@@ -2,12 +2,12 @@
   // https://nuxt.com/docs/guide/concepts/typescript
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
-      "allowJs": false,
-      "checkJs": false,
-      "allowUnusedLabels": false,
-      "allowUnreachableCode": false,
-      "noUnusedLocals": true,
-      "noUnusedParameters": true,
-      "isolatedModules": true
-    }
+    "allowJs": false,
+    "checkJs": false,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "isolatedModules": true
+  }
 }
