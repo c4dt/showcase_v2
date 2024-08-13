@@ -10,11 +10,15 @@
     "postinstall": "nuxt prepare",
     "typecheck": "bun --bun vue-tsc --noEmit",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
   },
   "dependencies": {
     "@nuxt/eslint": "^0.5.0",
+    "eslint-config-prettier": "^9.1.0",
     "nuxt": "^3.12.4",
+    "prettier": "^3.3.3",
     "vue": "latest"
   },
   "devDependencies": {
