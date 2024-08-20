@@ -32,41 +32,15 @@
       </div>
     </section>
     <section class="px-56 py-24">
-      <div class="mx-auto max-w-10xl">
-        <div class="text-center">
-          <h2 class="text-5xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            All our projects
-          </h2>
-        </div>
-      </div>
-      <div class="flex space-x-4 py-6 justify-center">
-        <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
-          ALL
-        </button>
-
-        <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
-          E-ID
-        </button>
-
-        <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
-          LLMS
-        </button>
-
-        <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
-          AI SAFETY
-        </button>
-
-        <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
-          Cryptography
-        </button>
-      </div>
       <div class="flex">
         <!-- Sidebar with filter -->
         <div class="w-1/4 pr-4">
-          <div class="sticky top-4">
+          <div class="sticky top-0">
             <div class="bg-white p-4 border rounded-lg shadow-md mb-4">
-              <h2 class="text-lg font-semibold mb-2">I am a filter box</h2>
-              <p class="mb-4">I should stick to the page when users are scrolling</p>
+              <div class="font-bold">Filter by</div>
+              <homepageCombobox title="Lab"/>
+              <homepageCombobox title="Category"/>
+              <homepageCombobox title="Application"/>
             </div>
           </div>
         </div>
@@ -74,7 +48,28 @@
         <!-- Main projects area -->
         <div class="w-3/4">
           <!-- Search bar -->
-          <div class="mb-4">
+          <div class="sticky border top-0 mb-4 bg-white rounded-xl shadow-md py-2 px-6">
+           <div class="flex space-x-4 py-6 justify-center">
+             <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
+               ALL
+             </button>
+
+             <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
+               E-ID
+             </button>
+
+             <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
+               LLMS
+             </button>
+
+             <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
+               AI SAFETY
+             </button>
+
+             <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
+               Cryptography
+             </button>
+           </div>
             <div class="relative">
               <input type="text" placeholder="Looking for something specific?"
                 class="w-full py-2 pl-10 pr-4 text-gray-700 bg-gray-200 rounded-full focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-300">
@@ -88,6 +83,12 @@
             </div>
           </div>
           <div class="space-y-4">
+            <homepageProjectCard />
+            <homepageProjectCard />
+            <homepageProjectCard />
+            <homepageProjectCard />
+            <homepageProjectCard />
+            <homepageProjectCard />
             <homepageProjectCard />
             <homepageProjectCard />
           </div>
