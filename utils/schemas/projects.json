@@ -1,0 +1,354 @@
+{
+  "type": "object",
+  "properties": {
+    "projects": {
+      "type": "object",
+      "patternProperties": {
+        "^.*$": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "type": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "Application",
+                  "Library",
+                  "Framework",
+                  "Toolset",
+                  "Simulation",
+                  "Experiments"
+                ]
+              }
+            },
+            "categories": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "Privacy",
+                  "Blockchain",
+                  "Verification",
+                  "Security",
+                  "Learning",
+                  "Other"
+                ]
+              }
+            },
+            "applications": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "Finance",
+                  "Health",
+                  "Gov",
+                  "Infra",
+                  "Info",
+                  "Other"
+                ]
+              }
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "Access Control",
+                  "Adversarial",
+                  "Anonymity",
+                  "Attack",
+                  "Benchmark",
+                  "Binary",
+                  "Bluetooth",
+                  "Byzantine Resilience",
+                  "Cloud",
+                  "Code Analysis",
+                  "Computer Vision",
+                  "Concurrency",
+                  "Consensus",
+                  "CrowdSource",
+                  "Data Structures",
+                  "Database",
+                  "Debug",
+                  "Decentralized",
+                  "Deep Neural Networks",
+                  "Development",
+                  "Distributed Learning",
+                  "Encryption",
+                  "Exploit",
+                  "Failure",
+                  "Features",
+                  "Federated Learning",
+                  "Fuzzing",
+                  "Homomorphic Encryption",
+                  "Image Classification",
+                  "Images",
+                  "Inductive Bias",
+                  "Internet of Things",
+                  "Locking",
+                  "Low-Level",
+                  "Machine Learning",
+                  "Mobile App",
+                  "Natural Language",
+                  "Network",
+                  "Optimization",
+                  "Predictor",
+                  "Protection",
+                  "Protocol",
+                  "PyTorch",
+                  "Secure Multi-Party Computation",
+                  "Server",
+                  "Simulator",
+                  "Static Analysis",
+                  "Survey",
+                  "TensorFlow",
+                  "Tor",
+                  "Zero-Knowledge Proofs"
+                ]
+              }
+            },
+            "date_added": {
+              "type": "string"
+            },
+            "layman_desc": {
+              "type": "string"
+            },
+            "tech_desc": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "contacts": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              }
+            },
+            "code": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "date_last_commit": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "doc": {
+              "type": "string"
+            },
+            "lines_of_code": {
+              "type": "string"
+            },
+            "c4dt_contact": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "email"
+              ],
+              "default": {
+                "name": "C4DT team",
+                "email": "c4dt-dev@listes.epfl.ch"
+              }
+            },
+            "language": {
+              "type": "string"
+            },
+            "license": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "AGPL-3.0",
+                  "GPL-2.0",
+                  "GPL-3.0",
+                  "GPL-2.0+",
+                  "GPL-3.0+",
+                  "LGPL-3.0",
+                  "MPL-2.0",
+                  "MPL-2.0+",
+                  "MIT",
+                  "Apache-2.0",
+                  "BSD-2-Clause",
+                  "BSD-3-Clause",
+                  "BSD-3-Clause Clear",
+                  "CeCILL-B",
+                  "CloudSuite",
+                  "CC BY 4.0",
+                  "SOLDERPAD HARDWARE LICENSE",
+                  "commercial",
+                  "non-commercial",
+                  "other",
+                  "various"
+                ]
+              }
+            },
+            "information": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "notes": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "text": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "text"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "type",
+                  "url",
+                  "title"
+                ]
+              }
+            },
+            "maturity": {
+              "type": "integer"
+            },
+            "incubator": {
+              "type": "object",
+              "properties": {
+                "work": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "incubated",
+                    "incubated_market",
+                    "retired",
+                    "retired_archived"
+                  ],
+                  "default": "incubated"
+                },
+                "products": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "Demo",
+                          "Hands-on",
+                          "Pilot",
+                          "App",
+                          "Library",
+                          "OSS-participation",
+                          "Archive"
+                        ]
+                      },
+                      "url": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "url",
+                      "title"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "work"
+              ]
+            },
+            "date_updated": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "maxItems": 0
+                }
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "description",
+            "type",
+            "categories",
+            "applications",
+            "tags",
+            "date_added"
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "projects"
+  ]
+}

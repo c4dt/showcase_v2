@@ -1,0 +1,109 @@
+{
+  "type": "object",
+  "properties": {
+    "labs": {
+      "type": "object",
+      "patternProperties": {
+        "^.*$": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "prof": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "email": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "email"
+              ]
+            },
+            "description": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "contacts": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              }
+            },
+            "notes": {
+              "type": "string"
+            },
+            "information": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "notes": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "text": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "text"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "title",
+                  "url"
+                ]
+              }
+            }
+          },
+          "required": [
+            "name",
+            "prof",
+            "description",
+            "url"
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "labs"
+  ]
+}
