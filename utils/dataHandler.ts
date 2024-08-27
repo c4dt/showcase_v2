@@ -10,29 +10,49 @@ import Ajv from 'ajv';
 import labsSchema from './schemas/labs.json'
 import projectsSchema from './schemas/projects.json'
 
+const DATADIR = './data';
+const PROJECTS_FILE = 'projects.yaml';
+const LABS_FILE = 'labs.yaml'
 
-function loadData(src: string, toValidate: boolean = true){
-  const content = YAML.parse(fs.readFileSync(src, 'utf-8'))
-  if (!toValidate) {
-    return content;
-  }
-  const basename = path.basename(src);
-  const ajv = new Ajv();
-  var schema;
-  switch (basename) {
-    case 'labs.yaml':
-      schema = ajv.compile(labsSchema);
-      break;
-    case 'projects.yaml':
-      schema = ajv.compile(projectsSchema);
-      break;
-    default:
-      throw(`unsupported file '${basename}'`);
-  }
-  if (!schema(content)) {
-    throw(`invalid YAML: ${JSON.stringify(schema.errors)}`);
-  }
+function validateData(basename, content) {
+    const ajv = new Ajv({ allowUnionTypes: true });
+    var schema;
+    switch (basename) {
+      case LABS_FILE:
+        schema = ajv.compile(labsSchema);
+        break;
+      case PROJECTS_FILE:
+        schema = ajv.compile(projectsSchema);
+        break;
+      default:
+        throw(`unsupported file '${basename}'`);
+    }
+    if (!schema(content)) {
+      throw(`invalid YAML: ${JSON.stringify(schema.errors)}`);
+    }
+}
+
+function loadLabs(skipValidation: boolean = false){
+    const filePath = path.join(DATADIR, LABS_FILE)
+    console.log(`processing ${filePath}`);
+    const content = YAML.parse(fs.readFileSync(filePath, 'utf-8'));
+    if (skipValidation) {
+      return content;
+    }
+    validateData(LABS_FILE, content);
   return content;
 }
 
-console.log(loadData('./data/DEDIS/projects.yaml'));  // this file is invalid
+function loadProjects(skipValidation: boolean = false){
+  fs.readdirSync(DATADIR, { withFileTypes: true }).filter(file => file.isDirectory()).map((file) => {
+    const filePath = path.join(file.parentPath, file.name, PROJECTS_FILE);
+    console.log(`processing ${filePath}`);
+    const content = YAML.parse(fs.readFileSync(filePath, 'utf-8'));
+    if (skipValidation) {
+      return content;
+    }
+    console.log(`validating ${filePath}`);
+    validateData(PROJECTS_FILE, content);
+  });
+  return content;
+}
