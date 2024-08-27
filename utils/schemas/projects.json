@@ -14,18 +14,7 @@
               "type": "string"
             },
             "type": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Application",
-                  "Library",
-                  "Framework",
-                  "Toolset",
-                  "Simulation",
-                  "Experiments"
-                ]
-              }
+              "type": "string"
             },
             "categories": {
               "type": "array",
@@ -170,7 +159,7 @@
               "type": "string"
             },
             "lines_of_code": {
-              "type": "string"
+              "type": ["number", "string"]
             },
             "c4dt_contact": {
               "type": "object",
@@ -195,33 +184,7 @@
               "type": "string"
             },
             "license": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "AGPL-3.0",
-                  "GPL-2.0",
-                  "GPL-3.0",
-                  "GPL-2.0+",
-                  "GPL-3.0+",
-                  "LGPL-3.0",
-                  "MPL-2.0",
-                  "MPL-2.0+",
-                  "MIT",
-                  "Apache-2.0",
-                  "BSD-2-Clause",
-                  "BSD-3-Clause",
-                  "BSD-3-Clause Clear",
-                  "CeCILL-B",
-                  "CloudSuite",
-                  "CC BY 4.0",
-                  "SOLDERPAD HARDWARE LICENSE",
-                  "commercial",
-                  "non-commercial",
-                  "other",
-                  "various"
-                ]
-              }
+              "type": "string"
             },
             "information": {
               "type": "array",
