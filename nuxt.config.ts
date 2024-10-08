@@ -20,4 +20,6 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
+  target: 'static',
+  ssr: true,
 });

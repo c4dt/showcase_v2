@@ -32,19 +32,19 @@ function validateData(basename, content) {
     }
 }
 
-function loadLabs(skipValidation: boolean = false){
-    const filePath = path.join(DATADIR, LABS_FILE)
-    console.log(`processing ${filePath}`);
-    const content = YAML.parse(fs.readFileSync(filePath, 'utf-8'));
-    if (skipValidation) {
-      return content;
-    }
-    validateData(LABS_FILE, content);
+export function loadLabs(skipValidation: boolean = false){
+  const filePath = path.join(DATADIR, LABS_FILE)
+  console.log(`processing ${filePath}`);
+  const content = YAML.parse(fs.readFileSync(filePath, 'utf-8'));
+  if (skipValidation) {
+    return content;
+  }
+  validateData(LABS_FILE, content);
   return content;
 }
 
-function loadProjects(skipValidation: boolean = false){
-  fs.readdirSync(DATADIR, { withFileTypes: true }).filter(file => file.isDirectory()).map((file) => {
+export function loadProjects(skipValidation: boolean = false){
+  const labProjects = fs.readdirSync(DATADIR, { withFileTypes: true }).filter(file => file.isDirectory()).map((file) => {
     const filePath = path.join(file.parentPath, file.name, PROJECTS_FILE);
     console.log(`processing ${filePath}`);
     const content = YAML.parse(fs.readFileSync(filePath, 'utf-8'));
@@ -53,6 +53,9 @@ function loadProjects(skipValidation: boolean = false){
     }
     console.log(`validating ${filePath}`);
     validateData(PROJECTS_FILE, content);
+    return content;
   });
-  return content;
+  return labProjects.map((labProject) => {
+    return Object.values(labProject.projects);
+  }).flat()
 }

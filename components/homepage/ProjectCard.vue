@@ -4,14 +4,7 @@
       <div class="flex justify-between items-start">
         <div class="flex-grow">
           <h2 class="text-2xl font-bold mb-2">Awesome project on AI</h2>
-          <p class="text-gray-600 mb-4">
-            Dela stands for DEDIS Ledger Architecture. It is both a set of abstractions and an implementation of a distributed ledger architecture.
-
-            Dela has 2 main purposes:
-
-            Provide a modular, global-purpose, and universal framework that describes a minimal and extended set of abstractions for a distributed ledger architecture.
-            Provide multiple modules implementations that can be combined to run a distributed ledger.
-          </p>
+          <p class="text-gray-600 mb-4">{{ project.name }}</p>
         </div>
         <img src="~/assets/img/dedis.png" alt="DEDIS" class="w-40 rounded-full border-gray-800">
       </div>
@@ -62,4 +55,8 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
 
 library.add(faUserSecret);
+const props = defineProps<{
+  project: Object
+  }>()
+  console.log(props);
 </script>

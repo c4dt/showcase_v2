@@ -1,3 +1,11 @@
+<script setup lang="ts">
+const { data, status, error, refresh, clear } = await useAsyncData(
+  'data',
+  () => loadProjects()
+)
+
+</script>
+
 <template>
   <div class="bg-white">
     <section class="relative isolate px-6 pt-14 lg:px-8">
@@ -82,15 +90,10 @@
               </div>
             </div>
           </div>
-          <div class="space-y-4">
-            <homepageProjectCard />
-            <homepageProjectCard />
-            <homepageProjectCard />
-            <homepageProjectCard />
-            <homepageProjectCard />
-            <homepageProjectCard />
-            <homepageProjectCard />
-            <homepageProjectCard />
+          <div class="space-y-4r">
+                <div class="py-4" v-for="project in data">
+                    <homepageProjectCard :project="project"/>
+                </div>
           </div>
         </div>
       </div>
