@@ -59,6 +59,7 @@ export function loadProjects(skipValidation: boolean = false){
   return labProjects.map((labProject) => {
     return Object.values(labProject.projects).map((project) => {
       project.lab = labProject.lab;
+      project.descriptionDisplay = project.layman_desc ?? project.tech_desc ?? project.description
       return project;
     });
   }).flat()

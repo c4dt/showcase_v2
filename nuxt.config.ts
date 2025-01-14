@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   ],
   fontawesome: {
     icons: {
-      solid: ['home', 'newspaper', 'tags', 'envelope', 'caret-down'],
+      solid: ['home', 'newspaper', 'tags', 'envelope', 'caret-down', 'code'],
       regular: ['newspaper', 'file'],
       brands: ['github'],
     },
