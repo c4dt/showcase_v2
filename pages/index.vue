@@ -3,7 +3,8 @@ const { data, status, error, refresh, clear } = await useAsyncData(
   'data',
   () => loadProjects()
 )
-
+const projects = data.value;
+const carouselProjects = projects.filter((project: any) => project.is_highlighted);
 </script>
 
 <template>
@@ -33,9 +34,7 @@ const { data, status, error, refresh, clear } = await useAsyncData(
       </div>
       <div class="mt-24">
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <HomepageCarouselItem />
-          <HomepageCarouselItem />
-          <HomepageCarouselItem />
+          <HomepageCarouselItem v-for="project in carouselProjects" :project="project" />
         </div>
       </div>
     </section>

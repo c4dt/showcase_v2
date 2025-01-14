@@ -60,6 +60,7 @@ export function loadProjects(skipValidation: boolean = false){
     return Object.values(labProject.projects).map((project) => {
       project.lab = labProject.lab;
       project.descriptionDisplay = project.layman_desc ?? project.tech_desc ?? project.description
+      project.logo ??= 'https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg'
       return project;
     });
   }).flat()
