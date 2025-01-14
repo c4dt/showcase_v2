@@ -7,24 +7,16 @@ library.add(faUserSecret);
 
 <template>
   <div
-    class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md border border-blue-gray-100"
-  >
-    <img
-      alt="Dela"
-      src="https://dedis.github.io/dela/assets/logo.png"
-      class="pt-4 pr-4 pl-4 object-cover w-full h-auto"
-    >
+    class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md border border-blue-gray-100">
+    <img alt="Dela" src="https://dedis.github.io/dela/assets/logo.png"
+      class="pt-4 pr-4 pl-4 object-cover w-full h-auto">
     <div
-      class="relative bg-clip-border mt-4 mx-4 rounded-xl overflow-hidden bg-transparent text-gray-700 shadow-none !m-0 p-6"
-    >
+      class="relative bg-clip-border mt-4 mx-4 rounded-xl overflow-hidden bg-transparent text-gray-700 shadow-none !m-0 p-6">
       <h5
-        class="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 capitalize"
-      >
+        class="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 capitalize">
         DEDIS Ledger Architecture
       </h5>
-      <p
-        class="block antialiased font-sans text-sm leading-normal text-inherit font-normal !text-gray-500"
-      >
+      <p class="block antialiased font-sans text-sm leading-normal text-inherit font-normal !text-gray-500">
         Dela stands for DEDIS Ledger Architecture. It is both a set of
         abstractions and an implementation of a distributed ledger architecture.
       </p>
