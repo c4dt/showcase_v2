@@ -53,9 +53,13 @@ export function loadProjects(skipValidation: boolean = false){
     }
     console.log(`validating ${filePath}`);
     validateData(PROJECTS_FILE, content);
-    return content;
+    content.lab = file.name;
+    return content
   });
   return labProjects.map((labProject) => {
-    return Object.values(labProject.projects);
+    return Object.values(labProject.projects).map((project) => {
+      project.lab = labProject.lab;
+      return project;
+    });
   }).flat()
 }
