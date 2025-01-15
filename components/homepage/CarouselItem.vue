@@ -24,7 +24,7 @@ const project = props.project
         {{ project.descriptionDisplay }}
       </p>
     </div>
-    <div class="flex space-x-4 justify-end pb-4 pr-4">
+    <div class="flex space-x-4 justify-end pb-4 pr-4 mt-auto">
       <a v-if="project.information" :href="project.information[0].url">
         <div class="text-right">
           <font-awesome :icon="['fa', 'newspaper']" class="fa-3x" />
