@@ -3,44 +3,47 @@
     <div class="p-8">
       <div class="flex justify-between items-start">
         <div class="flex-grow">
-          <h2 class="text-2xl font-bold mb-2">Awesome project on AI</h2>
-          <p class="text-gray-600 mb-4">{{ project.name }}</p>
+          <h2 class="text-2xl font-bold mb-2">{{ project.name }}</h2>
+          <p class="text-gray-600 mb-4">{{ project.descriptionDisplay }}</p>
         </div>
-        <img src="~/assets/img/dedis.png" alt="DEDIS" class="w-40 rounded-full border-gray-800">
       </div>
-      <div class="flex space-x-2"> <!-- This is the tag section -->
+      <div class="flex space-x-2">
         <span class="text-right">
           <font-awesome :icon="['fa', 'tags']" class="fa-1x text-gray-500" />
         </span>
-        <span class="px-3 py-1 bg-gray-200 text-gray-800 rounded-full text-sm">AI Alignment</span>
-        <span class="px-3 py-1 bg-gray-200 text-gray-800 rounded-full text-sm">Cloud</span>
-        <span class="px-3 py-1 bg-gray-200 text-gray-800 rounded-full text-sm">LLM</span>
+        <span class="px-3 py-1 bg-gray-200 text-gray-800 rounded-full text-sm" v-for="tag in project.tags">{{ tag }}</span>
       </div>
 
 
       <div class="flex space-x-4 justify-end">
-        <a href="https://www.epfl.ch/labs/dedis/wp-content/uploads/2022/02/report-2021-3-baum-auguste-Dvoting.pdf" class="text-gray-500 hover:underline flex items-center">
-          <div class="text-right">
-            <font-awesome :icon="['fa', 'newspaper']" class=" text-gray-500 fa-2x" />
-          </div>
-        </a>
-        <a href="https://link.springer.com/chapter/10.1007/978-3-031-48806-1_31" class="text-gray-500 hover:underline flex items-center">  
-          <div class="text-right">
-            <!-- Research Paper -->
-            <font-awesome :icon="['far', 'file']" class=" text-gray-500 fa-2x" />
-          </div>
-        </a>
-        <a href="https://dedis.github.io/dela" class="text-gray-500 hover:underline flex items-center">
+        <div v-for="information in project.information.filter(information => information.type.toLowerCase() == 'article')" v-if="project.information">
+          <a :href="information.url" class="text-gray-500 hover:underline flex items-center">
+            <div class="text-right">
+              <font-awesome :icon="['fa', 'newspaper']" class=" text-gray-500 fa-2x" />
+            </div>
+          </a>
+        </div>
+        <div v-for="information in project.information.filter(information => information.type.toLowerCase() == 'paper')" v-if="project.information">
+          <a :href="information.url" class="text-gray-500 hover:underline flex items-center">
+            <div class="text-right">
+              <font-awesome :icon="['far', 'file']" class=" text-gray-500 fa-2x" />
+            </div>
+          </a>
+        </div>
+        <a :href="project.url" class="text-gray-500 hover:underline flex items-center" v-if="project.url">
           <div class="text-right">
             <font-awesome :icon="['fa', 'home']" class=" text-gray-500 fa-2x" />
           </div>
         </a>
-        <a href="https://github.com/dedis/dela" class="text-gray-500 hover:underline flex items-center">
+        <a :href="project.code.url" class="text-gray-500 hover:underline flex items-center" v-if="project.code">
           <div class="text-right">
-            <font-awesome :icon="['fab', 'github']" class=" text-gray-500 fa-2x" />
+            <font-awesome :icon="['fab', 'github']" class=" text-gray-500 fa-2x" v-if="project.code.type.toLowerCase().includes('github')"/>
+          </div>
+          <div class="text-right">
+            <font-awesome :icon="['fas', 'code']" class=" text-gray-500 fa-2x" v-if="!project.code.type.toLowerCase().includes('github')"/>
           </div>
         </a>
-        <a href="mailto:pierluca.borso@epfl.ch" class="text-gray-500 hover:underline flex items-center">
+        <a :href="'mailto:' + project.contacts.map(contact => contact.email).join(',')" class="text-gray-500 hover:underline flex items-center" v-if="project.contacts">
           <div class="text-right">
             <font-awesome :icon="['fas', 'envelope']" class=" text-gray-500 fa-2x" />
           </div>
