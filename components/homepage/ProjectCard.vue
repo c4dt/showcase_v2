@@ -11,19 +11,23 @@
         <span class="text-right">
           <font-awesome :icon="['fa', 'tags']" class="fa-1x text-gray-500" />
         </span>
-        <span class="px-3 py-1 bg-gray-200 text-gray-800 rounded-full text-sm" v-for="tag in project.tags">{{ tag }}</span>
+        <span class="px-3 py-1 bg-gray-200 text-gray-800 rounded-full text-sm" v-for="tag in project.tags">{{ tag
+          }}</span>
       </div>
 
 
       <div class="flex space-x-4 justify-end">
-        <div v-for="information in project.information.filter(information => information.type.toLowerCase() == 'article')" v-if="project.information">
+        <div
+          v-for="information in project.information.filter(information => information.type.toLowerCase() == 'article')"
+          v-if="project.information">
           <a :href="information.url" class="text-gray-500 hover:underline flex items-center">
             <div class="text-right">
               <font-awesome :icon="['fa', 'newspaper']" class=" text-gray-500 fa-2x" />
             </div>
           </a>
         </div>
-        <div v-for="information in project.information.filter(information => information.type.toLowerCase() == 'paper')" v-if="project.information">
+        <div v-for="information in project.information.filter(information => information.type.toLowerCase() == 'paper')"
+          v-if="project.information">
           <a :href="information.url" class="text-gray-500 hover:underline flex items-center">
             <div class="text-right">
               <font-awesome :icon="['far', 'file']" class=" text-gray-500 fa-2x" />
@@ -37,13 +41,16 @@
         </a>
         <a :href="project.code.url" class="text-gray-500 hover:underline flex items-center" v-if="project.code">
           <div class="text-right">
-            <font-awesome :icon="['fab', 'github']" class=" text-gray-500 fa-2x" v-if="project.code.type.toLowerCase().includes('github')"/>
+            <font-awesome :icon="['fab', 'github']" class=" text-gray-500 fa-2x"
+              v-if="project.code.type.toLowerCase().includes('github')" />
           </div>
           <div class="text-right">
-            <font-awesome :icon="['fas', 'code']" class=" text-gray-500 fa-2x" v-if="!project.code.type.toLowerCase().includes('github')"/>
+            <font-awesome :icon="['fas', 'code']" class=" text-gray-500 fa-2x"
+              v-if="!project.code.type.toLowerCase().includes('github')" />
           </div>
         </a>
-        <a :href="'mailto:' + project.contacts.map(contact => contact.email).join(',')" class="text-gray-500 hover:underline flex items-center" v-if="project.contacts">
+        <a :href="'mailto:' + project.contacts.map(contact => contact.email).join(',')"
+          class="text-gray-500 hover:underline flex items-center" v-if="project.contacts">
           <div class="text-right">
             <font-awesome :icon="['fas', 'envelope']" class=" text-gray-500 fa-2x" />
           </div>
@@ -60,6 +67,6 @@ import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
 library.add(faUserSecret);
 const props = defineProps<{
   project: Object
-  }>()
-  console.log(props);
+}>()
+console.log(props);
 </script>
