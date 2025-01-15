@@ -37,7 +37,10 @@ const project = props.project
       </a>
       <a v-if="project.code" :href="project.code.url">
         <div class="text-right">
-          <font-awesome :icon="['fas', 'code']" class="fa-3x" />
+          <font-awesome v-if="project.code.type.toLowerCase().includes('github')" :icon="['fab', 'github']"
+            class=" fa-3x" />
+          <font-awesome v-if="!project.code.type.toLowerCase().includes('github')" :icon="['fas', 'code']"
+            class=" fa-3x" />
         </div>
       </a>
     </div>
