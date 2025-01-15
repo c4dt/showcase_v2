@@ -3,7 +3,8 @@ const { data, status, error, refresh, clear } = await useAsyncData(
   'data',
   () => loadProjects()
 )
-
+const projects = data.value;
+const carouselProjects = projects.filter((project: any) => project.is_highlighted);
 </script>
 
 <template>
@@ -33,9 +34,7 @@ const { data, status, error, refresh, clear } = await useAsyncData(
       </div>
       <div class="mt-24">
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <HomepageCarouselItem />
-          <HomepageCarouselItem />
-          <HomepageCarouselItem />
+          <HomepageCarouselItem v-for="project in carouselProjects" :project="project" />
         </div>
       </div>
     </section>
@@ -46,9 +45,9 @@ const { data, status, error, refresh, clear } = await useAsyncData(
           <div class="sticky top-0">
             <div class="bg-white p-4 border rounded-lg shadow-md mb-4">
               <div class="font-bold">Filter by</div>
-              <homepageCombobox title="Lab"/>
-              <homepageCombobox title="Category"/>
-              <homepageCombobox title="Application"/>
+              <homepageCombobox title="Lab" />
+              <homepageCombobox title="Category" />
+              <homepageCombobox title="Application" />
             </div>
           </div>
         </div>
@@ -57,27 +56,27 @@ const { data, status, error, refresh, clear } = await useAsyncData(
         <div class="w-3/4">
           <!-- Search bar -->
           <div class="sticky border top-0 mb-4 bg-white rounded-xl shadow-md py-2 px-6">
-           <div class="flex space-x-4 py-6 justify-center">
-             <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
-               ALL
-             </button>
+            <div class="flex space-x-4 py-6 justify-center">
+              <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
+                ALL
+              </button>
 
-             <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
-               E-ID
-             </button>
+              <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
+                E-ID
+              </button>
 
-             <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
-               LLMS
-             </button>
+              <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
+                LLMS
+              </button>
 
-             <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
-               AI SAFETY
-             </button>
+              <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
+                AI SAFETY
+              </button>
 
-             <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
-               Cryptography
-             </button>
-           </div>
+              <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
+                Cryptography
+              </button>
+            </div>
             <div class="relative">
               <input type="text" placeholder="Looking for something specific?"
                 class="w-full py-2 pl-10 pr-4 text-gray-700 bg-gray-200 rounded-full focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-300">
@@ -91,9 +90,9 @@ const { data, status, error, refresh, clear } = await useAsyncData(
             </div>
           </div>
           <div class="space-y-4r">
-                <div class="py-4" v-for="project in data">
-                    <homepageProjectCard :project="project"/>
-                </div>
+            <div class="py-4" v-for="project in data">
+              <homepageProjectCard :project="project" />
+            </div>
           </div>
         </div>
       </div>
