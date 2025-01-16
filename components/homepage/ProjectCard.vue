@@ -4,55 +4,71 @@
       <div class="flex justify-between items-start">
         <div class="flex-grow">
           <h2 class="text-2xl font-bold mb-2">{{ project.name }}</h2>
-          <p class="text-gray-600 mb-4">{{ project.descriptionDisplay }}</p>
+          <p class="text-gray-600 mb-4">
+            {{ project.descriptionDisplay }}
+          </p>
         </div>
       </div>
       <div class="flex space-x-2">
         <span class="text-right">
           <font-awesome :icon="['fa', 'tags']" class="fa-1x text-gray-500" />
         </span>
-        <span class="px-3 py-1 bg-gray-200 text-gray-800 rounded-full text-sm" v-for="tag in project.tags">{{ tag
-          }}</span>
+        <span v-for="tag in project.tags" class="px-3 py-1 bg-gray-200 text-gray-800 rounded-full text-sm">
+          {{ tag }}
+        </span>
       </div>
-
 
       <div class="flex space-x-4 justify-end">
         <div
-          v-for="information in project.information.filter(information => information.type.toLowerCase() == 'article')"
-          v-if="project.information">
+          v-for="information in project.information.filter(
+            (information) => information.type.toLowerCase() == 'article'
+          )"
+          v-if="project.information"
+        >
           <a :href="information.url" class="text-gray-500 hover:underline flex items-center">
             <div class="text-right">
-              <font-awesome :icon="['fa', 'newspaper']" class=" text-gray-500 fa-2x" />
+              <font-awesome :icon="['fa', 'newspaper']" class="text-gray-500 fa-2x" />
             </div>
           </a>
         </div>
-        <div v-for="information in project.information.filter(information => information.type.toLowerCase() == 'paper')"
-          v-if="project.information">
+        <div
+          v-for="information in project.information.filter((information) => information.type.toLowerCase() == 'paper')"
+          v-if="project.information"
+        >
           <a :href="information.url" class="text-gray-500 hover:underline flex items-center">
             <div class="text-right">
-              <font-awesome :icon="['far', 'file']" class=" text-gray-500 fa-2x" />
+              <font-awesome :icon="['far', 'file']" class="text-gray-500 fa-2x" />
             </div>
           </a>
         </div>
-        <a :href="project.url" class="text-gray-500 hover:underline flex items-center" v-if="project.url">
+        <a v-if="project.url" :href="project.url" class="text-gray-500 hover:underline flex items-center">
           <div class="text-right">
-            <font-awesome :icon="['fa', 'home']" class=" text-gray-500 fa-2x" />
+            <font-awesome :icon="['fa', 'home']" class="text-gray-500 fa-2x" />
           </div>
         </a>
-        <a :href="project.code.url" class="text-gray-500 hover:underline flex items-center" v-if="project.code">
+        <a v-if="project.code" :href="project.code.url" class="text-gray-500 hover:underline flex items-center">
           <div class="text-right">
-            <font-awesome :icon="['fab', 'github']" class=" text-gray-500 fa-2x"
-              v-if="project.code.type.toLowerCase().includes('github')" />
+            <font-awesome
+              v-if="project.code.type.toLowerCase().includes('github')"
+              :icon="['fab', 'github']"
+              class="text-gray-500 fa-2x"
+            />
           </div>
           <div class="text-right">
-            <font-awesome :icon="['fas', 'code']" class=" text-gray-500 fa-2x"
-              v-if="!project.code.type.toLowerCase().includes('github')" />
+            <font-awesome
+              v-if="!project.code.type.toLowerCase().includes('github')"
+              :icon="['fas', 'code']"
+              class="text-gray-500 fa-2x"
+            />
           </div>
         </a>
-        <a :href="'mailto:' + project.contacts.map(contact => contact.email).join(',')"
-          class="text-gray-500 hover:underline flex items-center" v-if="project.contacts">
+        <a
+          v-if="project.contacts"
+          :href="'mailto:' + project.contacts.map((contact) => contact.email).join(',')"
+          class="text-gray-500 hover:underline flex items-center"
+        >
           <div class="text-right">
-            <font-awesome :icon="['fas', 'envelope']" class=" text-gray-500 fa-2x" />
+            <font-awesome :icon="['fas', 'envelope']" class="text-gray-500 fa-2x" />
           </div>
         </a>
       </div>
@@ -66,7 +82,7 @@ import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
 
 library.add(faUserSecret);
 const props = defineProps<{
-  project: Object
-}>()
+  project: object;
+}>();
 console.log(props);
 </script>
