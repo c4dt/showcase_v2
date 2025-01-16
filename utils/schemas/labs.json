@@ -23,10 +23,7 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "name",
-                "email"
-              ]
+              "required": ["name", "email"]
             },
             "description": {
               "type": "string"
@@ -46,9 +43,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "name"
-                ]
+                "required": ["name"]
               }
             },
             "notes": {
@@ -80,30 +75,18 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "text"
-                      ]
+                      "required": ["text"]
                     }
                   }
                 },
-                "required": [
-                  "title",
-                  "url"
-                ]
+                "required": ["title", "url"]
               }
             }
           },
-          "required": [
-            "name",
-            "prof",
-            "description",
-            "url"
-          ]
+          "required": ["name", "prof", "description", "url"]
         }
       }
     }
   },
-  "required": [
-    "labs"
-  ]
+  "required": ["labs"]
 }

@@ -20,28 +20,14 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "Privacy",
-                  "Blockchain",
-                  "Verification",
-                  "Security",
-                  "Learning",
-                  "Other"
-                ]
+                "enum": ["Privacy", "Blockchain", "Verification", "Security", "Learning", "Other"]
               }
             },
             "applications": {
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "Finance",
-                  "Health",
-                  "Gov",
-                  "Infra",
-                  "Info",
-                  "Other"
-                ]
+                "enum": ["Finance", "Health", "Gov", "Infra", "Info", "Other"]
               }
             },
             "tags": {
@@ -133,9 +119,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "name"
-                ]
+                "required": ["name"]
               }
             },
             "code": {
@@ -151,9 +135,7 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "type"
-              ]
+              "required": ["type"]
             },
             "doc": {
               "type": "string"
@@ -171,10 +153,7 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "name",
-                "email"
-              ],
+              "required": ["name", "email"],
               "default": {
                 "name": "C4DT team",
                 "email": "c4dt-dev@listes.epfl.ch"
@@ -215,17 +194,11 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "text"
-                      ]
+                      "required": ["text"]
                     }
                   }
                 },
-                "required": [
-                  "type",
-                  "url",
-                  "title"
-                ]
+                "required": ["type", "url", "title"]
               }
             },
             "maturity": {
@@ -239,12 +212,7 @@
                 },
                 "type": {
                   "type": "string",
-                  "enum": [
-                    "incubated",
-                    "incubated_market",
-                    "retired",
-                    "retired_archived"
-                  ],
+                  "enum": ["incubated", "incubated_market", "retired", "retired_archived"],
                   "default": "incubated"
                 },
                 "products": {
@@ -254,15 +222,7 @@
                     "properties": {
                       "type": {
                         "type": "string",
-                        "enum": [
-                          "Demo",
-                          "Hands-on",
-                          "Pilot",
-                          "App",
-                          "Library",
-                          "OSS-participation",
-                          "Archive"
-                        ]
+                        "enum": ["Demo", "Hands-on", "Pilot", "App", "Library", "OSS-participation", "Archive"]
                       },
                       "url": {
                         "type": "string"
@@ -274,17 +234,11 @@
                         "type": "string"
                       }
                     },
-                    "required": [
-                      "type",
-                      "url",
-                      "title"
-                    ]
+                    "required": ["type", "url", "title"]
                   }
                 }
               },
-              "required": [
-                "work"
-              ]
+              "required": ["work"]
             },
             "date_updated": {
               "anyOf": [
@@ -298,20 +252,10 @@
               ]
             }
           },
-          "required": [
-            "name",
-            "description",
-            "type",
-            "categories",
-            "applications",
-            "tags",
-            "date_added"
-          ]
+          "required": ["name", "description", "type", "categories", "applications", "tags", "date_added"]
         }
       }
     }
   },
-  "required": [
-    "projects"
-  ]
+  "required": ["projects"]
 }

@@ -1,8 +1,5 @@
 <script setup lang="ts">
-const { data, status, error, refresh, clear } = await useAsyncData(
-  'data',
-  () => loadProjects()
-)
+const { data } = await useAsyncData("data", () => loadProjects());
 const projects = data.value;
 const carouselProjects = projects.filter((project: any) => project.is_highlighted);
 </script>
@@ -16,10 +13,8 @@ const carouselProjects = projects.filter((project: any) => project.is_highlighte
             Welcome to the Center for Digital Trust's Showcase
           </h1>
           <p class="mt-6 text-lg leading-8 text-gray-600">
-            This page presents all projects from the labs affiliated to the
-            Center for Digital Trust. You can filter the projects according to
-            your preferences. Clicking on one of the projects will show an
-            in-depth description.
+            This page presents all projects from the labs affiliated to the Center for Digital Trust. You can filter the
+            projects according to your preferences. Clicking on one of the projects will show an in-depth description.
           </p>
         </div>
       </div>
@@ -27,9 +22,7 @@ const carouselProjects = projects.filter((project: any) => project.is_highlighte
     <section class="px-56 py-24">
       <div class="mx-auto max-w-10xl">
         <div class="text-center">
-          <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            Selected Projects
-          </h2>
+          <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Selected Projects</h2>
         </div>
       </div>
       <div class="mt-24">
@@ -78,26 +71,36 @@ const carouselProjects = projects.filter((project: any) => project.is_highlighte
               </button>
             </div>
             <div class="relative">
-              <input type="text" placeholder="Looking for something specific?"
-                class="w-full py-2 pl-10 pr-4 text-gray-700 bg-gray-200 rounded-full focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-300">
+              <input
+                type="text"
+                placeholder="Looking for something specific?"
+                class="w-full py-2 pl-10 pr-4 text-gray-700 bg-gray-200 rounded-full focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-300"
+              />
               <div class="absolute inset-y-0 left-0 flex items-center pl-3">
-                <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                <svg
+                  class="w-5 h-5 text-gray-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
                 </svg>
               </div>
             </div>
           </div>
           <div class="space-y-4r">
-            <div class="py-4" v-for="project in data">
+            <div v-for="project in data" class="py-4">
               <homepageProjectCard :project="project" />
             </div>
           </div>
         </div>
       </div>
     </section>
-
-
   </div>
 </template>
