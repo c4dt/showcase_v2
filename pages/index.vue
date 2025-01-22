@@ -2,6 +2,25 @@
 const { data } = await useAsyncData("data", () => loadProjects());
 const projects = data.value;
 const carouselProjects = projects.filter((project: any) => project.is_highlighted);
+
+const labs = Array.from(new Set(projects.map((project: any) => project.lab)));
+const categories = Array.from(new Set(projects.map((project: any) => project.categories).flat()));
+const applications = Array.from(new Set(projects.map((project: any) => project.applications).flat()));
+const tags = Array.from(new Set(projects.map((project: any) => project.tags).flat()));
+
+const selectedLab = ref("");
+const selectedCategory = ref("");
+const selectedApplication = ref("");
+
+const filteredProjects = computed(() => {
+  return projects.filter((project: any) => {
+    return (
+      (selectedLab.value === "" || project.lab === selectedLab.value) &&
+      (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
+      (selectedApplication.value === "" || project.applications.includes(selectedApplication.value))
+    );
+  });
+});
 </script>
 
 <template>
@@ -38,9 +57,9 @@ const carouselProjects = projects.filter((project: any) => project.is_highlighte
           <div class="sticky top-0">
             <div class="bg-white p-4 border rounded-lg shadow-md mb-4">
               <div class="font-bold">Filter by</div>
-              <homepageCombobox title="Lab" />
-              <homepageCombobox title="Category" />
-              <homepageCombobox title="Application" />
+              <homepageCombobox title="Lab" :itemList="labs" v-model="selectedLab" />
+              <homepageCombobox title="Category" :itemList="categories" v-model="selectedCategory" />
+              <homepageCombobox title="Application" :itemList="applications" v-model="selectedApplication" />
             </div>
           </div>
         </div>
@@ -95,7 +114,7 @@ const carouselProjects = projects.filter((project: any) => project.is_highlighte
             </div>
           </div>
           <div class="space-y-4r">
-            <div v-for="project in data" class="py-4">
+            <div v-for="project in filteredProjects" class="py-4">
               <homepageProjectCard :project="project" />
             </div>
           </div>
