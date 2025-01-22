@@ -1,11 +1,15 @@
 <script setup lang="ts">
+const selectedItem = defineModel<string>();
 const isOpen = ref(false);
+const fieldDisplayValue = ref("");
+
 function toggleDropdown() {
   if (isOpen.value) {
     isOpen.value = false;
   } else {
     isOpen.value = true;
-    fieldValue.value = "";
+    fieldDisplayValue.value = "";
+    selectedItem.value = "";
   }
 }
 const props = defineProps<{
@@ -13,14 +17,13 @@ const props = defineProps<{
   itemList: string[];
 }>();
 
-const fieldValue = ref("");
-
 const filteredList = computed(() => {
-  return props.itemList.filter((name) => name.toLowerCase().includes(fieldValue.value.toLowerCase()));
+  return props.itemList.filter((name) => name.toLowerCase().includes(fieldDisplayValue.value.toLowerCase()));
 });
 
 function selectItem(name: string) {
-  fieldValue.value = name;
+  fieldDisplayValue.value = name;
+  selectedItem.value = name;
   isOpen.value = false;
 }
 </script>
@@ -29,7 +32,7 @@ function selectItem(name: string) {
   <div class="dropdown-container relative py-2">
     <input
       type="text"
-      v-model="fieldValue"
+      v-model="fieldDisplayValue"
       :placeholder="title"
       class="w-full px-4 py-2 pr-8 border border-gray-300 rounded-md"
       @focusin="isOpen = true"
