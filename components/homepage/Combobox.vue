@@ -31,8 +31,8 @@ function selectItem(name: string) {
 <template>
   <div class="dropdown-container relative py-2">
     <input
-      type="text"
       v-model="fieldDisplayValue"
+      type="text"
       :placeholder="title"
       class="w-full px-4 py-2 pr-8 border border-gray-300 rounded-md"
       @focusin="isOpen = true"
@@ -44,8 +44,8 @@ function selectItem(name: string) {
       <li
         v-for="name in filteredList"
         :key="name"
-        @click="selectItem(name)"
         class="px-4 py-2 cursor-pointer hover:bg-gray-100"
+        @click="selectItem(name)"
       >
         {{ name }}
       </li>

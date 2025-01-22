@@ -11,13 +11,15 @@ const tags = Array.from(new Set(projects.map((project: any) => project.tags).fla
 const selectedLab = ref("");
 const selectedCategory = ref("");
 const selectedApplication = ref("");
+const searchQuery = ref("");
 
 const filteredProjects = computed(() => {
   return projects.filter((project: any) => {
     return (
       (selectedLab.value === "" || project.lab === selectedLab.value) &&
       (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
-      (selectedApplication.value === "" || project.applications.includes(selectedApplication.value))
+      (selectedApplication.value === "" || project.applications.includes(selectedApplication.value)) &&
+      (searchQuery.value === "" || project.name.toLowerCase().includes(searchQuery.value.toLowerCase()))
     );
   });
 });
@@ -93,6 +95,7 @@ const filteredProjects = computed(() => {
               <input
                 type="text"
                 placeholder="Looking for something specific?"
+                v-model="searchQuery"
                 class="w-full py-2 pl-10 pr-4 text-gray-700 bg-gray-200 rounded-full focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-300"
               />
               <div class="absolute inset-y-0 left-0 flex items-center pl-3">
