@@ -14,6 +14,7 @@ const DATADIR = "./data";
 const PROJECTS_FILE = "projects.yaml";
 const LABS_FILE = "labs.yaml";
 const CONFIG_FILE = "config.yaml";
+const PRODUCTS= "products"
 
 function validateData(basename: string, content: string) {
   const ajv = new Ajv({ allowUnionTypes: true });
@@ -51,7 +52,7 @@ export function loadLabs(skipValidation: boolean = false) {
 export function loadProjects(skipValidation: boolean = false): object[] {
   const labProjects: object[] = fs
     .readdirSync(DATADIR, { withFileTypes: true })
-    .filter((file) => file.isDirectory())
+    .filter((file) => file.isDirectory() && file.name !== PRODUCTS)
     .map((file) => {
       const filePath = path.join(DATADIR, file.name, PROJECTS_FILE);
       const content = yaml.parse(fs.readFileSync(filePath, "utf-8"));
@@ -64,7 +65,8 @@ export function loadProjects(skipValidation: boolean = false): object[] {
     });
   return labProjects
     .map((labProject) => {
-      return Object.values(labProject.projects).map((project) => {
+      return Object.entries(labProject.projects).map(([key, project]) => {
+        project.id = key;
         project.lab = labProject.lab;
         project.descriptionDisplay = project.layman_desc ?? project.tech_desc ?? project.description;
         project.logo ??= "https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg";
@@ -72,4 +74,9 @@ export function loadProjects(skipValidation: boolean = false): object[] {
       });
     })
     .flat();
+}
+
+export function loadTemplate(projectId: string, templateType: string) {
+  const templateFilePath = fs.readdirSync(path.join(DATADIR, PRODUCTS, templateType), { withFileTypes: true }).find((file) => file.name == `${projectId}.tpl`);
+  return templateFilePath ? fs.readFileSync(path.join(DATADIR, PRODUCTS, templateType, templateFilePath.name), "utf-8")  : null;
 }
