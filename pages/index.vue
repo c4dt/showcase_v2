@@ -72,9 +72,9 @@ function filterByTag(tag: string) {
           <div class="sticky top-0">
             <div class="bg-white p-4 border rounded-lg shadow-md mb-4">
               <div class="font-bold">Filter by</div>
-              <homepageCombobox title="Lab" :itemList="labs" v-model="selectedLab" />
-              <homepageCombobox title="Category" :itemList="categories" v-model="selectedCategory" />
-              <homepageCombobox title="Application" :itemList="applications" v-model="selectedApplication" />
+              <homepageCombobox v-model="selectedLab" title="Lab" :item-list="labs" />
+              <homepageCombobox v-model="selectedCategory" title="Category" :item-list="categories" />
+              <homepageCombobox v-model="selectedApplication" title="Application" :item-list="applications" />
             </div>
           </div>
         </div>
