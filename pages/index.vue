@@ -6,11 +6,19 @@ const carouselProjects = projects.filter((project: any) => project.is_highlighte
 const labs = Array.from(new Set(projects.map((project: any) => project.lab)));
 const categories = Array.from(new Set(projects.map((project: any) => project.categories).flat()));
 const applications = Array.from(new Set(projects.map((project: any) => project.applications).flat()));
-const tags = Array.from(new Set(projects.map((project: any) => project.tags).flat()));
+
+const highlightedTags = ref<Record<string, string>>({
+  ALL: "",
+  "Distributed Learning": "Distributed Learning",
+  "ZK Proofs": "Zero-Knowledge Proofs",
+  Encryption: "Encryption",
+  Optimization: "Optimization"
+});
 
 const selectedLab = ref("");
 const selectedCategory = ref("");
 const selectedApplication = ref("");
+const selectedTag = ref("");
 const searchQuery = ref("");
 
 const filteredProjects = computed(() => {
@@ -19,10 +27,15 @@ const filteredProjects = computed(() => {
       (selectedLab.value === "" || project.lab === selectedLab.value) &&
       (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
       (selectedApplication.value === "" || project.applications.includes(selectedApplication.value)) &&
+      (selectedTag.value === "" || project.tags.includes(selectedTag.value)) &&
       (searchQuery.value === "" || project.name.toLowerCase().includes(searchQuery.value.toLowerCase()))
     );
   });
 });
+
+function filterByTag(tag: string) {
+  selectedTag.value = tag;
+}
 </script>
 
 <template>
@@ -59,9 +72,9 @@ const filteredProjects = computed(() => {
           <div class="sticky top-0">
             <div class="bg-white p-4 border rounded-lg shadow-md mb-4">
               <div class="font-bold">Filter by</div>
-              <homepageCombobox title="Lab" :itemList="labs" v-model="selectedLab" />
-              <homepageCombobox title="Category" :itemList="categories" v-model="selectedCategory" />
-              <homepageCombobox title="Application" :itemList="applications" v-model="selectedApplication" />
+              <homepageCombobox v-model="selectedLab" title="Lab" :item-list="labs" />
+              <homepageCombobox v-model="selectedCategory" title="Category" :item-list="categories" />
+              <homepageCombobox v-model="selectedApplication" title="Application" :item-list="applications" />
             </div>
           </div>
         </div>
@@ -70,32 +83,25 @@ const filteredProjects = computed(() => {
         <div class="w-3/4">
           <!-- Search bar -->
           <div class="sticky border top-0 mb-4 bg-white rounded-xl shadow-md py-2 px-6">
-            <div class="flex space-x-4 py-6 justify-center">
-              <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
-                ALL
-              </button>
-
-              <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
-                E-ID
-              </button>
-
-              <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
-                LLMS
-              </button>
-
-              <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
-                AI SAFETY
-              </button>
-
-              <button class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100">
-                Cryptography
-              </button>
-            </div>
+            <ul class="flex space-x-4 py-6 justify-center">
+              <li
+                v-for="(value, key) in highlightedTags"
+                :key="key"
+                class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100"
+                :class="[
+                  'px-6 py-2 border rounded-md shadow-sm cursor-pointer',
+                  selectedTag === value ? 'bg-blue-500 text-white' : 'bg-white hover:bg-gray-100'
+                ]"
+                @click="filterByTag(value)"
+              >
+                {{ key }}
+              </li>
+            </ul>
             <div class="relative">
               <input
+                v-model="searchQuery"
                 type="text"
                 placeholder="Looking for something specific?"
-                v-model="searchQuery"
                 class="w-full py-2 pl-10 pr-4 text-gray-700 bg-gray-200 rounded-full focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-300"
               />
               <div class="absolute inset-y-0 left-0 flex items-center pl-3">
