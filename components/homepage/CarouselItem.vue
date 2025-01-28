@@ -8,6 +8,12 @@ const props = defineProps<{
   project: object;
 }>();
 const project = props.project;
+
+const truncatedDescription = computed(() => {
+  return project.descriptionDisplay.length > 400
+    ? project.descriptionDisplay.substring(0, 400) + "..."
+    : project.descriptionDisplay;
+});
 </script>
 
 <template>
@@ -18,7 +24,7 @@ const project = props.project;
         {{ project.name }}
       </h5>
       <p class="antialiased font-sans text-sm leading-normal text-gray-500">
-        {{ project.descriptionDisplay }}
+        {{ truncatedDescription }}
       </p>
     </div>
     <div class="flex space-x-4 justify-end pb-4 pr-4 mt-auto">

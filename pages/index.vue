@@ -1,4 +1,16 @@
 <script setup lang="ts">
+import "vue3-carousel/carousel.css";
+import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
+
+const config = {
+  itemsToShow: 3,
+  height: 500,
+  gap: 5,
+  autoplay: 4000,
+  wrapAround: false,
+  pauseAutoplayOnHover: true
+};
+
 const { data } = await useAsyncData("data", () => loadProjects());
 const projects = data.value;
 const carouselProjects = projects.filter((project: any) => project.is_highlighted);
@@ -59,11 +71,17 @@ function filterByTag(tag: string) {
           <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Selected Projects</h2>
         </div>
       </div>
-      <div class="mt-24">
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <HomepageCarouselItem v-for="project in carouselProjects" :project="project" />
-        </div>
-      </div>
+
+      <Carousel class="mt-24" v-bind="config">
+        <Slide v-for="project in carouselProjects" :key="project.name" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <HomepageCarouselItem :project="project" class="h-full" />
+        </Slide>
+
+        <template #addons>
+          <Navigation />
+          <Pagination />
+        </template>
+      </Carousel>
     </section>
     <section class="px-56 py-24">
       <div class="flex">
@@ -87,7 +105,7 @@ function filterByTag(tag: string) {
               <li
                 v-for="(value, key) in highlightedTags"
                 :key="key"
-                class="px-6 py-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100"
+                class="px-6 py-2 border border-gray-300 rounded-md shadow-sm hover:bg-gray-100"
                 :class="[
                   'px-6 py-2 border rounded-md shadow-sm cursor-pointer',
                   selectedTag === value ? 'bg-blue-500 text-white' : 'bg-white hover:bg-gray-100'
