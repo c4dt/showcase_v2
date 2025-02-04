@@ -1,5 +1,5 @@
 // local imports
-import { loadProjects } from "./../../utils/loadData";
+import { loadProjects } from "@/utils/loadData";
 
 
 export default defineEventHandler((event) => { return loadProjects(); })
