@@ -12,9 +12,13 @@ const carouselConfig = {
 };
 
 interface Project {
-  id: number;
   name: string;
   is_highlighted: boolean;
+  lab: string;
+  categories: string[];
+  applications: string[];
+  tags: string[];
+  description: string;
 }
 
 const selectedLab = ref("");
