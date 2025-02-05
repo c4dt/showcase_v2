@@ -8,49 +8,40 @@ const props = defineProps<{
   project: object;
 }>();
 const project = props.project;
+
+const truncatedDescription = computed(() => {
+  return project.descriptionDisplay.length > 400
+    ? project.descriptionDisplay.substring(0, 400) + "..."
+    : project.descriptionDisplay;
+});
 </script>
 
 <template>
-  <div
-    class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md border border-blue-gray-100"
-  >
-    <img alt="Dela" :src="project.logo" class="pt-4 pr-4 pl-4 object-cover w-full h-auto" />
-    <div
-      class="relative bg-clip-border mt-4 mx-4 rounded-xl overflow-hidden bg-transparent text-gray-700 shadow-none !m-0 p-6"
-    >
-      <h5
-        class="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 capitalize"
-      >
+  <div class="relative flex flex-col rounded-xl bg-white text-gray-700 shadow-md border border-blue-gray-100">
+    <img alt="Dela" :src="project.logo" class="p-4 object-cover w-full h-auto" />
+    <div class="mt-4 mx-4 p-6 rounded-xl text-gray-700">
+      <h5 class="antialiased font-sans text-xl font-semibold leading-snug text-blue-gray-900 capitalize">
         {{ project.name }}
       </h5>
-      <p class="block antialiased font-sans text-sm leading-normal text-inherit font-normal !text-gray-500">
-        {{ project.descriptionDisplay }}
+      <p class="antialiased font-sans text-sm leading-normal text-gray-500">
+        {{ truncatedDescription }}
       </p>
     </div>
     <div class="flex space-x-4 justify-end pb-4 pr-4 mt-auto">
       <a v-if="project.information" :href="project.information[0].url">
-        <div class="text-right">
-          <font-awesome :icon="['fa', 'newspaper']" class="fa-3x" />
-        </div>
+        <font-awesome :icon="['fa', 'newspaper']" class="fa-3x" />
       </a>
       <a v-if="project.url" :href="project.url">
-        <div class="text-right">
-          <font-awesome :icon="['fa', 'home']" class="fa-3x" />
-        </div>
+        <font-awesome :icon="['fa', 'home']" class="fa-3x" />
       </a>
       <a v-if="project.code" :href="project.code.url">
-        <div class="text-right">
-          <font-awesome
-            v-if="project.code.type.toLowerCase().includes('github')"
-            :icon="['fab', 'github']"
-            class="fa-3x"
-          />
-          <font-awesome
-            v-if="!project.code.type.toLowerCase().includes('github')"
-            :icon="['fas', 'code']"
-            class="fa-3x"
-          />
-        </div>
+        <font-awesome
+          :icon="[
+            project.code.type.toLowerCase().includes('github') ? 'fab' : 'fas',
+            project.code.type.toLowerCase().includes('github') ? 'github' : 'code'
+          ]"
+          class="fa-3x"
+        />
       </a>
     </div>
   </div>
