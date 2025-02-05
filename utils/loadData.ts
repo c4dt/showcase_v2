@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 
 // third party imports
-import yaml from 'yaml';
+import yaml from "yaml";
 import Ajv from "ajv";
 
 // local imports
