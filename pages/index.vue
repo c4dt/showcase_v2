@@ -2,7 +2,7 @@
 import "vue3-carousel/carousel.css";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 
-const config = {
+const carouselConfig = {
   itemsToShow: 3,
   height: 500,
   gap: 5,
@@ -11,21 +11,15 @@ const config = {
   pauseAutoplayOnHover: true
 };
 
-const { data } = await useAsyncData("data", () => loadProjects());
-const projects = data.value;
-const carouselProjects = projects.filter((project: any) => project.is_highlighted);
-
-const labs = Array.from(new Set(projects.map((project: any) => project.lab)));
-const categories = Array.from(new Set(projects.map((project: any) => project.categories).flat()));
-const applications = Array.from(new Set(projects.map((project: any) => project.applications).flat()));
-
-const highlightedTags = ref<Record<string, string>>({
-  ALL: "",
-  "Distributed Learning": "Distributed Learning",
-  "ZK Proofs": "Zero-Knowledge Proofs",
-  Encryption: "Encryption",
-  Optimization: "Optimization"
-});
+interface Project {
+  name: string;
+  is_highlighted: boolean;
+  lab: string;
+  categories: string[];
+  applications: string[];
+  tags: string[];
+  description: string;
+}
 
 const selectedLab = ref("");
 const selectedCategory = ref("");
@@ -33,8 +27,43 @@ const selectedApplication = ref("");
 const selectedTag = ref("");
 const searchQuery = ref("");
 
+const { data: projects } = await useFetch<Project[]>("/api/projects");
+
+interface ProjectConfig {
+  highlightedTags: string[];
+  highlightedProjects: string[];
+}
+
+const projectConfig = ref<ProjectConfig>({
+  highlightedTags: [],
+  highlightedProjects: []
+});
+
+const { data } = await useFetch<ProjectConfig>("/api/configuration");
+
+if (data.value) {
+  projectConfig.value = data.value;
+}
+
+let labs: string[] = [];
+let categories: string[] = [];
+let applications: string[] = [];
+let highlighedProjects: Project[] = [];
+let highlightedTags: string[] = [];
+
+if (projects.value) {
+  labs = Array.from(new Set(projects.value.map((project: any) => project.lab)));
+  categories = Array.from(new Set(projects.value.map((project: any) => project.categories).flat()));
+  applications = Array.from(new Set(projects.value.map((project: any) => project.applications).flat()));
+  highlighedProjects = projects.value.filter((project: any) =>
+    projectConfig.value.highlightedProjects.includes(project.name)
+  );
+  highlightedTags = projectConfig.value.highlightedTags;
+}
+
 const filteredProjects = computed(() => {
-  return projects.filter((project: any) => {
+  if (!projects.value) return [];
+  return projects.value.filter((project: any) => {
     return (
       (selectedLab.value === "" || project.lab === selectedLab.value) &&
       (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
@@ -72,8 +101,12 @@ function filterByTag(tag: string) {
         </div>
       </div>
 
-      <Carousel class="mt-24" v-bind="config">
-        <Slide v-for="project in carouselProjects" :key="project.name" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <Carousel class="mt-24" v-bind="carouselConfig">
+        <Slide
+          v-for="project in highlighedProjects"
+          :key="project.name"
+          class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+        >
           <HomepageCarouselItem :project="project" class="h-full" />
         </Slide>
 
@@ -103,16 +136,13 @@ function filterByTag(tag: string) {
           <div class="sticky border top-0 mb-4 bg-white rounded-xl shadow-md py-2 px-6">
             <ul class="flex space-x-4 py-6 justify-center">
               <li
-                v-for="(value, key) in highlightedTags"
-                :key="key"
+                v-for="tag in highlightedTags"
+                :key="tag"
                 class="px-6 py-2 border border-gray-300 rounded-md shadow-sm hover:bg-gray-100"
-                :class="[
-                  'px-6 py-2 border rounded-md shadow-sm cursor-pointer',
-                  selectedTag === value ? 'bg-blue-500 text-white' : 'bg-white hover:bg-gray-100'
-                ]"
-                @click="filterByTag(value)"
+                :class="[selectedTag === tag ? 'bg-blue-500 text-white' : 'bg-white hover:bg-blue-400']"
+                @click="filterByTag(tag)"
               >
-                {{ key }}
+                {{ tag === "" ? "ALL" : tag }}
               </li>
             </ul>
             <div class="relative">

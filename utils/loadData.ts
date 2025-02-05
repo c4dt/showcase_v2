@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 
 // third party imports
-import YAML from "yaml";
+import yaml from "yaml";
 import Ajv from "ajv";
 
 // local imports
@@ -13,6 +13,7 @@ import projectsSchema from "./schemas/projects.json";
 const DATADIR = "./data";
 const PROJECTS_FILE = "projects.yaml";
 const LABS_FILE = "labs.yaml";
+const CONFIG_FILE = "config.yaml";
 
 function validateData(basename: string, content: string) {
   const ajv = new Ajv({ allowUnionTypes: true });
@@ -32,10 +33,14 @@ function validateData(basename: string, content: string) {
   }
 }
 
+export function loadConfiguration() {
+  const filePath = path.join(DATADIR, CONFIG_FILE);
+  return yaml.parse(fs.readFileSync(filePath, "utf-8"));
+}
+
 export function loadLabs(skipValidation: boolean = false) {
   const filePath = path.join(DATADIR, LABS_FILE);
-  console.log(`processing ${filePath}`);
-  const content = YAML.parse(fs.readFileSync(filePath, "utf-8"));
+  const content = yaml.parse(fs.readFileSync(filePath, "utf-8"));
   if (skipValidation) {
     return content;
   }
@@ -44,17 +49,15 @@ export function loadLabs(skipValidation: boolean = false) {
 }
 
 export function loadProjects(skipValidation: boolean = false): object[] {
-  const labProjects = fs
+  const labProjects: object[] = fs
     .readdirSync(DATADIR, { withFileTypes: true })
     .filter((file) => file.isDirectory())
     .map((file) => {
       const filePath = path.join(file.parentPath, file.name, PROJECTS_FILE);
-      console.log(`processing ${filePath}`);
-      const content = YAML.parse(fs.readFileSync(filePath, "utf-8"));
+      const content = yaml.parse(fs.readFileSync(filePath, "utf-8"));
       if (skipValidation) {
         return content;
       }
-      console.log(`validating ${filePath}`);
       validateData(PROJECTS_FILE, content);
       content.lab = file.name;
       return content;

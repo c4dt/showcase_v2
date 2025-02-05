@@ -11,7 +11,7 @@ const project = props.project;
 
 const truncatedDescription = computed(() => {
   return project.descriptionDisplay.length > 400
-    ? project.descriptionDisplay.substring(0, 400) + "..."
+    ? project.descriptionDisplay.substring(0, 400) + "…"
     : project.descriptionDisplay;
 });
 </script>
