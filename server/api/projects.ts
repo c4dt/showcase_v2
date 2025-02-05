@@ -1,4 +1,3 @@
-// local imports
 import { loadProjects } from "@/utils/loadData";
 
 
