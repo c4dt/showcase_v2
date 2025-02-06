@@ -13,7 +13,16 @@
         <span class="text-right">
           <font-awesome :icon="['fa', 'tags']" class="fa-1x text-gray-500" />
         </span>
-        <span v-for="tag in project.tags" class="px-3 py-1 bg-gray-200 text-gray-800 rounded-full text-sm">
+        <span
+          v-for="tag in project.tags"
+          @click="addTag(tag)"
+          :class="{
+            'px-3 py-1 rounded-full text-sm transition': true,
+            'bg-gray-400 text-gray-950 cursor-not-allowed': selectedTags.includes(tag),
+            'bg-gray-200 text-gray-800 cursor-pointer hover:bg-gray-300 hover:text-gray-900':
+              !selectedTags.includes(tag)
+          }"
+        >
           {{ tag }}
         </span>
       </div>
@@ -84,4 +93,7 @@ library.add(faUserSecret);
 defineProps<{
   project: object;
 }>();
+
+const selectedTags = inject("selectedTags");
+const addTag = inject("addTag");
 </script>
