@@ -24,8 +24,17 @@ interface Project {
 const selectedLab = ref("");
 const selectedCategory = ref("");
 const selectedApplication = ref("");
-const selectedTag = ref("");
+const selectedHighlightedTag = ref("");
 const searchQuery = ref("");
+const selectedTags = ref<string[]>([]);
+provide("selectedTags", selectedTags);
+
+function addTag(tag: string) {
+  if (!selectedTags.value.includes(tag)) {
+    selectedTags.value.push(tag);
+  }
+}
+provide("addTag", addTag);
 
 const { data: projects } = await useFetch<Project[]>("/api/projects");
 
@@ -68,14 +77,19 @@ const filteredProjects = computed(() => {
       (selectedLab.value === "" || project.lab === selectedLab.value) &&
       (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
       (selectedApplication.value === "" || project.applications.includes(selectedApplication.value)) &&
-      (selectedTag.value === "" || project.tags.includes(selectedTag.value)) &&
-      (searchQuery.value === "" || project.name.toLowerCase().includes(searchQuery.value.toLowerCase()))
+      (selectedHighlightedTag.value === "" || project.tags.includes(selectedHighlightedTag.value)) &&
+      (searchQuery.value === "" || project.name.toLowerCase().includes(searchQuery.value.toLowerCase())) &&
+      (selectedTags.value.length === 0 || selectedTags.value.some((element) => project.tags.includes(element)))
     );
   });
 });
 
 function filterByTag(tag: string) {
-  selectedTag.value = tag;
+  selectedHighlightedTag.value = tag;
+}
+
+function removeTag(tag: string) {
+  selectedTags.value = selectedTags.value.filter((t) => t !== tag);
 }
 </script>
 
@@ -126,6 +140,22 @@ function filterByTag(tag: string) {
               <homepageCombobox v-model="selectedLab" title="Lab" :item-list="labs" />
               <homepageCombobox v-model="selectedCategory" title="Category" :item-list="categories" />
               <homepageCombobox v-model="selectedApplication" title="Application" :item-list="applications" />
+              <div class="flex flex-wrap space-x-2 space-y-2">
+                <div
+                  v-for="tag in selectedTags"
+                  :key="tag"
+                  class="flex items-center space-x-2 px-3 py-1 bg-gray-200 text-gray-800 rounded-full text-sm"
+                >
+                  <span>{{ tag }}</span>
+                  <button
+                    @click="removeTag(tag)"
+                    class="text-red-500 hover:text-red-700 focus:outline-none"
+                    aria-label="Remove tag"
+                  >
+                    x
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -139,7 +169,7 @@ function filterByTag(tag: string) {
                 v-for="tag in highlightedTags"
                 :key="tag"
                 class="px-6 py-2 border border-gray-300 rounded-md shadow-sm hover:bg-gray-100"
-                :class="[selectedTag === tag ? 'bg-blue-500 text-white' : 'bg-white hover:bg-blue-400']"
+                :class="[selectedHighlightedTag === tag ? 'bg-blue-500 text-white' : 'bg-white hover:bg-blue-400']"
                 @click="filterByTag(tag)"
               >
                 {{ tag === "" ? "ALL" : tag }}
