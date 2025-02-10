@@ -177,7 +177,6 @@ function resetFilters() {
 
         <!-- Main projects area -->
         <div class="w-3/4">
-          <!-- Search bar -->
           <div class="sticky border top-0 mb-4 bg-white rounded-xl shadow-md py-2 px-6">
             <ul class="flex space-x-4 py-6 justify-center">
               <li
