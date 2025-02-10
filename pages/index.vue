@@ -91,6 +91,15 @@ function filterByTag(tag: string) {
 function removeTag(tag: string) {
   selectedTags.value = selectedTags.value.filter((t) => t !== tag);
 }
+
+function resetFilters() {
+  selectedLab.value = "";
+  selectedCategory.value = "";
+  selectedApplication.value = "";
+  selectedHighlightedTag.value = "";
+  searchQuery.value = "";
+  selectedTags.value = [];
+}
 </script>
 
 <template>
@@ -155,6 +164,12 @@ function removeTag(tag: string) {
                     x
                   </button>
                 </div>
+              </div>
+              <div
+                class="text-center py-2 border border-gray-300 rounded-md shadow-sm hover:bg-gray-100 cursor-pointer"
+                @click="resetFilters"
+              >
+                Reset Filters
               </div>
             </div>
           </div>
