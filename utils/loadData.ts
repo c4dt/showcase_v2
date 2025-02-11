@@ -53,7 +53,7 @@ export function loadProjects(skipValidation: boolean = false): object[] {
     .readdirSync(DATADIR, { withFileTypes: true })
     .filter((file) => file.isDirectory())
     .map((file) => {
-      const filePath = path.join(file.parentPath, file.name, PROJECTS_FILE);
+      const filePath = path.join(DATADIR, file.name, PROJECTS_FILE);
       const content = yaml.parse(fs.readFileSync(filePath, "utf-8"));
       if (skipValidation) {
         return content;
