@@ -14,6 +14,7 @@ const DATADIR = "./data";
 const PROJECTS_FILE = "projects.yaml";
 const LABS_FILE = "labs.yaml";
 const CONFIG_FILE = "config.yaml";
+const PRODUCTSDIR = "products"
 
 function validateData(basename: string, content: string) {
   const ajv = new Ajv({ allowUnionTypes: true });
@@ -51,7 +52,7 @@ export function loadLabs(skipValidation: boolean = false) {
 export function loadProjects(skipValidation: boolean = false): object[] {
   const labProjects: object[] = fs
     .readdirSync(DATADIR, { withFileTypes: true })
-    .filter((file) => file.isDirectory())
+    .filter((file) => file.isDirectory() && file.name !== PRODUCTSDIR)
     .map((file) => {
       const filePath = path.join(DATADIR, file.name, PROJECTS_FILE);
       const content = yaml.parse(fs.readFileSync(filePath, "utf-8"));
