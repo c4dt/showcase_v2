@@ -65,7 +65,8 @@ export function loadProjects(skipValidation: boolean = false): object[] {
     });
   return labProjects
     .map((labProject) => {
-      return Object.values(labProject.projects).map((project) => {
+      return Object.entries(labProject.projects).map(([key, project]) => {
+        project.id = key;
         project.lab = labProject.lab;
         project.descriptionDisplay = project.layman_desc ?? project.tech_desc ?? project.description;
         project.logo ??= "https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg";
