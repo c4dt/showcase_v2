@@ -74,3 +74,8 @@ export function loadProjects(skipValidation: boolean = false): object[] {
     })
     .flat();
 }
+
+export function loadTemplate(projectId: string, templateType: string) {
+  const templateFilePath = fs.readdirSync(path.join(DATADIR, PRODUCTSDIR, templateType), { withFileTypes: true }).find((file) => file.name == `${projectId}.tpl`);
+  return templateFilePath ? fs.readFileSync(path.join(DATADIR, PRODUCTSDIR, templateType, templateFilePath.name), "utf-8")  : null;
+}
