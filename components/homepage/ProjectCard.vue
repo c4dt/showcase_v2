@@ -1,14 +1,16 @@
 <template>
   <div class="mx-auto bg-white rounded-xl shadow-md overflow-hidden">
     <div class="p-8">
-      <div class="flex justify-between items-start">
-        <div class="flex-grow">
-          <h2 class="text-2xl font-bold mb-2">{{ project.name }}</h2>
-          <p class="text-gray-600 mb-4">
-            {{ project.descriptionDisplay }}
-          </p>
+      <NuxtLink :to="{ name: 'projects-id', params: { id: project.id } }">
+        <div class="flex justify-between items-start">
+          <div class="flex-grow">
+            <h2 class="text-2xl font-bold mb-2">{{ project.name }}</h2>
+            <p class="text-gray-600 mb-4">
+              {{ project.descriptionDisplay }}
+            </p>
+          </div>
         </div>
-      </div>
+      </NuxtLink>
       <div class="flex space-x-2">
         <span class="text-right">
           <font-awesome :icon="['fa', 'tags']" class="fa-1x text-gray-500" />
