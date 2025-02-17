@@ -12,6 +12,7 @@ const carouselConfig = {
 };
 
 interface Project {
+  id: string;
   name: string;
   is_highlighted: boolean;
   lab: string;
