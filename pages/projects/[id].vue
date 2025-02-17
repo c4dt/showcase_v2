@@ -21,3 +21,7 @@
  {{ project.name }}
  <ProjectsTabs v-if="tabs.length" :tabs="tabs" :defaultTab="defaultTab"></ProjectsTabs>
 </template>
+
+<style scoped>
+    @import "./assets/css/products.css";
+</style>
