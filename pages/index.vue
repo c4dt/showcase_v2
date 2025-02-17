@@ -21,11 +21,16 @@ interface Project {
   description: string;
 }
 
+interface ProjectConfig {
+  highlightedTags: string[];
+  highlightedProjects: string[];
+}
+
+const searchQuery = ref("");
 const selectedLab = ref("");
 const selectedCategory = ref("");
 const selectedApplication = ref("");
 const selectedHighlightedTag = ref("");
-const searchQuery = ref("");
 const selectedTags = ref<string[]>([]);
 provide("selectedTags", selectedTags);
 
@@ -35,54 +40,6 @@ function addTag(tag: string) {
   }
 }
 provide("addTag", addTag);
-
-const { data: projects } = await useFetch<Project[]>("/api/projects");
-
-interface ProjectConfig {
-  highlightedTags: string[];
-  highlightedProjects: string[];
-}
-
-const projectConfig = ref<ProjectConfig>({
-  highlightedTags: [],
-  highlightedProjects: []
-});
-
-const { data } = await useFetch<ProjectConfig>("/api/configuration");
-
-if (data.value) {
-  projectConfig.value = data.value;
-}
-
-let labs: string[] = [];
-let categories: string[] = [];
-let applications: string[] = [];
-let highlighedProjects: Project[] = [];
-let highlightedTags: string[] = [];
-
-if (projects.value) {
-  labs = Array.from(new Set(projects.value.map((project: any) => project.lab)));
-  categories = Array.from(new Set(projects.value.map((project: any) => project.categories).flat()));
-  applications = Array.from(new Set(projects.value.map((project: any) => project.applications).flat()));
-  highlighedProjects = projects.value.filter((project: any) =>
-    projectConfig.value.highlightedProjects.includes(project.name)
-  );
-  highlightedTags = projectConfig.value.highlightedTags;
-}
-
-const filteredProjects = computed(() => {
-  if (!projects.value) return [];
-  return projects.value.filter((project: any) => {
-    return (
-      (selectedLab.value === "" || project.lab === selectedLab.value) &&
-      (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
-      (selectedApplication.value === "" || project.applications.includes(selectedApplication.value)) &&
-      (selectedHighlightedTag.value === "" || project.tags.includes(selectedHighlightedTag.value)) &&
-      (searchQuery.value === "" || project.name.toLowerCase().includes(searchQuery.value.toLowerCase())) &&
-      (selectedTags.value.length === 0 || selectedTags.value.some((element) => project.tags.includes(element)))
-    );
-  });
-});
 
 function filterByTag(tag: string) {
   selectedHighlightedTag.value = tag;
@@ -100,6 +57,60 @@ function resetFilters() {
   searchQuery.value = "";
   selectedTags.value = [];
 }
+
+const route = useRoute();
+const queryParams = route.query;
+const searchQueryParam = queryParams.search as string;
+
+if (searchQueryParam) {
+  searchQuery.value = searchQueryParam;
+}
+
+watch(route.query, () => {
+  searchQuery.value = (route.query.search as string) || "";
+});
+
+const { data: projects } = await useFetch<Project[]>("/api/projects");
+const { data } = await useFetch<ProjectConfig>("/api/configuration");
+
+const projectConfig = ref<ProjectConfig>({
+  highlightedTags: [],
+  highlightedProjects: []
+});
+
+if (data.value) {
+  projectConfig.value = data.value;
+}
+
+let labs: string[] = [];
+let categories: string[] = [];
+let applications: string[] = [];
+let highlightedProjects: Project[] = [];
+let highlightedTags: string[] = [];
+
+if (projects.value) {
+  labs = Array.from(new Set(projects.value.map((project) => project.lab)));
+  categories = Array.from(new Set(projects.value.flatMap((project) => project.categories)));
+  applications = Array.from(new Set(projects.value.flatMap((project) => project.applications)));
+  highlightedProjects = projects.value.filter((project) =>
+    projectConfig.value.highlightedProjects.includes(project.name)
+  );
+  highlightedTags = projectConfig.value.highlightedTags;
+}
+
+const filteredProjects = computed(() => {
+  if (!projects.value) return [];
+  return projects.value.filter((project) => {
+    return (
+      (selectedLab.value === "" || project.lab === selectedLab.value) &&
+      (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
+      (selectedApplication.value === "" || project.applications.includes(selectedApplication.value)) &&
+      (selectedHighlightedTag.value === "" || project.tags.includes(selectedHighlightedTag.value)) &&
+      (searchQuery.value === "" || project.name.toLowerCase().includes(searchQuery.value.toLowerCase())) &&
+      (selectedTags.value.length === 0 || selectedTags.value.some((tag) => project.tags.includes(tag)))
+    );
+  });
+});
 </script>
 
 <template>

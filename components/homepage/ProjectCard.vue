@@ -15,13 +15,13 @@
         </span>
         <span
           v-for="tag in project.tags"
-          @click="addTag(tag)"
           :class="{
             'px-3 py-1 rounded-full text-sm transition': true,
             'bg-gray-400 text-gray-950 cursor-not-allowed': selectedTags.includes(tag),
             'bg-gray-200 text-gray-800 cursor-pointer hover:bg-gray-300 hover:text-gray-900':
               !selectedTags.includes(tag)
           }"
+          @click="addTag(tag)"
         >
           {{ tag }}
         </span>
