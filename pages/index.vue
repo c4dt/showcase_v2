@@ -22,11 +22,16 @@ interface Project {
   description: string;
 }
 
+interface ProjectConfig {
+  highlightedTags: string[];
+  highlightedProjects: string[];
+}
+
+const searchQuery = ref("");
 const selectedLab = ref("");
 const selectedCategory = ref("");
 const selectedApplication = ref("");
 const selectedHighlightedTag = ref("");
-const searchQuery = ref("");
 const selectedTags = ref<string[]>([]);
 provide("selectedTags", selectedTags);
 
@@ -36,54 +41,6 @@ function addTag(tag: string) {
   }
 }
 provide("addTag", addTag);
-
-const { data: projects } = await useFetch<Project[]>("/api/projects");
-
-interface ProjectConfig {
-  highlightedTags: string[];
-  highlightedProjects: string[];
-}
-
-const projectConfig = ref<ProjectConfig>({
-  highlightedTags: [],
-  highlightedProjects: []
-});
-
-const { data } = await useFetch<ProjectConfig>("/api/configuration");
-
-if (data.value) {
-  projectConfig.value = data.value;
-}
-
-let labs: string[] = [];
-let categories: string[] = [];
-let applications: string[] = [];
-let highlighedProjects: Project[] = [];
-let highlightedTags: string[] = [];
-
-if (projects.value) {
-  labs = Array.from(new Set(projects.value.map((project: any) => project.lab)));
-  categories = Array.from(new Set(projects.value.map((project: any) => project.categories).flat()));
-  applications = Array.from(new Set(projects.value.map((project: any) => project.applications).flat()));
-  highlighedProjects = projects.value.filter((project: any) =>
-    projectConfig.value.highlightedProjects.includes(project.name)
-  );
-  highlightedTags = projectConfig.value.highlightedTags;
-}
-
-const filteredProjects = computed(() => {
-  if (!projects.value) return [];
-  return projects.value.filter((project: any) => {
-    return (
-      (selectedLab.value === "" || project.lab === selectedLab.value) &&
-      (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
-      (selectedApplication.value === "" || project.applications.includes(selectedApplication.value)) &&
-      (selectedHighlightedTag.value === "" || project.tags.includes(selectedHighlightedTag.value)) &&
-      (searchQuery.value === "" || project.name.toLowerCase().includes(searchQuery.value.toLowerCase())) &&
-      (selectedTags.value.length === 0 || selectedTags.value.some((element) => project.tags.includes(element)))
-    );
-  });
-});
 
 function filterByTag(tag: string) {
   selectedHighlightedTag.value = tag;
@@ -101,11 +58,65 @@ function resetFilters() {
   searchQuery.value = "";
   selectedTags.value = [];
 }
+
+const route = useRoute();
+const queryParams = route.query;
+const searchQueryParam = queryParams.search as string;
+
+if (searchQueryParam) {
+  searchQuery.value = searchQueryParam;
+}
+
+watch(route.query, () => {
+  searchQuery.value = (route.query.search as string) || "";
+});
+
+const { data: projects } = await useFetch<Project[]>("/api/projects");
+const { data } = await useFetch<ProjectConfig>("/api/configuration");
+
+const projectConfig = ref<ProjectConfig>({
+  highlightedTags: [],
+  highlightedProjects: []
+});
+
+if (data.value) {
+  projectConfig.value = data.value;
+}
+
+let labs: string[] = [];
+let categories: string[] = [];
+let applications: string[] = [];
+let highlightedProjects: Project[] = [];
+let highlightedTags: string[] = [];
+
+if (projects.value) {
+  labs = Array.from(new Set(projects.value.map((project) => project.lab)));
+  categories = Array.from(new Set(projects.value.flatMap((project) => project.categories)));
+  applications = Array.from(new Set(projects.value.flatMap((project) => project.applications)));
+  highlightedProjects = projects.value.filter((project) =>
+    projectConfig.value.highlightedProjects.includes(project.name)
+  );
+  highlightedTags = projectConfig.value.highlightedTags;
+}
+
+const filteredProjects = computed(() => {
+  if (!projects.value) return [];
+  return projects.value.filter((project) => {
+    return (
+      (selectedLab.value === "" || project.lab === selectedLab.value) &&
+      (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
+      (selectedApplication.value === "" || project.applications.includes(selectedApplication.value)) &&
+      (selectedHighlightedTag.value === "" || project.tags.includes(selectedHighlightedTag.value)) &&
+      (searchQuery.value === "" || project.name.toLowerCase().includes(searchQuery.value.toLowerCase())) &&
+      (selectedTags.value.length === 0 || selectedTags.value.some((tag) => project.tags.includes(tag)))
+    );
+  });
+});
 </script>
 
 <template>
-  <div class="bg-white">
-    <section class="relative isolate px-6 pt-14 lg:px-8">
+  <div class="px-24 py-2 bg-white">
+    <section class="relative isolatept-14 lg:px-8">
       <div class="mx-auto max-w-10xl">
         <div class="text-center">
           <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
@@ -118,19 +129,15 @@ function resetFilters() {
         </div>
       </div>
     </section>
-    <section class="px-56 py-24">
-      <div class="mx-auto max-w-10xl">
+    <section class="py-12">
+      <div class="">
         <div class="text-center">
           <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Selected Projects</h2>
         </div>
       </div>
 
-      <Carousel class="mt-24" v-bind="carouselConfig">
-        <Slide
-          v-for="project in highlighedProjects"
-          :key="project.name"
-          class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
-        >
+      <Carousel class="mt-12" v-bind="carouselConfig">
+        <Slide v-for="project in highlightedProjects" :key="project.name">
           <HomepageCarouselItem :project="project" class="h-full" />
         </Slide>
 
@@ -140,7 +147,7 @@ function resetFilters() {
         </template>
       </Carousel>
     </section>
-    <section class="px-56 py-24">
+    <section class="px-12 py-24">
       <div class="flex">
         <!-- Sidebar with filter -->
         <div class="w-1/4 pr-4">
@@ -158,9 +165,9 @@ function resetFilters() {
                 >
                   <span>{{ tag }}</span>
                   <button
-                    @click="removeTag(tag)"
                     class="text-red-500 hover:text-red-700 focus:outline-none"
                     aria-label="Remove tag"
+                    @click="removeTag(tag)"
                   >
                     x
                   </button>
@@ -183,8 +190,12 @@ function resetFilters() {
               <li
                 v-for="tag in highlightedTags"
                 :key="tag"
-                class="px-6 py-2 border border-gray-300 rounded-md shadow-sm hover:bg-gray-100"
-                :class="[selectedHighlightedTag === tag ? 'bg-blue-500 text-white' : 'bg-white hover:bg-blue-400']"
+                class="cursor-pointer px-6 py-2 border border-gray-300 rounded-md shadow-sm"
+                :class="[
+                  selectedHighlightedTag === tag
+                    ? 'cursor-default bg-blue-500 text-white'
+                    : 'bg-white hover:bg-blue-400'
+                ]"
                 @click="filterByTag(tag)"
               >
                 {{ tag === "" ? "ALL" : tag }}
@@ -215,8 +226,8 @@ function resetFilters() {
               </div>
             </div>
           </div>
-          <div class="space-y-4r">
-            <div v-for="project in filteredProjects" class="py-4">
+          <div>
+            <div v-for="project in filteredProjects" :key="project.name" class="py-4">
               <homepageProjectCard :project="project" />
             </div>
           </div>
