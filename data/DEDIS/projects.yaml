@@ -34,6 +34,7 @@ projects:
 
   dela:
     name: DEDIS Ledger Architecture
+    logo: https://dedis.github.io/dela/assets/infograph.png
     categories:
       - Blockchain
     applications:
@@ -68,6 +69,7 @@ projects:
 
   odyssey:
     name: Odyssey
+    logo: https://dedis.github.io/odyssey/assets/odyssey-components.png
     categories:
       - Blockchain
       - Privacy
@@ -308,6 +310,7 @@ projects:
 
   drand:
     name: DRand
+    logo: https://github.com/drand/drand/blob/master/logo.png?raw=true
     categories:
       - Security
     applications:

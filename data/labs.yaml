@@ -48,6 +48,7 @@ labs:
 
   DEDIS:
     name: Decentralized Distributed Systems Laboratory
+    logo: https://raw.githubusercontent.com/dedis/.github/refs/heads/main/profile/assets/banner.png
     prof:
       name:
         - Bryan
@@ -65,6 +66,7 @@ labs:
 
   DLAB:
     name: Data Science Lab
+    logo: https://dlab.epfl.ch/assets/img/dlab.svg
     prof:
       name:
         - Robert

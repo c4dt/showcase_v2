@@ -97,6 +97,7 @@ projects:
 
   trickster:
     name: Trickster
+    logo: https://raw.githubusercontent.com/spring-epfl/trickster/master/trickster.svg
     categories:
       - Privacy
     applications:
@@ -129,6 +130,7 @@ projects:
 
   hippiepug:
     name: Hippiepug
+    logo: https://raw.githubusercontent.com/spring-epfl/hippiepug/refs/heads/master/hippiepug.svg
     categories:
       - Privacy
       - Blockchain
