@@ -2,15 +2,6 @@
 import "vue3-carousel/carousel.css";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 
-const carouselConfig = {
-  itemsToShow: 3,
-  height: 500,
-  gap: 5,
-  autoplay: 4000,
-  wrapAround: false,
-  pauseAutoplayOnHover: true
-};
-
 interface Project {
   id: string;
   name: string;
@@ -26,6 +17,30 @@ interface ProjectConfig {
   highlightedTags: string[];
   highlightedProjects: string[];
 }
+
+const carouselConfig = {
+  itemsToShow: 1,
+  height: 500,
+  gap: 5,
+  autoplay: 4000,
+  wrapAround: true,
+  pauseAutoplayOnHover: true,
+  breakpointMode: "carousel",
+  breakpoints: {
+    400: {
+      itemsToShow: 2,
+      snapAlign: "start"
+    },
+    800: {
+      itemsToShow: 3,
+      snapAlign: "start"
+    },
+    1100: {
+      itemsToShow: 4,
+      snapAlign: "start"
+    }
+  }
+};
 
 const searchQuery = ref("");
 const selectedLab = ref("");
