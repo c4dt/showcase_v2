@@ -114,8 +114,8 @@ const filteredProjects = computed(() => {
 </script>
 
 <template>
-  <div class="bg-white">
-    <section class="relative isolate px-6 pt-14 lg:px-8">
+  <div class="px-24 py-2 bg-white">
+    <section class="relative isolatept-14 lg:px-8">
       <div class="mx-auto max-w-10xl">
         <div class="text-center">
           <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
@@ -128,19 +128,15 @@ const filteredProjects = computed(() => {
         </div>
       </div>
     </section>
-    <section class="px-56 py-24">
-      <div class="mx-auto max-w-10xl">
+    <section class="py-12">
+      <div class="">
         <div class="text-center">
           <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Selected Projects</h2>
         </div>
       </div>
 
-      <Carousel class="mt-24" v-bind="carouselConfig">
-        <Slide
-          v-for="project in highlighedProjects"
-          :key="project.name"
-          class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
-        >
+      <Carousel class="mt-12" v-bind="carouselConfig">
+        <Slide v-for="project in highlightedProjects" :key="project.name">
           <HomepageCarouselItem :project="project" class="h-full" />
         </Slide>
 
@@ -150,7 +146,7 @@ const filteredProjects = computed(() => {
         </template>
       </Carousel>
     </section>
-    <section class="px-56 py-24">
+    <section class="px-12 py-24">
       <div class="flex">
         <!-- Sidebar with filter -->
         <div class="w-1/4 pr-4">
@@ -168,9 +164,9 @@ const filteredProjects = computed(() => {
                 >
                   <span>{{ tag }}</span>
                   <button
-                    @click="removeTag(tag)"
                     class="text-red-500 hover:text-red-700 focus:outline-none"
                     aria-label="Remove tag"
+                    @click="removeTag(tag)"
                   >
                     x
                   </button>
@@ -193,8 +189,12 @@ const filteredProjects = computed(() => {
               <li
                 v-for="tag in highlightedTags"
                 :key="tag"
-                class="px-6 py-2 border border-gray-300 rounded-md shadow-sm hover:bg-gray-100"
-                :class="[selectedHighlightedTag === tag ? 'bg-blue-500 text-white' : 'bg-white hover:bg-blue-400']"
+                class="cursor-pointer px-6 py-2 border border-gray-300 rounded-md shadow-sm"
+                :class="[
+                  selectedHighlightedTag === tag
+                    ? 'cursor-default bg-blue-500 text-white'
+                    : 'bg-white hover:bg-blue-400'
+                ]"
                 @click="filterByTag(tag)"
               >
                 {{ tag === "" ? "ALL" : tag }}
@@ -225,8 +225,8 @@ const filteredProjects = computed(() => {
               </div>
             </div>
           </div>
-          <div class="space-y-4r">
-            <div v-for="project in filteredProjects" class="py-4">
+          <div>
+            <div v-for="project in filteredProjects" :key="project.name" class="py-4">
               <homepageProjectCard :project="project" />
             </div>
           </div>
