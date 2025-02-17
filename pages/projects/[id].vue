@@ -3,12 +3,12 @@
   const project = projects.value.find((project) => project.id == useRoute().params.id);
   const { data: labs } = await useFetch("/api/labs");
   const lab = labs.value.labs[project.lab];
-  const { data: presentation } = await useFetch(`/api/presentation?id=${project.id}`);
-  const { data: app } = await useFetch(`/api/app?id=${project.id}`);
-  const { data: demo } = await useFetch(`/api/demo?id=${project.id}`);
-  const { data: details } = await useFetch(`/api/details?id=${project.id}`);
-  const { data: handsOn } = await useFetch(`/api/hands-on?id=${project.id}`);
-  const { data: pilot } = await useFetch(`/api/pilot?id=${project.id}`);
+  const { data: presentation } = await useFetch(`/api/templates?id=${project.id}&type=presentation`);
+  const { data: app } = await useFetch(`/api/templates?id=${project.id}&type=app`);
+  const { data: demo } = await useFetch(`/api/templates?id=${project.id}&type=demo`);
+  const { data: details } = await useFetch(`/api/templates?id=${project.id}&type=details`);
+  const { data: handsOn } = await useFetch(`/api/templates?id=${project.id}&type=hands-on`);
+  const { data: pilot } = await useFetch(`/api/templates?id=${project.id}&type=pilot`);
   const tabs = [
     { id: "presentation", label: "Presentation", content: presentation.value },
     { id: "app", label: "App", content: app.value },
