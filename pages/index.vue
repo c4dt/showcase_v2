@@ -145,10 +145,8 @@ const filteredProjects = computed(() => {
       </div>
     </section>
     <section class="py-12">
-      <div class="">
-        <div class="text-center">
-          <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Selected Projects</h2>
-        </div>
+      <div class="text-center">
+        <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Selected Projects</h2>
       </div>
 
       <Carousel class="mt-12" v-bind="carouselConfig">
