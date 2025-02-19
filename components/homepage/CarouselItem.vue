@@ -5,21 +5,31 @@ import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
 library.add(faUserSecret);
 
 const props = defineProps<{
-  project: object;
+  project: {
+    descriptionDisplay: string;
+    logo: string;
+    name: string;
+    information: { url: string }[];
+    url: string;
+    code: { url: string; type: string };
+  };
 }>();
 const project = props.project;
 
 const truncatedDescription = computed(() => {
-  return project.descriptionDisplay.length > 400
-    ? project.descriptionDisplay.substring(0, 400) + "…"
-    : project.descriptionDisplay;
+  if (project.descriptionDisplay.length > 180) {
+    return project.descriptionDisplay.slice(0, 180) + "...";
+  }
+  return project.descriptionDisplay;
 });
 </script>
 
 <template>
   <div class="relative flex flex-col rounded-xl bg-white text-gray-700 shadow-md border border-blue-gray-100">
-    <img alt="Dela" :src="project.logo" class="p-4 object-cover w-full h-auto" />
-    <div class="mt-4 mx-4 p-6 rounded-xl text-gray-700">
+    <div class="flex items-center justify-center h-1/2">
+      <img :alt="project.name" :src="project.logo" class="p-4 object-cover h-full w-auto" />
+    </div>
+    <div class="mx-2 p-4 rounded-xl text-gray-700">
       <h5 class="antialiased font-sans text-xl font-semibold leading-snug text-blue-gray-900 capitalize">
         {{ project.name }}
       </h5>
