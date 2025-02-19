@@ -29,7 +29,7 @@
         <p class="text-left py-4">{{ project.descriptionDisplay }}</p>
         <div class="flex space-x-4 text-left">
           <span
-            class="px-3 py-1 rounded-full text-sm bg-gray-200 text-gray-800"
+            class="px-3 py-1 rounded-full text-sm bg-[#d5d5d5] text-[#707070]"
             v-for="tag in project.tags"
           >
             {{ tag }}
@@ -38,7 +38,7 @@
       <ProjectsTabs v-if="tabs.length" :tabs="tabs" :defaultTab="defaultTab"></ProjectsTabs>
       </div>
     </div>
-    <div class="bg-gray-50 px-16 flex-[2] text-center divide-y divide-solid">
+    <div class="bg-[#d5d5d5] px-16 flex-[2] text-center divide-y divide-solid">
       <div class="py-4">
         <h1 class="header-h1">{{ project.lab }}</h1>
         <a class="link text-sm" :href="lab.url">{{ lab.name }}</a>
@@ -65,6 +65,6 @@
 }
 
 .link {
-  @apply underline
+  @apply underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]
 }
 </style>
