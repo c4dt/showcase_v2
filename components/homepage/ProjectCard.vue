@@ -96,6 +96,6 @@ defineProps<{
   project: object;
 }>();
 
-const selectedTags = inject("selectedTags");
-const addTag = inject("addTag");
+const selectedTags = inject("selectedTags") as Ref<string[]>;
+const addTag = inject("addTag") as (tag: string) => void;
 </script>
