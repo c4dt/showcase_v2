@@ -17,9 +17,10 @@ const props = defineProps<{
 const project = props.project;
 
 const truncatedDescription = computed(() => {
-  return project.descriptionDisplay.length > 400
-    ? project.descriptionDisplay.substring(0, 400) + "…"
-    : project.descriptionDisplay;
+  if (project.descriptionDisplay.length > 180) {
+    return project.descriptionDisplay.slice(0, 180) + "...";
+  }
+  return project.descriptionDisplay;
 });
 </script>
 
