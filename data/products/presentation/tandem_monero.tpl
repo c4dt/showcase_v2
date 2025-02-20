@@ -18,7 +18,7 @@
     leak the private key or lead to abuse.
     To avoid a single point of failure, one can use threshold
     cryptographic solutions like
-    <a href="../calypso">Calypso</a> or
+    <a href="/projects/calypso">Calypso</a> or
     <a href="https://sepior.com/">Sepior</a>.
     However, for a service that is privacy preserving, these solutions
     leak the identity of the key user.
