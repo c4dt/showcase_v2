@@ -29,9 +29,9 @@
       <div class="py-4">
         <h1 class="header-h1">{{ project.name }}</h1>
         <p class="text-xs py-4">This page was last edited on {{ lastEdited.toDateString() }}.</p>
+        <span :class="status">{{ status }}</span>
       </div>
       <div class="py-4">
-        <span :class="status">{{ status }}</span>
         <p class="text-left py-4">{{ project.descriptionDisplay }}</p>
         <div class="flex space-x-4 text-left">
           <span
