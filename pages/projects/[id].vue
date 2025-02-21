@@ -26,9 +26,11 @@
 <template>
   <div class="flex m-16">
     <div class="pr-16 flex-[8] text-center divide-y divide-solid">
-      <div class="py-4">
+      <div>
         <h1 class="header-h1">{{ project.name }}</h1>
         <p class="text-xs py-4">This page was last edited on {{ lastEdited.toDateString() }}.</p>
+      </div>
+      <div class="py-4">
         <span :class="status">{{ status }}</span>
         <p class="text-left py-4">{{ project.descriptionDisplay }}</p>
         <div class="flex space-x-4 text-left">
@@ -39,20 +41,22 @@
             {{ tag }}
           </span>
         </div>
-      <ProjectsTabs v-if="tabs.length" :tabs="tabs" :defaultTab="defaultTab"></ProjectsTabs>
       </div>
+      <div><ProjectsTabs v-if="tabs.length" :tabs="tabs" :defaultTab="defaultTab"></ProjectsTabs></div>
     </div>
-    <div class="bg-[#d5d5d5] px-16 flex-[2] text-center divide-y divide-solid">
-      <div class="py-4">
-        <h1 class="header-h1">{{ project.lab }}</h1>
-        <a class="link text-sm" :href="lab.url">{{ lab.name }}</a>
-        <div>
-          <p class="text-center py-4 text-l">
-          <a class="link text-xl" :href="'mailto:' + lab.prof.email">Prof. {{ lab.prof.name.join(" ") }}</a><br/>
-          </p>
+    <div class="flex-[2]">
+      <div class="px-16 bg-[#d5d5d5] text-center divide-y divide-solid">
+        <div class="py-4">
+          <h1 class="header-h1">{{ project.lab }}</h1>
+          <a class="link text-sm" :href="lab.url">{{ lab.name }}</a>
+          <div>
+            <p class="text-center py-4 text-l">
+            <a class="link text-xl" :href="'mailto:' + lab.prof.email">Prof. {{ lab.prof.name.join(" ") }}</a><br/>
+            </p>
+          </div>
         </div>
+        <div class="py-4 text-left text-sm">{{ lab.description }}</div>
       </div>
-      <div class="py-4 text-left text-sm">{{ lab.description }}</div>
     </div>
   </div>
 </template>
