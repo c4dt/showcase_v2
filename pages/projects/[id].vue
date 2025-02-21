@@ -25,7 +25,7 @@
     <div class="pr-16 flex-[8] text-center divide-y divide-solid">
       <div class="py-4">
         <h1 class="header-h1">{{ project.name }}</h1>
-        <p class="text-xs">This page was last edited on {{ lastEdited.toDateString() }}.</p>
+        <p class="text-xs py-4">This page was last edited on {{ lastEdited.toDateString() }}.</p>
         <p class="text-left py-4">{{ project.descriptionDisplay }}</p>
         <div class="flex space-x-4 text-left">
           <span
