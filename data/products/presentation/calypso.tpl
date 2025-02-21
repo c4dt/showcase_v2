@@ -20,7 +20,7 @@ information needs to be secured and only accessible under certain restrictions, 
 give the guarantees that this is enforced.
 <ul>
     <li><strong>Clearance-enforcing Document Sharing</strong> - as implemented in the
-        <a href="../odyssey/demo">Odyssey pilot</a>, which allows
+        <a href="/projects/odyssey#demo">Odyssey pilot</a>, which allows
         <i>Auditable Sharing and Management of Sensitive Data Across Jurisdictions</i>:
         the documents are stored encrypted, and only available to a restricted set of readers.
         The access control is updatable, and all accesses are logged in a blockchain.
