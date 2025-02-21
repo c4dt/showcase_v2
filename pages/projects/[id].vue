@@ -19,6 +19,9 @@
   ].filter((tab) => tab.content)
   const defaultTab = tabs.length ? tabs[0].id : null;
   const lastEdited = new Date(Date.parse(project.date_updated ? project.date_updated : project.date_added));
+  const status = computed(() => {
+    return project.code && project.code.date_last_commit ? (isActive(project.code.date_last_commit) ? "active" : "inactive") : "unknown";
+  });
 </script>
 <template>
   <div class="flex m-16">
@@ -26,6 +29,7 @@
       <div class="py-4">
         <h1 class="header-h1">{{ project.name }}</h1>
         <p class="text-xs py-4">This page was last edited on {{ lastEdited.toDateString() }}.</p>
+        <span :class="status">{{ status }}</span>
         <p class="text-left py-4">{{ project.descriptionDisplay }}</p>
         <div class="flex space-x-4 text-left">
           <span
@@ -66,5 +70,17 @@
 
 .link {
   @apply underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]
+}
+
+.active {
+  @apply px-3 py-1 bg-green-200 text-green-800  border-green-500 border-solid border-[1px] rounded-full text-sm;
+}
+
+.inactive {
+  @apply px-3 py-1 bg-red-200 text-red-800 border-red-500 border-solid border-[1px] rounded-full text-sm;
+}
+
+.unknown {
+  @apply px-3 py-1 bg-gray-200 text-gray-800  border-gray-500 border-solid border-[1px] rounded-full text-sm;
 }
 </style>
