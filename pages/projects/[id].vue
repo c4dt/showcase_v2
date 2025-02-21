@@ -22,6 +22,8 @@
   const status = computed(() => {
     return project.code && project.code.date_last_commit ? (isActive(project.code.date_last_commit) ? "active" : "inactive") : "unknown";
   });
+  const articles = project.information ? project.information.filter((information) => information.type.toLowerCase() === "article") : [];
+  const papers = project.information ? project.information.filter((information) => information.type.toLowerCase() === "paper") : [];
 </script>
 <template>
   <div class="flex m-16">
@@ -40,6 +42,20 @@
           >
             {{ tag }}
           </span>
+        </div>
+      </div>
+      <div class="py-4 text-left">
+        <div v-if="papers.length">
+          <h2 class="header-h2">Papers</h2>
+          <ul class="ul">
+            <li v-for="paper in papers"><a :href="paper.url" class="link">{{ paper.title }}</a></li>
+          </ul>
+        </div>
+        <div v-if="articles.length">
+          <h2 class="header-h2">Articles</h2>
+          <ul class="ul">
+            <li v-for="article in articles"><a :href="article.url" class="link">{{ article.title }}</a></li>
+          </ul>
         </div>
       </div>
       <div><ProjectsTabs v-if="tabs.length" :tabs="tabs" :defaultTab="defaultTab"></ProjectsTabs></div>
@@ -86,5 +102,14 @@
 
 .unknown {
   @apply px-3 py-1 bg-gray-200 text-gray-800  border-gray-500 border-solid border-[1px] rounded-full text-sm;
+}
+
+.ul {
+  list-style-type: square;
+  list-style-position: inside;
+}
+
+li::marker {
+  color: #ff0000;
 }
 </style>
