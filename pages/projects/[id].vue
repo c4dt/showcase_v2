@@ -26,7 +26,7 @@
 <template>
   <div class="flex m-16">
     <div class="pr-16 flex-[8] text-center divide-y divide-solid">
-      <div>
+      <div class="py-4">
         <h1 class="header-h1">{{ project.name }}</h1>
         <p class="text-xs py-4">This page was last edited on {{ lastEdited.toDateString() }}.</p>
       </div>
