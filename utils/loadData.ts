@@ -46,7 +46,7 @@ export function loadLabs(skipValidation: boolean = false) {
     return content;
   }
   validateData(LABS_FILE, content);
-  return content;
+  return content.labs;
 }
 
 export function loadProjects(skipValidation: boolean = false): object[] {
@@ -60,7 +60,8 @@ export function loadProjects(skipValidation: boolean = false): object[] {
         return content;
       }
       validateData(PROJECTS_FILE, content);
-      content.lab = file.name;
+      const labs = loadLabs();
+      content.lab = labs[file.name];
       return content;
     });
   return labProjects
