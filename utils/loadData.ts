@@ -10,11 +10,11 @@ import Ajv from "ajv";
 import labsSchema from "./schemas/labs.json";
 import projectsSchema from "./schemas/projects.json";
 
-const DATADIR = "./data";
+const DATA_DIR = "./data";
 const PROJECTS_FILE = "projects.yaml";
 const LABS_FILE = "labs.yaml";
 const CONFIG_FILE = "config.yaml";
-const PRODUCTSDIR = "products"
+const PRODUCTS_DIR = "products";
 
 function validateData(basename: string, content: string) {
   const ajv = new Ajv({ allowUnionTypes: true });
@@ -35,12 +35,12 @@ function validateData(basename: string, content: string) {
 }
 
 export function loadConfiguration() {
-  const filePath = path.join(DATADIR, CONFIG_FILE);
+  const filePath = path.join(DATA_DIR, CONFIG_FILE);
   return yaml.parse(fs.readFileSync(filePath, "utf-8"));
 }
 
 export function loadLabs(skipValidation: boolean = false) {
-  const filePath = path.join(DATADIR, LABS_FILE);
+  const filePath = path.join(DATA_DIR, LABS_FILE);
   const content = yaml.parse(fs.readFileSync(filePath, "utf-8"));
   if (skipValidation) {
     return content;
@@ -51,10 +51,10 @@ export function loadLabs(skipValidation: boolean = false) {
 
 export function loadProjects(skipValidation: boolean = false): object[] {
   const labProjects: object[] = fs
-    .readdirSync(DATADIR, { withFileTypes: true })
-    .filter((file) => file.isDirectory() && file.name !== PRODUCTSDIR)
+    .readdirSync(DATA_DIR, { withFileTypes: true })
+    .filter((file) => file.isDirectory() && file.name !== PRODUCTS_DIR)
     .map((file) => {
-      const filePath = path.join(DATADIR, file.name, PROJECTS_FILE);
+      const filePath = path.join(DATA_DIR, file.name, PROJECTS_FILE);
       const content = yaml.parse(fs.readFileSync(filePath, "utf-8"));
       if (skipValidation) {
         return content;
@@ -70,7 +70,7 @@ export function loadProjects(skipValidation: boolean = false): object[] {
         project.id = key;
         project.lab = labProject.lab;
         project.descriptionDisplay = project.layman_desc ?? project.tech_desc ?? project.description;
-        project.logo ??= "https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg";
+        project.logo ??= project.lab.logo ?? "https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg";
         return project;
       });
     })
@@ -78,6 +78,10 @@ export function loadProjects(skipValidation: boolean = false): object[] {
 }
 
 export function loadTemplate(projectId: string, templateType: string) {
-  const templateFilePath = fs.readdirSync(path.join(DATADIR, PRODUCTSDIR, templateType), { withFileTypes: true }).find((file) => file.name == `${projectId}.tpl`);
-  return templateFilePath ? fs.readFileSync(path.join(DATADIR, PRODUCTSDIR, templateType, templateFilePath.name), "utf-8")  : null;
+  const templateFilePath = fs
+    .readdirSync(path.join(DATA_DIR, PRODUCTS_DIR, templateType), { withFileTypes: true })
+    .find((file) => file.name == `${projectId}.tpl`);
+  return templateFilePath
+    ? fs.readFileSync(path.join(DATA_DIR, PRODUCTS_DIR, templateType, templateFilePath.name), "utf-8")
+    : null;
 }
