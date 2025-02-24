@@ -128,6 +128,13 @@ const filteredProjects = computed(() => {
     );
   });
 });
+const itemsToShow = ref<number>(10);
+const loadMoreProjects = () => {
+  itemsToShow.value += 10;
+};
+const projectsToDisplay = computed<Project[]>(() => {
+  return filteredProjects.value.slice(0, itemsToShow.value);
+});
 </script>
 
 <template>
@@ -234,10 +241,18 @@ const filteredProjects = computed(() => {
               </div>
             </div>
           </div>
-          <div>
-            <div v-for="project in filteredProjects" :key="project.name" class="py-2">
-              <homepageProjectCard :project="project" />
-            </div>
+          <div v-for="project in projectsToDisplay" :key="project.name" class="py-2">
+            <homepageProjectCard :project="project" />
+          </div>
+          <!-- Load more button -->
+          <div class="flex justify-center mt-4">
+            <button
+              v-if="itemsToShow < filteredProjects.length"
+              @click="loadMoreProjects"
+              class="py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md"
+            >
+              Load more projects
+            </button>
           </div>
         </div>
       </div>
