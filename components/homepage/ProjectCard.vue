@@ -3,7 +3,7 @@
     <div class="p-8">
       <NuxtLink :to="{ name: 'projects-id', params: { id: project.id } }">
         <div class="flex justify-between items-start">
-          <div class="flex-grow">
+          <div class="grow">
             <h2 class="text-2xl font-bold mb-2">{{ project.name }}</h2>
             <p class="text-gray-600 mb-4">
               {{ project.descriptionDisplay }}
