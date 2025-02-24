@@ -57,6 +57,8 @@ function addTag(tag: string) {
 }
 provide("addTag", addTag);
 
+const searchQuery = inject("searchQuery") as Ref<string>;
+
 function filterByTag(tag: string) {
   selectedHighlightedTag.value = tag;
 }
@@ -144,7 +146,7 @@ const filteredProjects = computed(() => {
         </div>
       </div>
     </section>
-    <section class="py-12">
+    <section v-if="!searchQuery" class="py-6">
       <div class="text-center">
         <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Selected Projects</h2>
       </div>

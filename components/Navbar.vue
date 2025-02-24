@@ -6,7 +6,7 @@ interface NavigationItem {
 
 const route = useRoute();
 
-const searchQuery = ref<string>(typeof route.query.search === "string" ? route.query.search : "");
+const searchQuery = inject("searchQuery") as Ref<string[]>;
 
 const searchInput = ref<HTMLInputElement | null>(null);
 
@@ -14,8 +14,8 @@ onMounted(() => {
   searchInput.value?.focus(); // Focus the search input when the component is mounted
 });
 
-watch(searchQuery, (val) => {
-  navigateTo(`/?search=${encodeURIComponent(val.trim())}`);
+watch(searchQuery, () => {
+  navigateTo(`/?search=${encodeURIComponent(searchQuery.value.trim())}`);
 });
 
 function formatBreadcrumbName(segment: string): string {
@@ -38,9 +38,9 @@ const navigation = computed<NavigationItem[]>(() => {
 </script>
 
 <template>
-  <div class="flex h-20 mx-auto max-w-7xl px-6 border-b-2 border-gray-300 items-center justify-between">
+  <div class="flex h-20 mx-auto px-6 border-b-2 border-gray-300 items-center justify-between">
     <div class="flex items-center gap-2">
-      <a href="https://epfl.ch" class="flex items-center">
+      <a href="https://epfl.ch" class="flex">
         <img
           src="https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg?refresh=now"
           alt="EPFL Logo"
