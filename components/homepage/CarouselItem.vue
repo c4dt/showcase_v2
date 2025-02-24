@@ -6,15 +6,22 @@ library.add(faUserSecret);
 
 const props = defineProps<{
   project: {
-    descriptionDisplay: string;
-    logo: string;
+    id: string;
     name: string;
+    logo: string;
+    descriptionDisplay: string;
     information: { url: string }[];
+    is_highlighted: boolean;
     lab: { name: string; url: string };
     url: string;
     code: { url: string; type: string };
+    categories: string[];
+    applications: string[];
+    tags: string[];
+    description: string;
   };
 }>();
+
 const project = props.project;
 
 const truncatedDescription = computed(() => {
