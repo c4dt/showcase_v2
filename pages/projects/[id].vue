@@ -119,7 +119,7 @@ const papers = project.information
 </template>
 
 <style scoped>
-@import "assets/css/products.css";
+@import "~/assets/css/products.css";
 
 .ul {
   list-style-type: square;
