@@ -6,7 +6,7 @@ interface Project {
   id: string;
   name: string;
   is_highlighted: boolean;
-  lab: string;
+  lab: { name: string; url: string };
   categories: string[];
   applications: string[];
   tags: string[];
@@ -106,7 +106,7 @@ let highlightedProjects: Project[] = [];
 let highlightedTags: string[] = [];
 
 if (projects.value) {
-  labs = Array.from(new Set(projects.value.map((project) => project.lab)));
+  labs = Array.from(new Set(projects.value.map((project) => project.lab.name)));
   categories = Array.from(new Set(projects.value.flatMap((project) => project.categories)));
   applications = Array.from(new Set(projects.value.flatMap((project) => project.applications)));
   highlightedProjects = projects.value.filter((project) =>
@@ -119,7 +119,7 @@ const filteredProjects = computed(() => {
   if (!projects.value) return [];
   return projects.value.filter((project) => {
     return (
-      (selectedLab.value === "" || project.lab === selectedLab.value) &&
+      (selectedLab.value === "" || project.lab.name === selectedLab.value) &&
       (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
       (selectedApplication.value === "" || project.applications.includes(selectedApplication.value)) &&
       (selectedHighlightedTag.value === "" || project.tags.includes(selectedHighlightedTag.value)) &&

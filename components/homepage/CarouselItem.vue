@@ -10,6 +10,7 @@ const props = defineProps<{
     logo: string;
     name: string;
     information: { url: string }[];
+    lab: { name: string; url: string };
     url: string;
     code: { url: string; type: string };
   };
