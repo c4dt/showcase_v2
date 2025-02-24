@@ -29,9 +29,9 @@ labs:
       privacy in distributed machine  learning, distributed algorithms making use of RDMA and NVRAM.
     url: https://dcl.epfl.ch/site/
     information:
-      - title: Lab Github Repository
+      - title: Lab Github
         url: https://github.com/Distributed-EPFL
-      - title: Old (?) Lab Github Repository
+      - title: Old (?) Lab Github
         url: https://github.com/LPD-EPFL
 
   DCSL:
@@ -45,6 +45,9 @@ labs:
       The Data Center Systems Laboratory (DCSL) focuses on systems-level problems within datacenters combining operating systems, networks,
       and computer architecture.
     url: https://www.epfl.ch/labs/dcsl/
+    information:
+      - title: Lab Github
+        url: https://github.com/epfl-dcsl
 
   DEDIS:
     name: Decentralized Distributed Systems Laboratory
@@ -63,6 +66,9 @@ labs:
       - name: Pierluca Borsò-Tan
         email: pierluca.borso@epfl.ch
     url: https://dedis.epfl.ch
+    information:
+      - title: Lab Github
+        url: https://github.com/dedis
 
   DLAB:
     name: Data Science Lab
@@ -79,7 +85,7 @@ labs:
       science, data mining, natural language processing, and human computation.
     url: https://dlab.epfl.ch/
     information:
-      - title: Github Repository
+      - title: Lab Github
         url: https://github.com/epfl-dlab
 
   DSLAB:
@@ -119,6 +125,7 @@ labs:
 
   ESL:
     name: Embedded Systems Laboratory
+    logo: https://www.epfl.ch/labs/esl/wp-content/uploads/2018/12/ESLlogos-2015-long.jpg
     prof:
       name:
         - David
@@ -130,11 +137,12 @@ labs:
       Multi-Processor System-on-Chip (MPSoC) architectures targeting the Internet-of-Things (IoT) Era.
     url: https://www.epfl.ch/labs/esl/
     information:
-      - title: Github Repository
+      - title: Lab Github
         url: https://github.com/esl-epfl
 
   HexHive:
     name: HexHive Group
+    logo: https://hexhive.epfl.ch/img/hexhive.png
     prof:
       name:
         - Mathias
@@ -160,6 +168,9 @@ labs:
         software vulnerabilities). All prototypes are released as open-source.
       </li> </ul>
     url: https://hexhive.epfl.ch/
+    information:
+      - title: Lab Github
+        url: https://github.com/HexHive
 
   INDY:
     name: Computer Communications and Applications Laboratory 4
@@ -178,6 +189,7 @@ labs:
 
   IVRL:
     name: Image and Visual Representation Lab
+    logo: https://www.epfl.ch/labs/ivrl/wp-content/uploads/2019/05/IVRL_logo-600dpi-150x150.png
     prof:
       name:
         - Sabine
@@ -197,6 +209,7 @@ labs:
 
   LAMP:
     name: Programming Methods Laboratory
+    logo: https://www.epfl.ch/labs/lamp/wp-content/uploads/2019/01/lamp.jpg
     prof:
       name:
         - Martin
@@ -210,6 +223,9 @@ labs:
       software is a programming language. Consequently, advances in programming language design are an important factor in solutions of the
       software composition problem. This is what we work on in our group.
     url: https://www.epfl.ch/labs/lamp/
+    information:
+      - title: Lab GitHub
+        url: https://github.com/lampepfl
 
   LAP:
     name: Processor Architecture Laboratory
@@ -229,6 +245,7 @@ labs:
 
   LARA:
     name: Lab for Automated Reasoning and Analysis
+    logo: https://avatars.githubusercontent.com/u/3035238?s=200&v=4
     prof:
       name:
         - Viktor
@@ -243,6 +260,9 @@ labs:
       - name: Nicolas Voirol
         email: nicolas.voirol@epfl.ch
     url: https://lara.epfl.ch
+    information:
+      - title: Lab GitHub
+        url: https://github.com/epfl-lara
 
   LASEC:
     name: Security and Cryptography Laboratory

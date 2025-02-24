@@ -5,8 +5,13 @@ import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 interface Project {
   id: string;
   name: string;
+  logo: string;
+  descriptionDisplay: string;
+  information: { url: string }[];
   is_highlighted: boolean;
-  lab: string;
+  lab: { name: string; url: string };
+  url: string;
+  code: { url: string; type: string };
   categories: string[];
   applications: string[];
   tags: string[];
@@ -106,7 +111,7 @@ let highlightedProjects: Project[] = [];
 let highlightedTags: string[] = [];
 
 if (projects.value) {
-  labs = Array.from(new Set(projects.value.map((project) => project.lab)));
+  labs = Array.from(new Set(projects.value.map((project) => project.lab.name)));
   categories = Array.from(new Set(projects.value.flatMap((project) => project.categories)));
   applications = Array.from(new Set(projects.value.flatMap((project) => project.applications)));
   highlightedProjects = projects.value.filter((project) =>
@@ -119,7 +124,7 @@ const filteredProjects = computed(() => {
   if (!projects.value) return [];
   return projects.value.filter((project) => {
     return (
-      (selectedLab.value === "" || project.lab === selectedLab.value) &&
+      (selectedLab.value === "" || project.lab.name === selectedLab.value) &&
       (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
       (selectedApplication.value === "" || project.applications.includes(selectedApplication.value)) &&
       (selectedHighlightedTag.value === "" || project.tags.includes(selectedHighlightedTag.value)) &&
@@ -128,10 +133,18 @@ const filteredProjects = computed(() => {
     );
   });
 });
+const itemsToShow = ref<number>(10);
+const loadMoreProjects = () => {
+  itemsToShow.value += 10;
+};
+const projectsToDisplay = computed<Project[]>(() => {
+  return filteredProjects.value.slice(0, itemsToShow.value);
+});
 </script>
 
 <template>
-  <div class="px-24 py-2 bg-white">
+  <div class="sm:px-12 py-2 bg-white">
+    <!-- Welcome section and C4DT factory introduction -->
     <section class="relative isolatept-14 lg:px-8">
       <div class="mx-auto max-w-10xl">
         <div class="text-center">
@@ -145,12 +158,13 @@ const filteredProjects = computed(() => {
         </div>
       </div>
     </section>
+    <!-- Highlighted projects section -->
     <section v-if="!searchQuery" class="py-6">
       <div class="text-center">
         <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Selected Projects</h2>
       </div>
 
-      <Carousel class="mt-12" v-bind="carouselConfig">
+      <Carousel class="mt-12 px-8" v-bind="carouselConfig">
         <Slide v-for="project in highlightedProjects" :key="project.name">
           <HomepageCarouselItem :project="project" class="h-full" />
         </Slide>
@@ -161,11 +175,12 @@ const filteredProjects = computed(() => {
         </template>
       </Carousel>
     </section>
-    <section class="px-12 py-24">
-      <div class="flex">
+    <!-- Project search section -->
+    <section class="px-4 md:px-12 py-12">
+      <div class="flex flex-col md:flex-row">
         <!-- Sidebar with filter -->
-        <div class="w-1/4 pr-4">
-          <div class="sticky top-0">
+        <div class="w-full md:w-1/4 md:pr-4">
+          <div class="md:sticky top-0">
             <div class="bg-white p-4 border rounded-lg shadow-md mb-4">
               <div class="font-bold">Filter by</div>
               <homepageCombobox v-model="selectedLab" title="Lab" :item-list="labs" />
@@ -179,7 +194,7 @@ const filteredProjects = computed(() => {
                 >
                   <span>{{ tag }}</span>
                   <button
-                    class="text-red-500 hover:text-red-700 focus:outline-hidden"
+                    class="text-red-500 hover:text-red-700 focus:outline-none"
                     aria-label="Remove tag"
                     @click="removeTag(tag)"
                   >
@@ -188,7 +203,7 @@ const filteredProjects = computed(() => {
                 </div>
               </div>
               <div
-                class="text-center py-2 border border-gray-300 rounded-md shadow-xs hover:bg-gray-100 cursor-pointer"
+                class="text-center py-2 border border-gray-300 rounded-md shadow-xs hover:bg-gray-100 cursor-pointer mt-4"
                 @click="resetFilters"
               >
                 Reset Filters
@@ -198,38 +213,29 @@ const filteredProjects = computed(() => {
         </div>
 
         <!-- Main projects area -->
-        <div class="w-3/4">
-          <div class="sticky border top-0 mb-4 bg-white rounded-xl shadow-md py-2 px-6">
-            <ul class="flex space-x-4 py-6 justify-center">
+        <div class="w-full md:w-3/4 mt-8 md:mt-0">
+          <!-- Highlighted tags and search -->
+          <div class="md:sticky border top-0 mb-4 bg-white rounded-xl shadow-md py-2 px-6">
+            <ul class="flex flex-wrap md:flex-nowrap space-x-2 space-y-2 py-4 justify-center">
               <li
                 v-for="tag in highlightedTags"
                 :key="tag"
-                class="cursor-pointer px-6 py-2 border border-gray-300 rounded-md shadow-xs"
-                :class="[
-                  selectedHighlightedTag === tag
-                    ? 'cursor-default bg-blue-500 text-white'
-                    : 'bg-white hover:bg-blue-400'
-                ]"
+                class="cursor-pointer px-4 py-2 border border-gray-300 rounded-md shadow-xs flex-grow text-center"
+                :class="selectedHighlightedTag === tag ? 'bg-blue-500 text-white' : 'bg-white hover:bg-blue-400'"
                 @click="filterByTag(tag)"
               >
                 {{ tag === "" ? "ALL" : tag }}
               </li>
             </ul>
-            <div class="relative">
+            <div class="relative mt-4">
               <input
                 v-model="searchQuery"
                 type="text"
                 placeholder="Looking for something specific?"
-                class="w-full py-2 pl-10 pr-4 text-gray-700 bg-gray-200 rounded-full focus:outline-hidden focus:bg-white focus:ring-2 focus:ring-blue-300"
+                class="w-full py-2 pl-10 pr-4 text-gray-700 bg-gray-200 rounded-full focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-300"
               />
               <div class="absolute inset-y-0 left-0 flex items-center pl-3">
-                <svg
-                  class="w-5 h-5 text-gray-500"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -240,10 +246,18 @@ const filteredProjects = computed(() => {
               </div>
             </div>
           </div>
-          <div>
-            <div v-for="project in filteredProjects" :key="project.name" class="py-2">
-              <homepageProjectCard :project="project" />
-            </div>
+          <div v-for="project in projectsToDisplay" :key="project.name" class="py-2">
+            <homepageProjectCard :project="project" />
+          </div>
+          <!-- Load more button -->
+          <div class="flex justify-center mt-4">
+            <button
+              v-if="itemsToShow < filteredProjects.length"
+              class="py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md"
+              @click="loadMoreProjects"
+            >
+              Load more projects
+            </button>
           </div>
         </div>
       </div>

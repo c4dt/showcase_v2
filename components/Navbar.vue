@@ -47,7 +47,7 @@ const navigation = computed<NavigationItem[]>(() => {
           class="h-8 border-r border-gray-400 pr-4"
         />
       </a>
-      <a href="https://c4dt.epfl.ch" class="ml-2 pr-8 text-lg font-bold leading-tight">
+      <a href="https://c4dt.epfl.ch" class="ml-2 pr-8 text-sm md:text-lg font-bold leading-tight">
         CENTER FOR <br />DIGITAL TRUST
       </a>
 

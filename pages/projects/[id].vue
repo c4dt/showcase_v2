@@ -1,8 +1,7 @@
 <script setup lang="ts">
 const { data: projects } = await useFetch("/api/projects");
 const project = projects.value.find((project) => project.id == useRoute().params.id);
-const { data: labs } = await useFetch("/api/labs");
-const lab = labs.value.labs[project.lab];
+const lab = project.lab;
 const { data: presentation } = await useFetch(`/api/templates?id=${project.id}&type=presentation`);
 const { data: app } = await useFetch(`/api/templates?id=${project.id}&type=app`);
 const { data: demo } = await useFetch(`/api/templates?id=${project.id}&type=demo`);
@@ -61,7 +60,7 @@ const papers = project.information
       <div class="py-4">
         <p class="text-left py-4">{{ project.descriptionDisplay }}</p>
         <div class="flex space-x-4 text-left">
-          <span class="px-3 py-1 rounded-full text-sm bg-[#d5d5d5] text-[#707070]" v-for="tag in project.tags">
+          <span v-for="tag in project.tags" class="px-3 py-1 rounded-full text-sm bg-[#d5d5d5] text-[#707070]">
             {{ tag }}
           </span>
         </div>
@@ -92,12 +91,12 @@ const papers = project.information
           </ul>
         </div>
       </div>
-      <div><ProjectsTabs v-if="tabs.length" :tabs="tabs" :defaultTab="defaultTab"></ProjectsTabs></div>
+      <div><ProjectsTabs v-if="tabs.length" :tabs="tabs" :default-tab="defaultTab" /></div>
     </div>
     <div class="flex-[2]">
       <div class="px-16 bg-[#d5d5d5] text-center divide-y divide-solid">
         <div class="py-4">
-          <h1 class="text-4xl font-bold">{{ project.lab }}</h1>
+          <h1 class="text-4xl font-bold">{{ project.lab.name }}</h1>
           <a
             class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121] text-sm"
             :href="lab.url"
@@ -120,7 +119,7 @@ const papers = project.information
 </template>
 
 <style scoped>
-@import "assets/css/products.css";
+@import "~/assets/css/products.css";
 
 .ul {
   list-style-type: square;
