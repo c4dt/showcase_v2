@@ -60,7 +60,7 @@ const papers = project.information
       <div class="py-4">
         <p class="text-left py-4">{{ project.descriptionDisplay }}</p>
         <div class="flex space-x-4 text-left">
-          <span class="px-3 py-1 rounded-full text-sm bg-[#d5d5d5] text-[#707070]" v-for="tag in project.tags">
+          <span v-for="tag in project.tags" class="px-3 py-1 rounded-full text-sm bg-[#d5d5d5] text-[#707070]">
             {{ tag }}
           </span>
         </div>
@@ -91,7 +91,7 @@ const papers = project.information
           </ul>
         </div>
       </div>
-      <div><ProjectsTabs v-if="tabs.length" :tabs="tabs" :defaultTab="defaultTab"></ProjectsTabs></div>
+      <div><ProjectsTabs v-if="tabs.length" :tabs="tabs" :default-tab="defaultTab" /></div>
     </div>
     <div class="flex-[2]">
       <div class="px-16 bg-[#d5d5d5] text-center divide-y divide-solid">

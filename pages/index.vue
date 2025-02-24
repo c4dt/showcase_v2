@@ -253,8 +253,8 @@ const projectsToDisplay = computed<Project[]>(() => {
           <div class="flex justify-center mt-4">
             <button
               v-if="itemsToShow < filteredProjects.length"
-              @click="loadMoreProjects"
               class="py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md"
+              @click="loadMoreProjects"
             >
               Load more projects
             </button>
