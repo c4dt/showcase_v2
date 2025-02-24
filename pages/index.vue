@@ -116,19 +116,16 @@ if (projects.value) {
   highlightedTags = projectConfig.value.highlightedTags;
 }
 
-function isEmptyFilter(field: Ref<string | string[]>) {
-  return field.value === "" || field.value.length === 0;
-}
 const filteredProjects = computed(() => {
   if (!projects.value) return [];
   return projects.value.filter((project) => {
     return (
-      (isEmptyFilter(selectedLab) || project.lab === selectedLab.value) &&
-      (isEmptyFilter(selectedCategory) || project.categories.includes(selectedCategory.value)) &&
-      (isEmptyFilter(selectedApplication) || project.applications.includes(selectedApplication.value)) &&
-      (isEmptyFilter(selectedHighlightedTag) || project.tags.includes(selectedHighlightedTag.value)) &&
-      (isEmptyFilter(searchQuery) || project.name.toLowerCase().includes(searchQuery.value.toLowerCase())) &&
-      (isEmptyFilter(selectedTags) || selectedTags.value.some((tag) => project.tags.includes(tag)))
+      (selectedLab.value === "" || project.lab === selectedLab.value) &&
+      (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
+      (selectedApplication.value === "" || project.applications.includes(selectedApplication.value)) &&
+      (selectedHighlightedTag.value === "" || project.tags.includes(selectedHighlightedTag.value)) &&
+      (searchQuery.value === "" || project.name.toLowerCase().includes(searchQuery.value.toLowerCase())) &&
+      (selectedTags.value.length === 0 || selectedTags.value.some((tag) => project.tags.includes(tag)))
     );
   });
 });
