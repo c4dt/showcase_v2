@@ -26,7 +26,7 @@ jobs:
         uses: oven-sh/setup-bun@v2
       - run: bun install
       - name: Static HTML export with Nuxt
-        run: NUXT_APP_BASE_URL=/showcase_v2/ bun nuxt build --preset github_pages
+        run: NUXT_APP_BASE_URL=/showcase_v2/ NODE_ENV=production bun nuxt build --preset github_pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
