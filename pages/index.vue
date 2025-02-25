@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import "vue3-carousel/carousel.css";
-import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
-
 interface Project {
   id: string;
   name: string;
@@ -22,30 +19,6 @@ interface ProjectConfig {
   highlightedTags: string[];
   highlightedProjects: string[];
 }
-
-const carouselConfig = {
-  itemsToShow: 1,
-  height: 500,
-  gap: 5,
-  autoplay: 4000,
-  wrapAround: true,
-  pauseAutoplayOnHover: true,
-  breakpointMode: "carousel",
-  breakpoints: {
-    400: {
-      itemsToShow: 2,
-      snapAlign: "start"
-    },
-    800: {
-      itemsToShow: 3,
-      snapAlign: "start"
-    },
-    1100: {
-      itemsToShow: 4,
-      snapAlign: "start"
-    }
-  }
-};
 
 const selectedLab = ref("");
 const selectedCategory = ref("");
@@ -107,6 +80,7 @@ if (data.value) {
 let labs: string[] = [];
 let categories: string[] = [];
 let applications: string[] = [];
+
 let highlightedProjects: Project[] = [];
 let highlightedTags: string[] = [];
 
@@ -161,20 +135,7 @@ const projectsToDisplay = computed<Project[]>(() => {
     </section>
     <!-- Highlighted projects section -->
     <section v-if="!searchQuery" class="py-6">
-      <div class="text-center">
-        <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Selected Projects</h2>
-      </div>
-
-      <Carousel class="mt-12 px-8" v-bind="carouselConfig">
-        <Slide v-for="project in highlightedProjects" :key="project.name">
-          <HomepageCarouselItem :project="project" class="h-full" />
-        </Slide>
-
-        <template #addons>
-          <Navigation />
-          <Pagination />
-        </template>
-      </Carousel>
+      <HomepageSelectedProjects :highlightedProjects="highlightedProjects" />
     </section>
     <!-- Project search section -->
     <section class="px-4 md:px-12 py-4">
