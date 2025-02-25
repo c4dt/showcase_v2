@@ -24,7 +24,7 @@ function formatBreadcrumbName(segment: string): string {
 
 const navigation = computed<NavigationItem[]>(() => {
   const segments = route.path.split("/").filter(Boolean);
-  const breadcrumbs: NavigationItem[] = [{ name: "Factory Home", href: "/" }];
+  const breadcrumbs: NavigationItem[] = [{ name: "Showcase", href: "/" }];
 
   segments.forEach((segment, index) => {
     breadcrumbs.push({
