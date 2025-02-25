@@ -149,12 +149,13 @@ const projectsToDisplay = computed<Project[]>(() => {
       <div class="mx-auto max-w-10xl">
         <div class="text-center">
           <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            Welcome to the Center for Digital Trust's Showcase
+            The Center for Digital Trust's Showcase
           </h1>
           <p class="mt-6 text-lg leading-8 text-gray-600">
-            This page presents all projects from the labs affiliated to the Center for Digital Trust. You can filter the
-            projects according to your preferences. Clicking on one of the projects will show an in-depth description.
+            A repository of Digital Trust projects showcasing the latest research and innovation in the field of digital
+            trust from the EPFL labs.
           </p>
+          <p>-curated by C4DT's factory team-</p>
         </div>
       </div>
     </section>
@@ -176,8 +177,9 @@ const projectsToDisplay = computed<Project[]>(() => {
       </Carousel>
     </section>
     <!-- Project search section -->
-    <section class="px-4 md:px-12 py-12">
-      <div class="flex flex-col md:flex-row">
+    <section class="px-4 md:px-12 py-4">
+      <h1 class="text-center text-3xl font-bold text-gray-900 sm:text-5xl">View all Projects</h1>
+      <div class="flex flex-col md:flex-row py-10">
         <!-- Sidebar with filter -->
         <div class="w-full md:w-1/4 md:pr-4">
           <div class="md:sticky top-0">
@@ -216,6 +218,7 @@ const projectsToDisplay = computed<Project[]>(() => {
         <div class="w-full md:w-3/4 mt-8 md:mt-0">
           <!-- Highlighted tags and search -->
           <div class="md:sticky border top-0 mb-4 bg-white rounded-xl shadow-md py-2 px-6">
+            <h2 class="text-3xl text-center">Trending tags</h2>
             <ul class="flex flex-wrap md:flex-nowrap space-x-2 space-y-2 py-4 justify-center">
               <li
                 v-for="tag in highlightedTags"
@@ -227,11 +230,11 @@ const projectsToDisplay = computed<Project[]>(() => {
                 {{ tag === "" ? "ALL" : tag }}
               </li>
             </ul>
-            <div class="relative mt-4">
+            <div class="relative">
               <input
                 v-model="searchQuery"
                 type="text"
-                placeholder="Looking for something specific?"
+                placeholder="Enter a project name..."
                 class="w-full py-2 pl-10 pr-4 text-gray-700 bg-gray-200 rounded-full focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-300"
               />
               <div class="absolute inset-y-0 left-0 flex items-center pl-3">
