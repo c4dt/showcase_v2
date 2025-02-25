@@ -107,6 +107,13 @@ const filteredProjects = computed(() => {
     );
   });
 });
+
+watch(filteredProjects, () => {
+  labs = Array.from(new Set(filteredProjects.value.map((project) => project.lab.name)));
+  categories = Array.from(new Set(filteredProjects.value.flatMap((project) => project.categories)));
+  applications = Array.from(new Set(filteredProjects.value.flatMap((project) => project.applications)));
+});
+
 const itemsToShow = ref<number>(10);
 const loadMoreProjects = () => {
   itemsToShow.value += 10;
