@@ -18,6 +18,16 @@ function selectItem(name: string) {
   searchQuery.value = name; // Display the selected item
   isOpen.value = false;
 }
+
+function clearSelection() {
+  selectedItem.value = "";
+  searchQuery.value = "";
+  isOpen.value = false;
+}
+
+defineExpose({
+  clearSelection
+});
 </script>
 
 <template>
