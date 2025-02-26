@@ -16,21 +16,25 @@ const LABS_FILE = "labs.yaml";
 const CONFIG_FILE = "config.yaml";
 const PRODUCTS_DIR = "products";
 
+const ajv = new Ajv({ allowUnionTypes: true })
+const LABS_SCHEMA = ajv.compile(labsSchema);
+const PROJECTS_SCHEMA = ajv.compile(projectsSchema);
+
+
 function validateData(basename: string, content: string) {
-  const ajv = new Ajv({ allowUnionTypes: true });
-  let schema;
+  let schema
   switch (basename) {
     case LABS_FILE:
-      schema = ajv.compile(labsSchema);
+      schema = LABS_SCHEMA
       break;
     case PROJECTS_FILE:
-      schema = ajv.compile(projectsSchema);
+      schema = PROJECTS_SCHEMA;
       break;
     default:
-      throw `unsupported file '${basename}'`;
+      throw new Error(`unsupported file '${basename}'`);
   }
   if (!schema(content)) {
-    throw `invalid YAML: ${JSON.stringify(schema.errors)}`;
+    throw new Error(`invalid YAML: ${JSON.stringify(schema.errors)}`);
   }
 }
 
