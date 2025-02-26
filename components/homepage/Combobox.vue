@@ -1,18 +1,21 @@
 <script setup lang="ts">
-const selectedItem = defineModel<string>();
-const isOpen = ref(false);
-
 const props = defineProps<{
   title: string;
   itemList: string[];
 }>();
 
+const selectedItem = defineModel<string>();
+const searchQuery = ref<string>("");
+const isOpen = ref<boolean>(false);
+
 const filteredList = computed(() => {
-  return props.itemList.filter((name) => name.toLowerCase().includes(selectedItem.value.toLowerCase()));
+  const query = searchQuery.value.toLowerCase();
+  return props.itemList.filter((name) => name.toLowerCase().includes(query));
 });
 
 function selectItem(name: string) {
   selectedItem.value = name;
+  searchQuery.value = name; // Display the selected item
   isOpen.value = false;
 }
 </script>
@@ -20,7 +23,7 @@ function selectItem(name: string) {
 <template>
   <div class="dropdown-container relative py-2" @focusin="isOpen = true" @focusout="isOpen = false">
     <input
-      v-model="selectedItem"
+      v-model="searchQuery"
       type="text"
       :placeholder="title"
       class="w-full px-4 py-2 pr-8 border border-gray-300 rounded-md"
