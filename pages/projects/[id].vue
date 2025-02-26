@@ -68,7 +68,7 @@ const papers = project.information
       </div>
       <div class="py-4 text-left">
         <div v-if="papers.length">
-          <h2 class="text-2xl font-bold">Scientific articles</h2>
+          <h2 class="text-2xl font-bold">Research papers</h2>
           <ul class="ul">
             <li v-for="paper in papers">
               <a
