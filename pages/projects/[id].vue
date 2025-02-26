@@ -104,10 +104,11 @@ const papers = project.information
           >
           <div>
             <p class="text-center py-4 text-l">
+              Prof. {{ lab.prof.name.join(" ") }}
               <a
                 class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121] text-xl"
                 :href="'mailto:' + lab.prof.email"
-                >Prof. {{ lab.prof.name.join(" ") }}</a
+                ><font-awesome :icon="['fas', 'envelope']" class="text-[#707070]" /></a
               ><br />
             </p>
           </div>
