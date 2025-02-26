@@ -58,6 +58,7 @@ const papers = project.information
         <span :class="projectStatus.StyleClass">{{ projectStatus.text }}</span>
       </div>
       <div class="py-4">
+        <h2 class="text-2xl font-bold">Project overview</h2>
         <p class="text-left py-4">{{ project.descriptionDisplay }}</p>
         <div class="flex space-x-4 text-left">
           <span v-for="tag in project.tags" class="px-3 py-1 rounded-full text-sm bg-[#d5d5d5] text-[#707070]">
