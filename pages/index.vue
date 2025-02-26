@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type Combobox from "~/components/homepage/Combobox.vue";
+
 interface Project {
   id: string;
   name: string;
@@ -43,11 +45,15 @@ function filterByTag(tag: string) {
 function removeTag(tag: string) {
   selectedTags.value = selectedTags.value.filter((t) => t !== tag);
 }
+const labsFilter = ref<InstanceType<typeof Combobox>>();
+const categoriesFilter = ref<InstanceType<typeof Combobox>>();
+const applicationsFilter = ref<InstanceType<typeof Combobox>>();
 
 function resetFilters() {
-  selectedLab.value = "";
-  selectedCategory.value = "";
-  selectedApplication.value = "";
+  categoriesFilter.value.clearSelection();
+  labsFilter.value.clearSelection();
+  applicationsFilter.value.clearSelection();
+
   selectedHighlightedTag.value = "";
   searchQuery.value = "";
   selectedTags.value = [];
@@ -153,9 +159,19 @@ const projectsToDisplay = computed<Project[]>(() => {
           <div class="md:sticky top-0">
             <div class="bg-white p-4 border rounded-lg shadow-md mb-4">
               <div class="font-bold">Filter by</div>
-              <homepageCombobox v-model="selectedLab" title="Lab" :item-list="labs" />
-              <homepageCombobox v-model="selectedCategory" title="Category" :item-list="categories" />
-              <homepageCombobox v-model="selectedApplication" title="Application" :item-list="applications" />
+              <homepageCombobox ref="labsFilter" v-model="selectedLab" title="Lab" :item-list="labs" />
+              <homepageCombobox
+                ref="categoriesFilter"
+                v-model="selectedCategory"
+                title="Category"
+                :item-list="categories"
+              />
+              <homepageCombobox
+                ref="applicationsFilter"
+                v-model="selectedApplication"
+                title="Application"
+                :item-list="applications"
+              />
               <div class="flex flex-wrap space-x-2 space-y-2">
                 <div
                   v-for="tag in selectedTags"

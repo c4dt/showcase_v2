@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   eslint: {},
   fontawesome: {
     icons: {
-      solid: ["home", "newspaper", "tags", "envelope", "caret-down", "code"],
+      solid: ["home", "newspaper", "tags", "envelope", "caret-down", "code", "times"],
       regular: ["newspaper", "file"],
       brands: ["github"]
     }
