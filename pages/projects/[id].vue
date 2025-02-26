@@ -58,6 +58,7 @@ const papers = project.information
         <span :class="projectStatus.StyleClass">{{ projectStatus.text }}</span>
       </div>
       <div class="py-4">
+        <h2 class="text-2xl font-bold">Project overview</h2>
         <p class="text-left py-4">{{ project.descriptionDisplay }}</p>
         <div class="flex space-x-4 text-left">
           <span v-for="tag in project.tags" class="px-3 py-1 rounded-full text-sm bg-[#d5d5d5] text-[#707070]">
@@ -67,7 +68,7 @@ const papers = project.information
       </div>
       <div class="py-4 text-left">
         <div v-if="papers.length">
-          <h2 class="text-2xl font-bold">Papers</h2>
+          <h2 class="text-2xl font-bold">Research papers</h2>
           <ul class="ul">
             <li v-for="paper in papers">
               <a
@@ -79,7 +80,7 @@ const papers = project.information
           </ul>
         </div>
         <div v-if="articles.length">
-          <h2 class="text-2xl font-bold">Articles</h2>
+          <h2 class="text-2xl font-bold">Miscellaneous publications</h2>
           <ul class="ul">
             <li v-for="article in articles">
               <a
@@ -104,10 +105,11 @@ const papers = project.information
           >
           <div>
             <p class="text-center py-4 text-l">
+              Prof. {{ lab.prof.name.join(" ") }}
               <a
                 class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121] text-xl"
                 :href="'mailto:' + lab.prof.email"
-                >Prof. {{ lab.prof.name.join(" ") }}</a
+                ><font-awesome :icon="['fas', 'envelope']" class="text-[#707070]" /></a
               ><br />
             </p>
           </div>
