@@ -41,7 +41,11 @@ defineExpose({
     <button class="absolute right-0 px-2 py-2 text-gray-500 text-center" @click="isOpen = !isOpen">
       <font-awesome :icon="['fa', 'caret-down']" />
     </button>
-    <ul v-if="isOpen" class="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg">
+    <!-- Dropdown List -->
+    <ul
+      v-if="isOpen && filteredList.length"
+      class="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-auto"
+    >
       <li
         v-for="name in filteredList"
         :key="name"
@@ -51,5 +55,12 @@ defineExpose({
         {{ name }}
       </li>
     </ul>
+    <!-- No Results Message -->
+    <div
+      v-else-if="isOpen && !filteredList.length"
+      class="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg p-4 text-gray-500"
+    >
+      No results found.
+    </div>
   </div>
 </template>
