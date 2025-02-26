@@ -28,15 +28,36 @@ function clearSelection() {
 defineExpose({
   clearSelection
 });
+
+function onFocusIn() {
+  if (!selectedItem.value) {
+    isOpen.value = true;
+  }
+}
+
+function onFocusOut() {
+  isOpen.value = false;
+}
+
+function toggleDropdown() {
+  if (!selectedItem.value) {
+    isOpen.value = !isOpen.value;
+  }
+}
 </script>
 
 <template>
-  <div class="dropdown-container relative py-2" @focusin="isOpen = true" @focusout="isOpen = false">
+  <div class="relative py-2" @focusin="onFocusIn" @focusout="onFocusOut">
     <input
       v-model="searchQuery"
       type="text"
       :placeholder="title"
-      class="w-full px-4 py-2 pr-8 border border-gray-300 rounded-md"
+      :readonly="!!selectedItem"
+      :class="[
+        'w-full px-4 py-2 pr-12 border rounded-md transition-colors duration-200',
+        selectedItem ? 'bg-gray-100 cursor-default text-gray-500' : 'bg-white',
+        'border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500'
+      ]"
     />
     <!-- Clear Button -->
     <button
