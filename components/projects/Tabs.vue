@@ -4,7 +4,7 @@
       <button
         v-for="tab in tabs"
         :class="{
-          'bg-[#ff0000] px-4 py-2 text-[#e6e6e6]': true,
+          'bg-[#ff0000] px-4 py-2 text-[#e6e6e6]': activeTab !== tab.id,
           'bg-[#ffffff] rounded-t-xl text-[#212121] border-b-[#ff0000] border-solid border-b-2': activeTab === tab.id
         }"
         @click="useRouter().replace({ hash: `#${tab.id}` })"
