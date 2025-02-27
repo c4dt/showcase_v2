@@ -93,7 +93,7 @@ import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
 
 library.add(faUserSecret);
 defineProps<{
-  project: object;
+  project: ExtendedProject;
 }>();
 
 const selectedTags = inject("selectedTags") as Ref<string[]>;
