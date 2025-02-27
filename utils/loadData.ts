@@ -27,7 +27,6 @@ export interface ExtendedProject extends Project {
   id: string;
   lab: Lab;
   descriptionDisplay: string;
-  logo: string;
 }
 
 function validateData(basename: string, content: object) {
@@ -77,8 +76,8 @@ async function loadLabProjects(
     const project = rawProject[1];
     const lab: Lab = labs.labs[labProjectsDir.name];
     const descriptionDisplay = project.layman_desc ?? project.tech_desc ?? project.description;
-    const logo: string = lab.logo || "https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg";
-    return { ...project, id: projectId, lab, descriptionDisplay, logo };
+    project.logo = project.logo || lab.logo || "https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg";
+    return { ...project, id: projectId, lab, descriptionDisplay };
   });
 }
 
