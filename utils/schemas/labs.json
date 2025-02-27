@@ -10,6 +10,9 @@
             "name": {
               "type": "string"
             },
+            "logo": {
+              "type": "string"
+            },
             "prof": {
               "type": "object",
               "properties": {
