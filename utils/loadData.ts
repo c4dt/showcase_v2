@@ -1,12 +1,9 @@
-// standard library imports
-import fs from "fs";
+import { promises as fsPromises } from "fs";
 import path from "path";
 
-// third party imports
 import yaml from "yaml";
 import Ajv from "ajv";
 
-// local imports
 import labsSchema from "./schemas/labs.json";
 import projectsSchema from "./schemas/projects.json";
 
@@ -16,32 +13,35 @@ const LABS_FILE = "labs.yaml";
 const CONFIG_FILE = "config.yaml";
 const PRODUCTS_DIR = "products";
 
+const ajv = new Ajv({ allowUnionTypes: true });
+const LABS_SCHEMA = ajv.compile(labsSchema);
+const PROJECTS_SCHEMA = ajv.compile(projectsSchema);
+
 function validateData(basename: string, content: string) {
-  const ajv = new Ajv({ allowUnionTypes: true });
   let schema;
   switch (basename) {
     case LABS_FILE:
-      schema = ajv.compile(labsSchema);
+      schema = LABS_SCHEMA;
       break;
     case PROJECTS_FILE:
-      schema = ajv.compile(projectsSchema);
+      schema = PROJECTS_SCHEMA;
       break;
     default:
-      throw `unsupported file '${basename}'`;
+      throw new Error(`unsupported file '${basename}'`);
   }
   if (!schema(content)) {
-    throw `invalid YAML: ${JSON.stringify(schema.errors)}`;
+    throw new Error(`invalid YAML: ${JSON.stringify(schema.errors)}`);
   }
 }
 
-export function loadConfiguration() {
+export async function loadConfiguration(): Promise<object> {
   const filePath = path.join(DATA_DIR, CONFIG_FILE);
-  return yaml.parse(fs.readFileSync(filePath, "utf-8"));
+  return yaml.parse(await fsPromises.readFile(filePath, "utf-8"));
 }
 
-export function loadLabs(skipValidation: boolean = false) {
+export async function loadLabs(skipValidation: boolean = false): Promise<object[]> {
   const filePath = path.join(DATA_DIR, LABS_FILE);
-  const content = yaml.parse(fs.readFileSync(filePath, "utf-8"));
+  const content = yaml.parse(await fsPromises.readFile(filePath, "utf-8"));
   if (skipValidation) {
     return content;
   }
@@ -49,39 +49,47 @@ export function loadLabs(skipValidation: boolean = false) {
   return content.labs;
 }
 
-export function loadProjects(skipValidation: boolean = false): object[] {
-  const labProjects: object[] = fs
-    .readdirSync(DATA_DIR, { withFileTypes: true })
-    .filter((file) => file.isDirectory() && file.name !== PRODUCTS_DIR)
-    .map((file) => {
-      const filePath = path.join(DATA_DIR, file.name, PROJECTS_FILE);
-      const content = yaml.parse(fs.readFileSync(filePath, "utf-8"));
-      if (skipValidation) {
-        return content;
-      }
-      validateData(PROJECTS_FILE, content);
-      const labs = loadLabs();
-      content.lab = labs[file.name];
-      return content;
-    });
-  return labProjects
-    .map((labProject) => {
-      return Object.entries(labProject.projects).map(([key, project]) => {
-        project.id = key;
-        project.lab = labProject.lab;
-        project.descriptionDisplay = project.layman_desc ?? project.tech_desc ?? project.description;
-        project.logo ??= project.lab.logo ?? "https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg";
-        return project;
-      });
-    })
-    .flat();
+async function loadLabProjects(
+  labProjectsDir: { name: string },
+  labs: object[],
+  skipValidation: boolean
+): Promise<object[]> {
+  const projectsFilePath = path.join(DATA_DIR, labProjectsDir.name, PROJECTS_FILE);
+  const labProjects = yaml.parse(await fsPromises.readFile(projectsFilePath, "utf-8"));
+
+  if (!skipValidation) {
+    validateData(PROJECTS_FILE, labProjects);
+  }
+  return Object.entries(labProjects.projects).flatMap((rawProject) => {
+    const project = rawProject[1];
+    project.id = rawProject[0];
+    project.lab = labProjectsDir.name;
+    project.lab = labs[labProjectsDir.name];
+    project.descriptionDisplay = project.layman_desc ?? project.tech_desc ?? project.description;
+    project.logo ??= project.lab.logo ?? "https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg";
+    return project;
+  });
 }
 
-export function loadTemplate(projectId: string, templateType: string) {
-  const templateFilePath = fs
-    .readdirSync(path.join(DATA_DIR, PRODUCTS_DIR, templateType), { withFileTypes: true })
-    .find((file) => file.name == `${projectId}.tpl`);
+export async function loadProjects(skipValidation: boolean = false): Promise<object[]> {
+  const labs = await loadLabs();
+
+  const projectLabsDirectories = (await fsPromises.readdir(DATA_DIR, { withFileTypes: true })).filter(
+    (labProjectsDir) => labProjectsDir.isDirectory() && labProjectsDir.name !== PRODUCTS_DIR
+  );
+
+  return (
+    await Promise.all(
+      projectLabsDirectories.map((labProjectsDir) => loadLabProjects(labProjectsDir, labs, skipValidation))
+    )
+  ).flat();
+}
+
+export async function loadTemplate(projectId: string, templateType: string): Promise<string | null> {
+  const templateFilePath = (
+    await fsPromises.readdir(path.join(DATA_DIR, PRODUCTS_DIR, templateType), { withFileTypes: true })
+  ).find((file) => file.name == `${projectId}.tpl`);
   return templateFilePath
-    ? fs.readFileSync(path.join(DATA_DIR, PRODUCTS_DIR, templateType, templateFilePath.name), "utf-8")
+    ? await fsPromises.readFile(path.join(DATA_DIR, PRODUCTS_DIR, templateType, templateFilePath.name), "utf-8")
     : null;
 }
