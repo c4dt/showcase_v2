@@ -63,8 +63,8 @@ function toggleDropdown() {
     <button
       v-if="selectedItem"
       class="absolute cursor-pointer inset-y-0 right-0 flex items-center pr-2"
-      @click.prevent="clearSelection"
       aria-label="Clear selection"
+      @click.prevent="clearSelection"
     >
       <span class="w-6 h-6 flex items-center justify-center bg-gray-200 hover:bg-gray-300 rounded-md text-black">
         <font-awesome :icon="['fas', 'times']" class="w-3 h-3" />
@@ -74,8 +74,8 @@ function toggleDropdown() {
     <button
       v-if="!selectedItem"
       class="absolute inset-y-0 right-0 flex items-center pr-2 text-gray-500"
-      @click="toggleDropdown"
       aria-label="Toggle dropdown"
+      @click="toggleDropdown"
     >
       <font-awesome :icon="['fas', 'caret-down']" />
     </button>

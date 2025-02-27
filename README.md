@@ -20,6 +20,14 @@ Start the development server on `http://localhost:3000`:
 bun run dev
 ```
 
+### updates types
+
+If you do any changes to any of the schemas, make sure to run this command
+
+```bash
+bunx json2ts utils/schemas -o ./types
+```
+
 ## Production
 
 Build the application for production:
