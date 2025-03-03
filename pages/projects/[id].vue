@@ -114,7 +114,7 @@ const papers = project.information
             </p>
           </div>
         </div>
-        <div class="py-4 text-left text-sm">{{ lab.description }}</div>
+        <div class="py-4 text-left text-sm" v-html="lab.description"/>
       </div>
     </div>
   </div>
