@@ -34,9 +34,9 @@ const categoriesFilter = ref<InstanceType<typeof Combobox>>();
 const applicationsFilter = ref<InstanceType<typeof Combobox>>();
 
 function resetFilters() {
-  categoriesFilter.value.clearSelection();
-  labsFilter.value.clearSelection();
-  applicationsFilter.value.clearSelection();
+  categoriesFilter.value?.clearSelection();
+  labsFilter.value?.clearSelection();
+  applicationsFilter.value?.clearSelection();
 
   selectedHighlightedTag.value = "";
   searchQuery.value = "";

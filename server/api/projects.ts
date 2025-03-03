@@ -1,5 +1,5 @@
 import { loadProjects } from "@/utils/loadData";
 
-export default defineEventHandler((event) => {
+export default defineEventHandler(() => {
   return loadProjects();
 });
