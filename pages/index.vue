@@ -1,22 +1,6 @@
 <script setup lang="ts">
 import type Combobox from "~/components/homepage/Combobox.vue";
 
-interface Project {
-  id: string;
-  name: string;
-  logo: string;
-  descriptionDisplay: string;
-  information: { url: string }[];
-  is_highlighted: boolean;
-  lab: { name: string; url: string };
-  url: string;
-  code: { url: string; type: string };
-  categories: string[];
-  applications: string[];
-  tags: string[];
-  description: string;
-}
-
 interface ProjectConfig {
   highlightedTags: string[];
   highlightedProjects: string[];
@@ -71,7 +55,7 @@ watch(route.query, () => {
   searchQuery.value = (route.query.search as string) || "";
 });
 
-const { data: projects } = await useFetch<Project[]>("/api/projects");
+const { data: projects } = await useFetch<ExtendedProject[]>("/api/projects");
 const { data } = await useFetch<ProjectConfig>("/api/configuration");
 
 const projectConfig = ref<ProjectConfig>({
@@ -87,7 +71,7 @@ let labs: string[] = [];
 let categories: string[] = [];
 let applications: string[] = [];
 
-let highlightedProjects: Project[] = [];
+let highlightedProjects: ExtendedProject[] = [];
 let highlightedTags: string[] = [];
 
 if (projects.value) {
@@ -124,7 +108,7 @@ const itemsToShow = ref<number>(10);
 const loadMoreProjects = () => {
   itemsToShow.value += 10;
 };
-const projectsToDisplay = computed<Project[]>(() => {
+const projectsToDisplay = computed<ExtendedProject[]>(() => {
   return filteredProjects.value.slice(0, itemsToShow.value);
 });
 </script>
