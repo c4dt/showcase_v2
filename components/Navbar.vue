@@ -15,6 +15,11 @@ onMounted(() => {
 });
 
 watch(searchQuery, () => {
+  // if the search query is empty and the search query in the URL is empty,
+  // don't navigate anywhere.
+  if (!searchQuery.value && !route.query.search) {
+    return;
+  }
   navigateTo(`/?search=${encodeURIComponent(searchQuery.value.trim())}`);
 });
 
