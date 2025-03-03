@@ -6,7 +6,7 @@ interface NavigationItem {
 
 const route = useRoute();
 
-const searchQuery = inject("searchQuery") as Ref<string[]>;
+const searchQuery = useSearchQuery();
 
 const searchInput = ref<HTMLInputElement | null>(null);
 

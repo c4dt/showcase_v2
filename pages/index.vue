@@ -20,7 +20,7 @@ function addTag(tag: string) {
 }
 provide("addTag", addTag);
 
-const searchQuery = inject("searchQuery") as Ref<string>;
+const searchQuery = useSearchQuery();
 
 function filterByTag(tag: string) {
   selectedHighlightedTag.value = tag;
@@ -42,18 +42,6 @@ function resetFilters() {
   searchQuery.value = "";
   selectedTags.value = [];
 }
-
-const route = useRoute();
-const queryParams = route.query;
-const searchQueryParam = queryParams.search as string;
-
-if (searchQueryParam) {
-  searchQuery.value = searchQueryParam;
-}
-
-watch(route.query, () => {
-  searchQuery.value = (route.query.search as string) || "";
-});
 
 const { data: projects } = await useFetch<ExtendedProject[]>("/api/projects");
 const { data } = await useFetch<ProjectConfig>("/api/configuration");
