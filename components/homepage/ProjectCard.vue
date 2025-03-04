@@ -17,6 +17,7 @@
         </span>
         <span
           v-for="tag in project.tags"
+          :key="tag"
           :class="{
             'px-3 py-1 rounded-full text-sm transition': true,
             'bg-gray-400 text-gray-950 cursor-not-allowed': selectedTags.includes(tag),
@@ -29,12 +30,12 @@
         </span>
       </div>
 
-      <div class="flex space-x-4 justify-end">
+      <div v-if="project.information" class="flex space-x-4 justify-end">
         <div
           v-for="information in project.information.filter(
             (information) => information.type.toLowerCase() == 'article'
           )"
-          v-if="project.information"
+          :key="information.url"
         >
           <a :href="information.url" class="text-gray-500 hover:underline flex items-center">
             <div class="text-right">
@@ -44,7 +45,7 @@
         </div>
         <div
           v-for="information in project.information.filter((information) => information.type.toLowerCase() == 'paper')"
-          v-if="project.information"
+          :key="information.url"
         >
           <a :href="information.url" class="text-gray-500 hover:underline flex items-center">
             <div class="text-right">

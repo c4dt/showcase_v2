@@ -1,5 +1,5 @@
 import { loadConfiguration } from "@/utils/loadData";
 
-export default defineEventHandler((event) => {
+export default defineEventHandler(() => {
   return loadConfiguration();
 });

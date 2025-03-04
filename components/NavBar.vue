@@ -6,7 +6,7 @@ interface NavigationItem {
 
 const route = useRoute();
 
-const searchQuery = inject("searchQuery") as Ref<string[]>;
+const searchQuery = useSearchQuery();
 
 const searchInput = ref<HTMLInputElement | null>(null);
 
@@ -15,6 +15,11 @@ onMounted(() => {
 });
 
 watch(searchQuery, () => {
+  // if the search query is empty and the search query in the URL is empty,
+  // don't navigate anywhere.
+  if (!searchQuery.value && !route.query.search) {
+    return;
+  }
   navigateTo(`/?search=${encodeURIComponent(searchQuery.value.trim())}`);
 });
 
