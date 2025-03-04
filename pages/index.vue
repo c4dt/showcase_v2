@@ -63,7 +63,9 @@ let highlightedProjects: ExtendedProject[] = [];
 let highlightedTags: string[] = [];
 
 if (projects.value) {
-  labs = Array.from(new Set(projects.value.map((project) => project.lab.name)));
+  labs = Array.from(
+    new Set(projects.value.map((project) => `${project.lab.prof.name.join(" ")} - ${project.lab.name}`))
+  );
   categories = Array.from(new Set(projects.value.flatMap((project) => project.categories)));
   applications = Array.from(new Set(projects.value.flatMap((project) => project.applications)));
   highlightedProjects = projects.value.filter((project) =>
@@ -76,7 +78,7 @@ const filteredProjects = computed(() => {
   if (!projects.value) return [];
   return projects.value.filter((project) => {
     return (
-      (selectedLab.value === "" || project.lab.name === selectedLab.value) &&
+      (selectedLab.value === "" || project.lab.name === selectedLab.value.split(" - ")[1]) &&
       (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
       (selectedApplication.value === "" || project.applications.includes(selectedApplication.value)) &&
       (selectedHighlightedTag.value === "" || project.tags.includes(selectedHighlightedTag.value)) &&
@@ -87,7 +89,9 @@ const filteredProjects = computed(() => {
 });
 
 watch(filteredProjects, () => {
-  labs = Array.from(new Set(filteredProjects.value.map((project) => project.lab.name)));
+  labs = Array.from(
+    new Set(filteredProjects.value.map((project) => `${project.lab.prof.name.join(" ")} - ${project.lab.name}`))
+  );
   categories = Array.from(new Set(filteredProjects.value.flatMap((project) => project.categories)));
   applications = Array.from(new Set(filteredProjects.value.flatMap((project) => project.applications)));
 });
