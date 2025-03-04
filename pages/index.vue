@@ -29,10 +29,10 @@ function filterByTag(tag: string) {
 function removeTag(tag: string) {
   selectedTags.value = selectedTags.value.filter((t) => t !== tag);
 }
+
 const labsFilter = ref<InstanceType<typeof Combobox>>();
 const categoriesFilter = ref<InstanceType<typeof Combobox>>();
 const applicationsFilter = ref<InstanceType<typeof Combobox>>();
-
 function resetFilters() {
   categoriesFilter.value?.clearSelection();
   labsFilter.value?.clearSelection();
@@ -178,7 +178,7 @@ const projectsToDisplay = computed<ExtendedProject[]>(() => {
         <div class="w-full md:w-3/4 mt-8 md:mt-0">
           <!-- Highlighted tags and search -->
           <div class="md:sticky border top-0 mb-4 bg-white rounded-xl shadow-md py-2 px-6">
-            <h2 class="text-3xl text-center">Trending Themes</h2>
+            <h2 class="text-3xl text-center">Hot Topics</h2>
             <ul class="flex flex-wrap md:flex-nowrap space-x-2 space-y-2 py-4 justify-center">
               <li
                 v-for="tag in highlightedTags"
