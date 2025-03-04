@@ -17,6 +17,7 @@ export interface Projects {
  */
 export interface Project {
   name: string;
+  logo?: string;
   description: string;
   type: string;
   categories: ("Privacy" | "Blockchain" | "Verification" | "Security" | "Learning" | "Other")[];
