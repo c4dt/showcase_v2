@@ -82,7 +82,7 @@ const filteredProjects = computed(() => {
       (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
       (selectedApplication.value === "" || project.applications.includes(selectedApplication.value)) &&
       (selectedHighlightedTag.value === "" || project.tags.includes(selectedHighlightedTag.value)) &&
-      (searchQuery.value === "" || project.name.toLowerCase().includes(searchQuery.value.toLowerCase())) &&
+      (searchQuery.value === "" || JSON.stringify(project).toLowerCase().includes(searchQuery.value.toLowerCase())) &&
       (selectedTags.value.length === 0 || selectedTags.value.some((tag) => project.tags.includes(tag)))
     );
   });
