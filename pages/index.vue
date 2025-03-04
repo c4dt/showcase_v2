@@ -29,10 +29,10 @@ function filterByTag(tag: string) {
 function removeTag(tag: string) {
   selectedTags.value = selectedTags.value.filter((t) => t !== tag);
 }
+
 const labsFilter = ref<InstanceType<typeof Combobox>>();
 const categoriesFilter = ref<InstanceType<typeof Combobox>>();
 const applicationsFilter = ref<InstanceType<typeof Combobox>>();
-
 function resetFilters() {
   categoriesFilter.value?.clearSelection();
   labsFilter.value?.clearSelection();
@@ -63,7 +63,9 @@ let highlightedProjects: ExtendedProject[] = [];
 let highlightedTags: string[] = [];
 
 if (projects.value) {
-  labs = Array.from(new Set(projects.value.map((project) => project.lab.name)));
+  labs = Array.from(
+    new Set(projects.value.map((project) => `${project.lab.prof.name.join(" ")} - ${project.lab.name}`))
+  );
   categories = Array.from(new Set(projects.value.flatMap((project) => project.categories)));
   applications = Array.from(new Set(projects.value.flatMap((project) => project.applications)));
   highlightedProjects = projects.value.filter((project) =>
@@ -76,18 +78,20 @@ const filteredProjects = computed(() => {
   if (!projects.value) return [];
   return projects.value.filter((project) => {
     return (
-      (selectedLab.value === "" || project.lab.name === selectedLab.value) &&
+      (selectedLab.value === "" || project.lab.name === selectedLab.value.split(" - ")[1]) &&
       (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
       (selectedApplication.value === "" || project.applications.includes(selectedApplication.value)) &&
       (selectedHighlightedTag.value === "" || project.tags.includes(selectedHighlightedTag.value)) &&
-      (searchQuery.value === "" || project.name.toLowerCase().includes(searchQuery.value.toLowerCase())) &&
+      (searchQuery.value === "" || JSON.stringify(project).toLowerCase().includes(searchQuery.value.toLowerCase())) &&
       (selectedTags.value.length === 0 || selectedTags.value.some((tag) => project.tags.includes(tag)))
     );
   });
 });
 
 watch(filteredProjects, () => {
-  labs = Array.from(new Set(filteredProjects.value.map((project) => project.lab.name)));
+  labs = Array.from(
+    new Set(filteredProjects.value.map((project) => `${project.lab.prof.name.join(" ")} - ${project.lab.name}`))
+  );
   categories = Array.from(new Set(filteredProjects.value.flatMap((project) => project.categories)));
   applications = Array.from(new Set(filteredProjects.value.flatMap((project) => project.applications)));
 });
@@ -174,7 +178,7 @@ const projectsToDisplay = computed<ExtendedProject[]>(() => {
         <div class="w-full md:w-3/4 mt-8 md:mt-0">
           <!-- Highlighted tags and search -->
           <div class="md:sticky border top-0 mb-4 bg-white rounded-xl shadow-md py-2 px-6">
-            <h2 class="text-3xl text-center">Trending Themes</h2>
+            <h2 class="text-3xl text-center">Hot Topics</h2>
             <ul class="flex flex-wrap md:flex-nowrap space-x-2 space-y-2 py-4 justify-center">
               <li
                 v-for="tag in highlightedTags"
