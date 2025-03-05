@@ -36,5 +36,5 @@
 </p>
 
 <div align="center">
-  <img class="dark" src="/products/images/spindle/network.svg" />
+  <img class="dark" src="/showcase_v2/products/images/spindle/network.svg" />
 </div>

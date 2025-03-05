@@ -10,7 +10,7 @@
         but only if a correct proof of the access control blockchain is given
     </li>
 </ul>
-<img src="/products/images/calypso/steps.png" class="dark_invert center"
+<img src="/showcase_v2/products/images/calypso/steps.png" class="dark_invert center"
      style="width: 75%;"/>
 
 <p>The <a href="https://eprint.iacr.org/2018/209.pdf">Calypso paper</a> has all the details.

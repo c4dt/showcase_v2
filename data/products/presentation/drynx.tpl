@@ -5,7 +5,7 @@
     decentralized system for privacy-conscious statistical analysis on distributed
     datasets.</p>
 
-<img src="/products/images/drynx/presentation-overview.png" width="60%" class="center"/>
+<img src="/showcase_v2/products/images/drynx/presentation-overview.png" width="60%" class="center"/>
 <br>
 <p>Drynx relies on a set of computing nodes to enable the computation of statistics
     such as standard deviation or extrema, and the training and

@@ -1,4 +1,4 @@
-<img src="/products/images/spindle/logo.svg" class="left dark_invert"/>
+<img src="/showcase_v2/products/images/spindle/logo.svg" class="left dark_invert"/>
 <h3>
     This project has been retired from the C4DT Factory Incubator
 </h3>

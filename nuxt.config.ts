@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   app: {
     baseURL: process.env.NODE_ENV === "production" ? "/showcase_v2/" : ""
   },
-  modules: ["@nuxt/eslint", "@vesp/nuxt-fontawesome"],
+  modules: ["@nuxt/eslint", "@vesp/nuxt-fontawesome", "@nuxt/image"],
   eslint: {},
   fontawesome: {
     icons: {

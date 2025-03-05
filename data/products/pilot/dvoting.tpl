@@ -2,14 +2,14 @@
     <div style="margin: 1em; flex:1;" class="click-zoom">
         <label>
             <input type="checkbox">
-            <img src="/products/images/d-voting/d-voting_at_EPFL.png"/>
+            <img src="/showcase_v2/products/images/d-voting/d-voting_at_EPFL.png"/>
             <br>Finalized Elections with results
         </label>
     </div>
     <div style="margin: 1em; flex:1;" class="click-zoom">
         <label>
             <input type="checkbox">
-            <img src="/products/images/d-voting/d-voting-overview.png"/>
+            <img src="/showcase_v2/products/images/d-voting/d-voting-overview.png"/>
             <br>Overview of the components of the system
         </label>
     </div>

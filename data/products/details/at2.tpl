@@ -9,4 +9,4 @@
   great compared to payment systems like Visa which handles 40'000 TPS.
 </p>
 
-<img src="/products/images/at2/tps-comparison.png" width="60%" class="center"/>
+<img src="/showcase_v2/products/images/at2/tps-comparison.png" width="60%" class="center"/>

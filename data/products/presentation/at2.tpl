@@ -1,4 +1,4 @@
-<img src="/products/images/at2/logo.png" class="left"/>
+<img src="/showcase_v2/products/images/at2/logo.png" class="left"/>
 <p>
   In this specific case of asset transfer, one doesn't need a "full-blockchain",
   only some simpler primitives. Here comes AT2, which allows for the same

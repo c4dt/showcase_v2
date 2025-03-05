@@ -56,7 +56,7 @@ One way to illustrate the difference is as follows. Imagine that you are
 producing an image and want to make sure it is correct. By testing, you will
 check a few pixels, perhaps a border or a corner, and verify that they are
 correct:
-<div align="center"><img class="dark" src="/products/images/stainless/test-vs-fv-1.png"></div>
+<div align="center"><img class="dark" src="/showcase_v2/products/images/stainless/test-vs-fv-1.png"></div>
 </p>
 <p>
 This will give you some assurance, but you will never be completely sure,
@@ -67,11 +67,11 @@ impossible in a reasonable amount of time depending on the size of the image.
 <p>
 Now by using mathematical logic, you can either construct a proof that your
 image is correct no matter its size:
-<div align="center"><img class="dark" src="/products/images/stainless/test-vs-fv-2.png"></div>
+<div align="center"><img class="dark" src="/showcase_v2/products/images/stainless/test-vs-fv-2.png"></div>
 </p>
 <p>
 Or, failing that, you can directly obtain an image location that is incorrect:
-<div align="center"><img class="dark" src="/products/images/stainless/test-vs-fv-3.png"></div>
+<div align="center"><img class="dark" src="/showcase_v2/products/images/stainless/test-vs-fv-3.png"></div>
 </p>
 
 <h4>Smart Contracts</h4>
@@ -100,7 +100,7 @@ href="https://www.epfl.ch/labs/dedis/">DEDIS</a> lab. It also contains a layer
 allowing it to run an Ethereum virtual machine. Together with Stainless, they
 provide a complete platform for the development and execution of verified Smart
 Contracts, as illustrated in the following diagram:
-<div align="center"><img class="dark dark_pad" src="/products/images/stainless/interactions.svg"></div>
+<div align="center"><img class="dark dark_pad" src="/showcase_v2/products/images/stainless/interactions.svg"></div>
 </p>
 <p>
 The Smart Contract author uses Stainless to determine whether the code fulfills

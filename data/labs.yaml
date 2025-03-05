@@ -24,6 +24,7 @@ labs:
         - Rachid
         - Guerraoui
       email: rachid.guerraoui@epfl.ch
+      picture: rachid_guerraoui.png
     description: >
       The Distributed Computing Lab focuses currently on Scalable Implementations  of Cryptocurrencies, Byzantine fault tolerance and
       privacy in distributed machine  learning, distributed algorithms making use of RDMA and NVRAM.
@@ -41,6 +42,7 @@ labs:
         - Edouard
         - Bugnion
       email: edouard.bugnion@epfl.ch
+      picture: edouard_bugnion.png
     description: >
       The Data Center Systems Laboratory (DCSL) focuses on systems-level problems within datacenters combining operating systems, networks,
       and computer architecture.
@@ -57,6 +59,7 @@ labs:
         - Bryan
         - Ford
       email: bryan.ford@epfl.ch
+      picture: bryan_ford.png
     description: >
       The DEDIS team is working on projects related to large-scale collective authorities (cothorities), which distribute trust among a
       number of independent parties to allow scalable self-organizing communities. With no single trusted party, cothorities can secure
@@ -78,6 +81,7 @@ labs:
         - Robert
         - West
       email: robert.west@epfl.ch
+      picture: robert_west.png
     description: >
       Our research aims to make sense of large amounts of data. Frequently, the data we analyze is collected on the Web, e.g., using server
       logs, social media, wikis, online news, online games, etc. We distill heaps of raw data into meaningful insights by developing and
@@ -95,6 +99,7 @@ labs:
         - George
         - Candea
       email: george.candea@epfl.ch
+      picture: george_candea.png
     description: >
       The Dependable Systems Lab develops  techniques and abstractions for building trustworthy computer systems, i.e., systems that are
       safe and secure. They:
@@ -131,6 +136,7 @@ labs:
         - David
         - Atienza
       email: david.atienza@epfl.ch
+      picture: david_atienza.png
     description: >
       The Embedded Systems Laboratory (ESL) is part of the Institute of Electrical Engineering at EPFL, and focuses on the definition of
       system-level multi-objective design methods, optimization methodologies and tools for high-performance embedded systems and nano-scale
@@ -148,6 +154,7 @@ labs:
         - Mathias
         - Payer
       email: mathias.payer@epfl.ch
+      picture: mathias_payer.png
     description: >
       Our research focuses on software and systems security. Despite efforts and improvements in bug discovery techniques, some exploitable
       vulnerabilities will remain. We target techniques that both enable developers to discover and remove bugs and make programs resilient
@@ -179,6 +186,7 @@ labs:
         - Matthias
         - Grossglauser
       email: matthias.grossglauser@epfl.ch
+      picture: matthias_grossglauser.png
     description: >
       The Information and Network Dynamics research group is part of the School of Computer and Communication Sciences at EPFL in Lausanne,
       Switzerland. The group is lead by Matthias Grossglauser and Patrick Thiran. Their research focuses broadly on the statistical modeling
@@ -195,6 +203,7 @@ labs:
         - Sabine
         - Süsstrunk
       email: sabine.susstrunk@epfl.ch
+      picture: sabine_susstrunk.png
     description: >
       The Image and Visual Representation Lab (IVRL) performs research that is primarily focused on the capture, analysis, and reproduction
       of color images. Aiming to improve everyone’s photographic experience, we develop algorithms and systems that help us understand,
@@ -215,6 +224,7 @@ labs:
         - Martin
         - Odersky
       email: martin.odersky@epfl.ch
+      picture: martin_odersky.png
     description: >
       Today, we experience an unprecedented integration of previously disconnected systems. Consequently, there is a leap in the complexity
       of the software controlling these systems. The challenge we are facing is how to master this complexity while at the same time
@@ -234,6 +244,7 @@ labs:
         - Paolo
         - Ienne
       email: paolo.ienne@epfl.ch
+      picture: paolo_ienne.png
     description: >
       Excellent performance in computing systems is the result of a judicious blend of computer architecture, compiler technology, and
       hardware implementation. The choices in each of these areas must strongly depend on the technical possibilities offered in the others.
@@ -251,6 +262,7 @@ labs:
         - Viktor
         - Kunčak
       email: viktor.kuncak@epfl.ch
+      picture: victor_kuncak.png
     description: >
       We develop precise automated reasoning techniques: tools, algorithms and languages. The goal of these techniques is to help
       construction of verified computer systems.
@@ -271,6 +283,7 @@ labs:
         - Serge
         - Vaudenay
       email: serge.vaudenay@epfl.ch
+      picture: serge_vaudenay.png
     description: >
       The main activities of LASEC are research and education on the security of communication and information systems, cryptography, and
       applications.
@@ -310,6 +323,7 @@ labs:
         - Boi
         - Faltings
       email: boi.faltings@epfl.ch
+      picture: boi_faltings.png
     description: >
       We develop knowledge-based technologies that allow humans and computers to deal better with the artificial world that surrounds us.
     url: https://lia.epfl.ch/
@@ -321,6 +335,7 @@ labs:
         - Volkan
         - Cevher
       email: volkan.cevher@epfl.ch
+      picture: volkan_cevher.png
     description: >
       At LIONS, we are concerned with optimized information extraction from signals or data volumes. We therefore develop mathematical
       theory and computational methods for information recovery from highly incomplete data.
@@ -333,6 +348,7 @@ labs:
         - Giovanni
         - De Micheli
       email: giovanni.demicheli@epfl.ch
+      picture: giovanni_de_micheli.png
     description: >
       The Integrated Systems Laboratory studies design technologies for circuits and systems. The objective is to research the interplay of
       hardware and software design for traditional (computation on silicon) and non-traditional (nanotechnology and biosensors) systems.
@@ -345,6 +361,7 @@ labs:
         - Karl
         - Aberer
       email: karl.aberer@epfl.ch
+      picture: karl_aberer.png
     description: >
       Research in the Distributed Information Systems Laboratory focuses on producing reliable information from the vast amount of data that
       is available on the Internet – a key challenge in today’s information society. <br>They are developing methods and systems that turn
@@ -369,6 +386,7 @@ labs:
         - Pascal
         - Frossard
       email: pascal.frossard@epfl.ch
+      picture: pascal_frossard.png
     description: >
       The Signal Processing Laboratory (LTS4) is a team of researchers led by Prof. Pascal Frossard, working in the Electrical Engineering
       Institute of the Swiss Federal Institute of Technology (EPFL), Lausanne, Switzerland. <br>The group research focuses on image
@@ -384,6 +402,7 @@ labs:
         - Martin
         - Jaggi
       email: martin.jaggi@epfl.ch
+      picture: martin_jaggi.png
     description: >
       The Machine Learning and Optimization Laboratory is interested in machine learning, optimization algorithms and text understanding, as
       well as several application domains.
@@ -399,6 +418,7 @@ labs:
         - Touradj
         - Ebrahimi
       email: touradj.ebrahimi@epfl.ch
+      picture: toujadj_ebrahimi.png
     description: >
       The Multimedia Signal Processing Group is headed by Prof. Touradj Ebrahimi. <br>The group is active in research and teaching in the
       field of multimedia signal processing. Research topics span over three highly interconnected disciplines of multimedia signal
@@ -415,6 +435,7 @@ labs:
         - Katerina
         - Argyraki
       email: katerina.argyraki@epfl.ch
+      picture: katerina_argyraki.png
     url: https://www.epfl.ch/labs/nal/
     information:
       - title: Github Repo
@@ -430,6 +451,7 @@ labs:
         - Antoine
         - Bosselut
       email: antoine.bosselut@epfl.ch
+      picture: antoine_bosselut.png
     url: https://nlp.epfl.ch/
 
   PARSA:
@@ -439,6 +461,7 @@ labs:
         - Babak
         - Falsafi
       email: babak.falsafi@epfl.ch
+      picture: babak_falsafi.png
     description: >
       The Parallel System Architecture Lab senses that information technology has undergone a major paradigm shift with sensors, embedded
       and mobile devices generating massive amounts of data to be augmented with backend cloud services for enhanced experience. Data has
@@ -461,6 +484,7 @@ labs:
         - Sanidhya
         - Kashyap
       email: sanidhya.kashyap@epfl.ch
+      picture: sanidhya_kashyap.png
     description: >
       We focus on building systems with performance, efficiency, and robustness. We try to build practical systems by understanding the
       intricacies of existing layers in both software and hardware; and revisiting the design in a principled manner. Our research
@@ -478,6 +502,7 @@ labs:
         - Anne-Marie
         - Kermarrec
       email: anne-marie.kermarrec@epfl.ch
+      picture: anne-marie_kermarrec.png
     description: >
       Computing systems that make human sense of big data are now ubiquitous. Equipped with powerful AI algorithms, they are now present in
       all aspects of our life: they drive cars, do surgery, control the lighting in your home, recommend movies and books, and are even
@@ -498,6 +523,7 @@ labs:
         - Marcel
         - Salathé
       email: marcel.salathe@epfl.ch
+      picture: marcel_salathe.png
     description: >
       The Lab of Digital Epidemiology is concerned with the dynamics of health and disease in human populations. <br>Research in
       epidemiology aims to identify the distribution, incidence, and etiology of human diseases to improve the understanding of the causes
@@ -517,6 +543,7 @@ labs:
         - Carmela
         - Troncoso
       email: carmela.troncoso@epfl.ch
+      picture: carmela_troncoso.png
     description: >
       The Security and Privacy Engineering Laboratory develops tools and methodologies to help engineers building systems that respect
       societal values, such as security, privacy or non discrimination. Currently, they are working on ":"
@@ -537,6 +564,7 @@ labs:
         - Thomas
         - Bourgeat
       email: thomas.bourgeat@epfl.ch
+      picture: thomasbourgeat.png
     url: https://www.epfl.ch/labs/vca/
 
   VLSC:
@@ -580,6 +608,7 @@ labs:
         - Alessandro
         - Chiesa
       email: alessandro.chiesa@epfl.ch
+      picture: alessandro_chiesa.png
     description: >
       We work on the theoretical foundations and practical realizations of cryptographic proofs. 
       This enables checking the correctness of a computation in zero knowledge, 
@@ -594,6 +623,7 @@ labs:
         - Clément
         - Pit-Claudel
       email: clement.pit-claudel@epfl.ch
+      picture: clement_pit-caudel.png
     description: >
       We're a programming languages, formal methods, and systems engineering lab at EPFL, 
       led by Clément Pit-Claudel. We use (and invent!) mathematical formalisms and interactive 

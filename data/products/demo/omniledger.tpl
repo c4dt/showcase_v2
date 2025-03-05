@@ -32,7 +32,7 @@
         which has been created in March 2019.
     </li>
 </ol>
-<img src="/resources/products/images/omniledger/demo-columbus.png" class="center" style="width: 100%"/>
+<img src="/showcase_v2/products/images/omniledger/demo-columbus.png" class="center" style="width: 100%"/>
 
 <a href="https://explorer.c4dt.org" class="tab-link">
     For a Live Demo Click Here

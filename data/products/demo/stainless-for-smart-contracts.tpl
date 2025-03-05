@@ -30,7 +30,7 @@
     (2) will guide you through the various elements of the interface and help you
     on your way.</p>
 
-<img src="/products/images/stainless/demo-start.png" width="80%" class="center"/>
+<img src="/showcase_v2/products/images/stainless/demo-start.png" width="80%" class="center"/>
 
 <p>
     Please note that this demonstrator is fairly technical, and requires

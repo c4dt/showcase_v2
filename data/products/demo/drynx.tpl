@@ -26,7 +26,7 @@
     <br>In (2) you can choose the type of operation, but for multi-column analysis, only
     <i>linear regression</i> is available.</p>
 
-<img src="/products/images/drynx/demo-start.png" width="80%" class="center"/>
+<img src="/showcase_v2/products/images/drynx/demo-start.png" width="80%" class="center"/>
 
 <p>Clicking on (3) will start the calculation. The
     nodes holding the data of the insurers (the <i>Data Providers</i>) will communicate
@@ -34,7 +34,7 @@
     is calculated, it is sent encrypted to the browser, who can then decrypt it and display
     it. The resulting linear regression can be seen in the following screenshot:</p>
 
-<img src="/products/images/drynx/demo-year-claim.png" width="60%" class="center"/>
+<img src="/showcase_v2/products/images/drynx/demo-year-claim.png" width="60%" class="center"/>
 
 <p>You can see that older houses tend to have higher claims than newer houses, which seems
 intuitively correct.</p>

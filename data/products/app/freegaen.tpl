@@ -1,4 +1,4 @@
-<img src="/products/images/freegaen/librechovid.png" width="30%"
+<img src="/showcase_v2/products/images/freegaen/librechovid.png" width="30%"
      style="float: left; margin: 1em;">
 <h3>
     This project has been retired from the C4DT Factory Incubator

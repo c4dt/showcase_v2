@@ -1,6 +1,6 @@
 <h3>Anonymous Communication in Mobile Apps</h3>
 
-<img src="/products/images/lightarti/logo.png" width="10%"
+<img src="/showcase_v2/products/images/lightarti/logo.png" width="10%"
      style="float: left; margin: 0.5em;" class="dark dark_pad"/>
 
 <p>Since the beginning of the commercial internet, and even more so with the start of mobile apps, 
