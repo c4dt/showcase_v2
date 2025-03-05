@@ -109,7 +109,7 @@ const projectsToDisplay = computed<ExtendedProject[]>(() => {
           </p>
           <p>-curated by C4DT's factory team-</p>
           <h3>
-            For more information about the C4DT factory, check out this link:
+            For more information about the C4DT factory, see this link:
             <a
               class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]"
               href="https://c4dt.epfl.ch/domains/factory/"
