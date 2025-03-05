@@ -8,8 +8,8 @@
             <h2 class="text-2xl font-bold mb-2">{{ project.name }}</h2>
             <h3>{{ project.description }}</h3>
             <p class="text-gray-600 mb-4">{{ project.laymen_desc || project.tech_desc }}</p>
-            <h3>Lab: {{ project.lab.name }}</h3>
             <h3>Professor: {{ project.lab.prof.name.join(" ") }}</h3>
+            <h3>Lab: {{ project.lab.name }}</h3>
           </div>
         </div>
       </NuxtLink>
