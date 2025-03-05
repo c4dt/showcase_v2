@@ -108,6 +108,22 @@ const projectsToDisplay = computed<ExtendedProject[]>(() => {
             trust from the EPFL labs.
           </p>
           <p>-curated by C4DT's factory team-</p>
+          <h3>
+            For more information about the C4DT factory, check out this link:
+            <a
+              class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]"
+              href="https://c4dt.epfl.ch/domains/factory/"
+              >https://c4dt.epfl.ch/domains/factory/</a
+            >
+          </h3>
+          <h3>
+            We also publish articles on our blog at this link:
+            <a
+              class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]"
+              href="https://c4dt.epfl.ch/article/?cat=10"
+              >https://c4dt.epfl.ch/article/?cat=10</a
+            >
+          </h3>
         </div>
       </div>
     </section>
