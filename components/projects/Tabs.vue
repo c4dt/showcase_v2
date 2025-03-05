@@ -1,11 +1,11 @@
 <template>
-  <div class="container py-4">
-    <div class="header flex">
+  <div class="py-4">
+    <div class="flex">
       <button
         v-for="tab in tabs"
         :class="{
-          'bg-[#ff0000] px-4 py-2 text-[#e6e6e6]': activeTab === tab.id,
-          'bg-[#ffffff] rounded-t-xl text-[#212121] border-b-[#ff0000] border-solid border-b-2': activeTab !== tab.id
+          'bg-[#ff0000] px-4 py-2 text-[#e6e6e6] border-b-[#ff0000] border-b-solid border-b-2': activeTab === tab.id,
+          'bg-[#ffffff] px-4 py-2 text-[#212121] border-b-[#ff0000] border-b-solid border-b-2': activeTab !== tab.id
         }"
         @click="useRouter().replace({ hash: `#${tab.id}` })"
       >
