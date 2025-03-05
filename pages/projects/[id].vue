@@ -2,6 +2,19 @@
 const { data: projects } = await useFetch("/api/projects");
 const project = projects.value.find((project) => project.id == useRoute().params.id);
 const lab = project.lab;
+const articles = project.information
+  ? project.information.filter((information) => information.type.toLowerCase() === "article")
+  : [];
+const papers = project.information
+  ? project.information.filter((information) => information.type.toLowerCase() === "paper")
+  : [];
+const aClass = "underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]";
+const papersContent = papers.length
+  ? `<ul class='ul'>${papers.map((paper) => `<li><a class='${aClass}' href=${paper.url}>${paper.title}</a></li>`).join("")}</ul>`
+  : "";
+const articlesContent = articles.length
+  ? `<ul class='ul'>${articles.map((article) => `<li><a class='${aClass}' href=${article.url}>${article.title}</a></li>`).join("")}</ul>`
+  : "";
 const { data: presentation } = await useFetch(`/api/templates?id=${project.id}&type=presentation`);
 const { data: app } = await useFetch(`/api/templates?id=${project.id}&type=app`);
 const { data: demo } = await useFetch(`/api/templates?id=${project.id}&type=demo`);
@@ -14,7 +27,9 @@ const tabs = [
   { id: "demo", label: "Demo", content: demo.value },
   { id: "details", label: "Details", content: details.value },
   { id: "hands-on", label: "Hands-on", content: handsOn.value },
-  { id: "pilot", label: "Pilot", content: pilot.value }
+  { id: "pilot", label: "Pilot", content: pilot.value },
+  { id: "papers", label: "Research papers", content: papersContent },
+  { id: "articles", label: "Miscellaneous publications", content: articlesContent }
 ].filter((tab) => tab.content);
 const defaultTab = tabs.length ? tabs[0].id : null;
 const lastEdited = new Date(Date.parse(project.date_updated ? project.date_updated : project.date_added));
@@ -41,13 +56,6 @@ projectStatus = computed(() => {
     };
   }
 });
-
-const articles = project.information
-  ? project.information.filter((information) => information.type.toLowerCase() === "article")
-  : [];
-const papers = project.information
-  ? project.information.filter((information) => information.type.toLowerCase() === "paper")
-  : [];
 </script>
 <template>
   <div class="flex m-16">
@@ -64,32 +72,6 @@ const papers = project.information
           <span v-for="tag in project.tags" class="px-3 py-1 rounded-full text-sm bg-[#d5d5d5] text-[#707070]">
             {{ tag }}
           </span>
-        </div>
-      </div>
-      <div class="py-4 text-left">
-        <div v-if="papers.length">
-          <h2 class="text-2xl font-bold">Research papers</h2>
-          <ul class="ul">
-            <li v-for="paper in papers">
-              <a
-                :href="paper.url"
-                class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]"
-                >{{ paper.title }}</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div v-if="articles.length">
-          <h2 class="text-2xl font-bold">Miscellaneous publications</h2>
-          <ul class="ul">
-            <li v-for="article in articles">
-              <a
-                :href="article.url"
-                class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]"
-                >{{ article.title }}</a
-              >
-            </li>
-          </ul>
         </div>
       </div>
       <div><ProjectsTabs v-if="tabs.length" :tabs="tabs" :default-tab="defaultTab" /></div>
@@ -114,21 +96,8 @@ const papers = project.information
             </p>
           </div>
         </div>
-        <div class="py-4 text-left text-sm">{{ lab.description }}</div>
+        <div class="py-4 text-left text-sm" v-html="lab.description"/>
       </div>
     </div>
   </div>
 </template>
-
-<style scoped>
-@import "~/assets/css/products.css";
-
-.ul {
-  list-style-type: square;
-  list-style-position: inside;
-}
-
-li::marker {
-  color: #ff0000;
-}
-</style>
