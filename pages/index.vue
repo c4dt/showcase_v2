@@ -2,14 +2,12 @@
 import type Combobox from "~/components/homepage/Combobox.vue";
 
 interface ProjectConfig {
-  highlightedTags: string[];
   highlightedProjects: string[];
 }
 
 const selectedLab = ref("");
 const selectedCategory = ref("");
 const selectedApplication = ref("");
-const selectedHighlightedTag = ref("");
 const selectedTags = ref<string[]>([]);
 provide("selectedTags", selectedTags);
 
@@ -21,10 +19,6 @@ function addTag(tag: string) {
 provide("addTag", addTag);
 
 const searchQuery = useSearchQuery();
-
-function filterByTag(tag: string) {
-  selectedHighlightedTag.value = tag;
-}
 
 function removeTag(tag: string) {
   selectedTags.value = selectedTags.value.filter((t) => t !== tag);
@@ -38,7 +32,6 @@ function resetFilters() {
   labsFilter.value?.clearSelection();
   applicationsFilter.value?.clearSelection();
 
-  selectedHighlightedTag.value = "";
   searchQuery.value = "";
   selectedTags.value = [];
 }
@@ -47,7 +40,6 @@ const { data: projects } = await useFetch<ExtendedProject[]>("/api/projects");
 const { data } = await useFetch<ProjectConfig>("/api/configuration");
 
 const projectConfig = ref<ProjectConfig>({
-  highlightedTags: [],
   highlightedProjects: []
 });
 
@@ -60,7 +52,6 @@ let categories: string[] = [];
 let applications: string[] = [];
 
 let highlightedProjects: ExtendedProject[] = [];
-let highlightedTags: string[] = [];
 
 if (projects.value) {
   labs = Array.from(
@@ -71,7 +62,6 @@ if (projects.value) {
   highlightedProjects = projects.value.filter((project) =>
     projectConfig.value.highlightedProjects.includes(project.name)
   );
-  highlightedTags = projectConfig.value.highlightedTags;
 }
 
 const filteredProjects = computed(() => {
@@ -81,7 +71,6 @@ const filteredProjects = computed(() => {
       (selectedLab.value === "" || project.lab.name === selectedLab.value.split(" - ")[1]) &&
       (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
       (selectedApplication.value === "" || project.applications.includes(selectedApplication.value)) &&
-      (selectedHighlightedTag.value === "" || project.tags.includes(selectedHighlightedTag.value)) &&
       (searchQuery.value === "" || JSON.stringify(project).toLowerCase().includes(searchQuery.value.toLowerCase())) &&
       (selectedTags.value.length === 0 || selectedTags.value.some((tag) => project.tags.includes(tag)))
     );
@@ -119,6 +108,22 @@ const projectsToDisplay = computed<ExtendedProject[]>(() => {
             trust from the EPFL labs.
           </p>
           <p>-curated by C4DT's factory team-</p>
+          <h3>
+            For more information about the C4DT factory, see this link:
+            <a
+              class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]"
+              href="https://c4dt.epfl.ch/domains/factory/"
+              >https://c4dt.epfl.ch/domains/factory/</a
+            >
+          </h3>
+          <h3>
+            We also publish articles on our blog at this link:
+            <a
+              class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]"
+              href="https://c4dt.epfl.ch/article/?cat=10"
+              >https://c4dt.epfl.ch/article/?cat=10</a
+            >
+          </h3>
         </div>
       </div>
     </section>
@@ -178,18 +183,6 @@ const projectsToDisplay = computed<ExtendedProject[]>(() => {
         <div class="w-full md:w-3/4 mt-8 md:mt-0">
           <!-- Highlighted tags and search -->
           <div class="md:sticky border top-0 mb-4 bg-white rounded-xl shadow-md py-2 px-6">
-            <h2 class="text-3xl text-center">Hot Topics</h2>
-            <ul class="flex flex-wrap md:flex-nowrap space-x-2 space-y-2 py-4 justify-center">
-              <li
-                v-for="tag in highlightedTags"
-                :key="tag"
-                class="cursor-pointer px-4 py-2 border border-gray-300 rounded-md shadow-xs flex-grow text-center"
-                :class="selectedHighlightedTag === tag ? 'bg-blue-500 text-white' : 'bg-white hover:bg-blue-400'"
-                @click="filterByTag(tag)"
-              >
-                {{ tag === "" ? "ALL" : tag }}
-              </li>
-            </ul>
             <div class="relative">
               <input
                 v-model="searchQuery"
