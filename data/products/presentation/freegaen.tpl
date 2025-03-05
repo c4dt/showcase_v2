@@ -1,4 +1,4 @@
-<img src="/products/images/freegaen/microg_full_colored.svg" width="30%"
+<img src="/showcase_v2/products/images/freegaen/microg_full_colored.svg" width="30%"
      style="float: left; margin: 1em;" class="dark_invert">
 <p>Apple and Google developed the Google-Apple Exposure Notification
     system in order to provide a uniform API for contact-tracing apps

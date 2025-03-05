@@ -20,7 +20,7 @@
     <tr style="vertical-align: top;">
         <td width="33%" style="padding: 1em;">
             <h4>Decentralization</h4>
-            <img src="/resources/products/images/omniledger/decentralized.png" width="33%"
+            <img src="/showcase_v2/products/images/omniledger/decentralized.png" width="33%"
                  style="float: left;" class="dark_invert padded"/>
             Blockchains got a lot of publicity under the name of <strong>Bitcoin</strong>.
             For some it is a source of great wealth, for others it is a synonym for a lot
@@ -32,9 +32,9 @@
         </td>
         <td width="33%" style="padding: 1em;">
             <h4>Transactions</h4>
-            <img src="/resources/products/images/omniledger/transaction_general.png" width="33%"
+            <img src="/showcase_v2/products/images/omniledger/transaction_general.png" width="33%"
                  style="float: left;" class="dark_invert padded"/>
-            <img src="/resources/products/images/omniledger/transaction_money.png" width="33%"
+            <img src="/showcase_v2/products/images/omniledger/transaction_money.png" width="33%"
                  style="float: right;" class="dark_invert padded"/>
             <br clear="left"/>
             A transaction is what is stored in a blockchain.
@@ -48,7 +48,7 @@
         </td>
         <td width="33%" style="padding: 1em;">
             <h4>Consensus</h4>
-            <img src="/resources/products/images/omniledger/distributed-ledger.png" width="33%"
+            <img src="/showcase_v2/products/images/omniledger/distributed-ledger.png" width="33%"
                  style="float: right;" class="padded"/>
             There are other blockchains than Bitcoin, but they all solve the problem of
             <strong>consensus</strong> for decentralized systems. Reaching a consensus between

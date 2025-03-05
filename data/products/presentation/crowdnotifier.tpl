@@ -14,4 +14,4 @@ notification at a national scale.</p>
 
 <p>CrowdNotifier has been implemented by the Ubique team and is now part of the
 SwissCovid App.</p>
-<img src="/products/images/crowdnotifier/logo.svg" class="dark center" width="80%">
+<img src="/showcase_v2/products/images/crowdnotifier/logo.svg" class="dark center" width="80%">

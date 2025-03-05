@@ -1,4 +1,4 @@
-<img src="/products/images/calypso/document-secure.png" width="10%"
+<img src="/showcase_v2/products/images/calypso/document-secure.png" width="10%"
      style="float: left; margin: 0.5em;"/>
 <p>Calypso allows a writer to encrypt a document, and to store the list of allowed
     readers on a blockchain. Over time, the writer can update this list to include more

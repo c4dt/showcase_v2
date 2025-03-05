@@ -32,7 +32,7 @@
     </li>
 </ol>
 <p>
-    <img src="/products/images/calypso/demo-fileshare.png" class="center"
+    <img src="/showcase_v2/products/images/calypso/demo-fileshare.png" class="center"
          style="width: 100%"/>
 </p>
 

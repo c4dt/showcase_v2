@@ -1,7 +1,7 @@
 <img
   class="dark center"
   style="width: 60%; max-width: 10em"
-  src="/products/images/disco/logo.svg"
+  src="/showcase_v2/products/images/disco/logo.svg"
 />
 
 <p>
@@ -22,7 +22,7 @@
 <img
   class="dark center"
   style="width: 60%; max-width: 20em"
-  src="/products/images/disco/network.svg"
+  src="/showcase_v2/products/images/disco/network.svg"
 />
 
 <p>

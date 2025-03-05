@@ -27,7 +27,7 @@
 <img class="dark center"
      alt="The user fetches a one-time token from the Tandem server. Then they use it
             to sign a transaction, which is sent to the server."
-     src="/products/images/tandem_monero/system_setup.png"
+     src="/showcase_v2/products/images/tandem_monero/system_setup.png"
      style="width: 30em; max-width: 80%;"
 />
 

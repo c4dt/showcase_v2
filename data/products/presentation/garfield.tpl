@@ -36,7 +36,7 @@ each participant to keep its data secret and only share partial models.
 <p>
 These different goals lead to various distributed architectures, illustrated in
 the following figure.
-<div align="center"><img class="dark" src="/products/images/garfield/models.svg"></div>
+<div align="center"><img class="dark" src="/showcase_v2/products/images/garfield/models.svg"></div>
 Garfield can work with any of these architectures, and provides examples for
 all of them.
 </p>

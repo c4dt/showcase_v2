@@ -5,5 +5,5 @@ foundation to help slow the spread of the SARS-CoV-2 virus. The system aims to
 minimise privacy and security risks for individuals and communities and
 guarantee the highest level of data protection.</p>
 
-<img src="/products/images/dp3t/logo.png" class="left"/>
+<img src="/showcase_v2/products/images/dp3t/logo.png" class="left"/>
 <p>It has been implemented by Ubique in the SwissCovid application.</p>

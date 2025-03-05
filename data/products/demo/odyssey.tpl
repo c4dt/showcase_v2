@@ -1,4 +1,4 @@
-<img src="/products/images/calypso/odyssey-components.png" width="30%"
+<img src="/showcase_v2/products/images/calypso/odyssey-components.png" width="30%"
      style="float: left;" class="dark_invert"/>
 <h3>
     This project has been retired from the C4DT Factory Incubator
@@ -21,7 +21,7 @@
     <div class="click-zoom">
         <label>
             <input type="checkbox">
-            <img src="/products/images/calypso/pilot-dom-welcome.png">
+            <img src="/showcase_v2/products/images/calypso/pilot-dom-welcome.png">
             <br>The Data Manager can add new data sources, change the access control,
             and verify the usage of their data
         </label>
@@ -29,7 +29,7 @@
     <div class="click-zoom">
         <label>
             <input type="checkbox">
-            <img src="/products/images/calypso/pilot-dsm-welcome.png">
+            <img src="/showcase_v2/products/images/calypso/pilot-dsm-welcome.png">
             <br>The Data Scientist can request different data sources, and will get these
             resources delivered in a personalized, temporary virtual machine
         </label>

@@ -1,4 +1,4 @@
-<img src="/products/images/medco/logo.png" class="left dark dark_pad"/>
+<img src="/showcase_v2/products/images/medco/logo.png" class="left dark dark_pad"/>
 <p>MedCo is the first operational system that makes sensitive medical-data
 available for research in a simple, privacy-conscious and secure way. It enables
 a consortium of clinical sites to collectively protect their data and to

@@ -34,5 +34,5 @@
 </p>
 <p>
     An overview of the OmniLedger architecture can be seen in the following figure:
-    <img src="/products/images/omniledger/omniledger-overview-transparent.png" class="dark_invert center"/>
+    <img src="/showcase_v2/products/images/omniledger/omniledger-overview-transparent.png" class="dark_invert center"/>
 </p>
