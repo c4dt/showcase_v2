@@ -95,6 +95,7 @@ projectStatus = computed(() => {
               ><br />
             </p>
           </div>
+          <div class="flex justify-center"><NuxtImg class="rounded-full" v-if="lab.prof.picture" :src="`/labs/${lab.prof.picture}`"  /></div>
         </div>
         <div class="py-4 text-left text-sm" v-html="lab.description"/>
       </div>
