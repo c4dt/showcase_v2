@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { faTags } from "@fortawesome/free-solid-svg-icons";
+import { faTags, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 const { data: projects } = await useFetch("/api/projects");
 const project = projects.value.find((project) => project.id == useRoute().params.id);
 const lab = project.lab;
@@ -71,10 +71,11 @@ const lastEdited = new Date(Date.parse(project.date_updated ? project.date_updat
           <div class="flex justify-center py-4"><NuxtImg class="rounded-full" v-if="lab.prof.picture" :src="`/labs/${lab.prof.picture}`" :alt="lab.prof.name.join(' ')"  /></div>
             <p class="text-center text-l">
               Prof. {{ lab.prof.name.join(" ") }}
+              <br />
               <a
                 class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121] text-xl"
                 :href="'mailto:' + lab.prof.email"
-                ><font-awesome :icon="['fas', 'envelope']" class="text-[#707070]" /></a
+                ><FontAwesomeIcon :icon="faEnvelope" class="text-[#707070]" /></a
               ><br />
             </p>
           </div>
