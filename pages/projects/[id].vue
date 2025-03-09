@@ -89,7 +89,7 @@ projectStatus = computed(() => {
             >{{ lab.name }}</a
           >
           <div>
-          <div class="flex justify-center py-4"><NuxtImg class="rounded-full" v-if="lab.prof.picture" :src="`/labs/${lab.prof.picture}`"  /></div>
+          <div class="flex justify-center py-4"><NuxtImg class="rounded-full" v-if="lab.prof.picture" :src="`/labs/${lab.prof.picture}`" :alt="lab.prof.name.join(' ')"  /></div>
             <p class="text-center text-l">
               Prof. {{ lab.prof.name.join(" ") }}
               <a
