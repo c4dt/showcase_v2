@@ -45,10 +45,8 @@ const lastEdited = new Date(Date.parse(project.date_updated ? project.date_updat
           <div class="flex items-center justify-center">
             <img :alt="project.name" :src="project.logo" class="p-4 object-contain w-full h-48" />
           </div>
-      </div>
-      <div class="py-4">
-        <h2 class="text-2xl font-bold">Project overview</h2>
-        <p class="text-left py-4">{{ project.descriptionDisplay }}</p>
+        <p class="text-left py-4">{{ project.description }}</p>
+        <p class="text-left pb-4 text-gray-600">{{ project.laymen_desc || project.tech_desc }}</p>
         <div class="flex items-center space-x-2 text-left">
           <FontAwesomeIcon :icon="faTags" class="text-gray-500" />
           <span v-for="tag in project.tags" class="px-3 py-1 rounded-full text-sm bg-[#d5d5d5] text-[#707070]">
