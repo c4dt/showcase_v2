@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { faTags } from "@fortawesome/free-solid-svg-icons";
 const { data: projects } = await useFetch("/api/projects");
 const project = projects.value.find((project) => project.id == useRoute().params.id);
 const lab = project.lab;
@@ -68,7 +70,8 @@ projectStatus = computed(() => {
       <div class="py-4">
         <h2 class="text-2xl font-bold">Project overview</h2>
         <p class="text-left py-4">{{ project.descriptionDisplay }}</p>
-        <div class="flex space-x-4 text-left">
+        <div class="flex items-center space-x-2 text-left">
+          <FontAwesomeIcon :icon="faTags" class="text-gray-500" />
           <span v-for="tag in project.tags" class="px-3 py-1 rounded-full text-sm bg-[#d5d5d5] text-[#707070]">
             {{ tag }}
           </span>
