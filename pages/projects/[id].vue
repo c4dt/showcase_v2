@@ -35,29 +35,6 @@ const tabs = [
 ].filter((tab) => tab.content);
 const defaultTab = tabs.length ? tabs[0].id : null;
 const lastEdited = new Date(Date.parse(project.date_updated ? project.date_updated : project.date_added));
-
-let projectStatus: { StyleClass: string; text: string };
-projectStatus = computed(() => {
-  if (project.code && project.code.date_last_commit) {
-    if (isActive(project.code.date_last_commit)) {
-      return {
-        StyleClass:
-          "px-3 py-1 bg-green-200 text-green-800  border-green-500 border-solid border-1px rounded-full text-sm",
-        text: "Active"
-      };
-    } else {
-      return {
-        StyleClass: "px-3 py-1 bg-red-200 text-red-800 border-red-500 border-solid border-1px rounded-full text-sm",
-        text: "Inactive"
-      };
-    }
-  } else {
-    return {
-      StyleClass: "px-3 py-1 bg-gray-200 text-gray-800 border-gray-500 border-solid border-1px rounded-full text-sm",
-      text: "Unknown"
-    };
-  }
-});
 </script>
 <template>
   <div class="flex m-16">
@@ -65,7 +42,6 @@ projectStatus = computed(() => {
       <div class="py-4">
         <h1 class="text-4xl font-bold">{{ project.name }}</h1>
         <p class="text-xs py-4">This page was last edited on {{ lastEdited.toDateString() }}.</p>
-        <span :class="projectStatus.StyleClass">{{ projectStatus.text }}</span>
       </div>
       <div class="py-4">
         <h2 class="text-2xl font-bold">Project overview</h2>
