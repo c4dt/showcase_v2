@@ -17,6 +17,24 @@ const papersContent = papers.length
 const articlesContent = articles.length
   ? `<ul class='ul'>${articles.map((article) => `<li><a class='${aClass}' href=${article.url}>${article.title}</a></li>`).join("")}</ul>`
   : "";
+const codeInfos = (project.code ? [
+  project.code.type ? `Source code: <a class="${aClass} "href=${project.code.url}>${project.code.type}</a>` : "",
+  project.code.date_last_commit ? `Last commit: ${project.code.date_last_commit}` : "",
+] : []).join("<br />");
+const pprintMaturity = project.maturity ? "Code quality: " + new Map([
+  [0, "Maturity evaluation possible upon request"],
+  [1, "Prototype"],
+  [2, "Intermediate"],
+  [3, "Mature"],
+]).get(project.maturity) : "";
+const technicalInfos = [
+  project.type ? `Project type: ${project.type}` : "",
+  codeInfos,
+  project.license ? `License: ${project.license}` : "",
+  project.language ? `Language(s): ${project.language}` : "",
+  pprintMaturity,
+].join("<br />");
+const technicalContent = `<p>${technicalInfos}</p>`;
 const { data: presentation } = await useFetch(`/api/templates?id=${project.id}&type=presentation`);
 const { data: app } = await useFetch(`/api/templates?id=${project.id}&type=app`);
 const { data: demo } = await useFetch(`/api/templates?id=${project.id}&type=demo`);
@@ -31,7 +49,8 @@ const tabs = [
   { id: "hands-on", label: "Hands-on", content: handsOn.value },
   { id: "pilot", label: "Pilot", content: pilot.value },
   { id: "papers", label: "Research papers", content: papersContent },
-  { id: "articles", label: "Miscellaneous publications", content: articlesContent }
+  { id: "articles", label: "Miscellaneous publications", content: articlesContent },
+  { id: "technical", label: "Technical", content: technicalContent }
 ].filter((tab) => tab.content);
 const defaultTab = tabs.length ? tabs[0].id : null;
 const lastEdited = new Date(Date.parse(project.date_updated ? project.date_updated : project.date_added));
