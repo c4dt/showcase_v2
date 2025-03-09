@@ -42,6 +42,9 @@ const lastEdited = new Date(Date.parse(project.date_updated ? project.date_updat
       <div class="py-4">
         <h1 class="text-4xl font-bold">{{ project.name }}</h1>
         <p class="text-xs py-4">This page was last edited on {{ lastEdited.toDateString() }}.</p>
+          <div class="flex items-center justify-center">
+            <img :alt="project.name" :src="project.logo" class="p-4 object-contain w-full h-48" />
+          </div>
       </div>
       <div class="py-4">
         <h2 class="text-2xl font-bold">Project overview</h2>
