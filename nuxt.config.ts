@@ -2,7 +2,7 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  compatibilityDate: "2024-04-03",
+  compatibilityDate: "2025-03-09",
   devtools: { enabled: true },
   app: {
     baseURL: process.env.NODE_ENV === "production" ? "/showcase_v2/" : ""
@@ -19,10 +19,6 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  postcss: {
-    plugins: {
-      autoprefixer: {}
-    }
-  },
+
   css: ["~/assets/css/tailwind.css"]
 });

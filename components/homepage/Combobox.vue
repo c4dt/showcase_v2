@@ -56,7 +56,7 @@ function toggleDropdown() {
       :class="[
         'w-full px-4 py-2 pr-12 border rounded-md transition-colors duration-200',
         selectedItem ? 'bg-gray-100 cursor-default text-gray-500' : 'bg-white',
-        'border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500'
+        'border-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500'
       ]"
     />
     <!-- Clear Button -->

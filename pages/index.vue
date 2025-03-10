@@ -5,9 +5,11 @@ interface ProjectConfig {
   highlightedProjects: string[];
 }
 
+const selectedStatus = ref("");
 const selectedLab = ref("");
 const selectedCategory = ref("");
 const selectedApplication = ref("");
+const selectedTag = ref("");
 const selectedTags = ref<string[]>([]);
 provide("selectedTags", selectedTags);
 
@@ -24,13 +26,19 @@ function removeTag(tag: string) {
   selectedTags.value = selectedTags.value.filter((t) => t !== tag);
 }
 
+const statusList: string[] = ["C4DT Active", "C4DT Was Here", "Lab Active", "Lab Inactive"];
+
 const labsFilter = ref<InstanceType<typeof Combobox>>();
 const categoriesFilter = ref<InstanceType<typeof Combobox>>();
 const applicationsFilter = ref<InstanceType<typeof Combobox>>();
+const TagFilter = ref<InstanceType<typeof Combobox>>();
+const statusFilter = ref<InstanceType<typeof Combobox>>();
 function resetFilters() {
   categoriesFilter.value?.clearSelection();
   labsFilter.value?.clearSelection();
   applicationsFilter.value?.clearSelection();
+  TagFilter.value?.clearSelection();
+  statusFilter.value?.clearSelection();
 
   searchQuery.value = "";
   selectedTags.value = [];
@@ -50,6 +58,7 @@ if (data.value) {
 let labs: string[] = [];
 let categories: string[] = [];
 let applications: string[] = [];
+let projectTags: string[] = [];
 
 let highlightedProjects: ExtendedProject[] = [];
 
@@ -62,12 +71,15 @@ if (projects.value) {
   highlightedProjects = projects.value.filter((project) =>
     projectConfig.value.highlightedProjects.includes(project.name)
   );
+  projectTags = Array.from(new Set(projects.value.flatMap((project) => project.tags)));
 }
 
 const filteredProjects = computed(() => {
   if (!projects.value) return [];
   return projects.value.filter((project) => {
     return (
+      (selectedStatus.value === "" || project.status === selectedStatus.value) &&
+      (selectedTag.value === "" || project.categories.includes(selectedTag.value)) &&
       (selectedLab.value === "" || project.lab.name === selectedLab.value.split(" - ")[1]) &&
       (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
       (selectedApplication.value === "" || project.applications.includes(selectedApplication.value)) &&
@@ -109,19 +121,19 @@ const projectsToDisplay = computed<ExtendedProject[]>(() => {
           </p>
           <p>-curated by C4DT's factory team-</p>
           <h3>
-            For more information about the C4DT factory, see this link:
+            For more information about the C4DT factory,
             <a
               class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]"
               href="https://c4dt.epfl.ch/domains/factory/"
-              >https://c4dt.epfl.ch/domains/factory/</a
+              >see this link</a
             >
           </h3>
           <h3>
-            We also publish articles on our blog at this link:
+            We also publish articles on our blog at
             <a
               class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]"
               href="https://c4dt.epfl.ch/article/?cat=10"
-              >https://c4dt.epfl.ch/article/?cat=10</a
+              >this link</a
             >
           </h3>
         </div>
@@ -153,6 +165,8 @@ const projectsToDisplay = computed<ExtendedProject[]>(() => {
                 title="Application"
                 :item-list="applications"
               />
+              <homepageCombobox ref="statusFilter" v-model="selectedStatus" title="Status" :item-list="statusList" />
+              <homepageCombobox ref="TagFilter" v-model="selectedTag" title="Tag" :item-list="projectTags" />
               <div class="flex flex-wrap space-x-2 space-y-2">
                 <div
                   v-for="tag in selectedTags"
@@ -161,7 +175,7 @@ const projectsToDisplay = computed<ExtendedProject[]>(() => {
                 >
                   <span>{{ tag }}</span>
                   <button
-                    class="text-red-500 hover:text-red-700 focus:outline-none"
+                    class="text-red-500 hover:text-red-700 focus:outline-hidden"
                     aria-label="Remove tag"
                     @click="removeTag(tag)"
                   >
@@ -181,25 +195,23 @@ const projectsToDisplay = computed<ExtendedProject[]>(() => {
 
         <!-- Main projects area -->
         <div class="w-full md:w-3/4 mt-8 md:mt-0">
-          <!-- Highlighted tags and search -->
-          <div class="md:sticky border top-0 mb-4 bg-white rounded-xl shadow-md py-2 px-6">
-            <div class="relative">
-              <input
-                v-model="searchQuery"
-                type="text"
-                placeholder="Enter a project name..."
-                class="w-full py-2 pl-10 pr-4 text-gray-700 bg-gray-200 rounded-full focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-300"
-              />
-              <div class="absolute inset-y-0 left-0 flex items-center pl-3">
-                <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </div>
+          <!-- Search -->
+          <div class="relative">
+            <input
+              v-model="searchQuery"
+              type="text"
+              placeholder="Enter a project name..."
+              class="w-full py-2 pl-10 pr-4 mb-4 text-gray-700 bg-gray-200 rounded-full focus:outline-hidden focus:bg-white focus:ring-2 focus:ring-blue-300"
+            />
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+              <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
             </div>
           </div>
           <div v-for="project in projectsToDisplay" :key="project.name" class="py-2">

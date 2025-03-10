@@ -23,10 +23,21 @@ ajv.addSchema(projectSchema, "utils/schemas/project.json");
 const LABS_SCHEMA: ValidateFunction = ajv.compile(labsSchema);
 const PROJECTS_SCHEMA: ValidateFunction = ajv.compile(projectsSchema);
 
+enum PROJECT_STATUS {
+  C4DT_ACTIVE = "C4DT ACTIVE",
+  C4DT_WAS_HERE = "C4DT Was Here",
+  LAB_ACTIVE = "Lab Active",
+  LAB_INACTIVE = "Lab Inactive",
+  UNCATEGORIZED = "Uncategorized",
+}
+
 export interface ExtendedProject extends Project {
   id: string;
   lab: Lab;
   descriptionDisplay: string;
+  status: PROJECT_STATUS;  // == c4dt_status || lab_status
+  c4dt_status?: PROJECT_STATUS;
+  lab_status?: PROJECT_STATUS;
 }
 
 function validateData(basename: string, content: object) {
@@ -77,22 +88,63 @@ async function loadLabProjects(
     const lab: Lab = labs.labs[labProjectsDir.name];
     const descriptionDisplay = project.layman_desc ?? project.tech_desc ?? project.description;
     project.logo = project.logo || lab.logo || "https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg";
-    return { ...project, id: projectId, lab, descriptionDisplay };
+    let c4dt_status: PROJECT_STATUS | undefined = undefined;
+    let lab_status: PROJECT_STATUS | undefined = undefined;
+    if (project.incubator?.type === "incubated" || project.incubator?.type === "incubated_market") {
+      c4dt_status = PROJECT_STATUS.C4DT_ACTIVE;
+    } else if (project.incubator?.type === "retired" || project.incubator?.type === "retired_archived") {
+      c4dt_status = PROJECT_STATUS.C4DT_WAS_HERE;
+    }
+    if (project.code?.date_last_commit) {
+      // ToDo: refactor and merge with isActive function in utils/misc.ts
+      const last_updated = new Date(project.date_updated || project.date_added);  // replace with date.last_updated
+      const six_months_duration = 9 * 30 * 24 * 60 * 60 * 1000;
+      const six_months_ago = new Date(last_updated.getTime() - six_months_duration);
+
+      if (new Date(project.code.date_last_commit) > six_months_ago) {
+        lab_status = PROJECT_STATUS.LAB_ACTIVE;
+      }
+      else {
+        lab_status = PROJECT_STATUS.LAB_INACTIVE;
+      }
+    }
+    const status = c4dt_status || lab_status || PROJECT_STATUS.UNCATEGORIZED;
+    return { ...project, id: projectId, lab, descriptionDisplay, status, c4dt_status, lab_status };
   });
 }
 
 export async function loadProjects(skipValidation: boolean = false): Promise<ExtendedProject[]> {
+  /*
+    * Load all projects from all labs, and flattens the array of projects.
+    * Also sorts the projects by their status. The order is:
+    * 1. C4DT Active
+    * 2. C4DT Was Here
+    * 3. Lab Active
+    * 4. Lab Inactive
+  */
   const labs = await loadLabs();
 
   const projectLabsDirectories = (await fsPromises.readdir(DATA_DIR, { withFileTypes: true })).filter(
     (labProjectsDir) => labProjectsDir.isDirectory() && labProjectsDir.name !== PRODUCTS_DIR
   );
 
-  return (
+  const projects = (
     await Promise.all(
       projectLabsDirectories.map((labProjectsDir) => loadLabProjects(labProjectsDir, labs, skipValidation))
     )
   ).flat();
+  const statusOrderArray = [
+    PROJECT_STATUS.C4DT_ACTIVE,
+    PROJECT_STATUS.C4DT_WAS_HERE,
+    PROJECT_STATUS.LAB_ACTIVE,
+    PROJECT_STATUS.LAB_INACTIVE,
+    PROJECT_STATUS.UNCATEGORIZED,
+  ];
+
+  return projects.sort((a, b) => {
+    return statusOrderArray.indexOf(a.status) - statusOrderArray.indexOf(b.status);
+  });
+
 }
 
 export async function loadTemplate(projectId: string, templateType: string): Promise<string | null> {
