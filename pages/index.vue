@@ -161,7 +161,7 @@ const projectsToDisplay = computed<ExtendedProject[]>(() => {
                 >
                   <span>{{ tag }}</span>
                   <button
-                    class="text-red-500 hover:text-red-700 focus:outline-none"
+                    class="text-red-500 hover:text-red-700 focus:outline-hidden"
                     aria-label="Remove tag"
                     @click="removeTag(tag)"
                   >
@@ -188,7 +188,7 @@ const projectsToDisplay = computed<ExtendedProject[]>(() => {
                 v-model="searchQuery"
                 type="text"
                 placeholder="Enter a project name..."
-                class="w-full py-2 pl-10 pr-4 text-gray-700 bg-gray-200 rounded-full focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-300"
+                class="w-full py-2 pl-10 pr-4 text-gray-700 bg-gray-200 rounded-full focus:outline-hidden focus:bg-white focus:ring-2 focus:ring-blue-300"
               />
               <div class="absolute inset-y-0 left-0 flex items-center pl-3">
                 <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
