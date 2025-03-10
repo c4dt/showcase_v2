@@ -28,7 +28,7 @@ const pprintMaturity = project.maturity ? "Code quality: " + new Map([
   [3, "Mature"],
 ]).get(project.maturity) : "";
 const technicalInfos = [
-  project.type ? `Project type: ${project.type}` : "",
+  `Project type: ${project.type}` : "",
   codeInfos,
   project.license ? `License: ${project.license}` : "",
   project.language ? `Language(s): ${project.language}` : "",
