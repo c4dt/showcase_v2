@@ -19,10 +19,6 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  postcss: {
-    plugins: {
-      autoprefixer: {}
-    }
-  },
+
   css: ["~/assets/css/tailwind.css"]
 });
