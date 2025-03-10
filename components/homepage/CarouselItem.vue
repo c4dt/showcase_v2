@@ -18,7 +18,9 @@ const truncatedDescription = computed(() => {
 });
 </script>
 <template>
-  <div class="relative flex flex-col rounded-xl bg-white text-gray-700 shadow-md border border-blue-gray-100">
+  <div
+    class="relative flex flex-col rounded-xl bg-white text-gray-700 shadow-md border border-blue-gray-100 hover:bg-zinc-100"
+  >
     <!-- Content Area -->
     <NuxtLink :to="{ name: 'projects-id', params: { id: project.id } }" class="flex flex-col flex-1">
       <!-- Image Container -->

@@ -5,7 +5,7 @@ import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 const carouselConfig = {
   itemsToShow: 1,
   height: 500,
-  gap: 5,
+  gap: 10,
   autoplay: 4000,
   wrapAround: true,
   pauseAutoplayOnHover: true,

@@ -96,14 +96,6 @@ watch(filteredProjects, () => {
   categories = Array.from(new Set(filteredProjects.value.flatMap((project) => project.categories)));
   applications = Array.from(new Set(filteredProjects.value.flatMap((project) => project.applications)));
 });
-
-const itemsToShow = ref<number>(10);
-const loadMoreProjects = () => {
-  itemsToShow.value += 10;
-};
-const projectsToDisplay = computed<ExtendedProject[]>(() => {
-  return filteredProjects.value.slice(0, itemsToShow.value);
-});
 </script>
 
 <template>
@@ -201,7 +193,7 @@ const projectsToDisplay = computed<ExtendedProject[]>(() => {
               v-model="searchQuery"
               type="text"
               placeholder="Enter a project name..."
-              class="w-full py-2 pl-10 pr-4 mb-4 text-gray-700 bg-gray-200 rounded-full focus:outline-hidden focus:bg-white focus:ring-2 focus:ring-blue-300"
+              class="w-full py-2 pl-10 pr-4 my-4 text-gray-700 bg-gray-200 rounded-full focus:outline-hidden focus:bg-white focus:ring-2 focus:ring-blue-300"
             />
             <div class="absolute inset-y-0 left-0 flex items-center pl-3">
               <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -214,18 +206,8 @@ const projectsToDisplay = computed<ExtendedProject[]>(() => {
               </svg>
             </div>
           </div>
-          <div v-for="project in projectsToDisplay" :key="project.name" class="py-2">
+          <div v-for="project in filteredProjects" :key="project.name" class="py-2">
             <homepageProjectCard :project="project" />
-          </div>
-          <!-- Load more button -->
-          <div class="flex justify-center mt-4">
-            <button
-              v-if="itemsToShow < filteredProjects.length"
-              class="py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md"
-              @click="loadMoreProjects"
-            >
-              Load more projects
-            </button>
           </div>
         </div>
       </div>
