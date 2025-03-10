@@ -96,14 +96,6 @@ watch(filteredProjects, () => {
   categories = Array.from(new Set(filteredProjects.value.flatMap((project) => project.categories)));
   applications = Array.from(new Set(filteredProjects.value.flatMap((project) => project.applications)));
 });
-
-const itemsToShow = ref<number>(10);
-const loadMoreProjects = () => {
-  itemsToShow.value += 10;
-};
-const projectsToDisplay = computed<ExtendedProject[]>(() => {
-  return filteredProjects.value.slice(0, itemsToShow.value);
-});
 </script>
 
 <template>
@@ -214,18 +206,8 @@ const projectsToDisplay = computed<ExtendedProject[]>(() => {
               </svg>
             </div>
           </div>
-          <div v-for="project in projectsToDisplay" :key="project.name" class="py-2">
+          <div v-for="project in filteredProjects" :key="project.name" class="py-2">
             <homepageProjectCard :project="project" />
-          </div>
-          <!-- Load more button -->
-          <div class="flex justify-center mt-4">
-            <button
-              v-if="itemsToShow < filteredProjects.length"
-              class="py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md"
-              @click="loadMoreProjects"
-            >
-              Load more projects
-            </button>
           </div>
         </div>
       </div>
