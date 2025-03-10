@@ -1,6 +1,6 @@
 <template>
   <div class="mx-auto bg-white rounded-xl shadow-md overflow-hidden">
-    <div class="p-8">
+    <div class="p-8 hover:bg-zinc-100 transition-colors duration-100">
       <!-- Special Tags on the Top Right -->
       <div class="flex space-x-4 justify-end">
         <span
