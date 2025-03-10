@@ -35,7 +35,9 @@ export interface ExtendedProject extends Project {
   id: string;
   lab: Lab;
   descriptionDisplay: string;
-  status: PROJECT_STATUS;
+  status: PROJECT_STATUS;  // == c4dt_status || lab_status
+  c4dt_status?: PROJECT_STATUS;
+  lab_status?: PROJECT_STATUS;
 }
 
 function validateData(basename: string, content: object) {
@@ -86,24 +88,28 @@ async function loadLabProjects(
     const lab: Lab = labs.labs[labProjectsDir.name];
     const descriptionDisplay = project.layman_desc ?? project.tech_desc ?? project.description;
     project.logo = project.logo || lab.logo || "https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg";
-    let status: PROJECT_STATUS = PROJECT_STATUS.UNCATEGORIZED;
+    let c4dt_status: PROJECT_STATUS | undefined = undefined;
+    let lab_status: PROJECT_STATUS | undefined = undefined;
     if (project.incubator?.type === "incubated" || project.incubator?.type === "incubated_market") {
-      status = PROJECT_STATUS.C4DT_ACTIVE;
+      c4dt_status = PROJECT_STATUS.C4DT_ACTIVE;
     } else if (project.incubator?.type === "retired" || project.incubator?.type === "retired_archived") {
-      status = PROJECT_STATUS.C4DT_WAS_HERE;
-    } else if (project.code?.date_last_commit) {
-      const today = new Date();
-      const six_months_duration = 6 * 30 * 24 * 60 * 60 * 1000;
-      const six_months_ago = new Date(today.getTime() - six_months_duration);
+      c4dt_status = PROJECT_STATUS.C4DT_WAS_HERE;
+    }
+    if (project.code?.date_last_commit) {
+      // ToDo: refactor and merge with isActive function in utils/misc.ts
+      const last_updated = new Date(project.date_updated || project.date_added);  // replace with date.last_updated
+      const six_months_duration = 9 * 30 * 24 * 60 * 60 * 1000;
+      const six_months_ago = new Date(last_updated.getTime() - six_months_duration);
 
       if (new Date(project.code.date_last_commit) > six_months_ago) {
-        status = PROJECT_STATUS.LAB_ACTIVE;
+        lab_status = PROJECT_STATUS.LAB_ACTIVE;
       }
       else {
-        status = PROJECT_STATUS.LAB_INACTIVE;
+        lab_status = PROJECT_STATUS.LAB_INACTIVE;
       }
     }
-    return { ...project, id: projectId, lab, descriptionDisplay, status };
+    const status = c4dt_status || lab_status || PROJECT_STATUS.UNCATEGORIZED;
+    return { ...project, id: projectId, lab, descriptionDisplay, status, c4dt_status, lab_status };
   });
 }
 

@@ -1,11 +1,22 @@
 <template>
   <div class="mx-auto bg-white rounded-xl shadow-md overflow-hidden">
     <div class="p-8">
+      <!-- Special Tags on the Top Right -->
+      <div class="flex space-x-4 justify-end">
+        <span
+          v-for="tag in statusTags"
+          :key="tag.label"
+          :class="`px-3 py-1 rounded-full text-sm font-semibold text-white ${tag.colorStyleClasses} shadow-lg`"
+        >
+          {{ tag.label }}
+        </span>
+      </div>
+
       <NuxtLink :to="{ name: 'projects-id', params: { id: project.id } }" class="block">
         <div class="flex items-start">
           <!-- Left Side: Project Name and Description -->
           <div class="grow">
-            <h2 class="text-2xl font-bold mb-2">{{ project.name }}</h2>
+            <h2 class="text-2xl font-bold mb-2">{{ project.name }} - {{ project.status }}</h2>
             <h3>{{ project.description }}</h3>
             <p class="text-gray-600 mb-4">{{ project.laymen_desc || project.tech_desc }}</p>
             <h3>Professor: {{ project.lab.prof.name.join(" ") }}</h3>
@@ -107,4 +118,20 @@ const projectInformationIcons = computed(() => {
 
   return icons;
 });
+const statusTags = ref<{ label: string; color: string }[]>([]);
+if (project.c4dt_status) {
+  statusTags.value.push({
+    label: project.c4dt_status,
+    colorStyleClasses:
+      project.c4dt_status === "C4DT Active"
+        ? "bg-gradient-to-r from-green-500 to-purple-600"
+        : "bg-gradient-to-r from-red-500 to-purple-600"
+  });
+}
+if (project.lab_status == "Lab Active") {
+  statusTags.value.push({
+    label: project.lab_status,
+    colorStyleClasses: "bg-gradient-to-r from-blue-500 to-purple-600"
+  });
+}
 </script>
