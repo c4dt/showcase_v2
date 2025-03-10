@@ -5,6 +5,7 @@ interface ProjectConfig {
   highlightedProjects: string[];
 }
 
+const selectedStatus = ref("");
 const selectedLab = ref("");
 const selectedCategory = ref("");
 const selectedApplication = ref("");
@@ -24,13 +25,17 @@ function removeTag(tag: string) {
   selectedTags.value = selectedTags.value.filter((t) => t !== tag);
 }
 
+const statusList: string[] = ["C4DT Active", "C4DT Was Here", "Lab Active", "Lab Inactive"];
+
 const labsFilter = ref<InstanceType<typeof Combobox>>();
 const categoriesFilter = ref<InstanceType<typeof Combobox>>();
 const applicationsFilter = ref<InstanceType<typeof Combobox>>();
+const statusFilter = ref<InstanceType<typeof Combobox>>();
 function resetFilters() {
   categoriesFilter.value?.clearSelection();
   labsFilter.value?.clearSelection();
   applicationsFilter.value?.clearSelection();
+  statusFilter.value?.clearSelection();
 
   searchQuery.value = "";
   selectedTags.value = [];
@@ -68,6 +73,7 @@ const filteredProjects = computed(() => {
   if (!projects.value) return [];
   return projects.value.filter((project) => {
     return (
+      (selectedStatus.value === "" || project.status === selectedStatus.value) &&
       (selectedLab.value === "" || project.lab.name === selectedLab.value.split(" - ")[1]) &&
       (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
       (selectedApplication.value === "" || project.applications.includes(selectedApplication.value)) &&
@@ -153,6 +159,7 @@ const projectsToDisplay = computed<ExtendedProject[]>(() => {
                 title="Application"
                 :item-list="applications"
               />
+              <homepageCombobox ref="statusFilter" v-model="selectedStatus" title="Status" :item-list="statusList" />
               <div class="flex flex-wrap space-x-2 space-y-2">
                 <div
                   v-for="tag in selectedTags"
@@ -181,7 +188,7 @@ const projectsToDisplay = computed<ExtendedProject[]>(() => {
 
         <!-- Main projects area -->
         <div class="w-full md:w-3/4 mt-8 md:mt-0">
-          <!-- Highlighted tags and search -->
+          <!-- Search -->
           <div class="md:sticky border top-0 mb-4 bg-white rounded-xl shadow-md py-2 px-6">
             <div class="relative">
               <input
