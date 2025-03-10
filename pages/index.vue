@@ -9,6 +9,7 @@ const selectedStatus = ref("");
 const selectedLab = ref("");
 const selectedCategory = ref("");
 const selectedApplication = ref("");
+const selectedTag = ref("");
 const selectedTags = ref<string[]>([]);
 provide("selectedTags", selectedTags);
 
@@ -30,11 +31,13 @@ const statusList: string[] = ["C4DT Active", "C4DT Was Here", "Lab Active", "Lab
 const labsFilter = ref<InstanceType<typeof Combobox>>();
 const categoriesFilter = ref<InstanceType<typeof Combobox>>();
 const applicationsFilter = ref<InstanceType<typeof Combobox>>();
+const TagFilter = ref<InstanceType<typeof Combobox>>();
 const statusFilter = ref<InstanceType<typeof Combobox>>();
 function resetFilters() {
   categoriesFilter.value?.clearSelection();
   labsFilter.value?.clearSelection();
   applicationsFilter.value?.clearSelection();
+  TagFilter.value?.clearSelection();
   statusFilter.value?.clearSelection();
 
   searchQuery.value = "";
@@ -55,6 +58,7 @@ if (data.value) {
 let labs: string[] = [];
 let categories: string[] = [];
 let applications: string[] = [];
+let projectTags: string[] = [];
 
 let highlightedProjects: ExtendedProject[] = [];
 
@@ -67,6 +71,7 @@ if (projects.value) {
   highlightedProjects = projects.value.filter((project) =>
     projectConfig.value.highlightedProjects.includes(project.name)
   );
+  projectTags = Array.from(new Set(projects.value.flatMap((project) => project.tags)));
 }
 
 const filteredProjects = computed(() => {
@@ -74,6 +79,7 @@ const filteredProjects = computed(() => {
   return projects.value.filter((project) => {
     return (
       (selectedStatus.value === "" || project.status === selectedStatus.value) &&
+      (selectedTag.value === "" || project.categories.includes(selectedTag.value)) &&
       (selectedLab.value === "" || project.lab.name === selectedLab.value.split(" - ")[1]) &&
       (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
       (selectedApplication.value === "" || project.applications.includes(selectedApplication.value)) &&
@@ -160,6 +166,7 @@ const projectsToDisplay = computed<ExtendedProject[]>(() => {
                 :item-list="applications"
               />
               <homepageCombobox ref="statusFilter" v-model="selectedStatus" title="Status" :item-list="statusList" />
+              <homepageCombobox ref="TagFilter" v-model="selectedTag" title="Tag" :item-list="projectTags" />
               <div class="flex flex-wrap space-x-2 space-y-2">
                 <div
                   v-for="tag in selectedTags"
