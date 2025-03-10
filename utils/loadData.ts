@@ -23,10 +23,19 @@ ajv.addSchema(projectSchema, "utils/schemas/project.json");
 const LABS_SCHEMA: ValidateFunction = ajv.compile(labsSchema);
 const PROJECTS_SCHEMA: ValidateFunction = ajv.compile(projectsSchema);
 
+enum PROJECT_STATUS {
+  C4DT_ACTIVE = "C4DT ACTIVE",
+  C4DT_WAS_HERE = "C4DT Was Here",
+  LAB_ACTIVE = "Lab Active",
+  LAB_INACTIVE = "Lab Inactive",
+  UNCATEGORIZED = "Uncategorized",
+}
+
 export interface ExtendedProject extends Project {
   id: string;
   lab: Lab;
   descriptionDisplay: string;
+  status: PROJECT_STATUS;
 }
 
 function validateData(basename: string, content: object) {
@@ -77,7 +86,24 @@ async function loadLabProjects(
     const lab: Lab = labs.labs[labProjectsDir.name];
     const descriptionDisplay = project.layman_desc ?? project.tech_desc ?? project.description;
     project.logo = project.logo || lab.logo || "https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg";
-    return { ...project, id: projectId, lab, descriptionDisplay };
+    let status: PROJECT_STATUS = PROJECT_STATUS.UNCATEGORIZED;
+    if (project.incubator?.type === "incubated" || project.incubator?.type === "incubated_market") {
+      status = PROJECT_STATUS.C4DT_ACTIVE;
+    } else if (project.incubator?.type === "retired" || project.incubator?.type === "retired_archived") {
+      status = PROJECT_STATUS.C4DT_WAS_HERE;
+    } else if (project.code?.date_last_commit) {
+      const today = new Date();
+      const six_months_duration = 6 * 30 * 24 * 60 * 60 * 1000;
+      const six_months_ago = new Date(today.getTime() - six_months_duration);
+
+      if (new Date(project.code.date_last_commit) > six_months_ago) {
+        status = PROJECT_STATUS.LAB_ACTIVE;
+      }
+      else {
+        status = PROJECT_STATUS.LAB_INACTIVE;
+      }
+    }
+    return { ...project, id: projectId, lab, descriptionDisplay, status };
   });
 }
 
