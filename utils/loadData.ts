@@ -108,17 +108,37 @@ async function loadLabProjects(
 }
 
 export async function loadProjects(skipValidation: boolean = false): Promise<ExtendedProject[]> {
+  /*
+    * Load all projects from all labs, and flattens the array of projects.
+    * Also sorts the projects by their status. The order is:
+    * 1. C4DT Active
+    * 2. C4DT Was Here
+    * 3. Lab Active
+    * 4. Lab Inactive
+  */
   const labs = await loadLabs();
 
   const projectLabsDirectories = (await fsPromises.readdir(DATA_DIR, { withFileTypes: true })).filter(
     (labProjectsDir) => labProjectsDir.isDirectory() && labProjectsDir.name !== PRODUCTS_DIR
   );
 
-  return (
+  const projects = (
     await Promise.all(
       projectLabsDirectories.map((labProjectsDir) => loadLabProjects(labProjectsDir, labs, skipValidation))
     )
   ).flat();
+  const statusOrderArray = [
+    PROJECT_STATUS.C4DT_ACTIVE,
+    PROJECT_STATUS.C4DT_WAS_HERE,
+    PROJECT_STATUS.LAB_ACTIVE,
+    PROJECT_STATUS.LAB_INACTIVE,
+    PROJECT_STATUS.UNCATEGORIZED,
+  ];
+
+  return projects.sort((a, b) => {
+    return statusOrderArray.indexOf(a.status) - statusOrderArray.indexOf(b.status);
+  });
+
 }
 
 export async function loadTemplate(projectId: string, templateType: string): Promise<string | null> {
