@@ -121,19 +121,19 @@ const projectsToDisplay = computed<ExtendedProject[]>(() => {
           </p>
           <p>-curated by C4DT's factory team-</p>
           <h3>
-            For more information about the C4DT factory, see this link:
+            For more information about the C4DT factory,
             <a
               class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]"
               href="https://c4dt.epfl.ch/domains/factory/"
-              >https://c4dt.epfl.ch/domains/factory/</a
+              >see this link</a
             >
           </h3>
           <h3>
-            We also publish articles on our blog at this link:
+            We also publish articles on our blog at
             <a
               class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]"
               href="https://c4dt.epfl.ch/article/?cat=10"
-              >https://c4dt.epfl.ch/article/?cat=10</a
+              >this link</a
             >
           </h3>
         </div>
