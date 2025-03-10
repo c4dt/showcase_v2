@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { faTags, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 const { data: projects } = await useFetch("/api/projects");
 const project = projects.value.find((project) => project.id == useRoute().params.id);
 const lab = project.lab;
@@ -15,6 +17,24 @@ const papersContent = papers.length
 const articlesContent = articles.length
   ? `<ul class='ul'>${articles.map((article) => `<li><a class='${aClass}' href=${article.url}>${article.title}</a></li>`).join("")}</ul>`
   : "";
+const codeInfos = (project.code ? [
+  project.code.type ? `Source code: <a class="${aClass} "href=${project.code.url}>${project.code.type}</a>` : "",
+  project.code.date_last_commit ? `Last commit: ${project.code.date_last_commit}` : "",
+] : []).join("<br />");
+const pprintMaturity = project.maturity ? "Code quality: " + new Map([
+  [0, "Maturity evaluation possible upon request"],
+  [1, "Prototype"],
+  [2, "Intermediate"],
+  [3, "Mature"],
+]).get(project.maturity) : "";
+const technicalInfos = [
+  `Project type: ${project.type}` : "",
+  codeInfos,
+  project.license ? `License: ${project.license}` : "",
+  project.language ? `Language(s): ${project.language}` : "",
+  pprintMaturity,
+].join("<br />");
+const technicalContent = `<p>${technicalInfos}</p>`;
 const { data: presentation } = await useFetch(`/api/templates?id=${project.id}&type=presentation`);
 const { data: app } = await useFetch(`/api/templates?id=${project.id}&type=app`);
 const { data: demo } = await useFetch(`/api/templates?id=${project.id}&type=demo`);
@@ -29,30 +49,24 @@ const tabs = [
   { id: "hands-on", label: "Hands-on", content: handsOn.value },
   { id: "pilot", label: "Pilot", content: pilot.value },
   { id: "papers", label: "Research papers", content: papersContent },
-  { id: "articles", label: "Miscellaneous publications", content: articlesContent }
+  { id: "articles", label: "Miscellaneous publications", content: articlesContent },
+  { id: "technical", label: "Technical", content: technicalContent }
 ].filter((tab) => tab.content);
 const defaultTab = tabs.length ? tabs[0].id : null;
 const lastEdited = new Date(Date.parse(project.date_updated ? project.date_updated : project.date_added));
-
-let projectStatus: { StyleClass: string; text: string };
-projectStatus = computed(() => {
-  if (project.code && project.code.date_last_commit) {
-    if (isActive(project.code.date_last_commit)) {
+const projectStatus = computed(() => {
+  if (project.incubator && project.incubator.type) {
+    if (project.incubator.type === "incubated" || project.incubator.type === "incubated_market") {
       return {
         StyleClass:
           "px-3 py-1 bg-green-200 text-green-800  border-green-500 border-solid border-1px rounded-full text-sm",
-        text: "Active"
-      };
-    } else {
-      return {
-        StyleClass: "px-3 py-1 bg-red-200 text-red-800 border-red-500 border-solid border-1px rounded-full text-sm",
-        text: "Inactive"
+        text: "C4DT support"
       };
     }
   } else {
     return {
       StyleClass: "px-3 py-1 bg-gray-200 text-gray-800 border-gray-500 border-solid border-1px rounded-full text-sm",
-      text: "Unknown"
+      text: "No C4DT support"
     };
   }
 });
@@ -64,11 +78,13 @@ projectStatus = computed(() => {
         <h1 class="text-4xl font-bold">{{ project.name }}</h1>
         <p class="text-xs py-4">This page was last edited on {{ lastEdited.toDateString() }}.</p>
         <span :class="projectStatus.StyleClass">{{ projectStatus.text }}</span>
-      </div>
-      <div class="py-4">
-        <h2 class="text-2xl font-bold">Project overview</h2>
-        <p class="text-left py-4">{{ project.descriptionDisplay }}</p>
-        <div class="flex space-x-4 text-left">
+          <div class="flex items-center justify-center">
+            <img :alt="project.name" :src="project.logo" class="p-4 object-contain w-full h-48" />
+          </div>
+        <p class="text-left py-4">{{ project.description }}</p>
+        <p class="text-left pb-4 text-gray-600">{{ project.laymen_desc || project.tech_desc }}</p>
+        <div class="flex items-center space-x-2 text-left">
+          <FontAwesomeIcon :icon="faTags" class="text-gray-500" />
           <span v-for="tag in project.tags" class="px-3 py-1 rounded-full text-sm bg-[#d5d5d5] text-[#707070]">
             {{ tag }}
           </span>
@@ -86,16 +102,17 @@ projectStatus = computed(() => {
             >{{ lab.name }}</a
           >
           <div>
-            <p class="text-center py-4 text-l">
+          <div class="flex justify-center py-4"><NuxtImg class="rounded-full" v-if="lab.prof.picture" :src="`/labs/${lab.prof.picture}`" :alt="lab.prof.name.join(' ')"  /></div>
+            <p class="text-center text-l">
               Prof. {{ lab.prof.name.join(" ") }}
+              <br />
               <a
                 class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121] text-xl"
                 :href="'mailto:' + lab.prof.email"
-                ><font-awesome :icon="['fas', 'envelope']" class="text-[#707070]" /></a
+                ><FontAwesomeIcon :icon="faEnvelope" class="text-[#707070]" /></a
               ><br />
             </p>
           </div>
-          <div class="flex justify-center"><NuxtImg class="rounded-full" v-if="lab.prof.picture" :src="`/labs/${lab.prof.picture}`"  /></div>
         </div>
         <div class="py-4 text-left text-sm" v-html="lab.description"/>
       </div>
