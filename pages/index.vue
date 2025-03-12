@@ -133,7 +133,7 @@ watch(filteredProjects, () => {
     </section>
     <!-- Highlighted projects section -->
     <section v-if="!searchQuery" class="py-6">
-      <HomepageSelectedProjects :highlightedProjects="highlightedProjects" />
+      <HomepageSelectedProjects :highlighted-projects="highlightedProjects" />
     </section>
     <!-- Project search section -->
     <section class="px-4 md:px-12 py-4">
