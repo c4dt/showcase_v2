@@ -28,14 +28,14 @@ enum PROJECT_STATUS {
   C4DT_WAS_HERE = "C4DT Was Here",
   LAB_ACTIVE = "Lab Active",
   LAB_INACTIVE = "Lab Inactive",
-  UNCATEGORIZED = "Uncategorized",
+  UNCATEGORIZED = "Uncategorized"
 }
 
 export interface ExtendedProject extends Project {
   id: string;
   lab: Lab;
   descriptionDisplay: string;
-  status: PROJECT_STATUS;  // == c4dt_status || lab_status
+  status: PROJECT_STATUS; // == c4dt_status || lab_status
   c4dt_status?: PROJECT_STATUS;
   lab_status?: PROJECT_STATUS;
 }
@@ -97,14 +97,13 @@ async function loadLabProjects(
     }
     if (project.code?.date_last_commit) {
       // ToDo: refactor and merge with isActive function in utils/misc.ts
-      const last_updated = new Date(project.date_updated || project.date_added);  // replace with date.last_updated
+      const last_updated = new Date(project.date_updated || project.date_added); // replace with date.last_updated
       const six_months_duration = 9 * 30 * 24 * 60 * 60 * 1000;
       const six_months_ago = new Date(last_updated.getTime() - six_months_duration);
 
       if (new Date(project.code.date_last_commit) > six_months_ago) {
         lab_status = PROJECT_STATUS.LAB_ACTIVE;
-      }
-      else {
+      } else {
         lab_status = PROJECT_STATUS.LAB_INACTIVE;
       }
     }
@@ -115,13 +114,13 @@ async function loadLabProjects(
 
 export async function loadProjects(skipValidation: boolean = false): Promise<ExtendedProject[]> {
   /*
-    * Load all projects from all labs, and flattens the array of projects.
-    * Also sorts the projects by their status. The order is:
-    * 1. C4DT Active
-    * 2. C4DT Was Here
-    * 3. Lab Active
-    * 4. Lab Inactive
-  */
+   * Load all projects from all labs, and flattens the array of projects.
+   * Also sorts the projects by their status. The order is:
+   * 1. C4DT Active
+   * 2. C4DT Was Here
+   * 3. Lab Active
+   * 4. Lab Inactive
+   */
   const labs = await loadLabs();
 
   const projectLabsDirectories = (await fsPromises.readdir(DATA_DIR, { withFileTypes: true })).filter(
@@ -138,13 +137,12 @@ export async function loadProjects(skipValidation: boolean = false): Promise<Ext
     PROJECT_STATUS.C4DT_WAS_HERE,
     PROJECT_STATUS.LAB_ACTIVE,
     PROJECT_STATUS.LAB_INACTIVE,
-    PROJECT_STATUS.UNCATEGORIZED,
+    PROJECT_STATUS.UNCATEGORIZED
   ];
 
   return projects.sort((a, b) => {
     return statusOrderArray.indexOf(a.status) - statusOrderArray.indexOf(b.status);
   });
-
 }
 
 export async function loadTemplate(projectId: string, templateType: string): Promise<string | null> {

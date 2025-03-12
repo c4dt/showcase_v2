@@ -4,14 +4,13 @@
       <ul class="ul">
         <li v-for="tab in tabs">
           <div
-              :class="{
-                'bg-[#e6e6e6] px-4 py-2 text-[#212121] border-r-[#ff0000] border-r-solid border-r-2': activeTab === tab.id,
-                'bg-[#ffffff] px-4 py-2 text-[#212121] border-r-[#e6e6e6] border-r-solid border-r-1': activeTab !== tab.id
-              }"
+            :class="{
+              'bg-[#e6e6e6] px-4 py-2 text-[#212121] border-r-[#ff0000] border-r-solid border-r-2':
+                activeTab === tab.id,
+              'bg-[#ffffff] px-4 py-2 text-[#212121] border-r-[#e6e6e6] border-r-solid border-r-1': activeTab !== tab.id
+            }"
           >
-            <button
-              @click="useRouter().replace({ hash: `#${tab.id}` })"
-            >
+            <button @click="useRouter().replace({ hash: `#${tab.id}` })">
               {{ tab.label }}
             </button>
           </div>
@@ -51,7 +50,6 @@ watch(
 </script>
 
 <style scoped>
-
 .ul {
   list-style: none;
 }

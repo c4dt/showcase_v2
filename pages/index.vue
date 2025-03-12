@@ -133,7 +133,7 @@ watch(filteredProjects, () => {
     </section>
     <!-- Highlighted projects section -->
     <section v-if="!searchQuery" class="py-6">
-      <HomepageSelectedProjects :highlightedProjects="highlightedProjects" />
+      <HomepageSelectedProjects :highlighted-projects="highlightedProjects" />
     </section>
     <!-- Project search section -->
     <section class="px-4 md:px-12 py-4">
@@ -192,7 +192,6 @@ watch(filteredProjects, () => {
             <input
               v-model="searchQuery"
               type="text"
-              placeholder="Enter a project name..."
               class="w-full py-2 pl-10 pr-4 my-4 text-gray-700 bg-gray-200 rounded-full focus:outline-hidden focus:bg-white focus:ring-2 focus:ring-blue-300"
             />
             <div class="absolute inset-y-0 left-0 flex items-center pl-3">
