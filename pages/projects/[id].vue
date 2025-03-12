@@ -73,7 +73,7 @@ const projectStatus = computed(() => {
 </script>
 <template>
   <div class="flex m-16">
-    <div class="pr-16 flex-[8] text-center divide-y divide-solid">
+    <div class="pr-16 flex-[8] text-center">
       <div class="py-4">
         <h1 class="text-4xl font-bold">{{ project.name }}</h1>
         <p class="text-xs py-4">This page was last edited on {{ lastEdited.toDateString() }}.</p>
