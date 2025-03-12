@@ -73,7 +73,7 @@ const projectStatus = computed(() => {
 </script>
 <template>
   <div class="flex m-16">
-    <div class="pr-16 flex-[8] text-center">
+    <div class="pr-16 flex-[7] text-center">
       <div class="py-4">
         <h1 class="text-4xl font-bold">{{ project.name }}</h1>
         <p class="text-xs py-4">This page was last edited on {{ lastEdited.toDateString() }}.</p>
@@ -92,8 +92,8 @@ const projectStatus = computed(() => {
       </div>
       <div><ProjectsTabs v-if="tabs.length" :tabs="tabs" :default-tab="defaultTab" /></div>
     </div>
-    <div class="flex-[2]">
-      <div class="px-16 bg-[#d5d5d5] text-center divide-y divide-solid">
+    <div class="flex-[3]">
+      <div class="px-8 bg-[#e6e6e6] text-center">
         <div class="py-4">
           <h1 class="text-4xl font-bold">{{ project.lab.name }}</h1>
           <a
