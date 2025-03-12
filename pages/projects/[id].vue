@@ -69,6 +69,7 @@ const projectStatus = computed(() => {
       text: "No C4DT support"
     };
   }
+  return {};
 });
 </script>
 <template>
