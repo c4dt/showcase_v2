@@ -84,7 +84,6 @@ const navigation = computed<NavigationItem[]>(() => {
         ref="searchInput"
         v-model="searchQuery"
         type="text"
-        placeholder="Have something specific in mind?"
         class="w-full rounded-full bg-gray-200 py-2 pl-10 pr-4 text-gray-700 ring-inset transition focus:bg-white focus:ring-2 focus:ring-blue-300"
       />
       <svg

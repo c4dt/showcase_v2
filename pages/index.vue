@@ -192,7 +192,6 @@ watch(filteredProjects, () => {
             <input
               v-model="searchQuery"
               type="text"
-              placeholder="Have something specific in mind?"
               class="w-full py-2 pl-10 pr-4 my-4 text-gray-700 bg-gray-200 rounded-full focus:outline-hidden focus:bg-white focus:ring-2 focus:ring-blue-300"
             />
             <div class="absolute inset-y-0 left-0 flex items-center pl-3">
