@@ -18,13 +18,10 @@ const statusTags = ref<{ label: string; color: string }[]>([]);
 if (project.c4dt_status) {
   statusTags.value.push({
     label: project.c4dt_status,
-    colorStyleClasses:
-      project.c4dt_status === "C4DT Active"
-        ? "bg-gradient-to-r from-green-500 to-purple-600"
-        : "bg-gradient-to-r from-red-500 to-purple-600"
+    colorStyleClasses: "bg-gradient-to-r from-green-500 to-purple-600"
   });
 }
-if (project.lab_status == "Lab Active") {
+if (project.lab_status) {
   statusTags.value.push({
     label: project.lab_status,
     colorStyleClasses: "bg-gradient-to-r from-blue-500 to-purple-600"
