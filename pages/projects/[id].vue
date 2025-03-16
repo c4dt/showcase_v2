@@ -2,6 +2,7 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faTags, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import ProjectDescription from "@/components/ProjectDescription";
+import ProjectStatus from "@/components/ProjectStatus";
 const { data: projects } = await useFetch("/api/projects");
 const project = projects.value.find((project) => project.id == useRoute().params.id);
 const lab = project.lab;
@@ -62,33 +63,16 @@ const tabs = [
 ].filter((tab) => tab.content);
 const defaultTab = tabs.length ? tabs[0].id : null;
 const lastEdited = new Date(Date.parse(project.date_updated ? project.date_updated : project.date_added));
-const projectStatus = computed(() => {
-  if (project.incubator && project.incubator.type) {
-    if (project.incubator.type === "incubated" || project.incubator.type === "incubated_market") {
-      return {
-        StyleClass:
-          "px-3 py-1 bg-green-200 text-green-800  border-green-500 border-solid border-1px rounded-full text-sm",
-        text: "C4DT support"
-      };
-    }
-  } else {
-    return {
-      StyleClass: "px-3 py-1 bg-gray-200 text-gray-800 border-gray-500 border-solid border-1px rounded-full text-sm",
-      text: "No C4DT support"
-    };
-  }
-  return {};
-});
 </script>
 <template>
   <div class="flex m-16">
     <div class="pr-16 flex-[7] text-center">
       <div class="py-4">
         <p class="text-xs py-4">This page was last edited on {{ lastEdited.toDateString() }}.</p>
-        <span :class="projectStatus.StyleClass">{{ projectStatus.text }}</span>
         <div class="flex items-center justify-center">
           <img :alt="project.name" :src="project.logo" class="p-4 object-contain w-full h-48" />
         </div>
+        <ProjectStatus :project="project" />
         <ProjectDescription :project="project" />
         <div class="flex items-center space-x-2 text-left">
           <FontAwesomeIcon :icon="faTags" class="text-gray-500" />
