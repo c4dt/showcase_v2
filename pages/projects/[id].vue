@@ -93,7 +93,11 @@ const projectStatus = computed(() => {
         <p class="text-left pb-4 text-gray-600">{{ project.laymen_desc || project.tech_desc }}</p>
         <div class="flex items-center space-x-2 text-left">
           <FontAwesomeIcon :icon="faTags" class="text-gray-500" />
-          <span v-for="tag in project.tags" class="px-3 py-1 rounded-full text-sm bg-[#d5d5d5] text-[#707070]">
+          <span
+            v-for="tag in project.tags"
+            :key="tag"
+            class="px-3 py-1 rounded-full text-sm bg-[#d5d5d5] text-[#707070]"
+          >
             {{ tag }}
           </span>
         </div>
