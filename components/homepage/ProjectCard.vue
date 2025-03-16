@@ -16,9 +16,7 @@
         <div class="flex items-start">
           <!-- Left Side: Project Name and Description -->
           <div class="grow">
-            <h2 class="text-2xl font-bold mb-2">{{ project.name }}</h2>
-            <h3>{{ project.description }}</h3>
-            <p class="text-gray-600 mb-4">{{ project.laymen_desc || project.tech_desc }}</p>
+            <ProjectDescription :project="project" />
             <h3>Professor: {{ project.lab.prof.name.join(" ") }}</h3>
             <h3>Lab: {{ project.lab.name }}</h3>
           </div>
@@ -56,6 +54,7 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faTags, faNewspaper, faFile, faHome, faCode, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import ProjectDescription from "@/components/ProjectDescription";
 
 const props = defineProps<{
   project: ExtendedProject;

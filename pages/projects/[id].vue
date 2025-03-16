@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faTags, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import ProjectDescription from "@/components/ProjectDescription";
 const { data: projects } = await useFetch("/api/projects");
 const project = projects.value.find((project) => project.id == useRoute().params.id);
 const lab = project.lab;
@@ -83,14 +84,12 @@ const projectStatus = computed(() => {
   <div class="flex m-16">
     <div class="pr-16 flex-[7] text-center">
       <div class="py-4">
-        <h1 class="text-4xl font-bold">{{ project.name }}</h1>
         <p class="text-xs py-4">This page was last edited on {{ lastEdited.toDateString() }}.</p>
         <span :class="projectStatus.StyleClass">{{ projectStatus.text }}</span>
         <div class="flex items-center justify-center">
           <img :alt="project.name" :src="project.logo" class="p-4 object-contain w-full h-48" />
         </div>
-        <p class="text-left py-4">{{ project.description }}</p>
-        <p class="text-left pb-4 text-gray-600">{{ project.laymen_desc || project.tech_desc }}</p>
+        <ProjectDescription :project="project" />
         <div class="flex items-center space-x-2 text-left">
           <FontAwesomeIcon :icon="faTags" class="text-gray-500" />
           <span
