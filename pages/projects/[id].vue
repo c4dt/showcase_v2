@@ -41,19 +41,13 @@ const technicalInfos = [
   pprintMaturity
 ].join("<br />");
 const technicalContent = `<p>${technicalInfos}</p>`;
-const { data: presentation } = await useFetch(`/api/templates?id=${project.id}&type=presentation`);
-const { data: app } = await useFetch(`/api/templates?id=${project.id}&type=app`);
-const { data: demo } = await useFetch(`/api/templates?id=${project.id}&type=demo`);
-const { data: details } = await useFetch(`/api/templates?id=${project.id}&type=details`);
-const { data: handsOn } = await useFetch(`/api/templates?id=${project.id}&type=hands-on`);
-const { data: pilot } = await useFetch(`/api/templates?id=${project.id}&type=pilot`);
-const tabs = [
-  { id: "presentation", label: "Presentation", content: presentation.value },
-  { id: "app", label: "App", content: app.value },
-  { id: "demo", label: "Demo", content: demo.value },
-  { id: "details", label: "Details", content: details.value },
-  { id: "hands-on", label: "Hands-on", content: handsOn.value },
-  { id: "pilot", label: "Pilot", content: pilot.value },
+
+let tabs = await $fetch<{ id: string; label: string; content: string }[]>(
+  `/api/projects/${useRoute().params.id}/templates`
+);
+
+tabs = [
+  ...tabs,
   { id: "papers", label: "Research papers", content: papersContent },
   { id: "articles", label: "Miscellaneous publications", content: articlesContent },
   { id: "technical", label: "Technical", content: technicalContent }
