@@ -28,16 +28,11 @@ function formatBreadcrumbName(segment: string): string {
 }
 
 const navigation = computed<NavigationItem[]>(() => {
-  const segments = route.path.split("/").filter(Boolean);
-  const breadcrumbs: NavigationItem[] = [{ name: "Showcase", href: "/" }];
-
-  segments.forEach((segment, index) => {
-    breadcrumbs.push({
-      name: formatBreadcrumbName(segment),
-      href: "/" + segments.slice(0, index + 1).join("/")
-    });
-  });
-
+  const breadcrumbs = [{ name: "Showcase", href: "/" }];
+  const currentPage = route.path.split("/").at(-1);
+  if (currentPage) {
+    breadcrumbs.push({ name: formatBreadcrumbName(currentPage), href: "#" });
+  }
   return breadcrumbs;
 });
 </script>
@@ -59,9 +54,10 @@ const navigation = computed<NavigationItem[]>(() => {
       <nav aria-label="Breadcrumb">
         <ol class="flex items-center gap-2">
           <li v-for="(item, index) in navigation" :key="item.href" class="flex items-center">
-            <RouterLink :to="item.href" class="text-gray-500 hover:text-gray-700">
+            <RouterLink v-if="index < navigation.length - 1" :to="item.href" class="text-gray-500 hover:text-gray-700">
               {{ item.name }}
             </RouterLink>
+            <span v-else class="text-gray-900">{{ item.name }}</span>
             <svg
               v-if="index < navigation.length - 1"
               class="mx-2 h-4 w-4 text-gray-400"
