@@ -15,7 +15,7 @@ const DATA_DIR = "./data";
 const PROJECTS_FILE = "projects.yaml";
 const LABS_FILE = "labs.yaml";
 const CONFIG_FILE = "config.yaml";
-const PRODUCTS_DIR = "products";
+const PRODUCTS_DIR = "customHTMLContent";
 
 const ajv = new Ajv({ allowUnionTypes: true });
 ajv.addSchema(labSchema, "utils/schemas/lab.json");
@@ -136,8 +136,13 @@ export async function loadProjects(skipValidation: boolean = false): Promise<Ext
 export async function loadTemplate(projectId: string, templateType: string): Promise<string | null> {
   const templateFilePath = (
     await fsPromises.readdir(path.join(DATA_DIR, PRODUCTS_DIR, templateType), { withFileTypes: true })
-  ).find((file) => file.name == `${projectId}.tpl`);
-  return templateFilePath
-    ? await fsPromises.readFile(path.join(DATA_DIR, PRODUCTS_DIR, templateType, templateFilePath.name), "utf-8")
-    : null;
+  ).find((file) => file.name == `${projectId}.vue`);
+  if (!templateFilePath) {
+    console.warn(`Template file not found for project ${projectId} in ${templateType}`);
+    return null;
+  }
+  const template = await fsPromises.readFile(path.join(templateFilePath.parentPath, templateFilePath.name), "utf-8");
+  // Remove <template> tags from the template temporarily
+  // until the Tabs.vue component is adjusted later
+  return template.replace(/<template>/, "").replace(/<\/template>/, "");
 }
