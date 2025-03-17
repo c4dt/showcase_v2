@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import type Combobox from "~/components/homepage/Combobox.vue";
 
-interface ProjectConfig {
-  highlightedProjects: string[];
-}
-
 const selectedStatus = ref("");
 const selectedLab = ref("");
 const selectedCategory = ref("");
@@ -44,39 +40,21 @@ function resetFilters() {
   selectedTags.value = [];
 }
 
-const { data: projects } = await useFetch<ExtendedProject[]>("/api/projects");
-const { data } = await useFetch<ProjectConfig>("/api/configuration");
+const projects = await $fetch<ExtendedProject[]>("/api/projects");
+const projectConfig = await $fetch<{ highlightedProjects: string[] }>("/api/configuration");
 
-const projectConfig = ref<ProjectConfig>({
-  highlightedProjects: []
-});
-
-if (data.value) {
-  projectConfig.value = data.value;
-}
-
-let labs: string[] = [];
-let categories: string[] = [];
-let applications: string[] = [];
-let projectTags: string[] = [];
-
-let highlightedProjects: ExtendedProject[] = [];
-
-if (projects.value) {
-  labs = Array.from(
-    new Set(projects.value.map((project) => `${project.lab.prof.name.join(" ")} - ${project.lab.name}`))
-  );
-  categories = Array.from(new Set(projects.value.flatMap((project) => project.categories)));
-  applications = Array.from(new Set(projects.value.flatMap((project) => project.applications)));
-  highlightedProjects = projects.value.filter((project) =>
-    projectConfig.value.highlightedProjects.includes(project.name)
-  );
-  projectTags = Array.from(new Set(projects.value.flatMap((project) => project.tags)));
-}
+let labs: string[] = Array.from(
+  new Set(projects.map((project) => `${project.lab.prof.name.join(" ")} - ${project.lab.name}`))
+);
+let categories: string[] = Array.from(new Set(projects.flatMap((project) => project.categories)));
+let applications: string[] = Array.from(new Set(projects.flatMap((project) => project.applications)));
+const highlightedProjects: ExtendedProject[] = projects.filter((project) =>
+  projectConfig.highlightedProjects.includes(project.name)
+);
+const projectTags: string[] = Array.from(new Set(projects.flatMap((project) => project.tags)));
 
 const filteredProjects = computed(() => {
-  if (!projects.value) return [];
-  return projects.value.filter((project) => {
+  return projects.filter((project) => {
     return (
       (selectedStatus.value === "" || project.status === selectedStatus.value) &&
       (selectedTag.value === "" || project.categories.includes(selectedTag.value)) &&
