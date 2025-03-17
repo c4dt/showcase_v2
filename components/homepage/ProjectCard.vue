@@ -45,8 +45,6 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faTags, faNewspaper, faFile, faHome, faCode, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import ProjectDescription from "@/components/ProjectDescription";
-import ProjectStatus from "@/components/ProjectStatus";
 
 const props = defineProps<{
   project: ExtendedProject;

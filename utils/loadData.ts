@@ -25,8 +25,8 @@ const PROJECTS_SCHEMA: ValidateFunction = ajv.compile(projectsSchema);
 
 enum PROJECT_STATUS {
   C4DT_SUPPORTED = "Supported by C4DT",
-  LAB_SUPPORTED = "Supported by lab",
-  NOT_SUPPORTED = "Not supported"
+  ACTIVELY_MAINTAINED = "Maintained by lab",
+  INACTIVE = "Inactive"
 }
 
 export interface ExtendedProject extends Project {
@@ -88,12 +88,7 @@ async function loadLabProjects(
     project.logo = project.logo || lab.logo || "https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg";
     let c4dt_status: PROJECT_STATUS | undefined = undefined;
     let lab_status: PROJECT_STATUS | undefined = undefined;
-    if (
-      project.incubator?.type === "incubated" ||
-      project.incubator?.type === "incubated_market" ||
-      project.incubator?.type === "retired" ||
-      project.incubator?.type === "retired_archived"
-    ) {
+    if (project.incubator) {
       c4dt_status = PROJECT_STATUS.C4DT_SUPPORTED;
     }
     if (project.code?.date_last_commit) {
@@ -103,10 +98,10 @@ async function loadLabProjects(
       const six_months_ago = new Date(last_updated.getTime() - six_months_duration);
 
       if (new Date(project.code.date_last_commit) > six_months_ago) {
-        lab_status = PROJECT_STATUS.LAB_SUPPORTED;
+        lab_status = PROJECT_STATUS.ACTIVELY_MAINTAINED;
       }
     }
-    const status = c4dt_status || lab_status || PROJECT_STATUS.NOT_SUPPORTED;
+    const status = c4dt_status || lab_status || PROJECT_STATUS.INACTIVE;
     return { ...project, id: projectId, lab, descriptionDisplay, status, c4dt_status, lab_status };
   });
 }
@@ -131,7 +126,7 @@ export async function loadProjects(skipValidation: boolean = false): Promise<Ext
       projectLabsDirectories.map((labProjectsDir) => loadLabProjects(labProjectsDir, labs, skipValidation))
     )
   ).flat();
-  const statusOrderArray = [PROJECT_STATUS.C4DT_SUPPORTED, PROJECT_STATUS.LAB_SUPPORTED, PROJECT_STATUS.NOT_SUPPORTED];
+  const statusOrderArray = [PROJECT_STATUS.C4DT_SUPPORTED, PROJECT_STATUS.ACTIVELY_MAINTAINED, PROJECT_STATUS.INACTIVE];
 
   return projects.sort((a, b) => {
     return statusOrderArray.indexOf(a.status) - statusOrderArray.indexOf(b.status);

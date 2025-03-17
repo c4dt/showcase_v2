@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faTags, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import ProjectDescription from "@/components/ProjectDescription";
-import ProjectStatus from "@/components/ProjectStatus";
 const { data: projects } = await useFetch("/api/projects");
 const project = projects.value.find((project) => project.id == useRoute().params.id);
 const lab = project.lab;
