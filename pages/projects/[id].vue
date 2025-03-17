@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faTags, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-const { data: projects } = await useFetch("/api/projects");
-const project = projects.value.find((project) => project.id == useRoute().params.id);
+const project = await $fetch<ExtendedProject>(`/api/projects/${useRoute().params.id}`);
 const lab = project.lab;
 const articles = project.information
   ? project.information.filter((information) => information.type.toLowerCase() === "article")
