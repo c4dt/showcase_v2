@@ -29,6 +29,12 @@ enum PROJECT_STATUS {
   INACTIVE = "Inactive"
 }
 
+export interface ProjectTab {
+  id: string;
+  label: string;
+  content: string;
+}
+
 export interface ExtendedProject extends Project {
   id: string;
   lab: Lab;
@@ -55,7 +61,11 @@ function validateData(basename: string, content: object) {
   }
 }
 
-export async function loadConfiguration(): Promise<object> {
+export interface Configuration {
+  highlightedProjects: string[];
+}
+
+export async function loadConfiguration(): Promise<Configuration> {
   const filePath = path.join(DATA_DIR, CONFIG_FILE);
   return yaml.parse(await fsPromises.readFile(filePath, "utf-8"));
 }
@@ -67,6 +77,36 @@ export async function loadLabs(skipValidation: boolean = false): Promise<Labs> {
     validateData(LABS_FILE, content);
   }
   return content;
+}
+
+export async function loadTemplate(projectId: string, templateType: string): Promise<string | null> {
+  const templateFilePath = (
+    await fsPromises.readdir(path.join(DATA_DIR, PRODUCTS_DIR, templateType), { withFileTypes: true })
+  ).find((file) => file.name == `${projectId}.vue`);
+  if (!templateFilePath) {
+    return null;
+  }
+  const template = await fsPromises.readFile(path.join(templateFilePath.parentPath, templateFilePath.name), "utf-8");
+  // Remove <template> tags from the template temporarily
+  // until the Tabs.vue component is adjusted later
+  return template.replace(/<template>/, "").replace(/<\/template>/, "");
+}
+
+export async function loadProjectTabs(projectId: string): Promise<ProjectTab[]> {
+  const templateNames = ["presentation", "app", "demo", "details", "hands-on", "pilot"];
+
+  const templates = [];
+  for (const templateName of templateNames) {
+    const template = await loadTemplate(projectId, templateName);
+    if (template) {
+      templates.push({
+        id: templateName,
+        label: getLabel(templateName),
+        content: template
+      });
+    }
+  }
+  return templates;
 }
 
 async function loadLabProjects(
@@ -131,18 +171,4 @@ export async function loadProjects(skipValidation: boolean = false): Promise<Ext
   return projects.sort((a, b) => {
     return statusOrderArray.indexOf(a.status) - statusOrderArray.indexOf(b.status);
   });
-}
-
-export async function loadTemplate(projectId: string, templateType: string): Promise<string | null> {
-  const templateFilePath = (
-    await fsPromises.readdir(path.join(DATA_DIR, PRODUCTS_DIR, templateType), { withFileTypes: true })
-  ).find((file) => file.name == `${projectId}.vue`);
-  if (!templateFilePath) {
-    console.warn(`Template file not found for project ${projectId} in ${templateType}`);
-    return null;
-  }
-  const template = await fsPromises.readFile(path.join(templateFilePath.parentPath, templateFilePath.name), "utf-8");
-  // Remove <template> tags from the template temporarily
-  // until the Tabs.vue component is adjusted later
-  return template.replace(/<template>/, "").replace(/<\/template>/, "");
 }
