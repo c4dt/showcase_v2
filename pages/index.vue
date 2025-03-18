@@ -40,21 +40,18 @@ function resetFilters() {
   selectedTags.value = [];
 }
 
-const projects = await $fetch<ExtendedProject[]>("/api/projects");
-const projectConfig = await $fetch<{ highlightedProjects: string[] }>("/api/configuration");
+const projects = useState<ExtendedProject[]>("projects");
 
 let labs: string[] = Array.from(
-  new Set(projects.map((project) => `${project.lab.prof.name.join(" ")} - ${project.lab.name}`))
+  new Set(projects.value.map((project) => `${project.lab.prof.name.join(" ")} - ${project.lab.name}`))
 );
-let categories: string[] = Array.from(new Set(projects.flatMap((project) => project.categories)));
-let applications: string[] = Array.from(new Set(projects.flatMap((project) => project.applications)));
-const highlightedProjects: ExtendedProject[] = projects.filter((project) =>
-  projectConfig.highlightedProjects.includes(project.name)
-);
-const projectTags: string[] = Array.from(new Set(projects.flatMap((project) => project.tags)));
+let categories: string[] = Array.from(new Set(projects.value.flatMap((project) => project.categories)));
+let applications: string[] = Array.from(new Set(projects.value.flatMap((project) => project.applications)));
+
+const projectTags: string[] = Array.from(new Set(projects.value.flatMap((project) => project.tags)));
 
 const filteredProjects = computed(() => {
-  return projects.filter((project) => {
+  return projects.value.filter((project) => {
     return (
       (selectedStatus.value === "" || project.status === selectedStatus.value) &&
       (selectedTag.value === "" || project.categories.includes(selectedTag.value)) &&
@@ -111,7 +108,7 @@ watch(filteredProjects, () => {
     </section>
     <!-- Highlighted projects section -->
     <section v-if="!searchQuery" class="py-6">
-      <HomepageSelectedProjects :highlighted-projects="highlightedProjects" />
+      <HomepageSelectedProjects />
     </section>
     <!-- Project search section -->
     <section class="px-4 md:px-12 py-4">

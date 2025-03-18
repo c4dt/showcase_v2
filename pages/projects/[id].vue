@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faTags, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-const project = await $fetch<ExtendedProject>(`/api/projects/${useRoute().params.id}`);
-const lab = project.lab;
-const articles = project.information
-  ? project.information.filter((information) => information.type.toLowerCase() === "article")
+const project = useState<ExtendedProject>(`project-${useRoute().params.id}`);
+const lab = project.value.lab;
+const articles = project.value.information
+  ? project.value.information.filter((information) => information.type.toLowerCase() === "article")
   : [];
-const papers = project.information
-  ? project.information.filter((information) => information.type.toLowerCase() === "paper")
+const papers = project.value.information
+  ? project.value.information.filter((information) => information.type.toLowerCase() === "paper")
   : [];
 const aClass = "underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]";
 const papersContent = papers.length
@@ -17,37 +17,37 @@ const articlesContent = articles.length
   ? `<ul class='ul'>${articles.map((article) => `<li><a class='${aClass}' href=${article.url}>${article.title}</a></li>`).join("")}</ul>`
   : "";
 const codeInfos = (
-  project.code
+  project.value.code
     ? [
-        project.code.type ? `Source code: <a class="${aClass} "href=${project.code.url}>${project.code.type}</a>` : "",
-        project.code.date_last_commit ? `Last commit: ${project.code.date_last_commit}` : ""
+        project.value.code.type
+          ? `Source code: <a class="${aClass} "href=${project.value.code.url}>${project.value.code.type}</a>`
+          : "",
+        project.value.code.date_last_commit ? `Last commit: ${project.value.code.date_last_commit}` : ""
       ]
     : []
 ).join("<br />");
-const pprintMaturity = project.maturity
+const pprintMaturity = project.value.maturity
   ? "Code quality: " +
     new Map([
       [0, "Maturity evaluation possible upon request"],
       [1, "Prototype"],
       [2, "Intermediate"],
       [3, "Mature"]
-    ]).get(project.maturity)
+    ]).get(project.value.maturity)
   : "";
 const technicalInfos = [
-  `Project type: ${project.type}`,
+  `Project type: ${project.value.type}`,
   codeInfos,
-  project.license ? `License: ${project.license}` : "",
-  project.language ? `Language(s): ${project.language}` : "",
+  project.value.license ? `License: ${project.value.license}` : "",
+  project.value.language ? `Language(s): ${project.value.language}` : "",
   pprintMaturity
 ].join("<br />");
 const technicalContent = `<p>${technicalInfos}</p>`;
 
-let tabs = await $fetch<{ id: string; label: string; content: string }[]>(
-  `/api/projects/${useRoute().params.id}/templates`
-);
+const tabs = useState<ProjectTab[]>(`project-${useRoute().params.id}-tabs`);
 
-tabs = [
-  ...tabs,
+tabs.value = [
+  ...tabs.value,
   { id: "papers", label: "Research papers", content: papersContent },
   { id: "articles", label: "Miscellaneous publications", content: articlesContent },
   { id: "technical", label: "Technical", content: technicalContent }
