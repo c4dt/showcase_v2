@@ -116,6 +116,6 @@ export interface Project {
     }[];
     [k: string]: unknown;
   };
-  date_updated?: string | [];
+  date_updated?: string;
   [k: string]: unknown;
 }
