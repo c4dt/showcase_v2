@@ -26,9 +26,12 @@ const carouselConfig = {
   }
 };
 
-defineProps<{
-  highlightedProjects: ExtendedProject[];
-}>();
+const configuration = useState<Configuration>("configuration");
+const projects = useState<ExtendedProject[]>("projects");
+
+const highlightedProjects: ExtendedProject[] = projects.value.filter((project) =>
+  configuration.value.highlightedProjects.includes(project.name)
+);
 </script>
 
 <template>
