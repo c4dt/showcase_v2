@@ -238,15 +238,7 @@
       "required": ["work"]
     },
     "date_updated": {
-      "anyOf": [
-        {
-          "type": "string"
-        },
-        {
-          "type": "array",
-          "maxItems": 0
-        }
-      ]
+      "type": "string"
     }
   },
   "required": ["name", "description", "type", "categories", "applications", "tags", "date_added"]
