@@ -53,7 +53,7 @@ tabs.value = [
   { id: "technical", label: "Technical", content: technicalContent }
 ].filter((tab) => tab.content);
 const defaultTab = tabs.length ? tabs[0].id : null;
-const lastEdited = new Date(Date.parse(project.date_updated ? project.date_updated : project.date_added));
+const lastEdited = new Date(Date.parse(project.value.date_updated || project.value.date_added));
 </script>
 <template>
   <div class="flex m-16">
