@@ -52,7 +52,7 @@ tabs.value = [
   { id: "articles", label: "Miscellaneous publications", content: articlesContent },
   { id: "technical", label: "Technical", content: technicalContent }
 ].filter((tab) => tab.content);
-const defaultTab = tabs.length ? tabs[0].id : null;
+
 const lastEdited = new Date(Date.parse(project.value.date_updated || project.value.date_added));
 </script>
 <template>
@@ -76,7 +76,7 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
           </span>
         </div>
       </div>
-      <div><ProjectsTabs v-if="tabs.length" :tabs="tabs" :default-tab="defaultTab" /></div>
+      <ProjectsTabs v-if="tabs.length" :tabs="tabs" />
     </div>
     <div class="flex-[3]">
       <div class="px-8 bg-[#e6e6e6] text-center">

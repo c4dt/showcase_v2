@@ -1,24 +1,22 @@
 <template>
-  <div class="py-4 flex">
-    <div class="flex-[2] px-4 text-left">
-      <ul class="ul">
-        <li v-for="tab in tabs">
-          <div
-            :class="{
-              'bg-[#e6e6e6] px-4 py-2 text-[#212121] border-r-[#ff0000] border-r-solid border-r-2':
-                activeTab === tab.id,
-              'bg-[#ffffff] px-4 py-2 text-[#212121] border-r-[#e6e6e6] border-r-solid border-r-1': activeTab !== tab.id
-            }"
-          >
-            <button @click="useRouter().replace({ hash: `#${tab.id}` })">
-              {{ tab.label }}
-            </button>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="flex-[8] text-left py-2 bg-[#ffffff]">
-      <div v-html="tabs.find((tab) => tab.id === activeTab).content" />
+  <div class="flex py-4">
+    <ul class="flex-[2] px-4 text-left list-none">
+      <li
+        v-for="tab in tabs"
+        :key="tab.id"
+        :class="[
+          'w-full text-left px-4 py-2 border-r text-gray-800',
+          activeTab === tab.id ? 'bg-gray-200  border-red-500 border-r-2' : 'bg-white border-gray-200'
+        ]"
+        @click="changeTab(tab.id)"
+      >
+        {{ tab.label }}
+      </li>
+    </ul>
+    <div class="flex-[10] px-4">
+      <div v-for="tab in tabs" :id="tab.id" :key="tab.id" class="flex py-2 text-left bg-white">
+        <div v-if="tab.id == activeTab" v-html="tab.content" />
+      </div>
     </div>
   </div>
 </template>
@@ -30,27 +28,28 @@ const props = defineProps<{
     label: string;
     content: string;
   }[];
-  defaultTab: string;
 }>();
-const tabIds = props.tabs.map((tab) => {
-  return tab.id;
-});
 const route = useRoute();
-const currTab = route.hash.slice(1);
-const activeTab = ref(tabIds.includes(currTab) ? currTab : props.defaultTab);
-watch(
-  () => route.hash,
-  (hash) => {
-    const tabId = hash.slice(1);
-    if (tabIds.includes(tabId)) {
-      activeTab.value = tabId;
-    }
-  }
-);
-</script>
+const router = useRouter();
 
-<style scoped>
-.ul {
-  list-style: none;
+const activeTab = ref();
+
+const changeTab = (tabId: string) => {
+  router.push({ query: { section: tabId } });
+  activeTab.value = tabId;
+};
+
+function setDefaultTab() {
+  // sets the active to a default that is dervied from
+  // either the url hash or the first tab in the list
+  const tabFromQuery = route.query?.section as string;
+  if (props.tabs.some((tab) => tab.id === tabFromQuery)) {
+    changeTab(tabFromQuery);
+  } else {
+    changeTab(props.tabs[0].id); // first tab in the list
+  }
 }
-</style>
+if (!activeTab.value) {
+  setDefaultTab();
+}
+</script>
