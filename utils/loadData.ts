@@ -10,6 +10,7 @@ import labsSchema from "./schemas/labs.json";
 import projectsSchema from "./schemas/projects.json";
 import type { Project, Projects } from "~/types/projects";
 import type { Lab, Labs } from "~/types/labs";
+import { PROJECT_STATUS } from "./vars";
 
 const DATA_DIR = "./data";
 const PROJECTS_FILE = "projects.yaml";
@@ -22,12 +23,6 @@ ajv.addSchema(labSchema, "utils/schemas/lab.json");
 ajv.addSchema(projectSchema, "utils/schemas/project.json");
 const LABS_SCHEMA: ValidateFunction = ajv.compile(labsSchema);
 const PROJECTS_SCHEMA: ValidateFunction = ajv.compile(projectsSchema);
-
-enum PROJECT_STATUS {
-  C4DT_SUPPORTED = "Supported by C4DT",
-  ACTIVELY_MAINTAINED = "Maintained by lab",
-  INACTIVE = "Inactive"
-}
 
 export interface ProjectTab {
   id: string;
