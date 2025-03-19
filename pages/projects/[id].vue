@@ -44,10 +44,10 @@ const technicalInfos = [
 ].join("<br />");
 const technicalContent = `<p>${technicalInfos}</p>`;
 
-const tabs = useState<ProjectTab[]>(`project-${useRoute().params.id}-tabs`);
+let tabs: ProjectTab[] = [];
 
-tabs.value = [
-  ...tabs.value,
+tabs = [
+  ...useState<ProjectTab[]>(`project-${useRoute().params.id}-tabs`).value,
   { id: "papers", label: "Research papers", content: papersContent },
   { id: "articles", label: "Miscellaneous publications", content: articlesContent },
   { id: "technical", label: "Technical", content: technicalContent }
