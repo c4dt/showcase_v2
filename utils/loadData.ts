@@ -123,8 +123,11 @@ async function loadLabProjects(
     project.logo = project.logo || lab.logo || "https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg";
     let c4dt_status: PROJECT_STATUS | undefined = undefined;
     let lab_status: PROJECT_STATUS | undefined = undefined;
-    if (project.incubator) {
-      c4dt_status = PROJECT_STATUS.C4DT_SUPPORTED;
+    if (project.incubator?.type === "incubated" || project.incubator?.type === "incubated_market") {
+      c4dt_status = PROJECT_STATUS.C4DT_SUPPORT_ACTIVE;
+    }
+    if (project.incubator?.type === "retired" || project.incubator?.type === "retired_archived") {
+      c4dt_status = PROJECT_STATUS.C4DT_SUPPORT_RETIRED;
     }
     if (project.code?.date_last_commit) {
       // ToDo: refactor and merge with isActive function in utils/misc.ts
@@ -133,7 +136,7 @@ async function loadLabProjects(
       const six_months_ago = new Date(last_updated.getTime() - six_months_duration);
 
       if (new Date(project.code.date_last_commit) > six_months_ago) {
-        lab_status = PROJECT_STATUS.ACTIVELY_MAINTAINED;
+        lab_status = PROJECT_STATUS.LAB_MAINTENANCE_ACTIVE;
       }
     }
     const status = c4dt_status || lab_status || PROJECT_STATUS.INACTIVE;
@@ -161,7 +164,12 @@ export async function loadProjects(skipValidation: boolean = false): Promise<Ext
       projectLabsDirectories.map((labProjectsDir) => loadLabProjects(labProjectsDir, labs, skipValidation))
     )
   ).flat();
-  const statusOrderArray = [PROJECT_STATUS.C4DT_SUPPORTED, PROJECT_STATUS.ACTIVELY_MAINTAINED, PROJECT_STATUS.INACTIVE];
+  const statusOrderArray = [
+    PROJECT_STATUS.C4DT_SUPPORT_ACTIVE,
+    PROJECT_STATUS.LAB_MAINTENANCE_ACTIVE,
+    PROJECT_STATUS.C4DT_SUPPORT_RETIRED,
+    PROJECT_STATUS.INACTIVE
+  ];
 
   return projects.sort((a, b) => {
     return statusOrderArray.indexOf(a.status) - statusOrderArray.indexOf(b.status);
