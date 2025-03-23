@@ -2,7 +2,7 @@
   <div v-for="tag in statusTags" :key="tag" class="flex pb-2 px-2 justify-end">
     <div class="px-4">
       {{ tag.desc }}
-      <span :class="`px-3 py-1 rounded-full text-sm font-semibold text-white ${tag.colorStyleClasses} shadow-lg`">
+      <span :class="`px-3 py-1 rounded-full text-sm font-semibold text-white ${tag.color} shadow-lg`">
         {{ tag.label }}
       </span>
     </div>
@@ -23,14 +23,14 @@ if (project.c4dt_status) {
   statusTags.value.push({
     desc: "C4DT support status:",
     label: project.c4dt_status,
-    colorStyleClasses: statusColor[project.c4dt_status]
+    color: statusColor[project.c4dt_status]
   });
 }
 if (project.lab_status) {
   statusTags.value.push({
     desc: "Lab maintenance status:",
     label: project.lab_status,
-    colorStyleClasses: statusColor[project.lab_status]
+    color: statusColor[project.lab_status]
   });
 }
 </script>
