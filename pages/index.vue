@@ -179,6 +179,24 @@ watch(filteredProjects, () => {
                 />
               </svg>
             </div>
+            <!-- Clear Button -->
+            <button
+              v-if="searchQuery"
+              class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-gray-500 hover:text-gray-700 transition"
+              aria-label="Clear search"
+              @click="searchQuery = ''"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
           </div>
           <div v-for="project in filteredProjects" :key="project.name" class="py-2">
             <homepageProjectCard :project="project" />
