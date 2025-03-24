@@ -119,7 +119,9 @@ watch(filteredProjects, () => {
           <div class="md:sticky top-0">
             <div class="bg-white p-4 border rounded-lg shadow-md mb-4">
               <div class="font-bold">Filter by</div>
+              <homepageCombobox ref="TagFilter" v-model="selectedTag" title="Tag" :item-list="projectTags" />
               <homepageCombobox ref="labsFilter" v-model="selectedLab" title="Lab" :item-list="labs" />
+              <homepageCombobox ref="statusFilter" v-model="selectedStatus" title="Status" :item-list="statusList" />
               <homepageCombobox
                 ref="categoriesFilter"
                 v-model="selectedCategory"
@@ -132,8 +134,6 @@ watch(filteredProjects, () => {
                 title="Application"
                 :item-list="applications"
               />
-              <homepageCombobox ref="statusFilter" v-model="selectedStatus" title="Status" :item-list="statusList" />
-              <homepageCombobox ref="TagFilter" v-model="selectedTag" title="Tag" :item-list="projectTags" />
               <div class="flex flex-wrap space-x-2 space-y-2">
                 <div
                   v-for="tag in selectedTags"
