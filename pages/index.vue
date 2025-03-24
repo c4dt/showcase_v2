@@ -54,7 +54,7 @@ const filteredProjects = computed(() => {
   return projects.value.filter((project) => {
     return (
       (selectedStatus.value === "" || project.status === selectedStatus.value) &&
-      (selectedTag.value === "" || project.categories.includes(selectedTag.value)) &&
+      (selectedTag.value === "" || project.tags.includes(selectedTag.value)) &&
       (selectedLab.value === "" || project.lab.name === selectedLab.value.split(" - ")[1]) &&
       (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
       (selectedApplication.value === "" || project.applications.includes(selectedApplication.value)) &&
