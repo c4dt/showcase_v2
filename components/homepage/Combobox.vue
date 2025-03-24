@@ -87,7 +87,8 @@ function toggleDropdown() {
       <li
         v-for="name in filteredList"
         :key="name"
-        class="px-4 py-2 cursor-pointer hover:bg-gray-100"
+        class="px-4 py-2 cursor-pointer hover:bg-gray-100 truncate"
+        :title="name"
         @mousedown.prevent="selectItem(name)"
       >
         {{ name }}
