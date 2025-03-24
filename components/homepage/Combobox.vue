@@ -10,7 +10,7 @@ const isOpen = ref<boolean>(false);
 
 const filteredList = computed(() => {
   const query = searchQuery.value.toLowerCase();
-  return props.itemList.filter((name) => name.toLowerCase().includes(query));
+  return props.itemList.filter((name) => name.toLowerCase().includes(query)).sort();
 });
 
 function selectItem(name: string) {
