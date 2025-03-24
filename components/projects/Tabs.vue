@@ -5,7 +5,7 @@
         v-for="tab in tabs"
         :key="tab.id"
         :class="[
-          'w-full text-left px-4 py-2 border-r text-gray-800',
+          'cursor-pointer w-full text-left px-4 py-2 border-r text-gray-800',
           activeTab === tab.id ? 'bg-gray-200  border-red-500 border-r-2' : 'bg-white border-gray-200'
         ]"
         @click="changeTab(tab.id)"
