@@ -88,19 +88,19 @@ watch(filteredProjects, () => {
           </p>
           <p>-curated by C4DT's factory team-</p>
           <h3>
-            For more information about the C4DT factory,
+            For more information about the C4DT factory, see
             <a
               class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]"
               href="https://c4dt.epfl.ch/domains/factory/"
-              >see this link</a
+              >our homepage</a
             >
           </h3>
           <h3>
-            We also publish articles on our blog at
+            You can find more information on
             <a
               class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]"
               href="https://c4dt.epfl.ch/article/?cat=10"
-              >this link</a
+              >our blog</a
             >
           </h3>
         </div>
