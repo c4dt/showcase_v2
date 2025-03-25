@@ -166,8 +166,8 @@ export async function loadProjects(skipValidation: boolean = false): Promise<Ext
   ).flat();
   const statusOrderArray = [
     PROJECT_STATUS.C4DT_SUPPORT_ACTIVE,
-    PROJECT_STATUS.LAB_MAINTENANCE_ACTIVE,
     PROJECT_STATUS.C4DT_SUPPORT_RETIRED,
+    PROJECT_STATUS.LAB_MAINTENANCE_ACTIVE,
     PROJECT_STATUS.INACTIVE
   ];
 
