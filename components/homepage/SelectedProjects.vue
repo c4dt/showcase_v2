@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import "vue3-carousel/carousel.css";
-import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
+import { Carousel, Slide, Navigation } from "vue3-carousel";
 
 const carouselConfig = {
   itemsToShow: 1,
@@ -45,7 +45,6 @@ const highlightedProjects: ExtendedProject[] = projects.value.filter((project) =
 
     <template #addons>
       <Navigation />
-      <Pagination />
     </template>
   </Carousel>
 </template>
