@@ -43,10 +43,21 @@ const technicalInfos = [
   pprintMaturity
 ].join("<br />");
 const technicalContent = `<p>${technicalInfos}</p>`;
+const incubatorInfos = project.value.incubator
+  ? [
+      `Status: ${project.value.incubator.type.startsWith("incubated") ? PROJECT_STATUS.C4DT_SUPPORT_ACTIVE : PROJECT_STATUS.C4DT_SUPPORT_RETIRED}`,
+      `Timeline: ${project.value.incubator.work}`
+    ].join("<br />") + "<br />"
+  : "";
+const productInfos = project.value.incubator?.products
+  ? `<ul class='ul'>${project.value.incubator.products.map((product) => `<li><a class='${aClass}' href=${product.url}>${product.title}</a></li>`).join("")}</ul>`
+  : "";
+const incubatorContent = incubatorInfos || productInfos ? `<p>${incubatorInfos}${productInfos}</p>` : "";
 
 let tabs: ProjectTab[] = [];
 
 tabs = [
+  { id: "incubator", label: "C4DT work", content: incubatorContent },
   ...useState<ProjectTab[]>(`project-${useRoute().params.id}-tabs`).value,
   { id: "papers", label: "Research papers", content: papersContent },
   { id: "articles", label: "Miscellaneous publications", content: articlesContent },
