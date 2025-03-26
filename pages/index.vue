@@ -22,7 +22,11 @@ function removeTag(tag: string) {
   selectedTags.value = selectedTags.value.filter((t) => t !== tag);
 }
 
-const statusList: string[] = ["C4DT Active", "C4DT Was Here", "Lab Active", "Lab Inactive"];
+const pprintStatus = {
+  [`C4DT support status: ${PROJECT_STATUS.C4DT_SUPPORT_ACTIVE}`]: PROJECT_STATUS.C4DT_SUPPORT_ACTIVE,
+  [`C4DT support status: ${PROJECT_STATUS.C4DT_SUPPORT_RETIRED}`]: PROJECT_STATUS.C4DT_SUPPORT_RETIRED,
+  [`Lab maintenance status: ${PROJECT_STATUS.LAB_MAINTENANCE_ACTIVE}`]: PROJECT_STATUS.LAB_MAINTENANCE_ACTIVE
+};
 
 const labsFilter = ref<InstanceType<typeof Combobox>>();
 const categoriesFilter = ref<InstanceType<typeof Combobox>>();
@@ -53,7 +57,7 @@ const projectTags: string[] = Array.from(new Set(projects.value.flatMap((project
 const filteredProjects = computed(() => {
   return projects.value.filter((project) => {
     return (
-      (selectedStatus.value === "" || project.status === selectedStatus.value) &&
+      (selectedStatus.value === "" || project.status === pprintStatus[selectedStatus.value]) &&
       (selectedTag.value === "" || project.tags.includes(selectedTag.value)) &&
       (selectedLab.value === "" || project.lab.name === selectedLab.value.split(" - ")[1]) &&
       (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
@@ -121,7 +125,12 @@ watch(filteredProjects, () => {
               <div class="font-bold">Filter by</div>
               <homepageCombobox ref="TagFilter" v-model="selectedTag" title="Tag" :item-list="projectTags" />
               <homepageCombobox ref="labsFilter" v-model="selectedLab" title="Lab" :item-list="labs" />
-              <homepageCombobox ref="statusFilter" v-model="selectedStatus" title="Status" :item-list="statusList" />
+              <homepageCombobox
+                ref="statusFilter"
+                v-model="selectedStatus"
+                title="Status"
+                :item-list="Object.keys(pprintStatus)"
+              />
               <homepageCombobox
                 ref="categoriesFilter"
                 v-model="selectedCategory"
