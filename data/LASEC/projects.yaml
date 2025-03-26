@@ -31,7 +31,6 @@ projects:
             url: https://www.iwsec.org/scis/2020/index_en.html
     date_added: 2021-11-05
     date_updated: 2024-04-16
-
   ophcrack:
     name: ophcrack
     categories:

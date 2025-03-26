@@ -36,7 +36,6 @@ projects:
     type: Library
     date_added: 2019-03-18
     date_updated: 2022-07-05
-
   who-is-that:
     name: Who is that?
     categories:
@@ -57,7 +56,6 @@ projects:
     type: Library
     date_added: 2019-09-09
     date_updated: 2022-07-05
-
   kickscore:
     name: kickscore
     categories:
@@ -107,7 +105,6 @@ projects:
     type: Library
     date_added: 2020-05-01
     date_updated: 2022-07-05
-
   predikon:
     name: Predikon
     categories:
@@ -133,7 +130,6 @@ projects:
     type: Library
     date_added: 2020-05-01
     date_updated: 2022-07-05
-
   climpact:
     name: Climpact
     categories:

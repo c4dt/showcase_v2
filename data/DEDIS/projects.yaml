@@ -31,7 +31,6 @@ projects:
     license: AGPL-3.0
     date_added: 2021-04-13
     date_updated: 2024-03-20
-
   dela:
     name: DEDIS Ledger Architecture
     logo: https://dedis.github.io/dela/assets/infograph.png
@@ -66,7 +65,6 @@ projects:
     license: BSD-3-Clause
     date_added: 2021-04-13
     date_updated: 2024-03-20
-
   odyssey:
     name: Odyssey
     logo: https://dedis.github.io/odyssey/assets/odyssey-components.png
@@ -95,7 +93,6 @@ projects:
     license: GPL-3.0
     date_added: 2020-04-28
     date_updated: 2024-03-20
-
   calypso:
     name: Calypso
     categories:
@@ -120,10 +117,10 @@ projects:
         The C4DT created a demonstrator for Calypso, as well as a hands-on workshop.
       products:
         - type: Demo
-          title: "Calypso filesharing"
+          title: Calypso filesharing
           url: https://github.com/dedis/filesharing
         - type: Pilot
-          title: "Odyssey"
+          title: Odyssey
           url: https://github.com/dedis/odyssey
     lines_of_code: 6500 / 1500
     contacts:
@@ -150,7 +147,6 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-03-20
     maturity: 2
-
   kyber:
     name: Kyber
     categories:
@@ -158,7 +154,7 @@ projects:
     applications:
       - Infra
     description: Cryptographic library
-    layman_desc: >
+    layman_desc: |
       A low level cryptographic library to create new cryptographic primitives. Not to be used for everyday cryptography.
     code:
       type: Lab GitHub
@@ -178,7 +174,6 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-03-20
     maturity: 3
-
   omniledger:
     name: OmniLedger
     categories:
@@ -209,7 +204,7 @@ projects:
       email: linus.gasser@epfl.ch
     information:
       - type: Paper
-        title: "Enhancing Bitcoin Security and Performance with Strong Consistency via Collective Signing"
+        title: Enhancing Bitcoin Security and Performance with Strong Consistency via Collective Signing
         url: https://www.usenix.org/system/files/conference/usenixsecurity16/sec16_paper_kokoris-kogias.pdf
         notes:
           - label: Published at
@@ -244,7 +239,6 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-03-20
     maturity: 2
-
   onet:
     name: Onet
     categories:
@@ -273,7 +267,6 @@ projects:
     license: LGPL-3.0
     date_added: 2019-03-18
     date_updated: 2024-03-20
-
   e-voting:
     name: E-voting
     categories:
@@ -307,7 +300,6 @@ projects:
     license: AGPL-3.0
     date_added: 2019-03-18
     date_updated: 2024-03-20
-
   drand:
     name: DRand
     logo: https://github.com/drand/drand/blob/master/logo.png?raw=true
@@ -344,7 +336,6 @@ projects:
         url: https://actu.epfl.ch/news/epfl-helps-launch-globally-distributed-randomness-/
     date_added: 2019-03-18
     date_updated: 2024-03-20
-
   purbs:
     name: PURBs
     categories:
@@ -352,7 +343,7 @@ projects:
     applications:
       - Info
     description: Metadata leakage prevention for encrypted communication and storage
-    layman_desc: >
+    layman_desc: |
       A library for a novel encoding approach preventing metadata leakage for encrypted communication and data at rest.
     code:
       type: Lab GitHub
@@ -375,7 +366,6 @@ projects:
     license: BSD-3-Clause
     date_added: 2019-03-18
     date_updated: 2024-03-20
-
   threshold-logical-clocks:
     name: Threshold Logical Clocks
     categories:
@@ -411,7 +401,6 @@ projects:
     type: Application
     date_added: 2019-07-26
     date_updated: 2024-03-20
-
   twins:
     name: Twins
     categories:
@@ -419,9 +408,9 @@ projects:
       - Blockchain
     applications:
       - Health
-    description: >
+    description: |
       Linking patients to their physical and digital TWINs
-    layman_desc: >
+    layman_desc: |
       Using organoids for research while protecting patients’ identity
     contacts:
       - name: Pierluca Borsò
@@ -433,14 +422,13 @@ projects:
     type: Application
     date_added: 2021-02-05
     date_updated: 2024-03-20
-
   simnet:
     name: SimNet
     categories:
       - Security
     applications:
       - Infra
-    description: >
+    description: |
       SimNet is a tool to simulate decentralized applications in the cloud
     tech_desc: >
       SimNet provides multiple configurations to affect the topology so that specific link between two nodes can have a delay or a loss of
@@ -459,7 +447,6 @@ projects:
     license: GPL-3.0
     date_added: 2021-02-24
     date_updated: 2024-03-20
-
   hbt:
     name: HBT
     categories:
@@ -483,7 +470,6 @@ projects:
     license: other
     date_added: 2022-07-04
     date_updated: 2024-03-20
-
   determ-checker:
     name: determ-checker
     categories:
@@ -505,7 +491,6 @@ projects:
     license: other
     date_added: 2022-07-04
     date_updated: 2024-03-20
-
   matchertext:
     name: matchertext
     categories:
@@ -536,20 +521,18 @@ projects:
     license: other
     date_added: 2022-03-16
     date_updated: 2024-03-20
-
   apir:
     name: APIR
     categories:
       - Privacy
     applications:
       - Info
-    description: >
+    description: |
       Authenticated Private Information Retrieval
     layman_desc: >
-      This work introduces protocols for authenticated private information retrieval, 
-      which enable a client to fetch a record from a database server such that (a) the server does 
-      not learn which record the client reads, and (b) the client either obtains the "authentic" 
-      record or detects server misbehavior and safely aborts.
+      This work introduces protocols for authenticated private information retrieval,  which enable a client to fetch a record from a
+      database server such that (a) the server does  not learn which record the client reads, and (b) the client either obtains the
+      "authentic"  record or detects server misbehavior and safely aborts.
     contacts:
       - name: Simone Colombo
         email: simone.colombo@epfl.ch
@@ -563,11 +546,11 @@ projects:
       date_last_commit: 2023-09-05
     information:
       - type: Paper
-        title: "Authenticated private information retrieval"
+        title: Authenticated private information retrieval
         url: https://eprint.iacr.org/2023/297
         notes:
           - label: Published at
-            text: "USENIX Security Symposium 2023"
+            text: USENIX Security Symposium 2023
             url: https://www.usenix.org/conference/usenixsecurity23/presentation/colombo
       - type: Demo
         title: "Keyd: A privacy-preserving key-value store"
@@ -577,21 +560,19 @@ projects:
     maturity: 2
     date_added: 2023-07-05
     date_updated: 2024-03-20
-
   dvoting:
     name: d-voting
-    description: >
+    description: |
       A decentralized, fully anonymous voting system for EPFL-internal elections.
     categories:
-      - "Blockchain"
+      - Blockchain
     applications:
-      - "Gov"
+      - Gov
     type: Application
     layman_desc: >
-      The d-voting project allows for electronic voting without a central point of trust.
-      It relies instead on the majority of servers to be honest during the voting process.
-      The ballots are encrypted during the voting phase, and then shuffled to anonymise the results.
-      When they are finally decrypted, it is not possible anymore to retrace who voted for what.
+      The d-voting project allows for electronic voting without a central point of trust. It relies instead on the majority of servers to be
+      honest during the voting process. The ballots are encrypted during the voting phase, and then shuffled to anonymise the results. When
+      they are finally decrypted, it is not possible anymore to retrace who voted for what.
     tags:
       - Anonymity
       - Byzantine Resilience

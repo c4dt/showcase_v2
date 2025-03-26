@@ -5,7 +5,7 @@ projects:
       - Learning
     applications:
       - Info
-    description: >
+    description: |
       System support for byzantine machine learning
     type: Library
     tech_desc: >
@@ -48,7 +48,7 @@ projects:
             text: DSN 2021
             url: https://dsn2021.ntu.edu.tw/
       - type: Relevant paper
-        title: "Collaborative Learning in the Jungle"
+        title: Collaborative Learning in the Jungle
         url: https://arxiv.org/abs/2008.00742
         notes:
           - label: Published in
@@ -62,7 +62,7 @@ projects:
             text: Proceedings of PODC 2021
             url: https://dl.acm.org/doi/proceedings/10.1145/3465084
       - type: Relevant paper
-        title: "Distributed Momentum for Byzantine-resilient Stochastic Gradient Descent"
+        title: Distributed Momentum for Byzantine-resilient Stochastic Gradient Descent
         url: https://infoscience.epfl.ch/record/287261
         notes:
           - label: Published at
@@ -76,14 +76,14 @@ projects:
             text: OPODIS 2020
             url: https://opodis2020.unistra.fr/
       - type: Relevant paper
-        title: "Genuinely Distributed Byzantine Machine Learning"
+        title: Genuinely Distributed Byzantine Machine Learning
         url: https://arxiv.org/abs/1905.03853
         notes:
           - label: Published in
             text: Proceedings of PODC 2020
             url: https://dl.acm.org/doi/proceedings/10.1145/3382734
       - type: Relevant paper
-        title: "Fast and Robust Distributed Learning in High Dimension"
+        title: Fast and Robust Distributed Learning in High Dimension
         url: https://infoscience.epfl.ch/record/282832
         notes:
           - label: Published at
@@ -97,28 +97,28 @@ projects:
             text: SysML 2019
             url: https://mlsys.org/Conferences/2019
       - type: Relevant paper
-        title: "Asynchronous Byzantine Machine Learning (the case of SGD)"
+        title: Asynchronous Byzantine Machine Learning (the case of SGD)
         url: https://infoscience.epfl.ch/record/269788
         notes:
           - label: Published at
             text: ICML 2018
             url: https://icml.cc/Conferences/2018
       - type: Relevant paper
-        title: "The Hidden Vulnerability of Distributed Learning in Byzantium"
+        title: The Hidden Vulnerability of Distributed Learning in Byzantium
         url: https://infoscience.epfl.ch/record/256124
         notes:
           - label: Published at
             text: ICML 2018
             url: https://icml.cc/Conferences/2018
       - type: Relevant paper
-        title: "On The Robustness of a Neural Network"
+        title: On The Robustness of a Neural Network
         url: https://infoscience.epfl.ch/record/230013
         notes:
           - label: Published at
             text: SRDS 2017
             url: http://srds2017.comp.polyu.edu.hk/
       - type: Relevant paper
-        title: "Machine Learning with Adversaries:Byzantine Tolerant Gradient Descent"
+        title: Machine Learning with Adversaries:Byzantine Tolerant Gradient Descent
         url: https://proceedings.neurips.cc/paper/2017/file/f4b9ec30ad9f68f89b29639786cb62ef-Paper.pdf
         notes:
           - label: Published in
@@ -126,7 +126,6 @@ projects:
             url: https://proceedings.neurips.cc/paper/2017
     date_added: 2021-01-20
     date_updated: 2024-03-22
-
   at2:
     name: AT2
     categories:
@@ -164,19 +163,19 @@ projects:
     information:
       - type: Website
         url: https://dcl.epfl.ch/site/cryptocurrencies
-        title: "Cryptocurrencies@EPFL"
+        title: Cryptocurrencies@EPFL
       - type: Website
         url: https://dcl.epfl.ch/site/poc-at2_project
-        title: "Low Cost Cryptocurrency"
+        title: Low Cost Cryptocurrency
       - type: Paper
-        title: "Scalable Byzantine Reliable Broadcast"
+        title: Scalable Byzantine Reliable Broadcast
         url: https://infoscience.epfl.ch/record/276218
         notes:
           - label: Published at
             text: DISC 2019
             url: http://www.disc-conference.org/wp/disc2019/
       - type: Paper
-        title: "Online Payments by Merely Broadcasting Messages"
+        title: Online Payments by Merely Broadcasting Messages
         url: https://infoscience.epfl.ch/record/280772
         notes:
           - label: Published at
@@ -186,21 +185,20 @@ projects:
         title: "AT2: Asynchronous Trustworthy Transfers"
         url: https://arxiv.org/abs/1812.10844
       - type: Paper
-        title: "The Consensus Number of a Cryptocurrency"
+        title: The Consensus Number of a Cryptocurrency
         url: https://arxiv.org/abs/1906.05574
         notes:
           - label: Published at
             text: PODC 2019
             url: https://dl.acm.org/doi/10.1145/3293611.3331589
       - type: Paper
-        title: "Dynamic Byzantine Reliable Broadcast"
+        title: Dynamic Byzantine Reliable Broadcast
         url: https://arxiv.org/abs/2001.06271
       - type: Video
-        title: "Presentation of Dynamic Byzantine Reliable Broadcast"
+        title: Presentation of Dynamic Byzantine Reliable Broadcast
         url: https://www.youtube.com/watch?v=WIm8XGopqIA
     date_added: 2019-03-18
     date_updated: 2024-03-22
-
   fegan:
     name: FeGAN
     categories:
@@ -233,7 +231,6 @@ projects:
             url: https://2020.middleware-conference.org
     date_added: 2020-11-11
     date_updated: 2024-03-22
-
   mvtil:
     name: MVTIL
     categories:
@@ -265,7 +262,6 @@ projects:
             url: https://www.podc.org/podc2018
     date_added: 2019-09-19
     date_updated: 2024-03-22
-
   libnvram:
     name: libNVRAM
     categories:
@@ -273,7 +269,7 @@ projects:
     applications:
       - Infra
     description: Log-free concurrent data structures
-    layman_desc: >
+    layman_desc: |
       Storing data structures in non-volatile RAM such that transient failures don't corrupt the data.
     url: http://dcl.epfl.ch/site/nvram
     code:
@@ -297,7 +293,6 @@ projects:
             url: https://www.usenix.org/conference/atc18/presentation/david
     date_added: 2019-03-18
     date_updated: 2024-03-22
-
   flodb:
     name: FloDB
     categories:
@@ -305,7 +300,7 @@ projects:
     applications:
       - Infra
     description: Unlocking memory in persistent key-value stores
-    layman_desc: >
+    layman_desc: |
       High performance key-value store for servers with high amount of RAM and lots of CPUs.
     url: http://dcl.epfl.ch/site/flodb
     code:
@@ -328,7 +323,6 @@ projects:
             url: https://eurosys2017.github.io
     date_added: 2019-03-18
     date_updated: 2024-03-22
-
   fleet:
     name: FLeet
     categories:
@@ -360,7 +354,6 @@ projects:
             url: https://2020.middleware-conference.org
     date_added: 2019-07-01
     date_updated: 2024-03-22
-
   mctop:
     name: MCTOP
     categories:
@@ -391,7 +384,6 @@ projects:
             url: https://eurosys2017.github.io
     date_added: 2019-07-26
     date_updated: 2024-03-22
-
   lockin:
     name: LOCKIN
     categories:
@@ -432,7 +424,6 @@ projects:
             url: http://2016.middleware-conference.org
     date_added: 2019-07-01
     date_updated: 2024-03-22
-
   aggregathor:
     name: AggregaThor
     categories:
@@ -464,7 +455,6 @@ projects:
             url: https://mlsys.org/Conferences/2019
     date_added: 2019-03-18
     date_updated: 2024-03-22
-
   ascylib-optik:
     name: ASCYLIB + OPTIK
     categories:
@@ -507,7 +497,6 @@ projects:
         title: Designing ASCY-compliant Concurrent Search Data Structures
     date_added: 2021-02-09
     date_updated: 2024-03-22
-
   carbon:
     name: carbon
     categories:
@@ -534,7 +523,6 @@ projects:
         url: https://arxiv.org/abs/1812.10844
     date_added: 2021-12-01
     date_updated: 2024-03-22
-
   clht:
     name: CLHT
     categories:
@@ -562,7 +550,6 @@ projects:
         url: https://infoscience.epfl.ch/record/203822
     date_added: 2022-07-04
     date_updated: 2024-03-22
-
   nn-fault-tolerance:
     name: Probabilistic Fault Tolerance of Neural Networks in the Continuous Limit
     categories:
@@ -588,7 +575,6 @@ projects:
         url: https://arxiv.org/abs/1902.01686
     date_added: 2022-07-04
     date_updated: 2024-03-22
-
   ukharon:
     name: uKharon
     categories:
@@ -616,7 +602,6 @@ projects:
             url: https://www.usenix.org/conference/atc22
     date_added: 2022-07-04
     date_updated: 2024-03-22
-
   ubft:
     name: uBFT
     categories:

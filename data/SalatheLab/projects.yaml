@@ -30,7 +30,6 @@ projects:
         url: https://www.myfoodrepo.org
     date_added: 2019-03-18
     date_updated: 2024-04-14
-
   foodandyou:
     name: Food & You
     categories:
@@ -39,11 +38,9 @@ projects:
       - Health
     description: Track your individual response to food and help advance science
     layman_desc: >
-      Take part in an exciting citizen science project on personalized nutrition! 
-      Citizen science enables volunteers and professionals to
-      make discoveries together.
-      By participating in this project, you will understand how your blood sugar levels
-      change in response to the food you eat.
+      Take part in an exciting citizen science project on personalized nutrition!  Citizen science enables volunteers and professionals to
+      make discoveries together. By participating in this project, you will understand how your blood sugar levels change in response to the
+      food you eat.
     maturity: 3
     contacts:
       - name: contact
@@ -54,7 +51,6 @@ projects:
     url: https://www.foodandyou.ch
     date_added: 2021-01-21
     date_updated: 2024-04-14
-
   crowdbreaks:
     name: CrowdBreaks
     categories:
@@ -86,7 +82,6 @@ projects:
             url: https://www.frontiersin.org/articles/10.3389/fpubh.2019.00081
     date_added: 2021-01-21
     date_updated: 2024-04-14
-
   aicrowd:
     name: AIcrowd
     categories:
@@ -110,7 +105,6 @@ projects:
     maturity: 3
     date_added: 2021-01-21
     date_updated: 2024-04-14
-
   txcl:
     name: txcl
     categories:

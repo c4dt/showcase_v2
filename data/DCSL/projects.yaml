@@ -35,7 +35,6 @@ projects:
             url: https://www.usenix.org/conference/atc19
     date_added: 2021-11-04
     date_updated: 2024-02-20
-
   raft:
     name: Raft consensus protocol
     categories:
@@ -59,7 +58,6 @@ projects:
       - Protocol
     date_added: 2021-11-05
     date_updated: 2024-02-20
-
   hovercraft:
     name: HovercRaft
     categories:
@@ -95,7 +93,6 @@ projects:
             url: https://www.eurosys2020.org/
     date_added: 2021-11-05
     date_updated: 2024-02-20
-
   crab:
     name: CRAB
     categories:
@@ -104,7 +101,7 @@ projects:
       - Infra
     type: Experiments
     description: L4 load balancer for cloud provider
-    tech_desc: >
+    tech_desc: |
       Connection Redirect LoAd Balancer is a new scheme for L4 load balancing targeting specifically internal cloud workloads.
     code:
       type: Lab GitHub

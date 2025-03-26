@@ -40,7 +40,6 @@ projects:
     date_added: 2019-08-15
     date_updated: 2023-03-21
     maturity: 3
-
   unlynx:
     name: Unlynx
     categories:
@@ -63,7 +62,7 @@ projects:
         url: https://doi.org/10.1515/popets-2017-0047
         notes:
           - label: Published at
-            text: "Privacy Enhancing Technologies Symposium, Minneapolis, MN, USA, July 18–21, 2017"
+            text: Privacy Enhancing Technologies Symposium, Minneapolis, MN, USA, July 18–21, 2017
             url: https://petsymposium.org/2017/program.php
     lines_of_code: 11000
     tags:
@@ -75,7 +74,6 @@ projects:
     license: non-commercial
     date_added: 2019-03-18
     date_updated: 2022-09-28
-
   medco:
     name: MedCo
     categories:
@@ -105,7 +103,6 @@ projects:
     date_added: 2019-03-18
     date_updated: 2023-03-21
     maturity: 2
-
   drynx:
     name: Drynx
     categories:
@@ -124,7 +121,7 @@ projects:
         url: https://arxiv.org/abs/1902.03785
         notes:
           - label: Published in
-            text: "IEEE Transactions On Information Forensics And Security"
+            text: IEEE Transactions On Information Forensics And Security
             url: https://ieeexplore.ieee.org/document/9019831
     tags:
       - Homomorphic Encryption
@@ -143,7 +140,6 @@ projects:
     date_added: 2019-03-18
     date_updated: 2022-09-28
     maturity: 1
-
   spindle:
     name: SPINDLE
     categories:
@@ -151,7 +147,7 @@ projects:
       - Learning
     applications:
       - Info
-    description: >
+    description: |
       Scalable, privacy-preserving, distributed learning on distributed datasets
     tech_desc: >
       SPINDLE allows to train and evaluate generalized linear models on datasets that are stored at different data providers who don't want
@@ -180,7 +176,6 @@ projects:
           url: https://github.com/c4dt/service-spindle
     date_added: 2021-01-21
     date_updated: 2022-09-28
-
   pricell:
     name: PriCell
     categories:
@@ -189,7 +184,7 @@ projects:
     applications:
       - Info
     description: Privacy preserving neural network learning for diseased cell classification
-    tech_desc: >
+    tech_desc: |
       PriCell is a Golang library that ensures CellCnn analysis in privacy-preserving, distributed, N-party setting.
     code:
       type: Lab GitHub
@@ -206,7 +201,6 @@ projects:
     license: non-commercial
     date_added: 2022-07-05
     date_updated: 2022-07-05
-
   crisp:
     name: CRISP
     categories:
