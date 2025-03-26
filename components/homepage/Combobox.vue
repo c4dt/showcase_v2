@@ -47,8 +47,8 @@ function toggleDropdown() {
 </script>
 
 <template>
-  <div class="relative py-2">
-    <div @focusin="onFocusIn" @focusout="onFocusOut">
+  <div class="relative py-2" @focusout="onFocusOut">
+    <div @focusin="onFocusIn">
       <input
         v-model="searchQuery"
         type="text"
