@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type Combobox from "~/components/homepage/Combobox.vue";
+import type MutliSelectCombobox from "~/components/homepage/mutliSelectCombobox.vue";
 
 const selectedStatus = ref("");
 const selectedLab = ref("");
@@ -18,10 +19,6 @@ provide("addTag", addTag);
 
 const searchQuery = useSearchQuery();
 
-function removeTag(tag: string) {
-  selectedTags.value = selectedTags.value.filter((t) => t !== tag);
-}
-
 const pprintStatus = {
   [`C4DT support status: ${PROJECT_STATUS.C4DT_SUPPORT_ACTIVE}`]: PROJECT_STATUS.C4DT_SUPPORT_ACTIVE,
   [`C4DT support status: ${PROJECT_STATUS.C4DT_SUPPORT_RETIRED}`]: PROJECT_STATUS.C4DT_SUPPORT_RETIRED,
@@ -31,13 +28,13 @@ const pprintStatus = {
 const labsFilter = ref<InstanceType<typeof Combobox>>();
 const categoriesFilter = ref<InstanceType<typeof Combobox>>();
 const applicationsFilter = ref<InstanceType<typeof Combobox>>();
-const TagFilter = ref<InstanceType<typeof Combobox>>();
+const TagFilter = ref<InstanceType<typeof MutliSelectCombobox>>();
 const statusFilter = ref<InstanceType<typeof Combobox>>();
 function resetFilters() {
   categoriesFilter.value?.clearSelection();
   labsFilter.value?.clearSelection();
   applicationsFilter.value?.clearSelection();
-  TagFilter.value?.clearSelection();
+  TagFilter.value?.clearAll();
   statusFilter.value?.clearSelection();
 
   searchQuery.value = "";
@@ -123,7 +120,12 @@ watch(filteredProjects, () => {
           <div class="md:sticky top-0">
             <div class="bg-white p-4 border rounded-lg shadow-md mb-4">
               <div class="font-bold">Filter by</div>
-              <homepageCombobox ref="TagFilter" v-model="selectedTag" title="Tag" :item-list="projectTags" />
+              <HomepageMutliSelectCombobox
+                ref="TagFilter"
+                v-model="selectedTags"
+                title="Tag"
+                :item-list="projectTags"
+              />
               <homepageCombobox ref="labsFilter" v-model="selectedLab" title="Lab" :item-list="labs" />
               <homepageCombobox
                 ref="statusFilter"
@@ -143,22 +145,6 @@ watch(filteredProjects, () => {
                 title="Application"
                 :item-list="applications"
               />
-              <div class="flex flex-wrap space-x-2 space-y-2">
-                <div
-                  v-for="tag in selectedTags"
-                  :key="tag"
-                  class="flex items-center space-x-2 px-3 py-1 bg-gray-200 text-gray-800 rounded-full text-sm"
-                >
-                  <span>{{ tag }}</span>
-                  <button
-                    class="text-red-500 hover:text-red-700 focus:outline-hidden"
-                    aria-label="Remove tag"
-                    @click="removeTag(tag)"
-                  >
-                    x
-                  </button>
-                </div>
-              </div>
               <div
                 class="text-center py-2 border border-gray-300 rounded-md shadow-xs hover:bg-gray-100 cursor-pointer mt-4"
                 @click="resetFilters"
