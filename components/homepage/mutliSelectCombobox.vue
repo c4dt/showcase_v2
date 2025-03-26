@@ -46,9 +46,10 @@ defineExpose({ clearAll });
 </script>
 
 <template>
-  <div class="relative py-2" @focusin="onFocusIn" @focusout="onFocusOut">
+  <div class="relative py-2" @focusout="onFocusOut">
     <div
       class="flex flex-wrap gap-1 items-center w-full px-4 py-2 pr-12 border rounded-md bg-white border-gray-300 focus-within:ring-2 focus-within:ring-blue-500 min-h-[40px]"
+      @focusin="onFocusIn"
     >
       <!-- Selected items as pills -->
       <span
@@ -69,10 +70,16 @@ defineExpose({ clearAll });
         class="flex-grow border-none focus:outline-none min-w-[120px]"
       />
     </div>
-
+    <button
+      class="absolute inset-y-0 right-0 flex items-center pr-2 text-gray-500"
+      aria-label="Toggle dropdown"
+      @click.prevent="toggleDropdown"
+    >
+      <font-awesome :icon="['fas', 'caret-down']" />
+    </button>
     <button
       v-if="selectedItems.length"
-      class="absolute inset-y-0 right-8 flex items-center pr-2"
+      class="absolute inset-y-0 right-6 flex items-center"
       aria-label="Clear all selections"
       @click.prevent="clearAll"
     >
@@ -80,15 +87,6 @@ defineExpose({ clearAll });
         <font-awesome :icon="['fas', 'times']" class="w-3 h-3" />
       </span>
     </button>
-
-    <button
-      class="absolute inset-y-0 right-0 flex items-center pr-2 text-gray-500"
-      aria-label="Toggle dropdown"
-      @click.prevent="toggleDropdown"
-    >
-      <font-awesome :icon="['fas', isOpen ? 'caret-up' : 'caret-down']" />
-    </button>
-
     <ul
       v-if="isOpen && filteredList.length"
       class="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-auto"
