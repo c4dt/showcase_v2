@@ -3,7 +3,7 @@ export enum PROJECT_C4DT_STATUS {
   RETIRED = "Retired"
 }
 export enum PROJECT_LAB_STATUS {
-  ACTIVE = "Maintained"
+  ACTIVE = "Active"
 }
 export const PROJECT_STATUS_INACTIVE = "Inactive";
 export enum PROJECT_STATUS_DESC {
