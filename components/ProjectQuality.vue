@@ -32,14 +32,14 @@ const statusColor = {
 };
 if (props.project.c4dt_status) {
   statusTags.value.push({
-    desc: "C4DT support status:",
+    desc: PROJECT_STATUS_DESC.C4DT_STATUS,
     label: props.project.c4dt_status,
     color: statusColor[props.project.c4dt_status]
   });
 }
 if (props.project.lab_status) {
   statusTags.value.push({
-    desc: "Lab maintenance status:",
+    desc: PROJECT_STATUS_DESC.LAB_STATUS,
     label: props.project.lab_status,
     color: statusColor[props.project.lab_status]
   });
