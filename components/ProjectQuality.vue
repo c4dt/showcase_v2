@@ -26,9 +26,9 @@ const props = defineProps<{
 }>();
 const statusTags = ref<{ label: string; color: string }[]>([]);
 const statusColor = {
-  [PROJECT_STATUS.C4DT_SUPPORT_ACTIVE]: "bg-green-500",
-  [PROJECT_STATUS.C4DT_SUPPORT_RETIRED]: "bg-orange-500",
-  [PROJECT_STATUS.LAB_MAINTENANCE_ACTIVE]: "bg-green-500"
+  [PROJECT_C4DT_STATUS.ACTIVE]: "bg-green-500",
+  [PROJECT_C4DT_STATUS.RETIRED]: "bg-orange-500",
+  [PROJECT_LAB_STATUS.ACTIVE]: "bg-green-500"
 };
 if (props.project.c4dt_status) {
   statusTags.value.push({

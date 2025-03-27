@@ -45,7 +45,7 @@ const technicalInfos = [
 const technicalContent = `<p>${technicalInfos}</p>`;
 const incubatorInfos = project.value.incubator
   ? [
-      `Status: ${project.value.incubator.type.startsWith("incubated") ? PROJECT_STATUS.C4DT_SUPPORT_ACTIVE : PROJECT_STATUS.C4DT_SUPPORT_RETIRED}`,
+      `Status: ${project.value.incubator.type.startsWith("incubated") ? PROJECT_C4DT_STATUS.ACTIVE : PROJECT_C4DT_STATUS.RETIRED}`,
       `Timeline: ${project.value.incubator.work}`
     ].join("<br />") + "<br />"
   : "";
