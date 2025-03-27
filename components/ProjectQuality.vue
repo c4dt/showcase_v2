@@ -47,5 +47,7 @@ if (props.project.lab_status) {
 const maturity = props.project.maturity ? props.project.maturity : 0;
 const title = ["Evaluation upon request", "Prototype", "Intermediate", "Mature"];
 const pprintMaturity = ["\u{2753}", "\u{1f95a}", "\u{1f425}", "\u{1f414}"];
-const grayscale = pprintMaturity.map((val, idx) => (idx === maturity ? "" : "grayscale-100"));
+const grayscale = pprintMaturity.map((val, idx) =>
+  (idx > 0 && idx <= maturity) || (idx === 0 && maturity === 0) ? "" : "grayscale-100"
+);
 </script>
