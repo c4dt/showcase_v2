@@ -2,8 +2,7 @@
   <div class="mx-auto bg-white rounded-xl shadow-md overflow-hidden">
     <div class="p-8 hover:bg-zinc-100 transition-colors duration-100">
       <!-- Special Tags on the Top Right -->
-      <ProjectStatus :project="project" />
-      <ProjectMaturity class="flex justify-end pb-2 px-4" :maturity="project.maturity ? props.project.maturity : 0" />
+      <ProjectQuality :project="project" />
       <NuxtLink :to="{ name: 'projects-id', params: { id: project.id } }" class="block">
         <div class="flex items-start">
           <!-- Left Side: Project Name and Description -->
