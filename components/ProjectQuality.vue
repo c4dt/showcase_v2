@@ -1,11 +1,8 @@
 <template>
   <div>
     <div v-for="tag in statusTags" :key="tag" class="flex justify-end pb-2 px-4">
-      <div class="px-4">
-        {{ tag.desc }}
-        <span :class="`px-3 py-1 rounded-full text-sm font-semibold text-white ${tag.color} shadow-lg`">
-          {{ tag.label }}
-        </span>
+      <div class="cursor-help" :title="tag.title">
+        {{ tag.label }}
       </div>
     </div>
     <div class="flex justify-end pb-2 px-4">
@@ -24,24 +21,22 @@
 const props = defineProps<{
   project: ExtendedProject;
 }>();
-const statusTags = ref<{ label: string; color: string }[]>([]);
+const statusTags: { title: string; label: string }[] = [];
 const statusColors = {
-  [PROJECT_C4DT_STATUS.ACTIVE]: "bg-green-500",
-  [PROJECT_C4DT_STATUS.RETIRED]: "bg-orange-500",
-  [PROJECT_LAB_STATUS.ACTIVE]: "bg-green-500"
+  [PROJECT_C4DT_STATUS.ACTIVE]: "\u{1F7E2}",
+  [PROJECT_C4DT_STATUS.RETIRED]: "\u{1F7E0}",
+  [PROJECT_LAB_STATUS.ACTIVE]: "\u{1F7E2}"
 };
 if (props.project.c4dt_status) {
-  statusTags.value.push({
-    desc: PROJECT_STATUS_DESC.C4DT_STATUS,
-    label: props.project.c4dt_status,
-    color: statusColors[props.project.c4dt_status]
+  statusTags.push({
+    title: props.project.c4dt_status,
+    label: `${PROJECT_STATUS_DESC.C4DT_STATUS} ${statusColors[props.project.c4dt_status]}`
   });
 }
 if (props.project.lab_status) {
-  statusTags.value.push({
-    desc: PROJECT_STATUS_DESC.LAB_STATUS,
-    label: props.project.lab_status,
-    color: statusColors[props.project.lab_status]
+  statusTags.push({
+    title: props.project.lab_status,
+    label: `${PROJECT_STATUS_DESC.LAB_STATUS} ${statusColors[props.project.lab_status]}`
   });
 }
 const maturity = props.project.maturity ?? 0;
