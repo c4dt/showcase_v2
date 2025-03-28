@@ -6,6 +6,10 @@ on:
     - cron: "0 5 * * 1"
   workflow_dispatch:
 
+env:
+  BRANCH_NAME: "data/weekly-last-commit-date-update-${{ github.run_id }}"
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   update-last-commit-date:
     runs-on: ubuntu-latest
@@ -19,50 +23,43 @@ jobs:
         uses: oven-sh/setup-bun@v2
       - run: bun install
       - name: Run script
-        run: bun utils/updateLastCommitDate.ts
-
+        id: run_script
+        run: |
+          OUTPUT=$(bun utils/updateLastCommitDate.ts 2>&1)
+          echo "$OUTPUT" | tee /dev/stderr
+          echo "output<<EOF" >> $GITHUB_OUTPUT
+          echo "$OUTPUT" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
       - name: Check for Changes
         id: changes
         run: |
           # Exit if no changes were made by the script
           git diff --quiet || echo "has_changes=true" >> $GITHUB_OUTPUT
 
-      - name: Create Branch, Commit, and Push
-        if: steps.changes.outputs.has_changes == 'true'
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          branch_name="data/updates-last-commit-date"
-          git checkout -b $branch_name
-          git add data/
-          git commit -m "chore: automated project data update"
-          git push origin $branch_name --force
-
       - name: Create Pull Request
         id: pullrequest
         if: steps.changes.outputs.has_changes == 'true'
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: $branch_name
-          base: main
+          branch: ${{ env.BRANCH_NAME }}
+          commit-message: "data: automatically update last commit date of projects"
           title: "data: Automated Weekly last commit date update"
           body: |
             Auto-generated PR with data updates. Review before merging!
             - **Triggered by:** Scheduled workflow
             - **Command:** `bun utils/updateLastCommitDate.ts`
-
+          delete-branch: true
+          sign-commits: true
+          reviewers: lanterno, ineiti, PascalinDe
       - name: Comment on PR with data update issues
         if: steps.changes.outputs.has_changes == 'true'
-        env:
-          PR_NUMBER: ${{ steps.pullrequest.outputs.pull-request-number }}
-        run: |
-          if [ -f errors.txt ]; then
-            script_errors=$(cat errors.txt)
-            gh pr comment $PR_NUMBER --body "⚠️ **Note:** We faced these issues while updating the data. Maybe it needs your attention:
-            \`\`\`
-            $script_errors
-            \`\`\`"
-          else
-            echo "Finished with no issues at all! :)"
-          fi
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ steps.pullrequest.outputs.pull-request-number }}
+          body: |
+            ⚠️ **Note:** We faced these issues while updating the data. Maybe it needs your attention
+            ```log
+            ${{ steps.run_script.outputs.output }}
+            ```
+
+          reactions: "+1"
