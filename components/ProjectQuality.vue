@@ -25,7 +25,7 @@ const props = defineProps<{
   project: ExtendedProject;
 }>();
 const statusTags = ref<{ label: string; color: string }[]>([]);
-const statusColor = {
+const statusColors = {
   [PROJECT_C4DT_STATUS.ACTIVE]: "bg-green-500",
   [PROJECT_C4DT_STATUS.RETIRED]: "bg-orange-500",
   [PROJECT_LAB_STATUS.ACTIVE]: "bg-green-500"
@@ -34,17 +34,17 @@ if (props.project.c4dt_status) {
   statusTags.value.push({
     desc: PROJECT_STATUS_DESC.C4DT_STATUS,
     label: props.project.c4dt_status,
-    color: statusColor[props.project.c4dt_status]
+    color: statusColors[props.project.c4dt_status]
   });
 }
 if (props.project.lab_status) {
   statusTags.value.push({
     desc: PROJECT_STATUS_DESC.LAB_STATUS,
     label: props.project.lab_status,
-    color: statusColor[props.project.lab_status]
+    color: statusColors[props.project.lab_status]
   });
 }
-const maturity = props.project.maturity ? props.project.maturity : 0;
+const maturity = props.project.maturity ?? 0;
 const title = ["Evaluation upon request", "Prototype", "Intermediate", "Mature"];
 const pprintMaturity = ["\u{2753}", "\u{1f95a}", "\u{1f425}", "\u{1f414}"];
 const grayscale = pprintMaturity.map((val, idx) =>
