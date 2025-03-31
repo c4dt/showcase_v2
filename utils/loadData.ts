@@ -34,7 +34,7 @@ export interface ExtendedProject extends Project {
   id: string;
   lab: Lab;
   descriptionDisplay: string;
-  status: PROJECT_C4DT_STATUS | PROJECT_LAB_STATUS;
+  status: int;
   c4dt_status?: PROJECT_C4DT_STATUS;
   lab_status?: PROJECT_LAB_STATUS;
 }
@@ -123,11 +123,14 @@ async function loadLabProjects(
     project.logo = project.logo || lab.logo || "https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg";
     let c4dt_status: PROJECT_C4DT_STATUS | undefined = undefined;
     let lab_status: PROJECT_LAB_STATUS | undefined = undefined;
+    let status: int;
     if (project.incubator?.type === "incubated" || project.incubator?.type === "incubated_market") {
       c4dt_status = PROJECT_C4DT_STATUS.ACTIVE;
+      status = 0;
     }
     if (project.incubator?.type === "retired" || project.incubator?.type === "retired_archived") {
       c4dt_status = PROJECT_C4DT_STATUS.RETIRED;
+      status = 1;
     }
     if (project.code?.date_last_commit) {
       // ToDo: refactor and merge with isActive function in utils/misc.ts
@@ -137,9 +140,10 @@ async function loadLabProjects(
 
       if (new Date(project.code.date_last_commit) > six_months_ago) {
         lab_status = PROJECT_LAB_STATUS.ACTIVE;
+        status = status ?? 2;
       }
     }
-    const status = c4dt_status || lab_status;
+    status = status ?? 3; // highest value instead of undefined to allow for substraction when sorting
     return { ...project, id: projectId, lab, descriptionDisplay, status, c4dt_status, lab_status };
   });
 }
@@ -166,14 +170,6 @@ export async function loadProjects(skipValidation: boolean = false): Promise<Ext
   ).flat();
 
   return projects.sort((a, b) => {
-    if (a.c4dt_status === PROJECT_C4DT_STATUS.ACTIVE) {
-      return -1;
-    }
-    if (a.c4dt_status && !b.c4dt_status) {
-      return -1;
-    }
-    if (!b.status) {
-      return -1;
-    }
+    return a.status - b.status;
   });
 }
