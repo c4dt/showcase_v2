@@ -6,7 +6,7 @@ projects:
     applications:
       - Info
     description: Privacy-preserving photo sharing
-    tech_desc: >
+    tech_desc: |
       Proshare allows you to share your photos, while protecting sensitive regions and hiding secret messages.
     url: https://grebproshare.epfl.ch/
     tags:
@@ -14,7 +14,6 @@ projects:
     type: Application
     date_added: 2019-03-18
     date_updated: 2024-03-15
-
   quality-crowd:
     name: QualityCrowd
     categories:
@@ -42,7 +41,6 @@ projects:
         url: https://mediatum.ub.tum.de/doc/1098076/1098076.pdf
     date_added: 2021-05-21
     date_updated: 2024-03-15
-
   point-cloud-web-renderer:
     name: Point cloud web renderer
     categories:
@@ -74,7 +72,6 @@ projects:
             url: http://apsipa.org
     date_added: 2021-05-21
     date_updated: 2024-03-15
-
   learned-residual-pcc:
     name: Learned Residual PCC
     categories:
@@ -110,7 +107,6 @@ projects:
             url: https://spie.org/Publications/Proceedings/Volume/11842
     date_added: 2021-11-04
     date_updated: 2024-03-15
-
   errgb:
     name: Error Resilient Recurring Gallery Building
     categories:
@@ -144,7 +140,6 @@ projects:
             url: https://www.2021.ieeeicip.org/
     date_added: 2021-11-04
     date_updated: 2024-03-15
-
   mesh-sampling:
     name: Mesh sampling
     categories:
@@ -170,7 +165,6 @@ projects:
         url: https://arxiv.org/abs/2201.06935
     date_added: 2021-11-04
     date_updated: 2024-03-15
-
   pcc-geo-color:
     name: Point-cloud compressor
     categories:
@@ -200,7 +194,6 @@ projects:
             url: https://www.spie.org/Publications/Proceedings/Volume/11510
     date_added: 2021-11-04
     date_updated: 2024-03-15
-
   procam:
     name: ProCam
     categories:
@@ -227,16 +220,14 @@ projects:
       date_last_commit: 2022-01-04
     date_added: 2022-09-14
     date_updated: 2024-03-15
-
   admire:
     name: AdMiRe EPFL
     categories:
       - Other
     applications:
       - Other
-    description:
-      "EPFL's contribution to the AdMiRe project: the Background Extraction and Super Resolution modules, with input and output as NDI
-      streams."
+    description: "EPFL's contribution to the AdMiRe project: the Background Extraction and Super Resolution modules, with input and output as
+      NDI streams."
     tech_desc: >
       Currently, TV audiences can only interact with the shows they are watching through social media or hybrid broadcast broadband TV.
       Additionally, content creators in film, TV or live productions face technical challenges that result in less engaging content. The

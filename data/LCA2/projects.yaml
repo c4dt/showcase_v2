@@ -28,7 +28,6 @@ projects:
             url: https://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=7742433
     date_added: 2019-03-18
     date_updated: 2022-07-05
-
   commelec-api:
     name: commelec-api
     categories:
@@ -54,7 +53,6 @@ projects:
     license: MIT
     date_added: 2019-03-18
     date_updated: 2022-07-05
-
   t-recs:
     name: T-RECS
     categories:

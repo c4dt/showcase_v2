@@ -22,7 +22,6 @@ projects:
     type: Framework
     date_added: 2019-03-18
     date_updated: 2024-02-06
-
   ai-data-platform-v2:
     name: AI-Driven Classifier Building Pipeline
     categories:
@@ -31,7 +30,7 @@ projects:
       - Info
     description: Platform for speeding up the development of Artificial-Intelligence classifiers
     url: https://www.epfl.ch/labs/lsir/ai-driven-classifier-building-pipeline
-    tech_desc: >
+    tech_desc: |
       The platform aims at accelerating the process of building Artificial Intelligence classifiers for image and text classification.
     code:
       type: Private GitHub
@@ -52,7 +51,6 @@ projects:
     date_added: 2019-05-22
     date_updated: 2023-03-21
     maturity: 2
-
   scilens:
     name: SciLens
     categories:
@@ -111,7 +109,6 @@ projects:
     type: Application
     date_added: 2019-03-18
     date_updated: 2024-02-06
-
   media-observatory:
     name: Media Observatory
     categories:
@@ -148,7 +145,6 @@ projects:
             url: https://www2019.thewebconf.org
     date_added: 2019-09-04
     date_updated: 2024-02-12
-
   mozuma:
     name: Mozuma
     categories:
@@ -168,73 +164,57 @@ projects:
     type: Library
     date_added: 2022-07-06
     date_updated: 2024-02-12
-
   commpass:
     name: CommPass
-    description: >
+    description: |
       News article similarity visualization tool
-    type: "Application"
+    type: Application
     categories:
-      - "Learning"
+      - Learning
     applications:
-      - "Info"
+      - Info
     tags:
-      - "Adversarial"
-      - "Machine Learning"
-      - "Natural Language"
+      - Adversarial
+      - Machine Learning
+      - Natural Language
     layman_desc: >
-      This tool visualizes how similar or different news articles about the
-      same event are from multiple perspectives. It can show if articles
-      have a positive or negative stance on the topic. This helps users
-      understand if they are caught in a filter bubble and exposes them to
-      diverse viewpoints. It also assists journalists in positioning their
-      articles among others covering the same story.
+      This tool visualizes how similar or different news articles about the same event are from multiple perspectives. It can show if
+      articles have a positive or negative stance on the topic. This helps users understand if they are caught in a filter bubble and
+      exposes them to diverse viewpoints. It also assists journalists in positioning their articles among others covering the same story.
     tech_desc: >
-      The project aims to visualize semantic similarity and polarity of news
-      articles covering a given media event. It extends the NewsTeller
-      platform which processes over 1.5 million news articles per month.
-      The goal is to provide intuitive visualization tools to explore the
-      media landscape and enhance the NewsTeller platform.
+      The project aims to visualize semantic similarity and polarity of news articles covering a given media event. It extends the
+      NewsTeller platform which processes over 1.5 million news articles per month. The goal is to provide intuitive visualization tools to
+      explore the media landscape and enhance the NewsTeller platform.
     url: https://www.media-initiative.ch/project/commpass/
     date_added: 2024-03-19
-
-  # Most common fields:
   upgrade_newsroom:
     name: Upgrading the Newsroom
-    description: >
+    description: |
       Automated image selection system for news articles
-    type: "Application"
+    type: Application
     categories:
-      - "Learning"
+      - Learning
     applications:
-      - "Info"
+      - Info
     tags:
-      - "Adversarial"
-      - "Machine Learning"
-      - "Natural Language"
+      - Adversarial
+      - Machine Learning
+      - Natural Language
     layman_desc: >
-      It is an automated system that can recommend suitable images to illustrate 
-      news articles by analyzing the text content of the articles. 
-      The system can handle inputs in multiple languages like German and French 
-      by using aligned multilingual word embeddings. 
-      It uses advanced neural network techniques like attention to identify 
-      the most relevant parts of the text for retrieving matching images from a 
-      large database.
+      It is an automated system that can recommend suitable images to illustrate  news articles by analyzing the text content of the
+      articles.  The system can handle inputs in multiple languages like German and French  by using aligned multilingual word
+      embeddings.  It uses advanced neural network techniques like attention to identify  the most relevant parts of the text for retrieving
+      matching images from a  large database.
     tech_desc: >
-      The system fuses multiple textual sources (caption, body, headline, lead) 
-      from news articles using a hierarchical attention mechanism to retrieve 
-      relevant images. 
-      It utilizes subword embeddings and self-attention to better encode 
-      entities and capture important keywords within texts. 
-      The model is trained on a large-scale multimodal multilingual dataset of 
-      over 500k German and French news article-image pairs in a 
-      weakly-supervised manner.
+      The system fuses multiple textual sources (caption, body, headline, lead)  from news articles using a hierarchical attention mechanism
+      to retrieve  relevant images.  It utilizes subword embeddings and self-attention to better encode  entities and capture important
+      keywords within texts.  The model is trained on a large-scale multimodal multilingual dataset of  over 500k German and French news
+      article-image pairs in a  weakly-supervised manner.
     url: https://modemos.epfl.ch/article
     contacts:
       - name: Rémi Lebret
         email: remi.lebret@epfl.ch
     information:
-      # One or more of:
       - type: Paper
         title: "Upgrading the Newsroom: An Automated Image Selection System for News Articles"
         url: https://arxiv.org/abs/2004.11449
