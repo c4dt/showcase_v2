@@ -45,7 +45,7 @@ const technicalInfos = [
 const technicalContent = `<p>${technicalInfos}</p>`;
 const incubatorInfos = project.value.incubator
   ? [
-      `Status: ${project.value.incubator.type.startsWith("incubated") ? PROJECT_STATUS.C4DT_SUPPORT_ACTIVE : PROJECT_STATUS.C4DT_SUPPORT_RETIRED}`,
+      `Status: ${project.value.incubator.type.startsWith("incubated") ? PROJECT_C4DT_STATUS.ACTIVE : PROJECT_C4DT_STATUS.RETIRED}`,
       `Timeline: ${project.value.incubator.work}`
     ].join("<br />") + "<br />"
   : "";
@@ -75,8 +75,7 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
           <div class="flex items-center justify-center">
             <img :alt="project.name" :src="project.logo" class="p-4 object-contain w-full h-48" />
           </div>
-          <ProjectStatus :project="project" />
-          <ProjectMaturity class="flex justify-end px-4" :maturity="project.maturity ? project.maturity : 0" />
+          <ProjectQuality :project="project" />
           <ProjectDescription :project="project" />
           <div class="flex items-center space-x-2 text-left">
             <FontAwesomeIcon :icon="faTags" class="text-gray-500" />
