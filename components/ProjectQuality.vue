@@ -6,18 +6,29 @@
       </div>
     </div>
     <div class="flex justify-end pb-2 px-4">
-      <span>Maturity: </span
-      ><span
-        v-for="(val, idx) in pprintMaturity"
-        :key="val"
-        :title="title[idx]"
-        :class="`${grayscale[idx]} cursor-help`"
-        >{{ val }}</span
-      >
+      <div v-if="maturity">
+        <span>Maturity: </span
+        ><span
+          v-for="(val, idx) in pprintMaturity"
+          :key="val"
+          :title="title[idx]"
+          :class="`${grayscale[idx]} cursor-help`"
+          >{{ val }}</span
+        >
+      </div>
+      <div v-if="maturity === 0">
+        <span>Request maturity evaluation: </span>
+        <span
+          ><a :href="`${MATURITY_EVALUATION_REQUEST.replaceAll('{name}', project.name)}`"
+            ><FontAwesomeIcon :icon="faEnvelope" class="text-[#707070]" /></a
+        ></span>
+      </div>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 const props = defineProps<{
   project: ExtendedProject;
 }>();
@@ -40,9 +51,7 @@ if (props.project.lab_status) {
   });
 }
 const maturity = props.project.maturity ?? 0;
-const title = ["Evaluation upon request", "Prototype", "Intermediate", "Mature"];
-const pprintMaturity = ["\u{2753}", "\u{1f95a}", "\u{1f425}", "\u{1f414}"];
-const grayscale = pprintMaturity.map((val, idx) =>
-  (idx > 0 && idx <= maturity) || (idx === 0 && maturity === 0) ? "" : "grayscale-100"
-);
+const title = ["Prototype", "Intermediate", "Mature"];
+const pprintMaturity = ["\u{1f95a}", "\u{1f425}", "\u{1f414}"];
+const grayscale = pprintMaturity.map((val, idx) => (idx <= maturity - 1 ? "" : "grayscale-100"));
 </script>

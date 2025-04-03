@@ -9,3 +9,5 @@ export enum PROJECT_STATUS_DESC {
   C4DT_STATUS = "C4DT support status:",
   LAB_STATUS = "Lab support status:"
 }
+export const FACTORY_EMAIL_ADDRESS = "factory@c4dt.org";
+export const MATURITY_EVALUATION_REQUEST = `mailto:${FACTORY_EMAIL_ADDRESS}?subject={name}: maturity evaluation request&body=Dear Factory team, please create a maturity evaluation for '{name}'.`;
