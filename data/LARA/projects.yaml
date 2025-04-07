@@ -13,7 +13,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/epfl-lara/stainless
-      date_last_commit: 2024-02-29
+      date_last_commit: 2025-03-20
     doc: https://epfl-lara.github.io/stainless/
     contacts:
       - name: Viktor Kunčak
@@ -30,17 +30,17 @@ projects:
     license: Apache-2.0
     information:
       - type: Paper
-        title: "Satisfiability Modulo Recursive Programs"
+        title: Satisfiability Modulo Recursive Programs
         url: https://lara.epfl.ch/~kuncak/papers/SuterETAL11SatisfiabilityModuloRecursivePrograms.pdf
         notes:
           - label: Published at
             text: SAS 2011
             url: https://staticanalysis.org
       - type: Paper
-        title: "On Counter-Example Complete Verification for Higher-Order Functions"
+        title: On Counter-Example Complete Verification for Higher-Order Functions
         url: https://infoscience.epfl.ch/record/207420
       - type: Paper
-        title: "System FR as Foundations for Stainless"
+        title: System FR as Foundations for Stainless
         url: https://arxiv.org/pdf/1904.03482.pdf
         notes:
           - label: Published at
@@ -61,7 +61,6 @@ projects:
     maturity: 2
     date_added: 2019-03-18
     date_updated: 2024-04-12
-
   stainless-for-smart-contracts:
     name: Stainless for smart contracts
     categories:
@@ -69,7 +68,7 @@ projects:
     applications:
       - Infra
     description: Stainless fork aimed at smart contracts
-    tech_desc: >
+    tech_desc: |
       Stainless is a tool for verifying Scala programs developed by the LARA. This fork can perform verification of Smart Contracts.
     url: https://stainless.epfl.ch/smart-contracts.html
     code:
@@ -98,7 +97,6 @@ projects:
     date_added: 2022-09-26
     date_updated: 2024-04-12
     maturity: 2
-
   inox:
     name: Inox
     categories:
@@ -106,12 +104,12 @@ projects:
     applications:
       - Infra
     description: Constraint solver for Stainless
-    tech_desc: >
+    tech_desc: |
       Inox can be used to prove constraints on methods in a program, to attest the correctness of these parts.
     code:
       type: Lab GitHub
       url: https://github.com/epfl-lara/inox
-      date_last_commit: 2023-10-31
+      date_last_commit: 2025-03-27
     contacts:
       - name: Viktor Kunčak
         email: viktor.kuncak@epfl.ch
@@ -124,11 +122,10 @@ projects:
     language: Scala
     type: Library, Application
     license: Apache-2.0
-    notes: >
+    notes: |
       Invokes https://github.com/Z3Prover/z3 and http://cvc4.cs.stanford.edu/web/
     date_added: 2019-03-18
     date_updated: 2024-04-12
-
   rust-stainless:
     name: Rust-Stainless
     categories:
@@ -154,7 +151,6 @@ projects:
       - Code Analysis
     date_added: 2021-11-04
     date_updated: 2024-04-12
-
   lisa:
     name: LISA
     categories:
@@ -168,7 +164,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/epfl-lara/lisa
-      date_last_commit: 2024-04-08
+      date_last_commit: 2024-10-08
     language: Scala
     type: Framework, Application
     license: Apache-2.0
@@ -177,7 +173,6 @@ projects:
       - Development
     date_added: 2022-07-05
     date_updated: 2024-04-12
-
   scallion:
     name: Scallion
     categories:
@@ -188,7 +183,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/epfl-lara/scallion
-      date_last_commit: 2022-10-03
+      date_last_commit: 2025-02-12
     language: Scala
     type: Library
     license: Apache-2.0
