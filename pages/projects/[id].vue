@@ -3,66 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faTags, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 const project = useState<ExtendedProject>(`project-${useRoute().params.id}`);
 const lab = project.value.lab;
-const articles = project.value.information
-  ? project.value.information.filter((information) => information.type.toLowerCase() === "article")
-  : [];
-const papers = project.value.information
-  ? project.value.information.filter((information) => information.type.toLowerCase() === "paper")
-  : [];
-const aClass = "underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]";
-const papersContent = papers.length
-  ? `<ul class='ul'>${papers.map((paper) => `<li><a class='${aClass}' href=${paper.url}>${paper.title}</a></li>`).join("")}</ul>`
-  : "";
-const articlesContent = articles.length
-  ? `<ul class='ul'>${articles.map((article) => `<li><a class='${aClass}' href=${article.url}>${article.title}</a></li>`).join("")}</ul>`
-  : "";
-const codeInfos = (
-  project.value.code
-    ? [
-        project.value.code.type
-          ? `Source code: <a class="${aClass} "href=${project.value.code.url}>${project.value.code.type}</a>`
-          : "",
-        project.value.code.date_last_commit ? `Last commit: ${project.value.code.date_last_commit}` : ""
-      ]
-    : []
-).join("<br />");
-const pprintMaturity = project.value.maturity
-  ? "Code quality: " +
-    new Map([
-      [0, "Maturity evaluation possible upon request"],
-      [1, "Prototype"],
-      [2, "Intermediate"],
-      [3, "Mature"]
-    ]).get(project.value.maturity)
-  : "";
-const technicalInfos = [
-  `Project type: ${project.value.type}`,
-  codeInfos,
-  project.value.license ? `License: ${project.value.license}` : "",
-  project.value.language ? `Language(s): ${project.value.language}` : "",
-  pprintMaturity
-].join("<br />");
-const technicalContent = `<p>${technicalInfos}</p>`;
-const incubatorInfos = project.value.incubator
-  ? [
-      `Status: ${project.value.incubator.type.startsWith("incubated") ? PROJECT_C4DT_STATUS.ACTIVE : PROJECT_C4DT_STATUS.RETIRED}`,
-      `Timeline: ${project.value.incubator.work}`
-    ].join("<br />") + "<br />"
-  : "";
-const productInfos = project.value.incubator?.products
-  ? `<ul class='ul'>${project.value.incubator.products.map((product) => `<li><a class='${aClass}' href=${product.url}>${product.title}</a></li>`).join("")}</ul>`
-  : "";
-const incubatorContent = incubatorInfos || productInfos ? `<p>${incubatorInfos}${productInfos}</p>` : "";
-
-let tabs: ProjectTab[] = [];
-
-tabs = [
-  { id: "incubator", label: "C4DT work", content: incubatorContent },
-  ...useState<ProjectTab[]>(`project-${useRoute().params.id}-tabs`).value,
-  { id: "papers", label: "Research papers", content: papersContent },
-  { id: "articles", label: "Miscellaneous publications", content: articlesContent },
-  { id: "technical", label: "Technical", content: technicalContent }
-].filter((tab) => tab.content);
 
 const lastEdited = new Date(Date.parse(project.value.date_updated || project.value.date_added));
 </script>
@@ -88,7 +28,7 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
             </span>
           </div>
         </div>
-        <ProjectsTabs v-if="tabs.length" :tabs="tabs" />
+        <ProjectsTabs :project="project" />
       </div>
       <div class="flex-[3]">
         <div class="px-8 bg-[#e6e6e6] text-center">
