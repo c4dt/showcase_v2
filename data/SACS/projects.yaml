@@ -28,7 +28,6 @@ projects:
             url: https://dl.acm.org/doi/10.1145/3078971.3078992
     date_added: 2021-11-05
     date_updated: 2022-07-07
-
   proteustm:
     name: ProteusTM
     categories:
