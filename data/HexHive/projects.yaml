@@ -25,18 +25,17 @@ projects:
         url: https://infoscience.epfl.ch/record/289212
         notes:
           - label: Published at
-            text: "Usenix ATC '20"
+            text: Usenix ATC '20
             url: https://www.usenix.org/conference/atc20/presentation/jeon
     date_added: 2021-03-05
     date_updated: 2024-04-12
-
   usbfuzz:
     name: USBFuzz
     categories:
       - Security
     applications:
       - Infra
-    description: "Virtual environment for fuzzing USB peripherals"
+    description: Virtual environment for fuzzing USB peripherals
     tech_desc: >
       Fuzzing USB peripherals for Linux, Android, MacOS, Windows, FreeBSD Found lots of 0days in modern kernels, allowing arbitrary
       compromise
@@ -54,11 +53,10 @@ projects:
         url: https://infoscience.epfl.ch/record/287847
         notes:
           - label: Published at
-            text: "Usenix S&P '20"
+            text: Usenix S&P '20
             url: https://www.usenix.org/conference/usenixsecurity20/presentation/peng
     date_added: 2021-03-05
     date_updated: 2024-04-12
-
   magma:
     name: Magma
     categories:
@@ -93,7 +91,6 @@ projects:
             url: http://www.sigmetrics.org/sigmetrics2021
     date_added: 2020-02-21
     date_updated: 2024-04-12
-
   t-fuzz:
     name: T-Fuzz
     categories:
@@ -124,7 +121,6 @@ projects:
             url: https://ieeexplore.ieee.org/document/8418632
     date_added: 2019-03-18
     date_updated: 2024-04-12
-
   bopc:
     name: BOPC
     categories:
@@ -156,7 +152,6 @@ projects:
             url: https://dl.acm.org/doi/10.1145/3243734.3243739
     date_added: 2019-03-18
     date_updated: 2024-04-12
-
   cfixx:
     name: CFIXX
     categories:
@@ -165,8 +160,7 @@ projects:
       - Infra
     description: Protection for C++ internal code pointers
     tech_desc: >
-      CFIXX is a runtime mitigation that protects C++ programs from attacks that overwrite internal data structures containing code
-      pointers.
+      CFIXX is a runtime mitigation that protects C++ programs from attacks that overwrite internal data structures containing code pointers.
     code:
       type: Lab GitHub
       url: https://github.com/HexHive/CFIXX
@@ -186,7 +180,6 @@ projects:
             url: https://www.ndss-symposium.org/ndss2018
     date_added: 2019-03-18
     date_updated: 2024-04-12
-
   hextype:
     name: HexType
     categories:
@@ -216,7 +209,6 @@ projects:
     maturity: 1
     date_added: 2019-03-18
     date_updated: 2024-04-12
-
   retrowrite:
     name: RetroWrite
     categories:
@@ -231,7 +223,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/HexHive/retrowrite
-      date_last_commit: 2023-11-30
+      date_last_commit: 2024-05-13
     tags:
       - Fuzzing
       - Binary
@@ -251,7 +243,6 @@ projects:
         url: https://github.com/HexHive/RetroWrite-Tutorial
     date_added: 2019-09-02
     date_updated: 2024-04-12
-
   shadowstack:
     name: ShadowStack
     categories:
@@ -285,7 +276,6 @@ projects:
             url: https://ieeexplore.ieee.org/document/8835389
     date_added: 2020-02-21
     date_updated: 2024-04-12
-
   hexpads:
     name: HexPADS
     categories:
@@ -318,7 +308,6 @@ projects:
             url: https://dl.acm.org/conference/essos
     date_added: 2020-02-21
     date_updated: 2024-04-12
-
   fuzzgen:
     name: FuzzGen
     categories:
@@ -350,7 +339,6 @@ projects:
             url: https://www.usenix.org/conference/usenixsecurity20
     date_added: 2020-02-21
     date_updated: 2024-04-12
-
   datashield:
     name: DataShield
     categories:
@@ -382,7 +370,6 @@ projects:
             url: https://dl.acm.org/doi/10.1145/3052973.3052983
     date_added: 2020-02-21
     date_updated: 2024-04-12
-
   halucinator:
     name: HALucinator
     categories:
@@ -415,7 +402,6 @@ projects:
     date_added: 2020-02-24
     date_updated: 2024-04-12
     maturity: 1
-
   benchiot:
     name: BenchIoT
     categories:
@@ -447,7 +433,6 @@ projects:
     maturity: 1
     date_added: 2020-02-24
     date_updated: 2024-04-12
-
   freegaen:
     name: Free GAEN alternative
     categories:
@@ -464,7 +449,7 @@ projects:
     code:
       type: C4DT GitHub
       url: https://github.com/c4dt/dp3t-app-android-ch/tree/microg-nearby
-      date_last_commit: 2021-07-15
+      date_last_commit: 2023-09-05
     tags:
       - Mobile App
       - Protocol
@@ -478,14 +463,13 @@ projects:
       work: 2021/Q1 worked on improving and integrating with microG and published app
     date_added: 2020-10-05
     date_updated: 2024-04-12
-
   lightblue:
     name: LightBlue
     categories:
       - Security
     applications:
       - Infra
-    description: "Automatic profile-aware debloating of bluetooth stacks"
+    description: Automatic profile-aware debloating of bluetooth stacks
     tech_desc: >
       The Bluetooth standard is complex, many commands are defined but aren't needed in many use cases. It allows for a big surface attack
       which can be cumbersome to correctly reduce. Based on Bluetooth usage profiling, LightBlue allows to reduce the number of exposed
@@ -509,7 +493,6 @@ projects:
     language: C++, Python
     date_added: 2020-02-26
     date_updated: 2024-04-12
-
   igor:
     name: Igor
     categories:
@@ -543,7 +526,6 @@ projects:
         url: https://www.youtube.com/watch?v=V06x1Ad5dRo
     date_added: 2021-11-04
     date_updated: 2024-04-12
-
   dis-cover:
     name: dis-cover
     categories:
@@ -563,7 +545,6 @@ projects:
       - Low-Level
     date_added: 2021-11-04
     date_updated: 2024-04-12
-
   gramatron:
     name: Gramatron
     categories:
@@ -571,12 +552,12 @@ projects:
     applications:
       - Infra
     description: Grammar-aware fuzzing
-    tech_desc: >
+    tech_desc: |
       Coverage-guided fuzzer that uses grammar automatons to perform grammar-aware fuzzing.
     code:
       type: Lab GitHub
       url: https://github.com/HexHive/Gramatron
-      date_last_commit: 2021-11-28
+      date_last_commit: 2021-11-27
     language: C
     license: Apache-2.0
     type: Application
@@ -593,7 +574,6 @@ projects:
             url: https://conf.researchr.org/home/issta-2021
     date_added: 2021-11-04
     date_updated: 2024-04-12
-
   dataflow:
     name: datAFLow
     categories:
@@ -607,7 +587,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/HexHive/datAFLow
-      date_last_commit: 2023-02-01
+      date_last_commit: 2023-08-19
     language: C++
     license: Apache-2.0
     type: Toolset
@@ -623,7 +603,6 @@ projects:
             url: https://fuzzingworkshop.github.io
     date_added: 2022-07-05
     date_updated: 2024-04-12
-
   midas:
     name: Midas
     categories:
@@ -652,11 +631,10 @@ projects:
         url: https://infoscience.epfl.ch/record/290014
         notes:
           - label: Published at
-            text: "Usenix SEC '22"
+            text: Usenix SEC '22
             url: https://www.usenix.org/conference/usenixsecurity22/summer-accepted-papers
     date_added: 2022-09-27
     date_updated: 2024-04-12
-
   gleefuzz:
     name: GLeeFuzz
     categories:
@@ -679,7 +657,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/HexHive/GLeeFuzz
-      date_last_commit: 2022-11-17
+      date_last_commit: 2022-11-18
     information:
       - type: Paper
         title: "GLeeFuzz: Fuzzing WebGL Through Error Message Guided Mutation"
@@ -690,7 +668,6 @@ projects:
             url: https://www.usenix.org/conference/usenixsecurity23/summer-accepted-papers
     date_added: 2023-03-20
     date_updated: 2024-04-12
-
   evocatio:
     name: Evocatio
     categories:
@@ -715,7 +692,6 @@ projects:
         url: https://hexhive.epfl.ch/publications/files/22CCS.pdf
     date_added: 2023-03-20
     date_updated: 2024-04-12
-
   warpattack:
     name: WarpAttack
     categories:
@@ -739,7 +715,6 @@ projects:
         url: https://hexhive.epfl.ch/publications/files/23Oakland3.pdf
     date_added: 2023-04-24
     date_updated: 2024-04-12
-
   videzzo:
     name: ViDeZZo
     categories:
@@ -756,14 +731,13 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/HexHive/ViDeZZo
-      date_last_commit: 2023-03-19
+      date_last_commit: 2025-04-15
     information:
       - type: Paper
         title: "VIDEZZO: Dependency-aware Virtual Device Fuzzing"
         url: https://hexhive.epfl.ch/publications/files/23Oakland4.pdf
     date_added: 2023-04-24
     date_updated: 2024-04-12
-
   sievefuzz:
     name: SieveFuzz
     categories:

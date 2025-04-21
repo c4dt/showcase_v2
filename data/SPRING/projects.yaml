@@ -32,15 +32,14 @@ projects:
     license: BSD-3-Clause
     information:
       - type: Paper
-        title: "Synthetic Data -- Anonymisation Groundhog Day"
+        title: Synthetic Data -- Anonymisation Groundhog Day
         url: https://arxiv.org/abs/2011.07018
         notes:
           - label: Published at
-            text: "31st USENIX Security Symposium, 2022"
+            text: 31st USENIX Security Symposium, 2022
             url: https://www.usenix.org/conference/usenixsecurity22/presentation/stadler
     date_added: 2021-02-08
     date_updated: 2022-07-07
-
   claimchain:
     name: ClaimChain
     categories:
@@ -48,7 +47,7 @@ projects:
     applications:
       - Info
     description: Prove your identity with regards to others
-    tech_desc: >
+    tech_desc: |
       A decentralized public key distribution system with an emphasis on privacy preservation.
     url: https://claimchain.github.io/
     code:
@@ -70,7 +69,6 @@ projects:
     license: MIT
     date_added: 2019-03-18
     date_updated: 2022-07-07
-
   lightnion:
     name: Lightnion
     categories:
@@ -94,7 +92,6 @@ projects:
     license: BSD-3-Clause
     date_added: 2019-03-18
     date_updated: 2022-07-07
-
   trickster:
     name: Trickster
     logo: https://raw.githubusercontent.com/spring-epfl/trickster/master/trickster.svg
@@ -118,8 +115,7 @@ projects:
     license: MIT
     information:
       - type: Paper
-        title: "Evading classifiers in discrete domains with provable optimality guarantees"
-        # Could not find an entry in Infoscience...
+        title: Evading classifiers in discrete domains with provable optimality guarantees
         url: https://arxiv.org/abs/1810.10939
         notes:
           - label: Published at
@@ -127,7 +123,6 @@ projects:
             url: https://secml2018.github.io/
     date_added: 2019-03-18
     date_updated: 2022-07-07
-
   hippiepug:
     name: Hippiepug
     logo: https://raw.githubusercontent.com/spring-epfl/hippiepug/refs/heads/master/hippiepug.svg
@@ -159,7 +154,6 @@ projects:
     license: MIT
     date_added: 2019-03-18
     date_updated: 2022-07-07
-
   mcsauditing:
     name: MCSAuditing
     categories:
@@ -178,7 +172,7 @@ projects:
     type: Application
     information:
       - type: Paper
-        title: "On (The Lack Of) Location Privacy in Crowdsourcing Applications"
+        title: On (The Lack Of) Location Privacy in Crowdsourcing Applications
         url: https://infoscience.epfl.ch/record/275442
         notes:
           - label: Published at
@@ -187,7 +181,6 @@ projects:
     license: GPL-3.0
     date_added: 2019-07-30
     date_updated: 2022-07-07
-
   zksk:
     name: Zero-Knowledge Swiss Knife
     categories:
@@ -207,7 +200,6 @@ projects:
     information:
       - type: Paper
         title: "zksk: A Library for Composable Zero-Knowledge Proofs"
-        # Could not find an entry in Infoscience...
         url: https://arxiv.org/abs/1911.02459
         notes:
           - label: Published at
@@ -217,7 +209,6 @@ projects:
     date_added: 2020-02-06
     date_updated: 2022-07-07
     maturity: 2
-
   dp3t:
     name: Decentralized Privacy-Preserving Proximity Tracing
     categories:
@@ -243,10 +234,10 @@ projects:
     type: Library
     information:
       - type: Application
-        title: "SwissCovid Android app (c) by Ubique"
+        title: SwissCovid Android app (c) by Ubique
         url: https://github.com/SwissCovid/swisscovid-app-android
       - type: Application
-        title: "SwissCovid iOS app (c) by Ubique"
+        title: SwissCovid iOS app (c) by Ubique
         url: https://github.com/SwissCovid/swisscovid-app-ios
     license: MPL-2.0
     date_added: 2020-10-05
@@ -258,7 +249,6 @@ projects:
     c4dt_contact:
       name: Linus Gasser
       email: linus.gasser@epfl.ch
-
   crowdnotifier:
     name: CrowdNotifier
     categories:
@@ -289,15 +279,14 @@ projects:
     type: Library
     information:
       - type: Application
-        title: "NotifyMe Android mobile app - (c) by Ubique"
+        title: NotifyMe Android mobile app - (c) by Ubique
         url: https://github.com/notifyme-app/notifyme-app-android
       - type: Application
-        title: "NotifyMe iOS mobile app - (c) by Ubique"
+        title: NotifyMe iOS mobile app - (c) by Ubique
         url: https://github.com/notifyme-app/notifyme-app-ios
     license: MPL-2.0
     date_added: 2021-01-21
     date_updated: 2022-07-07
-
   petrelic:
     name: Petrelic
     categories:
@@ -305,7 +294,7 @@ projects:
     applications:
       - Info
     description: Wrapper around RELIC pairings
-    tech_desc: >
+    tech_desc: |
       petrelic is a Python wrapper around RELIC. It provides a simple python interface to the BLS-381 pairing and RELIC's big number class.
     tags:
       - Low-Level
@@ -319,7 +308,6 @@ projects:
     license: MIT
     date_added: 2021-01-21
     date_updated: 2022-07-07
-
   sscred:
     name: SSCred
     categories:
@@ -327,7 +315,7 @@ projects:
     applications:
       - Info
     description: Library to facilitate anonymous authentication
-    tech_desc: >
+    tech_desc: |
       SSCred provides the following primitives: 1) Anonymous credential light (ACL) 2) Abe's Blind signature 3) Blinded Pedersen commitment
     tags:
       - Anonymity
@@ -340,7 +328,6 @@ projects:
     license: BSD-3-Clause
     date_added: 2021-01-21
     date_updated: 2023-03-22
-
   mia:
     name: mia
     categories:
@@ -363,7 +350,6 @@ projects:
     license: MIT
     date_added: 2021-01-21
     date_updated: 2022-07-07
-
   lightarti:
     name: lightarti-rest
     categories:
@@ -383,7 +369,7 @@ projects:
     code:
       type: C4DT Github
       url: https://github.com/C4DT/lightarti-rest
-      date_last_commit: 2022-11-14
+      date_last_commit: 2024-08-15
     incubator:
       type: incubated_market
       work: Created and updated a library for mobile
@@ -402,7 +388,6 @@ projects:
     license: MIT
     date_added: 2021-08-26
     date_updated: 2023-03-22
-
   voteagain:
     name: VOTEAGAIN
     categories:
@@ -435,7 +420,6 @@ projects:
             url: https://www.usenix.org/conference/usenixsecurity20
     date_added: 2021-11-04
     date_updated: 2022-07-07
-
   datashare-network:
     name: DatashareNetwork
     categories:
@@ -469,7 +453,6 @@ projects:
             url: https://www.usenix.org/conference/usenixsecurity20
     date_added: 2021-11-04
     date_updated: 2023-03-22
-
   tandem:
     name: Tandem
     categories:
@@ -503,7 +486,6 @@ projects:
     maturity: 2
     date_added: 2021-11-04
     date_updated: 2022-07-07
-
   webgraph:
     name: WebGraph
     categories:
@@ -512,12 +494,12 @@ projects:
     applications:
       - Info
     description: Capturing Advertising and Tracking Information Flows for Robust Blocking
-    tech_desc: >
+    tech_desc: |
       ML-based ad and tracker blocker that detects ads and trackers based on their action rather than their content.
     code:
       type: Lab GitHub
       url: https://github.com/spring-epfl/WebGraph
-      date_last_commit: 2022-08-25
+      date_last_commit: 2024-07-30
     type: Application
     language: Python
     license: other
@@ -535,7 +517,6 @@ projects:
     maturity: 2
     date_added: 2022-07-07
     date_updated: 2023-03-22
-
   disparate-vulnerability:
     name: DisparateVulnerability
     categories:
@@ -550,7 +531,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/spring-epfl/disparate-vulnerability
-      date_last_commit: 2021-10-20
+      date_last_commit: 2022-01-04
     type: Simulation, Experiments
     language: Python
     license: MIT
@@ -559,7 +540,7 @@ projects:
       - Protection
     information:
       - type: Paper
-        title: "Disparate Vulnerability to Membership Inference Attacks"
+        title: Disparate Vulnerability to Membership Inference Attacks
         url: https://arxiv.org/abs/1906.00389
         notes:
           - label: Published at
@@ -568,7 +549,6 @@ projects:
     maturity: 1
     date_added: 2022-07-07
     date_updated: 2022-08-11
-
   tandem_monero:
     name: Tandem / Monero
     categories:
@@ -576,7 +556,7 @@ projects:
       - Privacy
     applications:
       - Info
-    description: >
+    description: |
       Applying the privacy-preserving algorithms of Tandem to the usage of the Monero blockchain.
     tech_desc: >
       One challenge when using private keys is that if they get stolen the damage can be very big, especially when used in blockchains to
@@ -593,11 +573,10 @@ projects:
       - Protection
     information:
       - type: Paper
-        title: "Using Tandem with Monero"
+        title: Using Tandem with Monero
         url: https://c4dt.epfl.ch/using_tandem_in_monero/
     date_added: 2022-08-25
     date_updated: 2022-08-25
-
   private-collection-matching:
     name: Private Collection Matching Protocols
     categories:
@@ -606,7 +585,7 @@ projects:
     applications:
       - Info
     type: Framework
-    description: >
+    description: |
       Framework to build privacy-preserving Private Collection Matching (PCM) systems
     tech_desc: >
       We introduce Private Collection Matching (PCM) problems, in which a client aims to determine whether a collection of sets owned by a
@@ -622,7 +601,7 @@ projects:
       - Protection
     information:
       - type: Paper
-        title: "Private Collection Matching Protocols"
+        title: Private Collection Matching Protocols
         url: https://arxiv.org/abs/2206.07009
     date_added: 2023-03-22
     date_updated: 2023-03-22
