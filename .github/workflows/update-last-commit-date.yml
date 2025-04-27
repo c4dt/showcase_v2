@@ -61,5 +61,3 @@ jobs:
             ```log
             ${{ steps.run_script.outputs.output }}
             ```
-
-          reactions: "+1"
