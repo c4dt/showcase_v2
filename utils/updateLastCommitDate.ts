@@ -5,7 +5,7 @@ The script uses the GitHub API to retrieve the relevant date.
 
 import fs from "fs/promises";
 import path from "path";
-import yaml from "yaml";
+import yaml, { parseDocument } from "yaml";
 import type { Projects } from "~/types/projects";
 
 const DATA_DIR = "./data";
@@ -93,9 +93,20 @@ async function getProjectLastCommitDate(gitRepo: string): Promise<string | null>
   }
 }
 
+/**
+ * Updates a projects file changing only the `date_last_commit` field,
+ * while maintaining the rest of file without any changes.
+ */
 async function updateProjectFile(filePath: string, labProjects: Projects): Promise<void> {
-  const yamlString = yaml.stringify(labProjects, { lineWidth: 140 });
-  await fs.writeFile(filePath, yamlString, "utf-8");
+  const fileContent = await fs.readFile(filePath, "utf-8");
+  const yamlDoc = parseDocument(fileContent, { strict: false }); // preserves structure
+
+  for (const [projectId, project] of Object.entries(labProjects.projects)) {
+    if (project.code?.date_last_commit) {
+      yamlDoc.setIn(["projects", projectId, "code", "date_last_commit"], project.code.date_last_commit);
+    }
+  }
+  await fs.writeFile(filePath, String(yamlDoc), "utf-8");
 }
 
 /**
