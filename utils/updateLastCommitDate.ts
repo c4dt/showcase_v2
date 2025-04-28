@@ -99,7 +99,7 @@ async function getProjectLastCommitDate(gitRepo: string): Promise<string | null>
  */
 async function updateProjectFile(filePath: string, labProjects: Projects): Promise<void> {
   const fileContent = await fs.readFile(filePath, "utf-8");
-  const yamlDoc = parseDocument(fileContent, { strict: false }); // preserves structure
+  const yamlDoc = parseDocument(fileContent, { strict: false });
 
   for (const [projectId, project] of Object.entries(labProjects.projects)) {
     if (project.code?.date_last_commit) {
