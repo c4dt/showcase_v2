@@ -25,7 +25,9 @@
           </div>
         </div>
         <!-- Icons on the Right -->
-        <InfoIcons :project="project" />
+        <div class="flex space-x-4 flex-nowrap">
+          <InfoIcons :project="project" />
+        </div>
       </div>
     </div>
   </div>
