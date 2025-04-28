@@ -39,21 +39,7 @@ const truncatedDescription = computed(() => {
     </NuxtLink>
     <!-- Icons Container -->
     <div class="flex space-x-4 justify-end pb-4 pr-4 mt-auto">
-      <a v-if="project.information" :href="project.information[0].url">
-        <font-awesome :icon="['fa', 'newspaper']" class="fa-3x" />
-      </a>
-      <a v-if="project.url" :href="project.url">
-        <font-awesome :icon="['fa', 'home']" class="fa-3x" />
-      </a>
-      <a v-if="project.code" :href="project.code.url">
-        <font-awesome
-          :icon="[
-            project.code.type.toLowerCase().includes('github') ? 'fab' : 'fas',
-            project.code.type.toLowerCase().includes('github') ? 'github' : 'code'
-          ]"
-          class="fa-3x"
-        />
-      </a>
+      <InfoIcons :project="project" />
     </div>
   </div>
 </template>
