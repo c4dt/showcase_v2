@@ -25,16 +25,30 @@
           </div>
         </div>
         <!-- Icons on the Right -->
-        <div v-if="projectInformationIcons.length" class="flex space-x-4 flex-nowrap">
-          <a
-            v-for="info in projectInformationIcons"
-            :key="info.url"
-            :href="info.url"
-            class="text-gray-500 hover:text-gray-700"
-            :aria-label="info.label"
-          >
-            <FontAwesomeIcon :icon="info.icon" class="fa-2x" />
-          </a>
+        <div class="flex space-x-4 flex-nowrap">
+          <NuxtLink
+            v-if="papers"
+            :class="iconClass"
+            :to="{ name: 'projects-id', params: { id: project.id }, query: { section: TAB_IDS.PAPERS } }"
+            ><FontAwesomeIcon :icon="faFile" class="fa-2x"
+          /></NuxtLink>
+          <NuxtLink
+            v-if="articles"
+            :class="iconClass"
+            :to="{ name: 'projects-id', params: { id: project.id }, query: { section: TAB_IDS.ARTICLES } }"
+            ><FontAwesomeIcon :icon="faNewspaper" class="fa-2x"
+          /></NuxtLink>
+          <div v-if="projectInformationIcons.length" class="flex space-x-4 flex-nowrap">
+            <a
+              v-for="info in projectInformationIcons"
+              :key="info.url"
+              :href="info.url"
+              :class="iconClass"
+              :aria-label="info.label"
+            >
+              <FontAwesomeIcon :icon="info.icon" class="fa-2x" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -49,6 +63,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 const props = defineProps<{
   project: ExtendedProject;
 }>();
+const iconClass = "text-gray-500 hover:text-gray-700";
 const project = props.project;
 
 const selectedTags = inject("selectedTags") as Ref<string[]>;
@@ -59,27 +74,13 @@ const tagClass = (tag: string) =>
     ? "px-3 py-1 rounded-full text-sm bg-gray-400 text-gray-950 cursor-not-allowed transition"
     : "px-3 py-1 rounded-full text-sm bg-gray-200 text-gray-800 cursor-pointer hover:bg-gray-300 hover:text-gray-900 transition";
 
+const articles = project.information
+  ? project.information.some((info) => info.type.toLowerCase() === "article")
+  : false;
+const papers = project.information ? project.information.some((info) => info.type.toLowerCase() === "paper") : false;
+
 const projectInformationIcons = computed(() => {
   const icons = [];
-
-  if (project.information) {
-    project.information.forEach((info) => {
-      const type = info.type.toLowerCase();
-      if (type === "article") {
-        icons.push({
-          url: info.url,
-          icon: faNewspaper,
-          label: "Article"
-        });
-      } else if (type === "paper") {
-        icons.push({
-          url: info.url,
-          icon: faFile,
-          label: "Paper"
-        });
-      }
-    });
-  }
 
   if (project.url) {
     icons.push({
