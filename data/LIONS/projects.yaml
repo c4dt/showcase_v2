@@ -39,7 +39,8 @@ projects:
       - Info
     description: Magnetic imaging resonance optimization
     layman_desc: >
-      Learning-based framework for optimizing magnetic resonance imaging (MRI) reconstruction.
+      Learning-based framework for optimizing magnetic resonance imaging (MRI)
+      reconstruction.
     url: https://www.epfl.ch/labs/lions/technology/lb-csmri-2/
     code:
       type: Lab Download
@@ -68,7 +69,8 @@ projects:
       - Info
     description: Faster PyTorch optimizer
     layman_desc: >
-      Compared to the largely used SGD optimizer for PyTorch, STORM+ is faster but requires two passes on the data.
+      Compared to the largely used SGD optimizer for PyTorch, STORM+ is faster
+      but requires two passes on the data.
     code:
       type: Lab GitHub
       url: https://github.com/LIONS-EPFL/storm-plus-code

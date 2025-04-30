@@ -8,8 +8,9 @@ projects:
     description: >
       A simpler and faster NIC driver model for network functions
     tech_desc: >
-      By merely replacing the state-of-the-art driver with our driver, formal verification of the entire software stack completes in 7x less
-      time, while the verified functions’ throughput improves by 160%.
+      By merely replacing the state-of-the-art driver with our driver, formal
+      verification of the entire software stack completes in 7x less time, while
+      the verified functions’ throughput improves by 160%.
     url: https://dslab.epfl.ch/research/tinynf/
     contacts:
       - name: Solal Pirelli
@@ -42,11 +43,14 @@ projects:
       - Infra
     description: Formally verified and performant software middleboxes
     tech_desc: >
-      Software stack and toolchain for building and running software middleboxes that are guaranteed to be correct, while providing
-      competitive performance and preserving developer productivity. With Vigor, developers write the middlebox code (i.e., the software
-      network function, or NF) in C atop a standard packet-processing framework, putting persistent state in data structures from a
-      Vigor-provided library. Vigor then automatically verifies that the resulting software stack correctly implements a specification
-      (written in Python).
+      Software stack and toolchain for building and running software middleboxes
+      that are guaranteed to be correct, while providing competitive performance
+      and preserving developer productivity. With Vigor, developers write the
+      middlebox code (i.e., the software network function, or NF) in C atop a
+      standard packet-processing framework, putting persistent state in data
+      structures from a Vigor-provided library. Vigor then automatically
+      verifies that the resulting software stack correctly implements a
+      specification (written in Python).
     url: https://vigor-nf.github.io/
     code:
       type: Project Github
@@ -83,19 +87,28 @@ projects:
       - Infra
     description: Performance contracts for software network functions
     layman_desc: >
-      Software network functions (NFs), or middleboxes, promise flexibility and easy deployment of network services but face the serious
-      challenge of unexpected performance behaviour. This behaviour makes it harder for network operators to provision their networks and
-      exposes a new attack surface for adversaries seeking to degrade network performance. The goal of our work is to provide network
-      operators and NF developers with comprehensive understanding of the NF’s entire performance profile, before it is deployed. Such
-      understanding would, for instance, allow operators to conduct precise capacity planning and developers to make informed development
-      decisions.
+      Software network functions (NFs), or middleboxes, promise flexibility and
+      easy deployment of network services but face the serious challenge of
+      unexpected performance behaviour. This behaviour makes it harder for
+      network operators to provision their networks and exposes a new attack
+      surface for adversaries seeking to degrade network performance. The goal
+      of our work is to provide network operators and NF developers with
+      comprehensive understanding of the NF’s entire performance profile, before
+      it is deployed. Such understanding would, for instance, allow operators to
+      conduct precise capacity planning and developers to make informed
+      development decisions.
     tech_desc: >
-      We propose the notion of performance contracts for NFs. A performance contract enables users to predict and scrutinize NF performance
-      at fine granularities without having to run them. It provider users with an abstraction that enables them to easily parameterize
-      arbitrary input workloads, whether typical, exceptional or adversarial. Given only this abstract description of the workload and not a
-      concrete instance, the contract predicts the performance of the NF without actually running it. The performance predictions are in
-      terms of human-readable formulae, expressed as a function of workload and environment variables, that we together call Performance
-      Critical Variables (PCVs). informed development decisions.
+      We propose the notion of performance contracts for NFs. A performance
+      contract enables users to predict and scrutinize NF performance at fine
+      granularities without having to run them. It provider users with an
+      abstraction that enables them to easily parameterize arbitrary input
+      workloads, whether typical, exceptional or adversarial. Given only this
+      abstract description of the workload and not a concrete instance, the
+      contract predicts the performance of the NF without actually running it.
+      The performance predictions are in terms of human-readable formulae,
+      expressed as a function of workload and environment variables, that we
+      together call Performance Critical Variables (PCVs). informed development
+      decisions.
     contacts:
       - name: Rishabh Iyer
         email: rishabh.iyer@epfl.ch
@@ -127,10 +140,13 @@ projects:
       - Infra
     description: Fast and precise control-flow hijack protection
     tech_desc: >
-      Code-Pointer Integrity (CPI) is a property of C/C++ programs that guarantees absence of control-flow hijack attacks by requiring
-      integrity of all direct and indirect pointers to code. Code-Pointer Separation (CPS) is a simplified version of CPI that provides
-      strong protection against such attacks in practice. SafeStack is a component of CPI/CPS, which can be used independently and protects
-      against stack-based control-flow hijacks.
+      Code-Pointer Integrity (CPI) is a property of C/C++ programs that
+      guarantees absence of control-flow hijack attacks by requiring integrity
+      of all direct and indirect pointers to code. Code-Pointer Separation (CPS)
+      is a simplified version of CPI that provides strong protection against
+      such attacks in practice. SafeStack is a component of CPI/CPS, which can
+      be used independently and protects against stack-based control-flow
+      hijacks.
     url: https://dslab.epfl.ch/research/cpi/
     code:
       type: Project GitHub
@@ -165,10 +181,12 @@ projects:
       - Security
     applications:
       - Infra
-    description: Platform for writing tools that analyze the properties and behavior of software systems
+    description: Platform for writing tools that analyze the properties and behavior
+      of software systems
     tech_desc: >
-      S²E is a platform for writing tools that analyze the properties and behavior of software systems. S²E comes as a modular library that
-      gives virtual machines symbolic execution and program analysis capabilities.
+      S²E is a platform for writing tools that analyze the properties and
+      behavior of software systems. S²E comes as a modular library that gives
+      virtual machines symbolic execution and program analysis capabilities.
     url: https://s2e.systems/
     code:
       type: Project GitHub
@@ -203,7 +221,8 @@ projects:
       - Infra
     description: Low overhead software protection
     layman_desc: >
-      Makes it possible to use powerful software protection mechanisms at a low performance overhead.
+      Makes it possible to use powerful software protection mechanisms at a low
+      performance overhead.
     url: https://dslab.epfl.ch/research/asap/
     code:
       type: Lab GitHub
@@ -243,7 +262,8 @@ projects:
       - Infra
     description: Scalable symbolic execution
     tech_desc: >
-      Parallel symbolic execution engine that scales on shared-nothing clusters of commodity hardware.
+      Parallel symbolic execution engine that scales on shared-nothing clusters
+      of commodity hardware.
     url: http://cloud9.epfl.ch/
     code:
       type: Lab GitHub
@@ -291,8 +311,8 @@ projects:
       - Infra
     description: Protection against deadlock bugs
     layman_desc: >
-      Enables general-purpose applications to defend themselves against deadlock bugs, i.e. avoid deadlocks that they previously
-      encountered.
+      Enables general-purpose applications to defend themselves against deadlock
+      bugs, i.e. avoid deadlocks that they previously encountered.
     url: https://dslab.epfl.ch/research/dimmunix/
     code:
       type: Google Code
@@ -325,9 +345,12 @@ projects:
       - Infra
     description: Automated debugging technique
     tech_desc: >
-      Failure sketching is an automated debugging technique that provides developers with an explanation (“failure sketch”) of the root
-      cause of a failure that occurred in production. A failure sketch only contains program statements that lead to the failure, and it
-      clearly shows the differences between failing and successful runs; these differences guide developers to the root cause.
+      Failure sketching is an automated debugging technique that provides
+      developers with an explanation (“failure sketch”) of the root cause of a
+      failure that occurred in production. A failure sketch only contains
+      program statements that lead to the failure, and it clearly shows the
+      differences between failing and successful runs; these differences guide
+      developers to the root cause.
     url: https://dslab.epfl.ch/research/gist/
     code:
       type: Lab GitHub
@@ -345,7 +368,8 @@ projects:
     type: Application
     information:
       - type: Paper
-        title: "Failure Sketching: A Technique for Automated Root Cause Diagnosis of In-Production Failures"
+        title: "Failure Sketching: A Technique for Automated Root Cause Diagnosis of
+          In-Production Failures"
         url: https://dslab.epfl.ch/pubs/gist.pdf
         notes:
           - label: Published in
@@ -360,12 +384,15 @@ projects:
       - Security
     applications:
       - Infra
-    description: Quantify the resilience of software systems to human-induced configuration errors
+    description: Quantify the resilience of software systems to human-induced
+      configuration errors
     layman_desc: >
-      ConfErr uses human error models rooted in psychology and linguistics to generate realistic configuration mistakes; it then injects
-      these mistakes and measures their effects, producing a resilience profile of the system under test. The resilience profile, capturing
-      succinctly how sensitive the target software is to different classes of configuration errors, can be used for improving the software
-      or to compare systems to each other.
+      ConfErr uses human error models rooted in psychology and linguistics to
+      generate realistic configuration mistakes; it then injects these mistakes
+      and measures their effects, producing a resilience profile of the system
+      under test. The resilience profile, capturing succinctly how sensitive the
+      target software is to different classes of configuration errors, can be
+      used for improving the software or to compare systems to each other.
     url: https://dslab.epfl.ch/research/conferr/
     code:
       type: Personal GitHub
@@ -398,8 +425,9 @@ projects:
       - Infra
     description: Library-level fault injection toolkit
     layman_desc: >
-      LFI automatically identifies the errors exposed by shared libraries, finds potentially buggy error recovery code in program binaries,
-      and produces corresponding injection scenarios.
+      LFI automatically identifies the errors exposed by shared libraries, finds
+      potentially buggy error recovery code in program binaries, and produces
+      corresponding injection scenarios.
     url: https://dslab.epfl.ch/research/lfi/
     code:
       type: Lab GitHub
@@ -430,12 +458,13 @@ projects:
       - Infra
     description: Verification framework for smart infrastructures
     layman_desc: >
-      The Secure and Verified Smart Home Infrastructure project is a platform/runtime/toolchain for developing and running formally verified
+      The Secure and Verified Smart Home Infrastructure project is a
+      platform/runtime/toolchain for developing and running formally verified
       smart infrastructures, such as smart buildings, smart cities, etc.
     code:
       type: Lab GitHub
       url: https://github.com/dslab-epfl/svshi
-      date_last_commit: 2022-08-12
+      date_last_commit: 2022-09-21
     language: Python, Scala
     license: MIT
     type: Framework
@@ -454,9 +483,10 @@ projects:
       - Infra
     description: Automated verification of network function binaries
     layman_desc: >
-      Network functions are building blocks for "networks:" a router, a NAT or anything transforming packets. As it is handling all the
-      traffic for a given infrastructure, it is crucial that it is implemented correctly. Klint helps in building and verifying theses
-      functions.
+      Network functions are building blocks for "networks:" a router, a NAT or
+      anything transforming packets. As it is handling all the traffic for a
+      given infrastructure, it is crucial that it is implemented correctly.
+      Klint helps in building and verifying theses functions.
     code:
       type: Lab GitHub
       url: https://github.com/dslab-epfl/klint
@@ -480,8 +510,9 @@ projects:
     incubator:
       type: retired
       work: >
-        For this project we implemented extended Berkley Packet Filtering (eBPF) support,
-        so that the software verification can also be done for this type of code.
+        For this project we implemented extended Berkley Packet Filtering (eBPF)
+        support, so that the software verification can also be done for this
+        type of code.
       products:
         - type: OSS-participation
           url: https://github.com/angr/angr-platforms/pull/55
@@ -498,8 +529,9 @@ projects:
       - Infra
     description: Show performance of network functions
     layman_desc: >
-      Network functions speed is very important for any network-heavy infrastructure. PIX extracts performance metrics for these
-      automatically, to help find regressions and bottlenecks.
+      Network functions speed is very important for any network-heavy
+      infrastructure. PIX extracts performance metrics for these automatically,
+      to help find regressions and bottlenecks.
     code:
       type: Lab GitHub
       url: https://github.com/dslab-epfl/pix
@@ -536,20 +568,20 @@ projects:
       - "Debug"
       - "Network"
     layman_desc: >
-      eBPF-SE is a tool that analyzes programs written for the Linux
-      kernel's eBPF framework. It systematically explores all possible
-      execution paths through the program by using symbolic values instead
-      of concrete inputs. This allows finding bugs or verifying properties
-      of the program. eBPF-SE uses models of the Linux APIs to avoid
-      getting bogged down in the real kernel code. It was originally part
-      of a tool for optimizing network software performance.
+      eBPF-SE is a tool that analyzes programs written for the Linux kernel's
+      eBPF framework. It systematically explores all possible execution paths
+      through the program by using symbolic values instead of concrete inputs.
+      This allows finding bugs or verifying properties of the program. eBPF-SE
+      uses models of the Linux APIs to avoid getting bogged down in the real
+      kernel code. It was originally part of a tool for optimizing network
+      software performance.
     tech_desc: >
-      eBPF-SE is a tool that symbolically executes eBPF programs written
-      for the Linux kernel. It is based on the KLEE symbolic execution
-      engine and uses models (stubs) for the Linux kernel's libbpf API.
-      This allows exploring all program paths without path explosion from
-      the real API implementation. eBPF-SE was previously part of PIX, a
-      tool that extracts performance interfaces from network function code.
+      eBPF-SE is a tool that symbolically executes eBPF programs written for the
+      Linux kernel. It is based on the KLEE symbolic execution engine and uses
+      models (stubs) for the Linux kernel's libbpf API. This allows exploring
+      all program paths without path explosion from the real API implementation.
+      eBPF-SE was previously part of PIX, a tool that extracts performance
+      interfaces from network function code.
     code:
       type: Lab Github
       url: https://github.com/dslab-epfl/ebpf-se
