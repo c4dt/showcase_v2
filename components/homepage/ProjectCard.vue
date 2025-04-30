@@ -26,29 +26,7 @@
         </div>
         <!-- Icons on the Right -->
         <div class="flex space-x-4 flex-nowrap">
-          <NuxtLink
-            v-if="papers"
-            :class="iconClass"
-            :to="{ name: 'projects-id', params: { id: project.id }, query: { section: TAB_IDS.PAPERS } }"
-            ><FontAwesomeIcon :icon="faFile" class="fa-2x"
-          /></NuxtLink>
-          <NuxtLink
-            v-if="articles"
-            :class="iconClass"
-            :to="{ name: 'projects-id', params: { id: project.id }, query: { section: TAB_IDS.ARTICLES } }"
-            ><FontAwesomeIcon :icon="faNewspaper" class="fa-2x"
-          /></NuxtLink>
-          <div v-if="projectInformationIcons.length" class="flex space-x-4 flex-nowrap">
-            <a
-              v-for="info in projectInformationIcons"
-              :key="info.url"
-              :href="info.url"
-              :class="iconClass"
-              :aria-label="info.label"
-            >
-              <FontAwesomeIcon :icon="info.icon" class="fa-2x" />
-            </a>
-          </div>
+          <InfoIcons :project="project" />
         </div>
       </div>
     </div>
@@ -57,13 +35,11 @@
 
 <script lang="ts" setup>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { faTags, faNewspaper, faFile, faHome, faCode, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faTags } from "@fortawesome/free-solid-svg-icons";
 
 const props = defineProps<{
   project: ExtendedProject;
 }>();
-const iconClass = "text-gray-500 hover:text-gray-700";
 const project = props.project;
 
 const selectedTags = inject("selectedTags") as Ref<string[]>;
@@ -73,39 +49,4 @@ const tagClass = (tag: string) =>
   selectedTags.value.includes(tag)
     ? "px-3 py-1 rounded-full text-sm bg-gray-400 text-gray-950 cursor-not-allowed transition"
     : "px-3 py-1 rounded-full text-sm bg-gray-200 text-gray-800 cursor-pointer hover:bg-gray-300 hover:text-gray-900 transition";
-
-const articles = project.information
-  ? project.information.some((info) => info.type.toLowerCase() === "article")
-  : false;
-const papers = project.information ? project.information.some((info) => info.type.toLowerCase() === "paper") : false;
-
-const projectInformationIcons = computed(() => {
-  const icons = [];
-
-  if (project.url) {
-    icons.push({
-      url: project.url,
-      icon: faHome,
-      label: "Project Homepage"
-    });
-  }
-
-  if (project.code) {
-    icons.push({
-      url: project.code.url,
-      icon: project.code.type.toLowerCase().includes("github") ? faGithub : faCode,
-      label: "Source Code"
-    });
-  }
-
-  if (project.contacts && project.contacts.length) {
-    icons.push({
-      url: `mailto:${project.contacts.map((contact) => contact.email).join(",")}`,
-      icon: faEnvelope,
-      label: "Contact"
-    });
-  }
-
-  return icons;
-});
 </script>
