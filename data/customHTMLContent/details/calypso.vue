@@ -12,5 +12,5 @@
   </ul>
   <img src="/showcase_v2/products/images/calypso/steps.png" class="dark_invert center" style="width: 75%" />
 
-  <p>The <a href="https://eprint.iacr.org/2018/209.pdf">Calypso paper</a> has all the details.</p>
+  <p>The <a class="epfl-a" href="https://eprint.iacr.org/2018/209.pdf">Calypso paper</a> has all the details.</p>
 </template>

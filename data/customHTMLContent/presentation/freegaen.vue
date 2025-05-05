@@ -17,8 +17,9 @@
   </p>
   <p>
     After analyzing the various possibilities to replace GAEN, and examining the current related projects, we focused
-    our work on collaborating with <a href="https://microg.org/">microG</a>, a Free Software project dedicated to
-    replacing all of GMS. This effort resulted in a way to use microG's contact tracing subset as a library, so that it
-    can be bundled with an existing app without source code modification, and without other dependencies.
+    our work on collaborating with <a class="epfl-a" href="https://microg.org/">microG</a>, a Free Software project
+    dedicated to replacing all of GMS. This effort resulted in a way to use microG's contact tracing subset as a
+    library, so that it can be bundled with an existing app without source code modification, and without other
+    dependencies.
   </p>
 </template>

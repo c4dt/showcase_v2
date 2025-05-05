@@ -3,12 +3,12 @@
   <p>
     We do not host this demo anymore, but you can find its code here and use the instructions to run it on your own
     computer!
-    <a href="https://github.com/c4dt/omniledger">Omniledger Archive</a>.
+    <a class="epfl-a" href="https://github.com/c4dt/omniledger">Omniledger Archive</a>.
   </p>
   <p>
     OmniLedger has already been used for a number of years, and there are a lot of projects that interact with this
-    blockchain. Together with the <a href="https://dedis.ch">DEDIS</a> lab, C4DT is running a test-network since March
-    2019, and it is used on a daily basis for different services.
+    blockchain. Together with the <a class="epfl-a" href="https://dedis.ch">DEDIS</a> lab, C4DT is running a
+    test-network since March 2019, and it is used on a daily basis for different services.
   </p>
   <p>
     This page presents a demonstrator, showing the various blocks of the main chain. In addition to this, there are a
@@ -36,5 +36,5 @@
   </ol>
   <img src="/showcase_v2/products/images/omniledger/demo-columbus.png" class="center" style="width: 100%" />
 
-  <a href="https://explorer.c4dt.org" class="tab-link"> For a Live Demo Click Here </a>
+  <a class="epfl-a tab-link" href="https://explorer.c4dt.org"> For a Live Demo Click Here </a>
 </template>

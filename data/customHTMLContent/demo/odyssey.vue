@@ -38,7 +38,7 @@
   </div>
 
   <p>
-    Here is the <a href="https://dedis.github.io/odyssey/#/README">full documentation</a>, complete with a video
-    showcasing the final pilot.
+    Here is the <a class="epfl-a" href="https://dedis.github.io/odyssey/#/README">full documentation</a>, complete with
+    a video showcasing the final pilot.
   </p>
 </template>

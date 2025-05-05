@@ -4,4 +4,7 @@
 @tailwind utilities;
 
 @layer base {
+  .epfl-a {
+    @apply underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121];
+  }
 }

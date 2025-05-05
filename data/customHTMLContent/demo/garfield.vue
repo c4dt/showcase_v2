@@ -3,7 +3,7 @@
   <p>
     We do not host this demo anymore, but you can find its code here and use the instructions to run it on your own
     computer!
-    <a href="https://github.com/c4dt/garfield">Garfield Archive</a>.
+    <a class="epfl-a" href="https://github.com/c4dt/garfield">Garfield Archive</a>.
   </p>
   <p>Here are some screenshots from the running demo:</p>
   <div class="columns">
@@ -98,20 +98,20 @@
         />
         <br />
         Comparing Garfield with a solution like
-        <a href="https://factory.c4dt.org/showcase/spindle/presentation">SPINDLE</a> shows the difference between the
-        two: while Garfield protects against attacks wanting to influence the model, SPINDLE protects against attacks on
-        listeners, so that no server or external party can learn anything from the data exchanged.
+        <a class="epfl-a" href="https://factory.c4dt.org/showcase/spindle/presentation">SPINDLE</a> shows the difference
+        between the two: while Garfield protects against attacks wanting to influence the model, SPINDLE protects
+        against attacks on listeners, so that no server or external party can learn anything from the data exchanged.
       </label>
     </div>
   </div>
 
   <h4>Former description</h4>
   <p>
-    The <a href="https://factory.c4dt.org/incubator/garfield/demo/">Garfield Demonstrator</a> illustrates how Machine
-    Learning is used to train a model on known data and how it fares on new data. It describes the Decentralized
-    Learning model, showing how training on more data improves learning, while still keeping control on one’s data.
-    Finally, it shows the negative impact that faulty components have on distributed learning, and how using Garfield
-    helps to develop applications that can tolerate them.
+    The <a class="epfl-a" href="https://factory.c4dt.org/incubator/garfield/demo/">Garfield Demonstrator</a> illustrates
+    how Machine Learning is used to train a model on known data and how it fares on new data. It describes the
+    Decentralized Learning model, showing how training on more data improves learning, while still keeping control on
+    one’s data. Finally, it shows the negative impact that faulty components have on distributed learning, and how using
+    Garfield helps to develop applications that can tolerate them.
   </p>
 
   <p>
@@ -121,5 +121,5 @@
 
   <img src="/showcase_v2/products/images/garfield/demo-screenshot.png" width="50%" class="center" />
 
-  <a href="https://factory.c4dt.org/incubator/garfield/demo/" class="tab-link"> For a Live Demo Click Here </a>
+  <a class="epfl-a tab-link" href="https://factory.c4dt.org/incubator/garfield/demo/"> For a Live Demo Click Here </a>
 </template>

@@ -28,10 +28,10 @@
   <p>
     Originally created for the NotifyMe feature of SwissCovid, lightarti-rest offers an easy-to-use API for mobile apps.
     Both Android and iOS are supported. For more information, you can read the
-    <a href="https://github.com/c4dt/lightarti-rest/wiki">lightarti-rest wiki</a>.
+    <a class="epfl-a" href="https://github.com/c4dt/lightarti-rest/wiki">lightarti-rest wiki</a>.
   </p>
   <p>
     Lightarti-rest is based on the excellent work of the new Tor-client, called arti, which is available here:<br />
-    <a href="https://gitlab.torproject.org/tpo/core/arti/-/wikis/home">Arti</a>
+    <a class="epfl-a" href="https://gitlab.torproject.org/tpo/core/arti/-/wikis/home">Arti</a>
   </p>
 </template>

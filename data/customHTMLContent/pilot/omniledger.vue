@@ -3,7 +3,7 @@
   <p>
     We do not host this demo anymore, but you can find its code here and use the instructions to run it on your own
     computer!
-    <a href="https://github.com/c4dt/omniledger">Omniledger Archive</a>.
+    <a class="epfl-a" href="https://github.com/c4dt/omniledger">Omniledger Archive</a>.
   </p>
   <p>
     With the C4DT team we created a pilot using OmniLedger to create a self-sovereign identity. The identity is stored
@@ -12,22 +12,22 @@
   </p>
   <p>The demo can do the following:</p>
   <ol>
-    <li><a href="#update">Update</a> the user information autonomously</li>
+    <li><a class="epfl-a" href="#update">Update</a> the user information autonomously</li>
     <li>
-      <a href="#login">Login-procedures</a> - currently we have two logins:
+      <a class="epfl-a" href="#login">Login-procedures</a> - currently we have two logins:
       <ul>
         <li>Wordpress login, to allow access to the administrative interface and the partner-page</li>
         <li>Matrix login, to enter the C4DT chat</li>
       </ul>
     </li>
     <li>
-      <a href="#keymgmt">Key management</a> to allow the users to login from multiple devices and to entrust key
-      recovery to a chosen group of accounts.
+      <a class="epfl-a" href="#keymgmt">Key management</a> to allow the users to login from multiple devices and to
+      entrust key recovery to a chosen group of accounts.
     </li>
   </ol>
   <p>
     In the following paragraphs the different parts are presented in more detail. If you want to have a live demo, don't
-    hesitate to get in contact with <a href="mailto:linus.gasser@epfl.ch">Linus Gasser</a>
+    hesitate to get in contact with <a class="epfl-a" href="mailto:linus.gasser@epfl.ch">Linus Gasser</a>
   </p>
 
   <h3 id="update">Self sovereign Identity</h3>
