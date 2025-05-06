@@ -14,4 +14,7 @@
   li::marker {
     color: #ff0000;
   }
+  .epfl-h1 {
+    @apply text-4xl sm:text-6xl text-gray-900 font-bold tracking-tight
+  }
 }

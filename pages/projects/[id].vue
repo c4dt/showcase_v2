@@ -33,7 +33,7 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
       <div class="flex-[3]">
         <div class="px-8 bg-[#e6e6e6] text-center">
           <div class="py-4">
-            <h1 class="text-4xl font-bold">{{ project.lab.name }}</h1>
+            <h1 class="epfl-h1">{{ project.lab.name }}</h1>
             <a class="epfl-a" :href="lab.url">{{ lab.name }}</a>
             <div>
               <div class="flex justify-center py-4">
