@@ -102,7 +102,7 @@ watch(filteredProjects, () => {
     </section>
     <!-- Project search section -->
     <section class="px-4 md:px-12 py-4">
-      <h1 class="text-center text-3xl font-bold text-gray-900 sm:text-5xl">View all Projects</h1>
+      <h2 class="epfl-h2 text-center">View all Projects</h2>
       <div class="flex flex-col md:flex-row py-10">
         <!-- Sidebar with filter -->
         <div class="w-full md:w-1/4 md:pr-4">
