@@ -86,14 +86,13 @@ watch(filteredProjects, () => {
             trust from the EPFL labs.
           </p>
           <p>-curated by C4DT's factory team-</p>
-          <h3>
+          <p>
             For more information about the C4DT factory, see
             <a class="epfl-a" href="https://c4dt.epfl.ch/domains/factory/">our homepage</a>
-          </h3>
-          <h3>
-            You can find more information on
-            <a class="epfl-a" href="https://c4dt.epfl.ch/article/?cat=10">our blog</a>
-          </h3>
+          </p>
+          <p>
+            You can find more information on <a class="epfl-a" href="https://c4dt.epfl.ch/article/?cat=10">our blog</a>
+          </p>
         </div>
       </div>
     </section>
