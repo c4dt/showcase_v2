@@ -51,8 +51,8 @@
         between different parties. Instead of having a central bank deciding which money transfers are valid, Bitcoin
         spreads this decision over many computers that have to agree on which transfers are valid. A new kind of
         transaction that is gaining traction in 2021 is Non Fungible Tokens, or
-        <a href="https://en.wikipedia.org/wiki/Non-fungible_token">NFTs</a>, which represents the digital ownership of a
-        physical object.
+        <a class="epfl-a" href="https://en.wikipedia.org/wiki/Non-fungible_token">NFTs</a>, which represents the digital
+        ownership of a physical object.
       </td>
       <td width="33%" style="padding: 1em">
         <h4>Consensus</h4>
