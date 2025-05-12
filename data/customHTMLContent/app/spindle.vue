@@ -6,7 +6,7 @@
   </p>
   <p>
     As the interest from our partners was so important, C4DT, together with prof. Jean-Pierre Hubaux, decided to create
-    a startup: <a href="https://tuneinsight.com">TuneInsight</a>. This startup is currently working on various
-    Proof-of-Concepts with our partners, but soon it will be incorporated and start rea-life applications.
+    a startup: <a class="epfl-a" href="https://tuneinsight.com">TuneInsight</a>. This startup is currently working on
+    various Proof-of-Concepts with our partners, but soon it will be incorporated and start rea-life applications.
   </p>
 </template>

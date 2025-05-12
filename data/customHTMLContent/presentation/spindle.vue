@@ -2,13 +2,13 @@
   <p>
     SPINDLE allows for some statistics on distributed data without sharing any data in clear. One kind of statistics it
     can do is called
-    <a href="https://en.wikipedia.org/wiki/Machine_learning">machine learning</a>, which allows a program to make
-    predictions based on a given set of data. It fits many use cases, such as determining the likeliness that some
-    hospital patient has a disease, or automatically determine what an image represents.
+    <a class="epfl-a" href="https://en.wikipedia.org/wiki/Machine_learning">machine learning</a>, which allows a program
+    to make predictions based on a given set of data. It fits many use cases, such as determining the likeliness that
+    some hospital patient has a disease, or automatically determine what an image represents.
     <br />
     SPINDLE can do all that while at the same time keeping the data private. It does so by using a
-    <a href="https://en.wikipedia.org/wiki/Lattice-based_cryptography">new kind of cryptography</a>, allowing to apply
-    common mathematical operations on encrypted data and only revealing the result.
+    <a class="epfl-a" href="https://en.wikipedia.org/wiki/Lattice-based_cryptography">new kind of cryptography</a>,
+    allowing to apply common mathematical operations on encrypted data and only revealing the result.
   </p>
 
   <h4>Example</h4>

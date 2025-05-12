@@ -80,30 +80,19 @@ watch(filteredProjects, () => {
     <section class="relative isolatept-14 lg:px-8">
       <div class="mx-auto max-w-10xl">
         <div class="text-center">
-          <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            The Center for Digital Trust's Showcase
-          </h1>
+          <h1 class="epfl-h1">The Center for Digital Trust's Showcase</h1>
           <p class="mt-6 text-lg leading-8 text-gray-600">
             A repository of Digital Trust projects showcasing the latest research and innovation in the field of digital
             trust from the EPFL labs.
           </p>
           <p>-curated by C4DT's factory team-</p>
-          <h3>
+          <p>
             For more information about the C4DT factory, see
-            <a
-              class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]"
-              href="https://c4dt.epfl.ch/domains/factory/"
-              >our homepage</a
-            >
-          </h3>
-          <h3>
-            You can find more information on
-            <a
-              class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]"
-              href="https://c4dt.epfl.ch/article/?cat=10"
-              >our blog</a
-            >
-          </h3>
+            <a class="epfl-a" href="https://c4dt.epfl.ch/domains/factory/">our homepage</a>
+          </p>
+          <p>
+            You can find more information on <a class="epfl-a" href="https://c4dt.epfl.ch/article/?cat=10">our blog</a>
+          </p>
         </div>
       </div>
     </section>
@@ -113,7 +102,7 @@ watch(filteredProjects, () => {
     </section>
     <!-- Project search section -->
     <section class="px-4 md:px-12 py-4">
-      <h1 class="text-center text-3xl font-bold text-gray-900 sm:text-5xl">View all Projects</h1>
+      <h2 class="epfl-h2 text-center">View all Projects</h2>
       <div class="flex flex-col md:flex-row py-10">
         <!-- Sidebar with filter -->
         <div class="w-full md:w-1/4 md:pr-4">

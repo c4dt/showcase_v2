@@ -4,8 +4,8 @@
   <p>
     Machine learning allows computers to make choices without being explicitly programmed for each case. As this field
     is quite enormous, we will only talk about
-    <a href="https://en.wikipedia.org/wiki/Supervised_learning">supervised learning</a>, a special case of machine
-    learning, which happens to be the one shown in the demonstrator.
+    <a class="epfl-a" href="https://en.wikipedia.org/wiki/Supervised_learning">supervised learning</a>, a special case
+    of machine learning, which happens to be the one shown in the demonstrator.
   </p>
 
   <p>
@@ -82,7 +82,7 @@
     hundreds of producers, thousands of products and many other features.
     <br />
     That's where using
-    <a href="https://en.wikipedia.org/wiki/Unsupervised_learning">unsupervised machine learning</a>
+    <a class="epfl-a" href="https://en.wikipedia.org/wiki/Unsupervised_learning">unsupervised machine learning</a>
     helps: it discovers by itself the relations between the product features, creating a "model" representing the data.
     The output is not as readable as a human would do but takes much less time.
     <br />
