@@ -25,12 +25,16 @@
 
   <p>
     Here are the slides of the hands-on training. If you are interested in this training, please reach out to
-    <a href="mailto:linus.gasser@epfl.ch">Linus Gasser</a>
+    <a class="epfl-a" href="mailto:linus.gasser@epfl.ch">Linus Gasser</a>
   </p>
   <ul>
     <li>
-      <a href="/showcase_v2/products/images/calypso/calypso-hands-on-executive-overview.pdf">Executive Overview</a>
+      <a class="epfl-a" href="/showcase_v2/products/images/calypso/calypso-hands-on-executive-overview.pdf"
+        >Executive Overview</a
+      >
     </li>
-    <li><a href="/showcase_v2/products/images/calypso/calypso-hands-on-exercises.pdf">Training Slides</a></li>
+    <li>
+      <a class="epfl-a" href="/showcase_v2/products/images/calypso/calypso-hands-on-exercises.pdf">Training Slides</a>
+    </li>
   </ul>
 </template>

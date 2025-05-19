@@ -2,11 +2,7 @@
   <ul class="list-none">
     <li v-if="project.code?.url && project.code?.type">
       Source code:
-      <a
-        class="underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121]"
-        :href="project.code.url"
-        >{{ project.code.type }}</a
-      >
+      <a class="epfl-a" :href="project.code.url">{{ project.code.type }}</a>
     </li>
     <li v-if="project.code?.date_last_commit">Last commit: {{ project.code.date_last_commit }}</li>
   </ul>

@@ -2,17 +2,17 @@
   <h3>This project has been retired from the C4DT Factory Incubator</h3>
   <p>
     It is no longer actively supported, but you can find the archived project here:
-    <a href="https://github.com/dedis/filesharing"> Calypso Demo Code </a>
+    <a class="epfl-a" href="https://github.com/dedis/filesharing"> Calypso Demo Code </a>
     However, if you have questions or suggestions, feel free to contact us.
   </p>
   <p>
     OmniLedger has already been used for a number of years, and there are a lot of projects that interact with this
-    blockchain. Together with the <a href="https://dedis.ch">DEDIS</a> lab, C4DT is running a test-network since March
-    2019, and it is used on a daily basis for different services.
+    blockchain. Together with the <a class="epfl-a" href="https://dedis.ch">DEDIS</a> lab, C4DT is running a
+    test-network since March 2019, and it is used on a daily basis for different services.
   </p>
   <h4>Calypso Access Control</h4>
   <p>
-    The <a href="https://github.com/calypso-demo/filesharing">Calypso access control demo</a>
+    The <a class="epfl-a" href="https://github.com/calypso-demo/filesharing">Calypso access control demo</a>
     shows one use-case of the calypso access control system. The demo shows three users where each user has a list of
     contacts and two groups. The files of the users are stored encrypted on the blockchain, and to decrypt the files,
     the access control of the file must match the user.
@@ -37,5 +37,5 @@
   </p>
 
   This demo needs to be run on your local computer. Find the code here:
-  <a href="https://github.com/dedis/filesharing"> Calypso Demo Code </a>
+  <a class="epfl-a" href="https://github.com/dedis/filesharing"> Calypso Demo Code </a>
 </template>

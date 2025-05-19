@@ -2,9 +2,10 @@
   <h4>Introduction</h4>
 
   <p>
-    Garfield is a framework to write <a href="https://en.wikipedia.org/wiki/Machine_learning">Machine Learning</a> (ML)
-    applications. It is built on top of <a href="https://pytorch.org/">PyTorch</a> and
-    <a href="https://www.tensorflow.org/">TensorFlow</a>, two of the most used libraries in this field.
+    Garfield is a framework to write
+    <a class="epfl-a" href="https://en.wikipedia.org/wiki/Machine_learning">Machine Learning</a> (ML) applications. It
+    is built on top of <a class="epfl-a" href="https://pytorch.org/">PyTorch</a> and
+    <a class="epfl-a" href="https://www.tensorflow.org/">TensorFlow</a>, two of the most used libraries in this field.
   </p>
   <p>
     More specifically, Garfield allows one to write distributed Byzantine fault tolerant ML applications. Those terms
@@ -41,10 +42,10 @@
   <p>
     Computer systems can present many kinds of failures, ranging from one-off glitches to catastrophic breakdowns. In
     distributed systems, the most general class of failures is called
-    <a href="https://en.wikipedia.org/wiki/Byzantine_fault">Byzantine faults</a>, and characterizes conditions where
-    components can behave in completely arbitrary ways. They can for example act normally with respect to one component,
-    but present errors to another one. They can send inconsistent information to different peers. Such actions can be
-    the result of an attack, or simply due to a combination of software or hardware errors.
+    <a class="epfl-a" href="https://en.wikipedia.org/wiki/Byzantine_fault">Byzantine faults</a>, and characterizes
+    conditions where components can behave in completely arbitrary ways. They can for example act normally with respect
+    to one component, but present errors to another one. They can send inconsistent information to different peers. Such
+    actions can be the result of an attack, or simply due to a combination of software or hardware errors.
   </p>
 
   <p>
