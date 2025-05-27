@@ -108,9 +108,25 @@ async function getGitlabOrgLastCommitDate(orgName: string): Promise<string | und
   console.log(`getGitlabOrgLastCommitDate(${orgName}) is coming soon!`);
   return;
 }
-async function getGitlabProjectLastCommitDate(orgName: string, projectName: string): Promise<string | undefined> {
-  console.log(`getGitlabProjectLastCommitDate(${orgName}, ${projectName}) is coming soon!`);
-  return;
+async function getGitlabProjectLastCommitDate(orgName: string, repoName: string): Promise<string | undefined> {
+  console.log("Working...");
+  const commitsURL = `https://gitlab.com/api/v4/projects/${orgName}%2F${repoName}/repository/commits?per_page=1`;
+  const resp = await fetch(commitsURL, {
+    headers: {
+      Accept: "application/json"
+    }
+  });
+  if (!resp.ok) {
+    throw new Error(`GitLab API error: ${resp.status} ${resp.statusText}`);
+  }
+
+  const commits = await resp.json();
+  if (commits.length === 0) {
+    console.error(`No commits found for: ${orgName}/${repoName}.`);
+    return;
+  }
+
+  return commits[0].committed_date.split("T")[0];
 }
 
 /**
