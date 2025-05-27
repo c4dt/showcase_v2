@@ -3,7 +3,7 @@
   <p>
     We do not host this library anymore, but you can find its code here and use the instructions to run it on your own
     computer!
-    <a href="https://github.com/c4dt/lightarti-rest">LightArti-Rest Archive</a>.
+    <a class="epfl-a" href="https://github.com/c4dt/lightarti-rest">LightArti-Rest Archive</a>.
   </p>
   <p>
     Lightarti was developed during the work on SwissCovid at C4DT, in collaboration with Carmela Troncoso's lab. It
@@ -13,7 +13,7 @@
   </p>
   <p>You can find the mobile libraries here:</p>
   <ul>
-    <li><a href="https://github.com/c4dt/lightarti-rest-android">Android</a> Library</li>
-    <li><a href="https://github.com/c4dt/lightarti-rest-ios">iOS</a> Library</li>
+    <li><a class="epfl-a" href="https://github.com/c4dt/lightarti-rest-android">Android</a> Library</li>
+    <li><a class="epfl-a" href="https://github.com/c4dt/lightarti-rest-ios">iOS</a> Library</li>
   </ul>
 </template>

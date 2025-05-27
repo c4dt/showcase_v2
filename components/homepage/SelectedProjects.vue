@@ -36,7 +36,7 @@ const highlightedProjects: ExtendedProject[] = projects.value.filter((project) =
 
 <template>
   <div class="text-center">
-    <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Selected Projects</h2>
+    <h2 class="epfl-h2">Selected Projects</h2>
   </div>
   <Carousel class="mt-12 px-8" v-bind="carouselConfig">
     <Slide v-for="project in highlightedProjects" :key="project.name">

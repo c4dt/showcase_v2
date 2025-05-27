@@ -2,10 +2,11 @@
   <h4>Introduction</h4>
 
   <p>
-    Stainless is a tool to help designing highly reliable programs in <a href="https://scala-lang.org/">Scala</a>. Using
-    <a href="https://en.wikipedia.org/wiki/Formal_verification">Formal Verification</a>, it will check whether the
-    system behaves according to how it was specified, or if it will deviate in unexpected ways. Logical errors, security
-    vulnerabilities and other defects can therefore be detected before the program is deployed.
+    Stainless is a tool to help designing highly reliable programs in
+    <a class="epfl-a" href="https://scala-lang.org/">Scala</a>. Using
+    <a class="epfl-a" href="https://en.wikipedia.org/wiki/Formal_verification">Formal Verification</a>, it will check
+    whether the system behaves according to how it was specified, or if it will deviate in unexpected ways. Logical
+    errors, security vulnerabilities and other defects can therefore be detected before the program is deployed.
   </p>
 
   <p>
@@ -61,23 +62,23 @@
   <h4>Smart Contracts</h4>
 
   <p>
-    <a href="https://en.wikipedia.org/wiki/Smart_contract">Smart Contracts</a> are computer programs that are executed
-    on a <a href="https://en.wikipedia.org/wiki/Blockchain">blockchain</a>. They usually enforce mechanisms or model
-    real-life processes, such as e-voting, insurance or loans, with the advantage that they do not require centralized
-    trust.
+    <a class="epfl-a" href="https://en.wikipedia.org/wiki/Smart_contract">Smart Contracts</a> are computer programs that
+    are executed on a <a class="epfl-a" href="https://en.wikipedia.org/wiki/Blockchain">blockchain</a>. They usually
+    enforce mechanisms or model real-life processes, such as e-voting, insurance or loans, with the advantage that they
+    do not require centralized trust.
   </p>
   <p>
     Smart Contracts typically involve the transfer of assets such as money. It is therefore critical that they are
     devoid of errors, as mistakes will translate in possibly significant financial loss. Their source code is also
     generally short compared to applications, which helps in keeping the complexity of applying Formal Verification
     manageable. A variant of Stainless exists that can verify Smart Contracts written for the popular
-    <a href="https://en.wikipedia.org/wiki/Ethereum">Ethereum blockchain</a>.
+    <a class="epfl-a" href="https://en.wikipedia.org/wiki/Ethereum">Ethereum blockchain</a>.
   </p>
   <p>
-    <a href="omniledger.html">OmniLedger</a>, another project curated by the C4DT, is a blockchain implementation
-    developed at the <a href="https://www.epfl.ch/labs/dedis/">DEDIS</a> lab. It also contains a layer allowing it to
-    run an Ethereum virtual machine. Together with Stainless, they provide a complete platform for the development and
-    execution of verified Smart Contracts, as illustrated in the following diagram:
+    <a class="epfl-a" href="omniledger.html">OmniLedger</a>, another project curated by the C4DT, is a blockchain
+    implementation developed at the <a class="epfl-a" href="https://www.epfl.ch/labs/dedis/">DEDIS</a> lab. It also
+    contains a layer allowing it to run an Ethereum virtual machine. Together with Stainless, they provide a complete
+    platform for the development and execution of verified Smart Contracts, as illustrated in the following diagram:
     <img class="dark dark_pad align-middle" src="/showcase_v2/products/images/stainless/interactions.svg" />
   </p>
   <p>

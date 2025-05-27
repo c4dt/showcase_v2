@@ -8,8 +8,8 @@
   <p>The C4DT team was involved in the research and development process:</p>
   <ul>
     <li>
-      <a href="https://github.com/CrowdNotifier/libcrowdnotifier">Reference implementation</a> to make sure the
-      specification is complete
+      <a class="epfl-a" href="https://github.com/CrowdNotifier/libcrowdnotifier">Reference implementation</a> to make
+      sure the specification is complete
     </li>
     <li>Pilot at EPFL - involving installing the QRcodes in 30+ rooms at EPFL</li>
     <li>Administrative interface - to handle all QRcodes and send out notifications</li>

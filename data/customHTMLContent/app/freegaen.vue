@@ -5,7 +5,7 @@
   <p>
     We produced a version of SwissCovid that uses this approach to run on any phone that does not have access to Google
     Play services. The resulting application, LibreCHovid, is
-    <a href="https://f-droid.org/en/packages/ch.corona.tracing/">available on the F-Droid store</a>.
+    <a class="epfl-a" href="https://f-droid.org/en/packages/ch.corona.tracing/">available on the F-Droid store</a>.
   </p>
   <p>
     The F-Droid store does not provide statistics regarding how many users installed an app, for privacy reasons.

@@ -2,7 +2,7 @@
   <h3>This project has been retired from the C4DT Factory Incubator</h3>
   <p>
     We do not host this demo anymore, but you can
-    <a href="https://github.com/c4dt/service-drynx">find its code here</a>.
+    <a class="epfl-a" href="https://github.com/c4dt/service-drynx">find its code here</a>.
   </p>
 
   <h4>Description</h4>

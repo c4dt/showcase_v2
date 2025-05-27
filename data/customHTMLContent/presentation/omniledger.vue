@@ -27,7 +27,7 @@
   </ul>
   <p>
     In addition to these challenges, we implemented
-    <a href="https://factory.c4dt.org/showcase/labs/DEDIS/calypso">Calypso</a>, which is a
+    <a class="epfl-a" href="https://factory.c4dt.org/showcase/labs/DEDIS/calypso">Calypso</a>, which is a
     <strong>Secret storage</strong> service. This is needed, because today's blockchains are often world-readable, so it
     is important that you still can store secret data without everybody being able to read it. Calypso is not part of
     the original OmniLedger paper, but uses the OmniLedger blockchain implementation.

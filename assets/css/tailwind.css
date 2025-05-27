@@ -1,1 +1,23 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .epfl-a {
+    @apply underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121];
+  }
+  ul {
+    list-style-type: square;
+    list-style-position: inside;
+  }
+  li::marker {
+    color: #ff0000;
+  }
+  .epfl-h1 {
+    @apply text-4xl sm:text-6xl text-gray-900 font-bold tracking-tight;
+  }
+  .epfl-h2 {
+    @apply text-2xl sm:text-4xl text-gray-900 font-bold tracking-tight;
+  }
+}
