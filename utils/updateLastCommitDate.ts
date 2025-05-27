@@ -39,9 +39,33 @@ interface GitHubCommit {
 }
 
 async function getGithubOrgLastCommitDate(orgName: string): Promise<string | undefined> {
-  console.log(`getGithubOrgLastCommitDate(${orgName}) is coming soon!`);
-  return;
+  const reposURL = `https://api.github.com/orgs/${orgName}/repos?per_page=1&sort=updated&direction=desc`;
+  try {
+    const response = await fetch(reposURL, {
+      headers: {
+        Accept: "application/vnd.github.v3+json",
+        // Ensure GITHUB_TOKEN is set in your environment
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN ?? ""}`
+      }
+    });
+    if (!response.ok) {
+      console.error(`Failed to get repos for: ${orgName}. HTTP status: ${response.status}`);
+      return;
+    }
+    const lastCommitDate = (await response.json())[0]?.pushed_at;
+    if (!lastCommitDate) {
+      console.error(`Last repo in org ${orgName} Doesn't have any commits.`);
+      return;
+    }
+
+    return lastCommitDate.split("T")[0];
+  } catch (error) {
+    console.error(`Error fetching repos for org: ${orgName}`);
+    console.error(error);
+    return;
+  }
 }
+
 async function getGithubProjectLastCommitDate(orgName: string, repoName: string): Promise<string | undefined> {
   const commitsURL = `https://api.github.com/repos/${orgName}/${repoName}/commits?per_page=1`;
 
