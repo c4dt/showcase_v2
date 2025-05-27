@@ -38,6 +38,10 @@ interface GitHubCommit {
   };
 }
 
+async function getGithubOrgLastCommitDate(orgName: string): Promise<string | undefined> {
+  console.log(`getGithubOrgLastCommitDate(${orgName}) is coming soon!`);
+  return;
+}
 async function getGithubProjectLastCommitDate(orgName: string, repoName: string): Promise<string | undefined> {
   const commitsURL = `https://api.github.com/repos/${orgName}/${repoName}/commits?per_page=1`;
 
@@ -76,6 +80,15 @@ async function getGithubProjectLastCommitDate(orgName: string, repoName: string)
   }
 }
 
+async function getGitlabOrgLastCommitDate(orgName: string): Promise<string | undefined> {
+  console.log(`getGitlabOrgLastCommitDate(${orgName}) is coming soon!`);
+  return;
+}
+async function getGitlabProjectLastCommitDate(orgName: string, projectName: string): Promise<string | undefined> {
+  console.log(`getGitlabProjectLastCommitDate(${orgName}, ${projectName}) is coming soon!`);
+  return;
+}
+
 /**
  * Fetches the latest commit date in YYYY-MM-DD format from the provided GitHub repository URL.
  * Returns null if the data cannot be retrieved for any reason.
@@ -94,11 +107,17 @@ async function getProjectLastCommitDate(gitRepo: string): Promise<string | undef
     console.error(`Unrecognizable  URL: ${gitRepo}. Ensure it follows "https://github.com/owner/repo" format.`);
     return;
   }
-  if (pathParts.length !== 2 || repoService !== "github.com") {
-    console.error("Case not handled yet!");
-    return null;
+
+  switch (`${repoService},${pathParts.length}`) {
+    case "github.com,1":
+      return await getGithubOrgLastCommitDate(pathParts[0]);
+    case "github.com,2":
+      return await getGithubProjectLastCommitDate(pathParts[0], pathParts[1]);
+    case "gitlab.com,1":
+      return await getGitlabOrgLastCommitDate(pathParts[0]);
+    case "gitlab.com,2":
+      return await getGitlabProjectLastCommitDate(pathParts[0], pathParts[1]);
   }
-  return await getGithubProjectLastCommitDate(pathParts[0], pathParts[1]);
 }
 
 /**
