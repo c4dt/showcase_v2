@@ -38,7 +38,7 @@ interface GitHubCommit {
   };
 }
 
-async function getGithubProjectLastCommitDate(orgName: string, repoName: string): Promise<string | null> {
+async function getGithubProjectLastCommitDate(orgName: string, repoName: string): Promise<string | undefined> {
   const commitsURL = `https://api.github.com/repos/${orgName}/${repoName}/commits?per_page=1`;
 
   try {
@@ -52,27 +52,27 @@ async function getGithubProjectLastCommitDate(orgName: string, repoName: string)
 
     if (!response.ok) {
       console.error(`Failed to get commits for: ${orgName}/${repoName}. HTTP status: ${response.status}`);
-      return null;
+      return;
     }
 
     const commits = (await response.json()) as GitHubCommit[];
 
     if (!Array.isArray(commits) || commits.length === 0) {
       console.error(`No commits found for: ${orgName}/${repoName}.`);
-      return null;
+      return;
     }
 
     const lastCommitDate = commits[0]?.commit?.author?.date;
     if (!lastCommitDate) {
       console.error(`Could not retrieve commit date from: ${orgName}/${repoName}`);
-      return null;
+      return;
     }
 
     return lastCommitDate.split("T")[0];
   } catch (error) {
     console.error(`Error fetching commit for repo: ${orgName}/${repoName}`);
     console.error(error);
-    return null;
+    return;
   }
 }
 
@@ -80,7 +80,7 @@ async function getGithubProjectLastCommitDate(orgName: string, repoName: string)
  * Fetches the latest commit date in YYYY-MM-DD format from the provided GitHub repository URL.
  * Returns null if the data cannot be retrieved for any reason.
  */
-async function getProjectLastCommitDate(gitRepo: string): Promise<string | null> {
+async function getProjectLastCommitDate(gitRepo: string): Promise<string | undefined> {
   const url = new URL(gitRepo);
 
   const repoService = url.host;
@@ -88,11 +88,11 @@ async function getProjectLastCommitDate(gitRepo: string): Promise<string | null>
 
   if (repoService !== "github.com" && repoService !== "gitlab.com") {
     console.error(`Unsupported repository service: ${repoService}. Only GitHub and GitLab are supported.`);
-    return null;
+    return;
   }
   if (pathParts.length === 0 || pathParts.length > 2) {
     console.error(`Unrecognizable  URL: ${gitRepo}. Ensure it follows "https://github.com/owner/repo" format.`);
-    return null;
+    return;
   }
   if (pathParts.length !== 2 || repoService !== "github.com") {
     console.error("Case not handled yet!");
