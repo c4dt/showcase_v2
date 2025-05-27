@@ -81,7 +81,7 @@ const router = useRouter();
 const activeTab = ref();
 
 const changeTab = (tabId: string) => {
-  router.push({ query: { section: tabId } });
+  router.replace({ query: { section: tabId } });
   activeTab.value = tabId;
 };
 
