@@ -105,11 +105,32 @@ async function getGithubProjectLastCommitDate(orgName: string, repoName: string)
 }
 
 async function getGitlabOrgLastCommitDate(orgName: string): Promise<string | undefined> {
-  console.log(`getGitlabOrgLastCommitDate(${orgName}) is coming soon!`);
-  return;
+  const reposURL = `https://gitlab.com/api/v4/groups/${orgName}/projects?per_page=1&order_by=last_activity_at`;
+  try {
+    const response = await fetch(reposURL, {
+      headers: {
+        Accept: "application/json"
+      }
+    });
+    if (!response.ok) {
+      console.error(`Failed to get repos for: ${orgName}. HTTP status: ${response.status}`);
+      return;
+    }
+    const lastCommitDate = (await response.json())[0]?.last_activity_at;
+    if (!lastCommitDate) {
+      console.error(`Last repo in org ${orgName} doesn't have any commits.`);
+      return;
+    }
+
+    return lastCommitDate.split("T")[0];
+  } catch (error) {
+    console.error(`Error fetching repos for org: ${orgName}`);
+    console.error(error);
+    return;
+  }
 }
+
 async function getGitlabProjectLastCommitDate(orgName: string, repoName: string): Promise<string | undefined> {
-  console.log("Working...");
   const commitsURL = `https://gitlab.com/api/v4/projects/${orgName}%2F${repoName}/repository/commits?per_page=1`;
   const resp = await fetch(commitsURL, {
     headers: {
