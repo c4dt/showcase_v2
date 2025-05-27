@@ -39,7 +39,7 @@ interface GitHubCommit {
 }
 
 async function getGithubOrgLastCommitDate(orgName: string): Promise<string | undefined> {
-  const reposURL = `https://api.github.com/orgs/${orgName}/repos?per_page=1&sort=updated&direction=desc`;
+  const reposURL = `https://api.github.com/orgs/${orgName}/repos?per_page=1&sort=pushed&direction=desc`;
   try {
     const response = await fetch(reposURL, {
       headers: {
