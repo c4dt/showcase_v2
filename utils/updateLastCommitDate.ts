@@ -122,13 +122,14 @@ async function updateLastCommitDate(): Promise<void> {
     const labProjects = await readProjectsFromFile(projectsPath);
 
     for (const [projectId, project] of Object.entries(labProjects.projects)) {
-      const gitUrl = project.code?.url;
-      if (!gitUrl) {
-        console.warn(`No repository URL found for project: ${projectId}`);
-        continue; // Skip if no repository URL is provided
+      if (!project.code) {
+        continue;
       }
-
-      const lastCommitDate = await getProjectLastCommitDate(gitUrl);
+      if (!project.code.url) {
+        console.warn(`No repository URL found for project: ${projectId}`);
+        continue;
+      }
+      const lastCommitDate = await getProjectLastCommitDate(project.code.url);
       if (!lastCommitDate) {
         continue;
       }
