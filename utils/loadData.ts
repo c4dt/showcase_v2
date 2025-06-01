@@ -34,7 +34,7 @@ export interface ExtendedProject extends Project {
   id: string;
   lab: Lab;
   descriptionDisplay: string;
-  status: int;
+  status: number;
   c4dt_status?: PROJECT_C4DT_STATUS;
   lab_status?: PROJECT_LAB_STATUS;
 }
@@ -123,7 +123,7 @@ async function loadLabProjects(
     project.logo = project.logo || lab.logo || "https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg";
     let c4dt_status: PROJECT_C4DT_STATUS | undefined = undefined;
     let lab_status: PROJECT_LAB_STATUS | undefined = undefined;
-    let status: int;
+    let status: number;
     if (project.incubator?.type === "incubated" || project.incubator?.type === "incubated_market") {
       c4dt_status = PROJECT_C4DT_STATUS.ACTIVE;
       status = 0;

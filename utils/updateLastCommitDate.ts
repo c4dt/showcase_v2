@@ -38,58 +38,120 @@ interface GitHubCommit {
   };
 }
 
-/**
- * Fetches the latest commit date in YYYY-MM-DD format from the provided GitHub repository URL.
- * Returns null if the data cannot be retrieved for any reason.
- */
-async function getProjectLastCommitDate(gitRepo: string): Promise<string | null> {
-  // Attempt to extract "owner/repo" from the provided repository URL
-  const stripped = gitRepo.replace(/^https?:\/\/github\.com\//, "");
-  const [owner, repo] = stripped.split("/");
-
-  // Basic validation
-  if (!owner || !repo) {
-    console.error(`Invalid GitHub URL: ${gitRepo}. Ensure it follows "https://github.com/owner/repo" format.`);
-    return null;
+async function getGithubOrgLastCommitDate(orgName: string): Promise<string> {
+  const reposURL = `https://api.github.com/orgs/${orgName}/repos?per_page=1&sort=pushed&direction=desc`;
+  const response = await fetch(reposURL, {
+    headers: {
+      Accept: "application/vnd.github.v3+json",
+      // Ensure GITHUB_TOKEN is set in your environment
+      Authorization: `Bearer ${process.env.GITHUB_TOKEN ?? ""}`
+    }
+  });
+  if (!response.ok) {
+    throw Error(`Failed to get repos for: ${orgName}. HTTP status: ${response.status}`);
+  }
+  const lastCommitDate = (await response.json())[0]?.pushed_at;
+  if (!lastCommitDate) {
+    throw Error(`Last repo in org ${orgName} Doesn't have any commits.`);
   }
 
-  const commitsURL = `https://api.github.com/repos/${owner}/${repo}/commits?per_page=1`;
+  return lastCommitDate.split("T")[0];
+}
 
-  try {
-    const response = await fetch(commitsURL, {
-      headers: {
-        Accept: "application/vnd.github.v3+json",
-        // Ensure GITHUB_TOKEN is set in your environment
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN ?? ""}`
-      }
-    });
-
-    // Check for non-success responses (e.g., 404 for private repos or invalid tokens)
-    if (!response.ok) {
-      console.error(`Failed to get commits for: ${gitRepo}. HTTP status: ${response.status}`);
-      return null;
+async function getGithubProjectLastCommitDate(orgName: string, repoName: string): Promise<string> {
+  const commitsURL = `https://api.github.com/repos/${orgName}/${repoName}/commits?per_page=1`;
+  const response = await fetch(commitsURL, {
+    headers: {
+      Accept: "application/vnd.github.v3+json",
+      // Ensure GITHUB_TOKEN is set in your environment
+      Authorization: `Bearer ${process.env.GITHUB_TOKEN ?? ""}`
     }
+  });
 
-    // Convert the response to JSON; typed as an array with a minimal commit structure
-    const commits = (await response.json()) as GitHubCommit[];
+  if (!response.ok) {
+    throw Error(`Failed to get commits for: ${orgName}/${repoName}. HTTP status: ${response.status}`);
+  }
 
-    if (!Array.isArray(commits) || commits.length === 0) {
-      console.error(`No commits found for: ${gitRepo}.`);
-      return null;
+  const commits = (await response.json()) as GitHubCommit[];
+
+  if (!Array.isArray(commits) || commits.length === 0) {
+    throw Error(`No commits found for: ${orgName}/${repoName}.`);
+  }
+
+  const lastCommitDate = commits[0]?.commit?.author?.date;
+  if (!lastCommitDate) {
+    throw Error(`Could not retrieve commit date from: ${orgName}/${repoName}`);
+  }
+
+  return lastCommitDate.split("T")[0];
+}
+
+async function getGitlabOrgLastCommitDate(orgName: string): Promise<string> {
+  const reposURL = `https://gitlab.com/api/v4/groups/${orgName}/projects?per_page=1&order_by=last_activity_at`;
+  const response = await fetch(reposURL, {
+    headers: {
+      Accept: "application/json"
     }
+  });
+  if (!response.ok) {
+    throw Error(`GitLab API error: ${response.status} ${response.statusText}`);
+  }
+  const lastCommitDate = (await response.json())[0]?.last_activity_at;
+  if (!lastCommitDate) {
+    throw Error(`Last repo in org ${orgName} doesn't have any commits.`);
+  }
 
-    // Extract the date in "YYYY-MM-DD" format
-    const lastCommitDate = commits[0]?.commit?.author?.date;
-    if (!lastCommitDate) {
-      console.error(`Could not retrieve commit date from: ${gitRepo}`);
-      return null;
+  return lastCommitDate.split("T")[0];
+}
+
+async function getGitlabProjectLastCommitDate(orgName: string, repoName: string): Promise<string> {
+  const commitsURL = `https://gitlab.com/api/v4/projects/${encodeURIComponent(`${orgName}/${repoName}`)}/repository/commits?per_page=1`;
+  const resp = await fetch(commitsURL, {
+    headers: {
+      Accept: "application/json"
     }
+  });
+  if (!resp.ok) {
+    throw new Error(`GitLab API error: ${resp.status} ${resp.statusText}`);
+  }
 
-    return lastCommitDate.split("T")[0];
-  } catch (error) {
-    console.error(`Error fetching commit for repo: ${gitRepo}`);
-    console.error(error);
-    return null;
+  const commits = await resp.json();
+  if (commits.length === 0) {
+    throw new Error(`No commits found for: ${orgName}/${repoName}.`);
+  }
+
+  return commits[0].committed_date.split("T")[0];
+}
+
+/**
+ * Fetches the latest commit date in YYYY-MM-DD format from the provided repository URL.
+ * Supports both GitHub and GitLab repositories.
+ * Throws an Error if the data cannot be retrieved or if the repository format is invalid.
+ */
+async function getProjectLastCommitDate(gitRepo: string): Promise<string> {
+  const url = new URL(gitRepo);
+
+  const repoService = url.host;
+  const pathParts = url.pathname.replace(/^\/+|\/+$/g, "").split("/");
+
+  if (repoService !== "github.com" && repoService !== "gitlab.com") {
+    throw Error(`Unsupported repository service: ${repoService}. Only GitHub and GitLab are supported.`);
+  }
+  if (pathParts.length === 0 || pathParts.length > 2) {
+    throw Error(`Invalid repository path: ${url.pathname}. Expected format: /owner/repo or /owner for organization.`);
+  }
+
+  switch (`${repoService},${pathParts.length}`) {
+    case "github.com,1":
+      return await getGithubOrgLastCommitDate(pathParts[0]);
+    case "github.com,2":
+      return await getGithubProjectLastCommitDate(pathParts[0], pathParts[1]);
+    case "gitlab.com,1":
+      return await getGitlabOrgLastCommitDate(pathParts[0]);
+    case "gitlab.com,2":
+      return await getGitlabProjectLastCommitDate(pathParts[0], pathParts[1]);
+    default:
+      throw Error(`Unsupported repository format: ${url.pathname}`);
   }
 }
 
@@ -122,20 +184,22 @@ async function updateLastCommitDate(): Promise<void> {
     const labProjects = await readProjectsFromFile(projectsPath);
 
     for (const [projectId, project] of Object.entries(labProjects.projects)) {
-      const gitUrl = project.code?.url;
-      if (!gitUrl) {
-        console.warn(`No repository URL found for project: ${projectId}`);
-        continue; // Skip if no repository URL is provided
-      }
-
-      const lastCommitDate = await getProjectLastCommitDate(gitUrl);
-      if (!lastCommitDate) {
+      if (!project.code) {
         continue;
       }
-
-      project.code.date_last_commit = lastCommitDate;
-      labProjects.projects[projectId] = project;
-      updatedProjectsCount++;
+      if (!project.code.url) {
+        console.warn(`No repository URL found for project: ${projectId}`);
+        continue;
+      }
+      try {
+        const lastCommitDate = await getProjectLastCommitDate(project.code.url);
+        project.code.date_last_commit = lastCommitDate;
+        labProjects.projects[projectId] = project;
+        updatedProjectsCount++;
+      } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : String(error);
+        console.error(`Project: ${projectId} - Error: ${errorMessage}`);
+      }
     }
 
     // Update the YAML file with new data for every project in the file
