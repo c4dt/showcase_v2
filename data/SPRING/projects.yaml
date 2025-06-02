@@ -62,7 +62,7 @@ projects:
     code:
       type: Project GitHub
       url: https://github.com/claimchain
-      date_last_commit: 2018-10-13
+      date_last_commit: 2018-12-17
     tags:
       - Decentralized
     language: Python

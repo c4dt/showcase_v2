@@ -247,7 +247,7 @@ projects:
     code:
       type: Project GitLab
       url: https://gitlab.com/procam.epfl
-      date_last_commit: 2022-01-04
+      date_last_commit: 2022-03-16
     date_added: 2022-09-14
     date_updated: 2024-03-15
 

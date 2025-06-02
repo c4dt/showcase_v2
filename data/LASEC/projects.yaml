@@ -50,7 +50,7 @@ projects:
     code:
       type: Non-lab GitLab
       url: https://gitlab.com/objectifsecurite/ophcrack/
-      date_last_commit: 2023-11-29
+      date_last_commit: 2024-08-12
     language: C
     type: Application
     tags:
