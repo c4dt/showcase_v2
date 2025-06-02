@@ -141,6 +141,7 @@ projects:
     code:
       type: Private GitHub
       url: https://github.com/mediaobservatory
+      date_last_commit: 2019-07-02
     tags:
       - Natural Language
     type: Application

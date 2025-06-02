@@ -251,7 +251,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/epfl-dlab/aiflows?tab=readme-ov-file
-      date_last_commit: 2024-04-12
+      date_last_commit: 2024-04-30
     language: Python
     license: MIT
     date_added: 2024-04-16
