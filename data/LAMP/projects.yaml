@@ -16,7 +16,7 @@ projects:
     code:
       type: Project GitHub
       url: https://github.com/scala-js/scala-js
-      date_last_commit: 2025-06-02
+      date_last_commit: 2025-06-08
     language: Scala
     license: Apache-2.0
     tags:
@@ -45,7 +45,7 @@ projects:
     code:
       type: Project GitHub
       url: https://github.com/scala-native/scala-native
-      date_last_commit: 2025-05-31
+      date_last_commit: 2025-06-06
     language: Scala, C
     license: Apache-2.0
     tags:
@@ -80,7 +80,7 @@ projects:
     code:
       type: Project Github
       url: https://github.com/scala/scala3
-      date_last_commit: 2025-06-01
+      date_last_commit: 2025-06-07
     language: Scala
     license: Apache-2.0
     date_added: 2024-04-12

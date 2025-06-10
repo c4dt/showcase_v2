@@ -32,7 +32,7 @@ projects:
     code:
       type: Project Github
       url: https://github.com/arkworks-rs
-      date_last_commit: 2025-05-31
+      date_last_commit: 2025-06-07
     language: Rust
     license: Apache-2.0
     information:
