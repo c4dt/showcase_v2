@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div v-for="tag in statusTags" :key="tag" class="flex justify-end pb-2 px-4">
+    <div v-for="tag in statusTags" :key="tag" class="flex">
       <div class="cursor-help" :title="tag.title">
         {{ tag.label }}
       </div>
     </div>
-    <div class="flex justify-end pb-2 px-4">
+    <div class="flex">
       <div v-if="maturity">
         <span>Maturity: </span
         ><span
