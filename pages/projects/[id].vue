@@ -14,8 +14,17 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
           <div class="flex items-center justify-center">
             <img :alt="project.name" :src="project.logo" class="p-4 object-contain w-full h-48" />
           </div>
-          <ProjectQuality :project="project" />
-          <ProjectDescription :project="project" />
+          <div class="flex">
+            <div class="sm:flex-1">
+              <ProjectDescription :project="project" />
+              <div class="sm:hidden block">
+                <ProjectQuality :project="project" />
+              </div>
+            </div>
+            <div class="hidden sm:block sm:justify-end sm:basis-64 sm:flex-shrink-0 sm:flex-grow-0">
+              <ProjectQuality :project="project" />
+            </div>
+          </div>
           <div class="flex items-center space-x-2 text-left">
             <FontAwesomeIcon :icon="faTags" class="text-gray-500" />
             <span
