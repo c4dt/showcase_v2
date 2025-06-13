@@ -33,22 +33,15 @@ const props = defineProps<{
   project: ExtendedProject;
 }>();
 const statusTags: { title: string; label: string }[] = [];
-const statusColors = {
-  [PROJECT_C4DT_STATUS.ACTIVE]: "\u{2705}",
-  [PROJECT_C4DT_STATUS.RETIRED]: "\u{23F8}",
-  [PROJECT_C4DT_STATUS.INACTIVE]: "\u{2026}",
-  [PROJECT_LAB_STATUS.ACTIVE]: "\u{2705}",
-  [PROJECT_LAB_STATUS.UNKNOWN]: "\u{2026}"
-};
 const c4dtStatus = props.project.c4dt_status ?? PROJECT_C4DT_STATUS.INACTIVE;
 statusTags.push({
   title: c4dtStatus,
-  label: `${PROJECT_STATUS_DESC.C4DT_STATUS} ${statusColors[c4dtStatus]}`
+  label: `${PROJECT_STATUS_DESC.C4DT_STATUS} ${PROJECT_STATUS_ICONS[c4dtStatus]}`
 });
 const labStatus = props.project.lab_status ?? PROJECT_LAB_STATUS.UNKNOWN;
 statusTags.push({
   title: labStatus,
-  label: `${PROJECT_STATUS_DESC.LAB_STATUS} ${statusColors[labStatus]}`
+  label: `${PROJECT_STATUS_DESC.LAB_STATUS} ${PROJECT_STATUS_ICONS[labStatus]}`
 });
 const maturity = props.project.maturity ?? 0;
 const title = ["Prototype", "Intermediate", "Mature"];
