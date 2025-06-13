@@ -34,9 +34,9 @@ const props = defineProps<{
 }>();
 const statusTags: { title: string; label: string }[] = [];
 const statusColors = {
-  [PROJECT_C4DT_STATUS.ACTIVE]: "\u{1F7E2}",
-  [PROJECT_C4DT_STATUS.RETIRED]: "\u{1F7E0}",
-  [PROJECT_LAB_STATUS.ACTIVE]: "\u{1F7E2}"
+  [PROJECT_C4DT_STATUS.ACTIVE]: "\u{2705}",
+  [PROJECT_C4DT_STATUS.RETIRED]: "\u{23F8}",
+  [PROJECT_LAB_STATUS.ACTIVE]: "\u{2705}"
 };
 if (props.project.c4dt_status) {
   statusTags.push({
