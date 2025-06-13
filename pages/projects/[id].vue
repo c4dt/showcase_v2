@@ -11,12 +11,20 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
     <div class="flex m-16">
       <div class="pr-16 flex-[7] text-center">
         <div class="py-4">
-          <p class="text-xs py-4">This page was last edited on {{ lastEdited.toDateString() }}.</p>
           <div class="flex items-center justify-center">
             <img :alt="project.name" :src="project.logo" class="p-4 object-contain w-full h-48" />
           </div>
-          <ProjectQuality :project="project" />
-          <ProjectDescription :project="project" />
+          <div class="flex">
+            <div class="sm:flex-1">
+              <ProjectDescription :project="project" />
+              <div class="sm:hidden block">
+                <ProjectQuality :project="project" />
+              </div>
+            </div>
+            <div class="hidden sm:block sm:justify-end sm:basis-64 sm:flex-shrink-0 sm:flex-grow-0">
+              <ProjectQuality :project="project" />
+            </div>
+          </div>
           <div class="flex items-center space-x-2 text-left">
             <FontAwesomeIcon :icon="faTags" class="text-gray-500" />
             <span
@@ -66,5 +74,6 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
         ></NuxtLink
       >
     </div>
+    <p class="text-xs text-center pb-2">This page was last edited on {{ lastEdited.toDateString() }}.</p>
   </div>
 </template>

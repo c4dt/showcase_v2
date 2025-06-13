@@ -12,6 +12,15 @@
         C4DT work
       </li>
       <li
+        :class="[
+          'cursor-pointer w-full text-left px-4 py-2 border-r text-gray-800',
+          activeTab === TAB_IDS.TECHNICAL ? 'bg-gray-200  border-red-500 border-r-2' : 'bg-white border-gray-200'
+        ]"
+        @click="changeTab(TAB_IDS.TECHNICAL)"
+      >
+        Technical
+      </li>
+      <li
         v-if="papers.length"
         :class="[
           'cursor-pointer w-full text-left px-4 py-2 border-r text-gray-800',
@@ -30,15 +39,6 @@
         @click="changeTab(TAB_IDS.ARTICLES)"
       >
         Miscellaneous publications
-      </li>
-      <li
-        :class="[
-          'cursor-pointer w-full text-left px-4 py-2 border-r text-gray-800',
-          activeTab === TAB_IDS.TECHNICAL ? 'bg-gray-200  border-red-500 border-r-2' : 'bg-white border-gray-200'
-        ]"
-        @click="changeTab(TAB_IDS.TECHNICAL)"
-      >
-        Technical
       </li>
       <li
         v-for="tab in additionalTabs"
