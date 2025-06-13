@@ -1,9 +1,11 @@
 export enum PROJECT_C4DT_STATUS {
   ACTIVE = "Active",
-  RETIRED = "Retired"
+  RETIRED = "Retired",
+  INACTIVE = "Inactive"
 }
 export enum PROJECT_LAB_STATUS {
-  ACTIVE = "Active"
+  ACTIVE = "Active",
+  UNKNOWN = "Unknown"
 }
 export enum PROJECT_STATUS_DESC {
   C4DT_STATUS = "C4DT support status:",
