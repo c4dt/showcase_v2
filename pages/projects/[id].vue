@@ -43,7 +43,7 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
           ></NuxtLink
         >
       </div>
-      <p class="text-xs text-center pb-2">This page was last edited on {{ lastEdited.toDateString() }}.</p>
+      <p class="text-xs text-center pb-2">This page was last edited on {{ lastEdited.toISOString().split("T")[0] }}.</p>
     </div>
     <div class="flex-[3]">
       <div class="px-8 bg-[#e6e6e6] text-center">
