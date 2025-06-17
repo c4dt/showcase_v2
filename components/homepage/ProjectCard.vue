@@ -1,18 +1,21 @@
 <template>
   <div class="mx-auto bg-white rounded-xl shadow-md overflow-hidden">
     <div class="p-8 hover:bg-zinc-100 transition-colors duration-100">
-      <!-- Special Tags on the Top Right -->
-      <ProjectQuality :project="project" />
-      <NuxtLink :to="{ name: 'projects-id', params: { id: project.id } }" class="block">
-        <div class="flex items-start">
-          <!-- Left Side: Project Name and Description -->
-          <div class="grow">
+      <div class="flex items-start">
+        <div class="sm:flex-1">
+          <NuxtLink :to="{ name: 'projects-id', params: { id: project.id } }" class="block">
             <ProjectDescription :project="project" />
             <h3>Professor: {{ project.lab.prof.name.join(" ") }}</h3>
             <h3>Lab: {{ project.lab.name }}</h3>
-          </div>
+            <div class="sm:hidden block">
+              <ProjectQuality :project="project" />
+            </div>
+          </NuxtLink>
         </div>
-      </NuxtLink>
+        <div class="hidden sm:block sm:justify-end sm:basis-64 sm:flex-shrink-0 sm:flex-grow-0">
+          <ProjectQuality :project="project" />
+        </div>
+      </div>
       <!-- Bottom Section: Tags and Icons -->
       <div class="flex justify-between items-end mt-4">
         <!-- Tags on the Left -->
