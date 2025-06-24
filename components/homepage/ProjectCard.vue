@@ -44,5 +44,5 @@ const project = props.project;
 const selectedTags = inject("selectedTags") as Ref<string[]>;
 const addTag = inject("addTag") as (tag: string) => void;
 
-const tagClass = (tag: string) => (selectedTags.value.includes(tag) ? "epfl-tag-non-link" : "epfl-tag-link");
+const tagClass = (tag: string) => (selectedTags.value.includes(tag) ? "epfl-tag-plain" : "epfl-tag-light");
 </script>

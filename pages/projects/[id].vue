@@ -25,7 +25,7 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
           </div>
         </div>
         <div class="flex items-center space-x-2 text-left">
-          <span v-for="tag in project.tags.toSorted()" :key="tag" class="epfl-tag-non-link">
+          <span v-for="tag in project.tags.toSorted()" :key="tag" class="epfl-tag-plain">
             {{ tag }}
           </span>
         </div>
