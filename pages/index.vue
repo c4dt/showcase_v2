@@ -13,6 +13,8 @@ provide("selectedTags", selectedTags);
 function addTag(tag: string) {
   if (!selectedTags.value.includes(tag)) {
     selectedTags.value.push(tag);
+  } else {
+    selectedTags.value.splice(selectedTags.value.indexOf(tag), 1);
   }
 }
 provide("addTag", addTag);
