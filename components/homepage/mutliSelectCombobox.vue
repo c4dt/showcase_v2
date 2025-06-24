@@ -52,13 +52,9 @@ defineExpose({ clearAll });
       @focusin="onFocusIn"
     >
       <!-- Selected items as pills -->
-      <span
-        v-for="item in selectedItems"
-        :key="item"
-        class="inline-flex items-center px-2 py-1 rounded bg-blue-100 text-blue-700 text-sm"
-      >
+      <span v-for="item in selectedItems" :key="item" class="epfl-tag-light-removable">
         {{ item }}
-        <button aria-label="Remove item" class="ml-1 text-blue-500 hover:text-blue-700" @click.stop="removeItem(item)">
+        <button aria-label="Remove item" class="epfl-times" @click.stop="removeItem(item)">
           <font-awesome :icon="['fas', 'times']" class="w-3 h-3" />
         </button>
       </span>
@@ -83,7 +79,7 @@ defineExpose({ clearAll });
       aria-label="Clear all selections"
       @click.prevent="clearAll"
     >
-      <span class="w-6 h-6 flex items-center justify-center bg-gray-200 hover:bg-gray-300 rounded text-black">
+      <span class="epfl-times">
         <font-awesome :icon="['fas', 'times']" class="w-3 h-3" />
       </span>
     </button>

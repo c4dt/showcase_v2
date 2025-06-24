@@ -26,4 +26,10 @@
   .epfl-tag-light {
     @apply border-1 border-[#707070] hover:border-[#212121] hover:bg-[#e6e6e6] hover:cursor-pointer px-2 py-1;
   }
+  .epfl-tag-light-removable {
+    @apply border-1 border-[#707070] hover:cursor-pointer px-2 py-1;
+  }
+  .epfl-times {
+    @apply bg-[#e6e6e6] hover:bg-[#ff0000] hover:text-[#ffffff] leading-5 px-1
+  }
 }
