@@ -20,4 +20,10 @@
   .epfl-h2 {
     @apply text-2xl sm:text-4xl text-gray-900 font-bold tracking-tight;
   }
+  .epfl-tag-non-link {
+    @apply bg-[#707070] text-[#ffffff] px-2 py-1;
+  }
+  .epfl-tag-link {
+    @apply border-1 border-[#707070] hover:border-[#212121] hover:bg-[#e6e6e6] hover:cursor-pointer px-2 py-1;
+  }
 }

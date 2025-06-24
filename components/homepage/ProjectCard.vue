@@ -20,7 +20,6 @@
       <div class="flex justify-between items-end mt-4">
         <!-- Tags on the Left -->
         <div class="flex items-center space-x-2">
-          <FontAwesomeIcon :icon="faTags" class="text-gray-500" />
           <div class="flex flex-wrap gap-2">
             <span v-for="tag in project.tags" :key="tag" :class="tagClass(tag)" @click="addTag(tag)">
               {{ tag }}
@@ -37,9 +36,6 @@
 </template>
 
 <script lang="ts" setup>
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { faTags } from "@fortawesome/free-solid-svg-icons";
-
 const props = defineProps<{
   project: ExtendedProject;
 }>();
@@ -48,8 +44,5 @@ const project = props.project;
 const selectedTags = inject("selectedTags") as Ref<string[]>;
 const addTag = inject("addTag") as (tag: string) => void;
 
-const tagClass = (tag: string) =>
-  selectedTags.value.includes(tag)
-    ? "px-3 py-1 rounded-full text-sm bg-gray-400 text-gray-950 cursor-not-allowed transition"
-    : "px-3 py-1 rounded-full text-sm bg-gray-200 text-gray-800 cursor-pointer hover:bg-gray-300 hover:text-gray-900 transition";
+const tagClass = (tag: string) => (selectedTags.value.includes(tag) ? "epfl-tag-non-link" : "epfl-tag-link");
 </script>

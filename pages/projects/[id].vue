@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { faTags, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 const project = useState<ExtendedProject>(`project-${useRoute().params.id}`);
 const lab = project.value.lab;
 
@@ -25,12 +25,7 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
           </div>
         </div>
         <div class="flex items-center space-x-2 text-left">
-          <FontAwesomeIcon :icon="faTags" class="text-gray-500" />
-          <span
-            v-for="tag in project.tags"
-            :key="tag"
-            class="px-3 py-1 rounded-full text-sm bg-[#d5d5d5] text-[#707070]"
-          >
+          <span v-for="tag in project.tags" :key="tag" class="epfl-tag-non-link">
             {{ tag }}
           </span>
         </div>
