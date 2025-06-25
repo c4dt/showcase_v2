@@ -26,6 +26,9 @@
   .epfl-tag-light {
     @apply border-1 border-[#707070] hover:border-[#212121] hover:bg-[#e6e6e6] hover:cursor-pointer px-2 py-1 text-center truncate;
   }
+  .epfl-tag-light-not-clickable {
+    @apply border-1 border-[#707070] px-2 py-1 text-center truncate;
+  }
   .epfl-tag-light-removable {
     @apply border-1 border-[#707070] hover:cursor-pointer px-2 py-1 text-center truncate;
   }
