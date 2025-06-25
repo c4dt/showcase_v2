@@ -55,7 +55,7 @@ defineExpose({ clearAll });
       <span v-for="item in selectedItems" :key="item" class="epfl-tag-light-removable">
         {{ item }}
         <button aria-label="Remove item" class="epfl-times" @click.stop="removeItem(item)">
-          <font-awesome :icon="['fas', 'times']" class="w-3 h-3" />
+          <font-awesome :icon="['fas', 'times']" />
         </button>
       </span>
       <!-- Input field -->
