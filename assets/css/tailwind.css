@@ -21,13 +21,13 @@
     @apply text-2xl sm:text-4xl text-gray-900 font-bold tracking-tight;
   }
   .epfl-tag-plain {
-    @apply bg-[#707070] text-[#ffffff] hover:cursor-pointer px-2 py-1;
+    @apply bg-[#707070] text-[#ffffff] hover:cursor-pointer px-2 py-1 text-center;
   }
   .epfl-tag-light {
-    @apply border-1 border-[#707070] hover:border-[#212121] hover:bg-[#e6e6e6] hover:cursor-pointer px-2 py-1;
+    @apply border-1 border-[#707070] hover:border-[#212121] hover:bg-[#e6e6e6] hover:cursor-pointer px-2 py-1 text-center;
   }
   .epfl-tag-light-removable {
-    @apply border-1 border-[#707070] hover:cursor-pointer px-2 py-1;
+    @apply border-1 border-[#707070] hover:cursor-pointer px-2 py-1 text-center;
   }
   .epfl-times {
     @apply bg-[#e6e6e6] hover:bg-[#ff0000] hover:text-[#ffffff] leading-5 px-1
