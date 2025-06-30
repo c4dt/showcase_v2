@@ -110,3 +110,9 @@ defineExpose({ clearAll });
     </div>
   </div>
 </template>
+
+<style scoped>
+ul {
+  list-style: none;
+}
+</style>

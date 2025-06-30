@@ -105,3 +105,9 @@ function toggleDropdown() {
     </div>
   </div>
 </template>
+
+<style scoped>
+ul {
+  list-style: none;
+}
+</style>
