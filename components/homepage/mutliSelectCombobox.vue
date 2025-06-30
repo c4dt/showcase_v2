@@ -21,7 +21,11 @@ function selectItem(name: string) {
 }
 
 function removeItem(name: string) {
-  selectedItems.value = selectedItems.value.filter((item) => item !== name);
+  const updatedItems = selectedItems.value.filter((item) => item !== name);
+  if (!updatedItems.length) {
+    isOpen.value = false;
+  }
+  selectedItems.value = updatedItems;
 }
 
 function clearAll() {
