@@ -56,9 +56,11 @@ defineExpose({ clearAll });
       @focusin="onFocusIn"
     >
       <!-- Selected items as pills -->
-      <span v-for="item in selectedItems" :key="item" class="epfl-tag-light-removable">
-        {{ item }}
-        <button aria-label="Remove item" class="epfl-times" @click.stop="removeItem(item)">
+      <span v-for="item in selectedItems" :key="item" class="epfl-tag-light-removable max-w-full">
+        <span class="truncate">
+          {{ item }}
+        </span>
+        <button aria-label="Remove item" class="epfl-times truncate" @click.stop="removeItem(item)">
           <font-awesome :icon="['fas', 'times']" />
         </button>
       </span>
