@@ -50,35 +50,36 @@ defineExpose({ clearAll });
 </script>
 
 <template>
-  <div class="relative py-2" @focusout="onFocusOut">
+  <div class="relative py-2">
     <div
       class="flex flex-wrap gap-1 items-center w-full px-4 py-2 pr-12 border rounded-md bg-white border-gray-300 focus-within:ring-2 focus-within:ring-blue-500 min-h-[40px]"
-      @focusin="onFocusIn"
     >
       <!-- Selected items as pills -->
-      <span v-for="item in selectedItems" :key="item" class="epfl-tag-light-removable max-w-full">
-        <span class="truncate">
-          {{ item }}
+      <div @focusin="onFocusIn" @focusout="onFocusOut">
+        <span v-for="item in selectedItems" :key="item" class="epfl-tag-light-removable max-w-full">
+          <span class="truncate">
+            {{ item }}
+          </span>
+          <button aria-label="Remove item" class="epfl-times truncate" @click.stop="removeItem(item)">
+            <font-awesome :icon="['fas', 'times']" />
+          </button>
         </span>
-        <button aria-label="Remove item" class="epfl-times truncate" @click.stop="removeItem(item)">
-          <font-awesome :icon="['fas', 'times']" />
-        </button>
-      </span>
-      <!-- Input field -->
-      <input
-        v-model="searchQuery"
-        type="text"
-        :placeholder="selectedItems.length ? '' : title"
-        class="flex-grow border-none focus:outline-none min-w-[120px]"
-      />
+        <!-- Input field -->
+        <input
+          v-model="searchQuery"
+          type="text"
+          :placeholder="selectedItems.length ? '' : title"
+          class="flex-grow border-none focus:outline-none min-w-[120px]"
+        />
+      </div>
+      <button
+        class="inset-y-0 right-0 flex items-center pr-2 text-gray-500"
+        aria-label="Toggle dropdown"
+        @click.prevent="toggleDropdown"
+      >
+        <font-awesome :icon="['fas', 'caret-down']" />
+      </button>
     </div>
-    <button
-      class="absolute inset-y-0 right-0 flex items-center pr-2 text-gray-500"
-      aria-label="Toggle dropdown"
-      @click.prevent="toggleDropdown"
-    >
-      <font-awesome :icon="['fas', 'caret-down']" />
-    </button>
     <button
       v-if="selectedItems.length"
       class="absolute inset-y-0 right-6 flex items-center"
