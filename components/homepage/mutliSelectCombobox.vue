@@ -79,17 +79,17 @@ defineExpose({ clearAll });
       >
         <font-awesome :icon="['fas', 'caret-down']" />
       </button>
+      <button
+        v-if="selectedItems.length"
+        class="inset-y-0 right-6 flex items-center"
+        aria-label="Clear all selections"
+        @click.prevent="clearAll"
+      >
+        <span class="epfl-times">
+          <font-awesome :icon="['fas', 'times']" class="w-3 h-3" />
+        </span>
+      </button>
     </div>
-    <button
-      v-if="selectedItems.length"
-      class="absolute inset-y-0 right-6 flex items-center"
-      aria-label="Clear all selections"
-      @click.prevent="clearAll"
-    >
-      <span class="epfl-times">
-        <font-awesome :icon="['fas', 'times']" class="w-3 h-3" />
-      </span>
-    </button>
     <ul
       v-if="isOpen && filteredList.length"
       class="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-auto"
