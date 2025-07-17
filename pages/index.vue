@@ -77,10 +77,10 @@ watch(filteredProjects, () => {
 </script>
 
 <template>
-  <div class="sm:px-12 py-2 bg-white">
+  <div class="bg-white py-2 sm:px-12">
     <!-- Welcome section and C4DT factory introduction -->
-    <section class="relative isolatept-14 lg:px-8">
-      <div class="mx-auto max-w-10xl">
+    <section class="isolatept-14 relative lg:px-8">
+      <div class="max-w-10xl mx-auto">
         <div class="text-center">
           <h1 class="epfl-h1">The Center for Digital Trust's Showcase</h1>
           <p class="mt-6 text-lg leading-8 text-gray-600">
@@ -103,13 +103,13 @@ watch(filteredProjects, () => {
       <HomepageSelectedProjects />
     </section>
     <!-- Project search section -->
-    <section class="px-4 md:px-12 py-4">
+    <section class="px-4 py-4 md:px-12">
       <h2 class="epfl-h2 text-center">View all Projects</h2>
-      <div class="flex flex-col md:flex-row py-10">
+      <div class="flex flex-col py-10 md:flex-row">
         <!-- Sidebar with filter -->
         <div class="w-full md:w-1/4 md:pr-4">
-          <div class="md:sticky top-0">
-            <div class="bg-white p-4 border rounded-lg shadow-md mb-4">
+          <div class="top-0 md:sticky">
+            <div class="mb-4 rounded-lg border bg-white p-4 shadow-md">
               <div class="font-bold">Filter by</div>
               <HomepageMutliSelectCombobox
                 ref="TagFilter"
@@ -132,7 +132,7 @@ watch(filteredProjects, () => {
                 :item-list="applications"
               />
               <div
-                class="text-center py-2 border border-gray-300 rounded-md shadow-xs hover:bg-gray-100 cursor-pointer mt-4"
+                class="mt-4 cursor-pointer rounded-md border border-gray-300 py-2 text-center shadow-xs hover:bg-gray-100"
                 @click="resetFilters"
               >
                 Reset Filters
@@ -142,16 +142,16 @@ watch(filteredProjects, () => {
         </div>
 
         <!-- Main projects area -->
-        <div class="w-full md:w-3/4 mt-8 md:mt-0">
+        <div class="mt-8 w-full md:mt-0 md:w-3/4">
           <!-- Search -->
           <div class="relative">
             <input
               v-model="searchQuery"
               type="text"
-              class="w-full py-2 pl-10 pr-4 my-4 text-gray-700 bg-gray-200 rounded-full focus:outline-hidden focus:bg-white focus:ring-2 focus:ring-blue-300"
+              class="my-4 w-full rounded-full bg-gray-200 py-2 pr-4 pl-10 text-gray-700 focus:bg-white focus:ring-2 focus:ring-blue-300 focus:outline-hidden"
             />
             <div class="absolute inset-y-0 left-0 flex items-center pl-3">
-              <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="h-5 w-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -163,7 +163,7 @@ watch(filteredProjects, () => {
             <!-- Clear Button -->
             <button
               v-if="searchQuery"
-              class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-gray-500 hover:text-gray-700 transition"
+              class="absolute top-1/2 right-3 -translate-y-1/2 rounded-full p-1 text-gray-500 transition hover:text-gray-700"
               aria-label="Clear search"
               @click="searchQuery = ''"
             >

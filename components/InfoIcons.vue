@@ -11,7 +11,7 @@
     :to="{ name: 'projects-id', params: { id: project.id }, query: { section: TAB_IDS.ARTICLES } }"
     ><FontAwesomeIcon :icon="faNewspaper" class="fa-2x"
   /></NuxtLink>
-  <div v-if="projectInformationIcons.length" class="flex space-x-4 flex-nowrap">
+  <div v-if="projectInformationIcons.length" class="flex flex-nowrap space-x-4">
     <a
       v-for="info in projectInformationIcons"
       :key="info.url"

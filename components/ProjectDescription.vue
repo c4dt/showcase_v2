@@ -1,7 +1,7 @@
 <template>
-  <h2 class="text-2xl font-bold mb-2">{{ project.name }}</h2>
+  <h2 class="mb-2 text-2xl font-bold">{{ project.name }}</h2>
   <h3>{{ project.description }}</h3>
-  <p class="text-gray-600 mb-4">{{ project.laymen_desc || project.tech_desc }}</p>
+  <p class="mb-4 text-gray-600">{{ project.laymen_desc || project.tech_desc }}</p>
 </template>
 <script lang="ts" setup>
 const props = defineProps<{

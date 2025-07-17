@@ -19,26 +19,26 @@ const truncatedDescription = computed(() => {
 </script>
 <template>
   <div
-    class="relative flex flex-col rounded-xl bg-white text-gray-700 shadow-md border border-blue-gray-100 hover:bg-zinc-100"
+    class="border-blue-gray-100 relative flex flex-col rounded-xl border bg-white text-gray-700 shadow-md hover:bg-zinc-100"
   >
     <!-- Content Area -->
-    <NuxtLink :to="{ name: 'projects-id', params: { id: project.id } }" class="flex flex-col flex-1">
+    <NuxtLink :to="{ name: 'projects-id', params: { id: project.id } }" class="flex flex-1 flex-col">
       <!-- Image Container -->
       <div class="flex items-center justify-center">
-        <img :alt="project.name" :src="project.logo" class="p-4 object-contain w-full h-48" />
+        <img :alt="project.name" :src="project.logo" class="h-48 w-full object-contain p-4" />
       </div>
       <!-- Text Content -->
       <div class="mx-2 p-4 text-gray-700">
-        <h5 class="antialiased font-sans text-xl font-semibold leading-snug text-blue-gray-900 capitalize">
+        <h5 class="text-blue-gray-900 font-sans text-xl leading-snug font-semibold capitalize antialiased">
           {{ project.name }}
         </h5>
-        <p class="antialiased font-sans text-sm leading-normal text-gray-500">
+        <p class="font-sans text-sm leading-normal text-gray-500 antialiased">
           {{ truncatedDescription }}
         </p>
       </div>
     </NuxtLink>
     <!-- Icons Container -->
-    <div class="flex space-x-4 justify-end pb-4 pr-4 mt-auto">
+    <div class="mt-auto flex justify-end space-x-4 pr-4 pb-4">
       <InfoIcons :project="project" />
     </div>
   </div>
