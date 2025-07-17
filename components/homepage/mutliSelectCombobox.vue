@@ -57,7 +57,7 @@ defineExpose({ clearAll });
     >
       <!-- Selected items as pills -->
       <span v-for="item in selectedItems" :key="item" class="epfl-tag-light-removable max-w-full">
-        <span class="truncate">
+        <span class="truncate pr-2">
           {{ item }}
         </span>
         <button aria-label="Remove item" class="epfl-times truncate" @click.stop="removeItem(item)">
