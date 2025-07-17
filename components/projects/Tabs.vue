@@ -1,11 +1,11 @@
 <template>
   <div class="flex py-4">
-    <ul class="flex-[2] px-4 text-left list-none">
+    <ul class="flex-[2] list-none px-4 text-left">
       <li
         v-if="project.incubator"
         :class="[
-          'cursor-pointer w-full text-left px-4 py-2 border-r text-gray-800',
-          activeTab === TAB_IDS.INCUBATOR ? 'bg-gray-200  border-red-500 border-r-2' : 'bg-white border-gray-200'
+          'w-full cursor-pointer border-r px-4 py-2 text-left text-gray-800',
+          activeTab === TAB_IDS.INCUBATOR ? 'border-r-2 border-red-500 bg-gray-200' : 'border-gray-200 bg-white'
         ]"
         @click="changeTab(TAB_IDS.INCUBATOR)"
       >
@@ -13,8 +13,8 @@
       </li>
       <li
         :class="[
-          'cursor-pointer w-full text-left px-4 py-2 border-r text-gray-800',
-          activeTab === TAB_IDS.TECHNICAL ? 'bg-gray-200  border-red-500 border-r-2' : 'bg-white border-gray-200'
+          'w-full cursor-pointer border-r px-4 py-2 text-left text-gray-800',
+          activeTab === TAB_IDS.TECHNICAL ? 'border-r-2 border-red-500 bg-gray-200' : 'border-gray-200 bg-white'
         ]"
         @click="changeTab(TAB_IDS.TECHNICAL)"
       >
@@ -23,8 +23,8 @@
       <li
         v-if="papers.length"
         :class="[
-          'cursor-pointer w-full text-left px-4 py-2 border-r text-gray-800',
-          activeTab === TAB_IDS.PAPERS ? 'bg-gray-200  border-red-500 border-r-2' : 'bg-white border-gray-200'
+          'w-full cursor-pointer border-r px-4 py-2 text-left text-gray-800',
+          activeTab === TAB_IDS.PAPERS ? 'border-r-2 border-red-500 bg-gray-200' : 'border-gray-200 bg-white'
         ]"
         @click="changeTab(TAB_IDS.PAPERS)"
       >
@@ -33,8 +33,8 @@
       <li
         v-if="articles.length"
         :class="[
-          'cursor-pointer w-full text-left px-4 py-2 border-r text-gray-800',
-          activeTab === TAB_IDS.ARTICLES ? 'bg-gray-200  border-red-500 border-r-2' : 'bg-white border-gray-200'
+          'w-full cursor-pointer border-r px-4 py-2 text-left text-gray-800',
+          activeTab === TAB_IDS.ARTICLES ? 'border-r-2 border-red-500 bg-gray-200' : 'border-gray-200 bg-white'
         ]"
         @click="changeTab(TAB_IDS.ARTICLES)"
       >
@@ -44,8 +44,8 @@
         v-for="tab in additionalTabs"
         :key="tab"
         :class="[
-          'cursor-pointer w-full text-left px-4 py-2 border-r text-gray-800',
-          activeTab === tab.id ? 'bg-gray-200  border-red-500 border-r-2' : 'bg-white border-gray-200'
+          'w-full cursor-pointer border-r px-4 py-2 text-left text-gray-800',
+          activeTab === tab.id ? 'border-r-2 border-red-500 bg-gray-200' : 'border-gray-200 bg-white'
         ]"
         @click="changeTab(tab.id)"
       >

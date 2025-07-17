@@ -5,7 +5,7 @@
 
 @layer base {
   .epfl-a {
-    @apply underline text-[#212121] hover:text-[#ff0000] decoration-[#ff0000] hover:decoration-[#212121];
+    @apply text-[#212121] underline decoration-[#ff0000] hover:text-[#ff0000] hover:decoration-[#212121];
   }
   ul {
     list-style-type: square;
@@ -15,24 +15,24 @@
     color: #ff0000;
   }
   .epfl-h1 {
-    @apply text-4xl sm:text-6xl text-gray-900 font-bold tracking-tight;
+    @apply text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl;
   }
   .epfl-h2 {
-    @apply text-2xl sm:text-4xl text-gray-900 font-bold tracking-tight;
+    @apply text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl;
   }
   .epfl-tag-plain {
-    @apply bg-[#707070] text-[#ffffff] hover:cursor-pointer px-2 py-1 text-center truncate;
+    @apply truncate bg-[#707070] px-2 py-1 text-center text-[#ffffff] hover:cursor-pointer;
   }
   .epfl-tag-light {
-    @apply border-1 border-[#707070] hover:border-[#212121] hover:bg-[#e6e6e6] hover:cursor-pointer px-2 py-1 text-center truncate;
+    @apply truncate border-1 border-[#707070] px-2 py-1 text-center hover:cursor-pointer hover:border-[#212121] hover:bg-[#e6e6e6];
   }
   .epfl-tag-light-not-clickable {
-    @apply border-1 border-[#707070] px-2 py-1 text-center truncate;
+    @apply truncate border-1 border-[#707070] px-2 py-1 text-center;
   }
   .epfl-tag-light-removable {
-    @apply border-1 border-[#707070] hover:cursor-pointer px-2 py-1 text-center text-sm flex items-center content-between;
+    @apply flex content-between items-center border-1 border-[#707070] px-2 py-1 text-center text-sm hover:cursor-pointer;
   }
   .epfl-times {
-    @apply bg-[#e6e6e6] hover:bg-[#ff0000] hover:text-[#ffffff] leading-5 px-1;
+    @apply bg-[#e6e6e6] px-1 leading-5 hover:bg-[#ff0000] hover:text-[#ffffff];
   }
 }

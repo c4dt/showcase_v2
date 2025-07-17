@@ -48,7 +48,7 @@ defineExpose({ clearAll });
 <template>
   <div class="relative py-2" @focusout="onFocusOut">
     <div
-      class="flex flex-wrap gap-1 items-center w-full px-4 py-2 pr-12 border rounded-md bg-white border-gray-300 focus-within:ring-2 focus-within:ring-blue-500 min-h-[40px]"
+      class="flex min-h-[40px] w-full flex-wrap items-center gap-1 rounded-md border border-gray-300 bg-white px-4 py-2 pr-12 focus-within:ring-2 focus-within:ring-blue-500"
       @focusin="onFocusIn"
     >
       <!-- Selected items as pills -->
@@ -63,7 +63,7 @@ defineExpose({ clearAll });
         v-model="searchQuery"
         type="text"
         :placeholder="selectedItems.length ? '' : title"
-        class="flex-grow border-none focus:outline-none min-w-[120px]"
+        class="min-w-[120px] flex-grow border-none focus:outline-none"
       />
     </div>
     <button
@@ -80,17 +80,17 @@ defineExpose({ clearAll });
       @click.prevent="clearAll"
     >
       <span class="epfl-times">
-        <font-awesome :icon="['fas', 'times']" class="w-3 h-3" />
+        <font-awesome :icon="['fas', 'times']" class="h-3 w-3" />
       </span>
     </button>
     <ul
       v-if="isOpen && filteredList.length"
-      class="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-auto"
+      class="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md border border-gray-300 bg-white shadow-lg"
     >
       <li
         v-for="name in filteredList"
         :key="name"
-        class="px-4 py-2 cursor-pointer hover:bg-gray-100 truncate"
+        class="cursor-pointer truncate px-4 py-2 hover:bg-gray-100"
         :title="name"
         @mousedown.prevent="selectItem(name)"
       >
@@ -100,7 +100,7 @@ defineExpose({ clearAll });
 
     <div
       v-else-if="isOpen && !filteredList.length"
-      class="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg p-4 text-gray-500"
+      class="absolute z-10 mt-1 w-full rounded-md border border-gray-300 bg-white p-4 text-gray-500 shadow-lg"
     >
       No results found.
     </div>

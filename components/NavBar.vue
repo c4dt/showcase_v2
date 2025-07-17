@@ -43,7 +43,7 @@ const clearSearch = () => {
 </script>
 
 <template>
-  <div class="flex h-20 mx-auto px-6 border-b-2 border-gray-300 items-center justify-between">
+  <div class="mx-auto flex h-20 items-center justify-between border-b-2 border-gray-300 px-6">
     <div class="flex items-center gap-2">
       <a href="https://epfl.ch" class="flex">
         <img
@@ -52,7 +52,7 @@ const clearSearch = () => {
           class="h-8 border-r border-gray-400 pr-4"
         />
       </a>
-      <a href="https://c4dt.epfl.ch" class="ml-2 pr-8 text-sm md:text-lg font-bold leading-tight">
+      <a href="https://c4dt.epfl.ch" class="ml-2 pr-8 text-sm leading-tight font-bold md:text-lg">
         CENTER FOR <br />DIGITAL TRUST
       </a>
 
@@ -85,10 +85,10 @@ const clearSearch = () => {
         ref="searchInput"
         v-model="searchQuery"
         type="text"
-        class="w-full rounded-full bg-gray-200 py-2 pl-10 pr-4 text-gray-700 ring-inset transition focus:bg-white focus:ring-2 focus:ring-blue-300"
+        class="w-full rounded-full bg-gray-200 py-2 pr-4 pl-10 text-gray-700 transition ring-inset focus:bg-white focus:ring-2 focus:ring-blue-300"
       />
       <svg
-        class="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-500"
+        class="absolute top-1/2 left-3 h-5 w-5 -translate-y-1/2 text-gray-500"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -103,7 +103,7 @@ const clearSearch = () => {
       <!-- Clear Button -->
       <button
         v-if="searchQuery"
-        class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-gray-500 hover:text-gray-700 transition"
+        class="absolute top-1/2 right-3 -translate-y-1/2 rounded-full p-1 text-gray-500 transition hover:text-gray-700"
         aria-label="Clear search"
         @click="clearSearch"
       >
