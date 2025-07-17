@@ -56,7 +56,7 @@ defineExpose({ clearAll });
       @focusin="onFocusIn"
     >
       <!-- Selected items as pills -->
-      <span v-for="item in selectedItems" :key="item" class="epfl-tag-light-removable max-w-full">
+      <span v-for="item in selectedItems" :key="item" class="epfl-tag-light-removable max-w-full truncate">
         <span class="truncate pr-2">
           {{ item }}
         </span>
