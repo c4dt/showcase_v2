@@ -132,7 +132,7 @@ watch(filteredProjects, () => {
                 :item-list="applications"
               />
               <div
-                class="mt-4 cursor-pointer rounded-md border border-gray-300 py-2 text-center shadow-xs hover:bg-gray-100"
+                class="mt-4 cursor-pointer truncate rounded-md border border-gray-300 py-2 text-center shadow-xs hover:bg-gray-100"
                 @click="resetFilters"
               >
                 Reset Filters
