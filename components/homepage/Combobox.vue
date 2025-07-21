@@ -50,15 +50,13 @@ function onFocusOut() {
       ]"
       @focusin="onFocusIn"
     >
-      <div>
-        <input
-          v-model="searchQuery"
-          type="text"
-          :placeholder="title"
-          :readonly="!!selectedItem"
-          class="truncate px-4 py-2 pr-12 focus:outline-hidden"
-        />
-      </div>
+      <input
+        v-model="searchQuery"
+        type="text"
+        :placeholder="title"
+        :readonly="!!selectedItem"
+        class="truncate px-4 py-2 pr-12 focus:outline-hidden"
+      />
       <!-- Clear Button -->
       <HomepageClearButton v-if="selectedItem" :clear-func="clearSelection" aria-label="Clear selection" />
       <!-- Dropdown Toggle Button -->
