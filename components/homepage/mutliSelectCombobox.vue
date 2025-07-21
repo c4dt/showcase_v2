@@ -57,11 +57,11 @@ defineExpose({ clearAll });
     >
       <div class="flex min-h-[40px] w-full flex-wrap items-center gap-1 px-4 py-2 pr-12">
         <!-- Selected items as pills -->
-        <span v-for="item in selectedItems" :key="item" class="epfl-tag-light-removable max-w-full truncate">
+        <span v-for="item in selectedItems" :key="item" class="epfl-tag-light-removable max-w-full overflow-clip">
           <span class="truncate pr-2">
             {{ item }}
           </span>
-          <button aria-label="Remove item" class="epfl-times truncate" @click.stop="removeItem(item)">
+          <button aria-label="Remove item" class="epfl-times overflow-clip" @click.stop="removeItem(item)">
             <font-awesome :icon="['fas', 'times']" />
           </button>
         </span>
