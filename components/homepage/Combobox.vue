@@ -72,7 +72,7 @@ function toggleDropdown() {
         aria-label="Clear selection"
         @click.prevent="clearSelection"
       >
-        <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-200 text-black hover:bg-gray-300">
+        <span class="epfl-times">
           <font-awesome :icon="['fas', 'times']" />
         </span>
       </button>
