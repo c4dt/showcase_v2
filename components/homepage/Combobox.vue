@@ -60,16 +60,7 @@ function onFocusOut() {
         />
       </div>
       <!-- Clear Button -->
-      <button
-        v-if="selectedItem"
-        class="absolute inset-y-0 right-0 flex cursor-pointer items-center pr-2"
-        aria-label="Clear selection"
-        @click.prevent="clearSelection"
-      >
-        <span class="epfl-times">
-          <font-awesome :icon="['fas', 'times']" />
-        </span>
-      </button>
+      <HomepageClearButton v-if="selectedItem" :clear-func="clearSelection" aria-label="Clear selection" />
       <!-- Dropdown Toggle Button -->
       <HomepageDropdownButton v-if="!selectedItem" v-model="isOpen" />
     </div>

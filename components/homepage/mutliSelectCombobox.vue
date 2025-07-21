@@ -70,16 +70,7 @@ defineExpose({ clearAll });
         />
       </div>
       <HomepageDropdownButton v-model="isOpen" />
-      <button
-        v-if="selectedItems.length"
-        class="absolute inset-y-0 right-6 flex items-center"
-        aria-label="Clear all selections"
-        @click.prevent="clearAll"
-      >
-        <span class="epfl-times">
-          <font-awesome :icon="['fas', 'times']" class="h-3 w-3" />
-        </span>
-      </button>
+      <HomepageClearButton v-if="selectedItems.length" :clear-func="clearAll" aria-label="Clear all selections" />
     </div>
     <HomepageDropdownList
       v-if="isOpen && filteredList.length"
