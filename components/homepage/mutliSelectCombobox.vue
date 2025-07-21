@@ -33,10 +33,6 @@ function clearAll() {
   searchQuery.value = "";
 }
 
-function toggleDropdown() {
-  isOpen.value = !isOpen.value;
-}
-
 function onFocusIn() {
   isOpen.value = true;
 }
@@ -73,13 +69,7 @@ defineExpose({ clearAll });
           class="min-w-[120px] flex-grow border-none focus:outline-none"
         />
       </div>
-      <button
-        class="absolute inset-y-0 right-0 flex items-center pr-2 text-gray-500"
-        aria-label="Toggle dropdown"
-        @click.prevent="toggleDropdown"
-      >
-        <font-awesome :icon="['fas', 'caret-down']" />
-      </button>
+      <HomepageDropdownButton v-model="isOpen" />
       <button
         v-if="selectedItems.length"
         class="absolute inset-y-0 right-6 flex items-center"

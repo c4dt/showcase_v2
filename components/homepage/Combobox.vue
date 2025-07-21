@@ -38,12 +38,6 @@ function onFocusIn() {
 function onFocusOut() {
   isOpen.value = false;
 }
-
-function toggleDropdown() {
-  if (!selectedItem.value) {
-    isOpen.value = !isOpen.value;
-  }
-}
 </script>
 
 <template>
@@ -77,14 +71,7 @@ function toggleDropdown() {
         </span>
       </button>
       <!-- Dropdown Toggle Button -->
-      <button
-        v-if="!selectedItem"
-        class="absolute inset-y-0 right-0 flex items-center pr-2 text-gray-500"
-        aria-label="Toggle dropdown"
-        @click="toggleDropdown"
-      >
-        <font-awesome :icon="['fas', 'caret-down']" />
-      </button>
+      <HomepageDropdownButton v-if="!selectedItem" v-model="isOpen" />
     </div>
     <!-- Dropdown List -->
     <ul
