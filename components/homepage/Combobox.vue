@@ -41,12 +41,13 @@ function onFocusOut() {
 </script>
 
 <template>
-  <div class="relative py-2" @focusout="onFocusOut">
+  <div class="py-2" @focusout="onFocusOut">
     <div
       :class="[
         'w-full overflow-clip rounded-md border transition-colors duration-200',
         selectedItem ? 'cursor-default bg-gray-100 text-gray-500' : 'bg-white',
-        'border-gray-300 focus-within:ring-2 focus-within:ring-blue-500'
+        'border-gray-300 focus-within:ring-2 focus-within:ring-blue-500',
+        'justify-end-safe flex'
       ]"
       @focusin="onFocusIn"
     >
@@ -55,12 +56,14 @@ function onFocusOut() {
         type="text"
         :placeholder="title"
         :readonly="!!selectedItem"
-        class="truncate px-4 py-2 pr-12 focus:outline-hidden"
+        class="w-9/10 truncate py-2 pl-4 focus:outline-hidden"
       />
-      <!-- Clear Button -->
-      <HomepageClearButton v-if="selectedItem" :clear-func="clearSelection" aria-label="Clear selection" />
-      <!-- Dropdown Toggle Button -->
-      <HomepageDropdownButton v-if="!selectedItem" v-model="isOpen" />
+      <div class="w-1/10 overflow-clip py-2">
+        <!-- Clear Button -->
+        <HomepageClearButton v-if="selectedItem" :clear-func="clearSelection" aria-label="Clear selection" />
+        <!-- Dropdown Toggle Button -->
+        <HomepageDropdownButton v-if="!selectedItem" v-model="isOpen" />
+      </div>
     </div>
     <HomepageDropdownList
       v-if="isOpen && filteredList.length"
