@@ -39,7 +39,7 @@ function onFocusIn() {
 
 const multiSelectComboboxRef = useTemplateRef("multiSelectCombobox");
 function onFocusOut(e: FocusEvent) {
-  // only focus out if parent element looses focus
+  // only close drop-down list if parent element looses focus
   if (!(e.relatedTarget && multiSelectComboboxRef.value.contains(e.relatedTarget))) {
     isOpen.value = false;
   }
