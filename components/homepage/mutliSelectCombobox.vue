@@ -37,19 +37,21 @@ function onFocusIn() {
   isOpen.value = true;
 }
 
-function onFocusOut() {
-  // Short timeout prevents immediate close on item click
-  setTimeout(() => (isOpen.value = false), 150);
+const multiSelectComboboxRef = useTemplateRef("multiSelectCombobox");
+function onFocusOut(e: FocusEvent) {
+  // only focus out if parent element looses focus
+  if (!(e.relatedTarget && multiSelectComboboxRef.value.contains(e.relatedTarget))) {
+    isOpen.value = false;
+  }
 }
 
 defineExpose({ clearAll });
 </script>
 
 <template>
-  <div class="py-2" @focusout="onFocusOut">
+  <div ref="multiSelectCombobox" class="py-2" @focusout="onFocusOut">
     <div
       class="justify-end-safe flex w-full overflow-clip rounded-md border border-gray-300 bg-white focus-within:ring-2 focus-within:ring-blue-500"
-      @focusin="onFocusIn"
     >
       <!-- flex-wrap tags w/ input -->
       <div class="flex w-9/10 flex-wrap overflow-clip py-2 pl-4">
@@ -71,6 +73,7 @@ defineExpose({ clearAll });
           type="text"
           :placeholder="selectedItems.length ? '' : title"
           class="border-none focus:outline-none"
+          @focusin="onFocusIn"
         />
       </div>
       <div :class="selectedItems.length ? 'flex w-2/10 flex-wrap justify-evenly' : '' + ' py-2'">

@@ -35,13 +35,17 @@ function onFocusIn() {
   }
 }
 
-function onFocusOut() {
-  isOpen.value = false;
+const comboboxRef = useTemplateRef("combobox");
+function onFocusOut(e: FocusEvent) {
+  // only focus out if parent element looses focus
+  if (!(e.relatedTarget && comboboxRef.value.contains(e.relatedTarget))) {
+    isOpen.value = false;
+  }
 }
 </script>
 
 <template>
-  <div class="py-2" @focusout="onFocusOut">
+  <div ref="combobox" class="py-2" @focusout="onFocusOut">
     <div
       :class="[
         'w-full overflow-clip rounded-md border transition-colors duration-200',
@@ -49,7 +53,6 @@ function onFocusOut() {
         'border-gray-300 focus-within:ring-2 focus-within:ring-blue-500',
         'justify-end-safe flex'
       ]"
-      @focusin="onFocusIn"
     >
       <input
         v-model="searchQuery"
@@ -57,6 +60,7 @@ function onFocusOut() {
         :placeholder="title"
         :readonly="!!selectedItem"
         class="w-9/10 truncate py-2 pl-4 focus:outline-hidden"
+        @focusin="onFocusIn"
       />
       <div class="w-1/10 overflow-clip py-2">
         <!-- Clear Button -->
