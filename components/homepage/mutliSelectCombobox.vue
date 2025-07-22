@@ -46,31 +46,37 @@ defineExpose({ clearAll });
 </script>
 
 <template>
-  <div class="relative py-2" @focusout="onFocusOut">
+  <div class="py-2" @focusout="onFocusOut">
     <div
-      class="overflow-clip rounded-md border border-gray-300 bg-white focus-within:ring-2 focus-within:ring-blue-500"
+      class="justify-end-safe flex w-full overflow-clip rounded-md border border-gray-300 bg-white focus-within:ring-2 focus-within:ring-blue-500"
       @focusin="onFocusIn"
     >
-      <div class="flex min-h-[40px] w-full flex-wrap items-center gap-1 px-4 py-2 pr-12">
-        <!-- Selected items as pills -->
-        <span v-for="item in selectedItems" :key="item" class="epfl-tag-light-removable max-w-full overflow-clip">
-          <span class="truncate pr-2">
-            {{ item }}
+      <!-- flex-wrap tags w/ input -->
+      <div class="flex w-9/10 flex-wrap overflow-clip py-2 pl-4">
+        <!-- flex-wrap tags w/ each other -->
+        <div class="flex flex-wrap items-center gap-1 truncate">
+          <!-- Selected items as pills -->
+          <span v-for="item in selectedItems" :key="item" class="epfl-tag-light-removable max-w-full overflow-clip">
+            <span class="truncate pr-2">
+              {{ item }}
+            </span>
+            <button aria-label="Remove item" class="epfl-times overflow-clip" @click.stop="removeItem(item)">
+              <font-awesome :icon="['fas', 'times']" />
+            </button>
           </span>
-          <button aria-label="Remove item" class="epfl-times overflow-clip" @click.stop="removeItem(item)">
-            <font-awesome :icon="['fas', 'times']" />
-          </button>
-        </span>
+        </div>
         <!-- Input field -->
         <input
           v-model="searchQuery"
           type="text"
           :placeholder="selectedItems.length ? '' : title"
-          class="min-w-[120px] flex-grow border-none focus:outline-none"
+          class="border-none focus:outline-none"
         />
       </div>
-      <HomepageDropdownButton v-model="isOpen" />
-      <HomepageClearButton v-if="selectedItems.length" :clear-func="clearAll" aria-label="Clear all selections" />
+      <div :class="selectedItems.length ? 'flex w-2/10 flex-wrap justify-evenly' : '' + ' py-2'">
+        <HomepageClearButton v-if="selectedItems.length" :clear-func="clearAll" aria-label="Clear all selections" />
+        <HomepageDropdownButton v-model="isOpen" />
+      </div>
     </div>
     <HomepageDropdownList
       v-if="isOpen && filteredList.length"
