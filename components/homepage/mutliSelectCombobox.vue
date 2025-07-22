@@ -54,7 +54,8 @@ defineExpose({ clearAll });
       class="justify-end-safe flex w-full overflow-clip rounded-md border border-gray-300 bg-white focus-within:ring-2 focus-within:ring-blue-500"
     >
       <!-- flex-wrap tags w/ input -->
-      <div class="flex w-9/10 flex-wrap overflow-clip py-2 pl-4">
+      <!-- make `div` focusable to open drop-down list when clicking on list of tabs but don't add it to tab index order -->
+      <div class="flex w-9/10 flex-wrap overflow-clip py-2 pl-4" tabindex="-1" @focusin="onFocusIn">
         <!-- flex-wrap tags w/ each other -->
         <div class="flex flex-wrap items-center gap-1 truncate">
           <!-- Selected items as pills -->
@@ -73,7 +74,6 @@ defineExpose({ clearAll });
           type="text"
           :placeholder="selectedItems.length ? '' : title"
           class="border-none focus:outline-none"
-          @focusin="onFocusIn"
         />
       </div>
       <div :class="selectedItems.length ? 'flex w-2/10 flex-wrap justify-evenly' : '' + ' py-2'">
