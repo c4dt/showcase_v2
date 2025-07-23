@@ -47,4 +47,7 @@
   .epfl-filterbox {
     @apply text-[#707070] border border-[#d5d5d5] border-2 mb-4 p-4;
   }
+  .epfl-button-plain {
+    @apply border border-[#707070] hover:bg-[#d5d5d5] cursor-pointer truncate text-center mt-4 py-2 text-[#212121];
+  }
 }

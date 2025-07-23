@@ -131,12 +131,7 @@ watch(filteredProjects, () => {
                 title="Application"
                 :item-list="applications"
               />
-              <div
-                class="mt-4 cursor-pointer truncate rounded-md border border-gray-300 py-2 text-center shadow-xs hover:bg-gray-100"
-                @click="resetFilters"
-              >
-                Reset Filters
-              </div>
+              <div class="epfl-button-plain" @click="resetFilters">Reset Filters</div>
             </div>
           </div>
         </div>
