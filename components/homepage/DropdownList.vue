@@ -9,11 +9,11 @@ defineProps<{
 </script>
 <template>
   <div>
-    <ul class="z-10 mt-1 max-h-60 w-full overflow-auto rounded-md border border-gray-300 bg-white shadow-lg">
+    <ul class="epfl-select">
       <li
         v-for="name in filteredList"
         :key="name"
-        class="cursor-pointer truncate px-4 py-2 hover:bg-gray-100"
+        class="epfl-option"
         :title="name"
         @mousedown.prevent="selectFunc(name)"
       >
