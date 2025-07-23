@@ -46,14 +46,7 @@ function onFocusOut(e: FocusEvent) {
 
 <template>
   <div ref="combobox" class="py-2" @focusout="onFocusOut">
-    <div
-      :class="[
-        'w-full overflow-clip rounded-md border transition-colors duration-200',
-        selectedItem ? 'cursor-default bg-gray-100 text-gray-500' : 'bg-white',
-        'border-gray-300 focus-within:ring-2 focus-within:ring-blue-500',
-        'justify-end-safe flex'
-      ]"
-    >
+    <div class="epfl-input justify-end-safe flex">
       <input
         v-model="searchQuery"
         type="text"
