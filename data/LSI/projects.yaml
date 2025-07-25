@@ -37,7 +37,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/lsils/benchmarks
-      date_last_commit: 2025-05-19
+      date_last_commit: 2025-07-17
     language: VHDL
     license: MIT
     type: Simulation
