@@ -8,38 +8,44 @@ const selectedItems = defineModel<string[]>({ default: [] });
 const searchQuery = ref<string>("");
 const isOpen = ref<boolean>(false);
 
+// filter and sort items
 const filteredList = computed(() => {
   const query = searchQuery.value.toLowerCase();
   return props.itemList
-    .filter((name) => name.toLowerCase().includes(query) && !selectedItems.value.includes(name))
+    .filter((name) => name.toLowerCase().includes(query) && !selectedItems.value.includes(name)) // filter by search query and exclude selected items
     .sort();
 });
 
+// add item to selection
 function selectItem(name: string) {
   selectedItems.value = [...selectedItems.value, name];
-  searchQuery.value = "";
+  searchQuery.value = ""; // clear search input after adding item
 }
 
+// remove item from selection
 function removeItem(name: string) {
   const updatedItems = selectedItems.value.filter((item) => item !== name);
   if (!updatedItems.length) {
-    isOpen.value = false;
+    isOpen.value = false; // close drop-down menu if no items are left
   }
   selectedItems.value = updatedItems;
 }
 
+// clear all selected items and clear search input
 function clearAll() {
   selectedItems.value = [];
   searchQuery.value = "";
 }
 
+// open drop-down menu
 function onFocusIn() {
   isOpen.value = true;
 }
 
 const multiSelectComboboxRef = useTemplateRef("multiSelectCombobox");
+
+// close drop-down (only if parent element loses focus)
 function onFocusOut(e: FocusEvent) {
-  // only close drop-down list if parent element looses focus
   if (!(e.relatedTarget && multiSelectComboboxRef.value.contains(e.relatedTarget))) {
     isOpen.value = false;
   }
@@ -49,14 +55,11 @@ defineExpose({ clearAll });
 </script>
 
 <template>
+  <label for="searchInput">Filter by {{ title.toLowerCase() }}</label>
   <div ref="multiSelectCombobox" class="py-2" @focusout="onFocusOut">
     <div class="justify-end-safe epfl-input flex">
-      <!-- flex-wrap tags w/ input -->
-      <!-- make `div` focusable to open drop-down list when clicking on list of tabs but don't add it to tab index order -->
       <div class="flex w-9/10 flex-wrap overflow-clip py-2 pl-4" tabindex="-1" @focusin="onFocusIn">
-        <!-- flex-wrap tags w/ each other -->
         <div class="flex flex-wrap items-center gap-1 truncate">
-          <!-- Selected items as pills -->
           <span v-for="item in selectedItems" :key="item" class="epfl-tag-light-removable max-w-full overflow-clip">
             <span class="truncate pr-2">
               {{ item }}
@@ -66,8 +69,8 @@ defineExpose({ clearAll });
             </button>
           </span>
         </div>
-        <!-- Input field -->
         <input
+          id="searchInput"
           v-model="searchQuery"
           type="text"
           :placeholder="selectedItems.length ? '' : title"
@@ -79,11 +82,13 @@ defineExpose({ clearAll });
         <HomepageDropdownButton v-model="isOpen" />
       </div>
     </div>
+    <!-- drop-down menu if filtered list is not empty -->
     <HomepageDropdownList
       v-if="isOpen && filteredList.length"
       :select-func="selectItem"
       :filtered-list="filteredList"
     />
+    <!-- 'No results found.' message if no items match search criteria -->
     <HomepageNoResultsMessage v-else-if="isOpen && !filteredList.length" />
   </div>
 </template>

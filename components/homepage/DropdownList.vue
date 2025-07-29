@@ -9,6 +9,7 @@ defineProps<{
 </script>
 <template>
   <div>
+    <!-- list to display filtered options -->
     <ul class="epfl-select">
       <li
         v-for="name in filteredList"

@@ -8,6 +8,7 @@ defineProps<{
 </script>
 
 <template>
+  <!-- button to clear all selections -->
   <button aria-label="Clear all selections" @click.prevent="clearFunc">
     <span class="epfl-times">
       <font-awesome :icon="['fas', 'times']" class="h-3 w-3" />
