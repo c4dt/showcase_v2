@@ -6,5 +6,6 @@ defineProps<{
 </script>
 
 <template>
+  <!-- label for a filter input -->
   <label :for="id">Filter by {{ title.toLowerCase() }}</label>
 </template>
