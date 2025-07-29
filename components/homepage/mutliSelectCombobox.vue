@@ -50,9 +50,7 @@ defineExpose({ clearAll });
 
 <template>
   <div ref="multiSelectCombobox" class="py-2" @focusout="onFocusOut">
-    <div
-      class="justify-end-safe flex w-full overflow-clip rounded-md border border-gray-300 bg-white focus-within:ring-2 focus-within:ring-blue-500"
-    >
+    <div class="justify-end-safe epfl-input flex">
       <!-- flex-wrap tags w/ input -->
       <!-- make `div` focusable to open drop-down list when clicking on list of tabs but don't add it to tab index order -->
       <div class="flex w-9/10 flex-wrap overflow-clip py-2 pl-4" tabindex="-1" @focusin="onFocusIn">

@@ -109,8 +109,8 @@ watch(filteredProjects, () => {
         <!-- Sidebar with filter -->
         <div class="w-full md:w-1/4 md:pr-4">
           <div class="top-0 md:sticky">
-            <div class="mb-4 rounded-lg border bg-white p-4 shadow-md">
-              <div class="font-bold">Filter by</div>
+            <div class="epfl-filterbox">
+              <div>Filter by</div>
               <HomepageMutliSelectCombobox
                 ref="TagFilter"
                 v-model="selectedTags"
@@ -131,12 +131,7 @@ watch(filteredProjects, () => {
                 title="Application"
                 :item-list="applications"
               />
-              <div
-                class="mt-4 cursor-pointer truncate rounded-md border border-gray-300 py-2 text-center shadow-xs hover:bg-gray-100"
-                @click="resetFilters"
-              >
-                Reset Filters
-              </div>
+              <div class="epfl-button-plain" @click="resetFilters">Reset Filters</div>
             </div>
           </div>
         </div>
