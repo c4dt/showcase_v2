@@ -110,7 +110,7 @@ watch(filteredProjects, () => {
         <div class="w-full md:w-1/4 md:pr-4">
           <div class="top-0 md:sticky">
             <div class="epfl-filterbox">
-              <div>Filter by</div>
+              <div class="text-xl">Filter projects</div>
               <HomepageMutliSelectCombobox
                 ref="TagFilter"
                 v-model="selectedTags"

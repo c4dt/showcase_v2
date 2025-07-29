@@ -45,7 +45,7 @@
     @apply w-full overflow-clip border border-[#707070] text-[#212121] focus-within:ring-2 focus-within:ring-[#707070] focus-within:ring-offset-2;
   }
   .epfl-filterbox {
-    @apply mb-4 border border-2 border-[#d5d5d5] p-4 text-[#707070];
+    @apply mb-4 border border-2 border-[#d5d5d5] p-4;
   }
   .epfl-button-plain {
     @apply mt-4 cursor-pointer truncate border border-[#707070] py-2 text-center text-[#212121] hover:bg-[#d5d5d5];

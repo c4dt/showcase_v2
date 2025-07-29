@@ -45,9 +45,11 @@ function onFocusOut(e: FocusEvent) {
 </script>
 
 <template>
+  <HomepageLabel :id="searchInput" :title="title" />
   <div ref="combobox" class="py-2" @focusout="onFocusOut">
     <div class="epfl-input justify-end-safe flex">
       <input
+        id="searchInput"
         v-model="searchQuery"
         type="text"
         :placeholder="title"

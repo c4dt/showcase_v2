@@ -49,6 +49,7 @@ defineExpose({ clearAll });
 </script>
 
 <template>
+  <HomepageLabel id="searchInput" :title="title" />
   <div ref="multiSelectCombobox" class="py-2" @focusout="onFocusOut">
     <div class="justify-end-safe epfl-input flex">
       <!-- flex-wrap tags w/ input -->
@@ -68,6 +69,7 @@ defineExpose({ clearAll });
         </div>
         <!-- Input field -->
         <input
+          id="searchInput"
           v-model="searchQuery"
           type="text"
           :placeholder="selectedItems.length ? '' : title"
