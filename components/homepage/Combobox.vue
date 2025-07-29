@@ -50,7 +50,7 @@ function onFocusOut(e: FocusEvent) {
 </script>
 
 <template>
-  <HomepageLabel :id="searchInput" :title="title" />
+  <label for="searchInput">Filter by {{ title.toLowerCase() }}</label>
   <div ref="combobox" class="py-2" @focusout="onFocusOut">
     <div class="epfl-input justify-end-safe flex">
       <input

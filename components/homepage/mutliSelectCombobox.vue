@@ -55,7 +55,7 @@ defineExpose({ clearAll });
 </script>
 
 <template>
-  <HomepageLabel id="searchInput" :title="title" />
+  <label for="searchInput">Filter by {{ title.toLowerCase() }}</label>
   <div ref="multiSelectCombobox" class="py-2" @focusout="onFocusOut">
     <div class="justify-end-safe epfl-input flex">
       <div class="flex w-9/10 flex-wrap overflow-clip py-2 pl-4" tabindex="-1" @focusin="onFocusIn">
