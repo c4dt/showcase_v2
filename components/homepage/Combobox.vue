@@ -50,11 +50,11 @@ function onFocusOut(e: FocusEvent) {
 </script>
 
 <template>
-  <label for="searchInput">Filter by {{ title.toLowerCase() }}</label>
+  <label :for="`searchInput${title}`">Filter by {{ title.toLowerCase() }}</label>
   <div ref="combobox" class="py-2" @focusout="onFocusOut">
     <div class="epfl-input justify-end-safe flex">
       <input
-        id="searchInput"
+        :id="`searchInput${title}`"
         v-model="searchQuery"
         type="text"
         :placeholder="title"
