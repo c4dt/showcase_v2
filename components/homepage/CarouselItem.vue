@@ -18,9 +18,8 @@ const truncatedDescription = computed(() => {
 });
 </script>
 <template>
-  <div
-    class="border-blue-gray-100 relative flex flex-col rounded-xl border bg-white text-gray-700 shadow-md hover:bg-zinc-100"
-  >
+  <!-- space for shadow on hover-->
+  <div class="epfl-card relative flex h-[calc(100%-16px)] flex-col bg-white text-gray-700">
     <!-- Content Area -->
     <NuxtLink :to="{ name: 'projects-id', params: { id: project.id } }" class="flex flex-1 flex-col">
       <!-- Image Container -->
