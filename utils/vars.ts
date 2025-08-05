@@ -8,8 +8,8 @@ export enum PROJECT_LAB_STATUS {
   UNKNOWN = "Unknown"
 }
 export enum PROJECT_STATUS_DESC {
-  C4DT_STATUS = "C4DT support status:",
-  LAB_STATUS = "Lab support status:"
+  C4DT_STATUS = "C4DT",
+  LAB_STATUS = "Lab"
 }
 export const PROJECT_STATUS_ICONS = {
   [PROJECT_C4DT_STATUS.ACTIVE]: "\u{2705}",

@@ -13,7 +13,7 @@
             </div>
           </NuxtLink>
         </div>
-        <div class="hidden sm:block sm:flex-shrink-0 sm:flex-grow-0 sm:basis-64 sm:justify-end">
+        <div class="hidden sm:block sm:basis-64 sm:justify-end">
           <ProjectQuality :project="project" />
         </div>
       </div>
