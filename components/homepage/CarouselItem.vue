@@ -9,13 +9,6 @@ const props = defineProps<{
 }>();
 
 const project = props.project;
-
-const truncatedDescription = computed(() => {
-  if (project.descriptionDisplay.length > 180) {
-    return project.descriptionDisplay.slice(0, 180) + "...";
-  }
-  return project.descriptionDisplay;
-});
 </script>
 <template>
   <!-- space for shadow on hover-->
@@ -31,8 +24,8 @@ const truncatedDescription = computed(() => {
         <h5 class="text-blue-gray-900 font-sans text-xl leading-snug font-semibold capitalize antialiased">
           {{ project.name }}
         </h5>
-        <p class="font-sans text-sm leading-normal text-gray-500 antialiased">
-          {{ truncatedDescription }}
+        <p class="line-clamp-6 font-sans text-sm leading-normal text-gray-500 antialiased">
+          {{ project.descriptionDisplay }}
         </p>
       </div>
     </NuxtLink>
