@@ -46,5 +46,5 @@ statusTags.push({
 const maturity = props.project.maturity ?? 0;
 const title = ["Prototype", "Intermediate", "Mature"];
 const pprintMaturity = ["\u{1f95a}", "\u{1f425}", "\u{1f414}"];
-const grayscale = pprintMaturity.map((val, idx) => (idx <= maturity - 1 ? "bg-[#C1C1C1]" : "grayscale-100"));
+const grayscale = pprintMaturity.map((val, idx) => (idx <= maturity - 1 ? "text-xl" : "text-sm grayscale-100"));
 </script>
