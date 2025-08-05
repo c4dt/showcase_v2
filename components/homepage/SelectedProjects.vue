@@ -40,7 +40,7 @@ const highlightedProjects: ExtendedProject[] = projects.value.filter((project) =
   </div>
   <Carousel class="mt-12 px-8" v-bind="carouselConfig">
     <Slide v-for="project in highlightedProjects" :key="project.name">
-      <HomepageCarouselItem :project="project" class="h-full" />
+      <HomepageCarouselItem :project="project" />
     </Slide>
 
     <template #addons>

@@ -1,6 +1,7 @@
 <template>
-  <div class="mx-auto overflow-hidden rounded-xl bg-white shadow-md">
-    <div class="p-8 transition-colors duration-100 hover:bg-zinc-100">
+  <!-- use CSS to make parent relative on hover to move up -->
+  <div class="epfl-card mx-auto overflow-hidden bg-white hover:relative">
+    <div class="p-8">
       <div class="flex items-start">
         <div class="sm:flex-1">
           <NuxtLink :to="{ name: 'projects-id', params: { id: project.id } }" class="block">
@@ -27,9 +28,7 @@
           </div>
         </div>
         <!-- Icons on the Right -->
-        <div class="flex flex-nowrap space-x-4">
-          <InfoIcons :project="project" />
-        </div>
+        <InfoIcons :project="project" />
       </div>
     </div>
   </div>

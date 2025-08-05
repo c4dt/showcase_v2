@@ -9,18 +9,10 @@ const props = defineProps<{
 }>();
 
 const project = props.project;
-
-const truncatedDescription = computed(() => {
-  if (project.descriptionDisplay.length > 180) {
-    return project.descriptionDisplay.slice(0, 180) + "...";
-  }
-  return project.descriptionDisplay;
-});
 </script>
 <template>
-  <div
-    class="border-blue-gray-100 relative flex flex-col rounded-xl border bg-white text-gray-700 shadow-md hover:bg-zinc-100"
-  >
+  <!-- use CSS to leave space for shadow when moving up on hover-->
+  <div class="epfl-card relative flex h-[calc(100%-16px)] w-full flex-col bg-white text-gray-700">
     <!-- Content Area -->
     <NuxtLink :to="{ name: 'projects-id', params: { id: project.id } }" class="flex flex-1 flex-col">
       <!-- Image Container -->
@@ -32,13 +24,13 @@ const truncatedDescription = computed(() => {
         <h5 class="text-blue-gray-900 font-sans text-xl leading-snug font-semibold capitalize antialiased">
           {{ project.name }}
         </h5>
-        <p class="font-sans text-sm leading-normal text-gray-500 antialiased">
-          {{ truncatedDescription }}
+        <p class="line-clamp-6 font-sans text-sm leading-normal text-gray-500 antialiased">
+          {{ project.descriptionDisplay }}
         </p>
       </div>
     </NuxtLink>
     <!-- Icons Container -->
-    <div class="mt-auto flex justify-end space-x-4 pr-4 pb-4">
+    <div class="mt-auto flex justify-end pr-4 pb-4">
       <InfoIcons :project="project" />
     </div>
   </div>
