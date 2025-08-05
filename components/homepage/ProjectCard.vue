@@ -1,5 +1,5 @@
 <template>
-  <!-- relative parent to move up on hover -->
+  <!-- use CSS to make parent relative on hover to move up -->
   <div class="epfl-card mx-auto overflow-hidden bg-white hover:relative">
     <div class="p-8">
       <div class="flex items-start">

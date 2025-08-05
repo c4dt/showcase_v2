@@ -11,7 +11,7 @@ const props = defineProps<{
 const project = props.project;
 </script>
 <template>
-  <!-- space for shadow on hover-->
+  <!-- use CSS to leave space for shadow when moving up on hover-->
   <div class="epfl-card relative flex h-[calc(100%-16px)] w-full flex-col bg-white text-gray-700">
     <!-- Content Area -->
     <NuxtLink :to="{ name: 'projects-id', params: { id: project.id } }" class="flex flex-1 flex-col">
