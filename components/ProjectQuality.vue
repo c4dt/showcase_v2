@@ -28,7 +28,7 @@
         <div class="text-[#707070]">
           {{ tag.desc }}
         </div>
-        <FontAwesomeIcon :icon="tag.label" class="cursor-help text-xl text-[#707070]" :title="tag.title" />
+        <FontAwesomeIcon :icon="tag.label" :class="`cursor-help text-xl ${tag.color}`" :title="tag.title" />
       </template>
     </div>
   </div>
@@ -44,13 +44,15 @@ const c4dtStatus = props.project.c4dt_status ?? PROJECT_C4DT_STATUS.INACTIVE;
 statusTags.push({
   title: c4dtStatus,
   desc: PROJECT_STATUS_DESC.C4DT_STATUS,
-  label: PROJECT_STATUS_ICONS[c4dtStatus]
+  label: PROJECT_STATUS_ICONS[c4dtStatus],
+  color: c4dtStatus === PROJECT_C4DT_STATUS.ACTIVE ? "text-[#b51f1f]" : "text-[#707070]"
 });
 const labStatus = props.project.lab_status ?? PROJECT_LAB_STATUS.UNKNOWN;
 statusTags.push({
   title: labStatus,
   desc: PROJECT_STATUS_DESC.LAB_STATUS,
-  label: PROJECT_STATUS_ICONS[labStatus]
+  label: PROJECT_STATUS_ICONS[labStatus],
+  color: labStatus === PROJECT_C4DT_STATUS.ACTIVE ? "text-[#b51f1f]" : "text-[#707070]"
 });
 const maturity = props.project.maturity ?? 0;
 const maturityTitle = ["Prototype", "Intermediate", "Mature"];
