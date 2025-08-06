@@ -25,7 +25,7 @@
           :href="`${MATURITY_EVALUATION_REQUEST.replaceAll('{name}', project.name)}`"
           :aria-label="evaluationRequestTitle"
           :title="evaluationRequestTitle"
-          ><FontAwesomeIcon :icon="faEnvelope" class="text-[#707070]"
+          ><FontAwesomeIcon :icon="faEnvelope" class="text-xl text-[#707070]"
         /></a>
       </div>
     </div>
