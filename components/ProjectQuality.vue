@@ -8,9 +8,9 @@
           <FontAwesomeIcon
             v-for="(val, idx) in pprintMaturity"
             :key="val"
-            :title="title[idx]"
+            :title="maturityTitle[idx]"
             :icon="val"
-            :class="`pr-2 ${grayscale[idx]} cursor-help`"
+            :class="`pr-2 ${maturityTextStyle[idx]} cursor-help`"
           />
         </div>
       </div>
@@ -53,9 +53,9 @@ statusTags.push({
   label: PROJECT_STATUS_ICONS[labStatus]
 });
 const maturity = props.project.maturity ?? 0;
-const title = ["Prototype", "Intermediate", "Mature"];
+const maturityTitle = ["Prototype", "Intermediate", "Mature"];
 const pprintMaturity = [faRulerCombined, faHammer, faBuilding];
-const grayscale = pprintMaturity.map((val, idx) =>
+const maturityTextStyle = pprintMaturity.map((val, idx) =>
   idx <= maturity - 1 ? "text-xl text-[#707070]" : "text-sm text-[#c1c1c1]"
 );
 const evaluationRequestTitle = "Send evaluation request";
