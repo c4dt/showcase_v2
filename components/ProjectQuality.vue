@@ -3,14 +3,16 @@
     <div class="text-xl">Key facts</div>
     <div class="grid grid-cols-2">
       <div>Maturity</div>
-      <div v-if="maturity">
-        <span
-          v-for="(val, idx) in pprintMaturity"
-          :key="val"
-          :title="title[idx]"
-          :class="`${grayscale[idx]} cursor-help`"
-          >{{ val }}</span
-        >
+      <div v-if="maturity" class="flex">
+        <div>
+          <FontAwesomeIcon
+            v-for="(val, idx) in pprintMaturity"
+            :key="val"
+            :title="title[idx]"
+            :icon="val"
+            :class="`pr-2 ${grayscale[idx]} cursor-help`"
+          />
+        </div>
       </div>
       <div v-if="maturity === 0">
         <a
@@ -26,14 +28,14 @@
         <div class="text-[#707070]">
           {{ tag.desc }}
         </div>
-        <div class="cursor-help" :title="tag.title">{{ tag.label }}</div>
+        <FontAwesomeIcon :icon="tag.label" class="cursor-help text-xl text-[#707070]" :title="tag.title" />
       </template>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faRulerCombined, faHammer, faBuilding } from "@fortawesome/free-solid-svg-icons";
 const props = defineProps<{
   project: ExtendedProject;
 }>();
@@ -52,7 +54,9 @@ statusTags.push({
 });
 const maturity = props.project.maturity ?? 0;
 const title = ["Prototype", "Intermediate", "Mature"];
-const pprintMaturity = ["\u{1f95a}", "\u{1f425}", "\u{1f414}"];
-const grayscale = pprintMaturity.map((val, idx) => (idx <= maturity - 1 ? "text-xl" : "text-sm grayscale-100"));
+const pprintMaturity = [faRulerCombined, faHammer, faBuilding];
+const grayscale = pprintMaturity.map((val, idx) =>
+  idx <= maturity - 1 ? "text-xl text-[#707070]" : "text-sm text-[#c1c1c1]"
+);
 const evaluationRequestTitle = "Send evaluation request";
 </script>
