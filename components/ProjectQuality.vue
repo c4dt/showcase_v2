@@ -2,14 +2,6 @@
   <div class="border border-[#707070] px-2 py-1">
     <div class="text-xl">Key facts</div>
     <div class="grid grid-cols-2">
-      <div class="col-span-2">Support</div>
-      <!-- use `template` element to iterate so that columns are counted correctly -->
-      <template v-for="tag in statusTags" :key="tag">
-        <div class="text-[#707070]">
-          {{ tag.desc }}
-        </div>
-        <div class="cursor-help" :title="tag.title">{{ tag.label }}</div>
-      </template>
       <div>Maturity</div>
       <div v-if="maturity">
         <span
@@ -28,6 +20,14 @@
           ><FontAwesomeIcon :icon="faEnvelope" class="text-xl text-[#707070]"
         /></a>
       </div>
+      <div class="col-span-2">Support</div>
+      <!-- use `template` element to iterate so that columns are counted correctly -->
+      <template v-for="tag in statusTags" :key="tag">
+        <div class="text-[#707070]">
+          {{ tag.desc }}
+        </div>
+        <div class="cursor-help" :title="tag.title">{{ tag.label }}</div>
+      </template>
     </div>
   </div>
 </template>
