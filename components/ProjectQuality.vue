@@ -1,7 +1,7 @@
 <template>
   <div class="border border-[#707070] px-2 py-1">
     <div class="text-xl">Key facts</div>
-    <div class="grid grid-cols-2">
+    <div class="grid grid-cols-2 items-center">
       <div>Maturity</div>
       <div v-if="maturity" class="flex">
         <div>
