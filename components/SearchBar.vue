@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 const searchQuery = defineModel<string>("searchQuery");
 const searchInput = defineModel<HTMLInputElement | null>("searchInput");
+const { search, toggleSearch } = useSearch();
 
 const clearSearch = () => {
   searchQuery.value = "";
@@ -13,12 +14,18 @@ const clearSearch = () => {
 <template>
   <div class="relative">
     <input
+      v-if="search"
       ref="searchInput"
       v-model="searchQuery"
       type="text"
       class="w-full rounded-full bg-gray-200 py-2 pr-4 pl-10 text-gray-700 transition ring-inset focus:bg-white focus:ring-2 focus:ring-blue-300"
     />
-    <FontAwesomeIcon :icon="faMagnifyingGlass" class="absolute top-1/2 left-3 h-5 w-5 -translate-y-1/2 text-gray-500" />
+    <button @click="toggleSearch">
+      <FontAwesomeIcon
+        :icon="faMagnifyingGlass"
+        class="absolute top-1/2 left-3 h-5 w-5 -translate-y-1/2 hover:text-[#ff0000]"
+      />
+    </button>
     <!-- Clear Button -->
     <ClearButton
       v-if="searchQuery"
