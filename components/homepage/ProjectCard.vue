@@ -3,7 +3,7 @@
   <div class="epfl-card mx-auto overflow-hidden bg-white hover:relative">
     <div class="p-8">
       <div class="flex items-start">
-        <div class="sm:flex-1">
+        <div class="w-full sm:flex-1">
           <NuxtLink :to="{ name: 'projects-id', params: { id: project.id } }" class="block">
             <ProjectDescription :project="project" />
             <h3>Professor: {{ project.lab.prof.name.join(" ") }}</h3>
@@ -13,7 +13,7 @@
             </div>
           </NuxtLink>
         </div>
-        <div class="hidden sm:block sm:flex-shrink-0 sm:flex-grow-0 sm:basis-64 sm:justify-end">
+        <div class="hidden sm:block sm:basis-64 sm:justify-end">
           <ProjectQuality :project="project" />
         </div>
       </div>
