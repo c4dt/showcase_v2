@@ -30,7 +30,7 @@ const project = props.project;
       </div>
     </NuxtLink>
     <!-- Icons Container -->
-    <div class="mt-auto flex justify-end pr-4 pb-4">
+    <div class="mt-auto flex justify-end overflow-clip pr-4 pb-4">
       <InfoIcons :project="project" />
     </div>
   </div>

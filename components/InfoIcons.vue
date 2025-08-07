@@ -6,22 +6,19 @@
       :to="{ name: 'projects-id', params: { id: project.id }, query: { section: TAB_IDS.PAPERS } }"
       ><FontAwesomeIcon :icon="faFile" class="fa-2x"
     /></NuxtLink>
+    <FontAwesomeIcon v-else :icon="faFile" class="fa-2x text-[#c1c1c1]" />
     <NuxtLink
       v-if="articles"
       :class="iconClass"
       :to="{ name: 'projects-id', params: { id: project.id }, query: { section: TAB_IDS.ARTICLES } }"
       ><FontAwesomeIcon :icon="faNewspaper" class="fa-2x"
     /></NuxtLink>
-    <div v-if="projectInformationIcons.length" class="flex flex-nowrap space-x-4">
-      <a
-        v-for="info in projectInformationIcons"
-        :key="info.url"
-        :href="info.url"
-        :class="iconClass"
-        :aria-label="info.label"
-      >
+    <FontAwesomeIcon v-else :icon="faNewspaper" class="fa-2x text-[#c1c1c1]" />
+    <div v-for="info in projectInformationIcons" :key="info" class="flex flex-nowrap space-x-4">
+      <a v-if="info.url" :key="info.url" :href="info.url" :class="iconClass" :aria-label="info.label">
         <FontAwesomeIcon :icon="info.icon" class="fa-2x" />
       </a>
+      <FontAwesomeIcon v-else :icon="info.icon" class="fa-2x text-[#c1c1c1]" />
     </div>
   </div>
 </template>
@@ -50,6 +47,11 @@ const projectInformationIcons = computed(() => {
       icon: faHome,
       label: "Project Homepage"
     });
+  } else {
+    icons.push({
+      url: "",
+      icon: faHome
+    });
   }
 
   if (project.code) {
@@ -58,6 +60,11 @@ const projectInformationIcons = computed(() => {
       icon: project.code.type.toLowerCase().includes("github") ? faGithub : faCode,
       label: "Source Code"
     });
+  } else {
+    icons.push({
+      url: "",
+      icon: faCode
+    });
   }
 
   if (project.contacts && project.contacts.length) {
@@ -65,6 +72,11 @@ const projectInformationIcons = computed(() => {
       url: `mailto:${project.contacts.map((contact) => contact.email).join(",")}`,
       icon: faEnvelope,
       label: "Contact"
+    });
+  } else {
+    icons.push({
+      url: "",
+      icon: faEnvelope
     });
   }
 

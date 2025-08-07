@@ -27,9 +27,9 @@
             </span>
           </div>
         </div>
-        <!-- Icons on the Right -->
-        <InfoIcons :project="project" />
+        <InfoIcons :project="project" class="hidden sm:flex" />
       </div>
+      <InfoIcons :project="project" class="mt-4 block sm:hidden" />
     </div>
   </div>
 </template>
