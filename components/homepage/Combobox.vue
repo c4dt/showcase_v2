@@ -28,6 +28,10 @@ function clearSelection() {
   isOpen.value = false;
 }
 
+function clearInput() {
+  searchQuery.value = "";
+}
+
 defineExpose({
   clearSelection
 });
@@ -63,8 +67,9 @@ function onFocusOut(e: FocusEvent) {
         @focusin="onFocusIn"
       />
       <div class="w-1/10 overflow-clip py-2">
+        <ClearButton v-if="searchQuery && !selectedItem" :clear-func="clearInput" aria-label="Clear search query" />
         <ClearButton v-if="selectedItem" :clear-func="clearSelection" aria-label="Clear selection" />
-        <HomepageDropdownButton v-if="!selectedItem" v-model="isOpen" />
+        <HomepageDropdownButton v-if="!searchQuery && !selectedItem" v-model="isOpen" />
       </div>
     </div>
     <!-- drop-down menu if filtered list is not empty -->
