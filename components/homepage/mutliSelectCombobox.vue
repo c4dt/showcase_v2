@@ -78,7 +78,7 @@ defineExpose({ clearAll });
         />
       </div>
       <div :class="selectedItems.length ? 'flex w-2/10 flex-wrap justify-evenly' : '' + ' py-2'">
-        <HomepageClearButton v-if="selectedItems.length" :clear-func="clearAll" aria-label="Clear all selections" />
+        <ClearButton v-if="selectedItems.length" :clear-func="clearAll" aria-label="Clear all selections" />
         <HomepageDropdownButton v-model="isOpen" />
       </div>
     </div>
