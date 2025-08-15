@@ -37,6 +37,10 @@ function clearAll() {
   searchQuery.value = "";
 }
 
+function clearInput() {
+  searchQuery.value = "";
+}
+
 // open drop-down menu
 function onFocusIn() {
   isOpen.value = true;
@@ -78,8 +82,13 @@ defineExpose({ clearAll });
         />
       </div>
       <div :class="selectedItems.length ? 'flex w-2/10 flex-wrap justify-evenly' : '' + ' py-2'">
-        <ClearButton v-if="selectedItems.length" :clear-func="clearAll" aria-label="Clear all selections" />
-        <HomepageDropdownButton v-model="isOpen" />
+        <ClearButton v-if="searchQuery" :clear-func="clearInput" aria-label="Clear search query" />
+        <ClearButton
+          v-if="selectedItems.length && !searchQuery"
+          :clear-func="clearAll"
+          aria-label="Clear all selections"
+        />
+        <HomepageDropdownButton v-if="!searchQuery" v-model="isOpen" />
       </div>
     </div>
     <!-- drop-down menu if filtered list is not empty -->
