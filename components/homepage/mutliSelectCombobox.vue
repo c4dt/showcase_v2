@@ -35,6 +35,7 @@ function removeItem(name: string) {
 function clearAll() {
   selectedItems.value = [];
   searchQuery.value = "";
+  isOpen.value = false;
 }
 
 // open drop-down menu
