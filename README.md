@@ -2,6 +2,28 @@
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+## Devbox
+
+You can use the devbox bundler for the bun-bundler.
+
+1. [Install Devbox](https://www.jetify.com/docs/devbox/installing_devbox/)
+2. Run `devbox run dev` to start the server listening at <http://localhost:3000>
+
+### Pre-Commit
+
+This also installs `pre-commit`, so you can use the following to commit your code:
+
+`devbox run git commit -am "your messge"`
+
+This will run the `pre-commit` hooks defined by [husky](https://github.com/typicode/husky).
+
+### Prettier
+
+If `prettier` complains that one or more of your files don't follow its formatting, you
+can update all the files like this:
+
+`devbox run prettier`
+
 ## Setup
 
 Make sure to install the dependencies:
@@ -13,7 +35,7 @@ bun install
 
 ## Development Server
 
-Start the development server on `http://localhost:3000`:
+Start the development server on <http://localhost:3000>:
 
 ```bash
 # bun
