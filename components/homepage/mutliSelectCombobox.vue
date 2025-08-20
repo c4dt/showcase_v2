@@ -62,7 +62,7 @@ defineExpose({ clearAll });
 <template>
   <label :for="`searchInput${title}`">Filter by {{ title.toLowerCase() }}</label>
   <div ref="multiSelectCombobox" class="py-2" @focusout="onFocusOut">
-    <div class="justify-end-safe epfl-input flex">
+    <div class="epfl-input flex">
       <div class="flex w-9/10 flex-wrap overflow-clip py-2 pl-4" tabindex="-1" @focusin="onFocusIn">
         <div class="flex flex-wrap items-center gap-1 truncate">
           <span v-for="item in selectedItems" :key="item" class="epfl-tag-light-removable max-w-full overflow-clip">
