@@ -12,7 +12,7 @@ const project = props.project;
 </script>
 <template>
   <!-- use CSS to leave space for shadow when moving up on hover-->
-  <div class="epfl-card relative flex h-[calc(100%-16px)] w-full flex-col bg-white text-gray-700">
+  <div class="epfl-card relative flex h-[calc(100%-1rem)] w-full flex-col overflow-clip bg-white text-gray-700">
     <!-- Content Area -->
     <NuxtLink :to="{ name: 'projects-id', params: { id: project.id } }" class="flex flex-1 flex-col">
       <!-- Image Container -->
