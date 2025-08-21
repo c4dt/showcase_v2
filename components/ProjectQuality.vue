@@ -10,7 +10,7 @@
             :key="val"
             :title="maturityTitle[idx]"
             :icon="val"
-            :class="`pr-2 ${maturityTextStyle[idx]} cursor-help`"
+            :class="`pr-2 text-xl ${maturityTextStyle[idx]} cursor-help`"
           />
         </div>
       </div>
@@ -57,8 +57,6 @@ statusTags.push({
 const maturity = props.project.maturity ?? 0;
 const maturityTitle = ["Prototype", "Intermediate", "Mature"];
 const pprintMaturity = [faRulerCombined, faHammer, faBuilding];
-const maturityTextStyle = pprintMaturity.map((val, idx) =>
-  idx <= maturity - 1 ? "text-xl text-[#707070]" : "text-sm text-[#c1c1c1]"
-);
+const maturityTextStyle = pprintMaturity.map((val, idx) => (idx <= maturity - 1 ? "text-[#707070]" : "text-[#c1c1c1]"));
 const evaluationRequestTitle = "Send evaluation request";
 </script>
