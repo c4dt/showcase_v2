@@ -56,7 +56,7 @@ function onFocusOut(e: FocusEvent) {
 <template>
   <label :for="`searchInput${title}`">Filter by {{ title.toLowerCase() }}</label>
   <div ref="combobox" class="py-2" @focusout="onFocusOut">
-    <div class="epfl-input justify-end-safe flex">
+    <div class="epfl-input flex">
       <input
         :id="`searchInput${title}`"
         v-model="searchQuery"
