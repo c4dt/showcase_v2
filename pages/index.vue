@@ -107,7 +107,7 @@ watch(filteredProjects, () => {
       <h2 class="epfl-h2 text-center">View all Projects</h2>
       <div class="flex flex-col py-10 lg:flex-row">
         <!-- Sidebar with filter -->
-        <div class="w-full lg:w-1/4 lg:pr-4">
+        <div class="w-full lg:w-30/100 lg:pr-4">
           <div class="top-0 lg:sticky">
             <div class="epfl-filterbox">
               <div class="text-xl">Filter projects</div>
@@ -137,7 +137,7 @@ watch(filteredProjects, () => {
         </div>
 
         <!-- Main projects area -->
-        <div class="mt-8 w-full lg:mt-0 lg:w-3/4">
+        <div class="mt-8 w-full lg:mt-0 lg:w-70/100">
           <!-- Search -->
           <SearchBar v-model:search-query="searchQuery" class="my-4" />
           <div v-for="project in filteredProjects" :key="project.name" class="py-2">
