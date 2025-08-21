@@ -82,7 +82,7 @@ defineExpose({ clearAll });
           class="border-none focus:outline-none"
         />
       </div>
-      <div :class="'py-2 ' + (selectedItems.length ? 'flex w-2/10 flex-wrap justify-evenly' : '')">
+      <div :class="'py-2 ' + (selectedItems.length ? 'flex w-2/10 flex-nowrap justify-evenly' : '')">
         <ClearButton v-if="searchQuery" :clear-func="clearInput" aria-label="Clear search query" />
         <ClearButton
           v-if="selectedItems.length && !searchQuery"
