@@ -103,12 +103,12 @@ watch(filteredProjects, () => {
       <HomepageSelectedProjects />
     </section>
     <!-- Project search section -->
-    <section class="px-4 py-4 md:px-12">
+    <section class="px-4 py-4 lg:px-12">
       <h2 class="epfl-h2 text-center">View all Projects</h2>
-      <div class="flex flex-col py-10 md:flex-row">
+      <div class="flex flex-col py-10 lg:flex-row">
         <!-- Sidebar with filter -->
-        <div class="w-full md:w-1/4 md:pr-4">
-          <div class="top-0 md:sticky">
+        <div class="w-full lg:w-1/4 lg:pr-4">
+          <div class="top-0 lg:sticky">
             <div class="epfl-filterbox">
               <div class="text-xl">Filter projects</div>
               <HomepageMutliSelectCombobox
@@ -137,7 +137,7 @@ watch(filteredProjects, () => {
         </div>
 
         <!-- Main projects area -->
-        <div class="mt-8 w-full md:mt-0 md:w-3/4">
+        <div class="mt-8 w-full lg:mt-0 lg:w-3/4">
           <!-- Search -->
           <SearchBar v-model:search-query="searchQuery" class="my-4" />
           <div v-for="project in filteredProjects" :key="project.name" class="py-2">
