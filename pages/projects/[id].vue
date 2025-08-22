@@ -31,14 +31,18 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
         </div>
       </div>
       <ProjectsTabs :project="project" />
-      <div class="flex justify-center pb-16">
-        <NuxtLink to="/"
-          ><span class="cursor-pointer bg-[#ff0000] px-4 py-2 font-bold text-[#ffffff] hover:bg-[#b51f1f]"
-            >Go back</span
-          ></NuxtLink
-        >
+      <div class="hidden lg:block">
+        <div class="flex justify-center pb-16">
+          <NuxtLink to="/"
+            ><span class="cursor-pointer bg-[#ff0000] px-4 py-2 font-bold text-[#ffffff] hover:bg-[#b51f1f]"
+              >Go back</span
+            ></NuxtLink
+          >
+        </div>
+        <p class="pb-2 text-center text-xs">
+          This page was last edited on {{ lastEdited.toISOString().split("T")[0] }}.
+        </p>
       </div>
-      <p class="pb-2 text-center text-xs">This page was last edited on {{ lastEdited.toISOString().split("T")[0] }}.</p>
     </div>
     <div class="w-full lg:w-30/100">
       <div class="bg-[#e6e6e6] px-8 text-center">
@@ -67,6 +71,16 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
         </div>
         <div class="py-4 text-left text-sm" v-html="lab.description" />
       </div>
+    </div>
+    <div class="block lg:hidden">
+      <div class="flex justify-center pb-16">
+        <NuxtLink to="/"
+          ><span class="cursor-pointer bg-[#ff0000] px-4 py-2 font-bold text-[#ffffff] hover:bg-[#b51f1f]"
+            >Go back</span
+          ></NuxtLink
+        >
+      </div>
+      <p class="pb-2 text-center text-xs">This page was last edited on {{ lastEdited.toISOString().split("T")[0] }}.</p>
     </div>
   </div>
 </template>
