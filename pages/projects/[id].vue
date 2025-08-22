@@ -7,8 +7,8 @@ const lab = project.value.lab;
 const lastEdited = new Date(Date.parse(project.value.date_updated || project.value.date_added));
 </script>
 <template>
-  <div class="m-16 flex">
-    <div class="flex-[7] pr-16">
+  <div class="m-16 flex flex-col lg:flex-row">
+    <div class="w-full pr-16 lg:w-70/100">
       <div class="py-4">
         <div class="flex items-center justify-center">
           <img :alt="project.name" :src="project.logo" class="h-32" />
@@ -40,7 +40,7 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
       </div>
       <p class="pb-2 text-center text-xs">This page was last edited on {{ lastEdited.toISOString().split("T")[0] }}.</p>
     </div>
-    <div class="flex-[3]">
+    <div class="w-full lg:w-30/100">
       <div class="bg-[#e6e6e6] px-8 text-center">
         <div class="py-4">
           <h2 class="epfl-h2">{{ project.lab.name }}</h2>
