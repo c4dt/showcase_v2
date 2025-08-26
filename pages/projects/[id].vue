@@ -15,13 +15,13 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
             <img :alt="project.name" :src="project.logo" class="h-32 w-full object-contain p-4" />
           </div>
           <div class="flex">
-            <div class="sm:flex-1">
+            <div class="lg:flex-1">
               <ProjectDescription :project="project" />
-              <div class="block sm:hidden">
+              <div class="block lg:hidden">
                 <ProjectQuality :project="project" />
               </div>
             </div>
-            <div class="hidden sm:block sm:flex-shrink-0 sm:flex-grow-0 sm:basis-64 sm:justify-end">
+            <div class="hidden lg:block lg:flex-shrink-0 lg:flex-grow-0 lg:basis-64 lg:justify-end">
               <ProjectQuality :project="project" />
             </div>
           </div>
