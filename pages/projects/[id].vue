@@ -12,7 +12,7 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
       <div class="w-full pr-16 lg:w-70/100">
         <div class="py-4">
           <div class="flex items-center justify-center">
-            <img :alt="project.name" :src="project.logo" class="h-32" />
+            <img :alt="project.name" :src="project.logo" class="h-32 w-full object-contain p-4" />
           </div>
           <div class="flex">
             <div class="sm:flex-1">
