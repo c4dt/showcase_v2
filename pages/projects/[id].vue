@@ -17,9 +17,6 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
           <div class="flex">
             <div class="lg:flex-1">
               <ProjectDescription :project="project" />
-              <div class="block lg:hidden">
-                <ProjectQuality :project="project" />
-              </div>
             </div>
             <div class="hidden lg:block lg:flex-shrink-0 lg:flex-grow-0 lg:basis-64 lg:justify-end">
               <ProjectQuality :project="project" />
@@ -29,6 +26,9 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
             <span v-for="tag in project.tags.toSorted()" :key="tag" class="epfl-tag-light-not-clickable">
               {{ tag }}
             </span>
+          </div>
+          <div class="block lg:hidden">
+            <ProjectQuality :project="project" />
           </div>
         </div>
         <ProjectsTabs :project="project" />
