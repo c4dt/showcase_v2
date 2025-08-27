@@ -7,12 +7,12 @@ const lab = project.value.lab;
 const lastEdited = new Date(Date.parse(project.value.date_updated || project.value.date_added));
 </script>
 <template>
-  <div class="mx-auto px-6">
+  <div class="mx-auto px-6 py-6">
     <div class="flex flex-col lg:flex-row">
       <div class="w-full lg:w-70/100">
         <div class="flex flex-col gap-4">
           <div class="flex items-center justify-center">
-            <img :alt="project.name" :src="project.logo" class="h-32 w-full object-contain p-4" />
+            <img :alt="project.name" :src="project.logo" class="h-32 w-full object-contain pb-4" />
           </div>
           <div class="lg:flex lg:flex-row lg:gap-1">
             <div class="lg:flex-1">
