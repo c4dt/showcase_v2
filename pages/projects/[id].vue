@@ -31,7 +31,7 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
             <ProjectQuality :project="project" />
           </div>
         </div>
-        <ProjectsTabs :project="project" />
+        <ProjectsTabs :project="project" class="py-4" />
       </div>
       <div class="w-full lg:w-30/100">
         <div class="bg-[#e6e6e6] px-8 text-center">

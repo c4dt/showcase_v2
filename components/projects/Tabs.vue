@@ -1,5 +1,5 @@
 <template>
-  <div class="flex py-4">
+  <div class="flex">
     <ul class="flex-[2] list-none px-4 text-left">
       <li
         v-if="project.incubator"
