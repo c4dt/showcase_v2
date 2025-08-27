@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col lg:flex-row">
-    <ul class="flex list-none flex-row flex-wrap text-left lg:flex-[2] lg:flex-col lg:px-4">
+    <ul class="flex list-none flex-row flex-wrap text-left lg:flex-[2] lg:flex-col lg:pr-4">
       <li
         v-if="project.incubator"
         :class="[tabBaseClass, activeTab === TAB_IDS.INCUBATOR ? tabActiveClass : tabInactiveClass]"
