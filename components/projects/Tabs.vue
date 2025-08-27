@@ -37,7 +37,7 @@
         {{ tab.label }}
       </li>
     </ul>
-    <div class="lg:flex-[10] lg:px-4">
+    <div class="lg:flex-[10]">
       <ProjectsIncubatorTab v-if="project.incubator && activeTab === TAB_IDS.INCUBATOR" :project="project" />
       <ProjectsPapersTab v-if="papers.length && activeTab === TAB_IDS.PAPERS" :papers="papers" />
       <ProjectsArticlesTab v-if="articles.length && activeTab === TAB_IDS.ARTICLES" :articles="articles" />
