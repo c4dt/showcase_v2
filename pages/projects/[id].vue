@@ -17,7 +17,7 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
           <div class="lg:flex lg:flex-row lg:gap-1">
             <div class="lg:flex-1">
               <ProjectDescription :project="project" />
-              <div class="mt-4 flex flex-wrap items-center gap-1">
+              <div class="mt-4 flex flex-wrap items-center gap-2">
                 <span v-for="tag in project.tags.toSorted()" :key="tag" class="epfl-tag-light-not-clickable">
                   {{ tag }}
                 </span>
