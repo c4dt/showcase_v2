@@ -1,6 +1,6 @@
 <template>
-  <div class="flex">
-    <ul class="flex-[2] list-none px-4 text-left">
+  <div class="flex flex-col lg:flex-row">
+    <ul class="flex list-none flex-row flex-wrap text-left lg:flex-[2] lg:flex-col lg:px-4">
       <li
         v-if="project.incubator"
         :class="[tabBaseClass, activeTab === TAB_IDS.INCUBATOR ? tabActiveClass : tabInactiveClass]"
@@ -37,7 +37,7 @@
         {{ tab.label }}
       </li>
     </ul>
-    <div class="flex-[10] px-4">
+    <div class="lg:flex-[10] lg:px-4">
       <ProjectsIncubatorTab v-if="project.incubator && activeTab === TAB_IDS.INCUBATOR" :project="project" />
       <ProjectsPapersTab v-if="papers.length && activeTab === TAB_IDS.PAPERS" :papers="papers" />
       <ProjectsArticlesTab v-if="articles.length && activeTab === TAB_IDS.ARTICLES" :articles="articles" />
@@ -70,8 +70,9 @@ const changeTab = (tabId: string) => {
   activeTab.value = tabId;
 };
 
-const tabBaseClass = "w-full cursor-pointer border-r px-4 py-2 text-left text-gray-800";
-const tabActiveClass = "border-r-2 border-red-500 bg-gray-200";
+const tabBaseClass =
+  "flex-1 lg:flex-0 lg:w-full cursor-pointer border-b lg:border-r lg:border-b-0 px-4 py-2 text-left text-gray-800";
+const tabActiveClass = "border-b-2 lg:border-b-0 lg:border-r-2 border-red-500 bg-gray-200";
 const tabInactiveClass = "border-gray-200 bg-white";
 
 const tabIds = [
