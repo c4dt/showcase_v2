@@ -19,7 +19,7 @@
           :href="`${MATURITY_EVALUATION_REQUEST.replaceAll('{name}', project.name)}`"
           :aria-label="evaluationRequestTitle"
           :title="evaluationRequestTitle"
-          ><FontAwesomeIcon :icon="faEnvelope" class="text-xl text-[#707070]"
+          ><FontAwesomeIcon :icon="faEnvelope" class="text-xl text-[#212121]"
         /></a>
       </div>
       <div class="col-span-2">Support</div>
@@ -57,6 +57,6 @@ statusTags.push({
 const maturity = props.project.maturity ?? 0;
 const maturityTitle = ["Prototype", "Intermediate", "Mature"];
 const pprintMaturity = [faRulerCombined, faHammer, faBuilding];
-const maturityTextStyle = pprintMaturity.map((val, idx) => (idx <= maturity - 1 ? "text-[#707070]" : "text-[#c1c1c1]"));
+const maturityTextStyle = pprintMaturity.map((val, idx) => (idx <= maturity - 1 ? "text-[#212121]" : "text-[#e6e6e6]"));
 const evaluationRequestTitle = "Send evaluation request";
 </script>

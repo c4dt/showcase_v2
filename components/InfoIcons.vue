@@ -6,19 +6,19 @@
       :to="{ name: 'projects-id', params: { id: project.id }, query: { section: TAB_IDS.PAPERS } }"
       ><FontAwesomeIcon :icon="faFile" class="fa-2x"
     /></NuxtLink>
-    <FontAwesomeIcon v-else :icon="faFile" class="fa-2x text-[#c1c1c1]" />
+    <FontAwesomeIcon v-else :icon="faFile" class="fa-2x text-[#e6e6e6]" />
     <NuxtLink
       v-if="articles"
       :class="iconClass"
       :to="{ name: 'projects-id', params: { id: project.id }, query: { section: TAB_IDS.ARTICLES } }"
       ><FontAwesomeIcon :icon="faNewspaper" class="fa-2x"
     /></NuxtLink>
-    <FontAwesomeIcon v-else :icon="faNewspaper" class="fa-2x text-[#c1c1c1]" />
+    <FontAwesomeIcon v-else :icon="faNewspaper" class="fa-2x text-[#e6e6e6]" />
     <div v-for="info in projectInformationIcons" :key="info" class="flex flex-nowrap space-x-4">
       <a v-if="info.url" :key="info.url" :href="info.url" :class="iconClass" :aria-label="info.label">
         <FontAwesomeIcon :icon="info.icon" class="fa-2x" />
       </a>
-      <FontAwesomeIcon v-else :icon="info.icon" class="fa-2x text-[#c1c1c1]" />
+      <FontAwesomeIcon v-else :icon="info.icon" class="fa-2x text-[#e6e6e6]" />
     </div>
   </div>
 </template>
@@ -31,7 +31,7 @@ const props = defineProps<{
   project: ExtendedProject;
 }>();
 const project = props.project;
-const iconClass = "text-gray-500 hover:text-gray-700";
+const iconClass = "text-[#707070] hover:text-[#212121]";
 
 const articles = project.information
   ? project.information.some((info) => info.type.toLowerCase() === "article")
