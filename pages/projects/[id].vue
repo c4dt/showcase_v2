@@ -14,18 +14,18 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
           <div class="flex items-center justify-center">
             <img :alt="project.name" :src="project.logo" class="h-32 w-full object-contain p-4" />
           </div>
-          <div class="flex">
+          <div class="lg:flex lg:flex-row lg:gap-1">
             <div class="lg:flex-1">
               <ProjectDescription :project="project" />
+              <div class="flex flex-wrap items-center gap-1">
+                <span v-for="tag in project.tags.toSorted()" :key="tag" class="epfl-tag-light-not-clickable">
+                  {{ tag }}
+                </span>
+              </div>
             </div>
-            <div class="hidden lg:block lg:flex-shrink-0 lg:flex-grow-0 lg:basis-64 lg:justify-end">
+            <div class="hidden lg:block lg:basis-64">
               <ProjectQuality :project="project" />
             </div>
-          </div>
-          <div class="flex flex-wrap items-center gap-1">
-            <span v-for="tag in project.tags.toSorted()" :key="tag" class="epfl-tag-light-not-clickable">
-              {{ tag }}
-            </span>
           </div>
           <div class="block lg:hidden">
             <ProjectQuality :project="project" />
