@@ -41,7 +41,7 @@ const navigation = computed<NavigationItem[]>(() => {
   <div
     class="mx-auto flex flex-col justify-between gap-2 border-b-2 border-gray-300 px-6 py-6 lg:h-20 lg:flex-row lg:items-center"
   >
-    <div class="flex items-center gap-2">
+    <div class="flex flex-wrap items-center gap-2 lg:flex-nowrap">
       <a href="https://epfl.ch" class="flex">
         <img
           src="https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg?refresh=now"
