@@ -77,7 +77,7 @@ watch(filteredProjects, () => {
 </script>
 
 <template>
-  <div class="bg-white py-2 sm:px-12">
+  <div class="mx-auto bg-white px-6 py-6">
     <!-- Welcome section and C4DT factory introduction -->
     <section class="isolatept-14 relative lg:px-8">
       <div class="max-w-10xl mx-auto">
@@ -103,7 +103,7 @@ watch(filteredProjects, () => {
       <HomepageSelectedProjects />
     </section>
     <!-- Project search section -->
-    <section class="px-4 py-4 lg:px-12">
+    <section class="py-4">
       <h2 class="epfl-h2 text-center">View all Projects</h2>
       <div class="flex flex-col py-10 lg:flex-row">
         <!-- Sidebar with filter -->
