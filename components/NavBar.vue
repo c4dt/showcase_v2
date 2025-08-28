@@ -38,8 +38,10 @@ const navigation = computed<NavigationItem[]>(() => {
 </script>
 
 <template>
-  <div class="mx-auto flex h-20 items-center justify-between border-b-2 border-gray-300 px-6">
-    <div class="flex items-center gap-2">
+  <div
+    class="mx-auto flex flex-col justify-between gap-2 border-b-2 border-gray-300 px-6 py-6 lg:h-20 lg:flex-row lg:items-center"
+  >
+    <div class="flex flex-wrap items-center gap-2 lg:flex-nowrap">
       <a href="https://epfl.ch" class="flex">
         <img
           src="https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg?refresh=now"
@@ -74,6 +76,6 @@ const navigation = computed<NavigationItem[]>(() => {
         </ol>
       </nav>
     </div>
-    <SearchBar v-model:search-query="searchQuery" v-model:search-input="searchInput" class="ml-4 w-full max-w-md" />
+    <SearchBar v-model:search-query="searchQuery" v-model:search-input="searchInput" class="w-full max-w-md lg:ml-4" />
   </div>
 </template>
