@@ -118,7 +118,7 @@ watch(filteredProjects, () => {
                 :item-list="projectTags"
               />
               <homepageCombobox ref="labsFilter" v-model="selectedLab" title="Lab" :item-list="labs" />
-              <homepageCombobox ref="statusFilter" v-model="selectedStatus" title="Status" :item-list="pprintStatus" />
+              <homepageCombobox ref="statusFilter" v-model="selectedStatus" title="Support" :item-list="pprintStatus" />
               <homepageCombobox
                 ref="categoriesFilter"
                 v-model="selectedCategory"
