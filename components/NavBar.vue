@@ -10,9 +10,18 @@ const searchQuery = useSearchQuery();
 
 const searchInput = ref<HTMLInputElement | null>(null);
 
-onMounted(() => {
-  searchInput.value?.focus(); // Focus the search input when the component is mounted
-});
+watch(
+  () => route.path,
+  (newPath) => {
+    if (newPath === "/") {
+      // focus the search input field when navigating to the main page
+      nextTick(() => {
+        searchInput.value?.focus();
+      });
+    }
+  },
+  { immediate: true }
+);
 
 watch(searchQuery, () => {
   // if the search query is empty and the search query in the URL is empty,
