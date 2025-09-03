@@ -71,7 +71,7 @@ const changeTab = (tabId: string) => {
 };
 
 const tabBaseClass =
-  "flex-1 text-nowrap lg:flex-0 lg:w-full cursor-pointer border-b lg:border-r lg:border-b-0 px-4 py-2 text-left text-gray-800";
+  "flex-1 text-nowrap max-w-1/2 lg:max-w-none lg:flex-0 lg:w-full cursor-pointer border-b lg:border-r lg:border-b-0 px-4 py-2 text-left text-gray-800";
 const tabActiveClass = "border-b-2 lg:border-b-0 lg:border-r-2 border-red-500 bg-gray-200";
 const tabInactiveClass = "border-gray-200 bg-white";
 
