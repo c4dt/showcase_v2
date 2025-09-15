@@ -15,11 +15,9 @@ defineProps<{
         v-for="name in filteredList"
         :key="name"
         class="epfl-option"
-        :title="name"
         @mousedown.prevent="selectFunc(name)"
-      >
-        {{ name }}
-      </li>
+        v-html="name"
+      />
     </ul>
   </div>
 </template>

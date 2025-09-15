@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type Combobox from "~/components/homepage/Combobox.vue";
 import type MutliSelectCombobox from "~/components/homepage/mutliSelectCombobox.vue";
+import { icon } from "@fortawesome/fontawesome-svg-core";
 
 const selectedStatus = ref("");
 const selectedLab = ref("");
@@ -22,9 +23,9 @@ provide("addTag", addTag);
 const searchQuery = useSearchQuery();
 
 const pprintStatus = [
-  `${PROJECT_STATUS_DESC.C4DT_STATUS} ${PROJECT_C4DT_STATUS.ACTIVE} (${PROJECT_STATUS_ICONS[PROJECT_C4DT_STATUS.ACTIVE]})`,
-  `${PROJECT_STATUS_DESC.C4DT_STATUS} ${PROJECT_C4DT_STATUS.RETIRED} (${PROJECT_STATUS_ICONS[PROJECT_C4DT_STATUS.RETIRED]})`,
-  `${PROJECT_STATUS_DESC.LAB_STATUS} ${PROJECT_LAB_STATUS.ACTIVE} (${PROJECT_STATUS_ICONS[PROJECT_LAB_STATUS.ACTIVE]})`
+  `${PROJECT_C4DT_STATUS.ACTIVE} (<span class='text-[#b51f1f]'>${icon(PROJECT_STATUS_ICONS[PROJECT_C4DT_STATUS.ACTIVE]).html[0]}</span>) ${PROJECT_STATUS_DESC.C4DT_STATUS}`,
+  `${PROJECT_C4DT_STATUS.RETIRED} (<span class='text-[#707070]'>${icon(PROJECT_STATUS_ICONS[PROJECT_C4DT_STATUS.RETIRED]).html[0]}</span>) ${PROJECT_STATUS_DESC.C4DT_STATUS}`,
+  `${PROJECT_LAB_STATUS.ACTIVE} (<span class='text-[#b51f1f]'>${icon(PROJECT_STATUS_ICONS[PROJECT_LAB_STATUS.ACTIVE]).html[0]}</span>) ${PROJECT_STATUS_DESC.LAB_STATUS}`
 ];
 
 const labsFilter = ref<InstanceType<typeof Combobox>>();
@@ -118,7 +119,7 @@ watch(filteredProjects, () => {
                 :item-list="projectTags"
               />
               <homepageCombobox ref="labsFilter" v-model="selectedLab" title="Lab" :item-list="labs" />
-              <homepageCombobox ref="statusFilter" v-model="selectedStatus" title="Status" :item-list="pprintStatus" />
+              <homepageCombobox ref="statusFilter" v-model="selectedStatus" title="Support" :item-list="pprintStatus" />
               <homepageCombobox
                 ref="categoriesFilter"
                 v-model="selectedCategory"
