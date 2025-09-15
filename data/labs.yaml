@@ -158,22 +158,28 @@ labs:
     description: >
       Our research focuses on software and systems security. Despite efforts and improvements in bug discovery techniques, some exploitable
       vulnerabilities will remain. We target techniques that both enable developers to discover and remove bugs and make programs resilient
-      against the exploitation of unknown or unpatched vulnerabilities. <ul>
+      against the exploitation of unknown or unpatched vulnerabilities.
+      <ul>
         <li>
           To discover bugs we propose (i) sanitization techniques that enforce
           a security property such as memory or type safety; given concrete
           program input, our sanitizers then flag any property violations
-      </li> <li>
-        (ii) fuzzing techniques that leverage static and dynamic analysis to
-        create program inputs to explore program areas that are not yet covered
-        through existing test cases. To protect against exploitable
-        vulnerabilities, we focus on control-flow integrity using specific
-        language semantics, enforcing type integrity, and protecting selective
-        data. Under this premise, we focus on compiler-based, runtime-based, and
-        language-based protection mechanisms and security policies that increase
-        the resilience of applications against attacks (in the presence of
-        software vulnerabilities). All prototypes are released as open-source.
-      </li> </ul>
+          (ii) fuzzing techniques that leverage static and dynamic analysis to
+          create program inputs to explore program areas that are not yet covered
+          through existing test cases.
+        </li>
+        <li>
+          To protect against exploitable
+          vulnerabilities, we focus on control-flow integrity using specific
+          language semantics, enforcing type integrity, and protecting selective
+          data. Under this premise, we focus on compiler-based, runtime-based, and
+          language-based protection mechanisms and security policies that increase
+          the resilience of applications against attacks (in the presence of
+          software vulnerabilities).
+        </li>
+      </ul>
+      <br>
+      All prototypes are released as open-source.
     url: https://hexhive.epfl.ch/
     information:
       - title: Lab Github
@@ -546,7 +552,7 @@ labs:
       picture: carmela_troncoso.png
     description: >
       The Security and Privacy Engineering Laboratory develops tools and methodologies to help engineers building systems that respect
-      societal values, such as security, privacy or non discrimination. Currently, they are working on ":"
+      societal values, such as security, privacy or non discrimination. Currently, they are working on
 
       <ul>
         <li>Machine Learning impact on society</li>
@@ -558,7 +564,10 @@ labs:
   VCA:
     name: Verification and Computer Architecture Lab
     description: >
-      Something new is coming
+      Our research lies at the intersection between programming languages and computer architecture.<br>
+      We are interested in designing high-level hardware programming languages especially to ease hardware verification.
+      We leverage interactive theorem provers to reason about hardware, leading to more scalable and compositional proofs.<br>
+      We also focus on building novel hardware architectures to support fine-grained and dynamic parallel computations.
     prof:
       name:
         - Thomas
