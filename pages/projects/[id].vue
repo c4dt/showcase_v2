@@ -7,61 +7,75 @@ const lab = project.value.lab;
 const lastEdited = new Date(Date.parse(project.value.date_updated || project.value.date_added));
 </script>
 <template>
-  <div class="mx-auto px-6 py-6">
-    <div class="flex flex-col lg:flex-row">
-      <div class="w-full lg:w-70/100 lg:px-6">
-        <div class="flex flex-col gap-4">
-          <div class="flex items-center justify-center">
-            <img :alt="project.name" :src="project.logo" class="h-32 w-full object-contain pb-4" />
-          </div>
-          <div class="lg:flex lg:flex-row lg:gap-1">
-            <div class="lg:flex-1">
-              <ProjectDescription :project="project" />
-              <div class="mt-4 flex flex-wrap items-center gap-2">
-                <span v-for="tag in project.tags.toSorted()" :key="tag" class="epfl-tag-light-not-clickable">
-                  {{ tag }}
-                </span>
+  <html lang="en">
+    <div class="mx-auto px-6 py-6">
+      <div class="flex flex-col lg:flex-row">
+        <div class="w-full lg:w-70/100 lg:px-6">
+          <div class="flex flex-col gap-4">
+            <div class="flex items-center justify-center">
+              <img :alt="project.name" :src="project.logo" class="h-32 w-full object-contain pb-4" />
+            </div>
+            <div class="lg:flex lg:flex-row lg:gap-1">
+              <div class="lg:flex-1">
+                <ProjectDescription :project="project" />
+                <div class="mt-4 flex flex-wrap items-center gap-2">
+                  <span v-for="tag in project.tags.toSorted()" :key="tag" class="epfl-tag-light-not-clickable">
+                    {{ tag }}
+                  </span>
+                </div>
+              </div>
+              <div class="hidden lg:block lg:basis-64">
+                <ProjectQuality :project="project" />
               </div>
             </div>
-            <div class="hidden lg:block lg:basis-64">
+            <div class="block lg:hidden">
               <ProjectQuality :project="project" />
             </div>
           </div>
-          <div class="block lg:hidden">
-            <ProjectQuality :project="project" />
-          </div>
+          <ProjectsTabs :project="project" class="py-4" />
         </div>
-        <ProjectsTabs :project="project" class="py-4" />
-      </div>
-      <div class="w-full lg:w-30/100">
-        <div class="bg-[#e6e6e6] px-8 text-center">
-          <div class="py-4">
-            <h2 class="epfl-h2">{{ project.lab.name }}</h2>
-            <a class="epfl-a" :href="lab.url">{{ lab.name }}</a>
-            <div>
-              <div class="flex justify-center py-4">
-                <NuxtImg
-                  v-if="lab.prof.picture"
-                  class="rounded-full"
-                  :src="`/labs/${lab.prof.picture}`"
-                  :alt="lab.prof.name.join(' ')"
-                />
+        <div class="w-full lg:w-30/100">
+          <div class="bg-[#e6e6e6] px-8 text-center">
+            <div class="py-4">
+              <h2 class="epfl-h2">{{ project.lab.name }}</h2>
+              <a class="epfl-a" :href="lab.url">{{ lab.name }}</a>
+              <div>
+                <div class="flex justify-center py-4">
+                  <NuxtImg
+                    v-if="lab.prof.picture"
+                    class="rounded-full"
+                    :src="`/labs/${lab.prof.picture}`"
+                    :alt="lab.prof.name.join(' ')"
+                  />
+                </div>
+                <p class="text-l text-center">
+                  Prof. {{ lab.prof.name.join(" ") }}
+                  <br />
+                  <a
+                    class="text-xl text-[#212121] underline decoration-[#ff0000] hover:text-[#ff0000] hover:decoration-[#212121]"
+                    :href="'mailto:' + lab.prof.email"
+                    ><FontAwesomeIcon :icon="faEnvelope" class="text-[#707070]" /></a
+                  ><br />
+                </p>
               </div>
-              <p class="text-l text-center">
-                Prof. {{ lab.prof.name.join(" ") }}
-                <br />
-                <a
-                  class="text-xl text-[#212121] underline decoration-[#ff0000] hover:text-[#ff0000] hover:decoration-[#212121]"
-                  :href="'mailto:' + lab.prof.email"
-                  ><FontAwesomeIcon :icon="faEnvelope" class="text-[#707070]" /></a
-                ><br />
-              </p>
             </div>
+            <div class="py-4 text-left text-sm" v-html="lab.description" />
           </div>
-          <div class="py-4 text-left text-sm" v-html="lab.description" />
+        </div>
+        <div class="block pt-16 lg:hidden">
+          <div class="flex justify-center pb-16">
+            <NuxtLink to="/"
+              ><span class="cursor-pointer bg-[#ff0000] px-4 py-2 font-bold text-[#ffffff] hover:bg-[#b51f1f]"
+                >Go back</span
+              ></NuxtLink
+            >
+          </div>
+          <p class="pb-2 text-center text-xs">
+            This page was last edited on {{ lastEdited.toISOString().split("T")[0] }}.
+          </p>
         </div>
       </div>
-      <div class="block pt-16 lg:hidden">
+      <div class="hidden lg:block">
         <div class="flex justify-center pb-16">
           <NuxtLink to="/"
             ><span class="cursor-pointer bg-[#ff0000] px-4 py-2 font-bold text-[#ffffff] hover:bg-[#b51f1f]"
@@ -74,15 +88,5 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
         </p>
       </div>
     </div>
-    <div class="hidden lg:block">
-      <div class="flex justify-center pb-16">
-        <NuxtLink to="/"
-          ><span class="cursor-pointer bg-[#ff0000] px-4 py-2 font-bold text-[#ffffff] hover:bg-[#b51f1f]"
-            >Go back</span
-          ></NuxtLink
-        >
-      </div>
-      <p class="pb-2 text-center text-xs">This page was last edited on {{ lastEdited.toISOString().split("T")[0] }}.</p>
-    </div>
-  </div>
+  </html>
 </template>
