@@ -66,7 +66,7 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
         <div class="block pt-16 lg:hidden">
           <div class="flex justify-center pb-16">
             <NuxtLink to="/"
-              ><span class="cursor-pointer bg-[#ff0000] px-4 py-2 font-bold text-[#ffffff] hover:bg-[#b51f1f]"
+              ><span class="cursor-pointer bg-[#b51f1f] px-4 py-2 font-bold text-[#ffffff] hover:bg-[#ff0000]"
                 >Go back</span
               ></NuxtLink
             >
@@ -79,7 +79,7 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
       <div class="hidden lg:block">
         <div class="flex justify-center pb-16">
           <NuxtLink to="/"
-            ><span class="cursor-pointer bg-[#ff0000] px-4 py-2 font-bold text-[#ffffff] hover:bg-[#b51f1f]"
+            ><span class="cursor-pointer bg-[#b51f1f] px-4 py-2 font-bold text-[#ffffff] hover:bg-[#ff0000]"
               >Go back</span
             ></NuxtLink
           >
