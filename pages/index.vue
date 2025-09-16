@@ -47,7 +47,12 @@ function resetFilters() {
 const projects = useState<ExtendedProject[]>("projects");
 
 let labs: string[] = Array.from(
-  new Set(projects.value.map((project) => `${project.lab.prof.name.join(" ")} - ${project.lab.name}`))
+  new Set(
+    projects.value.map(
+      (project) =>
+        `${[project.lab.prof.name[project.lab.prof.name.length - 1].toUpperCase(), ...project.lab.prof.name.slice(0, -1)].join(", ")} - ${project.lab.name}`
+    )
+  )
 );
 let categories: string[] = Array.from(new Set(projects.value.flatMap((project) => project.categories)));
 let applications: string[] = Array.from(new Set(projects.value.flatMap((project) => project.applications)));
