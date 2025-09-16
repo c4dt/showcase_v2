@@ -24,7 +24,14 @@ const toggleAndFocus = async () => {
       <FontAwesomeIcon :icon="faMagnifyingGlass" class="pr-2 hover:text-[#ff0000]" />
     </button>
     <div v-show="search" class="epfl-input flex items-center px-2">
-      <input ref="searchInput" v-model="searchQuery" type="text" class="w-full focus:outline-none" />
+      <input
+        ref="searchInput"
+        v-model="searchQuery"
+        type="text"
+        class="w-full focus:outline-none"
+        placeholder="Search"
+        aria-label="Search"
+      />
       <!-- Clear Button -->
       <ClearButton v-if="searchQuery" :clear-func="clearSearch" aria-label="Clear search" class="" />
     </div>
