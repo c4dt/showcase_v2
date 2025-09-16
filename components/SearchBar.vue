@@ -20,7 +20,7 @@ const toggleAndFocus = async () => {
 <template>
   <!-- use fixed-height container to maintain positioning of other elements when input is toggled off -->
   <div class="flex h-10">
-    <button @click="toggleAndFocus">
+    <button aria-label="Toggle search bar open/closed" @click="toggleAndFocus">
       <FontAwesomeIcon :icon="faMagnifyingGlass" class="pr-2 hover:text-[#ff0000]" />
     </button>
     <div v-show="search" class="epfl-input flex items-center px-2">
