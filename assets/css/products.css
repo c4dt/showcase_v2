@@ -86,10 +86,19 @@ div.columns label {
   margin: 0.5em;
 }
 
-img.left {
-  float: left;
-  margin: 0.5em;
-  width: 30%;
+@media screen and (width < 64rem) {
+  img.left {
+    margin: auto;
+    height: 30%;
+  }
+}
+
+@media screen and (width >= 64rem) {
+  img.left {
+    float: left;
+    margin: 0.5em;
+    width: 30%;
+  }
 }
 
 img.center {
