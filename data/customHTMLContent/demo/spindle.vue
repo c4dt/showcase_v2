@@ -25,7 +25,6 @@
 
   <div class="click-zoom center">
     <label>
-      <input type="checkbox" />
       <img src="/showcase_v2/products/images/spindle/demo-start.png" width="50%" />
       <br />The start page of the demo
     </label>
@@ -58,12 +57,10 @@
 
   <div class="columns click-zoom">
     <label>
-      <input type="checkbox" />
       <img src="/showcase_v2/products/images/spindle/demo-calculate.png" />
       <br />During calculation of the result
     </label>
     <label>
-      <input type="checkbox" />
       <img src="/showcase_v2/products/images/spindle/demo-predict.png" />
       <br />Ready to predict outcomes
     </label>

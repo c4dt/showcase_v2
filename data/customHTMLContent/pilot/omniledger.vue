@@ -39,14 +39,12 @@
   <div class="center" style="width: 100%; display: flex">
     <div style="margin: 1em" class="click-zoom">
       <label>
-        <input type="checkbox" />
         <img src="/showcase_v2/products/images/omniledger/pilot-01-login.png" />
         <br />User information
       </label>
     </div>
     <div style="margin: 1em" class="click-zoom">
       <label>
-        <input type="checkbox" />
         <img src="/showcase_v2/products/images/omniledger/pilot-02-transaction.png" />
         <br />Update in progress
       </label>
@@ -69,21 +67,18 @@
   <div class="columns">
     <div class="click-zoom">
       <label>
-        <input type="checkbox" />
         <img src="/showcase_v2/products/images/omniledger/pilot-04-login-wordpress.png" />
         <br />The "Sign in with OmniLedger" button in Wordpress
       </label>
     </div>
     <div class="click-zoom">
       <label>
-        <input type="checkbox" />
         <img src="/showcase_v2/products/images/omniledger/pilot-05-login-wordpress-confirmation.png" />
         <br />A user has to confirm the login
       </label>
     </div>
     <div class="click-zoom">
       <label>
-        <input type="checkbox" />
         <img src="/showcase_v2/products/images/omniledger/pilot-07-login-wordpress-transaction.png" />
         <br />The login is written to the blockchain
       </label>
@@ -92,14 +87,12 @@
   <div class="columns">
     <div class="click-zoom">
       <label>
-        <input type="checkbox" />
         <img src="/showcase_v2/products/images/omniledger/pilot-06-login-wordpress-complete.png" />
         <br />The access to the protected area in Wordpress
       </label>
     </div>
     <div class="click-zoom">
       <label>
-        <input type="checkbox" />
         <img src="/showcase_v2/products/images/omniledger/pilot-08-login-matrix-cas.png" />
         <br />Logging in to Matrix
       </label>
@@ -127,7 +120,6 @@
   </p>
   <div style="margin: 1em" class="click-zoom center">
     <label>
-      <input type="checkbox" />
       <img src="/showcase_v2/products/images/omniledger/pilot-03-devices.png" width="50%" />
       <br />An account with a number of keys and a recovery account
     </label>

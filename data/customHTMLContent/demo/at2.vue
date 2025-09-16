@@ -8,7 +8,6 @@
   <div class="columns">
     <div class="click-zoom">
       <label>
-        <input type="checkbox" />
         <img
           src="/showcase_v2/products/images/at2/at2-demo-1.png"
           alt="Welcome screen of the AT2 demo showing some text and an
@@ -19,7 +18,6 @@
     </div>
     <div class="click-zoom">
       <label>
-        <input type="checkbox" />
         <img
           src="/showcase_v2/products/images/at2/at2-demo-2.png"
           alt="A short explanation of how to create an account, a field for
@@ -32,7 +30,6 @@
   <div class="columns">
     <div class="click-zoom">
       <label>
-        <input type="checkbox" />
         <img
           src="/showcase_v2/products/images/at2/at2-demo-3.png"
           alt="A simple form to send some of your assets over to network
@@ -44,7 +41,6 @@
     </div>
     <div class="click-zoom">
       <label>
-        <input type="checkbox" />
         <img
           src="/showcase_v2/products/images/at2/at2-demo-4.png"
           alt="A form to choose a destination and how much transactions should be performed.
