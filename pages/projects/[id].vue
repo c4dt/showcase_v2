@@ -54,6 +54,7 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
                   <a
                     class="text-xl text-[#212121] underline decoration-[#ff0000] hover:text-[#ff0000] hover:decoration-[#212121]"
                     :href="'mailto:' + lab.prof.email"
+                    aria-label="E-mail professor"
                     ><FontAwesomeIcon :icon="faEnvelope" class="text-[#707070]" /></a
                   ><br />
                 </p>
