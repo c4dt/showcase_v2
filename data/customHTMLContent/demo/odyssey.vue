@@ -22,14 +22,12 @@
   <div class="columns">
     <div class="click-zoom">
       <label>
-        <input type="checkbox" />
         <img src="/showcase_v2/products/images/calypso/pilot-dom-welcome.png" />
         <br />The Data Manager can add new data sources, change the access control, and verify the usage of their data
       </label>
     </div>
     <div class="click-zoom">
       <label>
-        <input type="checkbox" />
         <img src="/showcase_v2/products/images/calypso/pilot-dsm-welcome.png" />
         <br />The Data Scientist can request different data sources, and will get these resources delivered in a
         personalized, temporary virtual machine

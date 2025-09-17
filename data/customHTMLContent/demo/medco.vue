@@ -13,7 +13,6 @@
 
   <div class="click-zoom center">
     <label>
-      <input type="checkbox" />
       <img src="/showcase_v2/products/images/medco/demo.png" width="50%" />
       <br />The query building in medco
     </label>

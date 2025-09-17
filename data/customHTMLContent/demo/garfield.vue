@@ -9,7 +9,6 @@
   <div class="columns">
     <div class="click-zoom">
       <label>
-        <input type="checkbox" />
         <img
           src="/showcase_v2/products/images/garfield/garfield-demo-1.png"
           alt="This shows the first step of six in the demo. It contains the introduction
@@ -23,7 +22,6 @@
     </div>
     <div class="click-zoom">
       <label>
-        <input type="checkbox" />
         <img
           src="/showcase_v2/products/images/garfield/garfield-demo-2.png"
           alt="Step 2: 'Simple training' with a short explanation that we need
@@ -40,7 +38,6 @@
   <div class="columns">
     <div class="click-zoom">
       <label>
-        <input type="checkbox" />
         <img
           src="/showcase_v2/products/images/garfield/garfield-demo-3.png"
           alt="Step 3: 'Adding data' allows the user to choose how many additional
@@ -56,7 +53,6 @@
     </div>
     <div class="click-zoom">
       <label>
-        <input type="checkbox" />
         <img
           src="/showcase_v2/products/images/garfield/garfield-demo-4.png"
           alt="Step 4: 'Byzantine behaviour' gives the user a choice to change some
@@ -74,7 +70,6 @@
   <div class="columns">
     <div class="click-zoom">
       <label>
-        <input type="checkbox" />
         <img
           src="/showcase_v2/products/images/garfield/garfield-demo-5.png"
           alt="Step 5: 'Byzantine resilience' looks similar to step 4, with 4 systems,
@@ -90,7 +85,6 @@
     </div>
     <div class="click-zoom">
       <label>
-        <input type="checkbox" />
         <img
           src="/showcase_v2/products/images/garfield/garfield-demo-6.png"
           alt="Step 6: 'Comparison with other projects' shows a text comparing it to another
