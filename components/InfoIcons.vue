@@ -4,6 +4,7 @@
       v-if="papers"
       :class="iconClass"
       :to="{ name: 'projects-id', params: { id: project.id }, query: { section: TAB_IDS.PAPERS } }"
+      aria-label="Papers"
       ><FontAwesomeIcon :icon="faFile" class="fa-2x"
     /></NuxtLink>
     <FontAwesomeIcon v-else :icon="faFile" class="fa-2x text-[#e6e6e6]" />
@@ -11,6 +12,7 @@
       v-if="articles"
       :class="iconClass"
       :to="{ name: 'projects-id', params: { id: project.id }, query: { section: TAB_IDS.ARTICLES } }"
+      aria-label="Articles"
       ><FontAwesomeIcon :icon="faNewspaper" class="fa-2x"
     /></NuxtLink>
     <FontAwesomeIcon v-else :icon="faNewspaper" class="fa-2x text-[#e6e6e6]" />
