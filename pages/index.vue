@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type Combobox from "~/components/homepage/Combobox.vue";
 import type MutliSelectCombobox from "~/components/homepage/mutliSelectCombobox.vue";
-import { icon } from "@fortawesome/fontawesome-svg-core";
 
 const selectedStatus = ref("");
 const selectedLab = ref("");
@@ -21,12 +20,6 @@ function addTag(tag: string) {
 provide("addTag", addTag);
 
 const searchQuery = useSearchQuery();
-
-const pprintStatus = [
-  `${PROJECT_C4DT_STATUS.ACTIVE} (<span class='text-[#b51f1f]'>${icon(PROJECT_STATUS_ICONS[PROJECT_C4DT_STATUS.ACTIVE]).html[0]}</span>) ${PROJECT_STATUS_DESC.C4DT_STATUS}`,
-  `${PROJECT_C4DT_STATUS.RETIRED} (<span class='text-[#707070]'>${icon(PROJECT_STATUS_ICONS[PROJECT_C4DT_STATUS.RETIRED]).html[0]}</span>) ${PROJECT_STATUS_DESC.C4DT_STATUS}`,
-  `${PROJECT_LAB_STATUS.ACTIVE} (<span class='text-[#b51f1f]'>${icon(PROJECT_STATUS_ICONS[PROJECT_LAB_STATUS.ACTIVE]).html[0]}</span>) ${PROJECT_STATUS_DESC.LAB_STATUS}`
-];
 
 const labsFilter = ref<InstanceType<typeof Combobox>>();
 const categoriesFilter = ref<InstanceType<typeof Combobox>>();
@@ -62,7 +55,9 @@ const projectTags: string[] = Array.from(new Set(projects.value.flatMap((project
 const filteredProjects = computed(() => {
   return projects.value.filter((project) => {
     return (
-      (selectedStatus.value === "" || project.status === pprintStatus.indexOf(selectedStatus.value)) &&
+      (selectedStatus.value === "" ||
+        selectedStatus.value === PPRINTED_C4DT_STATUS[project.c4dt_status] ||
+        selectedStatus.value === PPRINTED_LAB_STATUS[project.lab_status]) &&
       (selectedTag.value === "" || project.tags.includes(selectedTag.value)) &&
       (selectedLab.value === "" || project.lab.name === selectedLab.value.split(" - ")[1]) &&
       (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
@@ -130,7 +125,7 @@ watch(filteredProjects, () => {
                   ref="statusFilter"
                   v-model="selectedStatus"
                   title="Support"
-                  :item-list="pprintStatus"
+                  :item-list="PPRINTED_STATUS"
                 />
                 <homepageCombobox
                   ref="categoriesFilter"
