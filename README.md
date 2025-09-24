@@ -2,6 +2,10 @@
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+## License
+
+This project is licensed under the terms of the GNU Affero General Public License Version 3 or later.
+
 ## Devbox
 
 You can use the devbox bundler for the bun-bundler.
