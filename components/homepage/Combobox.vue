@@ -58,6 +58,7 @@ function onFocusOut(e: FocusEvent) {
   <div ref="combobox" class="py-2" @focusout="onFocusOut">
     <div class="epfl-input flex">
       <input
+        v-if="!selectedItem"
         :id="`searchInput${title}`"
         v-model="searchQuery"
         type="text"
@@ -65,6 +66,13 @@ function onFocusOut(e: FocusEvent) {
         :readonly="!!selectedItem"
         class="w-9/10 truncate py-2 pl-4 focus:outline-hidden"
         @focusin="onFocusIn"
+      />
+      <div
+        v-else
+        :id="`searchInput${title}`"
+        class="w-9/10 truncate py-2 pl-4 focus:outline-hidden"
+        @focusin="onFocusIn"
+        v-html="selectedItem"
       />
       <div class="w-1/10 overflow-clip py-2">
         <ClearButton v-if="searchQuery && !selectedItem" :clear-func="clearInput" aria-label="Clear search query" />
