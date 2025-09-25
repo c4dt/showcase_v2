@@ -123,14 +123,23 @@ async function loadLabProjects(
     project.logo = project.logo || lab.logo || "https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg";
     let c4dt_status: PROJECT_C4DT_STATUS | undefined = undefined;
     let lab_status: PROJECT_LAB_STATUS | undefined = undefined;
+    // better sort order
+    // active C4DT project gets 8 points
+    // active lab project gets 4 points
+    // inactive C4DT project gets 2 points
+    // inactive lab project gets 1 point
+    // active C4DT + active lab > active C4DT + inactive lab > inactive C4DT + active lab > inactive C4DT + inactive lab
+    let sortKey = 0;
     let status: number;
     if (project.incubator?.type === "incubated" || project.incubator?.type === "incubated_market") {
       c4dt_status = PROJECT_C4DT_STATUS.ACTIVE;
+      sortKey += 8;
       status = 0;
     }
     if (project.incubator?.type === "retired" || project.incubator?.type === "retired_archived") {
       c4dt_status = PROJECT_C4DT_STATUS.RETIRED;
       status = 1;
+      sortKey += 2;
     }
     if (project.code?.date_last_commit) {
       // ToDo: refactor and merge with isActive function in utils/misc.ts
@@ -141,21 +150,25 @@ async function loadLabProjects(
       if (new Date(project.code.date_last_commit) > six_months_ago) {
         lab_status = PROJECT_LAB_STATUS.ACTIVE;
         status = status ?? 2;
+        sortKey += 4;
+      } else {
+        sortKey += 1;
       }
     }
-    status = status ?? 3; // highest value instead of undefined to allow for substraction when sorting
-    return { ...project, id: projectId, lab, descriptionDisplay, status, c4dt_status, lab_status };
+    status = status ?? 3; // highest value instead of undefined for indexOf
+    return { ...project, id: projectId, lab, descriptionDisplay, status, c4dt_status, lab_status, sortKey };
   });
 }
 
 export async function loadProjects(skipValidation: boolean = false): Promise<ExtendedProject[]> {
   /*
    * Load all projects from all labs, and flattens the array of projects.
-   * Also sorts the projects by their status. The order is:
-   * 1. C4DT Active
-   * 2. C4DT Retired
-   * 3. Lab Active
-   * 4. all other projects
+   * Also sorts the projects by their status.
+   * The order is:
+   * 1. C4DT Active + Lab Active
+   * 2. C4DT Active + Lab Inactive
+   * 3. Lab Active + C4DT Inactive
+   * 4. Lab Inactive + C4DT Inactive
    */
   const labs = await loadLabs();
 
@@ -170,6 +183,6 @@ export async function loadProjects(skipValidation: boolean = false): Promise<Ext
   ).flat();
 
   return projects.sort((a, b) => {
-    return a.status - b.status;
+    return b.sortKey - a.sortKey;
   });
 }
