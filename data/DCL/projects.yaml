@@ -679,3 +679,42 @@ projects:
             url: https://dl.acm.org/doi/proceedings/10.1145/3575693
     date_added: 2023-03-13
     date_updated: 2024-03-22
+
+  anyway:
+    name: Anyway
+    categories:
+      - Privacy
+    applications:
+      - Infra
+    description: On-premise robust distributed AI inference
+    layman_desc: >
+      Anyway coordinates and combines heterogeneous machines into
+      an on-premise cluster for robust distributed AI inference using
+      open source models of any size. It handles deployment, monitoring,
+      and scaling of the AI engine, and provides a fully compatible
+      OpenAI-style API endpoint. This allows users to safely use the
+      full power of AI on-premises on their most sensitive data.
+    license: commercial
+    tags:
+      - Network
+      - Deep Neural Networks
+      - Decentralized
+    type: Framework
+    information:
+      - type: Website
+        url: https://www.anyway.dev/
+        title: "Anyway"
+    url: https://www.anyway.dev/
+    incubator:
+      type: incubated
+      work: >
+        Started in Spring 2025 with development support, hands-on workshop
+        in Fall 2025.
+      products:
+        - type: Hands-on
+          title: Distributed LLM Hands-on Workshop
+          url: https://c4dt.epfl.ch/domains/factory/anyway-distributed-llm-hands-on-workshop/
+          code: https://github.com/c4dt/distributed-llm-hands-onworkshop
+    language: C
+    date_added: 2025-05-01
+    date_updated: 2025-10-01
