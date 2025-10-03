@@ -9,6 +9,7 @@
         C4DT work
       </li>
       <li
+        v-if="project.code"
         :class="[tabBaseClass, activeTab === TAB_IDS.TECHNICAL ? tabActiveClass : tabInactiveClass]"
         @click="changeTab(TAB_IDS.TECHNICAL)"
       >
