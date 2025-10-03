@@ -39,14 +39,11 @@ function resetFilters() {
 
 const projects = useState<ExtendedProject[]>("projects");
 
-let labs: string[] = Array.from(
-  new Set(
-    projects.value.map(
-      (project) =>
-        `${[project.lab.prof.name[project.lab.prof.name.length - 1].toUpperCase(), ...project.lab.prof.name.slice(0, -1)].join(", ")} - ${project.lab.name}`
-    )
-  )
-);
+function pprintLab(project: ExtendedProject): string {
+  return `${project.lab.prof.name[project.lab.prof.name.length - 1].toUpperCase()}, ${project.lab.prof.name.slice(0, -1).join(" ")} - ${project.lab.name}`;
+}
+
+let labs: string[] = Array.from(new Set(projects.value.map(pprintLab)));
 let categories: string[] = Array.from(new Set(projects.value.flatMap((project) => project.categories)));
 let applications: string[] = Array.from(new Set(projects.value.flatMap((project) => project.applications)));
 
@@ -69,9 +66,7 @@ const filteredProjects = computed(() => {
 });
 
 watch(filteredProjects, () => {
-  labs = Array.from(
-    new Set(filteredProjects.value.map((project) => `${project.lab.prof.name.join(" ")} - ${project.lab.name}`))
-  );
+  labs = Array.from(new Set(filteredProjects.value.map(pprintLab)));
   categories = Array.from(new Set(filteredProjects.value.flatMap((project) => project.categories)));
   applications = Array.from(new Set(filteredProjects.value.flatMap((project) => project.applications)));
 });
