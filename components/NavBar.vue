@@ -23,15 +23,6 @@ watch(
   { immediate: true }
 );
 
-watch(searchQuery, () => {
-  // if the search query is empty and the search query in the URL is empty,
-  // don't navigate anywhere.
-  if (!searchQuery.value && !route.query.search) {
-    return;
-  }
-  navigateTo(`/?search=${encodeURIComponent(searchQuery.value.trim())}`);
-});
-
 function formatBreadcrumbName(segment: string): string {
   return segment.replace(/[-_]/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
 }
