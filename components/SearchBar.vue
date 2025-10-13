@@ -19,12 +19,12 @@ const toggleAndFocus = async () => {
 };
 
 watch(searchQuery, () => {
-  // if the search query is empty and the search query in the URL is empty,
-  // don't navigate anywhere.
-  if (!searchQuery.value && !route.query.search) {
-    return;
+  // if the search query is empty remove empty query in URL
+  if (!searchQuery.value) {
+    navigateTo(route.path, { query: {}, replace: true });
+  } else {
+    navigateTo(`/?search=${encodeURIComponent(searchQuery.value.trim())}`);
   }
-  navigateTo(`/?search=${encodeURIComponent(searchQuery.value.trim())}`);
 });
 </script>
 
