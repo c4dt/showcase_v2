@@ -14,7 +14,7 @@
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "prepare": "husky",
-    "test": "vitest --run",
+    "vitest": "vitest --run",
     "playwright:test": "playwright test",
     "playwright:test-ui": "playwright test --ui"
   },
