@@ -65,12 +65,14 @@ To run Playwright, either run
 
 ```
 bun playwright:test [file]
+devbox run playwright:test [file]
 ```
 
 (with `file` for a specific file, or without to run all) to run it in the command-line, or
 
 ```
 bun playwright:test-ui
+devbox run playwright:test-ui
 ```
 
 to run it in a GUI.
