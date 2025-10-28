@@ -54,6 +54,29 @@ If you do any changes to any of the schemas, make sure to run this command
 bunx json2ts utils/schemas -o ./types
 ```
 
+## Playwright
+
+If you have never used [Playwright](https://playwright.dev/) before, you need to run `bun playwright install`
+to install the browsers Playwright uses for testing. If your system does not meet the
+[Playwright's system requirements](https://playwright.dev/docs/intro#system-requirements), you need to run
+it with the `--with-deps` flag (requires administrator privileges).
+
+To run Playwright, either run
+
+```
+bun playwright:test [file]
+devbox run playwright:test [file]
+```
+
+(with `file` for a specific file, or without to run all) to run it in the command-line, or
+
+```
+bun playwright:test-ui
+devbox run playwright:test-ui
+```
+
+to run it in a GUI.
+
 ## Production
 
 Build the application for production:
