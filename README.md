@@ -77,6 +77,11 @@ devbox run playwright:test-ui
 
 to run it in a GUI.
 
+### MacOS
+
+If you're running Playwright on macOS, the command-line tests are currently flaky, but running
+in a GUI seems to yield consistent results.
+
 ## Production
 
 Build the application for production:
