@@ -72,7 +72,7 @@ export interface Project {
   url?: string;
   contacts?: {
     name: string;
-    email?: string;
+    email: string;
     url?: string;
     [k: string]: unknown;
   }[];
