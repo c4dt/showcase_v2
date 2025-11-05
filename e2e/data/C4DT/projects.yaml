@@ -1,0 +1,14 @@
+projects:
+  eid-demo:
+    name: E-ID Demo (Issuer & Verifier)
+    description: Demo for the swiss E-ID ledger. It includes an issuer and a verifier.
+    type: Application
+    categories:
+      - Security
+      - Privacy
+    applications:
+      - Gov
+    tags:
+      - Access Control
+      - Development
+    date_added: 2024-01-09
