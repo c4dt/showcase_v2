@@ -1,6 +1,6 @@
 <template>
   <!-- use CSS to make parent relative on hover to move up -->
-  <div class="epfl-card mx-auto overflow-hidden bg-white hover:relative">
+  <div data-testid="project-card" class="epfl-card mx-auto overflow-hidden bg-white hover:relative">
     <div class="p-8">
       <div class="flex items-start">
         <div class="w-full sm:flex-1">
