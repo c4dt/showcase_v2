@@ -12,3 +12,30 @@ projects:
       - Access Control
       - Development
     date_added: 2024-01-09
+  eid-example:
+    name: E-ID Example
+    description: Example for the swiss E-ID ledger.
+    type: Application
+    categories:
+      - Security
+      - Privacy
+    applications:
+      - Gov
+    tags:
+      - Access Control
+      - Development
+    date_added: 2024-01-09
+    url: https://example.com
+    information:
+      - type: paper
+        url: https://example.com/paper
+        title: E-ID Example Paper
+      - type: article
+        url: https://example.com/article
+        title: E-ID Example Article
+    contacts:
+      - name: Linus Gasser
+        email: linus.gasser@epfl.ch
+    code:
+      type: toto
+      url: https://example.com/code
