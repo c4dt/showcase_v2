@@ -12,7 +12,7 @@ import type { Project, Projects } from "~/types/projects";
 import type { Lab, Labs } from "~/types/labs";
 import { PROJECT_C4DT_STATUS, PROJECT_LAB_STATUS } from "./vars";
 
-const DATA_DIR = "./data";
+const DATA_DIR = process.env.PLAYWRIGHT_TEST ? "./e2e/data" : "./data";
 const PROJECTS_FILE = "projects.yaml";
 const LABS_FILE = "labs.yaml";
 const CONFIG_FILE = "config.yaml";

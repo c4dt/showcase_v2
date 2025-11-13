@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-nowrap space-x-4">
+  <div data-testid="info-icons" class="flex flex-nowrap space-x-4">
     <NuxtLink
       v-if="papers"
       :class="iconClass"
