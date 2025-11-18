@@ -21,10 +21,13 @@ const project = props.project;
       </div>
       <!-- Text Content -->
       <div class="mx-2 p-4 text-gray-700">
-        <h5 class="text-blue-gray-900 font-sans text-xl leading-snug font-semibold capitalize antialiased">
+        <h5
+          data-testid="header"
+          class="text-blue-gray-900 font-sans text-xl leading-snug font-semibold capitalize antialiased"
+        >
           {{ project.name }}
         </h5>
-        <p class="line-clamp-6 font-sans text-sm leading-normal text-gray-500 antialiased">
+        <p data-testid="body" class="line-clamp-6 font-sans text-sm leading-normal text-gray-500 antialiased">
           {{ project.descriptionDisplay }}
         </p>
       </div>
