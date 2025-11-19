@@ -28,10 +28,10 @@ test.describe("search box", () => {
 
   test("handles special characters in input", async ({ page }) => {
     const searchBox = page.getByRole("textbox", { name: "Search" }).first();
-    const text = "!*'();:@&=+$,/?%#[]";
-    const textEncoded = "!*%27()%3B%3A%40%26%3D%2B%24%2C%2F%3F%25%23%5B%5D";
-    await searchBox.fill(text);
-    await page.waitForURL(`/?search=${textEncoded}`);
+    // cf. https://www.rfc-editor.org/rfc/rfc3986#section-2
+    await searchBox.fill("-._~:/?#[]@!$&'()*+");
+    // browser escapes "'"
+    await page.waitForURL("/?search=-._~%3A%2F%3F%23%5B%5D%40!%24%26%27()*%2B");
   });
 
   test("clicking search icon toggles search box visibility", async ({ page }) => {
