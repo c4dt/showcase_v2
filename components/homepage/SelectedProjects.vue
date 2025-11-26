@@ -38,15 +38,15 @@ const highlightedProjects: ExtendedProject[] = projects.value.filter((project) =
   <div class="text-center">
     <h2 class="epfl-h2">Selected Projects</h2>
   </div>
-  <Carousel v-if="highlightedProjects.length > 1" v-bind="carouselConfig" class="mt-12 px-8">
-    <Slide v-for="project in highlightedProjects" :key="project.name">
-      <HomepageCarouselItem :project="project" />
+  <Carousel v-if="highlightedProjects.length > 1" data-testid="carousel" v-bind="carouselConfig" class="mt-12 px-8">
+    <Slide v-for="project in highlightedProjects" :key="project.name" data-testid="slide">
+      <HomepageCarouselItem data-testid="carousel-item" :project="project" />
     </Slide>
     <template #addons>
-      <Navigation />
+      <Navigation data-testid="navigation" />
     </template>
   </Carousel>
   <div v-else class="mt-12 px-8">
-    <HomepageCarouselItem :project="highlightedProjects[0]" />
+    <HomepageCarouselItem data-testid="carousel-item" :project="highlightedProjects[0]" />
   </div>
 </template>
