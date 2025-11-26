@@ -30,7 +30,7 @@ const configuration = useState<Configuration>("configuration");
 const projects = useState<ExtendedProject[]>("projects");
 
 const highlightedProjects: ExtendedProject[] = projects.value.filter((project) =>
-  configuration.value.highlightedProjects.includes(project.name)
+  configuration.value.highlightedProjects.includes(project.id)
 );
 </script>
 
