@@ -39,3 +39,4 @@ projects:
     code:
       type: toto
       url: https://example.com/code
+    logo: https://raw.githubusercontent.com/spring-epfl/hippiepug/refs/heads/master/hippiepug.svg
