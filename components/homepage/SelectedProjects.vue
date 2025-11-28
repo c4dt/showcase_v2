@@ -6,7 +6,7 @@ const carouselConfig = {
   itemsToShow: 1,
   height: 500,
   gap: 10,
-  autoplay: 4000,
+  autoplay: process.env.PLAYWRIGHT_TEST ? 0 : 4000, // disable auto-advancing the slides for e2e tests
   wrapAround: true,
   pauseAutoplayOnHover: true,
   breakpointMode: "carousel",
@@ -30,7 +30,7 @@ const configuration = useState<Configuration>("configuration");
 const projects = useState<ExtendedProject[]>("projects");
 
 const highlightedProjects: ExtendedProject[] = projects.value.filter((project) =>
-  configuration.value.highlightedProjects.includes(project.name)
+  configuration.value.highlightedProjects.includes(project.id)
 );
 </script>
 
@@ -38,13 +38,15 @@ const highlightedProjects: ExtendedProject[] = projects.value.filter((project) =
   <div class="text-center">
     <h2 class="epfl-h2">Selected Projects</h2>
   </div>
-  <Carousel class="mt-12 px-8" v-bind="carouselConfig">
-    <Slide v-for="project in highlightedProjects" :key="project.name">
-      <HomepageCarouselItem :project="project" />
+  <Carousel v-if="highlightedProjects.length > 1" data-testid="carousel" v-bind="carouselConfig" class="mt-12 px-8">
+    <Slide v-for="project in highlightedProjects" :key="project.name" data-testid="slide">
+      <HomepageCarouselItem data-testid="carousel-item" :project="project" />
     </Slide>
-
     <template #addons>
-      <Navigation />
+      <Navigation data-testid="navigation" />
     </template>
   </Carousel>
+  <div v-else class="mt-12 px-8">
+    <HomepageCarouselItem data-testid="carousel-item" :project="highlightedProjects[0]" />
+  </div>
 </template>
