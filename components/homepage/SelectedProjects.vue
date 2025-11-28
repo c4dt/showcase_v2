@@ -6,7 +6,7 @@ const carouselConfig = {
   itemsToShow: 1,
   height: 500,
   gap: 10,
-  autoplay: 4000,
+  autoplay: process.env.PLAYWRIGHT_TEST ? 0 : 4000, // disable auto-advancing the slides for e2e tests
   wrapAround: true,
   pauseAutoplayOnHover: true,
   breakpointMode: "carousel",
