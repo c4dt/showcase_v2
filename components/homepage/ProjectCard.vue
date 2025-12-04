@@ -22,7 +22,13 @@
         <!-- Tags on the Left -->
         <div class="flex items-center space-x-2">
           <div class="flex flex-wrap gap-2">
-            <span v-for="tag in project.tags.toSorted()" :key="tag" :class="tagClass(tag)" @click="addTag(tag)">
+            <span
+              v-for="tag in project.tags.toSorted()"
+              :key="tag"
+              data-testid="tag"
+              :class="tagClass(tag)"
+              @click="addTag(tag)"
+            >
               {{ tag }}
             </span>
           </div>
