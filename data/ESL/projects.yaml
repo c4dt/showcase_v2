@@ -53,7 +53,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/esl-epfl/3d-ice
-      date_last_commit: 2023-06-19
+      date_last_commit: 2025-12-01
     language: C
     type: Simulation
     tags:
@@ -212,7 +212,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/esl-epfl/x-heep
-      date_last_commit: 2025-11-22
+      date_last_commit: 2025-12-05
     language: C
     license: SOLDERPAD HARDWARE LICENSE, Apache-2.0
     date_added: 2024-02-20
