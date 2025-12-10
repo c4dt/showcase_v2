@@ -1,5 +1,5 @@
 <template>
-  <div class="border border-[#707070] px-2 py-1">
+  <div data-testid="project-quality" class="border border-[#707070] px-2 py-1">
     <div class="text-xl">Key facts</div>
     <div class="grid grid-cols-2 items-center gap-x-[calc(25%)]">
       <div>Maturity</div>
