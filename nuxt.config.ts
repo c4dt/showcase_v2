@@ -5,9 +5,6 @@ import { defineNuxtConfig } from "nuxt/config";
 export default defineNuxtConfig({
   compatibilityDate: "2025-03-09",
   devtools: { enabled: true },
-  app: {
-    baseURL: process.env.NODE_ENV === "production" ? "/showcase_v2/" : ""
-  },
   modules: ["@nuxt/eslint", "@vesp/nuxt-fontawesome", "@nuxt/image", "@nuxt/test-utils/module"],
   eslint: {},
   fontawesome: {
