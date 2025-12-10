@@ -99,3 +99,18 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Docker
+
+The CI builds and pushes a Docker image to ghcr.io/c4dt/showcase_v2. If you want to run it locally, either pull
+it from there, or build it yourself
+
+```
+docker build -t ghcr.io/c4dt/showcase_v2:<X.Y> .
+```
+
+and then run it
+
+```
+docker run --rm -p 127.0.0.1:3000:80 ghcr.io/c4dt/showcase_v2:<X.Y>
+```
