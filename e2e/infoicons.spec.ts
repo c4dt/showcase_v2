@@ -1,5 +1,8 @@
 import { test, expect } from "@playwright/test";
 
+// FIXME fix filtering of visible items
+// TODO use event listener to check for URLs
+
 test.describe("bare-bone project", () => {
   let projectCard;
   let infoIcons;
