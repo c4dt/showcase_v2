@@ -1,3 +1,4 @@
+<!-- TODO add tooltips to icons -->
 <template>
   <!-- use CSS to make parent relative on hover to move up -->
   <div data-testid="project-card" class="epfl-card mx-auto overflow-hidden bg-white hover:relative">
