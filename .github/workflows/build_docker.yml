@@ -1,0 +1,39 @@
+name: Build docker
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-docker:
+    name: Build Showcase v2 Docker images
+    runs-on: ubuntu-24.04
+    env:
+      DockerTag: latest
+      push: ${{ (github.ref == 'refs/heads/main') && 'true' || 'false' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Login to GHCR
+        if: ${{ env.push == 'true' }}
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build Showcase v2
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile
+          platforms: linux/amd64
+          push: ${{ env.push }}
+          tags: ghcr.io/c4dt/showcase_v2:${{ env.DockerTag }}
