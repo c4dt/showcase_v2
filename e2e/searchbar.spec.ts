@@ -15,7 +15,7 @@ test.describe("search box", () => {
     const searchBox = page.getByRole("textbox", { name: "Search" }).first();
     const text = "toto";
     await searchBox.fill(text);
-    await page.waitForURL(`/?search=${text}`);
+    await expect(page).toHaveURL(`/?search=${text}`);
   });
 
   test("updates URL when search box is cleared", async ({ page }) => {
@@ -23,7 +23,7 @@ test.describe("search box", () => {
     await page.goto(`/?search=${text}`);
     const searchBox = page.getByRole("textbox", { name: "Search" }).first();
     await searchBox.clear();
-    await page.waitForURL("/");
+    await expect(page).toHaveURL("/");
   });
 
   test("handles special characters in input", async ({ page }) => {
@@ -31,7 +31,7 @@ test.describe("search box", () => {
     // cf. https://www.rfc-editor.org/rfc/rfc3986#section-2
     await searchBox.fill("-._~:/?#[]@!$&'()*+");
     // browser escapes "'"
-    await page.waitForURL("/?search=-._~%3A%2F%3F%23%5B%5D%40!%24%26%27()*%2B");
+    await expect(page).toHaveURL("/?search=-._~%3A%2F%3F%23%5B%5D%40!%24%26%27()*%2B");
   });
 
   test("clicking search icon toggles search box visibility", async ({ page }) => {
