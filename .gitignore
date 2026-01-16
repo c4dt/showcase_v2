@@ -30,3 +30,5 @@ bun.lockb
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+.claude

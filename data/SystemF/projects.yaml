@@ -35,7 +35,7 @@ projects:
 
   regelk:
     name: RegElk
-    logo: https://github.com/epfl-systemf/RegElk/blob/master/etc/regelk_logo.jpg?raw=true
+    logo: /products/images/regelk/regelk.jpg
     description: >
       Linear regex engine for JavaScript in OCaml
     type: "Library"
