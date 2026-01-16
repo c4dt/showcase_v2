@@ -13,7 +13,7 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
         <div class="w-full lg:w-70/100 lg:px-6">
           <div class="flex flex-col gap-4">
             <div class="flex items-center justify-center">
-              <img :alt="project.name" :src="project.logo" class="h-32 w-full object-contain pb-4" />
+              <NuxtImg :alt="project.name" :src="project.logo" class="h-32 w-full object-contain pb-4" />
             </div>
             <div class="lg:flex lg:flex-row lg:gap-1">
               <div class="lg:flex-1">

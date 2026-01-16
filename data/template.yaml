@@ -46,7 +46,7 @@ projects:
     incubator:
       work: (What C4DT did for the project)
       products:
-        type: ( Demo | Hands-on | Pilot | App | OSS-participation)
+        type: ( Demo | Hands-on | Pilot | App | OSS-participation | Blog | Project )
         url: (https://...)
         title: (Description of this product)
         code: (https:// of the code)
