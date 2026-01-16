@@ -16,7 +16,7 @@ const DATA_DIR = process.env.PLAYWRIGHT_TEST ? "./e2e/data" : "./data";
 const PROJECTS_FILE = "projects.yaml";
 const LABS_FILE = "labs.yaml";
 const CONFIG_FILE = "config.yaml";
-const PRODUCTS_DIR = "customHTMLContent";
+const PRODUCTS_DIR = "projectTabs";
 
 const ajv = new Ajv({ allowUnionTypes: true });
 ajv.addSchema(labSchema, "utils/schemas/lab.json");
@@ -27,7 +27,7 @@ const PROJECTS_SCHEMA: ValidateFunction = ajv.compile(projectsSchema);
 export interface ProjectTab {
   id: string;
   label: string;
-  content: string;
+  componentPath: string;
 }
 
 export interface ExtendedProject extends Project {
@@ -81,10 +81,9 @@ export async function loadTemplate(projectId: string, templateType: string): Pro
   if (!templateFilePath) {
     return null;
   }
-  const template = await fsPromises.readFile(path.join(templateFilePath.parentPath, templateFilePath.name), "utf-8");
-  // Remove <template> tags from the template temporarily
-  // until the Tabs.vue component is adjusted later
-  return template.replace(/<template>/, "").replace(/<\/template>/, "");
+  // Return the component path for dynamic import (convert ./data to ~/data for Vite alias)
+  const importBasePath = DATA_DIR.replace("./", "~/");
+  return `${importBasePath}/${PRODUCTS_DIR}/${templateType}/${projectId}.vue`;
 }
 
 export async function loadProjectTabs(projectId: string): Promise<ProjectTab[]> {
@@ -92,12 +91,12 @@ export async function loadProjectTabs(projectId: string): Promise<ProjectTab[]> 
 
   const templates = [];
   for (const templateName of templateNames) {
-    const template = await loadTemplate(projectId, templateName);
-    if (template) {
+    const componentPath = await loadTemplate(projectId, templateName);
+    if (componentPath) {
       templates.push({
         id: templateName,
         label: getLabel(templateName),
-        content: template
+        componentPath: componentPath
       });
     }
   }
