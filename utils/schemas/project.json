@@ -64,6 +64,7 @@
           "Images",
           "Inductive Bias",
           "Internet of Things",
+          "Large Language Model",
           "Locking",
           "Low-Level",
           "Machine Learning",
@@ -219,7 +220,17 @@
             "properties": {
               "type": {
                 "type": "string",
-                "enum": ["Demo", "Hands-on", "Pilot", "App", "Library", "OSS-participation", "Archive"]
+                "enum": [
+                  "Demo",
+                  "Hands-on",
+                  "Pilot",
+                  "App",
+                  "Library",
+                  "OSS-participation",
+                  "Archive",
+                  "Project",
+                  "Blog"
+                ]
               },
               "url": {
                 "type": "string"
