@@ -45,6 +45,7 @@ export interface Project {
     | "Images"
     | "Inductive Bias"
     | "Internet of Things"
+    | "Large Language Model"
     | "Locking"
     | "Low-Level"
     | "Machine Learning"
@@ -108,7 +109,7 @@ export interface Project {
     work: string;
     type?: "incubated" | "incubated_market" | "retired" | "retired_archived";
     products?: {
-      type: "Demo" | "Hands-on" | "Pilot" | "App" | "Library" | "OSS-participation" | "Archive";
+      type: "Demo" | "Hands-on" | "Pilot" | "App" | "Library" | "OSS-participation" | "Archive" | "Project" | "Blog";
       url: string;
       title: string;
       code?: string;
