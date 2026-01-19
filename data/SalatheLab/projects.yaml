@@ -103,7 +103,7 @@ projects:
     code:
       type: Project GitHub
       url: https://github.com/AIcrowd
-      date_last_commit: 2025-12-18
+      date_last_commit: 2026-01-17
     language: JavaScript, Ruby
     license: AGPL-3.0
     tags:
