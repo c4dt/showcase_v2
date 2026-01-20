@@ -17,6 +17,11 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()]
   },
+  runtimeConfig: {
+    public: {
+      playwrightTest: process.env.PLAYWRIGHT_TEST == "1" || false
+    }
+  },
 
   css: ["~/assets/css/tailwind.css"]
 });
