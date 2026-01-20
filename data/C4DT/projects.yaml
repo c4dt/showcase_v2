@@ -23,3 +23,106 @@ projects:
     maturity: 0
     date_added: 2024-01-09
     date_updated: 2024-01-09
+
+  innosuisse-eid:
+    name: Secure and Privacy-Preserving Credentials for E-ID
+    categories:
+      - Security
+      - Privacy
+    applications:
+      - Gov
+    type: Grant
+    description: Research techniques to improve privacy when using electronic identities
+    tech_desc: >
+      Today's identity security faces challenges like misuse and tracking. Our goal is to enable secure,
+      anonymous, unlinkable E-ID interactions by researching novel cryptographic algorithms. This boosts
+      user trust, creates new business opportunities, and cuts financial losses after data breaches.
+    incubator:
+      work: "Research Grant"
+      type: "incubated"
+      products:
+        - type: "Project"
+          url: https://github.com/eid-privacy
+          title: "e-ID Privacy github organization"
+        - type: "Blog"
+          url: https://eid-privacy.github.io
+          title: "Blog of project steps"
+    language: "Rust, Typst, TypeScript"
+    logo: /products/images/innosuisse-eid/innosuisse-eid.png
+    tags:
+      - Access Control
+      - Decentralized
+      - Zero-Knowledge Proofs
+    maturity: 2
+    date_added: 2025-04-01
+    date_updated: 2026-01-16
+
+  seal-phishing:
+    name: "Combattre le phishing: quelles innovations apporter ?"
+    categories:
+      - Security
+    applications:
+      - Gov
+      - Infra
+    type: Grant
+    description: Combating phishing through vulnerability analysis, detection tools, and best practice guidelines.
+    tech_desc: >
+      This project addresses phishing threats through the analysis of existing
+      countermeasures, identification of vulnerabilities, and development of
+      innovative solutions including best practice guidelines and tools for
+      email configuration testing and malicious link detection.
+      The initiative enhances organizational and societal resilience against
+      phishing attacks through knowledge dissemination and fosters collaboration
+      among stakeholders.
+    layman_desc: >
+      This project tackles phishing—a common online scam where criminals trick
+      people into clicking dangerous links or sharing personal information through
+      deceptive emails.
+      It develops practical guides and easy-to-use tools to help individuals and
+      organizations recognize and protect themselves against these attacks.
+    tags:
+      - Attack
+      - Cloud
+      - Exploit
+      - Protection
+    incubator:
+      work: "Research Grant"
+      type: "incubated"
+    logo: /products/images/seal-phishing/seal-phishing.png
+    maturity: 3
+    date_added: 2025-04-01
+    date_updated: 2026-01-16
+
+  seal-digiinov:
+    name: Sécurisation de Digiinov Hmi en adéquation avec le Cyber Resilience Act (CRA)
+    categories:
+      - Security
+    applications:
+      - Gov
+    type: Grant
+    description: Securing industrial HMI software for EU Cyber-Resilience-Act compliance
+    tech_desc: >
+      This project integrates state-of-the-art software security measures into
+      Digiinov HMI, a platform bridging Operational Technology (OT) and Information
+      Technology (IT) for industrial Human-Machine Interfaces.
+      The collaboration with HEIG-VD and EPFL focuses on achieving compliance with
+      the EU Cyber-Resilience-Act (CRA) requirements before its 2027 enforcement.
+      The security enhancements target the software development lifecycle and
+      maintenance processes for embedded industrial control systems.
+    layman_desc: >
+      This project enhances the security of software used to control and monitor
+      industrial machines, preparing it for new European cybersecurity regulations.
+      The EU's Cyber-Resilience-Act requires software products to meet strict
+      security standards starting in 2027, protecting users from digital threats.
+      By partnering with academic cybersecurity experts, this project ensures
+      machine manufacturers can offer secure, compliant products ahead of schedule.
+    tags:
+      - Code Analysis
+      - Large Language Model
+    incubator:
+      work: "Research Grant"
+      type: "incubated"
+    logo: /products/images/seal-digiinov/seal-digiinov.png
+    maturity: 0
+    date_added: 2026-01-16
+    date_updated: 2026-01-16
