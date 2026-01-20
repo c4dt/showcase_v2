@@ -7,7 +7,7 @@
       "dev": ["bun dev"],
       "git": ["git $@"],
       "prettier": ["prettier -w ."],
-      "playwright": ["bun playwright:test"],
+      "playwright": ["bun playwright:test --reporter list"],
       "playwright-ui": ["bun playwright:test-ui"]
     }
   }
