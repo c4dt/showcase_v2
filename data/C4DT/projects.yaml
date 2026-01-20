@@ -48,7 +48,7 @@ projects:
           url: https://eid-privacy.github.io
           title: "Blog of project steps"
     language: "Rust, Typst, TypeScript"
-    logo: /carousel/innosuisse-eid.png
+    logo: /products/images/innosuisse-eid/innosuisse-eid.png
     tags:
       - Access Control
       - Decentralized
@@ -88,7 +88,7 @@ projects:
     incubator:
       work: "Research Grant"
       type: "incubated"
-    logo: /carousel/seal-phishing.png
+    logo: /products/images/seal-phishing/seal-phishing.png
     maturity: 3
     date_added: 2025-04-01
     date_updated: 2026-01-16
@@ -122,7 +122,7 @@ projects:
     incubator:
       work: "Research Grant"
       type: "incubated"
-    logo: /carousel/seal-digiinov.png
+    logo: /products/images/seal-digiinov/seal-digiinov.png
     maturity: 0
     date_added: 2026-01-16
     date_updated: 2026-01-16
