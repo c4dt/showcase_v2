@@ -2,13 +2,15 @@
 import "vue3-carousel/carousel.css";
 import { Carousel, Slide, Navigation } from "vue3-carousel";
 
+const config = useRuntimeConfig();
 const carouselConfig = {
   itemsToShow: 1,
   height: 500,
   gap: 10,
-  autoplay: process.env.PLAYWRIGHT_TEST ? 0 : 4000, // disable auto-advancing the slides for e2e tests
-  wrapAround: true,
-  pauseAutoplayOnHover: true,
+  // use special values for tests
+  autoplay: config.public.playwrightTest ? 0 : 4000,
+  wrapAround: !config.public.playwrightTest,
+  pauseAutoplayOnHover: !config.public.playwrightTest,
   breakpointMode: "carousel",
   breakpoints: {
     400: {
