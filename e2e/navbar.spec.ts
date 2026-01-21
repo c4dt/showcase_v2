@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 
 test.describe("breadcrumbs", () => {
   test("contains home page breadcrumb", async ({ page }) => {
-    await page.goto("/", { waitUntil: "networkidle" });
+    await page.goto("/", { waitUntil: "load" });
     const showcaseBreadcrumb = page
       .getByRole("navigation", { name: "Breadcrumb" })
       .getByRole("list")
@@ -13,7 +13,7 @@ test.describe("breadcrumbs", () => {
   });
 
   test("contains project page breadcrumbs", async ({ page }) => {
-    await page.goto("/projects/eid-demo", { waitUntil: "networkidle" });
+    await page.goto("/projects/eid-demo", { waitUntil: "load" });
     const breadcrumbs = page.getByRole("navigation", { name: "Breadcrumb" }).getByRole("list");
     // on project page, home page breadcrumb IS a link
     const showcaseBreadcrumb = breadcrumbs.getByText("Showcase", { exact: true });

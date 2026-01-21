@@ -4,7 +4,7 @@ test.describe("bare-bone project", () => {
   let projectCard: Locator;
   let infoIcons: Locator;
   test.beforeEach(async ({ page }) => {
-    await page.goto("/", { waitUntil: "networkidle" });
+    await page.goto("/", { waitUntil: "load" });
     projectCard = page.locator("[data-testid='project-card']").filter({ hasText: "E-ID Demo (Issuer & Verifier)" });
     infoIcons = page.locator("[data-testid='info-icons']");
   });
@@ -54,7 +54,7 @@ test.describe("project w/ complete information", () => {
   let projectCard: Locator;
   let infoIcons: Locator;
   test.beforeEach(async ({ page }) => {
-    await page.goto("/", { waitUntil: "networkidle" });
+    await page.goto("/", { waitUntil: "load" });
     projectCard = page.locator("[data-testid='project-card']").filter({ hasText: "E-ID Example" });
     infoIcons = page.locator("[data-testid='info-icons']");
   });

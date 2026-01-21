@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 
 test.describe("bare-bone project", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/", { waitUntil: "networkidle" });
+    await page.goto("/", { waitUntil: "load" });
   });
 
   test("navigates to project page when clicked", async ({ page, baseURL }) => {
@@ -54,7 +54,7 @@ test.describe("bare-bone project", () => {
 
 test.describe("project w/ complete information", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/", { waitUntil: "networkidle" });
+    await page.goto("/", { waitUntil: "load" });
   });
 
   test("navigates to project page when clicked", async ({ page, baseURL }) => {
