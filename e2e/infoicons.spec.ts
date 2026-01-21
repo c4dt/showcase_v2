@@ -1,12 +1,12 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type Locator } from "@playwright/test";
 
 test.describe("bare-bone project", () => {
-  let projectCard;
-  let infoIcons;
+  let projectCard: Locator;
+  let infoIcons: Locator;
   test.beforeEach(async ({ page }) => {
+    await page.goto("/", { waitUntil: "networkidle" });
     projectCard = page.locator("[data-testid='project-card']").filter({ hasText: "E-ID Demo (Issuer & Verifier)" });
     infoIcons = page.locator("[data-testid='info-icons']");
-    await page.goto("/");
   });
 
   test("renders 'Research papers' icon", async ({ page }) => {
@@ -51,43 +51,38 @@ test.describe("bare-bone project", () => {
 });
 
 test.describe("project w/ complete information", () => {
-  let projectCard;
-  let infoIcons;
+  let projectCard: Locator;
+  let infoIcons: Locator;
   test.beforeEach(async ({ page }) => {
+    await page.goto("/", { waitUntil: "networkidle" });
     projectCard = page.locator("[data-testid='project-card']").filter({ hasText: "E-ID Example" });
     infoIcons = page.locator("[data-testid='info-icons']");
-    await page.goto("/");
   });
 
   test("navigates to project page's 'Research papers' section", async ({ page, baseURL }) => {
-    const icons = await projectCard.locator(infoIcons.locator(page.getByLabel("Papers"))).all();
-    await (await Promise.all(icons.filter((icon) => icon.isVisible())))[0].click();
+    await projectCard.locator(infoIcons).getByLabel("Papers").filter({ visible: true }).first().click();
     await expect(page).toHaveURL(`${baseURL}/projects/eid-example?section=papers`);
   });
 
   test("navigates to project page's 'Miscellaneous publications' section", async ({ page, baseURL }) => {
-    const icons = await projectCard.locator(infoIcons.locator(page.getByLabel("Articles"))).all();
-    await (await Promise.all(icons.filter((icon) => icon.isVisible())))[0].click();
+    await projectCard.locator(infoIcons).getByLabel("Articles").filter({ visible: true }).first().click();
     await expect(page).toHaveURL(`${baseURL}/projects/eid-example?section=articles`);
   });
 
-  test("renders link to home page", async ({ page }) => {
-    const icons = await projectCard.locator(infoIcons.locator(page.getByLabel("Project Homepage"))).all();
-    const icon = (await Promise.all(icons.filter((icon) => icon.isVisible())))[0];
+  test("renders link to home page", async () => {
+    const icon = projectCard.locator(infoIcons).getByLabel("Project Homepage").filter({ visible: true }).first();
     // do not test external URL, check only that link is present
     await expect(icon).toHaveAttribute("href", "https://example.com");
   });
 
-  test("renders link w/ code icon", async ({ page }) => {
-    const icons = await projectCard.locator(infoIcons.locator(page.getByLabel("Source Code"))).all();
-    const icon = (await Promise.all(icons.filter((icon) => icon.isVisible())))[0];
+  test("renders link w/ code icon", async () => {
+    const icon = projectCard.locator(infoIcons).getByLabel("Source Code").filter({ visible: true }).first();
     // do not test external URL, check only that link is present
     await expect(icon).toHaveAttribute("href", "https://example.com/code");
   });
 
-  test("renders mailto link", async ({ page }) => {
-    const icons = await projectCard.locator(infoIcons.locator(page.getByLabel("Contact"))).all();
-    const icon = (await Promise.all(icons.filter((icon) => icon.isVisible())))[0];
+  test("renders mailto link", async () => {
+    const icon = projectCard.locator(infoIcons).getByLabel("Contact").filter({ visible: true }).first();
     // check that link is present
     await expect(icon).toHaveAttribute("href", "mailto:linus.gasser@epfl.ch");
   });

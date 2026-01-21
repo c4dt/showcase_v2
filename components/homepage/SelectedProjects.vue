@@ -7,9 +7,10 @@ const carouselConfig = {
   itemsToShow: 1,
   height: 500,
   gap: 10,
-  autoplay: config.public.playwrightTest ? 0 : 4000, // disable auto-advancing the slides for e2e tests
-  wrapAround: true,
-  pauseAutoplayOnHover: true,
+  // use special values for tests
+  autoplay: config.public.playwrightTest ? 0 : 4000,
+  wrapAround: !config.public.playwrightTest,
+  pauseAutoplayOnHover: !config.public.playwrightTest,
   breakpointMode: "carousel",
   breakpoints: {
     400: {
