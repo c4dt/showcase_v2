@@ -53,7 +53,7 @@ labs:
 
   DEDIS:
     name: Decentralized Distributed Systems Laboratory
-    logo: https://raw.githubusercontent.com/dedis/.github/refs/heads/main/profile/assets/banner.png
+    logo: /labs/dedis.png
     prof:
       name:
         - Bryan
@@ -75,7 +75,7 @@ labs:
 
   DLAB:
     name: Data Science Lab
-    logo: https://dlab.epfl.ch/assets/img/dlab.svg
+    logo: /labs/dlab.svg
     prof:
       name:
         - Robert
@@ -130,7 +130,7 @@ labs:
 
   ESL:
     name: Embedded Systems Laboratory
-    logo: https://www.epfl.ch/labs/esl/wp-content/uploads/2018/12/ESLlogos-2015-long.jpg
+    logo: /labs/esl.jpg
     prof:
       name:
         - David
@@ -148,7 +148,7 @@ labs:
 
   HexHive:
     name: HexHive Group
-    logo: https://hexhive.epfl.ch/img/hexhive.png
+    logo: /labs/hexhive.png
     prof:
       name:
         - Mathias
@@ -203,7 +203,7 @@ labs:
 
   IVRL:
     name: Image and Visual Representation Lab
-    logo: https://www.epfl.ch/labs/ivrl/wp-content/uploads/2019/05/IVRL_logo-600dpi-150x150.png
+    logo: /labs/ivrl.png
     prof:
       name:
         - Sabine
@@ -224,7 +224,7 @@ labs:
 
   LAMP:
     name: Programming Methods Laboratory
-    logo: https://www.epfl.ch/labs/lamp/wp-content/uploads/2019/01/lamp.jpg
+    logo: /labs/lamp.jpg
     prof:
       name:
         - Martin
@@ -262,7 +262,7 @@ labs:
 
   LARA:
     name: Lab for Automated Reasoning and Analysis
-    logo: https://avatars.githubusercontent.com/u/3035238?s=200&v=4
+    logo: /labs/lara.png
     prof:
       name:
         - Viktor
