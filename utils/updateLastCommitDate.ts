@@ -9,7 +9,7 @@ import yaml, { parseDocument } from "yaml";
 import type { Projects } from "~/types/projects";
 
 const DATA_DIR = "./data";
-const PRODUCTS_DIR = "customHTMLContent";
+const PRODUCTS_DIR = "projectTabs";
 const PROJECTS_FILE = "projects.yaml";
 
 async function getProjectFilesPaths(): Promise<string[]> {

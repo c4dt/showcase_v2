@@ -43,9 +43,9 @@
       <ProjectsPapersTab v-if="papers.length && activeTab === TAB_IDS.PAPERS" :papers="papers" />
       <ProjectsArticlesTab v-if="articles.length && activeTab === TAB_IDS.ARTICLES" :articles="articles" />
       <ProjectsTechnicalTab v-if="project.code && activeTab === TAB_IDS.TECHNICAL" :project="project" />
-      <div v-for="tab in additionalTabs" :key="tab" class="flex py-2 text-left">
-        <div v-if="activeTab === tab.id" v-html="tab.content" />
-      </div>
+      <template v-for="tab in additionalTabs" :key="tab.id">
+        <component :is="getTabComponent(tab)" v-if="activeTab === tab.id" />
+      </template>
     </div>
   </div>
 </template>
@@ -63,6 +63,37 @@ const articles = project.information
   : [];
 const additionalTabs = useState<ProjectTab[]>(`project-${useRoute().params.id}-tabs`).value;
 const router = useRouter();
+
+// Create a map of all possible components using glob import (eager mode for SSR compatibility)
+const componentModules = import.meta.glob("../../data/projectTabs/**/*.vue", { eager: true });
+
+// Function to get the component for a tab
+const getTabComponent = (tab: ProjectTab) => {
+  // Convert ~/... to ../../... (Vite alias to relative path)
+  let componentPath = tab.componentPath.replace(/^~\//, "../../");
+
+  let module = componentModules[componentPath];
+
+  // If not found, try to find a matching key by the end of the path
+  if (!module) {
+    // Extract just the relevant part: projectTabs/type/name.vue
+    const pathPart = tab.componentPath.replace(/^~\/(?:e2e\/)?data\//, "");
+    const matchingKey = Object.keys(componentModules).find((key) => key.endsWith(pathPart));
+    if (matchingKey) {
+      componentPath = matchingKey;
+      module = componentModules[matchingKey];
+    }
+  }
+
+  if (!module) {
+    console.error(`Component not found: ${tab.componentPath}`);
+    console.log("Available keys:", Object.keys(componentModules));
+    return { template: "<div>Component not found</div>" };
+  }
+
+  // With eager: true, the module is already loaded
+  return module.default || module;
+};
 
 const activeTab = ref();
 
