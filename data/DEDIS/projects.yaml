@@ -174,7 +174,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/dedis/kyber
-      date_last_commit: 2025-12-24
+      date_last_commit: 2026-01-20
     lines_of_code: 17000 / 4000
     contacts:
       - name: Pierluca Borsò
