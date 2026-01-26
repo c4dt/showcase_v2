@@ -15,7 +15,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/epfl-lara/stainless
-      date_last_commit: 2025-12-23
+      date_last_commit: 2026-01-23
     doc: https://epfl-lara.github.io/stainless/
     contacts:
       - name: Viktor Kunčak
