@@ -360,7 +360,7 @@ projects:
     code:
       type: Personal GitHub
       url: https://github.com/debjitpaul/refiner
-      date_last_commit: 2024-02-20
+      date_last_commit: 2026-01-27
     language: Python
     license: Apache-2.0
     date_added: 2024-05-03

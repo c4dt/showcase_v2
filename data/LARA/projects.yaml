@@ -174,7 +174,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/epfl-lara/lisa
-      date_last_commit: 2025-12-04
+      date_last_commit: 2026-01-29
     language: Scala
     type: Framework, Application
     license: Apache-2.0
