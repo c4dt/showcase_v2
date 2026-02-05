@@ -5,22 +5,22 @@
       :class="iconClass"
       :to="{ name: 'projects-id', params: { id: project.id }, query: { section: TAB_IDS.PAPERS } }"
       aria-label="Papers"
-      ><FontAwesomeIcon :icon="faFile" class="fa-2x"
+      ><FontAwesomeIcon :icon="faFile" class="fa-2x" title="Papers"
     /></NuxtLink>
-    <FontAwesomeIcon v-else :icon="faFile" class="fa-2x text-[#e6e6e6]" />
+    <FontAwesomeIcon v-else :icon="faFile" class="fa-2x text-[#e6e6e6]" title="Papers" />
     <NuxtLink
       v-if="articles"
       :class="iconClass"
       :to="{ name: 'projects-id', params: { id: project.id }, query: { section: TAB_IDS.ARTICLES } }"
       aria-label="Articles"
-      ><FontAwesomeIcon :icon="faNewspaper" class="fa-2x"
+      ><FontAwesomeIcon :icon="faNewspaper" class="fa-2x" title="Articles"
     /></NuxtLink>
-    <FontAwesomeIcon v-else :icon="faNewspaper" class="fa-2x text-[#e6e6e6]" />
+    <FontAwesomeIcon v-else :icon="faNewspaper" class="fa-2x text-[#e6e6e6]" title="Articles" />
     <div v-for="info in projectInformationIcons" :key="info" class="flex flex-nowrap space-x-4">
       <a v-if="info.url" :key="info.url" :href="info.url" :class="iconClass" :aria-label="info.label">
-        <FontAwesomeIcon :icon="info.icon" class="fa-2x" />
+        <FontAwesomeIcon :icon="info.icon" class="fa-2x" :title="info.label" />
       </a>
-      <FontAwesomeIcon v-else :icon="info.icon" class="fa-2x text-[#e6e6e6]" />
+      <FontAwesomeIcon v-else :icon="info.icon" class="fa-2x text-[#e6e6e6]" :title="info.label" />
     </div>
   </div>
 </template>
