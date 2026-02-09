@@ -38,7 +38,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/tuneinsight/lattigo
-      date_last_commit: 2026-01-30
+      date_last_commit: 2026-02-02
     incubator:
       type: retired
       work: 2020/Q1 maturity evaluation
