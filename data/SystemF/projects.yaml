@@ -63,7 +63,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/epfl-systemf/RegElk
-      date_last_commit: 2025-12-10
+      date_last_commit: 2026-02-10
     language: OCaml
     license: MIT
     date_added: 2024-04-14
