@@ -138,3 +138,97 @@ projects:
             url: https://acmsocc.github.io/2020/
     date_added: 2022-07-04
     date_updated: 2024-02-20
+  fold:
+    name: Fold
+    description: "Rust framework for building dynamic linkers with syscall filtering and function hooks."
+    layman_desc: >
+      Dynamic linkers are system software that load and connect program
+      components at runtime. Fold is a Rust framework that lets developers
+      build custom dynamic linkers with fine-grained control, enabling
+      things like intercepting system calls or injecting invisible function
+      hooks between modules. This is useful for building security monitors,
+      debugging tools, or specialized runtime environments.
+    tech_desc: >
+      Rust framework for constructing custom dynamic linkers with syscall
+      filtering, inter-module communication, and invisible function-hook
+      injection. Includes quick-start guide, required toolchain, VSCode
+      configuration, and example projects demonstrating core capabilities.
+    type: Framework
+    categories:
+      - Other
+    tags:
+      - Low-Level
+    code:
+      type: Lab Github
+      url: https://github.com/epfl-dcsl/fold
+    language: Rust
+    license: MIT
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 2
+    applications:
+      - Infra
+  nwsim:
+    name: nwsim
+    description: "Network simulation suite integrating ns-2 with pFabric, SIRD, DCTCP, and Homa."
+    layman_desc: >
+      Understanding how data center networks behave under heavy load
+      requires detailed simulations. nwsim integrates several network
+      protocols and congestion control algorithms into the ns-2 simulator,
+      letting researchers compare their performance under incast and random
+      traffic patterns. It also supports OMNET integration and includes
+      tools for analyzing queue occupancy and application performance
+      metrics.
+    tech_desc: >
+      ns-2 simulation suite extended with pFabric, SIRD, DCTCP, and Homa
+      transport protocols, plus OMNET integration. Provides configuration
+      scripts for incast and random traffic experiments and output
+      processing tools for queue occupancy and application metrics.
+    type: Simulation
+    categories:
+      - Other
+    tags:
+      - Network
+      - Simulator
+    code:
+      type: Lab Github
+      url: https://github.com/epfl-dcsl/SIRD-Simulator
+    language: C++
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 4
+    applications:
+      - Infra
+  miralis:
+    name: Miralis
+    description: "Virtual firmware monitor for RISC-V with formal verification via Kani."
+    layman_desc: >
+      Firmware is the low-level software that initializes hardware before
+      the operating system starts. Miralis adds a security layer below the
+      firmware on RISC-V processors, controlling and isolating it from the
+      hardware so that untrusted or legacy firmware can run safely. The
+      system has been formally verified using the Kani model checker,
+      providing machine-checked guarantees about its correctness.
+    tech_desc: >
+      Virtual firmware monitor for RISC-V running below M-mode firmware,
+      providing isolation and policy enforcement via sandbox and Keystone
+      policies. Includes a Rust RISC-V ISA translator, benchmark scripts,
+      and formal verification via Kani. Supports Docker and manual setup.
+      SOSP'25 artifact.
+    type: Application
+    categories:
+      - Security
+      - Verification
+    tags:
+      - Low-Level
+      - RISC-V
+      - Formal Methods
+    code:
+      type: Lab Github
+      url: https://github.com/epfl-dcsl/miralis-sosp25-artifact
+    language: Rust
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 4
+    applications:
+      - Infra
