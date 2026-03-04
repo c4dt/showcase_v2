@@ -8,7 +8,8 @@
       "git": ["git $@"],
       "prettier": ["prettier -w ."],
       "playwright": ["bun playwright:test"],
-      "playwright-ui": ["bun playwright:test-ui"]
+      "playwright-ui": ["bun playwright:test-ui"],
+      "validate-data": ["bun utils/validate-data.ts"]
     }
   }
 }
