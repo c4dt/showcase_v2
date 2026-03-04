@@ -435,3 +435,204 @@ projects:
     language: Python
     license: Apache-2.0
     date_added: 2024-05-03
+  debategpt:
+    name: DebateGPT
+    description: "Code and data for studying the conversational persuasiveness of GPT-4."
+    layman_desc: >
+      Can AI chatbots change people's minds more effectively than human
+      debaters? This project investigates how persuasive GPT-4 is in
+      one-on-one debates by analyzing conversations and measuring opinion
+      change. The code includes tools for processing debate data,
+      extracting linguistic features, and reproducing the experiments
+      published in Nature Human Behaviour.
+    tech_desc: >
+      Code and data for studying conversational persuasiveness of GPT-4
+      vs. human debaters, published in Nature Human Behaviour. Includes
+      scripts for data processing, linguistic feature extraction, and
+      statistical analysis. Reproduces all experiments from the associated
+      arXiv paper.
+    type: Experiments
+    categories:
+      - Other
+    tags:
+      - Large Language Model
+    code:
+      type: Lab Github
+      url: https://github.com/epfl-dlab/debategpt
+    language: JavaScript
+    license: MIT
+    information:
+      - type: Paper
+        title: "On the Conversational Persuasiveness of GPT-4"
+        url: https://arxiv.org/abs/2403.14380
+        notes:
+          - label: Published in
+            text: Nature Human Behaviour, 2025
+            url: https://doi.org/10.1038/s41562-025-02194-6
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 3
+      linus: 5
+    applications:
+      - Info
+  time:
+    name: TiME
+    description: "Training tiny monolingual language models via knowledge distillation from larger models."
+    layman_desc: >
+      Large multilingual language models are powerful but slow and
+      expensive, especially for languages with limited digital text.
+      TiME addresses this by training small, fast models for individual
+      languages using knowledge distillation — a technique where a small
+      model learns to mimic a much larger one. This brings high-quality
+      NLP tools to low-resource languages without requiring massive
+      compute.
+    tech_desc: >
+      Knowledge distillation pipeline for training tiny monolingual
+      encoders from XLM-R or HPLT teacher models. Supports downstream
+      evaluation for POS tagging, lemmatization, dependency parsing, and
+      NER. Includes checkpoint selection scripts, distillation pipelines,
+      and evaluation tooling.
+    type: Framework
+    categories:
+      - Learning
+    tags:
+      - Natural Language
+      - Deep Neural Networks
+    code:
+      type: Lab Github
+      url: https://github.com/epfl-dlab/TiME
+    language: Python
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 4
+      linus: 4
+    applications:
+      - Info
+  jsonschemabench:
+    name: JSONSchemaBench
+    description: "Benchmark of ~10,000 real-world JSON schemas for evaluating structured output generation."
+    layman_desc: >
+      AI language models are often asked to produce structured output —
+      like JSON data matching a specific format — but reliably doing so
+      is a hard problem. JSONSchemaBench is a standardized benchmark using
+      ~10,000 real-world JSON schemas to evaluate how well different AI
+      systems generate valid structured output. It provides leaderboards
+      and tooling for custom evaluation engines.
+    tech_desc: >
+      Benchmark of ~10,000 real-world JSON schemas for evaluating LLM
+      structured output generation across efficiency, coverage, and
+      quality dimensions. Integrates with Hugging Face datasets; supports
+      custom engine integration and leaderboard submission.
+    type: Experiments
+    categories:
+      - Other
+    tags:
+      - Benchmark
+      - Large Language Model
+    code:
+      type: Lab Github
+      url: https://github.com/epfl-dlab/jsonschemabench
+    language: Python
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 4
+    applications:
+      - Info
+  zip2zip:
+    name: zip2zip
+    description: "High-performance LZW compression library with Python bindings for adaptive vocabularies."
+    layman_desc: >
+      This library provides a fast C implementation of LZW compression,
+      the algorithm behind classic formats like GIF and TIFF, with Python
+      bindings for easy use from Python code. It was built for the zip2zip
+      project, which uses compression for adaptive tokenization of AI-
+      generated text. A novel variant handles LLM output sequences without
+      needing a complete codebook upfront.
+    tech_desc: >
+      High-performance C LZW compression library with Python bindings
+      (cffi/ctypes). Supports adaptive vocabularies for LLM tokenization
+      pipelines; includes a novel LZW variant that decompresses LLM-
+      generated sequences without requiring a perfectly encoded input
+      stream. Install via pip or from source.
+    type: Library
+    categories:
+      - Other
+    tags:
+      - Large Language Model
+    url: https://zip2zip-tokenizer.vercel.app
+    code:
+      type: Lab Github
+      url: https://github.com/epfl-dlab/zip2zip
+    language: Python
+    license: Apache-2.0
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 3
+    applications:
+      - Infra
+  boostcd:
+    name: BoostCD
+    description: "Information extraction system with training, inference, and evaluation pipeline."
+    layman_desc: >
+      BoostCD is a machine learning system for automatically extracting
+      structured information from text — a task known as information
+      or relation extraction. It provides a complete pipeline from
+      downloading training data to running predictions and evaluating
+      accuracy. The system fine-tunes a pre-trained language model hosted
+      on Hugging Face.
+    tech_desc: >
+      End-to-end information extraction system with training, inference,
+      and evaluation pipelines. Uses a conda environment and Hugging Face
+      datasets; supports training on custom data, batched inference, and
+      prediction postprocessing. Published at an NLP conference.
+    type: Framework
+    categories:
+      - Learning
+    tags:
+      - Natural Language
+    code:
+      type: Lab Github
+      url: https://github.com/epfl-dlab/BoostCD
+    language: Python
+    license: MIT
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 3
+      linus: 4
+    applications:
+      - Info
+  lm-tandem-training:
+    name: Tandem Training
+    description: "Code and data for tandem training of language models."
+    layman_desc: >
+      Tandem training is a technique where two language models train
+      together in a coordinated way, allowing them to teach each other
+      and improve jointly. This repository contains the code and data
+      for the research paper proposing and evaluating this approach,
+      along with pre-trained model checkpoints hosted on Hugging Face.
+    tech_desc: >
+      Code and data for the "Tandem Training for Language Models" paper
+      (arXiv:2510.13551). Implements coordinated joint training of
+      language model pairs. Pre-trained models available on Hugging Face.
+      Authors: West, Anderson, Kamar, Horvitz.
+    type: Experiments
+    categories:
+      - Learning
+    tags:
+      - Large Language Model
+    code:
+      type: Lab Github
+      url: https://github.com/epfl-dlab/lm-tandem-training
+    language: Python
+    information:
+      - type: Paper
+        title: "Tandem Training for Language Models"
+        url: https://arxiv.org/abs/2510.13551
+        notes:
+          - label: Published at
+            text: EACL 2026
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 3
+    applications:
+      - Info

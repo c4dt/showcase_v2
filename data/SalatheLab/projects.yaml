@@ -133,3 +133,154 @@ projects:
     maturity: 1
     date_added: 2022-07-07
     date_updated: 2024-04-14
+  dietary-consistency-gut-microbiota:
+    name: Dietary Consistency and Gut Microbiota
+    description: "Analysis code for a Swiss cohort study on dietary patterns and gut microbiota diversity."
+    layman_desc: >
+      What you eat every day shapes the bacteria living in your gut. This
+      study uses five years of dietary tracking data from over 1000 Swiss
+      participants to investigate how consistent and healthy eating habits
+      relate to gut microbiome diversity, a key marker of intestinal health.
+    tech_desc: >
+      Analysis pipeline for the "Food & You" digital cohort studying
+      associations between dietary consistency, quality metrics, and gut
+      microbiota diversity. Includes alpha/beta diversity correlations,
+      differential abundance analysis via BIRDMan and QIIME2, taxa
+      correlation studies, and machine learning prediction of microbiome
+      composition from longitudinal dietary variables.
+    type: Experiments
+    categories:
+      - Other
+    applications:
+      - Health
+    tags:
+      - Survey
+      - Features
+    code:
+      type: Lab Github
+      url: https://github.com/digitalepidemiologylab/dietary-consistency-and-quality-associated-with-gut-microbiota-diversity-paper
+    language: Python
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 1
+  mindays-estimation:
+    name: Minimum Days Estimation
+    description: "Code for estimating the optimal study duration for reliable dietary intake information."
+    layman_desc: >
+      How many days of food diary do you need to fill in before the data
+      becomes reliable? This study analyzes real-world dietary logs from a
+      digital cohort to determine the minimum number of tracking days needed
+      for accurate nutritional assessments, accounting for day-of-week
+      variation and individual differences.
+    tech_desc: >
+      Analysis notebooks applying Linear Mixed Models (LMM), Coefficient of
+      Variation (CV), and Intraclass Correlation Coefficient (ICC) methods
+      to determine the minimum dietary monitoring duration for reliable
+      intake estimation. Analyzes data from the "Food & You" digital cohort
+      using Python scientific computing libraries (pandas, numpy, statsmodels,
+      pingouin).
+    type: Experiments
+    categories:
+      - Other
+    applications:
+      - Health
+    tags:
+      - Survey
+      - Predictor
+    code:
+      type: Lab Github
+      url: https://github.com/digitalepidemiologylab/mindays-estimation-paper
+    language: Python
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 1
+  myfoodrepo:
+    name: MyFoodRepo
+    description: "Nutrition tracking platform with food image segmentation and annotation tools."
+    layman_desc: >
+      MyFoodRepo lets users photograph their meals to automatically log what
+      they eat. AI-powered image segmentation identifies food items in photos
+      and links them to a large nutritional database, enabling researchers to
+      collect detailed and accurate dietary data at scale.
+    tech_desc: >
+      Ruby on Rails web platform implementing food image segmentation via an
+      AI/CrowdAI API, product database synchronization with FoodRepo, REST
+      API, and annotation management workflows. Supports direct upload,
+      segmentation status tracking, and data serialization for large-scale
+      digital dietary cohort studies.
+    type: Application
+    categories:
+      - Other
+    applications:
+      - Health
+    tags:
+      - Images
+      - Mobile App
+    code:
+      type: Lab Github
+      url: https://github.com/digitalepidemiologylab/nutrition-tracking-platform-v2
+    language: Ruby
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 1
+  meal-pattern-analysis:
+    name: Meal Timing Analysis
+    description: "Analysis of meal timing effects on dietary quality and glucose response."
+    layman_desc: >
+      Does eating at irregular times affect how your body handles sugar?
+      This study uses continuous glucose monitors and dietary logs from a
+      real-world cohort to examine how the timing of meals throughout the
+      day relates to eating quality and blood sugar regulation, including
+      differences between weekdays and weekends.
+    tech_desc: >
+      Analysis notebooks for the "Food & You" digital cohort examining meal
+      timing and dietary quality effects on glycemic response. Implements
+      partial correlations, linear mixed effects models, mediation analysis,
+      weekend effects, and incremental area under the curve (iAUC)
+      determinants using CGM-derived and dietary intake data.
+    type: Experiments
+    categories:
+      - Other
+    applications:
+      - Health
+    tags:
+      - Survey
+      - Time Series
+    code:
+      type: Lab Github
+      url: https://github.com/digitalepidemiologylab/meal-pattern-analysis-paper
+    language: Python
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 1
+  food-additives-gut-microbiota:
+    name: Food Additive Gut Microbiota
+    description: "Code for analyzing food additive exposure and its impact on gut microbiota diversity."
+    layman_desc: >
+      Ultra-processed foods contain many additives that may affect the
+      bacteria in our gut. This study maps additive exposure from barcode
+      scans of packaged food products to participants' gut microbiome
+      profiles, identifying which additive combinations are associated with
+      lower gut bacteria diversity.
+    tech_desc: >
+      Analysis pipeline using non-negative matrix factorization (NMF) to
+      identify additive co-consumption patterns from MyFoodRepo barcode logs
+      and OpenFoodFacts ingredient data, followed by z-score normalization,
+      composite contrast metrics, and BIRDMan differential abundance analysis
+      to assess associations between food additive mixtures and gut
+      microbiota diversity in the "Food & You" digital cohort.
+    type: Experiments
+    categories:
+      - Other
+    applications:
+      - Health
+    tags:
+      - Survey
+      - Features
+    code:
+      type: Lab Github
+      url: https://github.com/digitalepidemiologylab/food-additives-gut-microbiota-public
+    language: Python
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 1

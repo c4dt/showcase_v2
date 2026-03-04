@@ -616,3 +616,172 @@ projects:
     language: Python
     license: various
     date_added: 2024-04-12
+  fineweb2-hq:
+    name: FineWeb2-HQ
+    description: "Multilingual data filtering tools for LLM pretraining using FastText and Transformer-MLP classifiers."
+    layman_desc: >
+      Training powerful AI language models requires enormous amounts of
+      high-quality text in many languages. FineWeb2-HQ provides tools
+      for filtering and selecting the best multilingual text from web
+      crawls using machine learning classifiers. The result is a cleaner,
+      higher-quality dataset for training multilingual AI models across
+      20 languages.
+    tech_desc: >
+      Toolset for multilingual data quality filtering using FastText
+      language identification and Transformer-MLP quality classifiers.
+      Supports embedding generation, model training, and automated
+      dataset curation for the FineWeb2-HQ corpus covering 20 languages.
+      Accompanies an arXiv preprint on model-based data selection.
+    type: Toolset
+    categories:
+      - Learning
+    tags:
+      - Large Language Model
+      - Natural Language
+    code:
+      type: Lab Github
+      url: https://github.com/epfml/fineweb2-hq
+    language: Python
+    license: Apache-2.0
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 3
+    applications:
+      - Info
+  grad-norm-smooth:
+    name: Gradient-Normalized Smoothness
+    description: "Algorithms for optimization with approximate Hessians using gradient-normalized smoothness."
+    layman_desc: >
+      Optimizing machine learning models can be made more efficient by
+      using second-order information (how quickly the gradient is
+      changing), but computing this exactly is expensive. This project
+      introduces gradient-normalized smoothness, a new mathematical
+      framework for analyzing optimization algorithms that use approximate
+      second-order information. Code is provided to reproduce the
+      theoretical results and experiments from the paper.
+    tech_desc: >
+      Implementation of the gradient-normalized smoothness (GNS) analysis
+      framework for optimization with approximate Hessians. Provides
+      algorithms, oracle functions, Hessian approximation routines, and
+      utilities for convex and non-convex settings. Includes quick-start
+      instructions and examples reproducing paper results.
+    type: Library
+    categories:
+      - Learning
+    tags:
+      - Optimization
+    code:
+      type: Lab Github
+      url: https://github.com/epfml/grad-norm-smooth
+    language: Python
+    license: Apache-2.0
+    information:
+      - type: Paper
+        title: Gradient-Normalized Smoothness for Optimization with Approximate Hessians
+        url: https://arxiv.org/abs/2506.13710
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 3
+    applications:
+      - Info
+  llm-optimizer-benchmark:
+    name: LLM Optimizer Benchmark
+    description: "Benchmark for comparing optimizers for LLM pretraining on Llama and MoE models."
+    layman_desc: >
+      Training large language models requires choosing an optimizer — an
+      algorithm that updates model weights — but it is not always clear
+      which optimizer works best. This repository provides standardized
+      code and scripts for comparing different optimizers on realistic
+      LLM pretraining tasks, using both Llama and Mixture-of-Experts
+      model architectures with configurable training parameters.
+    tech_desc: >
+      Benchmarking suite for comparing optimizers (Adam, SGD, Muon,
+      Scion, etc.) on LLM pretraining using Llama and MoE architectures.
+      Supports configurable training parameters, WandB logging, multi-GPU
+      and CPU setups, and guidelines for extending to new models or
+      datasets.
+    type: Experiments
+    categories:
+      - Learning
+    tags:
+      - Benchmark
+      - Large Language Model
+      - Optimization
+    code:
+      type: Lab Github
+      url: https://github.com/epfml/llm-optimizer-benchmark
+    language: Python
+    license: Apache-2.0
+    information:
+      - type: Paper
+        title: Benchmarking Optimizers for Large Language Model Pretraining
+        url: https://arxiv.org/abs/2509.01440
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 3
+      linus: 3
+    applications:
+      - Info
+  timoe:
+    name: TiMoE
+    description: "Modular framework for temporally grounded language models with time-aware expert routing."
+    layman_desc: >
+      Language models are trained on data up to a certain date and can
+      quickly become outdated. TiMoE addresses this by training separate
+      expert models on different time periods and routing each query only
+      to the experts whose data covers the relevant time frame. This
+      makes the model's knowledge temporally grounded without requiring
+      a full retraining every time the data is updated.
+    tech_desc: >
+      Modular Mixture-of-Experts (MoE) framework for temporally grounded
+      LLMs. Trains separate GPT experts on two-year data slices; routes
+      queries to experts up to the query timestamp. Aggregates outputs
+      via equal weighting, learned routing, or joint co-adaptation.
+      Includes repo structure and quickstart instructions.
+    type: Framework
+    categories:
+      - Learning
+    tags:
+      - Large Language Model
+    code:
+      type: Lab Github
+      url: https://github.com/epfml/TiMoE
+    language: Python
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 4
+    applications:
+      - Info
+  halluhard:
+    name: HalluHard
+    description: "Hard multi-turn hallucination benchmark for evaluating language models across domains."
+    layman_desc: >
+      Language models sometimes confidently state false information —
+      a problem called hallucination. HalluHard is a challenging benchmark
+      designed to test how well models resist hallucinating across many
+      different domains in multi-turn conversations. It provides tools for
+      generating model responses, evaluating them using claim-based web
+      scrapers, and producing summary reports.
+    tech_desc: >
+      Multi-turn hallucination benchmark evaluating LLMs across diverse
+      domains. Installed via Pixi; scripts provided for response
+      generation, claim-based web-scraping judgment (or coding_direct
+      mode), and report creation. Supports multiple models and CLI
+      configuration. Designed to maximize hallucination elicitation
+      difficulty.
+    type: Experiments
+    categories:
+      - Learning
+    tags:
+      - Benchmark
+      - Large Language Model
+      - AI Safety
+    code:
+      type: Lab Github
+      url: https://github.com/epfml/halluhard
+    language: Python
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 5
+    applications:
+      - Info

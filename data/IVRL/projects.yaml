@@ -320,3 +320,35 @@ projects:
     license: MIT
     date_added: 2023-03-21
     date_updated: 2024-04-14
+  noisediff:
+    name: NoiseDiff
+    description: "Dark Noise Diffusion for synthetic low-light noise generation and image denoising."
+    layman_desc: >
+      Photographs taken in low-light conditions are often degraded by
+      camera sensor noise called "dark noise". NoiseDiff uses diffusion
+      models — a type of AI image generation technology — to both simulate
+      this noise realistically and remove it from images. This makes it
+      possible to train better denoising algorithms even without large
+      real-world noisy image datasets.
+    tech_desc: >
+      Dark Noise Diffusion model for synthetic low-light noise generation
+      and paired image denoising. Trained on SID and ELD datasets; uses
+      diffusion-based noise simulation to augment training data. Provides
+      pretrained models, training/testing scripts, shading resources, and
+      optional synthetic data generation pipeline.
+    type: Application
+    categories:
+      - Other
+    tags:
+      - Images
+      - Deep Neural Networks
+    code:
+      type: Lab Github
+      url: https://github.com/IVRL/NoiseDiff
+    language: Python
+    license: Apache-2.0
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 3
+    applications:
+      - Info
