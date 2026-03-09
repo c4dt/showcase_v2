@@ -48,7 +48,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/parsa-epfl/qflex
-      date_last_commit: 2025-10-18
+      date_last_commit: 2026-03-03
     lines_of_code: "Flexus: 50000, Qemu: 100000"
     tags:
       - Network
