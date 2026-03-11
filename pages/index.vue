@@ -35,6 +35,7 @@ function resetFilters() {
 
   searchQuery.value = "";
   selectedTags.value = [];
+  showAdvanced.value = false;
 }
 
 const projects = useState<ExtendedProject[]>("projects");
@@ -69,6 +70,14 @@ watch(filteredProjects, () => {
   labs = Array.from(new Set(filteredProjects.value.map(pprintLab)));
   categories = Array.from(new Set(filteredProjects.value.flatMap((project) => project.categories)));
   applications = Array.from(new Set(filteredProjects.value.flatMap((project) => project.applications)));
+});
+
+const showAdvanced = ref(false);
+
+watch([selectedTags, selectedCategory, selectedApplication], ([tags, category, application]) => {
+  if (tags.length > 0 || category !== "" || application !== "") {
+    showAdvanced.value = true;
+  }
 });
 </script>
 
@@ -109,12 +118,6 @@ watch(filteredProjects, () => {
             <div class="top-0 lg:sticky">
               <div class="epfl-filterbox">
                 <div class="text-xl">Filter projects</div>
-                <HomepageMutliSelectCombobox
-                  ref="TagFilter"
-                  v-model="selectedTags"
-                  title="Tag"
-                  :item-list="projectTags"
-                />
                 <homepageCombobox ref="labsFilter" v-model="selectedLab" title="Lab" :item-list="labs" />
                 <homepageCombobox
                   ref="statusFilter"
@@ -122,18 +125,29 @@ watch(filteredProjects, () => {
                   title="Support"
                   :item-list="PPRINTED_STATUS"
                 />
-                <homepageCombobox
-                  ref="categoriesFilter"
-                  v-model="selectedCategory"
-                  title="Category"
-                  :item-list="categories"
-                />
-                <homepageCombobox
-                  ref="applicationsFilter"
-                  v-model="selectedApplication"
-                  title="Application"
-                  :item-list="applications"
-                />
+                <div class="epfl-button-plain" @click="showAdvanced = !showAdvanced">
+                  <span>Advanced search</span>
+                </div>
+                <div v-show="showAdvanced">
+                  <HomepageMutliSelectCombobox
+                    ref="TagFilter"
+                    v-model="selectedTags"
+                    title="Tag"
+                    :item-list="projectTags"
+                  />
+                  <homepageCombobox
+                    ref="categoriesFilter"
+                    v-model="selectedCategory"
+                    title="Category"
+                    :item-list="categories"
+                  />
+                  <homepageCombobox
+                    ref="applicationsFilter"
+                    v-model="selectedApplication"
+                    title="Application"
+                    :item-list="applications"
+                  />
+                </div>
                 <div class="epfl-button-plain" @click="resetFilters">Reset Filters</div>
               </div>
             </div>
