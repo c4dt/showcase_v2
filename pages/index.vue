@@ -2,6 +2,7 @@
 import type Combobox from "~/components/homepage/Combobox.vue";
 import type MutliSelectCombobox from "~/components/homepage/mutliSelectCombobox.vue";
 import { sortProjects } from "~/utils/sortProjects";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 const config = useRuntimeConfig();
 
@@ -41,6 +42,7 @@ function resetFilters() {
   statusFilter.value?.clearSelection();
   resetFilterHash();
   selectedEvaluators.value = [];
+  showAdvanced.value = false;
 }
 
 function toggleEvaluator(key: string) {
@@ -118,6 +120,14 @@ watch(filteredProjects, () => {
   categories = Array.from(new Set(filteredProjects.value.flatMap((project) => project.categories)));
   applications = Array.from(new Set(filteredProjects.value.flatMap((project) => project.applications)));
 });
+
+const showAdvanced = ref(false);
+
+watch([tags, category, application], ([newTags, newCategory, newApplication]) => {
+  if (newTags.length > 0 || newCategory !== "" || newApplication !== "") {
+    showAdvanced.value = true;
+  }
+});
 </script>
 
 <template>
@@ -160,16 +170,34 @@ watch(filteredProjects, () => {
             <div class="top-0 lg:sticky">
               <div class="epfl-filterbox">
                 <div class="text-xl">Filter projects</div>
-                <HomepageMutliSelectCombobox ref="TagFilter" v-model="tags" title="Tag" :item-list="projectTags" />
                 <homepageCombobox ref="labsFilter" v-model="lab" title="Lab" :item-list="labs" />
                 <homepageCombobox ref="statusFilter" v-model="status" title="Support" :item-list="PPRINTED_STATUS" />
-                <homepageCombobox ref="categoriesFilter" v-model="category" title="Category" :item-list="categories" />
-                <homepageCombobox
-                  ref="applicationsFilter"
-                  v-model="application"
-                  title="Application"
-                  :item-list="applications"
-                />
+                <button
+                  class="flex cursor-pointer items-center gap-1 text-sm text-gray-600 hover:text-gray-900"
+                  @click="showAdvanced = !showAdvanced"
+                >
+                  <font-awesome-icon
+                    icon="fa-solid fa-chevron-right"
+                    class="transition-transform duration-200"
+                    :class="{ 'rotate-90': showAdvanced }"
+                  />
+                  <span>Advanced search</span>
+                </button>
+                <div v-show="showAdvanced" class="border-l-2 border-gray-200 pl-3">
+                  <HomepageMutliSelectCombobox ref="TagFilter" v-model="tags" title="Tag" :item-list="projectTags" />
+                  <homepageCombobox
+                    ref="categoriesFilter"
+                    v-model="category"
+                    title="Category"
+                    :item-list="categories"
+                  />
+                  <homepageCombobox
+                    ref="applicationsFilter"
+                    v-model="application"
+                    title="Application"
+                    :item-list="applications"
+                  />
+                </div>
                 <div class="epfl-button-plain" @click="resetFilters">Reset Filters</div>
               </div>
             </div>
