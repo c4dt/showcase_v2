@@ -143,6 +143,7 @@ watch(filteredProjects, () => {
           <div class="mt-8 w-full lg:mt-0 lg:w-70/100">
             <!-- Search -->
             <SearchBar v-model:search-query="searchQuery" class="my-4" />
+            <HomepageNoResultsMessage v-if="filteredProjects.length === 0" />
             <div v-for="project in filteredProjects" :key="project.name" class="py-2">
               <homepageProjectCard :project="project" />
             </div>
