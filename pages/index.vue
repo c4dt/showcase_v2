@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type Combobox from "~/components/homepage/Combobox.vue";
 import type MutliSelectCombobox from "~/components/homepage/mutliSelectCombobox.vue";
+import { sortProjects } from "~/utils/sortProjects";
 
 const config = useRuntimeConfig();
 
@@ -108,17 +109,8 @@ const filteredProjects = computed(() => {
 });
 
 const sortedProjects = computed(() => {
-  if (!config.public.evaluateMode || selectedEvaluators.value.length === 0) {
-    return filteredProjects.value;
-  }
-  return [...filteredProjects.value].sort((a, b) => {
-    const scores = (p: ExtendedProject) =>
-      selectedEvaluators.value.reduce((sum, key) => {
-        const interest = (p.showcase_interest as Record<string, number>) ?? {};
-        return sum + (interest[key] ?? 0);
-      }, 0);
-    return scores(b) - scores(a);
-  });
+  const evaluators = config.public.evaluateMode ? selectedEvaluators.value : [];
+  return sortProjects(filteredProjects.value, evaluators);
 });
 
 watch(filteredProjects, () => {
