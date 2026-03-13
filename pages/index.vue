@@ -74,7 +74,8 @@ const filteredProjects = computed(() => {
     return (
       (selectedStatus.value === "" ||
         selectedStatus.value === PPRINTED_C4DT_STATUS[project.c4dt_status] ||
-        selectedStatus.value === PPRINTED_LAB_STATUS[project.lab_status]) &&
+        selectedStatus.value === PPRINTED_LAB_STATUS[project.lab_status] ||
+        (selectedStatus.value === PROPOSAL_2026_STATUS && project.tags.includes(PROPOSAL_2026_STATUS))) &&
       (selectedTag.value === "" || project.tags.includes(selectedTag.value)) &&
       (selectedLab.value === "" || project.lab.name === selectedLab.value.split(" - ")[1]) &&
       (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&

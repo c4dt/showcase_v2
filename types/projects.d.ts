@@ -23,6 +23,7 @@ export interface Project {
   categories: ("Privacy" | "Blockchain" | "Verification" | "Security" | "Learning" | "Other")[];
   applications: ("Finance" | "Health" | "Gov" | "Infra" | "Info" | "Other")[];
   tags: (
+    | "2026 Proposal"
     | "Access Control"
     | "Adversarial"
     | "Anonymity"

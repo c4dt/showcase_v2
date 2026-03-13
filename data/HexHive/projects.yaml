@@ -893,6 +893,7 @@ projects:
       - Security
     tags:
       - Fuzzing
+      - 2026 Proposal
     code:
       type: Lab Github
       url: https://github.com/HexHive/truman
@@ -960,6 +961,7 @@ projects:
       - Security
     tags:
       - Fuzzing
+      - 2026 Proposal
     code:
       type: Lab Github
       url: https://github.com/HexHive/Reflecta
@@ -1153,6 +1155,7 @@ projects:
     tags:
       - Bluetooth
       - Internet of Things
+      - 2026 Proposal
     code:
       type: Lab Github
       url: https://github.com/HexHive/privacyshield

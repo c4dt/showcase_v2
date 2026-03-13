@@ -776,6 +776,7 @@ projects:
       - Benchmark
       - Large Language Model
       - AI Safety
+      - 2026 Proposal
     code:
       type: Lab Github
       url: https://github.com/epfml/halluhard

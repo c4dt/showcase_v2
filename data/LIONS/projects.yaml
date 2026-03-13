@@ -150,6 +150,7 @@ projects:
       - Large Language Model
       - Attack
       - AI Safety
+      - 2026 Proposal
     code:
       type: Lab Github
       url: https://github.com/LIONS-EPFL/SPD

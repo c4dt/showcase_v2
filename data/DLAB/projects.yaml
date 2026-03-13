@@ -456,6 +456,7 @@ projects:
       - Other
     tags:
       - Large Language Model
+      - 2026 Proposal
     code:
       type: Lab Github
       url: https://github.com/epfl-dlab/debategpt
@@ -498,6 +499,7 @@ projects:
     tags:
       - Natural Language
       - Deep Neural Networks
+      - 2026 Proposal
     code:
       type: Lab Github
       url: https://github.com/epfl-dlab/TiME
