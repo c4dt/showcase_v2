@@ -416,7 +416,7 @@ projects:
       url: https://github.com/C4DT/lightarti-rest
       date_last_commit: 2024-08-15
     incubator:
-      type: incubated_market
+      type: retired_archived
       work: Created and updated a library for mobile
       products:
         - type: Library

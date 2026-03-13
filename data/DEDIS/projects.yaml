@@ -62,7 +62,7 @@ projects:
       url: https://github.com/c4dt/dela
       date_last_commit: 2024-10-10
     incubator:
-      type: incubated_market
+      type: retired
       work: 2023/Q3-2024/Q2 Debugging and feature enhancement
       products:
         - type: Library
