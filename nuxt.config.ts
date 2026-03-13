@@ -19,7 +19,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      playwrightTest: process.env.PLAYWRIGHT_TEST === "1" || false
+      playwrightTest: process.env.PLAYWRIGHT_TEST === "1" || false,
+      evaluateMode: process.env.EVALUATE_MODE === "1" || false
     }
   },
 
