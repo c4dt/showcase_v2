@@ -1,3 +1,4 @@
+import { ref } from "vue";
 import { test, expect, vi } from "vitest";
 import { mountSuspended, mockNuxtImport } from "@nuxt/test-utils/runtime";
 import IndexPage from "~/pages/index.vue";
@@ -25,16 +26,6 @@ const { useRuntimeConfigMock } = vi.hoisted(() => {
 
 mockNuxtImport("useRuntimeConfig", () => {
   return useRuntimeConfigMock;
-});
-
-const { useSearchQueryMock } = vi.hoisted(() => {
-  return {
-    useSearchQueryMock: vi.fn(() => ref(""))
-  };
-});
-
-mockNuxtImport("useSearchQuery", () => {
-  return useSearchQueryMock;
 });
 
 const projects = [
@@ -91,6 +82,14 @@ function setupStateMock() {
         return { value: projects };
       case "configuration":
         return { value: { highlightedProjects: [projects[0].id] } };
+      case "filter-tags":
+        return ref([]);
+      case "filter-search":
+      case "filter-lab":
+      case "filter-category":
+      case "filter-application":
+      case "filter-status":
+        return ref("");
       default:
         return { value: [] };
     }

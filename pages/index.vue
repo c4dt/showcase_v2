@@ -4,24 +4,26 @@ import type MutliSelectCombobox from "~/components/homepage/mutliSelectCombobox.
 
 const config = useRuntimeConfig();
 
-const selectedStatus = ref("");
-const selectedLab = ref("");
-const selectedCategory = ref("");
-const selectedApplication = ref("");
-const selectedTag = ref("");
-const selectedTags = ref<string[]>([]);
-provide("selectedTags", selectedTags);
+const {
+  search,
+  lab,
+  category,
+  application,
+  status,
+  tags,
+  searchQuery,
+  resetFilters: resetFilterHash
+} = useFilterHash();
+provide("selectedTags", tags);
 
 function addTag(tag: string) {
-  if (!selectedTags.value.includes(tag)) {
-    selectedTags.value.push(tag);
+  if (!tags.value.includes(tag)) {
+    tags.value.push(tag);
   } else {
-    selectedTags.value.splice(selectedTags.value.indexOf(tag), 1);
+    tags.value.splice(tags.value.indexOf(tag), 1);
   }
 }
 provide("addTag", addTag);
-
-const searchQuery = useSearchQuery();
 
 const labsFilter = ref<InstanceType<typeof Combobox>>();
 const categoriesFilter = ref<InstanceType<typeof Combobox>>();
@@ -36,9 +38,7 @@ function resetFilters() {
   applicationsFilter.value?.clearSelection();
   TagFilter.value?.clearAll();
   statusFilter.value?.clearSelection();
-
-  searchQuery.value = "";
-  selectedTags.value = [];
+  resetFilterHash();
   selectedEvaluators.value = [];
 }
 
@@ -72,16 +72,15 @@ const evaluatorKeys = config.public.evaluateMode
 const filteredProjects = computed(() => {
   return projects.value.filter((project) => {
     return (
-      (selectedStatus.value === "" ||
-        selectedStatus.value === PPRINTED_C4DT_STATUS[project.c4dt_status] ||
-        selectedStatus.value === PPRINTED_LAB_STATUS[project.lab_status] ||
-        (selectedStatus.value === PROPOSAL_2026_STATUS && project.tags.includes(PROPOSAL_2026_STATUS))) &&
-      (selectedTag.value === "" || project.tags.includes(selectedTag.value)) &&
-      (selectedLab.value === "" || project.lab.name === selectedLab.value.split(" - ")[1]) &&
-      (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
-      (selectedApplication.value === "" || project.applications.includes(selectedApplication.value)) &&
-      (searchQuery.value === "" || JSON.stringify(project).toLowerCase().includes(searchQuery.value.toLowerCase())) &&
-      (selectedTags.value.length === 0 || selectedTags.value.some((tag) => project.tags.includes(tag)))
+      (status.value === "" ||
+        status.value === PPRINTED_C4DT_STATUS[project.c4dt_status] ||
+        status.value === PPRINTED_LAB_STATUS[project.lab_status] ||
+        (status.value === PROPOSAL_2026_STATUS && project.tags.includes(PROPOSAL_2026_STATUS))) &&
+      (lab.value === "" || project.lab.name === lab.value.split(" - ")[1]) &&
+      (category.value === "" || project.categories.includes(category.value)) &&
+      (application.value === "" || project.applications.includes(application.value)) &&
+      (search.value === "" || JSON.stringify(project).toLowerCase().includes(search.value.toLowerCase())) &&
+      (tags.value.length === 0 || tags.value.some((tag) => project.tags.includes(tag)))
     );
   });
 });
@@ -132,7 +131,7 @@ watch(filteredProjects, () => {
         </div>
       </section>
       <!-- Highlighted projects section -->
-      <section v-if="!searchQuery" class="py-6">
+      <section v-if="!search" class="py-6">
         <HomepageSelectedProjects />
       </section>
       <!-- Project search section -->
@@ -144,28 +143,13 @@ watch(filteredProjects, () => {
             <div class="top-0 lg:sticky">
               <div class="epfl-filterbox">
                 <div class="text-xl">Filter projects</div>
-                <HomepageMutliSelectCombobox
-                  ref="TagFilter"
-                  v-model="selectedTags"
-                  title="Tag"
-                  :item-list="projectTags"
-                />
-                <homepageCombobox ref="labsFilter" v-model="selectedLab" title="Lab" :item-list="labs" />
-                <homepageCombobox
-                  ref="statusFilter"
-                  v-model="selectedStatus"
-                  title="Support"
-                  :item-list="PPRINTED_STATUS"
-                />
-                <homepageCombobox
-                  ref="categoriesFilter"
-                  v-model="selectedCategory"
-                  title="Category"
-                  :item-list="categories"
-                />
+                <HomepageMutliSelectCombobox ref="TagFilter" v-model="tags" title="Tag" :item-list="projectTags" />
+                <homepageCombobox ref="labsFilter" v-model="lab" title="Lab" :item-list="labs" />
+                <homepageCombobox ref="statusFilter" v-model="status" title="Support" :item-list="PPRINTED_STATUS" />
+                <homepageCombobox ref="categoriesFilter" v-model="category" title="Category" :item-list="categories" />
                 <homepageCombobox
                   ref="applicationsFilter"
-                  v-model="selectedApplication"
+                  v-model="application"
                   title="Application"
                   :item-list="applications"
                 />

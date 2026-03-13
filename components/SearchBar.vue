@@ -6,8 +6,6 @@ const searchQuery = defineModel<string>("searchQuery");
 const searchInput = defineModel<HTMLInputElement | null>("searchInput");
 const { search, toggleSearch } = useSearch();
 
-const route = useRoute();
-
 const clearSearch = () => {
   searchQuery.value = "";
   searchInput.value?.focus();
@@ -17,15 +15,6 @@ const toggleAndFocus = async () => {
   await nextTick(); // wait for DOM update
   searchInput.value?.focus();
 };
-
-watch(searchQuery, () => {
-  // if the search query is empty remove empty query in URL
-  if (!searchQuery.value) {
-    navigateTo(route.path, { query: {}, replace: true });
-  } else {
-    navigateTo(`/?search=${encodeURIComponent(searchQuery.value.trim())}`);
-  }
-});
 </script>
 
 <template>
