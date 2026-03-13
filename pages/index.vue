@@ -69,6 +69,28 @@ const evaluatorKeys = config.public.evaluateMode
     ).sort()
   : [];
 
+const showCarousel = computed(
+  () =>
+    !search.value &&
+    !lab.value &&
+    !category.value &&
+    !application.value &&
+    !status.value &&
+    !tags.value.length &&
+    (typeof window === "undefined" || !window.location.hash)
+);
+
+const projectsAreaRef = ref<HTMLElement | null>(null);
+watch(showCarousel, async (newVal, oldVal) => {
+  if (newVal && !oldVal && typeof window !== "undefined") {
+    const anchorTop = projectsAreaRef.value?.getBoundingClientRect().top ?? null;
+    await nextTick();
+    if (anchorTop !== null && projectsAreaRef.value) {
+      window.scrollBy(0, projectsAreaRef.value.getBoundingClientRect().top - anchorTop);
+    }
+  }
+});
+
 const filteredProjects = computed(() => {
   return projects.value.filter((project) => {
     return (
@@ -130,12 +152,15 @@ watch(filteredProjects, () => {
           </div>
         </div>
       </section>
-      <!-- Highlighted projects section -->
-      <section v-if="!search" class="py-6">
-        <HomepageSelectedProjects />
-      </section>
+      <!-- Highlighted projects section: ClientOnly prevents SSR from rendering it
+           (server has no access to the URL fragment, so it would always show) -->
+      <ClientOnly>
+        <section v-if="showCarousel" data-testid="carousel-section" class="py-6">
+          <HomepageSelectedProjects />
+        </section>
+      </ClientOnly>
       <!-- Project search section -->
-      <section class="py-4">
+      <section ref="projectsAreaRef" class="py-4">
         <h2 class="epfl-h2 text-center">View all Projects</h2>
         <div class="flex flex-col py-10 lg:flex-row">
           <!-- Sidebar with filter -->
