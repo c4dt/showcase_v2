@@ -31,6 +31,7 @@ If a new tag is added, also add it to `data.py`
 "RISC-V", "Robustness",
 "Secure Multi-Party Computation", "Server", "Simulator", "Static Analysis", "Survey",
 "TensorFlow", "Time Series", "Tor", "Trusted Execution Environment",
+"2026 Proposal",
 "Wearable",
 "Zero-Knowledge Proofs"
 

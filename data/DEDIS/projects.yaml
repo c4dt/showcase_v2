@@ -669,6 +669,7 @@ projects:
       - Gov
     tags:
       - Protocol
+      - 2026 Proposal
     code:
       type: Lab Github
       url: https://github.com/dedis/votegral
