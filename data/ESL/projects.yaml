@@ -216,3 +216,489 @@ projects:
     language: C
     license: SOLDERPAD HARDWARE LICENSE, Apache-2.0
     date_added: 2024-02-20
+  gsr-monitor:
+    name: GSR Monitor Board
+    description: "Hardware validation board for HEEPidermis SoC with low-noise power regulation and GSR measurement."
+    layman_desc: >
+      This repository contains the hardware design and documentation for
+      a circuit board that validates the HEEPidermis chip, a custom
+      research chip for measuring galvanic skin response (GSR) on
+      wearable devices. The board includes specialized low-noise analog
+      circuitry and communicates with standard microcontrollers via I²C.
+      It demonstrates the HEEPidermis SoC's capabilities in a real
+      hardware setup.
+    tech_desc: >
+      Hardware validation board for the HEEPidermis SoC. Features
+      low-noise power regulation, 16-bit current DAC (40 nA–10 µA),
+      precision resistors, level-crossing and 12-bit ΣΔ ADCs, I²C
+      interface (1.65–5.5 V), and Arduino library support. Includes
+      schematics and WEMAC dataset integration.
+    type: Experiments
+    categories:
+      - Other
+    applications:
+      - Health
+    tags:
+      - Hardware
+      - Wearable
+      - Internet of Things
+    code:
+      type: Lab Github
+      url: https://github.com/esl-epfl/GSR_monitor
+    language: HTML
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 2
+  prau:
+    name: PRAU
+    description: "Open-source configurable Posit arithmetic unit supporting extended numerical operations."
+    layman_desc: >
+      Posit numbers are a modern alternative to standard floating-point
+      numbers that offer better numerical precision and fewer edge cases.
+      PRAU is an open-source hardware implementation of posit arithmetic
+      operations — addition, multiplication, division, and square root
+      — that can be configured for different posit sizes and integrated
+      into RISC-V processors. It originated from the PERCIVAL research
+      project.
+    tech_desc: >
+      Open-source configurable hardware Posit Arithmetic Unit supporting
+      posit sizes from 8–64 bits. Implements standard posit operations
+      plus optional log-approximate multiplication, division, sqrt, and
+      quire (exact accumulation). Derived from the PAU in the PERCIVAL
+      RISC-V core; used by Coprosit and PHEE projects.
+    type: Library
+    categories:
+      - Other
+    tags:
+      - Hardware
+      - RISC-V
+      - Low-Level
+    code:
+      type: Lab Github
+      url: https://github.com/esl-epfl/PRAU
+    language: VHDL
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 2
+    applications:
+      - Infra
+  coprosit:
+    name: Coprosit
+    description: "Posit and quire arithmetic coprocessor compliant with the RISC-V eXtension interface."
+    layman_desc: >
+      RISC-V is an open-source processor architecture, and coprocessors
+      extend it with specialized instructions. Coprosit adds posit
+      arithmetic — an alternative to standard floating-point numbers —
+      as a coprocessor to RISC-V chips using the standard CV-X-IF
+      extension interface. This lets RISC-V software use posit arithmetic
+      for applications like neural network inference on embedded devices.
+    tech_desc: >
+      Posit and quire arithmetic coprocessor compliant with the RISC-V
+      CV-X-IF eXtension interface, wrapping the PRAU execution unit.
+      Configurable posit sizes (8–64 bits) and optional operations
+      (log-approximate multiply, divide, sqrt, quire). Integrated into
+      X-HEEP and PHEE; accessible via make configuration flags.
+    type: Library
+    categories:
+      - Other
+    tags:
+      - Hardware
+      - RISC-V
+      - Low-Level
+    code:
+      type: Lab Github
+      url: https://github.com/esl-epfl/Coprosit
+    language: SystemVerilog
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 2
+    applications:
+      - Infra
+  phee:
+    name: PHEE
+    description: "Posit-enabled X-HEEP RISC-V platform integrating the Coprosit arithmetic coprocessor."
+    layman_desc: >
+      X-HEEP is an open-source RISC-V microcontroller platform for
+      research. PHEE extends it by adding the Coprosit posit arithmetic
+      coprocessor, enabling the platform to execute posit arithmetic
+      instructions natively in hardware. This lets researchers study the
+      benefits of posit numbers on real RISC-V hardware and FPGA
+      prototypes.
+    tech_desc: >
+      X-HEEP RISC-V SoC extended with the Coprosit posit coprocessor via
+      CV-X-IF, targeting the cv32e40px CPU. Supports configurable posit
+      sizes and quire operations. Provides QuestaSim simulation, PYNQ-Z2
+      FPGA synthesis, vendor update management, and test commands.
+    type: Framework
+    categories:
+      - Other
+    tags:
+      - Hardware
+      - RISC-V
+      - Low-Level
+    code:
+      type: Lab Github
+      url: https://github.com/esl-epfl/PHEE
+    language: C
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 2
+    applications:
+      - Infra
+  compigra:
+    name: Compigra
+    description: "MLIR-based compilation tool transforming C/C++ code into CGRA assembly."
+    layman_desc: >
+      Coarse-Grained Reconfigurable Arrays (CGRAs) are hardware
+      accelerators that can be reprogrammed to efficiently run specific
+      computational patterns. Compigra is a compiler that automatically
+      converts regular C/C++ code into the specialized assembly needed
+      to run on these accelerators. It uses MLIR, a modern compiler
+      framework, and an optimization stage that finds the best hardware
+      mapping.
+    tech_desc: >
+      MLIR-based compilation tool transforming C/C++ to CGRA assembly
+      via custom IR dialects, front-end optimizations, and a back-end
+      ILP mapper requiring Gurobi. Build with CMake; run via
+      compigra-opt; results verifiable with CGRA-simulator or RTL tools.
+    type: Toolset
+    categories:
+      - Other
+    tags:
+      - Compiler
+      - Low-Level
+    code:
+      type: Lab Github
+      url: https://github.com/esl-epfl/Compigra
+    language: C++
+    license: Apache-2.0
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 2
+    applications:
+      - Infra
+  heepstor:
+    name: HEEPstor
+    description: "Framework for deploying post-training quantized PyTorch models on X-HEEP RISC-V SoCs."
+    layman_desc: >
+      Running neural network models on tiny microcontrollers requires
+      converting them into a quantized, hardware-friendly format. HEEPstor
+      automates this for the X-HEEP RISC-V platform — taking a PyTorch
+      model and handling quantization, code generation, and deployment
+      to the microcontroller. It supports a configurable systolic array
+      accelerator for efficient inference at the edge.
+    tech_desc: >
+      Open-hardware framework for post-training quantization and
+      deployment of PyTorch models on X-HEEP RISC-V SoCs. Provides
+      automated INT8/FP32 hybrid quantization, FPGA synthesis, a
+      configurable systolic array, performance analysis, and debugging
+      tools. Targets edge AI workloads.
+    type: Framework
+    categories:
+      - Learning
+    tags:
+      - Hardware
+      - RISC-V
+      - PyTorch
+      - Internet of Things
+    code:
+      type: Lab Github
+      url: https://github.com/esl-epfl/HEEPstor
+    language: C++
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 4
+    applications:
+      - Infra
+  xif-copro:
+    name: CV-X-IF Coprocessor
+    description: "Sample RISC-V coprocessor implementing a custom BITREV instruction via the CV-X-IF interface."
+    layman_desc: >
+      This is a sample implementation showing how to add a custom
+      instruction to a RISC-V processor using the standard coprocessor
+      extension interface (CV-X-IF). The example instruction (BITREV)
+      reverses the bits in a number, which is useful for algorithms like
+      FFT, cryptography, and error-correcting codes. It serves as a
+      practical template for developers adding their own custom
+      instructions to RISC-V chips.
+    tech_desc: >
+      Sample RISC-V coprocessor implementing the R-type BITREV
+      instruction via the CV-X-IF interface for the cv32e40px core.
+      Includes hardware decode and execute stages and a C usage example.
+      Serves as a template for custom instruction extension development.
+    type: Library
+    categories:
+      - Other
+    tags:
+      - Hardware
+      - RISC-V
+      - Low-Level
+    code:
+      type: Lab Github
+      url: https://github.com/esl-epfl/xif_copro
+    language: SystemVerilog
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 2
+    applications:
+      - Infra
+  cross-domain-saliency-maps:
+    name: Timeseries Saliency Maps
+    description: "Cross-domain saliency maps library for time-series model explanation in PyTorch and TensorFlow."
+    layman_desc: >
+      When AI models make predictions on time-series data — like medical
+      sensor readings — it is important to understand which parts of the
+      input most influenced the prediction. This library produces
+      "saliency maps" for time-series models, highlighting important
+      regions across time, frequency, and ICA domains. It works with
+      both PyTorch and TensorFlow models without requiring any retraining.
+    tech_desc: >
+      Library implementing cross-domain saliency maps for time-series
+      model explainability in PyTorch and TensorFlow. Supports time,
+      frequency, and ICA domains via invertible differentiable transforms.
+      Requires no model retraining; extensible to custom transforms.
+      Pip-installable with ready-to-run notebooks.
+    type: Library
+    categories:
+      - Learning
+    applications:
+      - Health
+    tags:
+      - Time Series
+      - Wearable
+      - PyTorch
+      - TensorFlow
+    code:
+      type: Lab Github
+      url: https://github.com/esl-epfl/cross-domain-saliency-maps
+    language: Python
+    license: GPL-3.0
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 4
+      linus: 3
+  ticwatch-radar:
+    name: Pedesite App
+    description: "Wear OS application for wearable sensor data acquisition, storage, and automated upload."
+    layman_desc: >
+      Pedesite is a smartwatch application for Wear OS that continuously
+      collects sensor data, stores it locally on the watch, and
+      automatically uploads it to a data pipeline when the watch is
+      charging. It supports multiple sensor types and includes Python
+      tools for reading and visualizing the collected data. This is
+      useful for health research studies requiring continuous wearable
+      sensor recordings.
+    tech_desc: >
+      Wear OS application for continuous wearable sensor data
+      acquisition, local storage, and automated batch upload to Kafka
+      while charging. Includes ADB installation instructions, watch-face
+      activation, Python scripts for sensor file reading, and data
+      visualization tools.
+    type: Application
+    categories:
+      - Other
+    applications:
+      - Health
+    tags:
+      - Wearable
+      - Time Series
+      - Mobile App
+      - Internet of Things
+    code:
+      type: Lab Github
+      url: https://github.com/esl-epfl/ticwatch-radar
+    language: Kotlin
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 3
+  metawears:
+    name: MetaWearS
+    description: "Meta-learning framework for few-shot adaptation in wearable health monitoring."
+    layman_desc: >
+      Wearable health monitors need models that work well for individual
+      users, but collecting labeled training data from each person is
+      expensive. MetaWearS uses meta-learning — training models that
+      can quickly adapt to new users with very little data — to create
+      personalized health monitoring systems. It pre-trains on large
+      datasets and fine-tunes with just a few labeled examples per user,
+      while keeping updates lightweight to conserve battery.
+    tech_desc: >
+      Meta-learning framework for few-shot adaptation in wearable health
+      monitoring. Pre-trains on large datasets with prototypical network
+      structure; fine-tunes on few shots per user. Lightweight update
+      mechanism conserves battery. Provides code, Jupyter notebooks, and
+      hardware implementation details.
+    type: Framework
+    categories:
+      - Learning
+    applications:
+      - Health
+    tags:
+      - Wearable
+      - Time Series
+      - Deep Neural Networks
+      - Internet of Things
+    code:
+      type: Lab Github
+      url: https://github.com/esl-epfl/metawears
+    language: C++
+    license: MIT
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 4
+  heepidermis:
+    name: HEEPidermis
+    description: "X-HEEP-based SoC for GSR and impedance recording with DMA and level-crossing support."
+    layman_desc: >
+      HEEPidermis is a custom research microchip designed for recording
+      biological signals from the skin for health monitoring wearables.
+      It measures galvanic skin response (GSR) and impedance using a
+      current DAC and a specialized 14-bit analog-to-digital converter.
+      Built on the open-source X-HEEP RISC-V platform, it can be
+      programmed and simulated using standard research tools.
+    tech_desc: >
+      X-HEEP-based SoC for galvanic skin response (GSR) and impedance
+      recording using an iDAC and 14-bit VCO-ADC. Supports DMA, digital
+      Level-Crossing detection, and JTAG/SPI/UART interfaces. Board
+      preparation, programming modes, and RTL simulation steps documented
+      in the README.
+    type: Experiments
+    categories:
+      - Other
+    applications:
+      - Health
+    tags:
+      - Hardware
+      - RISC-V
+      - Wearable
+      - Low-Level
+      - Internet of Things
+    code:
+      type: Lab Github
+      url: https://github.com/esl-epfl/HEEPidermis
+    language: SystemVerilog
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 1
+  heepidermis-breakout-board:
+    name: HEEPidermis Breakout Board
+    description: "Hardware breakout board for HEEPidermis with connector pinout documentation."
+    layman_desc: >
+      This repository contains hardware design documentation for a
+      breakout board that makes it easier to connect the HEEPidermis
+      chip to external components and test equipment. It provides
+      connector pinout information and a hardware diagram, serving as
+      a reference for engineers integrating the HEEPidermis SoC into
+      their own designs.
+    tech_desc: >
+      Hardware breakout board for the HEEPidermis SoC providing
+      accessible connector pinouts for integration and testing. Includes
+      a connector pinout spreadsheet and diagram link for hardware
+      engineers.
+    type: Experiments
+    categories:
+      - Other
+    tags:
+      - Hardware
+      - Wearable
+    code:
+      type: Lab Github
+      url: https://github.com/esl-epfl/HEEPidermis-breakout-board
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 1
+    applications:
+      - Health
+  cheep-boards:
+    name: CHEEP Boards
+    description: "Modular PCB suite with configurable power supplies and current measurement modules."
+    layman_desc: >
+      CHEEP Boards are a modular set of circuit boards designed for
+      flexible hardware prototyping in research settings. A main PCB
+      provides basic connectivity, power regulation, and peripherals,
+      while interchangeable "chewing-gum" modules can add configurable
+      voltage supplies or current measurement capabilities. Researchers
+      can also design their own custom modules to extend the platform.
+    tech_desc: >
+      Modular PCB suite with a main board (FTDI, power, peripherals) and
+      150-pin connector for custom breakout boards. Chewing-gum modules
+      add configurable voltage supplies or current measurement. I²C
+      multiplexers manage address conflicts. Open-source with extension
+      APIs for custom module development.
+    type: Experiments
+    categories:
+      - Other
+    tags:
+      - Hardware
+    code:
+      type: Lab Github
+      url: https://github.com/esl-epfl/CHEEP-boards
+    language: HTML
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 1
+    applications:
+      - Infra
+  aquacast:
+    name: AquaCast
+    description: "Transformer-based time-series forecasting framework for urban water dynamics."
+    layman_desc: >
+      Managing urban water systems — detecting leaks and optimizing
+      distribution — requires accurate forecasting of how water flows
+      through the network over time. AquaCast applies transformer neural
+      networks — the same technology behind AI chatbots — to predict
+      multiple aspects of urban water dynamics simultaneously. Synthetic
+      datasets are provided since real operational data is confidential.
+    tech_desc: >
+      Research framework for multi-variate, multi-horizon time-series
+      forecasting of urban water dynamics using transformer architectures.
+      Includes synthetic datasets, Docker setup, and experiment scripts.
+      Real operational data unavailable due to NDAs. References an arXiv
+      preprint.
+    type: Application
+    categories:
+      - Other
+    applications:
+      - Infra
+    tags:
+      - Time Series
+      - Deep Neural Networks
+      - Predictor
+    code:
+      type: Lab Github
+      url: https://github.com/esl-epfl/AquaCast
+    language: Python
+    license: Apache-2.0
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 2
+  coughvid:
+    name: COUGHVID
+    description: "Crowdsourced COVID-19 cough sound dataset with preprocessing and classification tools."
+    layman_desc: >
+      During the COVID-19 pandemic, researchers investigated whether the
+      sound of a cough could be used to screen for infection. COUGHVID
+      is a large crowdsourced dataset of cough recordings gathered from
+      around the world, with tools for preprocessing the audio and
+      training machine learning classifiers. It enables research into
+      non-invasive, low-cost disease screening.
+    tech_desc: >
+      Crowdsourced COVID-19 cough sound dataset with audio conversion,
+      preprocessing, segmentation, and XGBoost classification tools.
+      Enables non-invasive COVID-19 screening research. Provides Jupyter
+      notebooks, source code, citation details, and a contribution portal.
+    type: Application
+    categories:
+      - Other
+    applications:
+      - Health
+    tags:
+      - Features
+      - CrowdSource
+    code:
+      type: Lab Github
+      url: https://github.com/esl-epfl/COUGHVID
+    language: Python
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 2

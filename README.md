@@ -46,6 +46,14 @@ Start the development server on <http://localhost:3000>:
 bun run dev
 ```
 
+### Validate data
+
+To check that all `data/` YAML files conform to their JSON schemas, run:
+
+```bash
+devbox run validate-data
+```
+
 ### updates types
 
 If you do any changes to any of the schemas, make sure to run this command

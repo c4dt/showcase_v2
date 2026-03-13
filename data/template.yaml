@@ -10,6 +10,7 @@ projects:
     applications:
       - ( "Finance" | "Health" | "Gov" | "Infra" | "Info" | "Other" )
     tags:
+      - 2026 Proposal
       - (Add tags, if possible out of the existing ones)
     layman_desc: >
       (A 2-3 sentence description for somebody with general knowledge)
@@ -45,6 +46,7 @@ projects:
     maturity: (1|2|3)
     incubator:
       work: (What C4DT did for the project)
+      type: ("incubated" | "incubated_market" | "retired" | "retired_archived")
       products:
         type: ( Demo | Hands-on | Pilot | App | OSS-participation | Blog | Project )
         url: (https://...)

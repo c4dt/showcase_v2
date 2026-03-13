@@ -90,3 +90,329 @@ projects:
     maturity: 1
     date_added: 2022-07-05
     date_updated: 2022-08-11
+  lipslev:
+    name: LipsLev
+    description: "PyTorch implementation of certified robustness against bounded Levenshtein distance edits."
+    layman_desc: >
+      Text AI models can be fooled by tiny character-level changes to
+      their input — adding, removing, or swapping a single character.
+      LipsLev provides mathematical guarantees that a text classifier's
+      prediction will not change as long as the input differs by fewer
+      than a set number of character edits. This certified robustness
+      prevents adversarial attacks that manipulate AI through subtle text
+      modifications.
+    tech_desc: >
+      PyTorch implementation of certified robustness against bounded
+      Levenshtein (edit) distance perturbations from the ICLR 2025 paper.
+      Provides Lipschitz-constrained text classifiers with formal
+      robustness certificates, training scripts, verification methods,
+      and pre-trained models. Also covers the related Charmer method.
+    type: Library
+    categories:
+      - Security
+      - Learning
+    tags:
+      - Natural Language
+      - PyTorch
+      - Robustness
+    code:
+      type: Lab Github
+      url: https://github.com/LIONS-EPFL/LipsLev
+    language: Python
+    license: MIT
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 3
+    applications:
+      - Info
+  spd:
+    name: SPD
+    description: "Single-pass detection classifier for jailbreaking inputs in large language models."
+    layman_desc: >
+      Jailbreaking tricks AI language models into ignoring their safety
+      guidelines and producing harmful content. SPD is a classifier that
+      detects these jailbreaking attempts in a single forward pass through
+      the model, making detection fast enough for real-world deployment.
+      It extends the JailbreakBench framework and was trained on a dataset
+      of over 4,000 attack examples from techniques like GCG, AutoDAN,
+      and PAIR.
+    tech_desc: >
+      Single-pass jailbreak detection classifier for LLMs extending
+      JailbreakBench. Trained on 4,000+ samples from GCG, AutoDAN, and
+      PAIR attack methods. TMLR 2025 paper. Provides training and
+      evaluation scripts and a unified detection interface.
+    type: Application
+    categories:
+      - Security
+      - Learning
+    tags:
+      - Large Language Model
+      - Attack
+      - LLM Safety
+      - 2026 Proposal
+    code:
+      type: Lab Github
+      url: https://github.com/LIONS-EPFL/SPD
+    language: Python
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 4
+      linus: 4
+    applications:
+      - Info
+  lion:
+    name: LION
+    description: "Framework converting linear-attention Transformers into bidirectional RNN equivalents."
+    layman_desc: >
+      Transformers are the dominant architecture for AI models but are
+      slow when processing very long sequences. LION converts Transformers
+      that use linear attention — a faster variant — into equivalent
+      bidirectional recurrent neural networks (RNNs), which can process
+      sequences more efficiently. This enables fast parallel training
+      combined with efficient RNN-style inference.
+    tech_desc: >
+      Framework converting linear-attention Transformers to bidirectional
+      RNN equivalents for fast training and efficient inference. Provides
+      three variants (LION-Lit, LION-D, LION-S) for image classification
+      and masked language modeling, with configurable size, masking, patch
+      order, and format. Achieves competitive accuracy with reduced
+      training time.
+    type: Framework
+    categories:
+      - Learning
+    tags:
+      - Deep Neural Networks
+    code:
+      type: Lab Github
+      url: https://github.com/LIONS-EPFL/LION
+    language: Python
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 3
+    applications:
+      - Info
+  scion:
+    name: Scion Optimizer
+    description: "Norm-constrained optimizer with multiple norm implementations for neural network training."
+    layman_desc: >
+      Training neural networks involves choosing an optimizer that updates
+      model parameters, and the right choice significantly affects
+      training speed and final quality. Scion constrains parameter updates
+      using a chosen norm — a mathematical measure of size — which can
+      lead to more stable and effective training. Reference implementations
+      and example configurations for language models and image classifiers
+      are included.
+    tech_desc: >
+      Norm-constrained optimizer for neural network training with
+      reference implementations of Scion and ScionLight supporting
+      multiple norms (spectral, Frobenius, etc.). Includes hyperparameter
+      guidance, nanoGPT/MLP/CNN example configurations, and notes on
+      a recent momentum initialization change.
+    type: Library
+    categories:
+      - Learning
+    tags:
+      - Deep Neural Networks
+      - Optimization
+    code:
+      type: Lab Github
+      url: https://github.com/LIONS-EPFL/scion
+    language: Python
+    license: MIT
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 3
+    applications:
+      - Info
+  leaf:
+    name: LEAF
+    description: "Levenshtein Efficient Adversarial Finetuning for creating a robust CLIP text encoder."
+    layman_desc: >
+      CLIP is a popular AI model that understands both images and text
+      together, but it can be fooled by subtle character-level changes
+      to text inputs. LEAF fine-tunes CLIP's text encoder to be robust
+      against these attacks using adversarial training with Levenshtein-
+      distance perturbations. Combined with a robust image encoder (FARE),
+      LEAF provides a fully robust CLIP model in both modalities.
+    tech_desc: >
+      Levenshtein Efficient Adversarial Finetuning (LEAF) for a robust
+      CLIP text encoder resilient to character-level perturbations.
+      Combined with FARE (robust image encoder) for dual-domain
+      robustness. Pre-trained models on HuggingFace; provides training
+      and evaluation procedures.
+    type: Library
+    categories:
+      - Security
+      - Learning
+    tags:
+      - Natural Language
+      - Images
+      - Robustness
+    code:
+      type: Lab Github
+      url: https://github.com/LIONS-EPFL/LEAF
+    language: Python
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 3
+    applications:
+      - Info
+  chameleon:
+    name: CHAMELEON
+    description: "Data-mixing framework using Kernel Ridge Leverage Scores for LLM pretraining and finetuning."
+    layman_desc: >
+      When training language models on data from many different sources —
+      web text, books, code — choosing how much data to use from each
+      source greatly affects performance. CHAMELEON uses mathematical
+      techniques called Kernel Ridge Leverage Scores to automatically
+      determine the best data mixture. It works for both training from
+      scratch and fine-tuning existing models, and integrates easily
+      with existing training pipelines.
+    tech_desc: >
+      Data-mixing framework using Kernel Ridge Leverage Scores (KRLS)
+      for domain weighting in LLM pretraining and finetuning. Computes
+      domain embeddings and weights to optimize universal generalization
+      and transferability. Integrates with existing training pipelines
+      via simple scripting.
+    type: Framework
+    categories:
+      - Learning
+    tags:
+      - Large Language Model
+    code:
+      type: Lab Github
+      url: https://github.com/LIONS-EPFL/Chameleon
+    language: Python
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 3
+    applications:
+      - Info
+  coins:
+    name: COINs
+    description: "Community-informed graph embeddings for fast knowledge-graph link prediction."
+    layman_desc: >
+      Knowledge graphs are large databases of facts about the world, and
+      "link prediction" finds missing connections in these graphs. COINs
+      speeds this up dramatically by first predicting which community
+      (cluster of related entities) a node belongs to, then only searching
+      within that community for the answer. This achieves 97% of baseline
+      accuracy while using only about 7.5% of the usual computation.
+    tech_desc: >
+      Community-informed graph embeddings for knowledge-graph link
+      prediction and conjunctive query answering. Two-stage prediction:
+      community membership prediction followed by within-community node
+      lookup. Achieves ~97% baseline accuracy at ~7.5% of original
+      compute. ICT Innovations 2025 paper.
+    type: Framework
+    categories:
+      - Learning
+    tags:
+      - Deep Neural Networks
+    code:
+      type: Lab Github
+      url: https://github.com/LIONS-EPFL/coins-ict-innovations-2025
+    language: Python
+    license: CC0-1.0
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 3
+    applications:
+      - Info
+  nbl:
+    name: NBL
+    description: "Neural Block Linearization replacing self-attention with LMMSE approximations for faster LLM inference."
+    layman_desc: >
+      Self-attention in language models is computationally expensive,
+      especially for long texts. NBL (Neural Block Linearization) replaces
+      selected self-attention layers with faster linear approximations
+      (LMMSE), automatically identifying which layers can be swapped
+      without significant accuracy loss using a mathematical analysis
+      (CCA). The result is ~32% faster inference on Llama-8B with less
+      than 1% accuracy degradation.
+    tech_desc: >
+      LLM inference acceleration via selective replacement of
+      self-attention with linear LMMSE approximations. CCA-based error
+      bounding identifies low-error layers without fine-tuning. Achieves
+      ~32% speed-up on Llama-8B with <1% accuracy loss. Supports
+      quantization, LoRA fine-tuning, and speculative decoding.
+    type: Library
+    categories:
+      - Learning
+    tags:
+      - Large Language Model
+      - Deep Neural Networks
+    code:
+      type: Lab Github
+      url: https://github.com/LIONS-EPFL/NBL
+    language: Python
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 3
+    applications:
+      - Info
+  clippedscion:
+    name: ClippedScion
+    description: "Reference implementation of ClippedScion optimizers supporting multiple norms."
+    layman_desc: >
+      ClippedScion is a variant of the Scion optimizer that adds gradient
+      clipping to improve training stability for neural networks. It
+      provides reference implementations for training various model types,
+      including language models (nanoGPT), convolutional networks (CNNs),
+      and vision transformers (DeiT), with example configurations and
+      hyperparameter guidance.
+    tech_desc: >
+      Reference implementation of ClippedScion and
+      UnconstrainedClippedScion optimizers extending Scion with gradient
+      clipping. Supports multiple norms and hyperparameter configurations
+      for nanoGPT, CNN, and DeiT training with example setups and
+      citation information.
+    type: Library
+    categories:
+      - Learning
+    tags:
+      - Deep Neural Networks
+      - Optimization
+    code:
+      type: Lab Github
+      url: https://github.com/LIONS-EPFL/ClippedScion
+    language: Python
+    license: MIT
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 3
+    applications:
+      - Info
+  pepo:
+    name: PEPO
+    description: "Preference alignment framework for language models using DPO and RLHF techniques."
+    layman_desc: >
+      Language models are made safer and more helpful by training them
+      to follow human preferences — a process called preference alignment.
+      PEPO implements several techniques for this, including DPO (Direct
+      Preference Optimization) and RLHF (Reinforcement Learning from
+      Human Feedback). It provides a full training and evaluation
+      framework with Hydra configuration, SLURM cluster support, and
+      pre-commit code quality hooks.
+    tech_desc: >
+      Preference alignment framework for LLMs implementing DPO, RLHF,
+      and related techniques. Uses Hydra for configuration management;
+      supports SLURM cluster scheduling, CUDA systems, training and
+      evaluation pipelines, and environment variable management.
+      Pre-commit hooks included for code quality.
+    type: Framework
+    categories:
+      - Learning
+    tags:
+      - Large Language Model
+      - LLM Safety
+      - Optimization
+    code:
+      type: Lab Github
+      url: https://github.com/LIONS-EPFL/PEPO
+    language: Python
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 4
+    applications:
+      - Info
