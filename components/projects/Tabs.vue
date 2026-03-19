@@ -2,6 +2,14 @@
   <div class="flex flex-col lg:flex-row">
     <ul class="flex list-none flex-row flex-wrap text-left lg:flex-[2] lg:flex-col lg:pr-4">
       <li
+        v-for="tab in additionalTabs"
+        :key="tab"
+        :class="[tabBaseClass, activeTab === tab.id ? tabActiveClass : tabInactiveClass]"
+        @click="changeTab(tab.id)"
+      >
+        {{ tab.label }}
+      </li>
+      <li
         v-if="project.incubator"
         :class="[tabBaseClass, activeTab === TAB_IDS.INCUBATOR ? tabActiveClass : tabInactiveClass]"
         @click="changeTab(TAB_IDS.INCUBATOR)"
@@ -28,14 +36,6 @@
         @click="changeTab(TAB_IDS.ARTICLES)"
       >
         Miscellaneous publications
-      </li>
-      <li
-        v-for="tab in additionalTabs"
-        :key="tab"
-        :class="[tabBaseClass, activeTab === tab.id ? tabActiveClass : tabInactiveClass]"
-        @click="changeTab(tab.id)"
-      >
-        {{ tab.label }}
       </li>
     </ul>
     <div class="lg:flex-[10]">
@@ -108,11 +108,11 @@ const tabActiveClass = "border-b-2 lg:border-b-0 lg:border-r-2 border-red-500 bg
 const tabInactiveClass = "border-gray-200 bg-white";
 
 const tabIds = [
+  ...additionalTabs.map((tab) => tab.id),
   ...(project.incubator ? [TAB_IDS.INCUBATOR] : []),
   ...(project.code ? [TAB_IDS.TECHNICAL] : []),
   ...(papers.length ? [TAB_IDS.PAPERS] : []),
-  ...(articles.length ? [TAB_IDS.ARTICLES] : []),
-  ...additionalTabs.map((tab) => tab.id)
+  ...(articles.length ? [TAB_IDS.ARTICLES] : [])
 ];
 
 function setDefaultTab() {
