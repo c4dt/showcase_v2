@@ -1,40 +1,55 @@
 <script setup lang="ts">
 import type Combobox from "~/components/homepage/Combobox.vue";
 import type MutliSelectCombobox from "~/components/homepage/mutliSelectCombobox.vue";
+import { sortProjects } from "~/utils/sortProjects";
 
-const selectedStatus = ref("");
-const selectedLab = ref("");
-const selectedCategory = ref("");
-const selectedApplication = ref("");
-const selectedTag = ref("");
-const selectedTags = ref<string[]>([]);
-provide("selectedTags", selectedTags);
+const config = useRuntimeConfig();
+
+const {
+  search,
+  lab,
+  category,
+  application,
+  status,
+  tags,
+  searchQuery,
+  resetFilters: resetFilterHash
+} = useFilterHash();
+provide("selectedTags", tags);
 
 function addTag(tag: string) {
-  if (!selectedTags.value.includes(tag)) {
-    selectedTags.value.push(tag);
+  if (!tags.value.includes(tag)) {
+    tags.value.push(tag);
   } else {
-    selectedTags.value.splice(selectedTags.value.indexOf(tag), 1);
+    tags.value.splice(tags.value.indexOf(tag), 1);
   }
 }
 provide("addTag", addTag);
-
-const searchQuery = useSearchQuery();
 
 const labsFilter = ref<InstanceType<typeof Combobox>>();
 const categoriesFilter = ref<InstanceType<typeof Combobox>>();
 const applicationsFilter = ref<InstanceType<typeof Combobox>>();
 const TagFilter = ref<InstanceType<typeof MutliSelectCombobox>>();
 const statusFilter = ref<InstanceType<typeof Combobox>>();
+const selectedEvaluators = ref<string[]>([]);
+
 function resetFilters() {
   categoriesFilter.value?.clearSelection();
   labsFilter.value?.clearSelection();
   applicationsFilter.value?.clearSelection();
   TagFilter.value?.clearAll();
   statusFilter.value?.clearSelection();
+  resetFilterHash();
+  selectedEvaluators.value = [];
+}
 
-  searchQuery.value = "";
-  selectedTags.value = [];
+function toggleEvaluator(key: string) {
+  const idx = selectedEvaluators.value.indexOf(key);
+  if (idx === -1) {
+    selectedEvaluators.value = [...selectedEvaluators.value, key];
+  } else {
+    selectedEvaluators.value = selectedEvaluators.value.filter((k) => k !== key);
+  }
 }
 
 const projects = useState<ExtendedProject[]>("projects");
@@ -49,20 +64,53 @@ let applications: string[] = Array.from(new Set(projects.value.flatMap((project)
 
 const projectTags: string[] = Array.from(new Set(projects.value.flatMap((project) => project.tags)));
 
+const evaluatorKeys = config.public.evaluateMode
+  ? Array.from(
+      new Set(projects.value.flatMap((p) => Object.keys((p.showcase_interest as Record<string, number>) ?? {})))
+    ).sort()
+  : [];
+
+const showCarousel = computed(
+  () =>
+    !search.value &&
+    !lab.value &&
+    !category.value &&
+    !application.value &&
+    !status.value &&
+    !tags.value.length &&
+    (typeof window === "undefined" || !window.location.hash)
+);
+
+const projectsAreaRef = ref<HTMLElement | null>(null);
+watch(showCarousel, async (newVal, oldVal) => {
+  if (newVal && !oldVal && typeof window !== "undefined") {
+    const anchorTop = projectsAreaRef.value?.getBoundingClientRect().top ?? null;
+    await nextTick();
+    if (anchorTop !== null && projectsAreaRef.value) {
+      window.scrollBy(0, projectsAreaRef.value.getBoundingClientRect().top - anchorTop);
+    }
+  }
+});
+
 const filteredProjects = computed(() => {
   return projects.value.filter((project) => {
     return (
-      (selectedStatus.value === "" ||
-        selectedStatus.value === PPRINTED_C4DT_STATUS[project.c4dt_status] ||
-        selectedStatus.value === PPRINTED_LAB_STATUS[project.lab_status]) &&
-      (selectedTag.value === "" || project.tags.includes(selectedTag.value)) &&
-      (selectedLab.value === "" || project.lab.name === selectedLab.value.split(" - ")[1]) &&
-      (selectedCategory.value === "" || project.categories.includes(selectedCategory.value)) &&
-      (selectedApplication.value === "" || project.applications.includes(selectedApplication.value)) &&
-      (searchQuery.value === "" || JSON.stringify(project).toLowerCase().includes(searchQuery.value.toLowerCase())) &&
-      (selectedTags.value.length === 0 || selectedTags.value.some((tag) => project.tags.includes(tag)))
+      (status.value === "" ||
+        status.value === PPRINTED_C4DT_STATUS[project.c4dt_status] ||
+        status.value === PPRINTED_LAB_STATUS[project.lab_status] ||
+        (status.value === PROPOSAL_2026_STATUS && project.tags.includes(PROPOSAL_2026_STATUS))) &&
+      (lab.value === "" || project.lab.name === lab.value.split(" - ")[1]) &&
+      (category.value === "" || project.categories.includes(category.value)) &&
+      (application.value === "" || project.applications.includes(application.value)) &&
+      (search.value === "" || JSON.stringify(project).toLowerCase().includes(search.value.toLowerCase())) &&
+      (tags.value.length === 0 || tags.value.some((tag) => project.tags.includes(tag)))
     );
   });
+});
+
+const sortedProjects = computed(() => {
+  const evaluators = config.public.evaluateMode ? selectedEvaluators.value : [];
+  return sortProjects(filteredProjects.value, evaluators);
 });
 
 watch(filteredProjects, () => {
@@ -96,12 +144,15 @@ watch(filteredProjects, () => {
           </div>
         </div>
       </section>
-      <!-- Highlighted projects section -->
-      <section v-if="!searchQuery" class="py-6">
-        <HomepageSelectedProjects />
-      </section>
+      <!-- Highlighted projects section: ClientOnly prevents SSR from rendering it
+           (server has no access to the URL fragment, so it would always show) -->
+      <ClientOnly>
+        <section v-if="showCarousel" data-testid="carousel-section" class="py-6">
+          <HomepageSelectedProjects />
+        </section>
+      </ClientOnly>
       <!-- Project search section -->
-      <section class="py-4">
+      <section ref="projectsAreaRef" class="py-4">
         <h2 class="epfl-h2 text-center">View all Projects</h2>
         <div class="flex flex-col py-10 lg:flex-row">
           <!-- Sidebar with filter -->
@@ -109,28 +160,13 @@ watch(filteredProjects, () => {
             <div class="top-0 lg:sticky">
               <div class="epfl-filterbox">
                 <div class="text-xl">Filter projects</div>
-                <HomepageMutliSelectCombobox
-                  ref="TagFilter"
-                  v-model="selectedTags"
-                  title="Tag"
-                  :item-list="projectTags"
-                />
-                <homepageCombobox ref="labsFilter" v-model="selectedLab" title="Lab" :item-list="labs" />
-                <homepageCombobox
-                  ref="statusFilter"
-                  v-model="selectedStatus"
-                  title="Support"
-                  :item-list="PPRINTED_STATUS"
-                />
-                <homepageCombobox
-                  ref="categoriesFilter"
-                  v-model="selectedCategory"
-                  title="Category"
-                  :item-list="categories"
-                />
+                <HomepageMutliSelectCombobox ref="TagFilter" v-model="tags" title="Tag" :item-list="projectTags" />
+                <homepageCombobox ref="labsFilter" v-model="lab" title="Lab" :item-list="labs" />
+                <homepageCombobox ref="statusFilter" v-model="status" title="Support" :item-list="PPRINTED_STATUS" />
+                <homepageCombobox ref="categoriesFilter" v-model="category" title="Category" :item-list="categories" />
                 <homepageCombobox
                   ref="applicationsFilter"
-                  v-model="selectedApplication"
+                  v-model="application"
                   title="Application"
                   :item-list="applications"
                 />
@@ -143,9 +179,39 @@ watch(filteredProjects, () => {
           <div class="mt-8 w-full lg:mt-0 lg:w-70/100">
             <!-- Search -->
             <SearchBar v-model:search-query="searchQuery" class="my-4" />
-            <HomepageNoResultsMessage v-if="filteredProjects.length === 0" />
-            <div v-for="project in filteredProjects" :key="project.name" class="py-2">
+            <div v-if="config.public.evaluateMode" class="my-4">
+              <div class="flex flex-row gap-4">
+                <button
+                  v-for="key in evaluatorKeys"
+                  :key="key"
+                  :data-testid="`evaluator-btn-${key}`"
+                  :class="['epfl-button-plain', 'px-4', selectedEvaluators.includes(key) ? 'bg-[#d5d5d5]' : '']"
+                  @click="toggleEvaluator(key)"
+                >
+                  {{ key }}
+                </button>
+              </div>
+            </div>
+            <HomepageNoResultsMessage v-if="sortedProjects.length === 0" />
+            <div
+              v-for="project in sortedProjects"
+              :key="project.name"
+              :data-testid="`project-${project.id}`"
+              class="py-2"
+            >
               <homepageProjectCard :project="project" />
+              <div
+                v-if="config.public.evaluateMode"
+                :data-testid="`evaluations-${project.id}`"
+                class="flex gap-4 px-2 py-1 text-sm text-gray-500"
+              >
+                <span
+                  v-for="(score, evaluator) in project.showcase_interest as Record<string, number>"
+                  :key="evaluator"
+                >
+                  {{ evaluator }}: {{ score }}
+                </span>
+              </div>
             </div>
           </div>
         </div>

@@ -841,3 +841,360 @@ projects:
         url: https://hexhive.epfl.ch/publications/files/22ACSAC2.pdf
     date_added: 2023-04-24
     date_updated: 2024-04-12
+  mendelfuzz:
+    name: MendelFuzz
+    description: "Improved deterministic stage for AFL++ fuzzer, now default in AFL++ 4.10c."
+    layman_desc: >
+      Fuzzing is a security testing technique that automatically feeds
+      inputs to a program to find crashes and bugs. MendelFuzz improves
+      a key part of the AFL++ fuzzer called the "deterministic stage",
+      which systematically mutates inputs rather than randomly. This
+      improvement has proven so effective that it became the default
+      behavior in AFL++ version 4.10c.
+    tech_desc: >
+      Enhanced deterministic mutation stage for AFL++ improving coverage
+      and bug-finding over the standard havoc and deterministic
+      strategies. Merged as the default stage in AFL++ 4.10c. Artifact
+      includes reproducibility scripts for MAGMA and FuzzBench evaluations
+      with documented data quirks.
+    type: Application
+    categories:
+      - Security
+    tags:
+      - Fuzzing
+    code:
+      type: Lab Github
+      url: https://github.com/HexHive/MendelFuzz-Artifact
+    language: HTML
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 1
+      linus: 4
+    applications:
+      - Infra
+  truman:
+    name: Truman
+    description: "Constructs device behavior models from OS drivers for virtual-device fuzzing."
+    layman_desc: >
+      Truman is a security research tool that learns how hardware devices
+      behave by analyzing the software drivers that control them, then
+      uses that knowledge to fuzz virtual (emulated) versions of those
+      devices for vulnerabilities. It captures hidden dependencies between
+      driver messages to generate more realistic and effective test inputs.
+      The technique was published at NDSS 2025.
+    tech_desc: >
+      Framework for constructing device behavior models from OS device
+      drivers, capturing inter- and intra-message dependencies. Generates
+      dependency-aware seeds for virtual-device fuzzing via dynamic binary
+      instrumentation (DBI). Docker-based build, fuzzing, and coverage
+      collection pipelines provided.
+    type: Framework
+    categories:
+      - Security
+    tags:
+      - Fuzzing
+      - 2026 Proposal
+    code:
+      type: Lab Github
+      url: https://github.com/HexHive/truman
+    language: C++
+    license: MIT
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 1
+      linus: 4
+    applications:
+      - Infra
+  liberator:
+    name: libErator
+    description: "Automatically generates fuzzing drivers for libraries by extracting constraints."
+    layman_desc: >
+      Testing libraries for security vulnerabilities requires writing
+      specialized "driver" programs that feed inputs to the library —
+      a tedious and error-prone task. libErator automates this by
+      analyzing a library's code to understand its constraints, then
+      automatically synthesizing conforming test drivers. This lets
+      security researchers fuzz libraries much faster and with less
+      manual effort.
+    tech_desc: >
+      Framework for automated fuzzing driver synthesis for C/C++
+      libraries. Uses static analysis to extract API constraints and
+      pre/post-conditions, then generates conforming drivers for
+      libfuzzer. Includes a customized libfuzzer build and tooling to
+      add new fuzzing targets and run experiments.
+    type: Framework
+    categories:
+      - Security
+    tags:
+      - Fuzzing
+      - Static Analysis
+    code:
+      type: Lab Github
+      url: https://github.com/HexHive/liberator
+    language: C++
+    license: Apache-2.0
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 3
+    applications:
+      - Infra
+  reflecta:
+    name: Reflecta
+    description: "Reflection-based, language-agnostic fuzzer for scripting languages."
+    layman_desc: >
+      Reflecta is a tool for finding bugs in scripting language
+      interpreters (like Python, Ruby, or PHP) by automatically generating
+      and running random programs in those languages. Unlike traditional
+      fuzzers that produce random byte sequences, Reflecta uses the
+      language's own reflection capabilities to generate syntactically
+      and semantically valid programs. It has found numerous real bugs
+      across multiple interpreters.
+    tech_desc: >
+      Language-agnostic fuzzer for scripting language interpreters
+      leveraging reflection APIs to generate valid programs. Supports
+      Ruby, MRuby, CPython, MicroPython, PHP, and V8. Dockerized with
+      scripts for campaign launch, coverage collection, and result
+      visualization. Compatible with reflecta, nautilus, and polyglot
+      fuzzers.
+    type: Application
+    categories:
+      - Security
+    tags:
+      - Fuzzing
+      - 2026 Proposal
+    code:
+      type: Lab Github
+      url: https://github.com/HexHive/Reflecta
+    language: Swift
+    license: MIT
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 2
+      linus: 4
+    applications:
+      - Infra
+  sourcerer:
+    name: Sourcerer
+    description: "LLVM-based C++ type checking tool with performance overhead and fuzzing evaluation."
+    layman_desc: >
+      Type confusion bugs — where a program treats data as the wrong type
+      — are a common source of security vulnerabilities in C++ software.
+      Sourcerer is a compiler-based tool that adds runtime checks to
+      detect dangerous type mismatches. It has been evaluated on
+      performance overhead using industry-standard benchmarks and includes
+      fuzzing experiments to measure its bug-finding effectiveness.
+    tech_desc: >
+      LLVM-based instrumentation tool enforcing C++ type safety at
+      runtime to detect type confusion and memory safety violations.
+      Artifact includes scripts for compatibility testing, SPEC CPU
+      performance overhead measurement, ablation studies, and fuzzing
+      evaluation. Docker-based setup with hardware/software requirements.
+    type: Application
+    categories:
+      - Security
+    tags:
+      - Static Analysis
+      - Robustness
+    code:
+      type: Lab Github
+      url: https://github.com/HexHive/Sourcerer
+    language: C++
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 3
+    applications:
+      - Infra
+  nass:
+    name: NASS
+    description: "Dynamic binary instrumentation tool for fuzzing Android native system services."
+    layman_desc: >
+      Android phones run many background services written in C/C++ that
+      are difficult to test for security vulnerabilities. NASS uses
+      dynamic binary instrumentation — a technique for analyzing programs
+      as they run — to discover and fuzz these native services on real
+      devices. It can automatically extract interfaces, generate test
+      inputs, and triage crashes.
+    tech_desc: >
+      Dynamic binary instrumentation (DBI) framework for discovering and
+      fuzzing Android native system services. Requires a rooted device
+      with ADB and NDK r26. Provides scripts for interface extraction,
+      seed generation, fuzzing campaigns, crash triage, and evaluation
+      against COTS and FANS baselines. Docker setup available.
+    type: Application
+    categories:
+      - Security
+    tags:
+      - Fuzzing
+      - Binary
+    code:
+      type: Lab Github
+      url: https://github.com/HexHive/NASS
+    language: Python
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 1
+      linus: 3
+    applications:
+      - Infra
+  droidot:
+    name: Droidot
+    description: "Framework to fuzz Android app native libraries on arm64."
+    layman_desc: >
+      Mobile apps often include compiled C/C++ code — native libraries
+      — that can contain hard-to-find security vulnerabilities. Droidot
+      extracts these native libraries from Android apps and automatically
+      tests them for bugs using fuzzing on arm64. It uses an emulated
+      environment and automated harness generation to work without
+      physical device access.
+    tech_desc: >
+      Fuzzing framework for Android app native libraries (arm64) using
+      static analysis to extract function signatures and generate fuzzing
+      harnesses. Workflow: Docker setup → APK loading → emulator setup
+      → static analysis → harness generation → fuzzing → crash triage.
+      Includes emulator, fuzzing, harness, and static analysis tooling.
+    type: Framework
+    categories:
+      - Security
+    tags:
+      - Fuzzing
+      - Binary
+    code:
+      type: Lab Github
+      url: https://github.com/HexHive/droidot
+    language: Java
+    license: MIT
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 1
+    applications:
+      - Infra
+  sysyphuzz:
+    name: SYSYPHUZZ
+    description: "Syzkaller-based kernel fuzzer targeting low-frequency code regions with coverage-guided scheduling."
+    layman_desc: >
+      Kernel fuzzers automatically find bugs in operating system code,
+      but most only test code paths that are triggered frequently and
+      easily. SYSYPHUZZ targets "low-frequency" code paths — rare but
+      often bug-prone kernel regions — by intelligently scheduling which
+      test cases receive more CPU time. It also uses a warm-up mode and
+      basic-block hit counting to maximize coverage of hard-to-reach
+      paths.
+    tech_desc: >
+      Kernel fuzzer extending Syzkaller with selective task scheduling
+      to prioritize low-frequency basic blocks and context-preserving
+      mutations. Introduces warm-up mode with basic-block hit-count
+      tracking via kcov instrumentation. Achieves better coverage of
+      rare but bug-prone kernel code paths.
+    type: Application
+    categories:
+      - Security
+    tags:
+      - Fuzzing
+    code:
+      type: Lab Github
+      url: https://github.com/HexHive/Sysyphuzz
+    language: Python
+    license: MIT
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 1
+    applications:
+      - Infra
+  beanpod-fiasco:
+    name: Beanpod TEE Pwn
+    description: "Proof-of-concept exploit for the keyinstall Trusted Application on Xiaomi Redmi Note 11s 5G."
+    layman_desc: >
+      This is a proof-of-concept security exploit demonstrating a
+      vulnerability in the trusted execution environment (TEE) of Xiaomi
+      Redmi Note 11s 5G phones. A TEE is a secure processor area meant
+      to protect sensitive operations like key management. The exploit
+      maps and reads secure monitor memory, showing that a root-level
+      attacker can access protected TEE data.
+    tech_desc: >
+      PoC exploit targeting the keyinstall Trusted Application in the
+      Beanpod TEE on Xiaomi Redmi Note 11s 5G. Demonstrates mapping of
+      secure monitor memory via a vulnerability in the TA's key
+      installation flow. Requires rooted device; provides kernel module
+      and verification steps.
+    type: Experiments
+    categories:
+      - Security
+    tags:
+      - Exploit
+      - Attack
+      - Trusted Execution Environment
+    code:
+      type: Lab Github
+      url: https://github.com/HexHive/beanpod_fiasco
+    language: C
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 1
+    applications:
+      - Info
+  privacyshield:
+    name: PrivacyShield
+    description: "BLE beacon relay system to prevent unwanted AirTag tracking using ESP32 relays."
+    layman_desc: >
+      AirTags and similar Bluetooth tracking devices can be misused to
+      secretly follow people without their knowledge. PrivacyShield uses
+      small wireless ESP32 microcontrollers to relay AirTag signals in
+      a way that confuses the tracking system and prevents accurate
+      location tracking. It includes a Flask server, a modified
+      smartphone detection app, and open-source ESP32 firmware.
+    tech_desc: >
+      System countering unsolicited BLE tracker-based surveillance by
+      relay-confusing AirTag and similar devices. Architecture: Flask
+      server, modified AirGuard Android app, ESP32 BLE relay firmware,
+      and optional Sniffle-based sniffer tools. Fully open-source under
+      GPLv3/MIT.
+    type: Application
+    categories:
+      - Privacy
+      - Security
+    tags:
+      - Bluetooth
+      - Internet of Things
+      - 2026 Proposal
+    code:
+      type: Lab Github
+      url: https://github.com/HexHive/privacyshield
+    language: C
+    license: MIT
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 5
+    applications:
+      - Other
+  taemu:
+    name: GP TA Emulator
+    description: "GlobalPlatform Trusted Application emulator with GDB and fuzzing support."
+    layman_desc: >
+      Trusted Applications (TAs) are small secure programs running inside
+      a TEE on mobile devices to protect sensitive operations like
+      payments or key storage. taemu lets developers run and debug these
+      applications on a standard computer without requiring real secure
+      hardware, and also supports fuzzing them to find security
+      vulnerabilities before deployment.
+    tech_desc: >
+      Emulator for GlobalPlatform-compliant Trusted Applications (TAs)
+      enabling development, debugging (GDB support), and fuzzing without
+      physical TEE hardware. Provides Docker setup, PoC build
+      instructions, Android NDK cross-compilation, and fuzzing harness
+      with crash handling and replay.
+    type: Application
+    categories:
+      - Security
+    tags:
+      - Fuzzing
+      - Trusted Execution Environment
+    code:
+      type: Lab Github
+      url: https://github.com/HexHive/taemu
+    language: Python
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 2
+      linus: 4
+    applications:
+      - Infra

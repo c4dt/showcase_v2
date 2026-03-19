@@ -243,6 +243,7 @@ projects:
     tags:
       - Images
       - Anonymity
+      - Medical
     type: Application
     code:
       type: Project GitLab

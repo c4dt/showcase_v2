@@ -27,7 +27,7 @@ projects:
       the traces in the console.
     code:
       type: Lab Github
-      url: https://github.com/epfl-systemf/JumboTrace
+      url: https://github.com/ep-systemf/JumboTrace
       date_last_commit: 2024-01-05
     language: Java
     license: MIT
@@ -71,3 +71,124 @@ projects:
       - type: Paper
         title: Linear Matching of JavaScript Regular Expressions
         url: https://arxiv.org/abs/2311.17620
+  librrd:
+    name: LibRRD
+    description: "Build and CLI deployment tool with a web GUI component."
+    layman_desc: >
+      LibRRD is a build and deployment tool that simplifies compiling and
+      releasing software projects. It comes with a command-line interface
+      for controlling builds and a browser-based graphical interface for
+      visual management. The tool uses Node.js and npm, making it
+      accessible to developers familiar with the JavaScript ecosystem.
+    tech_desc: >
+      Build orchestration tool using SBT for compilation, with a Node.js
+      CLI (v20+) and a statically served browser-based GUI. Deploy with
+      `sbt deploy`; run CLI via `node cli/cli.js`; serve the GUI from the
+      gui/ directory.
+    type: Toolset
+    categories:
+      - Other
+    tags:
+      - Development
+    code:
+      type: Lab Github
+      url: https://github.com/epfl-systemf/librrd
+    language: Scala
+    license: MIT
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 1
+    applications:
+      - Infra
+  dvar-track:
+    name: dvar-track
+    description: "Emacs Lisp tool for tracking dynamic variable dependencies with eldoc support."
+    layman_desc: >
+      dvar-track is an Emacs plugin that helps developers understand how
+      dynamic variables — configuration settings that change at runtime
+      — relate to each other in a codebase. It can analyze code to map
+      variable dependencies, generate reports, and show live documentation
+      hints as you type. This is especially useful when working with
+      complex Emacs Lisp or C code inside the Emacs source tree.
+    tech_desc: >
+      Emacs Lisp tool for static analysis of dynamic variable (defvar)
+      dependencies in Elisp and C sources. Provides dependency graphs,
+      reporting, eldoc integration for on-the-fly documentation, and
+      docstring annotations. Includes C analysis patches targeting Emacs
+      internals.
+    type: Toolset
+    categories:
+      - Other
+    tags:
+      - Code Analysis
+    code:
+      type: Lab Github
+      url: https://github.com/epfl-systemf/dvar-track
+    language: C
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 1
+    applications:
+      - Infra
+  logical-pinning:
+    name: Logical Pinning
+    description: "Coq formalization of logical pinning for container-internal pointers."
+    layman_desc: >
+      This project provides a formal, computer-verified proof that a
+      technique called "logical pinning" correctly handles pointers that
+      point inside a container object rather than to its start — a subtle
+      and tricky problem in programming language theory. The proofs are
+      written in Coq, a tool that lets researchers write and machine-check
+      mathematical arguments about program correctness. Case studies cover
+      linked lists and binary trees.
+    tech_desc: >
+      Coq formalization of logical pinning for container-internal
+      (interior) pointers. Covers core libraries and case studies for
+      linked lists and binary trees. Provides automated (make) and manual
+      build paths with explicit dependencies. Accompanies a published
+      research paper.
+    type: Experiments
+    categories:
+      - Verification
+    tags:
+      - Formal Methods
+    code:
+      type: Lab Github
+      url: https://github.com/epfl-systemf/logical-pinning
+    language: Coq
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 1
+    applications:
+      - Info
+  lorikeet:
+    name: Lorikeet
+    description: "Scalafix-based code quality feedback tool with custom rule definitions via query patterns."
+    layman_desc: >
+      Lorikeet is a tool for automatically reviewing Scala code quality,
+      originally designed to give automated feedback on student
+      programming assignments. Teachers or developers can define custom
+      coding rules using a pattern-and-rewrite language, and the tool
+      checks submitted code against these rules. It integrates with the
+      Scalafix ecosystem and can generate detailed, formatted feedback
+      reports.
+    tech_desc: >
+      Scalafix-based linting and automated grading framework with custom
+      rule definitions via semantic query patterns and rewrite templates.
+      Supports batch student submission checking, formatting feedback, and
+      developer assistance. Scripts included for testing, publishing, and
+      evaluation.
+    type: Toolset
+    categories:
+      - Other
+    tags:
+      - Code Analysis
+    code:
+      type: Lab Github
+      url: https://github.com/epfl-systemf/lorikeet
+    language: Scala
+    date_added: 2026-03-03
+    showcase_interest:
+      carine: 2
+    applications:
+      - Infra

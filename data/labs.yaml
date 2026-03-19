@@ -17,6 +17,20 @@
 #   - Drake
 
 labs:
+  AIMM:
+    name: Artificial Intelligence in Molecular Medicine
+    prof:
+      name:
+        - Charlotte
+        - Bunne
+      email: charlotte.bunne@epfl.ch
+      picture: charlotte_bunne.png
+    description: >
+      Our research aims to advance personalized medicine by utilizing machine learning and large-scale biomedical data.
+    url: https://aimm.epfl.ch/
+    information:
+      - title: Lab Github
+        url: https://github.com/bunnelab
   DCL:
     name: Distributed Computing Lab
     prof:
@@ -619,9 +633,9 @@ labs:
       email: alessandro.chiesa@epfl.ch
       picture: alessandro_chiesa.png
     description: >
-      We work on the theoretical foundations and practical realizations of cryptographic proofs. 
-      This enables checking the correctness of a computation in zero knowledge, 
-      and much faster than re-running the computation. 
+      We work on the theoretical foundations and practical realizations of cryptographic proofs.
+      This enables checking the correctness of a computation in zero knowledge,
+      and much faster than re-running the computation.
       These cryptographic proofs have powerful applications in the real world.
     url: https://theory.epfl.ch
 
@@ -634,8 +648,8 @@ labs:
       email: clement.pit-claudel@epfl.ch
       picture: clement_pit-caudel.png
     description: >
-      We're a programming languages, formal methods, and systems engineering lab at EPFL, 
-      led by Clément Pit-Claudel. We use (and invent!) mathematical formalisms and interactive 
+      We're a programming languages, formal methods, and systems engineering lab at EPFL,
+      led by Clément Pit-Claudel. We use (and invent!) mathematical formalisms and interactive
       tools to explore new ways to develop computer systems.
     url: https://systemf.epfl.ch/
     information:

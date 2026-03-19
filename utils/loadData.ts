@@ -17,6 +17,8 @@ const PROJECTS_FILE = "projects.yaml";
 const LABS_FILE = "labs.yaml";
 const CONFIG_FILE = "config.yaml";
 const PRODUCTS_DIR = "projectTabs";
+// An active project had activity within the last 9 months.
+const ACTIVE_THRESHOLD_MS = 270 * 24 * 60 * 60 * 1000;
 
 const ajv = new Ajv({ allowUnionTypes: true });
 ajv.addSchema(labSchema, "utils/schemas/lab.json");
@@ -95,7 +97,7 @@ export async function loadProjectTabs(projectId: string): Promise<ProjectTab[]> 
     if (componentPath) {
       templates.push({
         id: templateName,
-        label: getLabel(templateName),
+        label: templateName.charAt(0).toUpperCase() + templateName.slice(1),
         componentPath: componentPath
       });
     }
@@ -141,12 +143,7 @@ async function loadLabProjects(
       sortKey += 2;
     }
     if (project.code?.date_last_commit) {
-      // ToDo: refactor and merge with isActive function in utils/misc.ts
-      const last_updated = new Date(project.date_updated || project.date_added); // replace with date.last_updated
-      const six_months_duration = 9 * 30 * 24 * 60 * 60 * 1000;
-      const six_months_ago = new Date(last_updated.getTime() - six_months_duration);
-
-      if (new Date(project.code.date_last_commit) > six_months_ago) {
+      if (Date.now() - Date.parse(project.code.date_last_commit) <= ACTIVE_THRESHOLD_MS) {
         lab_status = PROJECT_LAB_STATUS.ACTIVE;
         status = status ?? 2;
         sortKey += 4;

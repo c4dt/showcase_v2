@@ -83,6 +83,7 @@ projects:
       - Protocol
       - Homomorphic Encryption
       - Secure Multi-Party Computation
+      - Medical
     language: GoLang
     type: Application
     license: non-commercial
@@ -111,6 +112,7 @@ projects:
     tags:
       - Homomorphic Encryption
       - Secure Multi-Party Computation
+      - Medical
     language: GoLang
     type: Application
     license: non-commercial
@@ -224,6 +226,7 @@ projects:
         url: https://doi.org/10.1101/2022.01.10.475610
     tags:
       - Homomorphic Encryption
+      - Medical
     language: GoLang
     type: Application
     license: non-commercial
