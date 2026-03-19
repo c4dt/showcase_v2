@@ -23,7 +23,7 @@ If a new tag is added, also add it to `data.py`
 "Hardware", "Homomorphic Encryption",
 "Image Classification", "Images", "Inductive Bias", "Internet of Things",
 "Large Language Model", "AI Safety", "Locking", "Low-Level",
-"Machine Learning",
+"Machine Learning", "Medical",
 "Mobile App",
 "Natural Language", "Network",
 "Optimization",

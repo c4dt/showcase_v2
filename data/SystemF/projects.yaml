@@ -27,7 +27,7 @@ projects:
       the traces in the console.
     code:
       type: Lab Github
-      url: https://github.com/epfl-systemf/JumboTrace
+      url: https://github.com/ep-systemf/JumboTrace
       date_last_commit: 2024-01-05
     language: Java
     license: MIT

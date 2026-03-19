@@ -1,0 +1,72 @@
+projects:
+  virtues:
+    name: VirTues
+    description: >
+      Foundation model for spatial proteomics enabling multi-scale tissue analysis
+      for clinical diagnostics and biomedical discovery
+    type: Framework
+    categories:
+      - Learning
+    applications:
+      - Health
+    tags:
+      - Machine Learning
+      - Medical
+      - Deep Neural Networks
+      - Images
+      - Computer Vision
+    layman_desc: >
+      VirTues is an AI system that analyzes tissue images from cancer biopsies at
+      multiple scales—from individual proteins and cells to whole tissue regions.
+      It can help doctors understand how cancer is organized in tissue and predict
+      how patients will respond to treatment, even when different labs use
+      different measurement panels.
+    tech_desc: >
+      VirTues is a foundation model for spatial proteomics that learns
+      marker-aware, multi-scale representations from multiplex tissue imaging
+      data. From a single pretrained backbone it supports zero-shot annotation
+      across heterogeneous marker panels, cell typing, niche annotation, spatial
+      biomarker discovery, and patient stratification.
+    url: https://huggingface.co/bunnelab/virtues
+    code:
+      type: Lab Github
+      url: https://github.com/bunnelab/virtues
+    language: Python
+    license: MIT
+    date_added: 2026-03-19
+
+  mtbbench:
+    name: MTBBench
+    description: >
+      Benchmark for evaluating multimodal LLM reasoning in complex oncology
+      clinical decision-making scenarios
+    type: Experiments
+    categories:
+      - Learning
+    applications:
+      - Health
+    tags:
+      - Benchmark
+      - Large Language Model
+      - Machine Learning
+      - Medical
+    layman_desc: >
+      MTBBench tests how well AI systems can make complex cancer treatment
+      decisions using multiple types of medical data such as tissue images,
+      genetic profiles, and patient history over time. It mimics the work of a
+      tumor board—a group of doctors who review cancer cases together.
+    tech_desc: >
+      MTBBench is a benchmark for evaluating multimodal LLM reasoning in
+      oncology, covering two core challenges: multimodal integration (pathology,
+      genomics, radiology) and longitudinal reasoning across patient timelines.
+      It includes agentic tasks requiring interaction with external
+      foundation-model-based tools such as TRIDENT for pathology and DrugBank
+      for pharmacology.
+    code:
+      type: Lab Github
+      url: https://github.com/bunnelab/mtbbench
+    showcase_interest:
+      linus: 3
+    language: Python
+    license: MIT
+    date_added: 2026-03-19

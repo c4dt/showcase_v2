@@ -54,6 +54,7 @@ export interface Project {
     | "Locking"
     | "Low-Level"
     | "Machine Learning"
+    | "Medical"
     | "Mobile App"
     | "Natural Language"
     | "Network"
