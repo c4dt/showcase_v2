@@ -131,6 +131,7 @@ projects:
     tags:
       - Anonymity
       - Predictor
+      - Medical
     date_added: 2024-02-20
     layman_desc: >
       Digital Twins are like virtual doppelgangers of physical objects,  helping
@@ -208,6 +209,7 @@ projects:
     tags:
       - Development
       - Internet of Things
+      - Medical
     url: https://www.epfl.ch/labs/esl/research/systems-on-chip/x-heep/
     code:
       type: Lab Github
@@ -538,6 +540,7 @@ projects:
       - Time Series
       - Deep Neural Networks
       - Internet of Things
+      - Medical
     code:
       type: Lab Github
       url: https://github.com/esl-epfl/metawears
@@ -573,6 +576,7 @@ projects:
       - Wearable
       - Low-Level
       - Internet of Things
+      - Medical
     code:
       type: Lab Github
       url: https://github.com/esl-epfl/HEEPidermis

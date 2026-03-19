@@ -50,6 +50,7 @@ projects:
     tags:
       - Optimization
       - Images
+      - Medical
     information:
       - type: Paper
         title: Learning-Based Compressive MRI

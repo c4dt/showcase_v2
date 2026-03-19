@@ -51,6 +51,7 @@ projects:
         email: support@foodandyou.ch
     tags:
       - Survey
+      - Medical
     type: Application
     url: https://www.foodandyou.ch
     date_added: 2021-01-21
@@ -71,6 +72,7 @@ projects:
     tags:
       - Survey
       - CrowdSource
+      - Medical
     code:
       type: Lab GitHub
       url: https://github.com/digitalepidemiologylab/crowdbreaks
@@ -156,6 +158,7 @@ projects:
     tags:
       - Survey
       - Features
+      - Medical
     code:
       type: Lab Github
       url: https://github.com/digitalepidemiologylab/dietary-consistency-and-quality-associated-with-gut-microbiota-diversity-paper
@@ -246,6 +249,7 @@ projects:
     tags:
       - Survey
       - Time Series
+      - Medical
     code:
       type: Lab Github
       url: https://github.com/digitalepidemiologylab/meal-pattern-analysis-paper
@@ -277,6 +281,7 @@ projects:
     tags:
       - Survey
       - Features
+      - Medical
     code:
       type: Lab Github
       url: https://github.com/digitalepidemiologylab/food-additives-gut-microbiota-public

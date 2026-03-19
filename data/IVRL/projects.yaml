@@ -181,6 +181,7 @@ projects:
     tags:
       - Images
       - Deep Neural Networks
+      - Medical
     information:
       - type: Paper
         title: Zero-Learning Fast Medical Image Fusion

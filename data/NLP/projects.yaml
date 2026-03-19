@@ -99,6 +99,7 @@ projects:
     tags:
       - Machine Learning
       - Natural Language
+      - Medical
     code:
       type: Lab Github
       url: https://github.com/epfLLM/meditron
