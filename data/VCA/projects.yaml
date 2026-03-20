@@ -15,16 +15,16 @@ projects:
     layman_desc: >
       Graphiti automatically transforms and optimizes circuit diagrams while
       mathematically proving that every transformation preserves the original
-      circuit's behaviour. It takes a graph description of a dataflow circuit
-      as input and produces an optimized version along with a verifiable trace
-      of all rewrites applied.
+      circuit's behaviour. It takes a graph description of a dataflow circuit as
+      input and produces an optimized version along with a verifiable trace of
+      all rewrites applied.
     tech_desc: >
-      Lean 4 framework for verified graph rewriting targeting dataflow
-      circuits. Rewrites are formally proved correct in Lean; an oracle
-      component (Rust) handles matching. The codebase is structured into a
-      reviewed core library, per-project modules, and an experimental area.
-      It reads and writes Dynamatic-compatible DOT graphs and emits a JSON
-      log of every rewrite step.
+      Lean 4 framework for verified graph rewriting targeting dataflow circuits.
+      Rewrites are formally proved correct in Lean; an oracle component (Rust)
+      handles matching. The codebase is structured into a reviewed core library,
+      per-project modules, and an experimental area. It reads and writes
+      Dynamatic-compatible DOT graphs and emits a JSON log of every rewrite
+      step.
     code:
       type: Lab GitHub
       url: https://github.com/VCA-EPFL/graphiti

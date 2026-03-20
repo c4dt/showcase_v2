@@ -686,21 +686,21 @@ projects:
     date_updated: 2023-03-22
   flfp:
     name: Double-Edged Shield
-    description: "Study and attacks on fingerprinting users through customized ad-blocker filter lists."
+    description: "Study and attacks on fingerprinting users through customized
+      ad-blocker filter lists."
     layman_desc: >
-      Ad blockers protect privacy, but customizing them can paradoxically
-      make you easier to identify online. This project studies how the
-      specific filter lists a person subscribes to in their ad blocker
-      create a unique fingerprint that websites can exploit. The
-      researchers developed three attacks that identify 84% of filter list
-      combinations and found that even small customizations dramatically
-      shrink a user's anonymity set.
+      Ad blockers protect privacy, but customizing them can paradoxically make
+      you easier to identify online. This project studies how the specific
+      filter lists a person subscribes to in their ad blocker create a unique
+      fingerprint that websites can exploit. The researchers developed three
+      attacks that identify 84% of filter list combinations and found that even
+      small customizations dramatically shrink a user's anonymity set.
     tech_desc: >
       Fingerprinting study using customized ad-blocker filter lists as an
       identification vector. Presents three attacks achieving 84% list
-      identification, 0.72-bit entropy fingerprints, and median anonymity
-      sets of 48 users. Provides datasets, reproducibility artifacts, and
-      a honeypage for data collection.
+      identification, 0.72-bit entropy fingerprints, and median anonymity sets
+      of 48 users. Provides datasets, reproducibility artifacts, and a honeypage
+      for data collection.
     type: Experiments
     categories:
       - Privacy
@@ -710,6 +710,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/spring-epfl/flfp
+      date_last_commit: 2025-04-07
     language: JavaScript
     license: MIT
     date_added: 2026-03-03
@@ -719,20 +720,20 @@ projects:
       - Info
   iccwd:
     name: ICCWD
-    description: "Scripts for the Image-Caption in the Wild Dataset and minor-detection method evaluation."
+    description: "Scripts for the Image-Caption in the Wild Dataset and
+      minor-detection method evaluation."
     layman_desc: >
-      This project provides tools for detecting whether images of minors
-      appear alongside inappropriate captions on public social media. The
-      dataset (ICCWD) was collected in the wild, and the researchers
-      evaluated three automated detection approaches: an AI caption
-      analyzer, a cloud image recognition service, and a combined
-      pipeline. Outputs include standard detection quality metrics such
-      as true positive and false positive rates.
+      This project provides tools for detecting whether images of minors appear
+      alongside inappropriate captions on public social media. The dataset
+      (ICCWD) was collected in the wild, and the researchers evaluated three
+      automated detection approaches: an AI caption analyzer, a cloud image
+      recognition service, and a combined pipeline. Outputs include standard
+      detection quality metrics such as true positive and false positive rates.
     tech_desc: >
       Scripts for downloading and evaluating the Image-Caption in the Wild
-      Dataset (ICCWD) using three minor-detection pipelines: DeepSeek
-      caption labeling, Amazon Rekognition image analysis, and a combined
-      approach. Outputs TPR/FPR metrics and ROC curves.
+      Dataset (ICCWD) using three minor-detection pipelines: DeepSeek caption
+      labeling, Amazon Rekognition image analysis, and a combined approach.
+      Outputs TPR/FPR metrics and ROC curves.
     type: Experiments
     categories:
       - Privacy
@@ -741,6 +742,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/spring-epfl/iccwd
+      date_last_commit: 2025-07-06
     language: Python
     license: MIT
     date_added: 2026-03-03
@@ -752,18 +754,17 @@ projects:
     name: WF4NYM
     description: "Website fingerprinting and flow-correlation attacks on the Nym mixnet."
     layman_desc: >
-      Mix networks like Nym are designed to provide strong anonymity by
-      mixing and delaying network traffic, making it hard to trace who is
-      communicating with whom. This project investigates whether website
-      fingerprinting attacks still work against Nym, evaluates a proposed
-      defense (WTF4NYM), and measures the overhead involved. The findings
-      help clarify the real-world anonymity guarantees of modern mixnets.
+      Mix networks like Nym are designed to provide strong anonymity by mixing
+      and delaying network traffic, making it hard to trace who is communicating
+      with whom. This project investigates whether website fingerprinting
+      attacks still work against Nym, evaluates a proposed defense (WTF4NYM),
+      and measures the overhead involved. The findings help clarify the
+      real-world anonymity guarantees of modern mixnets.
     tech_desc: >
-      Artifact for website fingerprinting and flow-correlation attacks on
-      the Nym mixnet and Tor. Evaluates the WTF4NYM defense, analyzes
-      feature importance, and measures overhead. Implemented in Python
-      3.9/3.10 on Linux; includes code, datasets, and full reproduction
-      instructions.
+      Artifact for website fingerprinting and flow-correlation attacks on the
+      Nym mixnet and Tor. Evaluates the WTF4NYM defense, analyzes feature
+      importance, and measures overhead. Implemented in Python 3.9/3.10 on
+      Linux; includes code, datasets, and full reproduction instructions.
     type: Experiments
     categories:
       - Privacy
@@ -774,6 +775,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/spring-epfl/WF4NYM-artifacts
+      date_last_commit: 2026-01-16
     language: Python
     license: MIT
     date_added: 2026-03-03

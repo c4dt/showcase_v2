@@ -2,8 +2,8 @@ projects:
   virtues:
     name: VirTues
     description: >
-      Foundation model for spatial proteomics enabling multi-scale tissue analysis
-      for clinical diagnostics and biomedical discovery
+      Foundation model for spatial proteomics enabling multi-scale tissue
+      analysis for clinical diagnostics and biomedical discovery
     type: Framework
     categories:
       - Learning
@@ -16,11 +16,11 @@ projects:
       - Images
       - Computer Vision
     layman_desc: >
-      VirTues is an AI system that analyzes tissue images from cancer biopsies at
-      multiple scales—from individual proteins and cells to whole tissue regions.
-      It can help doctors understand how cancer is organized in tissue and predict
-      how patients will respond to treatment, even when different labs use
-      different measurement panels.
+      VirTues is an AI system that analyzes tissue images from cancer biopsies
+      at multiple scales—from individual proteins and cells to whole tissue
+      regions. It can help doctors understand how cancer is organized in tissue
+      and predict how patients will respond to treatment, even when different
+      labs use different measurement panels.
     tech_desc: >
       VirTues is a foundation model for spatial proteomics that learns
       marker-aware, multi-scale representations from multiplex tissue imaging
@@ -31,6 +31,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/bunnelab/virtues
+      date_last_commit: 2026-01-30
     language: Python
     license: MIT
     date_added: 2026-03-19
@@ -65,6 +66,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/bunnelab/mtbbench
+      date_last_commit: 2025-10-23
     showcase_interest:
       linus: 3
     language: Python

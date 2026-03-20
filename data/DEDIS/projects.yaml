@@ -174,7 +174,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/dedis/kyber
-      date_last_commit: 2026-03-09
+      date_last_commit: 2026-03-17
     lines_of_code: 17000 / 4000
     contacts:
       - name: Pierluca Borsò
@@ -342,7 +342,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/drand/drand
-      date_last_commit: 2026-03-12
+      date_last_commit: 2026-03-19
     url: https://drand.love
     doc: https://github.com/drand/drand#documentation
     lines_of_code: 1000 / 200
@@ -552,7 +552,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/dedis/matchertext
-      date_last_commit: 2026-03-09
+      date_last_commit: 2026-03-20
     information:
       - type: Paper
         title: "Matchertext: Towards Verbatim Interlanguage Embedding"
@@ -647,20 +647,21 @@ projects:
     date_updated: 2024-03-20
   votegral:
     name: Votegral
-    description: "End-to-end verifiable, coercion-resistant voting system using TRIP for in-person registration."
+    description: "End-to-end verifiable, coercion-resistant voting system using TRIP
+      for in-person registration."
     layman_desc: >
-      Electronic voting must be both verifiable (you can check your vote
-      was counted correctly) and coercion-resistant (nobody can force you
-      to vote a particular way or prove how you voted). Votegral achieves
-      both properties using TRIP, a protocol for in-person registration
-      that separates identity verification from vote casting. It includes
-      a simulation framework for performance testing and evaluation.
+      Electronic voting must be both verifiable (you can check your vote was
+      counted correctly) and coercion-resistant (nobody can force you to vote a
+      particular way or prove how you voted). Votegral achieves both properties
+      using TRIP, a protocol for in-person registration that separates identity
+      verification from vote casting. It includes a simulation framework for
+      performance testing and evaluation.
     tech_desc: >
-      End-to-end verifiable, coercion-resistant voting system using TRIP
-      for in-person registration. Implements E2E verification and coercion
-      resistance via randomized ballot shuffling and re-encryption.
-      Includes simulation framework, Docker/local build, configurable
-      hardware and shuffle modes, and performance metrics generation.
+      End-to-end verifiable, coercion-resistant voting system using TRIP for
+      in-person registration. Implements E2E verification and coercion
+      resistance via randomized ballot shuffling and re-encryption. Includes
+      simulation framework, Docker/local build, configurable hardware and
+      shuffle modes, and performance metrics generation.
     type: Application
     categories:
       - Privacy
@@ -673,6 +674,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/dedis/votegral
+      date_last_commit: 2025-10-14
     language: Go
     date_added: 2026-03-03
     showcase_interest:
@@ -682,17 +684,16 @@ projects:
     name: Grounded Arithmetic
     description: "Prototype of Grounded Arithmetic logic formalized in Isabelle/Pure."
     layman_desc: >
-      Grounded Arithmetic is a new approach to formalizing the foundations
-      of mathematics that avoids paradoxes arising in traditional set
-      theory. This project implements a complete formalization in
-      Isabelle/Pure, a computer proof assistant, covering basic
-      arithmetic, data structures like lists, and the full axiomatic
-      system. It was developed as a bachelor's thesis.
+      Grounded Arithmetic is a new approach to formalizing the foundations of
+      mathematics that avoids paradoxes arising in traditional set theory. This
+      project implements a complete formalization in Isabelle/Pure, a computer
+      proof assistant, covering basic arithmetic, data structures like lists,
+      and the full axiomatic system. It was developed as a bachelor's thesis.
     tech_desc: >
-      Isabelle/Pure prototype of the Grounded Arithmetic (GA) logic
-      system. Features a complete axiomatization, arithmetic functions,
-      Cantor tuple constructions, a manually encoded List datatype, and
-      the accompanying B.Sc. thesis PDF and source files.
+      Isabelle/Pure prototype of the Grounded Arithmetic (GA) logic system.
+      Features a complete axiomatization, arithmetic functions, Cantor tuple
+      constructions, a manually encoded List datatype, and the accompanying
+      B.Sc. thesis PDF and source files.
     type: Experiments
     categories:
       - Verification
@@ -701,6 +702,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/dedis/gd-pure
+      date_last_commit: 2025-11-05
     language: Isabelle
     date_added: 2026-03-03
     showcase_interest:
