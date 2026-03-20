@@ -89,7 +89,7 @@ export async function loadTemplate(projectId: string, templateType: string): Pro
 }
 
 export async function loadProjectTabs(projectId: string): Promise<ProjectTab[]> {
-  const templateNames = ["presentation", "app", "demo", "details", "hands-on", "pilot"];
+  const templateNames = ["presentation", "details", "hands-on", "app", "demo", "pilot"];
 
   const templates = [];
   for (const templateName of templateNames) {
