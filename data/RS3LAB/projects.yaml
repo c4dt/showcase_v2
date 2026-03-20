@@ -283,20 +283,19 @@ projects:
     date_added: 2024-04-12
   mage:
     name: Mage
-    description: "Remote memory system for scalable memory-intensive applications with asynchronous decoupling."
+    description: "Remote memory system for scalable memory-intensive applications
+      with asynchronous decoupling."
     layman_desc: >
-      Modern applications sometimes need more RAM than a single machine
-      can provide. Mage lets applications transparently use memory on
-      remote machines over a network as if it were local RAM. It achieves
-      good performance by decoupling memory access from computation,
-      pipelining operations, and avoiding contention between concurrent
-      accesses.
+      Modern applications sometimes need more RAM than a single machine can
+      provide. Mage lets applications transparently use memory on remote
+      machines over a network as if it were local RAM. It achieves good
+      performance by decoupling memory access from computation, pipelining
+      operations, and avoiding contention between concurrent accesses.
     tech_desc: >
-      Remote memory system for memory-intensive workloads using
-      asynchronous decoupling, pipelined execution, and contention
-      avoidance at the LibOS layer, implemented on top of RDMA. Artifact
-      includes kernel module, LibOS, baseline comparisons (kernel swap,
-      Fastswap), and full evaluation scripts.
+      Remote memory system for memory-intensive workloads using asynchronous
+      decoupling, pipelined execution, and contention avoidance at the LibOS
+      layer, implemented on top of RDMA. Artifact includes kernel module, LibOS,
+      baseline comparisons (kernel swap, Fastswap), and full evaluation scripts.
     type: Framework
     categories:
       - Other
@@ -307,6 +306,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/rs3lab/mage-artifact
+      date_last_commit: 2025-08-30
     language: C
     date_added: 2026-03-03
     showcase_interest:
@@ -315,20 +315,21 @@ projects:
       - Infra
   veritas:
     name: Veritas
-    description: "Syzkaller-based fuzzer with specification-based oracle for detecting eBPF misbehavior."
+    description: "Syzkaller-based fuzzer with specification-based oracle for
+      detecting eBPF misbehavior."
     layman_desc: >
-      eBPF is a powerful Linux kernel technology that lets programs run
-      safely inside the kernel, but bugs in the eBPF subsystem can cause
-      serious security problems. Veritas is a fuzzer that targets eBPF
-      code specifically, using formal specifications of correct eBPF
-      behavior as an oracle to detect when the kernel misbehaves. It is
-      built on the well-known Syzkaller kernel fuzzing framework.
+      eBPF is a powerful Linux kernel technology that lets programs run safely
+      inside the kernel, but bugs in the eBPF subsystem can cause serious
+      security problems. Veritas is a fuzzer that targets eBPF code
+      specifically, using formal specifications of correct eBPF behavior as an
+      oracle to detect when the kernel misbehaves. It is built on the well-known
+      Syzkaller kernel fuzzing framework.
     tech_desc: >
       Syzkaller-based kernel fuzzer augmented with the SpecCheck
-      specification-based oracle, which encodes formal eBPF semantics.
-      Detects eBPF misbehavior by comparing runtime behavior against
-      specifications. Runs on Ubuntu 22.04; includes bug-finding,
-      comparison, and performance evaluation tooling.
+      specification-based oracle, which encodes formal eBPF semantics. Detects
+      eBPF misbehavior by comparing runtime behavior against specifications.
+      Runs on Ubuntu 22.04; includes bug-finding, comparison, and performance
+      evaluation tooling.
     type: Application
     categories:
       - Security
@@ -337,6 +338,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/rs3lab/veritas
+      date_last_commit: 2025-08-16
     language: C
     license: Apache-2.0
     date_added: 2026-03-03
@@ -348,18 +350,17 @@ projects:
     name: Kernel TLA+ Specifications
     description: "Formal TLA+ specifications of Linux kernel synchronization algorithms."
     layman_desc: >
-      TLA+ is a mathematical language for describing how complex systems
-      behave, and it can find subtle bugs that are nearly impossible to
-      catch through testing alone. This project provides formal TLA+
-      models of important Linux kernel synchronization algorithms —
-      like spin locks and read-write locks — allowing researchers to
-      verify their correctness mathematically using the TLC model checker.
+      TLA+ is a mathematical language for describing how complex systems behave,
+      and it can find subtle bugs that are nearly impossible to catch through
+      testing alone. This project provides formal TLA+ models of important Linux
+      kernel synchronization algorithms — like spin locks and read-write locks —
+      allowing researchers to verify their correctness mathematically using the
+      TLC model checker.
     tech_desc: >
-      Formal TLA+ specifications of Linux kernel synchronization
-      primitives: ASID allocator, queued RW locks, ticket spinlock,
-      context switching, queued spinlock, arm64 KPTI, and FPSIMD/SVE
-      state saving. Includes TLC model checker scripts for both simulation
-      and exhaustive verification.
+      Formal TLA+ specifications of Linux kernel synchronization primitives:
+      ASID allocator, queued RW locks, ticket spinlock, context switching,
+      queued spinlock, arm64 KPTI, and FPSIMD/SVE state saving. Includes TLC
+      model checker scripts for both simulation and exhaustive verification.
     type: Experiments
     categories:
       - Verification
@@ -368,6 +369,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/rs3lab/kernel-tla
+      date_last_commit: 2026-02-11
     language: TLA+
     license: GPL-2.0
     date_added: 2026-03-03

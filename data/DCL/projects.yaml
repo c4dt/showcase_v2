@@ -683,7 +683,8 @@ projects:
   byzfl:
     name: ByzFL
     description: >
-      Python library for Byzantine-resilient federated learning, compatible with PyTorch and NumPy.
+      Python library for Byzantine-resilient federated learning, compatible with
+      PyTorch and NumPy.
     type: Library
     categories:
       - Learning
@@ -696,16 +697,17 @@ projects:
       - Distributed Learning
       - Machine Learning
     layman_desc: >
-      ByzFL helps train machine learning models across many participants even when some of
-      them behave maliciously or are corrupted. It provides ready-to-use tools to simulate
-      attacks and defences, so researchers can benchmark how robust their federated learning
-      system really is.
+      ByzFL helps train machine learning models across many participants even
+      when some of them behave maliciously or are corrupted. It provides
+      ready-to-use tools to simulate attacks and defences, so researchers can
+      benchmark how robust their federated learning system really is.
     tech_desc: >
-      ByzFL implements state-of-the-art robust aggregators (Trimmed Mean, Geometric Median,
-      Krum, Centered Clipping, etc.) and pre-aggregators (NNM, Bucketing, ARC) as well as
-      Byzantine attack strategies (IPM, ALIE, Sign Flipping, Mimic, …) fully compatible with
-      PyTorch tensors and NumPy arrays. It also ships a complete federated learning simulation
-      pipeline for systematic benchmarking under adversarial conditions.
+      ByzFL implements state-of-the-art robust aggregators (Trimmed Mean,
+      Geometric Median, Krum, Centered Clipping, etc.) and pre-aggregators (NNM,
+      Bucketing, ARC) as well as Byzantine attack strategies (IPM, ALIE, Sign
+      Flipping, Mimic, …) fully compatible with PyTorch tensors and NumPy
+      arrays. It also ships a complete federated learning simulation pipeline
+      for systematic benchmarking under adversarial conditions.
     url: https://byzfl.epfl.ch/
     code:
       type: Lab GitHub

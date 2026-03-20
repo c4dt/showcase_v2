@@ -591,21 +591,21 @@ projects:
     date_added: 2024-03-20
   nex:
     name: NEX
-    description: "Full-stack simulation framework running unmodified software while modelling hardware accelerators."
+    description: "Full-stack simulation framework running unmodified software while
+      modelling hardware accelerators."
     layman_desc: >
-      Developing software for hardware accelerators (specialized chips for
-      tasks like AI inference or image processing) normally requires either
-      actual hardware or very slow simulators. NEX runs real, unmodified
-      software on regular CPUs while simultaneously simulating the
-      accelerators, giving both speed and accuracy. It supports multiple
-      accelerators and models interconnect and DMA latency realistically.
+      Developing software for hardware accelerators (specialized chips for tasks
+      like AI inference or image processing) normally requires either actual
+      hardware or very slow simulators. NEX runs real, unmodified software on
+      regular CPUs while simultaneously simulating the accelerators, giving both
+      speed and accuracy. It supports multiple accelerators and models
+      interconnect and DMA latency realistically.
     tech_desc: >
-      Full-stack simulation framework running unmodified software stacks
-      on real CPUs while modeling hardware accelerators (VTA, JPEG,
-      Protoacc) via RTL simulation or DSim. Supports multi-accelerator
-      setups, DMA and interconnect latency modeling, and epoch-based
-      scheduling. Integrates with the SimBricks modular simulation
-      platform.
+      Full-stack simulation framework running unmodified software stacks on real
+      CPUs while modeling hardware accelerators (VTA, JPEG, Protoacc) via RTL
+      simulation or DSim. Supports multi-accelerator setups, DMA and
+      interconnect latency modeling, and epoch-based scheduling. Integrates with
+      the SimBricks modular simulation platform.
     type: Simulation
     categories:
       - Other
@@ -614,6 +614,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/dslab-epfl/NEX
+      date_last_commit: 2025-08-25
     language: C++
     license: MIT
     date_added: 2026-03-03
@@ -623,20 +624,20 @@ projects:
       - Infra
   simbricks-lpn:
     name: LPN/DSim for SimBricks
-    description: "LPN/DSim integration with SimBricks for modular network and accelerator simulation."
+    description: "LPN/DSim integration with SimBricks for modular network and
+      accelerator simulation."
     layman_desc: >
       SimBricks is a modular simulation platform where different hardware
-      components — CPUs, networks, accelerators — can be simulated
-      independently and connected together. This project integrates LPN
-      (Lightweight Protocol Notation) and DSim into SimBricks, enabling
-      more flexible and accurate simulation of network and accelerator
-      components. Docker support is included alongside build and
-      experiment scripts.
+      components — CPUs, networks, accelerators — can be simulated independently
+      and connected together. This project integrates LPN (Lightweight Protocol
+      Notation) and DSim into SimBricks, enabling more flexible and accurate
+      simulation of network and accelerator components. Docker support is
+      included alongside build and experiment scripts.
     tech_desc: >
-      Integration of LPN/DSim with the SimBricks modular simulation
-      platform. Supports building and connecting gem5, QEMU, VTA, and
-      Protoacc simulators with configurable disk images and experiment
-      scripts. Docker support and all required dependencies are included.
+      Integration of LPN/DSim with the SimBricks modular simulation platform.
+      Supports building and connecting gem5, QEMU, VTA, and Protoacc simulators
+      with configurable disk images and experiment scripts. Docker support and
+      all required dependencies are included.
     type: Simulation
     categories:
       - Other
@@ -646,6 +647,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/dslab-epfl/SimBricks-LPN
+      date_last_commit: 2025-08-31
     language: Verilog
     license: MIT
     date_added: 2026-03-03
@@ -655,18 +657,19 @@ projects:
       - Infra
   nexdsim-ae:
     name: NEX+DSim Artifact Evaluation
-    description: "Artifact evaluation guide for reproducing accelerated hardware-software stack simulations."
+    description: "Artifact evaluation guide for reproducing accelerated
+      hardware-software stack simulations."
     layman_desc: >
       This repository is an artifact evaluation guide for reproducing the
       research results comparing different hardware-software simulation
-      approaches. It walks through setting up and running experiments with
-      three hardware accelerators across four simulation mode combinations,
-      helping other researchers verify and build on the published findings.
+      approaches. It walks through setting up and running experiments with three
+      hardware accelerators across four simulation mode combinations, helping
+      other researchers verify and build on the published findings.
     tech_desc: >
-      Artifact evaluation guide for reproducing performance simulations of
-      VTA, Protoacc, and JPEG accelerators across NEX+DSim, NEX+RTL,
-      gem5+DSim, and gem5+RTL configurations. Covers Docker setup,
-      SimBricks build, gem5 scripting, and NEX experiment execution.
+      Artifact evaluation guide for reproducing performance simulations of VTA,
+      Protoacc, and JPEG accelerators across NEX+DSim, NEX+RTL, gem5+DSim, and
+      gem5+RTL configurations. Covers Docker setup, SimBricks build, gem5
+      scripting, and NEX experiment execution.
     type: Experiments
     categories:
       - Other
@@ -677,6 +680,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/dslab-epfl/NEXDSIM_AE
+      date_last_commit: 2025-08-07
     language: C++
     license: MIT
     date_added: 2026-03-03
