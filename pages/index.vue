@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type Combobox from "~/components/homepage/Combobox.vue";
 import type MutliSelectCombobox from "~/components/homepage/mutliSelectCombobox.vue";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 const selectedStatus = ref("");
 const selectedLab = ref("");
@@ -125,10 +126,18 @@ watch([selectedTags, selectedCategory, selectedApplication], ([tags, category, a
                   title="Support"
                   :item-list="PPRINTED_STATUS"
                 />
-                <div class="epfl-button-plain" @click="showAdvanced = !showAdvanced">
+                <button
+                  class="flex cursor-pointer items-center gap-1 text-sm text-gray-600 hover:text-gray-900"
+                  @click="showAdvanced = !showAdvanced"
+                >
+                  <font-awesome-icon
+                    icon="fa-solid fa-chevron-right"
+                    class="transition-transform duration-200"
+                    :class="{ 'rotate-90': showAdvanced }"
+                  />
                   <span>Advanced search</span>
-                </div>
-                <div v-show="showAdvanced">
+                </button>
+                <div v-show="showAdvanced" class="border-l-2 border-gray-200 pl-3">
                   <HomepageMutliSelectCombobox
                     ref="TagFilter"
                     v-model="selectedTags"
