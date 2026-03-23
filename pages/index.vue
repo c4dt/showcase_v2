@@ -123,11 +123,15 @@ watch(filteredProjects, () => {
 
 const showAdvanced = ref(false);
 
-watch([tags, category, application], ([newTags, newCategory, newApplication]) => {
-  if (newTags.length > 0 || newCategory !== "" || newApplication !== "") {
-    showAdvanced.value = true;
-  }
-});
+watch(
+  [tags, category, application],
+  ([newTags, newCategory, newApplication]) => {
+    if (newTags.length > 0 || newCategory !== "" || newApplication !== "") {
+      showAdvanced.value = true;
+    }
+  },
+  { deep: true }
+);
 </script>
 
 <template>
@@ -174,6 +178,7 @@ watch([tags, category, application], ([newTags, newCategory, newApplication]) =>
                 <homepageCombobox ref="statusFilter" v-model="status" title="Support" :item-list="PPRINTED_STATUS" />
                 <button
                   class="flex cursor-pointer items-center gap-1 text-sm text-gray-600 hover:text-gray-900"
+                  aria-label="shows the more advanced filter options to the user"
                   @click="showAdvanced = !showAdvanced"
                 >
                   <font-awesome-icon
@@ -183,7 +188,7 @@ watch([tags, category, application], ([newTags, newCategory, newApplication]) =>
                   />
                   <span>Advanced search</span>
                 </button>
-                <div v-show="showAdvanced" class="border-l-2 border-gray-200 pl-3">
+                <div v-show="showAdvanced" data-testid="advanced-filters" class="border-l-2 border-gray-200 pl-3">
                   <HomepageMutliSelectCombobox ref="TagFilter" v-model="tags" title="Tag" :item-list="projectTags" />
                   <homepageCombobox
                     ref="categoriesFilter"
