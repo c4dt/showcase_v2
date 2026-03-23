@@ -35,7 +35,6 @@ projects:
             url: https://hosting.cs.vt.edu/hpc2019/
     date_added: 2021-11-04
     date_updated: 2022-07-05
-
   3d-ice:
     name: 3D-ICE
     categories:

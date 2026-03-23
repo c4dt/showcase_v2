@@ -20,7 +20,6 @@ projects:
     type: Application
     date_added: 2019-03-18
     date_updated: 2024-04-14
-
   image-completion:
     name: Image Completion
     categories:
@@ -41,7 +40,6 @@ projects:
     type: Application
     date_added: 2019-03-18
     date_updated: 2024-04-14
-
   adefan:
     name: ADEFAN
     type: Application
@@ -79,7 +77,6 @@ projects:
             url: https://2020.ieeeicassp.org/
     date_added: 2021-11-05
     date_updated: 2024-04-14
-
   fg-nic:
     name: FG-NIC
     type: Application
@@ -110,8 +107,7 @@ projects:
       - Image Classification
     information:
       - type: Paper
-        title: Fidelity Estimation Improves Noisy-Image Classification with Pretrained
-          Networks
+        title: Fidelity Estimation Improves Noisy-Image Classification with Pretrained Networks
         url: https://infoscience.epfl.ch/record/287705
         notes:
           - label: Published in
@@ -119,7 +115,6 @@ projects:
             url: https://ieeexplore.ieee.org/document/9513558
     date_added: 2021-11-05
     date_updated: 2024-04-14
-
   buifd:
     name: BUIFD
     type: Application
@@ -157,7 +152,6 @@ projects:
             url: https://ieeexplore.ieee.org/document/9024220
     date_added: 2021-11-05
     date_updated: 2024-04-14
-
   zero-learning-medical-fusion:
     name: Zero-Learning Fast Medical Image Fusion
     type: Application
@@ -192,7 +186,6 @@ projects:
             url: https://ieeexplore.ieee.org/document/9011178
     date_added: 2021-11-05
     date_updated: 2024-04-14
-
   lelsd:
     name: LELSD
     type: Application
@@ -222,7 +215,6 @@ projects:
     maturity: 1
     date_added: 2022-07-05
     date_updated: 2024-04-14
-
   dsr:
     name: DSR
     type: Experiments, Simulation
@@ -257,7 +249,6 @@ projects:
     license: BSD-3-Clause
     date_added: 2023-03-21
     date_updated: 2024-04-14
-
   tempsal:
     name: TempSAL
     type: Application, Experiments

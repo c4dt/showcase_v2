@@ -51,7 +51,6 @@ projects:
     date_added: 2019-08-15
     date_updated: 2023-03-21
     maturity: 3
-
   unlynx:
     name: Unlynx
     categories:
@@ -89,7 +88,6 @@ projects:
     license: non-commercial
     date_added: 2019-03-18
     date_updated: 2022-09-28
-
   medco:
     name: MedCo
     categories:
@@ -156,7 +154,7 @@ projects:
     license: other
     incubator:
       type: retired_archived
-      work: 2020/Q1 created demonstrator for SwissRe
+      work: 2020/Q1 created demonstrator for SwissRe - retired and archived in 2022/Q1
       products:
         - type: Demo
           title: Decentralized Data Analysis
@@ -165,7 +163,6 @@ projects:
     date_added: 2019-03-18
     date_updated: 2022-09-28
     maturity: 1
-
   spindle:
     name: SPINDLE
     categories:
@@ -196,14 +193,13 @@ projects:
     license: other
     incubator:
       type: retired_archived
-      work: 2021/Q1 created Spindle demonstrator
+      work: 2021/Q1 created Spindle demonstrator - retired and archived in 2023/Q1
       products:
         - type: Demo
           title: SPINDLE demonstrator
           url: https://github.com/c4dt/service-spindle
     date_added: 2021-01-21
     date_updated: 2022-09-28
-
   pricell:
     name: PriCell
     categories:
@@ -232,7 +228,6 @@ projects:
     license: non-commercial
     date_added: 2022-07-05
     date_updated: 2022-07-05
-
   crisp:
     name: CRISP
     categories:

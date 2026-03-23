@@ -38,7 +38,6 @@ projects:
     date_added: 2021-11-05
     date_updated: 2024-04-16
     maturity: 1
-
   invariant-language-models:
     name: Invariant Language Modeling
     categories:
@@ -63,7 +62,6 @@ projects:
       - Natural Language
     date_added: 2021-11-05
     date_updated: 2024-04-16
-
   eighenthemes:
     name: Eigenthemes
     categories:
@@ -97,7 +95,6 @@ projects:
             url: https://2021.emnlp.org/
     date_added: 2021-11-05
     date_updated: 2024-04-16
-
   quotebank:
     name: Quotebank
     categories:
@@ -132,7 +129,6 @@ projects:
         url: https://quotebank.dlab.tools
     date_added: 2022-09-28
     date_updated: 2024-04-16
-
   dipps:
     name: DiPPS
     categories:
@@ -166,7 +162,6 @@ projects:
         url: https://arxiv.org/abs/2210.02360
     date_added: 2023-03-16
     date_updated: 2024-04-16
-
   genie:
     name: GenIE
     categories:
@@ -195,7 +190,6 @@ projects:
         url: https://arxiv.org/abs/2112.08340
     date_added: 2023-03-16
     date_updated: 2024-04-16
-
   synthie:
     name: SynthIE
     categories:
