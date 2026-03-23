@@ -742,11 +742,7 @@ projects:
     incubator:
       type: incubated
       work: |
-        Started in Spring 2025 with development support, hands-on workshop in Fall 2025.
-      products:
-        - type: Hands-on
-          title: Distributed LLM Hands-on Workshop
-          url: https://c4dt.epfl.ch/domains/factory/anyway-distributed-llm-hands-on-workshop/
+        Started in Spring 2025 with development support, then presenting with partners
     language: C
     information:
       - type: Website

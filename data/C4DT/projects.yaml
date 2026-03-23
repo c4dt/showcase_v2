@@ -190,7 +190,7 @@ projects:
           title: E-ID Hands-on Workshop
           url: https://github.com/c4dt/eid-workshop/
     date_added: 2024-11-21
-    date_updated: 2024-11-08
+    date_updated: 2024-11-21
   matrix-epfl:
     name: Matrix@EPFL
     categories:

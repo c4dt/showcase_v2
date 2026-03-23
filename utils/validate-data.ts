@@ -29,7 +29,9 @@ function check(file: string, schema: object, content: unknown, valid: boolean, e
     console.log(`  ✓  ${file}`);
   } else {
     console.error(`  ✗  ${file}`);
-    console.error(betterAjvErrors(schema, content, errs ?? [], { format: "cli", json: JSON.stringify(content, null, 2) }));
+    console.error(
+      betterAjvErrors(schema, content, errs ?? [], { format: "cli", json: JSON.stringify(content, null, 2) })
+    );
     errors++;
   }
 }
