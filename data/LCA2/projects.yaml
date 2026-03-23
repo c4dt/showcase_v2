@@ -21,8 +21,9 @@ projects:
     license: MIT
     information:
       - type: Paper
-        title: "iPRP - the Parallel Redundancy Protofol for IP Networks: Protocol Design
-          and Operation"
+        title:
+          "iPRP - the Parallel Redundancy Protofol for IP Networks: Protocol
+          Design and Operation"
         url: https://infoscience.epfl.ch/record/216985
         notes:
           - label: Published in

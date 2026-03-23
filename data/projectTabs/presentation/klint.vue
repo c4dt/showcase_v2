@@ -1,14 +1,24 @@
 <template>
   <p>
     Klint allows for fast and automated
-    <a class="epfl-a" href="https://en.wikipedia.org/wiki/Formal_verification">formal verification</a>
+    <a class="epfl-a" href="https://en.wikipedia.org/wiki/Formal_verification"
+      >formal verification</a
+    >
     of network functions (NF), such as a
-    <a class="epfl-a" href="https://en.wikipedia.org/wiki/Router_(computing)">router</a> or a
-    <a class="epfl-a" href="https://en.wikipedia.org/wiki/Network_address_translation">NAT</a>. It works directly on
-    binaries, without the need of special data structures.
+    <a class="epfl-a" href="https://en.wikipedia.org/wiki/Router_(computing)"
+      >router</a
+    >
+    or a
+    <a
+      class="epfl-a"
+      href="https://en.wikipedia.org/wiki/Network_address_translation"
+      >NAT</a
+    >. It works directly on binaries, without the need of special data
+    structures.
     <br />
-    It can ensure that a given NF, be it proprietary or not, respects a formal specification. It allows decoupling
-    between NF-providers and network operators, and let the latter validate it before deploying it.
+    It can ensure that a given NF, be it proprietary or not, respects a formal
+    specification. It allows decoupling between NF-providers and network
+    operators, and let the latter validate it before deploying it.
   </p>
 
   <a
@@ -21,11 +31,13 @@
   /></a>
 
   <p>
-    The network functions can be written in any compiled language, as long as it exposes two functions conforming to
-    Klint: a setup method taking care of initialisation, and another method handling a packet, asserting on the
+    The network functions can be written in any compiled language, as long as it
+    exposes two functions conforming to Klint: a setup method taking care of
+    initialisation, and another method handling a packet, asserting on the
     transmitted packet.
     <br />
-    Klint provides some well-known NF specification to get you started writing your own, and a way to compile with
+    Klint provides some well-known NF specification to get you started writing
+    your own, and a way to compile with
     <a class="epfl-a" href="https://www.dpdk.org">DPDK</a>.
   </p>
 </template>

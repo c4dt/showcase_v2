@@ -23,8 +23,9 @@ projects:
     type: Application
     information:
       - type: Paper
-        title: "Clearing the clouds: a study of emerging scale-out workloads on modern
-          hardware"
+        title:
+          "Clearing the clouds: a study of emerging scale-out workloads on
+          modern hardware"
         url: https://infoscience.epfl.ch/record/173764
         notes:
           - label: Published at
@@ -39,7 +40,8 @@ projects:
       - Other
     applications:
       - Infra
-    description: State-of-the-art modeling tools for the computer architecture community
+    description:
+      State-of-the-art modeling tools for the computer architecture community
     tech_desc: >
       QFlex is a full-system cycle-accurate computer architecture simulator of
       multi-node computer systems.
