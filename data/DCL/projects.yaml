@@ -722,3 +722,39 @@ projects:
         title: "ByzFL: Research Framework for Robust Federated Learning"
         url: https://arxiv.org/abs/2505.24802
     date_updated: 2026-03-19
+
+  anyway:
+    name: Anyway
+    description: >
+      Self-hosted AI platform for private, on-premise LLM inference
+    type: Application
+    categories:
+      - Privacy
+      - Learning
+    applications:
+      - Infra
+    tags:
+      - 2026 Proposal
+      - Machine Learning
+      - Large Language Model
+    layman_desc: >
+      Anyway lets organisations run AI models entirely on their own machines,
+      so sensitive data never leaves their premises. It coordinates a cluster
+      of servers into an optimised on-premise AI platform and exposes an
+      OpenAI-compatible API, requiring no DevOps expertise to deploy.
+    tech_desc: >
+      Anyway orchestrates on-premise hardware into a distributed inference
+      cluster supporting any Hugging Face model. It deploys as a standalone
+      app, Docker image, or Kubernetes pod and provides an OpenAI-compatible
+      REST API endpoint, giving organisations full model control and fixed
+      operational costs with no per-token fees.
+    url: https://anyway.dev/
+    contacts:
+      - name: Geovani Rizk
+        email: geovani.rizk@epfl.ch
+      - name: Gauthier Voron
+        email: gauthier.voron@epfl.ch
+      - name: Rachid Guerraoui
+        email: rachid.guerraoui@epfl.ch
+    date_added: 2026-03-23
+    date_updated: 2026-03-23
