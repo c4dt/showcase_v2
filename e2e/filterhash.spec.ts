@@ -39,6 +39,22 @@ test.describe("filter hash — updating URL from interactions", () => {
   });
 });
 
+test.describe("advanced search visibility", () => {
+  test("clicking a project tag shows the advanced filters section", async ({ page }) => {
+    // Networkidle is needed here
+    await page.goto("/", { waitUntil: "networkidle" });
+    const advancedSection = page.locator('[data-testid="advanced-filters"]');
+    await expect(advancedSection).toBeHidden();
+
+    // Click any tag on a project card
+    const firstTag = page.locator('[data-testid="project-card"] .epfl-tag-light').first();
+    await firstTag.click();
+
+    // Advanced filters should now be visible
+    await expect(advancedSection).toBeVisible();
+  });
+});
+
 test.describe("filter hash — search and clear", () => {
   test("loading /#search=foo and clearing restores empty hash", async ({ page }) => {
     await page.goto("/#search=foo");
