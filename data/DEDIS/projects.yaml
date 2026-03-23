@@ -552,7 +552,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/dedis/matchertext
-      date_last_commit: 2026-03-20
+      date_last_commit: 2026-03-21
     information:
       - type: Paper
         title: "Matchertext: Towards Verbatim Interlanguage Embedding"
@@ -674,7 +674,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/dedis/votegral
-      date_last_commit: 2025-10-14
+      date_last_commit: 2026-03-22
     language: Go
     date_added: 2026-03-03
     showcase_interest:
