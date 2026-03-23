@@ -86,7 +86,6 @@ labs:
     information:
       - title: Lab Github
         url: https://github.com/dedis
-
   DLAB:
     name: Data Science Lab
     logo: /labs/dlab.svg
@@ -141,7 +140,6 @@ labs:
       - name: Beatriz Descloux
         email: beatriz.descloux@epfl.ch
     url: https://dslab.epfl.ch
-
   ESL:
     name: Embedded Systems Laboratory
     logo: /labs/esl.jpg
@@ -178,27 +176,21 @@ labs:
           To discover bugs we propose (i) sanitization techniques that enforce
           a security property such as memory or type safety; given concrete
           program input, our sanitizers then flag any property violations
-          (ii) fuzzing techniques that leverage static and dynamic analysis to
-          create program inputs to explore program areas that are not yet covered
-          through existing test cases.
-        </li>
-        <li>
-          To protect against exploitable
-          vulnerabilities, we focus on control-flow integrity using specific
-          language semantics, enforcing type integrity, and protecting selective
-          data. Under this premise, we focus on compiler-based, runtime-based, and
-          language-based protection mechanisms and security policies that increase
-          the resilience of applications against attacks (in the presence of
-          software vulnerabilities).
-        </li>
-      </ul>
-      <br>
-      All prototypes are released as open-source.
+      </li> <li>
+        (ii) fuzzing techniques that leverage static and dynamic analysis to
+        create program inputs to explore program areas that are not yet covered
+        through existing test cases. To protect against exploitable
+        vulnerabilities, we focus on control-flow integrity using specific
+        language semantics, enforcing type integrity, and protecting selective
+        data. Under this premise, we focus on compiler-based, runtime-based, and
+        language-based protection mechanisms and security policies that increase
+        the resilience of applications against attacks (in the presence of
+        software vulnerabilities). All prototypes are released as open-source.
+      </li> </ul>
     url: https://hexhive.epfl.ch/
     information:
       - title: Lab Github
         url: https://github.com/HexHive
-
   INDY:
     name: Computer Communications and Applications Laboratory 4
     prof:
@@ -295,7 +287,6 @@ labs:
     information:
       - title: Lab GitHub
         url: https://github.com/epfl-lara
-
   LASEC:
     name: Security and Cryptography Laboratory
     prof:
@@ -398,7 +389,6 @@ labs:
     information:
       - title: Github Repo
         url: https://github.com/LSIR
-
   LTS4:
     name: Signal Processing Laboratory
     prof:
@@ -473,7 +463,6 @@ labs:
       email: antoine.bosselut@epfl.ch
       picture: antoine_bosselut.png
     url: https://nlp.epfl.ch/
-
   PARSA:
     name: Parallel Systems Architecture Lab
     prof:
@@ -589,7 +578,6 @@ labs:
       email: thomas.bourgeat@epfl.ch
       picture: thomasbourgeat.png
     url: https://www.epfl.ch/labs/vca/
-
   VLSC:
     name: Very Large Scale Computing Lab
     prof:

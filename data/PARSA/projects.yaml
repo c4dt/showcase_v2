@@ -33,7 +33,6 @@ projects:
     license: CloudSuite, other
     date_added: 2019-03-18
     date_updated: 2024-03-15
-
   qflex:
     name: QFlex
     categories:

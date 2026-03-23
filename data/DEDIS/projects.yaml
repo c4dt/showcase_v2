@@ -35,7 +35,6 @@ projects:
     license: AGPL-3.0
     date_added: 2021-04-13
     date_updated: 2024-03-20
-
   dela:
     name: DEDIS Ledger Architecture
     logo: /products/images/dela/infograph.png
@@ -72,7 +71,6 @@ projects:
     license: BSD-3-Clause
     date_added: 2021-04-13
     date_updated: 2024-03-20
-
   odyssey:
     name: Odyssey
     logo: /products/images/odyssey/odyssey.png
@@ -103,7 +101,6 @@ projects:
     license: GPL-3.0
     date_added: 2020-04-28
     date_updated: 2024-03-20
-
   calypso:
     name: Calypso
     categories:
@@ -160,7 +157,6 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-03-20
     maturity: 2
-
   kyber:
     name: Kyber
     categories:
@@ -189,7 +185,6 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-03-20
     maturity: 3
-
   omniledger:
     name: OmniLedger
     categories:
@@ -289,7 +284,6 @@ projects:
     license: LGPL-3.0
     date_added: 2019-03-18
     date_updated: 2024-03-20
-
   e-voting:
     name: E-voting
     categories:
@@ -326,7 +320,6 @@ projects:
     license: AGPL-3.0
     date_added: 2019-03-18
     date_updated: 2024-03-20
-
   drand:
     name: DRand
     logo: /products/images/drand/drand.png
@@ -364,7 +357,6 @@ projects:
         url: https://actu.epfl.ch/news/epfl-helps-launch-globally-distributed-randomness-/
     date_added: 2019-03-18
     date_updated: 2024-03-20
-
   purbs:
     name: PURBs
     categories:
@@ -397,7 +389,6 @@ projects:
     license: BSD-3-Clause
     date_added: 2019-03-18
     date_updated: 2024-03-20
-
   threshold-logical-clocks:
     name: Threshold Logical Clocks
     categories:
@@ -437,7 +428,6 @@ projects:
     type: Application
     date_added: 2019-07-26
     date_updated: 2024-03-20
-
   twins:
     name: Twins
     categories:
@@ -486,7 +476,6 @@ projects:
     license: GPL-3.0
     date_added: 2021-02-24
     date_updated: 2024-03-20
-
   hbt:
     name: HBT
     categories:
@@ -510,7 +499,6 @@ projects:
     license: other
     date_added: 2022-07-04
     date_updated: 2024-03-20
-
   determ-checker:
     name: determ-checker
     categories:
@@ -641,10 +629,16 @@ projects:
         - type: App
           title: D-Voting application
           url: https://github.com/c4dt/d-voting
+        - type: Blog
+          title: Introducing d-voting
+          url: https://c4dt.epfl.ch/article/introducing-d-voting/
+        - type: Blog
+          title: "Secure, Transparent, and Verifiable Elections: The D-Voting Project"
+          url: https://c4dt.epfl.ch/article/secure-transparent-and-verifiable-elections-the-d-voting-project/
     language: Golang
     maturity: 1
     date_added: 2023-09-01
-    date_updated: 2024-03-20
+    date_updated: 2024-11-21
   votegral:
     name: Votegral
     description: "End-to-end verifiable, coercion-resistant voting system using TRIP

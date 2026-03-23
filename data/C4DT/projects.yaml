@@ -23,7 +23,6 @@ projects:
     maturity: 0
     date_added: 2024-01-09
     date_updated: 2024-01-09
-
   innosuisse-eid:
     name: Secure and Privacy-Preserving Credentials for E-ID
     categories:
@@ -58,7 +57,6 @@ projects:
     maturity: 2
     date_added: 2025-04-01
     date_updated: 2026-01-16
-
   seal-phishing:
     name: "Combattre le phishing: quelles innovations apporter ?"
     categories:
@@ -95,7 +93,7 @@ projects:
     maturity: 3
     date_added: 2025-04-01
     date_updated: 2026-01-16
-
+    url: https://seal-innovation.ch/en/combating-phishing/
   seal-digiinov:
     name: Sécurisation de Digiinov Hmi en adéquation avec le Cyber Resilience Act
       (CRA)
@@ -132,3 +130,111 @@ projects:
     maturity: 0
     date_added: 2026-01-16
     date_updated: 2026-01-16
+  eid-innosuisse:
+    name: E-ID Innosuisse
+    categories:
+      - Security
+      - Privacy
+    applications:
+      - Gov
+    type: Library
+    description: |
+      This Innosuisse project focuses on researching cryptographic algorithms to fit the given requirements of a privacy-preserving, unlinkable E-ID system.
+    tags:
+      - Access Control
+      - Development
+    incubator:
+      type: incubated
+      work: 2023/Q3-2024/Q2 Testing and implementing the demonstrator
+    url: https://eid-privacy.github.io/
+    code:
+      type: Project GitHub
+      url: https://github.com/eid-privacy
+    information:
+      - type: Blog
+        url: https://eid-privacy.github.io/
+        title: E-ID Privacy Blog
+      - type: Relevant paper
+        url: >-
+          https://eid-privacy.github.io/wp1/2025/09/17/taxonomy-of-digital-identity-systems.html
+        title: Taxonomy of Digital Identity Systems
+      - type: Report
+        url: https://eid-privacy.github.io/2026/01/09/poc-report.html
+        title: PoC Report
+    date_added: 2025-10-15
+    date_updated: 2025-10-15
+  eid-hands-on:
+    name: E-ID Hands-on Workshop
+    categories:
+      - Security
+      - Privacy
+    applications:
+      - Gov
+    type: Hands-on
+    description: A hands-on workshop showing how cryptography can preserve privacy and security of an E-ID solution.
+    tech_desc: |
+      To protect the privacy of the users of E-ID systems, several technical measures need to be taken. This workshop demonstrates the workings of Self-Sovereign Identities, using selective disclosure  for data protection, and explores further safeguards like unlinkability through BBS+ and  zero-knowledge proofs to share only essential information.
+    code:
+      type: Lab GitHub
+      url: https://github.com/c4dt/eid-workshop
+      date_last_commit: 2024-11-08
+    language: TypeScript
+    tags:
+      - Access Control
+      - Development
+    incubator:
+      type: retired
+      work: 2024/Q3 E-ID Cryptography
+      products:
+        - type: Hands-on
+          title: E-ID Hands-on Workshop
+          url: https://github.com/c4dt/eid-workshop/
+    date_added: 2024-11-21
+    date_updated: 2024-11-08
+  matrix-epfl:
+    name: Matrix@EPFL
+    categories:
+      - Security
+      - Privacy
+    applications:
+      - Infra
+    type: Application
+    description: |
+      The Matrix server run for the EPFL community by the EPFL Center for Imaging with help from the EPFL Center for Digital Trust.
+    layman_desc: |
+      Matrix is a widely used open source chat platform. It is an alternative to platforms such as Slack and MSTeams. Edward Andò from the Imaging Center at EPFL started an EPFL-wide instance, matrix.epfl.ch, in 2023. It advances digital trust at the whole EPFL while also having a broader positive impact. Thinking ahead and planning to eventually move the users of matrix.c4dt.org to this EPFL-wide instance, C4DT reached out to Edward Andò to offer our support bolstering matrix.epfl.ch’s team, which was readily welcomed.
+    tags:
+      - Protection
+      - Decentralized
+      - Encryption
+    incubator:
+      type: incubated
+      work: 2023/Q4 - maintenance and development
+    url: https://matrix.epfl.ch
+    information:
+      - type: Article
+        url: https://c4dt.epfl.ch/article/report-2024-matrix-epfl-ch/
+        title: Report 2024 matrix.epfl.ch
+    date_added: 2025-03-04
+    date_updated: 2025-03-04
+  showcasev2:
+    name: Showcase v2.0
+    categories:
+      - Other
+    applications:
+      - Other
+    type: Application
+    description: Version 2.0 of the C4DT's showcase.
+    code:
+      type: Lab GitHub
+      url: https://github.com/c4dt/showcase_v2
+      date_last_commit: 2025-10-13
+    tags:
+      - Development
+    language: TypeScript
+    incubator:
+      type: incubated
+      work: Q4 2024/2025 Developing and implementing
+    maturity: 1
+    date_added: 2025-10-17
+    date_updated: 2025-10-17

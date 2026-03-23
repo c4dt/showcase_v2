@@ -27,7 +27,6 @@ projects:
         url: https://www.scala-js.org/doc/tutorial/
     date_added: 2021-11-05
     date_updated: 2024-04-12
-
   scala-native:
     name: Scala Native
     type: Library, Toolset

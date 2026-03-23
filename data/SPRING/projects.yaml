@@ -79,7 +79,6 @@ projects:
     license: MIT
     date_added: 2019-03-18
     date_updated: 2022-07-07
-
   lightnion:
     name: Lightnion
     categories:
@@ -105,7 +104,6 @@ projects:
     license: BSD-3-Clause
     date_added: 2019-03-18
     date_updated: 2022-07-07
-
   trickster:
     name: Trickster
     logo: /products/images/trickster/trickster.svg
@@ -141,7 +139,6 @@ projects:
             url: https://secml2018.github.io/
     date_added: 2019-03-18
     date_updated: 2022-07-07
-
   hippiepug:
     name: Hippiepug
     logo: /products/images/hippiepug/hippiepug.svg
@@ -175,7 +172,6 @@ projects:
     license: MIT
     date_added: 2019-03-18
     date_updated: 2022-07-07
-
   mcsauditing:
     name: MCSAuditing
     categories:
@@ -234,7 +230,6 @@ projects:
     date_added: 2020-02-06
     date_updated: 2022-07-07
     maturity: 2
-
   dp3t:
     name: Decentralized Privacy-Preserving Proximity Tracing
     categories:
@@ -279,7 +274,6 @@ projects:
     c4dt_contact:
       name: Linus Gasser
       email: linus.gasser@epfl.ch
-
   crowdnotifier:
     name: CrowdNotifier
     categories:
@@ -343,7 +337,6 @@ projects:
     license: MIT
     date_added: 2021-01-21
     date_updated: 2022-07-07
-
   sscred:
     name: SSCred
     categories:
@@ -391,7 +384,6 @@ projects:
     license: MIT
     date_added: 2021-01-21
     date_updated: 2022-07-07
-
   lightarti:
     name: lightarti-rest
     categories:
@@ -417,7 +409,7 @@ projects:
       date_last_commit: 2024-08-15
     incubator:
       type: retired_archived
-      work: Created and updated a library for mobile
+      work: 2022/Q1 Created and updated a library for mobile - retired and archived in 2024/Q2
       products:
         - type: Library
           title: Lightarti-REST
@@ -433,7 +425,6 @@ projects:
     license: MIT
     date_added: 2021-08-26
     date_updated: 2023-03-22
-
   voteagain:
     name: VOTEAGAIN
     categories:
@@ -469,7 +460,6 @@ projects:
             url: https://www.usenix.org/conference/usenixsecurity20
     date_added: 2021-11-04
     date_updated: 2022-07-07
-
   datashare-network:
     name: DatashareNetwork
     categories:
@@ -508,7 +498,6 @@ projects:
             url: https://www.usenix.org/conference/usenixsecurity20
     date_added: 2021-11-04
     date_updated: 2023-03-22
-
   tandem:
     name: Tandem
     categories:
@@ -545,7 +534,6 @@ projects:
     maturity: 2
     date_added: 2021-11-04
     date_updated: 2022-07-07
-
   webgraph:
     name: WebGraph
     categories:
@@ -579,7 +567,6 @@ projects:
     maturity: 2
     date_added: 2022-07-07
     date_updated: 2023-03-22
-
   disparate-vulnerability:
     name: DisparateVulnerability
     categories:
@@ -614,7 +601,6 @@ projects:
     maturity: 1
     date_added: 2022-07-07
     date_updated: 2022-08-11
-
   tandem_monero:
     name: Tandem / Monero
     categories:
