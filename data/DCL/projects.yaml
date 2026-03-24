@@ -37,7 +37,7 @@ projects:
     license: MIT
     incubator:
       type: retired_archived
-      work: Started in Spring 2021, demo in Autumn.
+      work: 2021/09 - Created a demo for our website - archived in 2024/10
       products:
         - type: Demo
           title: Garfield Demonstrator
@@ -245,7 +245,6 @@ projects:
             url: https://2020.middleware-conference.org
     date_added: 2020-11-11
     date_updated: 2024-03-22
-
   mvtil:
     name: MVTIL
     categories:
@@ -278,7 +277,6 @@ projects:
             url: https://www.podc.org/podc2018
     date_added: 2019-09-19
     date_updated: 2024-03-22
-
   libnvram:
     name: libNVRAM
     categories:
@@ -311,7 +309,6 @@ projects:
             url: https://www.usenix.org/conference/atc18/presentation/david
     date_added: 2019-03-18
     date_updated: 2024-03-22
-
   flodb:
     name: FloDB
     categories:
@@ -343,7 +340,6 @@ projects:
             url: https://eurosys2017.github.io
     date_added: 2019-03-18
     date_updated: 2024-03-22
-
   fleet:
     name: FLeet
     categories:
@@ -378,7 +374,6 @@ projects:
             url: https://2020.middleware-conference.org
     date_added: 2019-07-01
     date_updated: 2024-03-22
-
   mctop:
     name: MCTOP
     categories:
@@ -410,7 +405,6 @@ projects:
             url: https://eurosys2017.github.io
     date_added: 2019-07-26
     date_updated: 2024-03-22
-
   lockin:
     name: LOCKIN
     categories:
@@ -454,7 +448,6 @@ projects:
             url: http://2016.middleware-conference.org
     date_added: 2019-07-01
     date_updated: 2024-03-22
-
   aggregathor:
     name: AggregaThor
     categories:
@@ -488,7 +481,6 @@ projects:
             url: https://mlsys.org/Conferences/2019
     date_added: 2019-03-18
     date_updated: 2024-03-22
-
   ascylib-optik:
     name: ASCYLIB + OPTIK
     categories:
@@ -565,7 +557,6 @@ projects:
         url: https://arxiv.org/abs/1812.10844
     date_added: 2021-12-01
     date_updated: 2024-03-22
-
   clht:
     name: CLHT
     categories:
@@ -593,7 +584,6 @@ projects:
         url: https://infoscience.epfl.ch/record/203822
     date_added: 2022-07-04
     date_updated: 2024-03-22
-
   nn-fault-tolerance:
     name: Probabilistic Fault Tolerance of Neural Networks in the Continuous Limit
     categories:
@@ -649,7 +639,6 @@ projects:
             url: https://www.usenix.org/conference/atc22
     date_added: 2022-07-04
     date_updated: 2024-03-22
-
   ubft:
     name: uBFT
     categories:
@@ -722,3 +711,49 @@ projects:
         title: "ByzFL: Research Framework for Robust Federated Learning"
         url: https://arxiv.org/abs/2505.24802
     date_updated: 2026-03-19
+
+  anyway:
+    name: Anyway
+    description: >
+      Self-hosted AI platform for private, on-premise LLM inference
+    type: Application
+    categories:
+      - Privacy
+      - Learning
+    applications:
+      - Infra
+    tags:
+      - 2026 Proposal
+      - Machine Learning
+      - Large Language Model
+      - Decentralized
+    layman_desc: >
+      Anyway lets organisations run AI models entirely on their own machines,
+      so sensitive data never leaves their premises. It coordinates a cluster
+      of servers into an optimised on-premise AI platform and exposes an
+      OpenAI-compatible API, requiring no DevOps expertise to deploy.
+    tech_desc: >
+      Anyway orchestrates on-premise hardware into a distributed inference
+      cluster supporting any Hugging Face model. It deploys as a standalone
+      app, Docker image, or Kubernetes pod and provides an OpenAI-compatible
+      REST API endpoint, giving organisations full model control and fixed
+      operational costs with no per-token fees.
+    url: https://anyway.dev/
+    incubator:
+      type: incubated
+      work: |
+        Started in Spring 2025 with development support, then presenting with partners
+    language: C
+    information:
+      - type: Website
+        url: https://www.anyway.dev/
+        title: Anyway
+    contacts:
+      - name: Geovani Rizk
+        email: geovani.rizk@epfl.ch
+      - name: Gauthier Voron
+        email: gauthier.voron@epfl.ch
+      - name: Rachid Guerraoui
+        email: rachid.guerraoui@epfl.ch
+    date_added: 2026-03-23
+    date_updated: 2026-03-23

@@ -31,7 +31,6 @@ projects:
         url: https://www.myfoodrepo.org
     date_added: 2019-03-18
     date_updated: 2024-04-14
-
   foodandyou:
     name: Food & You
     categories:
@@ -56,7 +55,6 @@ projects:
     url: https://www.foodandyou.ch
     date_added: 2021-01-21
     date_updated: 2024-04-14
-
   crowdbreaks:
     name: CrowdBreaks
     categories:
@@ -90,7 +88,6 @@ projects:
             url: https://www.frontiersin.org/articles/10.3389/fpubh.2019.00081
     date_added: 2021-01-21
     date_updated: 2024-04-14
-
   aicrowd:
     name: AIcrowd
     categories:
@@ -114,7 +111,6 @@ projects:
     maturity: 3
     date_added: 2021-01-21
     date_updated: 2024-04-14
-
   txcl:
     name: txcl
     categories:

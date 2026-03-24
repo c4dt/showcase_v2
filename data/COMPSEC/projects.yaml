@@ -41,3 +41,6 @@ projects:
         url: https://www.youtube.com/watch?v=Bz2KN_h3VKM&t=90s
     date_added: 2024-03-13
     maturity: 3
+    incubator:
+      work: 2024/Q3 - maturity evaluation
+      type: incubated

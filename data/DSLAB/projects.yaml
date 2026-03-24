@@ -416,7 +416,6 @@ projects:
         url: http://lorenzo.nodo.ch/media/files/papers/eurosys10-arugula.pdf
     date_added: 2021-11-03
     date_updated: 2022-07-05
-
   lfi:
     name: LFI
     categories:
@@ -449,7 +448,6 @@ projects:
             url: https://dl.acm.org/doi/10.1145/2063509.2063511
     date_added: 2021-11-03
     date_updated: 2022-07-05
-
   svshi:
     name: SVSHI
     categories:
@@ -474,7 +472,6 @@ projects:
     maturity: 3
     date_added: 2022-07-05
     date_updated: 2023-03-20
-
   klint:
     name: Klint
     categories:
@@ -520,7 +517,6 @@ projects:
     maturity: 1
     date_added: 2022-07-05
     date_updated: 2024-03-08
-
   pix:
     name: PIX
     categories:

@@ -38,7 +38,6 @@ projects:
             url: https://cvpr2016.thecvf.com/program/main_conference
     date_added: 2019-03-18
     date_updated: 2024-03-21
-
   manifool:
     name: ManiFool
     categories:
@@ -108,7 +107,6 @@ projects:
             url: https://cvpr2019.thecvf.com/program/main_conference
     date_added: 2019-09-04
     date_updated: 2024-03-21
-
   universal:
     name: Universal
     categories:
@@ -234,7 +232,6 @@ projects:
             url: https://neurips.cc/virtual/2020/public/papers.html?filter=sessions&search=Poster+Session+4
     date_added: 2021-01-27
     date_updated: 2024-03-21
-
   orthonet:
     name: OrthoNet
     categories:

@@ -64,7 +64,6 @@ projects:
     maturity: 2
     date_added: 2019-03-18
     date_updated: 2024-04-12
-
   stainless-for-smart-contracts:
     name: Stainless for smart contracts
     categories:
@@ -102,7 +101,6 @@ projects:
     date_added: 2022-09-26
     date_updated: 2024-04-12
     maturity: 2
-
   inox:
     name: Inox
     categories:

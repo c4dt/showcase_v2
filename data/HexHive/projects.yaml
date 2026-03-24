@@ -99,7 +99,6 @@ projects:
             url: http://www.sigmetrics.org/sigmetrics2021
     date_added: 2020-02-21
     date_updated: 2024-04-12
-
   t-fuzz:
     name: T-Fuzz
     categories:
@@ -132,7 +131,6 @@ projects:
             url: https://ieeexplore.ieee.org/document/8418632
     date_added: 2019-03-18
     date_updated: 2024-04-12
-
   bopc:
     name: BOPC
     categories:
@@ -165,7 +163,6 @@ projects:
             url: https://dl.acm.org/doi/10.1145/3243734.3243739
     date_added: 2019-03-18
     date_updated: 2024-04-12
-
   cfixx:
     name: CFIXX
     categories:
@@ -195,7 +192,6 @@ projects:
             url: https://www.ndss-symposium.org/ndss2018
     date_added: 2019-03-18
     date_updated: 2024-04-12
-
   hextype:
     name: HexType
     categories:
@@ -226,7 +222,6 @@ projects:
     maturity: 1
     date_added: 2019-03-18
     date_updated: 2024-04-12
-
   retrowrite:
     name: RetroWrite
     categories:
@@ -264,7 +259,6 @@ projects:
         url: https://github.com/HexHive/RetroWrite-Tutorial
     date_added: 2019-09-02
     date_updated: 2024-04-12
-
   shadowstack:
     name: ShadowStack
     categories:
@@ -302,7 +296,6 @@ projects:
             url: https://ieeexplore.ieee.org/document/8835389
     date_added: 2020-02-21
     date_updated: 2024-04-12
-
   hexpads:
     name: HexPADS
     categories:
@@ -339,7 +332,6 @@ projects:
             url: https://dl.acm.org/conference/essos
     date_added: 2020-02-21
     date_updated: 2024-04-12
-
   fuzzgen:
     name: FuzzGen
     categories:
@@ -373,7 +365,6 @@ projects:
             url: https://www.usenix.org/conference/usenixsecurity20
     date_added: 2020-02-21
     date_updated: 2024-04-12
-
   datashield:
     name: DataShield
     categories:
@@ -406,7 +397,6 @@ projects:
             url: https://dl.acm.org/doi/10.1145/3052973.3052983
     date_added: 2020-02-21
     date_updated: 2024-04-12
-
   halucinator:
     name: HALucinator
     categories:
@@ -441,7 +431,6 @@ projects:
     date_added: 2020-02-24
     date_updated: 2024-04-12
     maturity: 1
-
   benchiot:
     name: BenchIoT
     categories:
@@ -474,7 +463,6 @@ projects:
     maturity: 1
     date_added: 2020-02-24
     date_updated: 2024-04-12
-
   freegaen:
     name: Free GAEN alternative
     categories:
@@ -542,7 +530,6 @@ projects:
     language: C++, Python
     date_added: 2020-02-26
     date_updated: 2024-04-12
-
   igor:
     name: Igor
     categories:
@@ -578,7 +565,6 @@ projects:
         url: https://www.youtube.com/watch?v=V06x1Ad5dRo
     date_added: 2021-11-04
     date_updated: 2024-04-12
-
   dis-cover:
     name: dis-cover
     categories:
@@ -598,7 +584,6 @@ projects:
       - Low-Level
     date_added: 2021-11-04
     date_updated: 2024-04-12
-
   gramatron:
     name: Gramatron
     categories:
@@ -629,7 +614,6 @@ projects:
             url: https://conf.researchr.org/home/issta-2021
     date_added: 2021-11-04
     date_updated: 2024-04-12
-
   dataflow:
     name: datAFLow
     categories:
@@ -660,7 +644,6 @@ projects:
             url: https://fuzzingworkshop.github.io
     date_added: 2022-07-05
     date_updated: 2024-04-12
-
   midas:
     name: Midas
     categories:
@@ -764,7 +747,6 @@ projects:
         url: https://hexhive.epfl.ch/publications/files/22CCS.pdf
     date_added: 2023-03-20
     date_updated: 2024-04-12
-
   warpattack:
     name: WarpAttack
     categories:
@@ -789,7 +771,6 @@ projects:
         url: https://hexhive.epfl.ch/publications/files/23Oakland3.pdf
     date_added: 2023-04-24
     date_updated: 2024-04-12
-
   videzzo:
     name: ViDeZZo
     categories:
@@ -813,7 +794,6 @@ projects:
         url: https://hexhive.epfl.ch/publications/files/23Oakland4.pdf
     date_added: 2023-04-24
     date_updated: 2024-04-12
-
   sievefuzz:
     name: SieveFuzz
     categories:
@@ -1205,3 +1185,21 @@ projects:
       linus: 4
     applications:
       - Infra
+  orchard:
+    name: Orchestrated Artifact Evaluation
+    categories:
+      - Security
+    applications:
+      - Infra
+    type: Framework
+    description: Automatically evaluating code artifacts from research papers
+    tech_desc: |
+      While there has been a strong push for adding reliable code artifacts to research papers since 2018, the process of evaluating them is still manual and often very tedious. Orchard proposes a standardized framework based on Docker to automatically evaluate those artifacts.
+    tags:
+      - Benchmark
+      - Code Analysis
+    incubator:
+      work: 2024/Q3 - started implementing of a first PoC
+      type: incubated
+    date_added: 2024-11-22
+    date_updated: 2024-11-22

@@ -7,6 +7,7 @@ import path from "path";
 
 import yaml from "yaml";
 import Ajv from "ajv";
+import betterAjvErrors from "better-ajv-errors";
 
 import labSchema from "./schemas/lab.json";
 import projectSchema from "./schemas/project.json";
@@ -23,19 +24,22 @@ const validateProjects = ajv.compile(projectsSchema);
 
 let errors = 0;
 
-function check(file: string, valid: boolean, errs: unknown) {
+function check(file: string, schema: object, content: unknown, valid: boolean, errs: Ajv["errors"]) {
   if (valid) {
     console.log(`  ✓  ${file}`);
   } else {
     console.error(`  ✗  ${file}`);
-    console.error(`     ${JSON.stringify(errs, null, 2)}`);
+    console.error(
+      betterAjvErrors(schema, content, errs ?? [], { format: "cli", json: JSON.stringify(content, null, 2) })
+    );
     errors++;
   }
 }
 
 // Validate labs.yaml
-const labsContent = yaml.parse(await fs.readFile(path.join(DATA_DIR, "labs.yaml"), "utf-8"));
-check("data/labs.yaml", validateLabs(labsContent), validateLabs.errors);
+const labsSrc = await fs.readFile(path.join(DATA_DIR, "labs.yaml"), "utf-8");
+const labsContent = yaml.parse(labsSrc);
+check("data/labs.yaml", labsSchema, labsContent, validateLabs(labsContent), validateLabs.errors);
 
 // Validate each lab's projects.yaml
 const dirs = (await fs.readdir(DATA_DIR, { withFileTypes: true })).filter(
@@ -46,8 +50,9 @@ for (const dir of dirs) {
   const rel = `data/${dir.name}/projects.yaml`;
   const projectsFile = path.join(DATA_DIR, dir.name, "projects.yaml");
   try {
-    const content = yaml.parse(await fs.readFile(projectsFile, "utf-8"));
-    check(rel, validateProjects(content), validateProjects.errors);
+    const src = await fs.readFile(projectsFile, "utf-8");
+    const content = yaml.parse(src);
+    check(rel, projectsSchema, content, validateProjects(content), validateProjects.errors);
   } catch (e) {
     if ((e as NodeJS.ErrnoException).code !== "ENOENT") {
       console.error(`  ✗  ${rel}: ${(e as Error).message}`);
