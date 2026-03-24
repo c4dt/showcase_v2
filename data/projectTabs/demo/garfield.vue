@@ -1,9 +1,11 @@
 <template>
   <h3>This project has been retired from the C4DT Factory Incubator</h3>
   <p>
-    We do not host this demo anymore, but you can find its code here and use the instructions to run it on your own
-    computer!
-    <a class="epfl-a" href="https://github.com/c4dt/garfield">Garfield Archive</a>.
+    We do not host this demo anymore, but you can find its code here and use the
+    instructions to run it on your own computer!
+    <a class="epfl-a" href="https://github.com/c4dt/garfield"
+      >Garfield Archive</a
+    >.
   </p>
   <p>Here are some screenshots from the running demo:</p>
   <div class="columns">
@@ -17,7 +19,8 @@
                 participant to keep their private data on their servers."
         />
         <br />
-        Overview of the system, showing the different setups proposed by Garfield.
+        Overview of the system, showing the different setups proposed by
+        Garfield.
       </label>
     </div>
     <div class="click-zoom">
@@ -30,8 +33,9 @@
                 of 72% for the single system."
         />
         <br />
-        This shows the training results for a simple system with only part of the available data. It supposes that the
-        rest of the data stays private with the other nodes.
+        This shows the training results for a simple system with only part of
+        the available data. It supposes that the rest of the data stays private
+        with the other nodes.
       </label>
     </div>
   </div>
@@ -47,8 +51,9 @@
                 76% for the '4 reliable systems'."
         />
         <br />
-        If we can bring more data to train the model, the accuracy increases. Here the user chose to add 3 more systems,
-        all reliable, which gives an accuracy of nearly 76%.
+        If we can bring more data to train the model, the accuracy increases.
+        Here the user chose to add 3 more systems, all reliable, which gives an
+        accuracy of nearly 76%.
       </label>
     </div>
     <div class="click-zoom">
@@ -62,8 +67,9 @@
                 one is unreliable'."
         />
         <br />
-        Unfortunately, if one of the systems is unreliable (byzantine) and sends wrong data, then the model suffers. In
-        this case, the accuracy drops to 64%, even though more data is available.
+        Unfortunately, if one of the systems is unreliable (byzantine) and sends
+        wrong data, then the model suffers. In this case, the accuracy drops to
+        64%, even though more data is available.
       </label>
     </div>
   </div>
@@ -78,8 +84,9 @@
                 an accuracy of 76% for '4 systems, 1 unreliable, with byzantine resilience'"
         />
         <br />
-        Now Garfield enters the scene and adds byzantine resilience to the system. This will allow the 3 reliable
-        systems to detect and ignore the unreliable one. In this case the accuracy is again about the same as the
+        Now Garfield enters the scene and adds byzantine resilience to the
+        system. This will allow the 3 reliable systems to detect and ignore the
+        unreliable one. In this case the accuracy is again about the same as the
         accuracy with 4 reliable systems.
       </label>
     </div>
@@ -92,28 +99,49 @@
         />
         <br />
         Comparing Garfield with a solution like
-        <a class="epfl-a" href="https://factory.c4dt.org/showcase/spindle/presentation">SPINDLE</a> shows the difference
-        between the two: while Garfield protects against attacks wanting to influence the model, SPINDLE protects
-        against attacks on listeners, so that no server or external party can learn anything from the data exchanged.
+        <a
+          class="epfl-a"
+          href="https://factory.c4dt.org/showcase/spindle/presentation"
+          >SPINDLE</a
+        >
+        shows the difference between the two: while Garfield protects against
+        attacks wanting to influence the model, SPINDLE protects against attacks
+        on listeners, so that no server or external party can learn anything
+        from the data exchanged.
       </label>
     </div>
   </div>
 
   <h4>Former description</h4>
   <p>
-    The <a class="epfl-a" href="https://factory.c4dt.org/incubator/garfield/demo/">Garfield Demonstrator</a> illustrates
-    how Machine Learning is used to train a model on known data and how it fares on new data. It describes the
-    Decentralized Learning model, showing how training on more data improves learning, while still keeping control on
-    one’s data. Finally, it shows the negative impact that faulty components have on distributed learning, and how using
-    Garfield helps to develop applications that can tolerate them.
+    The
+    <a class="epfl-a" href="https://factory.c4dt.org/incubator/garfield/demo/"
+      >Garfield Demonstrator</a
+    >
+    illustrates how Machine Learning is used to train a model on known data and
+    how it fares on new data. It describes the Decentralized Learning model,
+    showing how training on more data improves learning, while still keeping
+    control on one’s data. Finally, it shows the negative impact that faulty
+    components have on distributed learning, and how using Garfield helps to
+    develop applications that can tolerate them.
   </p>
 
   <p>
-    The following screenshot shows the start of the demonstrator. A wizard-style interface will let you navigate through
-    the various steps of the demonstrator.
+    The following screenshot shows the start of the demonstrator. A wizard-style
+    interface will let you navigate through the various steps of the
+    demonstrator.
   </p>
 
-  <NuxtImg src="/products/images/garfield/demo-screenshot.png" width="50%" class="center" />
+  <NuxtImg
+    src="/products/images/garfield/demo-screenshot.png"
+    width="50%"
+    class="center"
+  />
 
-  <a class="epfl-a tab-link" href="https://factory.c4dt.org/incubator/garfield/demo/"> For a Live Demo Click Here </a>
+  <a
+    class="epfl-a tab-link"
+    href="https://factory.c4dt.org/incubator/garfield/demo/"
+  >
+    For a Live Demo Click Here
+  </a>
 </template>

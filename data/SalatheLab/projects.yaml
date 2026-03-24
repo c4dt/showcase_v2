@@ -61,7 +61,8 @@ projects:
       - Learning
     applications:
       - Health
-    description: Track health trends using public social media data and crowdsourcing
+    description:
+      Track health trends using public social media data and crowdsourcing
     url: https://www.crowdbreaks.org
     maturity: 3
     contacts:
@@ -79,8 +80,9 @@ projects:
     license: MIT
     information:
       - type: Paper
-        title: "Crowdbreaks: Tracking Health Trends Using Public Social Media Data and
-          Crowdsourcing"
+        title:
+          "Crowdbreaks: Tracking Health Trends Using Public Social Media Data
+          and Crowdsourcing"
         url: https://infoscience.epfl.ch/record/265362
         notes:
           - label: Published in
@@ -133,7 +135,8 @@ projects:
     date_updated: 2024-04-14
   dietary-consistency-gut-microbiota:
     name: Dietary Consistency and Gut Microbiota
-    description: "Analysis code for a Swiss cohort study on dietary patterns and gut
+    description:
+      "Analysis code for a Swiss cohort study on dietary patterns and gut
       microbiota diversity."
     layman_desc: >
       What you eat every day shapes the bacteria living in your gut. This study
@@ -166,8 +169,9 @@ projects:
       carine: 1
   mindays-estimation:
     name: Minimum Days Estimation
-    description: "Code for estimating the optimal study duration for reliable
-      dietary intake information."
+    description:
+      "Code for estimating the optimal study duration for reliable dietary
+      intake information."
     layman_desc: >
       How many days of food diary do you need to fill in before the data becomes
       reliable? This study analyzes real-world dietary logs from a digital
@@ -199,8 +203,9 @@ projects:
       carine: 1
   myfoodrepo:
     name: MyFoodRepo
-    description: "Nutrition tracking platform with food image segmentation and
-      annotation tools."
+    description:
+      "Nutrition tracking platform with food image segmentation and annotation
+      tools."
     layman_desc: >
       MyFoodRepo lets users photograph their meals to automatically log what
       they eat. AI-powered image segmentation identifies food items in photos
@@ -230,7 +235,8 @@ projects:
       carine: 1
   meal-pattern-analysis:
     name: Meal Timing Analysis
-    description: "Analysis of meal timing effects on dietary quality and glucose response."
+    description:
+      "Analysis of meal timing effects on dietary quality and glucose response."
     layman_desc: >
       Does eating at irregular times affect how your body handles sugar? This
       study uses continuous glucose monitors and dietary logs from a real-world
@@ -262,7 +268,8 @@ projects:
       carine: 1
   food-additives-gut-microbiota:
     name: Food Additive Gut Microbiota
-    description: "Code for analyzing food additive exposure and its impact on gut
+    description:
+      "Code for analyzing food additive exposure and its impact on gut
       microbiota diversity."
     layman_desc: >
       Ultra-processed foods contain many additives that may affect the bacteria

@@ -60,14 +60,16 @@ projects:
             text: Proceedings of NeurIPS 2021
             url: https://proceedings.neurips.cc/paper/2021
       - type: Relevant paper
-        title: "Differential Privacy and Byzantine Resilience in SGD: Do They Add Up?"
+        title:
+          "Differential Privacy and Byzantine Resilience in SGD: Do They Add Up?"
         url: https://arxiv.org/abs/2102.08166
         notes:
           - label: Published in
             text: Proceedings of PODC 2021
             url: https://dl.acm.org/doi/proceedings/10.1145/3465084
       - type: Relevant paper
-        title: "Distributed Momentum for Byzantine-resilient Stochastic Gradient
+        title:
+          "Distributed Momentum for Byzantine-resilient Stochastic Gradient
           Descent"
         url: https://infoscience.epfl.ch/record/287261
         notes:
@@ -96,7 +98,9 @@ projects:
             text: SRDS 2020
             url: https://ieeexplore.ieee.org/xpl/conhome/9251916/proceeding
       - type: Relevant paper
-        title: "AggregaThor: Byzantine Machine Learning via Robust Gradient Aggregation"
+        title:
+          "AggregaThor: Byzantine Machine Learning via Robust Gradient
+          Aggregation"
         url: https://infoscience.epfl.ch/record/265684
         notes:
           - label: Published at
@@ -124,7 +128,8 @@ projects:
             text: SRDS 2017
             url: http://srds2017.comp.polyu.edu.hk/
       - type: Relevant paper
-        title: "Machine Learning with Adversaries:Byzantine Tolerant Gradient Descent"
+        title:
+          "Machine Learning with Adversaries:Byzantine Tolerant Gradient Descent"
         url: https://proceedings.neurips.cc/paper/2017/file/f4b9ec30ad9f68f89b29639786cb62ef-Paper.pdf
         notes:
           - label: Published in
@@ -139,8 +144,9 @@ projects:
       - Blockchain
     applications:
       - Finance
-    description: Asset Transfer System using lightweight broadcast-based primitives
-      instead of consensus
+    description:
+      Asset Transfer System using lightweight broadcast-based primitives instead
+      of consensus
     layman_desc: >
       AT2 is a full-fledged asset transfer system (cryptocurrency) without the
       need for a global consensus, allowing for faster transactions and better
@@ -365,8 +371,9 @@ projects:
     maturity: 1
     information:
       - type: Paper
-        title: "FLeet: Online Federated Learning via Staleness Awareness and Performance
-          Prediction"
+        title:
+          "FLeet: Online Federated Learning via Staleness Awareness and
+          Performance Prediction"
         url: https://infoscience.epfl.ch/record/282766
         notes:
           - label: Published at
@@ -454,7 +461,8 @@ projects:
       - Learning
     applications:
       - Info
-    description: Framework over TensorFlow implementing robust stochastic gradient descent
+    description:
+      Framework over TensorFlow implementing robust stochastic gradient descent
     layman_desc: >
       Framework built over TensorFlow implementing state-of-the-art
       Byzantine-resilient, distributed Stochastic Gradient Descent (SGD).
@@ -474,7 +482,9 @@ projects:
     information:
       - type: Paper
         url: https://infoscience.epfl.ch/record/265684
-        title: "AggregaThor: Byzantine Machine Learning via Robust Gradient Aggregation"
+        title:
+          "AggregaThor: Byzantine Machine Learning via Robust Gradient
+          Aggregation"
         notes:
           - label: Published at
             text: SysML 2019
@@ -508,8 +518,9 @@ projects:
     information:
       - type: Paper
         url: https://infoscience.epfl.ch/record/207109
-        title: "Asynchronized Concurrency: The Secret to Scaling Concurrent Search Data
-          Structures"
+        title:
+          "Asynchronized Concurrency: The Secret to Scaling Concurrent Search
+          Data Structures"
         notes:
           - label: Published at
             text: ASPLOS 2015
@@ -533,7 +544,8 @@ projects:
       - Blockchain
     applications:
       - Finance
-    description: Blockchain using lightweight broadcast-based primitives instead of
+    description:
+      Blockchain using lightweight broadcast-based primitives instead of
       consensus
     layman_desc: >
       Carbon is a blockchain not using global consensus for transactions,
@@ -585,7 +597,8 @@ projects:
     date_added: 2022-07-04
     date_updated: 2024-03-22
   nn-fault-tolerance:
-    name: Probabilistic Fault Tolerance of Neural Networks in the Continuous Limit
+    name:
+      Probabilistic Fault Tolerance of Neural Networks in the Continuous Limit
     categories:
       - Learning
     applications:
@@ -606,7 +619,8 @@ projects:
     language: Python
     information:
       - type: Paper
-        title: The Probabilistic Fault Tolerance of Neural Networks in the Continuous
+        title:
+          The Probabilistic Fault Tolerance of Neural Networks in the Continuous
           Limit
         url: https://arxiv.org/abs/1902.01686
     date_added: 2022-07-04
@@ -728,21 +742,22 @@ projects:
       - Large Language Model
       - Decentralized
     layman_desc: >
-      Anyway lets organisations run AI models entirely on their own machines,
-      so sensitive data never leaves their premises. It coordinates a cluster
-      of servers into an optimised on-premise AI platform and exposes an
+      Anyway lets organisations run AI models entirely on their own machines, so
+      sensitive data never leaves their premises. It coordinates a cluster of
+      servers into an optimised on-premise AI platform and exposes an
       OpenAI-compatible API, requiring no DevOps expertise to deploy.
     tech_desc: >
       Anyway orchestrates on-premise hardware into a distributed inference
-      cluster supporting any Hugging Face model. It deploys as a standalone
-      app, Docker image, or Kubernetes pod and provides an OpenAI-compatible
-      REST API endpoint, giving organisations full model control and fixed
-      operational costs with no per-token fees.
+      cluster supporting any Hugging Face model. It deploys as a standalone app,
+      Docker image, or Kubernetes pod and provides an OpenAI-compatible REST API
+      endpoint, giving organisations full model control and fixed operational
+      costs with no per-token fees.
     url: https://anyway.dev/
     incubator:
       type: incubated
-      work: |
-        Started in Spring 2025 with development support, then presenting with partners
+      work: >
+        Started in Spring 2025 with development support, then presenting with
+        partners
     language: C
     information:
       - type: Website

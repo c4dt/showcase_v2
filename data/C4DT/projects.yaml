@@ -7,7 +7,8 @@ projects:
     applications:
       - Gov
     type: Application
-    description: Demo for the swiss E-ID ledger. It includes an issuer and a verifier.
+    description:
+      Demo for the swiss E-ID ledger. It includes an issuer and a verifier.
     tech_desc: >
       The issuer is a web application that allows to create a new identity and
       issue a credential.  The verifier is a web application that allows to
@@ -31,7 +32,8 @@ projects:
     applications:
       - Gov
     type: Grant
-    description: Research techniques to improve privacy when using electronic identities
+    description:
+      Research techniques to improve privacy when using electronic identities
     tech_desc: >
       Today's identity security faces challenges like misuse and tracking. Our
       goal is to enable secure, anonymous, unlinkable E-ID interactions by
@@ -65,8 +67,9 @@ projects:
       - Gov
       - Infra
     type: Grant
-    description: Combating phishing through vulnerability analysis, detection tools,
-      and best practice guidelines.
+    description:
+      Combating phishing through vulnerability analysis, detection tools, and
+      best practice guidelines.
     tech_desc: >
       This project addresses phishing threats through the analysis of existing
       countermeasures, identification of vulnerabilities, and development of
@@ -95,14 +98,16 @@ projects:
     date_updated: 2026-01-16
     url: https://seal-innovation.ch/en/combating-phishing/
   seal-digiinov:
-    name: Sécurisation de Digiinov Hmi en adéquation avec le Cyber Resilience Act
+    name:
+      Sécurisation de Digiinov Hmi en adéquation avec le Cyber Resilience Act
       (CRA)
     categories:
       - Security
     applications:
       - Gov
     type: Grant
-    description: Securing industrial HMI software for EU Cyber-Resilience-Act compliance
+    description:
+      Securing industrial HMI software for EU Cyber-Resilience-Act compliance
     tech_desc: >
       This project integrates state-of-the-art software security measures into
       Digiinov HMI, a platform bridging Operational Technology (OT) and
@@ -138,8 +143,10 @@ projects:
     applications:
       - Gov
     type: Library
-    description: |
-      This Innosuisse project focuses on researching cryptographic algorithms to fit the given requirements of a privacy-preserving, unlinkable E-ID system.
+    description: >
+      This Innosuisse project focuses on researching cryptographic algorithms to
+      fit the given requirements of a privacy-preserving, unlinkable E-ID
+      system.
     tags:
       - Access Control
       - Development
@@ -171,9 +178,15 @@ projects:
     applications:
       - Gov
     type: Hands-on
-    description: A hands-on workshop showing how cryptography can preserve privacy and security of an E-ID solution.
-    tech_desc: |
-      To protect the privacy of the users of E-ID systems, several technical measures need to be taken. This workshop demonstrates the workings of Self-Sovereign Identities, using selective disclosure  for data protection, and explores further safeguards like unlinkability through BBS+ and  zero-knowledge proofs to share only essential information.
+    description:
+      A hands-on workshop showing how cryptography can preserve privacy and
+      security of an E-ID solution.
+    tech_desc: >
+      To protect the privacy of the users of E-ID systems, several technical
+      measures need to be taken. This workshop demonstrates the workings of
+      Self-Sovereign Identities, using selective disclosure  for data
+      protection, and explores further safeguards like unlinkability through
+      BBS+ and  zero-knowledge proofs to share only essential information.
     code:
       type: Lab GitHub
       url: https://github.com/c4dt/eid-workshop
@@ -199,10 +212,18 @@ projects:
     applications:
       - Infra
     type: Application
-    description: |
-      The Matrix server run for the EPFL community by the EPFL Center for Imaging with help from the EPFL Center for Digital Trust.
-    layman_desc: |
-      Matrix is a widely used open source chat platform. It is an alternative to platforms such as Slack and MSTeams. Edward Andò from the Imaging Center at EPFL started an EPFL-wide instance, matrix.epfl.ch, in 2023. It advances digital trust at the whole EPFL while also having a broader positive impact. Thinking ahead and planning to eventually move the users of matrix.c4dt.org to this EPFL-wide instance, C4DT reached out to Edward Andò to offer our support bolstering matrix.epfl.ch’s team, which was readily welcomed.
+    description: >
+      The Matrix server run for the EPFL community by the EPFL Center for
+      Imaging with help from the EPFL Center for Digital Trust.
+    layman_desc: >
+      Matrix is a widely used open source chat platform. It is an alternative to
+      platforms such as Slack and MSTeams. Edward Andò from the Imaging Center
+      at EPFL started an EPFL-wide instance, matrix.epfl.ch, in 2023. It
+      advances digital trust at the whole EPFL while also having a broader
+      positive impact. Thinking ahead and planning to eventually move the users
+      of matrix.c4dt.org to this EPFL-wide instance, C4DT reached out to Edward
+      Andò to offer our support bolstering matrix.epfl.ch’s team, which was
+      readily welcomed.
     tags:
       - Protection
       - Decentralized

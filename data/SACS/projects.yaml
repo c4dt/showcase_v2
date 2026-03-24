@@ -56,7 +56,8 @@ projects:
       - Concurrency
     information:
       - type: Paper
-        title: "ProteusTM: Abstraction Meets Performance in Transactional Memory"
+        title:
+          "ProteusTM: Abstraction Meets Performance in Transactional Memory"
         url: https://infoscience.epfl.ch/record/215897
         notes:
           - label: Published at

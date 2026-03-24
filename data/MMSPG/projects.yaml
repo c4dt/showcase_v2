@@ -72,7 +72,8 @@ projects:
     type: Library
     information:
       - type: Paper
-        title: A comprehensive study of the rate-distortion performance in MPEG point
+        title:
+          A comprehensive study of the rate-distortion performance in MPEG point
           cloud compression
         url: https://infoscience.epfl.ch/record/272124
         notes:
@@ -115,7 +116,9 @@ projects:
         url: https://infoscience.epfl.ch/record/288000
         notes:
           - label: Published in
-            text: Proceedings of SPIE - Applications of Digital Image Processing XLIV
+            text:
+              Proceedings of SPIE - Applications of Digital Image Processing
+              XLIV
             url: https://spie.org/Publications/Proceedings/Volume/11842
     date_added: 2021-11-04
     date_updated: 2024-03-15
@@ -147,7 +150,8 @@ projects:
       - Computer Vision
     information:
       - type: Paper
-        title: Open-Set Person Re-Identification through Error Resilient Recurring
+        title:
+          Open-Set Person Re-Identification through Error Resilient Recurring
           Gallery Building
         url: https://infoscience.epfl.ch/record/286318
         notes:
@@ -221,7 +225,8 @@ projects:
     applications:
       - Info
       - Health
-    description: Privacy-preserving camera system tracking individual body temperatures
+    description:
+      Privacy-preserving camera system tracking individual body temperatures
     tech_desc: >
       Many contagious diseases such as Covid19 can induce high temperatures and
       fever in a significant number of affected individuals. Contact tracing of
@@ -253,9 +258,9 @@ projects:
       - Other
     applications:
       - Other
-    description: "EPFL's contribution to the AdMiRe project: the Background
-      Extraction and Super Resolution modules, with input and output as NDI
-      streams."
+    description:
+      "EPFL's contribution to the AdMiRe project: the Background Extraction and
+      Super Resolution modules, with input and output as NDI streams."
     tech_desc: >
       Currently, TV audiences can only interact with the shows they are watching
       through social media or hybrid broadcast broadband TV. Additionally,

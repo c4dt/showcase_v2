@@ -5,7 +5,8 @@ projects:
       - Verification
     applications:
       - Infra
-    description: Verification framework for a subset of the Scala programming language
+    description:
+      Verification framework for a subset of the Scala programming language
     tech_desc: >
       Stainless is a tool for verifying Scala programs developed by the LARA. It
       can verify that your program is correct for all inputs, it can report
@@ -39,7 +40,8 @@ projects:
             text: SAS 2011
             url: https://staticanalysis.org
       - type: Paper
-        title: "On Counter-Example Complete Verification for Higher-Order Functions"
+        title:
+          "On Counter-Example Complete Verification for Higher-Order Functions"
         url: https://infoscience.epfl.ch/record/207420
       - type: Paper
         title: "System FR as Foundations for Stainless"
@@ -52,8 +54,9 @@ projects:
         title: Tools for Verified Scala at Scala Days 2017
         url: https://www.youtube.com/watch?v=d4VeFa0z_Lo
       - type: Video
-        title: Formal verification of Scala programs with Stainless at Typelevel Summit
-          2019
+        title:
+          Formal verification of Scala programs with Stainless at Typelevel
+          Summit 2019
         url: https://www.youtube.com/watch?v=K1ZwpumSHCc
       - type: Tutorial
         title: Stainless Verification System Tutorial
@@ -128,7 +131,8 @@ projects:
     type: Library, Application
     license: Apache-2.0
     notes: >
-      Invokes https://github.com/Z3Prover/z3 and http://cvc4.cs.stanford.edu/web/
+      Invokes https://github.com/Z3Prover/z3 and
+      http://cvc4.cs.stanford.edu/web/
     date_added: 2019-03-18
     date_updated: 2024-04-12
 
@@ -164,8 +168,9 @@ projects:
       - Verification
     applications:
       - Info
-    description: A Proof Assistant based on first order logic, sequent calculus and
-      set theory.
+    description:
+      A Proof Assistant based on first order logic, sequent calculus and set
+      theory.
     contacts:
       - name: Simon Guilloud
         email: simon.guilloud@epfl.ch
@@ -188,8 +193,9 @@ projects:
       - Other
     applications:
       - Info
-    description: A library for writing parsers and pretty printers for LL(1)
-      languages in Scala.
+    description:
+      A library for writing parsers and pretty printers for LL(1) languages in
+      Scala.
     code:
       type: Lab GitHub
       url: https://github.com/epfl-lara/scallion

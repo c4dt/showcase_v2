@@ -5,7 +5,9 @@ projects:
       - Learning
     applications:
       - Info
-    description: Practical low-rank communication compression in decentralized deep learning
+    description:
+      Practical low-rank communication compression in decentralized deep
+      learning
     tech_desc: >
       Inspired by the PowerSGD algorithm for centralized deep learning, this
       algorithm uses power iteration steps to maximize the information
@@ -23,7 +25,8 @@ projects:
     license: MIT
     information:
       - type: Paper
-        title: "PowerGossip: Practical Low-Rank Communication Compression in
+        title:
+          "PowerGossip: Practical Low-Rank Communication Compression in
           Decentralized Deep Learning"
         url: https://arxiv.org/abs/2008.01425
         notes:
@@ -38,7 +41,8 @@ projects:
       - Learning
     applications:
       - Info
-    description: Decentralized communication-efficient machine learning and deep learning
+    description:
+      Decentralized communication-efficient machine learning and deep learning
     tech_desc: >
       Communication-efficient decentralized ML training (both deep learning,
       compatible with PyTorch, and traditional convex machine learning models).
@@ -52,7 +56,8 @@ projects:
       - PyTorch
     information:
       - type: Paper
-        title: Decentralized Stochastic Optimization and Gossip Algorithms with
+        title:
+          Decentralized Stochastic Optimization and Gossip Algorithms with
           Compressed Communication
         url: https://infoscience.epfl.ch/record/267529
         notes:
@@ -101,7 +106,8 @@ projects:
             text: NeurIPS 2018
             url: https://nips.cc/Conferences/2018/Schedule?showEvent=11447
       - type: Paper
-        title: "Distribution System Voltage Prediction from Smart Inverters using
+        title:
+          "Distribution System Voltage Prediction from Smart Inverters using
           Decentralized Regression"
         url: https://arxiv.org/pdf/2101.04816.pdf
     tags:
@@ -183,7 +189,8 @@ projects:
       - Learning
     applications:
       - Info
-    description: Practical low-rank gradient compression for distributed optimization
+    description:
+      Practical low-rank gradient compression for distributed optimization
     tech_desc: >
       New low-rank gradient compressor based on power iteration that can i)
       compress gradients rapidly, ii) efficiently aggregate the compressed
@@ -198,7 +205,8 @@ projects:
       date_last_commit: 2024-10-29
     information:
       - type: Paper
-        title: "PowerSGD: Practical Low-Rank Gradient Compression for Distributed
+        title:
+          "PowerSGD: Practical Low-Rank Gradient Compression for Distributed
           Optimization"
         url: https://infoscience.epfl.ch/record/278542
         notes:
@@ -307,27 +315,31 @@ projects:
         title: Secure Byzantine-Robust Machine Learning
         url: https://arxiv.org/abs/2006.04747
       - type: Paper
-        title: Practical Secure Aggregation for Privacy-Preserving Machine Learning
+        title:
+          Practical Secure Aggregation for Privacy-Preserving Machine Learning
         url: https://eprint.iacr.org/2017/281.pdf
         notes:
           - label: Published in
-            text: "ACM Conference on Computer and Communications Security (CCS '17)"
+            text:
+              "ACM Conference on Computer and Communications Security (CCS '17)"
             url: https://acmccs.github.io/session-E5/
       - type: Paper
         title: Decentralized SGD with Asynchronous, Local and Quantized Updates
         url: https://arxiv.org/abs/1910.12308
         notes:
           - label: Poster in
-            text: "Thirty-Fifth Conference on Neural Information Processing Systems (NeurIPS
-              2021)"
+            text:
+              "Thirty-Fifth Conference on Neural Information Processing Systems
+              (NeurIPS 2021)"
             url: https://openreview.net/forum?id=9x10Q5J8e9W
       - type: Paper
         title: Byzantine-Robust Learning on Heterogeneous Datasets via Bucketing
         url: https://arxiv.org/abs/2006.09365
         notes:
           - label: Published in
-            text: "The Tenth International Conference on Learning Representations (ICLR
-              2022)"
+            text:
+              "The Tenth International Conference on Learning Representations
+              (ICLR 2022)"
             url: https://openreview.net/forum?id=jXKKDEi5vJt
       - type: Paper
         title: Learning from History for Byzantine Robust Optimization
@@ -407,7 +419,8 @@ projects:
       - Deep Neural Networks
     information:
       - type: Paper
-        title: "Quasi-Global Momentum: Accelerating Decentralized Deep Learning on
+        title:
+          "Quasi-Global Momentum: Accelerating Decentralized Deep Learning on
           Heterogeneous Data"
         url: https://arxiv.org/pdf/2102.04761
         notes:
@@ -486,7 +499,8 @@ projects:
       - Learning
     applications:
       - Info
-    description: Byzantine-Robust Learning on Heterogeneous Datasets via Bucketing
+    description:
+      Byzantine-Robust Learning on Heterogeneous Datasets via Bucketing
     code:
       type: Lab GitHub
       url: https://github.com/epfml/byzantine-robust-noniid-optimizer
@@ -505,8 +519,9 @@ projects:
       - Learning
     applications:
       - Info
-    description: Proof-of-concept ML algorithms to do anomaly detection compatible
-      with distributed, encrypted algorithms.
+    description:
+      Proof-of-concept ML algorithms to do anomaly detection compatible with
+      distributed, encrypted algorithms.
     tech_desc: >
       The goal of this project is prove that state-of-the-art anomaly detection
       algorithms that already  achieve over 99% accuracy can be run in a
@@ -564,7 +579,8 @@ projects:
     url: https://actu.epfl.ch/news/epfl-s-new-large-language-model-for-medical-knowle/
     information:
       - type: Paper
-        title: "MEDITRON-70B: Scaling Medical Pretraining for Large Language Models"
+        title:
+          "MEDITRON-70B: Scaling Medical Pretraining for Large Language Models"
         url: https://arxiv.org/abs/2311.16079
     date_added: 2024-04-12
 
@@ -606,8 +622,9 @@ projects:
     date_added: 2024-04-12
   fineweb2-hq:
     name: FineWeb2-HQ
-    description: "Multilingual data filtering tools for LLM pretraining using
-      FastText and Transformer-MLP classifiers."
+    description:
+      "Multilingual data filtering tools for LLM pretraining using FastText and
+      Transformer-MLP classifiers."
     layman_desc: >
       Training powerful AI language models requires enormous amounts of
       high-quality text in many languages. FineWeb2-HQ provides tools for
@@ -639,7 +656,8 @@ projects:
       - Info
   grad-norm-smooth:
     name: Gradient-Normalized Smoothness
-    description: "Algorithms for optimization with approximate Hessians using
+    description:
+      "Algorithms for optimization with approximate Hessians using
       gradient-normalized smoothness."
     layman_desc: >
       Optimizing machine learning models can be made more efficient by using
@@ -668,7 +686,9 @@ projects:
     license: Apache-2.0
     information:
       - type: Paper
-        title: Gradient-Normalized Smoothness for Optimization with Approximate Hessians
+        title:
+          Gradient-Normalized Smoothness for Optimization with Approximate
+          Hessians
         url: https://arxiv.org/abs/2506.13710
     date_added: 2026-03-03
     showcase_interest:
@@ -677,8 +697,9 @@ projects:
       - Info
   llm-optimizer-benchmark:
     name: LLM Optimizer Benchmark
-    description: "Benchmark for comparing optimizers for LLM pretraining on Llama
-      and MoE models."
+    description:
+      "Benchmark for comparing optimizers for LLM pretraining on Llama and MoE
+      models."
     layman_desc: >
       Training large language models requires choosing an optimizer — an
       algorithm that updates model weights — but it is not always clear which
@@ -716,8 +737,9 @@ projects:
       - Info
   timoe:
     name: TiMoE
-    description: "Modular framework for temporally grounded language models with
-      time-aware expert routing."
+    description:
+      "Modular framework for temporally grounded language models with time-aware
+      expert routing."
     layman_desc: >
       Language models are trained on data up to a certain date and can quickly
       become outdated. TiMoE addresses this by training separate expert models
@@ -748,8 +770,9 @@ projects:
       - Info
   halluhard:
     name: HalluHard
-    description: "Hard multi-turn hallucination benchmark for evaluating language
-      models across domains."
+    description:
+      "Hard multi-turn hallucination benchmark for evaluating language models
+      across domains."
     layman_desc: >
       Language models sometimes confidently state false information — a problem
       called hallucination. HalluHard is a challenging benchmark designed to

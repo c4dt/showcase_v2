@@ -5,8 +5,9 @@ projects:
       - Learning
     applications:
       - Info
-    description: Simple algorithm to find the minimum adversarial perturbations in
-      deep networks
+    description:
+      Simple algorithm to find the minimum adversarial perturbations in deep
+      networks
     layman_desc: >
       DeepFool is a simple algorithm to find the minimum perturbations needed in
       deep networks to change the outcome of its decision.
@@ -30,11 +31,13 @@ projects:
     type: Application
     information:
       - type: Paper
-        title: "DeepFool: A Simple and Accurate Method to Fool Deep Neural Networks"
+        title:
+          "DeepFool: A Simple and Accurate Method to Fool Deep Neural Networks"
         url: https://infoscience.epfl.ch/record/218057
         notes:
           - label: Published at
-            text: 2016 IEEE Conference on Computer Vision and Pattern Recognition
+            text:
+              2016 IEEE Conference on Computer Vision and Pattern Recognition
             url: https://cvpr2016.thecvf.com/program/main_conference
     date_added: 2019-03-18
     date_updated: 2024-03-21
@@ -44,7 +47,8 @@ projects:
       - Learning
     applications:
       - Info
-    description: Algorithm for evaluating the invariance properties of deep networks
+    description:
+      Algorithm for evaluating the invariance properties of deep networks
     tech_desc: >
       Deep convolutional neural networks have been shown to be vulnerable to
       arbitrary geometric transformations. However, there is no systematic
@@ -67,8 +71,9 @@ projects:
         url: https://infoscience.epfl.ch/record/253668
         notes:
           - label: Published in
-            text: proceedings of the 2018 IEEE/CVF Conference on Computer Vision and Pattern
-              Recognition
+            text:
+              proceedings of the 2018 IEEE/CVF Conference on Computer Vision and
+              Pattern Recognition
             url: https://www.computer.org/csdl/proceedings/cvpr/2018/17D45VtKirt
     date_added: 2019-03-18
     date_updated: 2024-03-21
@@ -103,7 +108,9 @@ projects:
         url: https://infoscience.epfl.ch/record/258118
         notes:
           - label: Published at
-            text: 2019 IEEE/CVF Conference on Computer Vision and Pattern Recognition
+            text:
+              2019 IEEE/CVF Conference on Computer Vision and Pattern
+              Recognition
             url: https://cvpr2019.thecvf.com/program/main_conference
     date_added: 2019-09-04
     date_updated: 2024-03-21
@@ -132,7 +139,8 @@ projects:
         url: https://infoscience.epfl.ch/record/226156
         notes:
           - label: Published in
-            text: proceedings of 2017 IEEE Conference on Computer Vision and Pattern
+            text:
+              proceedings of 2017 IEEE Conference on Computer Vision and Pattern
               Recognition
             url: https://www.computer.org/csdl/proceedings/cvpr/2017/12OmNyoiYVr
     date_added: 2019-03-18
@@ -176,7 +184,8 @@ projects:
     license: Apache-2.0
     information:
       - type: Paper
-        title: Hold me tight! Influence of discriminative features on deep network
+        title:
+          Hold me tight! Influence of discriminative features on deep network
           boundaries
         url: https://infoscience.epfl.ch/record/280278
         notes:
@@ -268,8 +277,9 @@ projects:
         url: https://infoscience.epfl.ch/record/276521
         notes:
           - label: Published in
-            text: IEEE Transactions on Signal and Information Processing over Networks,
-              Volume 6
+            text:
+              IEEE Transactions on Signal and Information Processing over
+              Networks, Volume 6
             url: https://ieeexplore.ieee.org/document/8974205
     date_added: 2021-11-04
     date_updated: 2024-03-21
@@ -299,7 +309,8 @@ projects:
       - PyTorch
     information:
       - type: Paper
-        title: "PRIME: A few primitives can boost robustness to common corruptions"
+        title:
+          "PRIME: A few primitives can boost robustness to common corruptions"
         url: https://arxiv.org/abs/2112.13547
     date_added: 2022-07-06
     date_updated: 2024-03-21
@@ -340,7 +351,8 @@ projects:
     license: Apache-2.0
     information:
       - type: Paper
-        title: "TransFool: An Adversarial Attack against Neural Machine Translation
+        title:
+          "TransFool: An Adversarial Attack against Neural Machine Translation
           Models"
         url: https://openreview.net/pdf?id=sFk3aBNb81
     date_added: 2024-04-12
@@ -386,6 +398,7 @@ projects:
     date_added: 2024-12-31
     information:
       - type: Paper
-        title: A Classification-Guided Approach for Adversarial Attacks against Neural
-          Machine Translation
+        title:
+          A Classification-Guided Approach for Adversarial Attacks against
+          Neural Machine Translation
         url: https://aclanthology.org/2024.eacl-long.70/
