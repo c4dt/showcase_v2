@@ -67,6 +67,7 @@ function onFocusOut(e: FocusEvent) {
         class="w-9/10 truncate py-2 pl-4 focus:outline-hidden"
         @focusin="onFocusIn"
       />
+      <!-- eslint-disable vue/no-v-html -- We trust the html because it's our hard-coded data -->
       <div
         v-else
         :id="`searchInput${title}`"
@@ -74,6 +75,7 @@ function onFocusOut(e: FocusEvent) {
         @focusin="onFocusIn"
         v-html="selectedItem"
       />
+      <!-- eslint-enable vue/no-v-html -->
       <div class="w-1/10 overflow-clip py-2">
         <ClearButton v-if="searchQuery && !selectedItem" :clear-func="clearInput" aria-label="Clear search query" />
         <ClearButton v-if="selectedItem" :clear-func="clearSelection" aria-label="Clear selection" />

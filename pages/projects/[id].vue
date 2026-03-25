@@ -60,6 +60,7 @@ const lastEdited = new Date(Date.parse(project.value.date_updated || project.val
                 </p>
               </div>
             </div>
+            <!-- eslint-disable-next-line vue/no-v-html -- We trust the html because it's our hard-coded data-->
             <div class="py-4 text-left text-sm" v-html="lab.description" />
           </div>
         </div>

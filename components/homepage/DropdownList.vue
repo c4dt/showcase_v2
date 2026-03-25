@@ -11,6 +11,7 @@ defineProps<{
   <div>
     <!-- list to display filtered options -->
     <ul class="epfl-select">
+      <!-- eslint-disable vue/no-v-html -- We trust the html because it's our hard-coded data -->
       <li
         v-for="name in filteredList"
         :key="name"
@@ -18,6 +19,7 @@ defineProps<{
         @mousedown.prevent="selectFunc(name)"
         v-html="name"
       />
+      <!-- eslint-enable vue/no-v-html -->
     </ul>
   </div>
 </template>
