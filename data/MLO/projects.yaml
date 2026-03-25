@@ -808,8 +808,8 @@ projects:
   comigs:
     name: CoMiGS
     description: >
-      On-device collaborative language modeling via a mixture of generalists
-      and specialists
+      On-device collaborative language modeling via a mixture of generalists and
+      specialists
     type: Experiments
     categories:
       - Learning
@@ -825,18 +825,17 @@ projects:
       performance) and keeping knowledge local (which preserves privacy and
       handles individual differences). CoMiGS resolves this by splitting the
       model into "generalist" experts that are shared across devices and
-      "specialist" experts that stay local, allowing each device to benefit
-      from collective learning while still adapting to its own data.
+      "specialist" experts that stay local, allowing each device to benefit from
+      collective learning while still adapting to its own data.
     tech_desc: >
-      CoMiGS introduces a Mixture-of-Experts (MoE) architecture for
-      personalized federated fine-tuning of language models on heterogeneous
-      devices. Experts are categorized as generalists (whose parameters are
-      aggregated across clients via FedAvg) or specialists (whose parameters
-      remain local), and the split is determined through a bi-level
-      optimization formulation. The method handles both system heterogeneity
-      (varying LoRA ranks per device) and data heterogeneity, outperforming
-      baselines including FedAvg, FlexLoRA, HetLoRA, FFA-LoRA, FDLoRA, and
-      pFedMoE on standard benchmarks.
+      CoMiGS introduces a Mixture-of-Experts (MoE) architecture for personalized
+      federated fine-tuning of language models on heterogeneous devices. Experts
+      are categorized as generalists (whose parameters are aggregated across
+      clients via FedAvg) or specialists (whose parameters remain local), and
+      the split is determined through a bi-level optimization formulation. The
+      method handles both system heterogeneity (varying LoRA ranks per device)
+      and data heterogeneity, outperforming baselines including FedAvg,
+      FlexLoRA, HetLoRA, FFA-LoRA, FDLoRA, and pFedMoE on standard benchmarks.
     code:
       type: Lab Github
       url: https://github.com/epfml/CoMiGS
@@ -846,8 +845,8 @@ projects:
     information:
       - type: Paper
         title: >
-          On-Device Collaborative Language Modeling via a Mixture of
-          Generalists and Specialists
+          On-Device Collaborative Language Modeling via a Mixture of Generalists
+          and Specialists
         url: https://arxiv.org/abs/2409.13931
         notes:
           - label: Published at
