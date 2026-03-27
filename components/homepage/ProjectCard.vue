@@ -9,11 +9,15 @@
             <h3>Professor: {{ project.lab.prof.name.join(" ") }}</h3>
             <h3>Lab: {{ project.lab.name }}</h3>
             <div class="block sm:hidden">
+              <p class="mt-2 text-sm font-semibold">{{ project.lab.prof.name.join(" ") }}</p>
+              <p class="text-sm text-gray-500">{{ project.lab.name }}</p>
               <ProjectQuality :project="project" />
             </div>
           </NuxtLink>
         </div>
         <div class="hidden sm:block sm:basis-64 sm:justify-end">
+          <p class="mt-2 text-sm font-semibold">{{ project.lab.prof.name.join(" ") }}</p>
+          <p class="text-sm text-gray-500">{{ project.lab.name }}</p>
           <ProjectQuality :project="project" />
         </div>
       </div>
