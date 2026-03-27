@@ -131,7 +131,18 @@ export interface Project {
     work: string;
     type?: "incubated" | "incubated_market" | "retired" | "retired_archived";
     products?: {
-      type: "Demo" | "Hands-on" | "Pilot" | "App" | "Library" | "OSS-participation" | "Archive" | "Project" | "Blog";
+      type:
+        | "Demo"
+        | "Hands-on"
+        | "Pilot"
+        | "App"
+        | "Library"
+        | "OSS-participation"
+        | "Archive"
+        | "Project"
+        | "Blog"
+        | "White paper"
+        | "Report";
       url: string;
       title: string;
       code?: string;

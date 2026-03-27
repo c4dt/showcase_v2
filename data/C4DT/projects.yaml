@@ -1,6 +1,6 @@
 projects:
-  eid-demo:
-    name: E-ID Demo (Issuer & Verifier)
+  demo-eid:
+    name: Issuer & Verifier for the Swiss e-ID 2023 sandbox
     categories:
       - Security
       - Privacy
@@ -40,6 +40,10 @@ projects:
       researching novel cryptographic algorithms. This boosts user trust,
       creates new business opportunities, and cuts financial losses after data
       breaches.
+    url: https://eid-privacy.github.io/
+    code:
+      type: Project GitHub
+      url: https://github.com/eid-privacy
     incubator:
       work: "Research Grant"
       type: "incubated"
@@ -50,6 +54,13 @@ projects:
         - type: "Blog"
           url: https://eid-privacy.github.io
           title: "Blog of project steps"
+        - type: White paper
+          url: >-
+            https://eid-privacy.github.io/wp1/2025/09/17/taxonomy-of-digital-identity-systems.html
+          title: Taxonomy of Digital Identity Systems
+        - type: Report
+          url: https://eid-privacy.github.io/2026/01/09/poc-report.html
+          title: PoC Report
     language: "Rust, Typst, TypeScript"
     logo: /products/images/innosuisse-eid/innosuisse-eid.png
     tags:
@@ -58,7 +69,7 @@ projects:
       - Zero-Knowledge Proofs
     maturity: 2
     date_added: 2025-04-01
-    date_updated: 2026-01-16
+    date_updated: 2026-03-27
   seal-phishing:
     name: "Combattre le phishing: quelles innovations apporter ?"
     categories:
@@ -135,42 +146,7 @@ projects:
     maturity: 0
     date_added: 2026-01-16
     date_updated: 2026-01-16
-  eid-innosuisse:
-    name: E-ID Innosuisse
-    categories:
-      - Security
-      - Privacy
-    applications:
-      - Gov
-    type: Library
-    description: >
-      This Innosuisse project focuses on researching cryptographic algorithms to
-      fit the given requirements of a privacy-preserving, unlinkable E-ID
-      system.
-    tags:
-      - Access Control
-      - Development
-    incubator:
-      type: incubated
-      work: 2023/Q3-2024/Q2 Testing and implementing the demonstrator
-    url: https://eid-privacy.github.io/
-    code:
-      type: Project GitHub
-      url: https://github.com/eid-privacy
-    information:
-      - type: Blog
-        url: https://eid-privacy.github.io/
-        title: E-ID Privacy Blog
-      - type: Relevant paper
-        url: >-
-          https://eid-privacy.github.io/wp1/2025/09/17/taxonomy-of-digital-identity-systems.html
-        title: Taxonomy of Digital Identity Systems
-      - type: Report
-        url: https://eid-privacy.github.io/2026/01/09/poc-report.html
-        title: PoC Report
-    date_added: 2025-10-15
-    date_updated: 2025-10-15
-  eid-hands-on:
+  hands-on-eid:
     name: E-ID Hands-on Workshop
     categories:
       - Security

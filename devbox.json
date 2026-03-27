@@ -10,7 +10,8 @@
       "playwright": ["bun playwright:test"],
       "playwright-ui": ["bun playwright:test-ui"],
       "validate-data": ["bun utils/validate-data.ts"],
-      "dev-evaluate": ["EVALUATE_MODE=1 bun dev"]
+      "dev-evaluate": ["EVALUATE_MODE=1 bun dev"],
+      "update-schema": ["bunx json2ts utils/schemas -o ./types"]
     }
   }
 }
