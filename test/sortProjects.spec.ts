@@ -167,6 +167,35 @@ describe("searchRelevance", () => {
   });
 });
 
+describe("accent handling in search", () => {
+  test("matches description containing accented text when query uses same accent", () => {
+    const p = makeProject("city-proj", { description: "A project based in Genève, Switzerland" });
+    expect(projectMatchesSearch(p, "Genève")).toBe(true);
+  });
+
+  test("case-insensitive accent match works (lowercase query)", () => {
+    const p = makeProject("city-proj", { description: "A project based in Genève, Switzerland" });
+    expect(projectMatchesSearch(p, "genève")).toBe(true);
+  });
+
+  test("query without accent matches accented description (accent-folding)", () => {
+    // id and name are unrelated so only the description is the potential match site
+    const p = makeProject("city-proj", { name: "CityProject", description: "A project based in Genève, Switzerland" });
+    expect(projectMatchesSearch(p, "Geneve")).toBe(true);
+  });
+
+  test("accented project appears in sortProjects results when query matches", () => {
+    const p = makeProject("city-proj", {
+      name: "CityProject",
+      description: "A project based in Genève, Switzerland",
+      sortKey: 5
+    });
+    const other = makeProject("other", { description: "unrelated", sortKey: 5 });
+    const result = sortProjects([other, p], [], "genève");
+    expect(result.map((r) => r.id)).toContain("city-proj");
+  });
+});
+
 describe("sortProjects with search query", () => {
   test("exact name match beats same-sortKey description-only match", () => {
     const disco = makeProject("disco", { name: "Disco", sortKey: 12 });

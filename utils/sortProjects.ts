@@ -1,5 +1,10 @@
 import type { ExtendedProject } from "./loadData";
 
+/** Lowercase and strip combining diacritics so "geneve" matches "Genève". */
+export function normalize(s: string): string {
+  return s.toLowerCase().normalize("NFD").replace(/\p{M}/gu, "");
+}
+
 export function meanEvaluation(interest: Record<string, number> | undefined): number {
   const vals = Object.values(interest ?? {});
   return vals.length ? vals.reduce((s, v) => s + v, 0) / vals.length : 0;
@@ -11,22 +16,22 @@ export function meanEvaluation(interest: Record<string, number> | undefined): nu
  */
 export function projectMatchesSearch(project: ExtendedProject, query: string): boolean {
   if (query === "") return true;
-  const q = query.toLowerCase();
-  const searchable = [
-    project.id,
-    project.name,
-    project.description ?? "",
-    project.tech_desc ?? "",
-    project.layman_desc ?? "",
-    project.lab.name,
-    ...project.lab.prof.name,
-    project.lab.description,
-    ...(project.tags ?? []),
-    ...(project.categories ?? []),
-    ...(project.applications ?? [])
-  ]
-    .join("\n")
-    .toLowerCase();
+  const q = normalize(query);
+  const searchable = normalize(
+    [
+      project.id,
+      project.name,
+      project.description ?? "",
+      project.tech_desc ?? "",
+      project.layman_desc ?? "",
+      project.lab.name,
+      ...project.lab.prof.name,
+      project.lab.description,
+      ...(project.tags ?? []),
+      ...(project.categories ?? []),
+      ...(project.applications ?? [])
+    ].join("\n")
+  );
   return searchable.includes(q);
 }
 
@@ -43,31 +48,31 @@ export function projectMatchesSearch(project: ExtendedProject, query: string): b
  */
 export function searchRelevance(project: ExtendedProject, query: string): number {
   if (query === "") return 0;
-  const q = query.toLowerCase();
-  const name = project.name.toLowerCase();
-  const id = project.id.toLowerCase();
+  const q = normalize(query);
+  const name = normalize(project.name);
+  const id = normalize(project.id);
 
   if (name === q || id === q) return 7;
   if (name.startsWith(q) || id.startsWith(q)) return 6;
   if (name.includes(q) || id.includes(q)) return 5;
 
-  if (project.lab.prof.name.some((n) => n.toLowerCase().includes(q))) return 4;
+  if (project.lab.prof.name.some((n) => normalize(n).includes(q))) return 4;
 
-  if (project.lab.name.toLowerCase().includes(q)) return 3;
+  if (normalize(project.lab.name).includes(q)) return 3;
 
-  const projectDesc = [
-    project.description ?? "",
-    project.tech_desc ?? "",
-    project.layman_desc ?? "",
-    ...(project.tags ?? []),
-    ...(project.categories ?? []),
-    ...(project.applications ?? [])
-  ]
-    .join("\n")
-    .toLowerCase();
+  const projectDesc = normalize(
+    [
+      project.description ?? "",
+      project.tech_desc ?? "",
+      project.layman_desc ?? "",
+      ...(project.tags ?? []),
+      ...(project.categories ?? []),
+      ...(project.applications ?? [])
+    ].join("\n")
+  );
   if (projectDesc.includes(q)) return 2;
 
-  if (project.lab.description.toLowerCase().includes(q)) return 1;
+  if (normalize(project.lab.description).includes(q)) return 1;
 
   return 0;
 }
