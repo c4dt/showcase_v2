@@ -38,7 +38,7 @@ test.describe("bare-bone project", () => {
       .filter({ hasText: "E-ID Demo (Issuer & Verifier)" })
       .filter({ visible: true })
       .first();
-    await expect(carouselItem).toContainText("Demo for the swiss E-ID ledger. It includes an issuer and a verifier.");
+    await expect(carouselItem).toContainText("Demo for the swiss E-ID system. It includes an issuer and a verifier.");
   });
 
   test("displays information icons", async ({ page }) => {

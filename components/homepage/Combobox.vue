@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { normalize } from "~/utils/sortProjects";
+
 const props = defineProps<{
   title: string;
   itemList: string[];
@@ -10,8 +12,8 @@ const isOpen = ref<boolean>(false);
 
 // filter and sort items
 const filteredList = computed(() => {
-  const query = searchQuery.value.toLowerCase();
-  return props.itemList.filter((name) => name.toLowerCase().includes(query)).sort();
+  const query = normalize(searchQuery.value);
+  return props.itemList.filter((name) => normalize(name).includes(query)).sort();
 });
 
 // handle item selection
