@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type Combobox from "~/components/homepage/Combobox.vue";
 import type MutliSelectCombobox from "~/components/homepage/mutliSelectCombobox.vue";
-import { sortProjects } from "~/utils/sortProjects";
+import { sortProjects, projectMatchesSearch } from "~/utils/sortProjects";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 const config = useRuntimeConfig();
@@ -104,7 +104,7 @@ const filteredProjects = computed(() => {
       (lab.value === "" || project.lab.name === lab.value.split(" - ")[1]) &&
       (category.value === "" || project.categories.includes(category.value)) &&
       (application.value === "" || project.applications.includes(application.value)) &&
-      (search.value === "" || JSON.stringify(project).toLowerCase().includes(search.value.toLowerCase())) &&
+      projectMatchesSearch(project, search.value) &&
       (tags.value.length === 0 || tags.value.some((tag) => project.tags.includes(tag)))
     );
   });
@@ -112,7 +112,7 @@ const filteredProjects = computed(() => {
 
 const sortedProjects = computed(() => {
   const evaluators = config.public.evaluateMode ? selectedEvaluators.value : [];
-  return sortProjects(filteredProjects.value, evaluators);
+  return sortProjects(filteredProjects.value, evaluators, search.value);
 });
 
 watch(filteredProjects, () => {

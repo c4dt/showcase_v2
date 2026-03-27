@@ -62,3 +62,19 @@ test.describe("search box", () => {
     await expect(page).toHaveURL("/");
   });
 });
+
+test.describe("search relevance", () => {
+  test("name match ranks above description match with higher sortKey", async ({ page }) => {
+    // eid-ledger: name contains "ledger" (relevance score 4), sortKey=0
+    // eid-demo: description mentions ledger (relevance score 1), sortKey=8 (incubated)
+    // Old code (no relevance ranking) would sort by sortKey → eid-demo first
+    // New code ranks by relevance first → eid-ledger first
+    await page.goto("/", { waitUntil: "networkidle" });
+    const searchBox = page.getByRole("textbox", { name: "Search" }).filter({ visible: true }).first();
+    await searchBox.fill("ledger");
+    await page.waitForURL("/#search=ledger");
+
+    const firstWrapper = page.locator("[data-testid^='project-']:not([data-testid='project-card'])").first();
+    await expect(firstWrapper).toHaveAttribute("data-testid", "project-eid-ledger");
+  });
+});

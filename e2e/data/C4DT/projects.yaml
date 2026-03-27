@@ -1,7 +1,18 @@
 projects:
+  eid-ledger:
+    name: E-ID Ledger
+    description: The ledger component of the swiss E-ID system.
+    type: Application
+    categories:
+      - Security
+    applications:
+      - Gov
+    tags:
+      - Development
+    date_added: 2024-01-09
   eid-demo:
     name: E-ID Demo (Issuer & Verifier)
-    description: Demo for the swiss E-ID ledger. It includes an issuer and a verifier.
+    description: Demo for the swiss E-ID system. It includes an issuer and a verifier.
     type: Application
     categories:
       - Security
