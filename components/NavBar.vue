@@ -5,6 +5,7 @@ interface NavigationItem {
 }
 
 const route = useRoute();
+const router = useRouter();
 
 const searchQuery = useSearchQuery();
 
@@ -22,6 +23,12 @@ watch(
   },
   { immediate: true }
 );
+
+watch(searchQuery, (query) => {
+  if (route.path !== "/" && query) {
+    router.push({ path: "/", hash: `#search=${encodeURIComponent(query)}` });
+  }
+});
 
 function formatBreadcrumbName(segment: string): string {
   return segment.replace(/[-_]/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());

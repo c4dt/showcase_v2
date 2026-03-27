@@ -63,6 +63,19 @@ test.describe("search box", () => {
   });
 });
 
+test.describe("search from project page", () => {
+  test("navigates to homepage when searching from a project page", async ({ page }) => {
+    // networkidle is needed here
+    await page.goto("/projects/eid-demo", { waitUntil: "networkidle" });
+    await expect(page).toHaveURL(/\/projects\/eid-demo/);
+
+    const searchBox = page.getByRole("textbox", { name: "Search" }).filter({ visible: true }).first();
+    await searchBox.fill("ledger");
+
+    await page.waitForURL("/#search=ledger");
+  });
+});
+
 test.describe("search relevance", () => {
   test("name match ranks above description match with higher sortKey", async ({ page }) => {
     // eid-ledger: name contains "ledger" (relevance score 4), sortKey=0
