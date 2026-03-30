@@ -194,7 +194,7 @@ projects:
     code:
       type: Project GitHub
       url: https://github.com/s2e
-      date_last_commit: 2026-03-22
+      date_last_commit: 2026-03-29
     language: C, C++
     license: MIT
     contacts:

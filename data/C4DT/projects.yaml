@@ -44,6 +44,7 @@ projects:
     code:
       type: Project GitHub
       url: https://github.com/eid-privacy
+      date_last_commit: 2026-03-27
     incubator:
       work: "Research Grant"
       type: "incubated"
@@ -166,7 +167,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/c4dt/eid-workshop
-      date_last_commit: 2024-11-08
+      date_last_commit: 2025-04-04
     language: TypeScript
     tags:
       - Access Control
@@ -225,7 +226,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/c4dt/showcase_v2
-      date_last_commit: 2025-10-13
+      date_last_commit: 2026-03-27
     tags:
       - Development
     language: TypeScript
