@@ -12,9 +12,12 @@ const project = props.project;
 </script>
 <template>
   <!-- use CSS to leave space for shadow when moving up on hover-->
-  <div class="epfl-card relative flex h-[calc(100%-1rem)] w-full flex-col overflow-clip bg-white text-gray-700">
+  <div class="epfl-card relative flex h-[calc(100%-1rem)] w-full flex-col overflow-hidden bg-white text-gray-700">
     <!-- Content Area -->
-    <NuxtLink :to="{ name: 'projects-id', params: { id: project.id } }" class="flex flex-1 flex-col">
+    <NuxtLink
+      :to="{ name: 'projects-id', params: { id: project.id } }"
+      class="flex min-h-0 flex-1 flex-col overflow-hidden"
+    >
       <!-- Image Container -->
       <div class="flex items-center justify-center">
         <img :alt="project.name" :src="project.logo" class="h-48 w-full object-contain p-4" />
@@ -23,7 +26,7 @@ const project = props.project;
       <div class="mx-2 p-4 text-gray-700">
         <h5
           data-testid="header"
-          class="text-blue-gray-900 font-sans text-xl leading-snug font-semibold capitalize antialiased"
+          class="text-blue-gray-900 line-clamp-2 font-sans text-xl leading-snug font-semibold capitalize antialiased"
         >
           {{ project.name }}
         </h5>
@@ -33,7 +36,7 @@ const project = props.project;
       </div>
     </NuxtLink>
     <!-- Icons Container -->
-    <div class="mt-auto flex justify-end overflow-clip pr-4 pb-4">
+    <div class="mt-auto flex justify-center overflow-clip pb-4 sm:justify-end sm:pr-4">
       <InfoIcons :project="project" />
     </div>
   </div>
