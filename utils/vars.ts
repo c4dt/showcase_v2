@@ -37,6 +37,7 @@ export const PPRINTED_LAB_STATUS = {
 };
 export const FACTORY_EMAIL_ADDRESS = "factory@c4dt.org";
 export const MATURITY_EVALUATION_REQUEST = `mailto:${FACTORY_EMAIL_ADDRESS}?subject={name}: maturity evaluation request&body=Dear Factory team, please create a maturity evaluation for '{name}'.`;
+export const CONTACT_REQUEST = `mailto:${FACTORY_EMAIL_ADDRESS}?subject={name}: contact request&body=Dear Factory team, please establish contact with the maintainers of '{name}'.`;
 export enum TAB_IDS {
   INCUBATOR = "incubator",
   PAPERS = "papers",
