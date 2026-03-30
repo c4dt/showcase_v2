@@ -70,14 +70,12 @@ projects:
       date_last_commit: 2021-10-11
     information:
       - type: Paper
-        title:
-          "UnLynx: A Decentralized System for Privacy-Conscious Data Sharing"
+        title: "UnLynx: A Decentralized System for Privacy-Conscious Data Sharing"
         url: https://doi.org/10.1515/popets-2017-0047
         notes:
           - label: Published at
-            text:
-              "Privacy Enhancing Technologies Symposium, Minneapolis, MN, USA,
-              July 18–21, 2017"
+            text: "Privacy Enhancing Technologies Symposium, Minneapolis, MN, USA, July
+              18–21, 2017"
             url: https://petsymposium.org/2017/program.php
     lines_of_code: 11000
     tags:
@@ -129,9 +127,8 @@ projects:
       - Privacy
     applications:
       - Health
-    description:
-      Decentralized, secure, verifiable system for statistical queries and
-      machine learning on distributed datasets
+    description: Decentralized, secure, verifiable system for statistical queries
+      and machine learning on distributed datasets
     tech_desc: >
       Drynx allows to create privacy-preserving queries on encrypted datasets
       that are stored at different data providers who don't want to share the
@@ -142,9 +139,8 @@ projects:
     notes: Transfered to TuneInsight
     information:
       - type: Paper
-        title:
-          "Drynx: Decentralized, Secure, Verifiable System for Statistical
-          Queries and Machine Learning on Distributed Datasets"
+        title: "Drynx: Decentralized, Secure, Verifiable System for Statistical Queries
+          and Machine Learning on Distributed Datasets"
         url: https://arxiv.org/abs/1902.03785
         notes:
           - label: Published in
@@ -158,9 +154,7 @@ projects:
     license: other
     incubator:
       type: retired_archived
-      work:
-        2020/Q1 created demonstrator for SwissRe - retired and archived in
-        2022/Q1
+      work: 2020/Q1 created demonstrator for SwissRe - retired and archived in 2022/Q1
       products:
         - type: Demo
           title: Decentralized Data Analysis
@@ -199,8 +193,7 @@ projects:
     license: other
     incubator:
       type: retired_archived
-      work:
-        2021/Q1 created Spindle demonstrator - retired and archived in 2023/Q1
+      work: 2021/Q1 created Spindle demonstrator - retired and archived in 2023/Q1
       products:
         - type: Demo
           title: SPINDLE demonstrator
@@ -214,9 +207,7 @@ projects:
       - Privacy
     applications:
       - Info
-    description:
-      Privacy preserving neural network learning for diseased cell
-      classification
+    description: Privacy preserving neural network learning for diseased cell classification
     tech_desc: >
       PriCell is a Golang library that ensures CellCnn analysis in
       privacy-preserving, distributed, N-party setting.
@@ -226,8 +217,7 @@ projects:
       date_last_commit: 2022-07-21
     information:
       - type: Paper
-        title:
-          Privacy-Preserving Federated Neural Network Learning for
+        title: Privacy-Preserving Federated Neural Network Learning for
           Disease-Associated Cell Classification
         url: https://doi.org/10.1101/2022.01.10.475610
     tags:

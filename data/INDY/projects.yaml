@@ -5,9 +5,8 @@ projects:
       - Learning
     applications:
       - Info
-    description:
-      Library that provides inference algorithms for models based on Luce's
-      choice axiom
+    description: Library that provides inference algorithms for models based on
+      Luce's choice axiom
     code:
       type: Personal GitHub
       url: https://github.com/lucasmaystre/choix
@@ -25,13 +24,11 @@ projects:
             text: proceedings of NeurIPS 28, 2015
             url: https://proceedings.neurips.cc/paper/2015
       - type: Paper
-        title:
-          "ChoiceRank: Identifying Preferences from Node Traffic in Networks"
+        title: "ChoiceRank: Identifying Preferences from Node Traffic in Networks"
         url: https://infoscience.epfl.ch/record/229164
         notes:
           - label: Published in
-            text:
-              proceedings of Machine Learning Research Volume 70, August 2017
+            text: proceedings of Machine Learning Research Volume 70, August 2017
             url: http://proceedings.mlr.press/v70/
     tags:
       - Low-Level
@@ -46,8 +43,7 @@ projects:
       - Learning
     applications:
       - Info
-    description:
-      Machine Learning framework to search a database via similarity samples
+    description: Machine Learning framework to search a database via similarity samples
     url: https://who-is-th.at/
     tech_desc: >
       Use machine learning to organize a collection of objects (e.g. faces of
@@ -93,8 +89,7 @@ projects:
             text: proceedings of ACM SIGKDD 25, July 2019
             url: https://www.kdd.org/kdd2019/
       - type: Paper
-        title:
-          "The Player Kernel: Learning Team Strengths Based on Implicit Player
+        title: "The Player Kernel: Learning Team Strengths Based on Implicit Player
           Contributions"
         url: https://infoscience.epfl.ch/record/221151
         notes:

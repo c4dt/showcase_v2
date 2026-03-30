@@ -81,9 +81,8 @@ projects:
     applications:
       - Other
     type: Toolset
-    description:
-      Bitfiltrator is an automated bitstream parameter extraction tool for
-      Xilinx UltraScale and UltraScale+ FPGAs.
+    description: Bitfiltrator is an automated bitstream parameter extraction tool
+      for Xilinx UltraScale and UltraScale+ FPGAs.
     tech_desc: >
       Prior work has reverse-engineered parts of the bitstream format for
       security or debugging/instrumentation activities, but no paper has
@@ -108,8 +107,7 @@ projects:
       - Debug
     information:
       - type: Paper
-        title:
-          "Bitfiltrator: A general approach for reverse-engineering Xilinx
+        title: "Bitfiltrator: A general approach for reverse-engineering Xilinx
           bitstream formats"
         url: https://github.com/epfl-vlsc/bitfiltrator/blob/main/fpl22-bitfiltrator-paper.pdf
     date_added: 2023-03-22

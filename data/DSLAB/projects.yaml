@@ -61,8 +61,7 @@ projects:
       - Network
     information:
       - type: Paper
-        title:
-          "Verifying Software Network Functions with No Verification Expertise"
+        title: "Verifying Software Network Functions with No Verification Expertise"
         url: https://infoscience.epfl.ch/record/275534
         notes:
           - label: Published in
@@ -168,8 +167,7 @@ projects:
             text: "OSDI '14"
             url: https://www.usenix.org/system/files/conference/osdi14/osdi14-paper-kuznetsov.pdf
       - type: Paper
-        title:
-          "Missing the Point(er): On the Effectiveness of Code Pointer Integrity"
+        title: "Missing the Point(er): On the Effectiveness of Code Pointer Integrity"
         url: http://people.csail.mit.edu/rinard/paper/oakland15.pdf
         notes:
           - label: Published in
@@ -183,9 +181,8 @@ projects:
       - Security
     applications:
       - Infra
-    description:
-      Platform for writing tools that analyze the properties and behavior of
-      software systems
+    description: Platform for writing tools that analyze the properties and behavior
+      of software systems
     tech_desc: >
       S²E is a platform for writing tools that analyze the properties and
       behavior of software systems. S²E comes as a modular library that gives
@@ -194,7 +191,7 @@ projects:
     code:
       type: Project GitHub
       url: https://github.com/s2e
-      date_last_commit: 2026-03-22
+      date_last_commit: 2026-03-29
     language: C, C++
     license: MIT
     contacts:
@@ -282,8 +279,7 @@ projects:
       - Cloud
     information:
       - type: Paper
-        title:
-          "Parallel Symbolic Execution for Automated Real-World Software Testing"
+        title: "Parallel Symbolic Execution for Automated Real-World Software Testing"
         url: https://infoscience.epfl.ch/record/166069
         notes:
           - label: Published in
@@ -372,8 +368,7 @@ projects:
     type: Application
     information:
       - type: Paper
-        title:
-          "Failure Sketching: A Technique for Automated Root Cause Diagnosis of
+        title: "Failure Sketching: A Technique for Automated Root Cause Diagnosis of
           In-Production Failures"
         url: https://dslab.epfl.ch/pubs/gist.pdf
         notes:
@@ -389,9 +384,8 @@ projects:
       - Security
     applications:
       - Infra
-    description:
-      Quantify the resilience of software systems to human-induced configuration
-      errors
+    description: Quantify the resilience of software systems to human-induced
+      configuration errors
     layman_desc: >
       ConfErr uses human error models rooted in psychology and linguistics to
       generate realistic configuration mistakes; it then injects these mistakes
@@ -411,9 +405,7 @@ projects:
       - Failure
     information:
       - type: Paper
-        title:
-          "ConfErr: A Tool for Assessing Resilience to Human Configuration
-          Errors"
+        title: "ConfErr: A Tool for Assessing Resilience to Human Configuration Errors"
         url: https://infoscience.epfl.ch/record/129043?ln=en
         notes:
           - label: Published at
@@ -595,8 +587,7 @@ projects:
     date_added: 2024-03-20
   nex:
     name: NEX
-    description:
-      "Full-stack simulation framework running unmodified software while
+    description: "Full-stack simulation framework running unmodified software while
       modelling hardware accelerators."
     layman_desc: >
       Developing software for hardware accelerators (specialized chips for tasks
@@ -629,9 +620,8 @@ projects:
       - Infra
   simbricks-lpn:
     name: LPN/DSim for SimBricks
-    description:
-      "LPN/DSim integration with SimBricks for modular network and accelerator
-      simulation."
+    description: "LPN/DSim integration with SimBricks for modular network and
+      accelerator simulation."
     layman_desc: >
       SimBricks is a modular simulation platform where different hardware
       components — CPUs, networks, accelerators — can be simulated independently
@@ -663,9 +653,8 @@ projects:
       - Infra
   nexdsim-ae:
     name: NEX+DSim Artifact Evaluation
-    description:
-      "Artifact evaluation guide for reproducing accelerated hardware-software
-      stack simulations."
+    description: "Artifact evaluation guide for reproducing accelerated
+      hardware-software stack simulations."
     layman_desc: >
       This repository is an artifact evaluation guide for reproducing the
       research results comparing different hardware-software simulation

@@ -5,9 +5,8 @@ projects:
       - Other
     applications:
       - Info
-    description:
-      Collection of modular libraries for the development of logic synthesis
-      applications
+    description: Collection of modular libraries for the development of logic
+      synthesis applications
     code:
       type: Lab GitHub
       url: https://github.com/lsils/lstools-showcase

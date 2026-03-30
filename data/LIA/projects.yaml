@@ -57,8 +57,7 @@ projects:
       - Decentralized
     information:
       - type: Paper
-        title:
-          "ADER: Adaptively Distilled Exemplar Replay Towards Continual Learning
+        title: "ADER: Adaptively Distilled Exemplar Replay Towards Continual Learning
           for Session-based Recommendation"
         url: https://arxiv.org/pdf/2007.12000.pdf
         notes:

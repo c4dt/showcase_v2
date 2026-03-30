@@ -22,13 +22,11 @@ projects:
       - Simulator
     information:
       - type: Paper
-        title:
-          "Gem5-X: A Many-Core Heterogeneous Simulation Platform for
-          Architectural Exploration and Optimization"
+        title: "Gem5-X: A Many-Core Heterogeneous Simulation Platform for Architectural
+          Exploration and Optimization"
         url: https://infoscience.epfl.ch/record/285129
       - type: Paper
-        title:
-          "Gem5-X: A Gem5-Based System Level Simulation Framework to Optimize
+        title: "Gem5-X: A Gem5-Based System Level Simulation Framework to Optimize
           Many-Core Platforms"
         url: https://infoscience.epfl.ch/record/264182
         notes:
@@ -62,18 +60,15 @@ projects:
       - Simulator
     information:
       - type: Paper
-        title:
-          "3D-ICE 3.0: efficient nonlinear MPSoC thermal simulation with
-          pluggable heat sink models"
+        title: "3D-ICE 3.0: efficient nonlinear MPSoC thermal simulation with pluggable
+          heat sink models"
         url: https://infoscience.epfl.ch/record/285104
       - type: Paper
-        title:
-          "3D-ICE: a compact thermal model for early-stage design of
-          liquid-cooled ICs"
+        title: "3D-ICE: a compact thermal model for early-stage design of liquid-cooled
+          ICs"
         url: https://infoscience.epfl.ch/record/186785
       - type: Paper
-        title:
-          "3D-ICE: Fast compact transient thermal modeling for 3D-ICs with
+        title: "3D-ICE: Fast compact transient thermal modeling for 3D-ICs with
           inter-tier liquid cooling"
         url: https://infoscience.epfl.ch/record/149790
         notes:
@@ -81,8 +76,7 @@ projects:
             text: ICCAD 2010
             url: https://iccad.com
       - type: Paper
-        title:
-          Compact transient thermal model for 3D ICs with liquid cooling via
+        title: Compact transient thermal model for 3D ICs with liquid cooling via
           enhanced heat transfer cavity geometries
         url: https://infoscience.epfl.ch/record/149792
         notes:
@@ -219,14 +213,13 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/esl-epfl/x-heep
-      date_last_commit: 2026-03-20
+      date_last_commit: 2026-03-29
     language: C
     license: SOLDERPAD HARDWARE LICENSE, Apache-2.0
     date_added: 2024-02-20
   gsr-monitor:
     name: GSR Monitor Board
-    description:
-      "Hardware validation board for HEEPidermis SoC with low-noise power
+    description: "Hardware validation board for HEEPidermis SoC with low-noise power
       regulation and GSR measurement."
     layman_desc: >
       This repository contains the hardware design and documentation for a
@@ -259,8 +252,7 @@ projects:
       carine: 2
   prau:
     name: PRAU
-    description:
-      "Open-source configurable Posit arithmetic unit supporting extended
+    description: "Open-source configurable Posit arithmetic unit supporting extended
       numerical operations."
     layman_desc: >
       Posit numbers are a modern alternative to standard floating-point numbers
@@ -294,8 +286,7 @@ projects:
       - Infra
   coprosit:
     name: Coprosit
-    description:
-      "Posit and quire arithmetic coprocessor compliant with the RISC-V
+    description: "Posit and quire arithmetic coprocessor compliant with the RISC-V
       eXtension interface."
     layman_desc: >
       RISC-V is an open-source processor architecture, and coprocessors extend
@@ -329,9 +320,8 @@ projects:
       - Infra
   phee:
     name: PHEE
-    description:
-      "Posit-enabled X-HEEP RISC-V platform integrating the Coprosit arithmetic
-      coprocessor."
+    description: "Posit-enabled X-HEEP RISC-V platform integrating the Coprosit
+      arithmetic coprocessor."
     layman_desc: >
       X-HEEP is an open-source RISC-V microcontroller platform for research.
       PHEE extends it by adding the Coprosit posit arithmetic coprocessor,
@@ -362,8 +352,7 @@ projects:
       - Infra
   compigra:
     name: Compigra
-    description:
-      "MLIR-based compilation tool transforming C/C++ code into CGRA assembly."
+    description: "MLIR-based compilation tool transforming C/C++ code into CGRA assembly."
     layman_desc: >
       Coarse-Grained Reconfigurable Arrays (CGRAs) are hardware accelerators
       that can be reprogrammed to efficiently run specific computational
@@ -395,9 +384,8 @@ projects:
       - Infra
   heepstor:
     name: HEEPstor
-    description:
-      "Framework for deploying post-training quantized PyTorch models on X-HEEP
-      RISC-V SoCs."
+    description: "Framework for deploying post-training quantized PyTorch models on
+      X-HEEP RISC-V SoCs."
     layman_desc: >
       Running neural network models on tiny microcontrollers requires converting
       them into a quantized, hardware-friendly format. HEEPstor automates this
@@ -430,9 +418,8 @@ projects:
       - Infra
   xif-copro:
     name: CV-X-IF Coprocessor
-    description:
-      "Sample RISC-V coprocessor implementing a custom BITREV instruction via
-      the CV-X-IF interface."
+    description: "Sample RISC-V coprocessor implementing a custom BITREV instruction
+      via the CV-X-IF interface."
     layman_desc: >
       This is a sample implementation showing how to add a custom instruction to
       a RISC-V processor using the standard coprocessor extension interface
@@ -464,9 +451,8 @@ projects:
       - Infra
   cross-domain-saliency-maps:
     name: Timeseries Saliency Maps
-    description:
-      "Cross-domain saliency maps library for time-series model explanation in
-      PyTorch and TensorFlow."
+    description: "Cross-domain saliency maps library for time-series model
+      explanation in PyTorch and TensorFlow."
     layman_desc: >
       When AI models make predictions on time-series data — like medical sensor
       readings — it is important to understand which parts of the input most
@@ -502,9 +488,8 @@ projects:
       linus: 3
   ticwatch-radar:
     name: Pedesite App
-    description:
-      "Wear OS application for wearable sensor data acquisition, storage, and
-      automated upload."
+    description: "Wear OS application for wearable sensor data acquisition, storage,
+      and automated upload."
     layman_desc: >
       Pedesite is a smartwatch application for Wear OS that continuously
       collects sensor data, stores it locally on the watch, and automatically
@@ -537,8 +522,7 @@ projects:
       carine: 3
   metawears:
     name: MetaWearS
-    description:
-      "Meta-learning framework for few-shot adaptation in wearable health
+    description: "Meta-learning framework for few-shot adaptation in wearable health
       monitoring."
     layman_desc: >
       Wearable health monitors need models that work well for individual users,
@@ -576,8 +560,7 @@ projects:
       carine: 4
   heepidermis:
     name: HEEPidermis
-    description:
-      "X-HEEP-based SoC for GSR and impedance recording with DMA and
+    description: "X-HEEP-based SoC for GSR and impedance recording with DMA and
       level-crossing support."
     layman_desc: >
       HEEPidermis is a custom research microchip designed for recording
@@ -613,8 +596,7 @@ projects:
       carine: 1
   heepidermis-breakout-board:
     name: HEEPidermis Breakout Board
-    description:
-      "Hardware breakout board for HEEPidermis with connector pinout
+    description: "Hardware breakout board for HEEPidermis with connector pinout
       documentation."
     layman_desc: >
       This repository contains hardware design documentation for a breakout
@@ -643,8 +625,7 @@ projects:
       - Health
   cheep-boards:
     name: CHEEP Boards
-    description:
-      "Modular PCB suite with configurable power supplies and current
+    description: "Modular PCB suite with configurable power supplies and current
       measurement modules."
     layman_desc: >
       CHEEP Boards are a modular set of circuit boards designed for flexible
@@ -675,9 +656,8 @@ projects:
       - Infra
   aquacast:
     name: AquaCast
-    description:
-      "Transformer-based time-series forecasting framework for urban water
-      dynamics."
+    description: "Transformer-based time-series forecasting framework for urban
+      water dynamics."
     layman_desc: >
       Managing urban water systems — detecting leaks and optimizing distribution
       — requires accurate forecasting of how water flows through the network

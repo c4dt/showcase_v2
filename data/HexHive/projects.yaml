@@ -52,8 +52,7 @@ projects:
     language: C
     information:
       - type: Paper
-        title:
-          "USBFuzz: A Framework for Fuzzing USB Drivers by Device Emulation"
+        title: "USBFuzz: A Framework for Fuzzing USB Drivers by Device Emulation"
         url: https://infoscience.epfl.ch/record/287847
         notes:
           - label: Published at
@@ -68,9 +67,8 @@ projects:
       - Security
     applications:
       - Infra
-    description:
-      A ground-truth fuzzing benchmark suite based on real programs with real
-      bugs
+    description: A ground-truth fuzzing benchmark suite based on real programs with
+      real bugs
     tech_desc: >
       Magma is a collection of open-source libraries with widespread usage and a
       long history of security-critical bugs and vulnerabilities. In light of
@@ -249,8 +247,7 @@ projects:
     type: Application
     information:
       - type: Paper
-        title:
-          "RetroWrite: Statically Instrumenting COTS Binaries for Fuzzing and
+        title: "RetroWrite: Statically Instrumenting COTS Binaries for Fuzzing and
           Sanitization"
         url: https://infoscience.epfl.ch/record/284290
         notes:
@@ -425,8 +422,7 @@ projects:
     type: Application
     information:
       - type: Paper
-        title:
-          "HALucinator: Firmware Re-hosting Through Abstraction Layer Emulation"
+        title: "HALucinator: Firmware Re-hosting Through Abstraction Layer Emulation"
         url: https://infoscience.epfl.ch/record/287890
         notes:
           - label: Published at
@@ -473,8 +469,7 @@ projects:
       - Privacy
     applications:
       - Health
-    description:
-      LibreCHovid - Alternative to GAEN for contact tracing applications
+    description: LibreCHovid - Alternative to GAEN for contact tracing applications
     tech_desc: >
       Apple and Google developed the Google-Apple Exposure Notification system
       in order to provide a uniform API for contact-tracing apps while
@@ -498,9 +493,7 @@ projects:
     maturity: 1
     incubator:
       type: retired
-      work:
-        2021/Q1 worked on improving and integrating with microG and published
-        app
+      work: 2021/Q1 worked on improving and integrating with microG and published app
     date_added: 2020-10-05
     date_updated: 2024-04-12
 
@@ -528,8 +521,7 @@ projects:
       date_last_commit: 2022-07-01
     information:
       - type: Paper
-        title:
-          "LIGHTBLUE : Automatic Profile-Aware Debloating of Bluetooth Stacks"
+        title: "LIGHTBLUE : Automatic Profile-Aware Debloating of Bluetooth Stacks"
         url: https://infoscience.epfl.ch/record/291299
         notes:
           - label: Published at
@@ -569,8 +561,7 @@ projects:
             text: ACM CCS 2021
             url: https://sigsac.org/ccs/CCS2021/
       - type: Video
-        title:
-          "Igor: Crash Deduplication Through Root-Cause Clustering (CCS'21)"
+        title: "Igor: Crash Deduplication Through Root-Cause Clustering (CCS'21)"
         url: https://www.youtube.com/watch?v=V06x1Ad5dRo
     date_added: 2021-11-04
     date_updated: 2024-04-12
@@ -734,9 +725,8 @@ projects:
       - Security
     applications:
       - Infra
-    description:
-      Evocatio is a bug analyzer built on top of AFL++ and AddressSanitizer. It
-      automatically discovers a bug’s capabilities.
+    description: Evocatio is a bug analyzer built on top of AFL++ and
+      AddressSanitizer. It automatically discovers a bug’s capabilities.
     tech_desc: >
       Evocatio automatically discovers a bug’s capabilities: analyzing a
       crashing test case (i.e., an input exposing a bug) to understand the full
@@ -777,8 +767,7 @@ projects:
       date_last_commit: 2023-04-13
     information:
       - type: Paper
-        title:
-          "WarpAttack: Bypassing CFI through Compiler-Introduced Double-Fetches"
+        title: "WarpAttack: Bypassing CFI through Compiler-Introduced Double-Fetches"
         url: https://hexhive.epfl.ch/publications/files/23Oakland3.pdf
     date_added: 2023-04-24
     date_updated: 2024-04-12
@@ -811,8 +800,7 @@ projects:
       - Security
     applications:
       - Infra
-    description:
-      Optimizing Directed Fuzzing via Target-tailored Program State Restriction
+    description: Optimizing Directed Fuzzing via Target-tailored Program State Restriction
     tech_desc: >
       We implement tripwiring-directed fuzzing as a prototype, Sieve-Fuzz, and
       evaluate it alongside the state-of-the-art directed fuzzers AFLGo, BEACON
@@ -828,17 +816,15 @@ projects:
       date_last_commit: 2023-04-10
     information:
       - type: Paper
-        title:
-          "One Fuzz Doesn’t Fit All: Optimizing Directed Fuzzing via
+        title: "One Fuzz Doesn’t Fit All: Optimizing Directed Fuzzing via
           Target-tailored Program State Restriction"
         url: https://hexhive.epfl.ch/publications/files/22ACSAC2.pdf
     date_added: 2023-04-24
     date_updated: 2024-04-12
   mendelfuzz:
     name: MendelFuzz
-    description:
-      "Improved deterministic stage for AFL++ fuzzer, now default in AFL++
-      4.10c."
+    description: "Improved deterministic stage for AFL++ fuzzer, now default in
+      AFL++ 4.10c."
     layman_desc: >
       Fuzzing is a security testing technique that automatically feeds inputs to
       a program to find crashes and bugs. MendelFuzz improves a key part of the
@@ -868,9 +854,8 @@ projects:
       - Infra
   truman:
     name: Truman
-    description:
-      "Constructs device behavior models from OS drivers for virtual-device
-      fuzzing."
+    description: "Constructs device behavior models from OS drivers for
+      virtual-device fuzzing."
     layman_desc: >
       Truman is a security research tool that learns how hardware devices behave
       by analyzing the software drivers that control them, then uses that
@@ -904,9 +889,8 @@ projects:
       - Infra
   liberator:
     name: libErator
-    description:
-      "Automatically generates fuzzing drivers for libraries by extracting
-      constraints."
+    description: "Automatically generates fuzzing drivers for libraries by
+      extracting constraints."
     layman_desc: >
       Testing libraries for security vulnerabilities requires writing
       specialized "driver" programs that feed inputs to the library — a tedious
@@ -939,8 +923,7 @@ projects:
       - Infra
   reflecta:
     name: Reflecta
-    description:
-      "Reflection-based, language-agnostic fuzzer for scripting languages."
+    description: "Reflection-based, language-agnostic fuzzer for scripting languages."
     layman_desc: >
       Reflecta is a tool for finding bugs in scripting language interpreters
       (like Python, Ruby, or PHP) by automatically generating and running random
@@ -974,9 +957,8 @@ projects:
       - Infra
   sourcerer:
     name: Sourcerer
-    description:
-      "LLVM-based C++ type checking tool with performance overhead and fuzzing
-      evaluation."
+    description: "LLVM-based C++ type checking tool with performance overhead and
+      fuzzing evaluation."
     layman_desc: >
       Type confusion bugs — where a program treats data as the wrong type — are
       a common source of security vulnerabilities in C++ software. Sourcerer is
@@ -1008,9 +990,8 @@ projects:
       - Infra
   nass:
     name: NASS
-    description:
-      "Dynamic binary instrumentation tool for fuzzing Android native system
-      services."
+    description: "Dynamic binary instrumentation tool for fuzzing Android native
+      system services."
     layman_desc: >
       Android phones run many background services written in C/C++ that are
       difficult to test for security vulnerabilities. NASS uses dynamic binary
@@ -1075,9 +1056,8 @@ projects:
       - Infra
   sysyphuzz:
     name: SYSYPHUZZ
-    description:
-      "Syzkaller-based kernel fuzzer targeting low-frequency code regions with
-      coverage-guided scheduling."
+    description: "Syzkaller-based kernel fuzzer targeting low-frequency code regions
+      with coverage-guided scheduling."
     layman_desc: >
       Kernel fuzzers automatically find bugs in operating system code, but most
       only test code paths that are triggered frequently and easily. SYSYPHUZZ
@@ -1109,9 +1089,8 @@ projects:
       - Infra
   beanpod-fiasco:
     name: Beanpod TEE Pwn
-    description:
-      "Proof-of-concept exploit for the keyinstall Trusted Application on Xiaomi
-      Redmi Note 11s 5G."
+    description: "Proof-of-concept exploit for the keyinstall Trusted Application on
+      Xiaomi Redmi Note 11s 5G."
     layman_desc: >
       This is a proof-of-concept security exploit demonstrating a vulnerability
       in the trusted execution environment (TEE) of Xiaomi Redmi Note 11s 5G
@@ -1142,9 +1121,8 @@ projects:
       - Info
   privacyshield:
     name: PrivacyShield
-    description:
-      "BLE beacon relay system to prevent unwanted AirTag tracking using ESP32
-      relays."
+    description: "BLE beacon relay system to prevent unwanted AirTag tracking using
+      ESP32 relays."
     layman_desc: >
       AirTags and similar Bluetooth tracking devices can be misused to secretly
       follow people without their knowledge. PrivacyShield uses small wireless
@@ -1178,8 +1156,7 @@ projects:
       - Other
   taemu:
     name: GP TA Emulator
-    description:
-      "GlobalPlatform Trusted Application emulator with GDB and fuzzing support."
+    description: "GlobalPlatform Trusted Application emulator with GDB and fuzzing support."
     layman_desc: >
       Trusted Applications (TAs) are small secure programs running inside a TEE
       on mobile devices to protect sensitive operations like payments or key

@@ -35,8 +35,7 @@ projects:
     information:
       - type: video
         url: https://www.youtube.com/watch?v=QQfiKRsOYwU
-        title:
-          Persona Commonsense Knowledge for Consistent and Engaging Narratives
+        title: Persona Commonsense Knowledge for Consistent and Engaging Narratives
     language: Python
     date_added: 2024-02-20
 

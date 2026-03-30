@@ -57,9 +57,7 @@ projects:
       - Concurrency
     information:
       - type: Paper
-        title:
-          "PACTree: A High Performance Persistent RangeIndex Using PAC
-          Guidelines"
+        title: "PACTree: A High Performance Persistent RangeIndex Using PAC Guidelines"
         url: https://multics69.github.io/pages/pubs/pactree-kim-sosp21.pdf
         notes:
           - label: Published at
@@ -158,8 +156,7 @@ projects:
       - Other
     applications:
       - Infra
-    description:
-      Finding Semantic Bugs in File Systems with an Extensible Fuzzing Framework
+    description: Finding Semantic Bugs in File Systems with an Extensible Fuzzing Framework
     tags:
       - Concurrency
       - Fuzzing
@@ -171,8 +168,7 @@ projects:
     type: Framework, Experiments
     information:
       - type: Paper
-        title:
-          Finding Semantic Bugs in File Systems with an Extensible Fuzzing
+        title: Finding Semantic Bugs in File Systems with an Extensible Fuzzing
           Framework
         url: https://sanidhya.github.io/pubs/2019/hydra.pdf
         notes:
@@ -222,8 +218,7 @@ projects:
     license: GPL-2.0
     information:
       - type: Paper
-        title:
-          "Ship your Critical Section, Not Your Data: Enabling Transparent
+        title: "Ship your Critical Section, Not Your Data: Enabling Transparent
           Delegation with TCLocks"
         url: https://www.usenix.org/system/files/osdi23-gupta.pdf
         notes:
@@ -273,9 +268,8 @@ projects:
     license: Apache-2.0
     information:
       - type: Paper
-        title:
-          Enabling High-Performance and Secure Userspace NVM File Systems with
-          the Trio Architecture
+        title: Enabling High-Performance and Secure Userspace NVM File Systems with the
+          Trio Architecture
         url: https://dl.acm.org/doi/pdf/10.1145/3600006.3613171
         notes:
           - label: Published in
@@ -284,9 +278,8 @@ projects:
     date_added: 2024-04-12
   mage:
     name: Mage
-    description:
-      "Remote memory system for scalable memory-intensive applications with
-      asynchronous decoupling."
+    description: "Remote memory system for scalable memory-intensive applications
+      with asynchronous decoupling."
     layman_desc: >
       Modern applications sometimes need more RAM than a single machine can
       provide. Mage lets applications transparently use memory on remote
@@ -317,9 +310,8 @@ projects:
       - Infra
   veritas:
     name: Veritas
-    description:
-      "Syzkaller-based fuzzer with specification-based oracle for detecting eBPF
-      misbehavior."
+    description: "Syzkaller-based fuzzer with specification-based oracle for
+      detecting eBPF misbehavior."
     layman_desc: >
       eBPF is a powerful Linux kernel technology that lets programs run safely
       inside the kernel, but bugs in the eBPF subsystem can cause serious
@@ -351,8 +343,7 @@ projects:
       - Infra
   kernel-tla:
     name: Kernel TLA+ Specifications
-    description:
-      "Formal TLA+ specifications of Linux kernel synchronization algorithms."
+    description: "Formal TLA+ specifications of Linux kernel synchronization algorithms."
     layman_desc: >
       TLA+ is a mathematical language for describing how complex systems behave,
       and it can find subtle bugs that are nearly impossible to catch through

@@ -107,9 +107,8 @@ projects:
       - Image Classification
     information:
       - type: Paper
-        title:
-          Fidelity Estimation Improves Noisy-Image Classification with
-          Pretrained Networks
+        title: Fidelity Estimation Improves Noisy-Image Classification with Pretrained
+          Networks
         url: https://infoscience.epfl.ch/record/287705
         notes:
           - label: Published in
@@ -145,8 +144,7 @@ projects:
       - Deep Neural Networks
     information:
       - type: Paper
-        title:
-          Blind Universal Bayesian Image Denoising WithGaussian Noise Level
+        title: Blind Universal Bayesian Image Denoising WithGaussian Noise Level
           Learning
         url: https://infoscience.epfl.ch/record/276107
         notes:
@@ -213,8 +211,7 @@ projects:
     license: MIT
     information:
       - type: Paper
-        title:
-          Optimizing Latent Space Directions For GAN-based Local Image Editing
+        title: Optimizing Latent Space Directions For GAN-based Local Image Editing
         url: https://arxiv.org/abs/2111.12583
     maturity: 1
     date_added: 2022-07-05
@@ -279,9 +276,7 @@ projects:
       - Deep Neural Networks
     information:
       - type: Paper
-        title:
-          "TempSAL -- Uncovering Temporal Information for Deep Saliency
-          Prediction"
+        title: "TempSAL -- Uncovering Temporal Information for Deep Saliency Prediction"
         url: https://arxiv.org/abs/2301.02315
     license: MIT
     date_added: 2023-03-21
@@ -294,8 +289,7 @@ projects:
     applications:
       - Info
     type: Framework
-    description:
-      Real-Time Dynamic Texture Synthesis Using Neural Cellular Automata
+    description: Real-Time Dynamic Texture Synthesis Using Neural Cellular Automata
     tech_desc: >
       Current Dynamic Texture Synthesis (DyTS) models in the literature can
       synthesize realistic videos. However, these methods require a slow
@@ -313,8 +307,7 @@ projects:
       - Deep Neural Networks
     information:
       - type: Paper
-        title:
-          "DyNCA: Real-time Dynamic Texture Synthesis Using Neural Cellular
+        title: "DyNCA: Real-time Dynamic Texture Synthesis Using Neural Cellular
           Automata"
         url: https://arxiv.org/abs/2211.11417
     license: MIT
@@ -322,9 +315,8 @@ projects:
     date_updated: 2024-04-14
   noisediff:
     name: NoiseDiff
-    description:
-      "Dark Noise Diffusion for synthetic low-light noise generation and image
-      denoising."
+    description: "Dark Noise Diffusion for synthetic low-light noise generation and
+      image denoising."
     layman_desc: >
       Photographs taken in low-light conditions are often degraded by camera
       sensor noise called "dark noise". NoiseDiff uses diffusion models — a type

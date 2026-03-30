@@ -25,9 +25,7 @@ projects:
             text: NIPS 2014
             url: https://researchr.org/publication/nips-2014
       - type: Paper
-        title:
-          A Primal-Dual Algorithmic Framework for Constrained Convex
-          Minimization
+        title: A Primal-Dual Algorithmic Framework for Constrained Convex Minimization
         url: https://infoscience.epfl.ch/record/199844
     date_added: 2021-11-04
     date_updated: 2022-07-05
@@ -82,8 +80,7 @@ projects:
       - PyTorch
     information:
       - type: Paper
-        title:
-          "STORM+: Fully Adaptive SGD with Momentum for Nonconvex Optimization"
+        title: "STORM+: Fully Adaptive SGD with Momentum for Nonconvex Optimization"
         url: https://infoscience.epfl.ch/record/289807
         notes:
           - label: Published at
@@ -94,8 +91,7 @@ projects:
     date_updated: 2022-08-11
   lipslev:
     name: LipsLev
-    description:
-      "PyTorch implementation of certified robustness against bounded
+    description: "PyTorch implementation of certified robustness against bounded
       Levenshtein distance edits."
     layman_desc: >
       Text AI models can be fooled by tiny character-level changes to their
@@ -131,8 +127,7 @@ projects:
       - Info
   spd:
     name: SPD
-    description:
-      "Single-pass detection classifier for jailbreaking inputs in large
+    description: "Single-pass detection classifier for jailbreaking inputs in large
       language models."
     layman_desc: >
       Jailbreaking tricks AI language models into ignoring their safety
@@ -168,9 +163,8 @@ projects:
       - Info
   lion:
     name: LION
-    description:
-      "Framework converting linear-attention Transformers into bidirectional RNN
-      equivalents."
+    description: "Framework converting linear-attention Transformers into
+      bidirectional RNN equivalents."
     layman_desc: >
       Transformers are the dominant architecture for AI models but are slow when
       processing very long sequences. LION converts Transformers that use linear
@@ -201,9 +195,8 @@ projects:
       - Info
   scion:
     name: Scion Optimizer
-    description:
-      "Norm-constrained optimizer with multiple norm implementations for neural
-      network training."
+    description: "Norm-constrained optimizer with multiple norm implementations for
+      neural network training."
     layman_desc: >
       Training neural networks involves choosing an optimizer that updates model
       parameters, and the right choice significantly affects training speed and
@@ -236,9 +229,8 @@ projects:
       - Info
   leaf:
     name: LEAF
-    description:
-      "Levenshtein Efficient Adversarial Finetuning for creating a robust CLIP
-      text encoder."
+    description: "Levenshtein Efficient Adversarial Finetuning for creating a robust
+      CLIP text encoder."
     layman_desc: >
       CLIP is a popular AI model that understands both images and text together,
       but it can be fooled by subtle character-level changes to text inputs.
@@ -271,8 +263,7 @@ projects:
       - Info
   chameleon:
     name: CHAMELEON
-    description:
-      "Data-mixing framework using Kernel Ridge Leverage Scores for LLM
+    description: "Data-mixing framework using Kernel Ridge Leverage Scores for LLM
       pretraining and finetuning."
     layman_desc: >
       When training language models on data from many different sources — web
@@ -303,8 +294,7 @@ projects:
       - Info
   coins:
     name: COINs
-    description:
-      "Community-informed graph embeddings for fast knowledge-graph link
+    description: "Community-informed graph embeddings for fast knowledge-graph link
       prediction."
     layman_desc: >
       Knowledge graphs are large databases of facts about the world, and "link
@@ -337,8 +327,7 @@ projects:
       - Info
   nbl:
     name: NBL
-    description:
-      "Neural Block Linearization replacing self-attention with LMMSE
+    description: "Neural Block Linearization replacing self-attention with LMMSE
       approximations for faster LLM inference."
     layman_desc: >
       Self-attention in language models is computationally expensive, especially
@@ -371,9 +360,8 @@ projects:
       - Info
   clippedscion:
     name: ClippedScion
-    description:
-      "Reference implementation of ClippedScion optimizers supporting multiple
-      norms."
+    description: "Reference implementation of ClippedScion optimizers supporting
+      multiple norms."
     layman_desc: >
       ClippedScion is a variant of the Scion optimizer that adds gradient
       clipping to improve training stability for neural networks. It provides
@@ -405,9 +393,8 @@ projects:
       - Info
   pepo:
     name: PEPO
-    description:
-      "Preference alignment framework for language models using DPO and RLHF
-      techniques."
+    description: "Preference alignment framework for language models using DPO and
+      RLHF techniques."
     layman_desc: >
       Language models are made safer and more helpful by training them to follow
       human preferences — a process called preference alignment. PEPO implements

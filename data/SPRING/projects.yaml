@@ -69,8 +69,7 @@ projects:
     type: Library
     information:
       - type: Paper
-        title:
-          "ClaimChain: Improving the Security and Privacy of In-band Key
+        title: "ClaimChain: Improving the Security and Privacy of In-band Key
           Distribution for Messaging"
         url: https://infoscience.epfl.ch/record/266698
         notes:
@@ -130,8 +129,7 @@ projects:
     license: MIT
     information:
       - type: Paper
-        title:
-          "Evading classifiers in discrete domains with provable optimality
+        title: "Evading classifiers in discrete domains with provable optimality
           guarantees"
         # Could not find an entry in Infoscience...
         url: https://arxiv.org/abs/1810.10939
@@ -149,8 +147,7 @@ projects:
       - Blockchain
     applications:
       - Info
-    description:
-      Sublinear-traversal blockchains and efficient key-value Merkle trees
+    description: Sublinear-traversal blockchains and efficient key-value Merkle trees
     tech_desc: >
       This library provides implementations of two cryptographic data
       structures: fast traversal blockchain structure, and a verifiable
@@ -165,8 +162,7 @@ projects:
     type: Library
     information:
       - type: Paper
-        title:
-          "ClaimChain: Improving the Security and Privacy of In-band Key
+        title: "ClaimChain: Improving the Security and Privacy of In-band Key
           Distribution for Messaging"
         url: https://infoscience.epfl.ch/record/266698
         notes:
@@ -183,8 +179,7 @@ projects:
     applications:
       - Info
     description: Evaluation code for mobile crowdsourcing privacy
-    tech_desc:
-      This tool implements the evaluation framework described in the paper
+    tech_desc: This tool implements the evaluation framework described in the paper
     code:
       type: Lab GitHub
       url: https://github.com/spring-epfl/MCSAuditing
@@ -211,8 +206,7 @@ projects:
       - Privacy
     applications:
       - Info
-    description:
-      Library for prototyping composable zero-knowledge proofs in the
+    description: Library for prototyping composable zero-knowledge proofs in the
       discrete-log setting
     code:
       type: Lab GitHub
@@ -244,9 +238,8 @@ projects:
       - Gov
       - Health
       - Infra
-    description:
-      A privacy preserving exposure notification protocol to inform people about
-      possible exposure to the COVID-19 virus
+    description: A privacy preserving exposure notification protocol to inform
+      people about possible exposure to the COVID-19 virus
     tech_desc: >
       The goal of the DP3T protocol is to simplify and accelerate the process of
       identifying people who have been in contact with a positively CoVid-19
@@ -372,9 +365,8 @@ projects:
       - Privacy
     applications:
       - Info
-    description:
-      Library for running membership inference attacks (MIA) against machine
-      learning models
+    description: Library for running membership inference attacks (MIA) against
+      machine learning models
     tech_desc: >
       These are attacks against privacy of the training data. In MIA, an
       attacker tries to guess whether a given example was used during training
@@ -399,9 +391,8 @@ projects:
     applications:
       - Gov
       - Infra
-    description:
-      A Rust library to perform REST requests over the Tor network for mobile
-      applications.
+    description: A Rust library to perform REST requests over the Tor network for
+      mobile applications.
     tech_desc: >
       This library builds upon the arti-library. It wraps the arti-library for
       easy use by mobile applications. Instead of downloading the whole
@@ -418,9 +409,8 @@ projects:
       date_last_commit: 2024-08-15
     incubator:
       type: retired_archived
-      work:
-        2022/Q1 Created and updated a library for mobile - retired and archived
-        in 2024/Q2
+      work: 2022/Q1 Created and updated a library for mobile - retired and archived in
+        2024/Q2
       products:
         - type: Library
           title: Lightarti-REST
@@ -478,8 +468,7 @@ projects:
       - Privacy
     applications:
       - Info
-    description:
-      Decentralized privacy-preserving search engine for investigative
+    description: Decentralized privacy-preserving search engine for investigative
       journalists
     tech_desc: >
       Investigative journalists collect large numbers of digital documents
@@ -501,9 +490,8 @@ projects:
       - Decentralized
     information:
       - type: Paper
-        title:
-          "DATASHARENETWORK: A Decentralized Privacy-Preserving Search Engine
-          for Investigative Journalists"
+        title: "DATASHARENETWORK: A Decentralized Privacy-Preserving Search Engine for
+          Investigative Journalists"
         url: https://infoscience.epfl.ch/record/287810
         notes:
           - label: Published at
@@ -537,8 +525,7 @@ projects:
       - Protocol
     information:
       - type: Paper
-        title:
-          "Tandem: Securing Keys by Using a Central Server While Preserving
+        title: "Tandem: Securing Keys by Using a Central Server While Preserving
           Privacy"
         url: https://arxiv.org/abs/1809.03390
         notes:
@@ -555,8 +542,7 @@ projects:
       - Learning
     applications:
       - Info
-    description:
-      Capturing Advertising and Tracking Information Flows for Robust Blocking
+    description: Capturing Advertising and Tracking Information Flows for Robust Blocking
     tech_desc: >
       ML-based ad and tracker blocker that detects ads and trackers based on
       their action rather than their content.
@@ -572,8 +558,7 @@ projects:
       - Protection
     information:
       - type: Paper
-        title:
-          "WebGraph: Capturing Advertising and Tracking Information Flows for
+        title: "WebGraph: Capturing Advertising and Tracking Information Flows for
           Robust Blocking"
         url: https://arxiv.org/abs/2107.11309v1
         notes:
@@ -688,9 +673,8 @@ projects:
     date_updated: 2023-03-22
   flfp:
     name: Double-Edged Shield
-    description:
-      "Study and attacks on fingerprinting users through customized ad-blocker
-      filter lists."
+    description: "Study and attacks on fingerprinting users through customized
+      ad-blocker filter lists."
     layman_desc: >
       Ad blockers protect privacy, but customizing them can paradoxically make
       you easier to identify online. This project studies how the specific
@@ -723,9 +707,8 @@ projects:
       - Info
   iccwd:
     name: ICCWD
-    description:
-      "Scripts for the Image-Caption in the Wild Dataset and minor-detection
-      method evaluation."
+    description: "Scripts for the Image-Caption in the Wild Dataset and
+      minor-detection method evaluation."
     layman_desc: >
       This project provides tools for detecting whether images of minors appear
       alongside inappropriate captions on public social media. The dataset
@@ -756,8 +739,7 @@ projects:
       - Info
   wf4nym:
     name: WF4NYM
-    description:
-      "Website fingerprinting and flow-correlation attacks on the Nym mixnet."
+    description: "Website fingerprinting and flow-correlation attacks on the Nym mixnet."
     layman_desc: >
       Mix networks like Nym are designed to provide strong anonymity by mixing
       and delaying network traffic, making it hard to trace who is communicating

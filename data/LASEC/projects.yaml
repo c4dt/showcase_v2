@@ -88,8 +88,7 @@ projects:
     date_added: 2024-09-30
     information:
       - type: Paper
-        title:
-          Anonymous Tokens with Stronger Metadata Bit Hiding from Algebraic MACs
+        title: Anonymous Tokens with Stronger Metadata Bit Hiding from Algebraic MACs
         url: https://doi.org/10.1007/978-3-031-38545-2_14
         notes:
           - label: Presented at

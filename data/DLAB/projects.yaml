@@ -33,8 +33,7 @@ projects:
         title: Privacy-Preserving Classification with Secret Vector Machines
         url: https://arxiv.org/pdf/1907.03373.pdf
       - type: Paper
-        title:
-          Privacy-Preserving Distributed Learning with Secret Gradient Descent
+        title: Privacy-Preserving Distributed Learning with Secret Gradient Descent
         url: https://arxiv.org/pdf/1906.11993.pdf
     date_added: 2021-11-05
     date_updated: 2024-04-16
@@ -209,9 +208,8 @@ projects:
     license: MIT
     information:
       - type: Paper
-        title:
-          "Exploiting Asymmetry for Synthetic Training Data Generation: SynthIE
-          and the Case of Information Extraction"
+        title: "Exploiting Asymmetry for Synthetic Training Data Generation: SynthIE and
+          the Case of Information Extraction"
         url: https://arxiv.org/abs/2303.04132
     date_added: 2023-03-16
     date_updated: 2024-04-16
@@ -433,8 +431,7 @@ projects:
     date_added: 2024-05-03
   debategpt:
     name: DebateGPT
-    description:
-      "Code and data for studying the conversational persuasiveness of GPT-4."
+    description: "Code and data for studying the conversational persuasiveness of GPT-4."
     layman_desc: >
       Can AI chatbots change people's minds more effectively than human
       debaters? This project investigates how persuasive GPT-4 is in one-on-one
@@ -474,9 +471,8 @@ projects:
       - Info
   time:
     name: TiME
-    description:
-      "Training tiny monolingual language models via knowledge distillation from
-      larger models."
+    description: "Training tiny monolingual language models via knowledge
+      distillation from larger models."
     layman_desc: >
       Large multilingual language models are powerful but slow and expensive,
       especially for languages with limited digital text. TiME addresses this by
@@ -509,9 +505,8 @@ projects:
       - Info
   jsonschemabench:
     name: JSONSchemaBench
-    description:
-      "Benchmark of ~10,000 real-world JSON schemas for evaluating structured
-      output generation."
+    description: "Benchmark of ~10,000 real-world JSON schemas for evaluating
+      structured output generation."
     layman_desc: >
       AI language models are often asked to produce structured output — like
       JSON data matching a specific format — but reliably doing so is a hard
@@ -542,8 +537,7 @@ projects:
       - Info
   zip2zip:
     name: zip2zip
-    description:
-      "High-performance LZW compression library with Python bindings for
+    description: "High-performance LZW compression library with Python bindings for
       adaptive vocabularies."
     layman_desc: >
       This library provides a fast C implementation of LZW compression, the
@@ -567,7 +561,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/epfl-dlab/zip2zip
-      date_last_commit: 2025-10-16
+      date_last_commit: 2026-03-24
     language: Python
     license: Apache-2.0
     date_added: 2026-03-03
@@ -577,9 +571,8 @@ projects:
       - Infra
   boostcd:
     name: BoostCD
-    description:
-      "Information extraction system with training, inference, and evaluation
-      pipeline."
+    description: "Information extraction system with training, inference, and
+      evaluation pipeline."
     layman_desc: >
       BoostCD is a machine learning system for automatically extracting
       structured information from text — a task known as information or relation

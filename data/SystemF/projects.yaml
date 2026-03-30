@@ -103,9 +103,8 @@ projects:
       - Infra
   dvar-track:
     name: dvar-track
-    description:
-      "Emacs Lisp tool for tracking dynamic variable dependencies with eldoc
-      support."
+    description: "Emacs Lisp tool for tracking dynamic variable dependencies with
+      eldoc support."
     layman_desc: >
       dvar-track is an Emacs plugin that helps developers understand how dynamic
       variables — configuration settings that change at runtime — relate to each
@@ -135,8 +134,7 @@ projects:
       - Infra
   logical-pinning:
     name: Logical Pinning
-    description:
-      "Coq formalization of logical pinning for container-internal pointers."
+    description: "Coq formalization of logical pinning for container-internal pointers."
     layman_desc: >
       This project provides a formal, computer-verified proof that a technique
       called "logical pinning" correctly handles pointers that point inside a
@@ -166,9 +164,8 @@ projects:
       - Info
   lorikeet:
     name: Lorikeet
-    description:
-      "Scalafix-based code quality feedback tool with custom rule definitions
-      via query patterns."
+    description: "Scalafix-based code quality feedback tool with custom rule
+      definitions via query patterns."
     layman_desc: >
       Lorikeet is a tool for automatically reviewing Scala code quality,
       originally designed to give automated feedback on student programming
