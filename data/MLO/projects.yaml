@@ -289,7 +289,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/epfml/disco
-      date_last_commit: 2026-03-19
+      date_last_commit: 2026-03-27
     language: TypeScript
     license: Apache-2.0
     incubator:
@@ -504,7 +504,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/epfml/byzantine-robust-noniid-optimizer
-      date_last_commit: 2022-02-02
+      date_last_commit: 2021-11-20
     language: Python
     license: MIT
     type: Library
@@ -681,7 +681,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/epfml/grad-norm-smooth
-      date_last_commit: 2025-11-09
+      date_last_commit: 2026-03-23
     language: Python
     license: Apache-2.0
     information:
@@ -797,7 +797,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/epfml/halluhard
-      date_last_commit: 2026-02-20
+      date_last_commit: 2026-03-26
     language: Python
     date_added: 2026-03-03
     showcase_interest:
