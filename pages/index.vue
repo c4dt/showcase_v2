@@ -140,21 +140,22 @@ watch(
       <!-- Welcome section and C4DT factory introduction -->
       <section class="isolatept-14 relative lg:px-8">
         <div class="max-w-10xl mx-auto">
-          <div class="text-center">
-            <h1 class="epfl-h1">The Center for Digital Trust's Showcase</h1>
-            <p class="mt-6 text-lg leading-8 text-gray-600">
-              A repository of Digital Trust projects showcasing the latest research and innovation in the field of
-              digital trust from the EPFL labs.
-            </p>
-            <p>-curated by C4DT's factory team-</p>
-            <p>
-              For more information about the C4DT factory, see
-              <a class="epfl-a" href="https://c4dt.epfl.ch/domains/factory/">our homepage</a>
-            </p>
-            <p>
-              You can find more information on
-              <a class="epfl-a" href="https://c4dt.epfl.ch/article/?cat=10">our blog</a>
-            </p>
+          <div class="mx-auto w-1/2 text-center">
+            <h1 class="epfl-h1">Center for Digital Trust's Showcase</h1>
+            <div class="text-justify">
+              <p class="mt-6 text-lg text-gray-600">
+                Welcome to the Center for Digital Trust (C4DT)'s showcase, a hub of cutting‑edge research and innovation
+                in digital trust from EPFL’s leading laboratories. Here you’ll find the most recent projects that
+                advance security, privacy, and trustworthy computing, selected by the C4DT Factory team.
+              </p>
+              <p>
+                For more details about the Center for Digital Trust, visit our
+                <a class="epfl-a" href="https://c4dt.epfl.ch">main site</a>. The Factory team shares its latest news and
+                insights on our <a class="epfl-a" href="https://c4dt.epfl.ch/article/?cat=10">blog</a>. If you need to
+                get in touch with the Factory team, you can reach us by emailing
+                <a class="epfl-a" :href="`mailto:${FACTORY_EMAIL_ADDRESS}`">{{ FACTORY_EMAIL_ADDRESS }}.</a>
+              </p>
+            </div>
           </div>
         </div>
       </section>
