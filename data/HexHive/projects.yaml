@@ -6,6 +6,11 @@ projects:
     applications:
       - Infra
     description: Faster address sanitization to improve fuzzing speed
+    layman_desc: >
+      When testing software for bugs, security tools that monitor memory use can
+      slow things down significantly. FuZZan is a faster version of one such
+      tool that lets researchers find software vulnerabilities more quickly by
+      reducing that overhead.
     tech_desc: >
       Our evaluation shows that on the Google fuzzer test suite, FuZZan improves
       fuzzing throughput over ASan by 48% starting with Google’s provided seeds
@@ -39,6 +44,11 @@ projects:
     applications:
       - Infra
     description: "Virtual environment for fuzzing USB peripherals"
+    layman_desc: >
+      USB devices like keyboards or storage drives interact with the operating
+      system through complex software drivers. USBFuzz emulates USB hardware to
+      automatically test these drivers for security flaws, and has uncovered
+      many previously unknown vulnerabilities in major operating systems.
     tech_desc: >
       Fuzzing USB peripherals for Linux, Android, MacOS, Windows, FreeBSD Found
       lots of 0days in modern kernels, allowing arbitrary compromise
@@ -71,6 +81,11 @@ projects:
     description:
       A ground-truth fuzzing benchmark suite based on real programs with real
       bugs
+    layman_desc: >
+      Magma is a collection of real-world software libraries with known, real
+      bugs that have been carefully preserved for benchmarking purposes. It
+      allows researchers to objectively compare how well different bug-finding
+      tools perform.
     tech_desc: >
       Magma is a collection of open-source libraries with widespread usage and a
       long history of security-critical bugs and vulnerabilities. In light of
@@ -108,6 +123,11 @@ projects:
     applications:
       - Infra
     description: Fuzzing tool and crash analyzer
+    layman_desc: >
+      Automated bug-finding tools sometimes get stuck and fail to explore deeper
+      parts of a program. T-Fuzz detects when this happens and temporarily
+      transforms the program to bypass the obstacle, enabling discovery of bugs
+      in otherwise unreachable code.
     tech_desc: >
       T-Fuzz (transformational fuzzing) improves fuzzing by detecting whenever
       the fuzzer is stuck and then modifying the underlying program to reach new
@@ -145,6 +165,12 @@ projects:
       new functions, while not tipping off any of the verifications in the
       program. BOPC is a tool that automatically synthesizes data-flow exploits
       based on real programs and real exploits.
+    tech_desc: >
+      BOPC is a compiler that automatically synthesizes data-only exploits using
+      Block Oriented Programming (BOP). It searches a program's existing code
+      for functional blocks (SPloits) that can be chained together to express
+      arbitrary computation, bypassing control-flow integrity (CFI) defenses
+      without injecting new code.
     code:
       type: Lab GitHub
       url: https://github.com/HexHive/BOPC
@@ -172,6 +198,11 @@ projects:
     applications:
       - Infra
     description: Protection for C++ internal code pointers
+    layman_desc: >
+      Many software attacks work by secretly replacing pointers in a running
+      program so that it executes malicious code instead. CFIXX prevents this by
+      protecting the internal pointers used by C++ programs from being
+      overwritten at runtime.
     tech_desc: >
       CFIXX is a runtime mitigation that protects C++ programs from attacks that
       overwrite internal data structures containing code pointers.
@@ -201,6 +232,11 @@ projects:
     applications:
       - Infra
     description: Efficient detection of type confusion errors for C++
+    layman_desc: >
+      Type confusion bugs occur when a program incorrectly handles data as if it
+      were a different kind of object, which attackers can exploit. HexType is a
+      tool that monitors C++ programs at runtime to catch these dangerous errors
+      before they can be exploited.
     tech_desc: >
       HexType is a sanitizer for C++ cast safety. The primary use case is during
       testing to detect type confusion issues in the code. Additionally, HexType
@@ -231,6 +267,11 @@ projects:
     applications:
       - Infra
     description: Static instrumentation of binaries for fuzzing and sanitation
+    layman_desc: >
+      Security analysis of software is much harder when the original source code
+      is not available. RetroWrite adds monitoring capabilities directly into
+      compiled binary programs, enabling thorough security testing of
+      closed-source software at speeds comparable to source-level analysis.
     tech_desc: >
       RetroWrite can analyze the security of closed source binaries by applying
       an efficient fuzzing technique that usually only works when the source
@@ -280,6 +321,13 @@ projects:
       address differ, then an attack is detected; the typical course of action
       is simply to terminate the program or alert system administrators about a
       possible intrusion attempt.
+    tech_desc: >
+      This project provides an LLVM-based implementation of multiple shadow
+      stack schemes for x86_64, including parallel shadow stack, shstk (Intel
+      CET), and randomized schemes. It serves as a systematic evaluation
+      framework for comparing the security guarantees, performance overhead, and
+      compatibility trade-offs of different shadow stack approaches on modern
+      hardware.
     code:
       type: Lab GitHub
       url: https://github.com/HexHive/ShadowStack
@@ -306,6 +354,12 @@ projects:
     applications:
       - Infra
     description: Host-based, performance-counter-based attack detection system
+    layman_desc: >
+      Sophisticated cyberattacks often try to hide their presence from
+      traditional security tools. HexPADS detects these hidden attacks by
+      monitoring low-level hardware performance counters and looking for
+      behavioral anomalies that indicate attacks such as cache side-channels or
+      memory manipulation.
     tech_desc: >
       Attacks change the execution behavior of a system. Our attack detection
       system HexPADS detects attacks through divergences from normal behavior
@@ -342,6 +396,11 @@ projects:
     applications:
       - Infra
     description: Automatic fuzzer generation
+    layman_desc: >
+      Writing specialized test programs to find security bugs in software
+      libraries is a time-consuming task that requires deep knowledge of each
+      library's interface. FuzzGen automates this process by analyzing a library
+      and automatically creating a dedicated testing program tailored to it.
     tech_desc: >
       FuzzGen is a tool for automatically synthesizing fuzzers for complex
       libraries in a given environment. From a given library, it allow for
@@ -375,6 +434,11 @@ projects:
     applications:
       - Info
     description: Configurable data confidentiality and integrity
+    layman_desc: >
+      Protecting sensitive data inside a running program from being read or
+      tampered with is difficult without slowing everything down. DataShield
+      lets developers mark which data needs protection, and then automatically
+      enforces that only authorized parts of the program can access it.
     tech_desc: >
       DataShield can, based on C/C++ languages annotation, protect unwanted
       access to secret data. By securing only theses datastructures, performance
@@ -407,6 +471,12 @@ projects:
     applications:
       - Infra
     description: Firmware re-hosting through abstraction layer emulation
+    layman_desc: >
+      Embedded devices like routers or medical equipment run specialized
+      firmware that is normally very hard to test for security flaws without the
+      physical hardware. HALucinator allows this firmware to run on a regular
+      computer by emulating the hardware interfaces it depends on, enabling
+      security testing without the physical device.
     tech_desc: >
       HALucinator allow for running a firmware outside of its physical
       implementation. When extracting it, one can recreate the same environment
@@ -442,6 +512,12 @@ projects:
     applications:
       - Infra
     description: Security benchmarks for the Internet of Things
+    layman_desc: >
+      Internet of Things devices such as smart home sensors or industrial
+      controllers face unique security challenges. BenchIoT provides a
+      standardized set of tests to fairly compare how well different security
+      mechanisms protect these devices while measuring their impact on
+      performance, memory, and battery life.
     tech_desc: >
       BenchIoT enables automatic evaluation of 14 metrics covering security,
       performance, memory usage, and energy consumption. Having a sound
@@ -475,6 +551,12 @@ projects:
       - Health
     description:
       LibreCHovid - Alternative to GAEN for contact tracing applications
+    layman_desc: >
+      The official COVID contact tracing apps rely on proprietary Google and
+      Apple services that are not available on all devices. This project
+      provides an open-source alternative that works on Android phones without
+      Google services, allowing broader adoption of privacy-preserving contact
+      tracing.
     tech_desc: >
       Apple and Google developed the Google-Apple Exposure Notification system
       in order to provide a uniform API for contact-tracing apps while
@@ -511,6 +593,11 @@ projects:
     applications:
       - Infra
     description: "Automatic profile-aware debloating of bluetooth stacks"
+    layman_desc: >
+      Bluetooth devices support many features that most products never use,
+      creating unnecessary opportunities for attackers. LightBlue analyzes how a
+      device actually uses Bluetooth and then removes all unused functionality
+      from the software stack, reducing the attack surface with minimal effort.
     tech_desc: >
       The Bluetooth standard is complex, many commands are defined but aren't
       needed in many use cases. It allows for a big surface attack which can be
@@ -545,6 +632,12 @@ projects:
     applications:
       - Infra
     description: Crash deduplication through root-cause clustering
+    layman_desc: >
+      Security testing tools can produce thousands of seemingly different
+      crashes that actually stem from the same underlying bug. Igor
+      automatically groups these crashes by their root cause, dramatically
+      reducing the manual work needed for developers to triage and fix the real
+      bugs.
     tech_desc: >
       Fuzzing has emerged as the most effective bug-finding technique. The
       output of a fuzzer is a set of proof-of-concept (PoC) test cases for all
@@ -581,6 +674,18 @@ projects:
     applications:
       - Infra
     description: Disassemble binaries and recover as much info as possible
+    layman_desc: >
+      When software is compiled, most human-readable information like function
+      names and structure is stripped away. dis-cover is a tool that takes these
+      compiled binary programs and recovers as much of that lost information as
+      possible, helping security researchers understand and analyze the
+      software.
+    tech_desc: >
+      dis-cover is a binary analysis tool that disassembles compiled executables
+      and applies heuristics to recover high-level information such as function
+      boundaries, symbols, and data structures. It aids reverse engineering and
+      vulnerability research by reconstructing semantic information from
+      stripped binaries.
     code:
       type: Lab GitHub
       url: https://github.com/HexHive/dis-cover
@@ -600,6 +705,11 @@ projects:
     applications:
       - Infra
     description: Grammar-aware fuzzing
+    layman_desc: >
+      Programs that process structured input like programming languages or file
+      formats are hard to test because random inputs are almost always invalid.
+      Gramatron generates test inputs that follow the program's grammar rules,
+      enabling deeper testing of parsers, interpreters, and compilers.
     tech_desc: >
       Coverage-guided fuzzer that uses grammar automatons to perform
       grammar-aware fuzzing.
@@ -630,6 +740,11 @@ projects:
     applications:
       - Infra
     description: Data-flow based fuzzing
+    layman_desc: >
+      Most automated bug-finding tools guide their testing by tracking which
+      lines of code are executed. datAFLow improves on this by tracking how data
+      flows through the program, allowing it to discover bugs that
+      execution-coverage-based approaches miss.
     tech_desc: >
       DatAFLow is a fuzzer built on top of AFL++. However, instead of a
       control-flow-based feedback mechanism, it uses a data-flow-based feedback
@@ -660,6 +775,12 @@ projects:
     applications:
       - Infra
     description: Systematic kernel TOCTTOU protection
+    layman_desc: >
+      A subtle class of security bugs called TOCTTOU
+      (time-of-check-to-time-of-use) lets attackers trick the operating system
+      kernel by changing data between when it is checked and when it is used.
+      Midas prevents this by ensuring the kernel always reads the same value for
+      a given memory address during a single system call.
     tech_desc: >
       During a syscall, the kernel might read multiple times a value from
       userspace. As theses are controlled by the unpriviliged process, it may
@@ -695,6 +816,11 @@ projects:
     applications:
       - Infra
     description: Fuzzing WebGL Through Error Message Guided Mutation
+    layman_desc: >
+      3D graphics in web browsers are powered by a complex API called WebGL that
+      can contain serious security vulnerabilities. GLeeFuzz finds these
+      vulnerabilities by using browser error messages as feedback to guide its
+      testing, discovering flaws in Chrome, Firefox, and Safari.
     tech_desc: >
       Our fuzzing technique, GLeeFuzz, guides input mutation by error messages
       instead of code coverage. Our key observation is that browsers emit
@@ -737,6 +863,11 @@ projects:
     description:
       Evocatio is a bug analyzer built on top of AFL++ and AddressSanitizer. It
       automatically discovers a bug’s capabilities.
+    layman_desc: >
+      When a security bug is found in software, it is not always clear how
+      dangerous it actually is. Evocatio automatically explores what an attacker
+      could do with a bug by generating variants of the triggering input,
+      revealing the full extent of the vulnerability’s exploitability.
     tech_desc: >
       Evocatio automatically discovers a bug’s capabilities: analyzing a
       crashing test case (i.e., an input exposing a bug) to understand the full
@@ -764,6 +895,12 @@ projects:
     applications:
       - Infra
     description: Bypassing CFI through Compiler-Introduced Double-Fetches
+    layman_desc: >
+      Control-flow integrity is a widely used defense that prevents attackers
+      from redirecting program execution. WarpAttack reveals a new way to bypass
+      this defense by exploiting optimizations that compilers silently
+      introduce, where the same memory value is read twice and can differ
+      between reads.
     tech_desc: >
       WarpAttack is a new attack vector that exploits compiler-introduced
       double-fetch optimizations to mount TOCTTOU attacks and bypass code-reuse
@@ -789,6 +926,12 @@ projects:
     applications:
       - Infra
     description: Dependency-aware Virtual Device Fuzzing Framework
+    layman_desc: >
+      Virtual machines emulate hardware devices in software, and bugs in these
+      virtual devices can let attackers escape the virtual machine and
+      compromise the host. ViDeZZo automatically tests these virtual devices for
+      vulnerabilities by generating test inputs that respect the dependencies
+      between device messages.
     tech_desc: >
       ViDeZZo is a virtual device fuzzing framework considering both intra- and
       inter-message dependencies to balance fuzzing scalability and efficiency.
@@ -813,6 +956,12 @@ projects:
       - Infra
     description:
       Optimizing Directed Fuzzing via Target-tailored Program State Restriction
+    layman_desc: >
+      Directed fuzzing focuses testing resources on specific parts of a program
+      known to be suspicious, but it often wastes effort on program states
+      irrelevant to reaching the target. SieveFuzz improves efficiency by
+      restricting the fuzzer to only explore program states that are on a path
+      toward the target location.
     tech_desc: >
       We implement tripwiring-directed fuzzing as a prototype, Sieve-Fuzz, and
       evaluate it alongside the state-of-the-art directed fuzzers AFLGo, BEACON
@@ -1216,6 +1365,11 @@ projects:
       - Infra
     type: Framework
     description: Automatically evaluating code artifacts from research papers
+    layman_desc: >
+      Research papers in computer science are increasingly expected to include
+      working code, but verifying that this code actually works is a slow and
+      tedious manual process. Orchard provides a standardized, automated way to
+      run and evaluate these code artifacts using container technology.
     tech_desc: >
       While there has been a strong push for adding reliable code artifacts to
       research papers since 2018, the process of evaluating them is still manual

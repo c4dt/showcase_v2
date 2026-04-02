@@ -9,6 +9,12 @@ projects:
     description:
       GoLang extension to allow a programmer to execute a goroutine within an
       enclave
+    layman_desc: >
+      Modern processors can create secure "enclaves" — isolated regions of
+      memory that protect sensitive code and data even from the operating system
+      itself. Gotee makes it easy for Go programmers to run parts of their
+      program inside such an enclave, without needing to completely rewrite
+      their application or understand the low-level hardware details.
     tech_desc: >
       Trusted Execution Environments (TEEs), such as Intel SGX enclaves, use
       hardware to ensure the confidentiality and integrity of operations on
@@ -50,6 +56,12 @@ projects:
     applications:
       - Infra
     description: Implementation of the Raft consensus protocol
+    tech_desc: >
+      This is a C implementation of the Raft distributed consensus protocol that
+      deliberately makes no assumptions about the underlying network, so it can
+      operate over unreliable transports such as UDP. The library exposes a
+      state-machine interface for log replication and leader election, allowing
+      integrators to plug in their own network and storage layers.
     layman_desc: >
       Implementation of the Raft consensus protocol. The library doesn't assume
       a network layer with ordering or duplicate detection. This means you could
@@ -75,6 +87,12 @@ projects:
       - Infra
     type: Experiments
     description: Improved scalable and fault-tolerant distributed architecture
+    layman_desc: >
+      Cloud services need to handle more users as traffic grows and keep working
+      even when hardware fails. HovercRaft is a new design for replicated
+      services that achieves both goals simultaneously: adding more servers
+      increases both the speed and the resilience of the system, instead of
+      forcing a trade-off between the two.
     tech_desc: >
       Cloud platform services must simultaneously be scalable, meet low tail
       latency service-level objectives, and be resilient to a combination of
@@ -117,6 +135,12 @@ projects:
       - Infra
     type: Experiments
     description: L4 load balancer for cloud provider
+    layman_desc: >
+      When many users connect to a cloud service, a load balancer distributes
+      their connections across multiple servers. CRAB is a new approach that
+      lets servers handle connections directly after an initial redirect,
+      bypassing the load balancer for subsequent packets and reducing latency
+      without sacrificing connection tracking.
     tech_desc: >
       Connection Redirect LoAd Balancer is a new scheme for L4 load balancing
       targeting specifically internal cloud workloads.

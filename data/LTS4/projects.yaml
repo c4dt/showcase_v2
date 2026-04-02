@@ -49,6 +49,11 @@ projects:
       - Info
     description:
       Algorithm for evaluating the invariance properties of deep networks
+    layman_desc: >
+      AI image recognition systems should ideally give the same answer whether
+      an image is slightly rotated, zoomed, or shifted. ManiFool is a tool that
+      systematically measures how much geometric transformation a neural network
+      can tolerate before it changes its classification.
     tech_desc: >
       Deep convolutional neural networks have been shown to be vulnerable to
       arbitrary geometric transformations. However, there is no systematic
@@ -85,6 +90,11 @@ projects:
     applications:
       - Info
     description: Geometry-inspired sparse attack on deep networks
+    layman_desc: >
+      AI image classifiers can be fooled by making tiny changes to just a few
+      pixels in an image. SparseFool is a tool that efficiently finds the
+      minimum number of pixels that need to be altered to make an AI misclassify
+      an image.
     tech_desc: >
       Deep Neural Networks have achieved extraordinary results on image
       classification tasks, but have been shown to be vulnerable to attacks with
@@ -121,6 +131,11 @@ projects:
     applications:
       - Info
     description: Universal adversarial perturbations
+    layman_desc: >
+      AI image classifiers can be systematically fooled by adding a nearly
+      invisible pattern to any image. Universal computes a single small
+      perturbation that, when applied to virtually any photograph, causes a
+      neural network to misclassify it with high probability.
     tech_desc: >
       Proposing a universal (image-agnostic) and very small perturbation vector
       that causes natural images to be misclassified with high probability in a
@@ -154,6 +169,12 @@ projects:
       - Info
     description: >
       Influence of discriminative features on deep network boundaries in ML
+    layman_desc: >
+      Neural networks make decisions by drawing invisible boundaries between
+      categories in a high-dimensional space. This work investigates how the
+      features present in training data shape where those boundaries are placed,
+      revealing why small changes to training images can drastically alter what
+      the network learns to focus on.
     tech_desc: >
       Important insights towards the explainability of neural networks reside in
       the characteristics of their decision boundaries. In this work, we borrow
@@ -204,6 +225,12 @@ projects:
     description: >
       Analyzing the role of the network architecture in shaping the inductive
       bias of deep classifiers.
+    layman_desc: >
+      Different neural network designs are not equally good at recognizing all
+      types of patterns. This work identifies the specific directions in image
+      space that each network architecture is inherently better or worse at
+      distinguishing, revealing a hidden fingerprint of each architecture's
+      built-in preferences.
     tech_desc: >
       In this work, we analyze the role of the network architecture in shaping
       the inductive bias of deep classifiers. To that end, we start by focusing
@@ -248,6 +275,12 @@ projects:
     applications:
       - Info
     description: Multilayer network data clustering
+    layman_desc: >
+      Grouping nodes in a network into communities — such as finding friend
+      groups in a social network or functional clusters in a biological network
+      — is a common but challenging task. OrthoNet improves this by jointly
+      using both the connections between nodes and any extra data associated
+      with each node.
     tech_desc: >
       Network data appears in very diverse applications, like biological,
       social, or sensor networks. Clustering of network nodes into categories or
@@ -292,6 +325,12 @@ projects:
     applications:
       - Info
     description: Boost robustness of images to common corruptions
+    layman_desc: >
+      AI image classifiers can be unreliable when images are degraded by real-
+      world effects like blur, noise, or weather. PRIME is a data augmentation
+      method that exposes neural networks to a wide variety of image distortions
+      during training, significantly improving their robustness when deployed in
+      the real world.
     tech_desc: >
       PRIME is a generic, plug-n-play data augmentation scheme that consists of
       simple families of max-entropy image transformations for conferring

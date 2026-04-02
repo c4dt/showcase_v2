@@ -6,6 +6,11 @@ projects:
     applications:
       - Infra
     description: Fast distance computation for searches in large databases
+    layman_desc: >
+      When searching for similar items in a very large collection — such as
+      finding images that look alike — computers must compare many numerical
+      descriptions. Quick ADC speeds up this comparison process dramatically,
+      making it practical to search through millions of items in real time.
     tech_desc: >
       Quick ADC is an implementation of fast distance computation techniques for
       nearest neighbor search in large databases of high-dimensional vectors.
@@ -36,6 +41,13 @@ projects:
     applications:
       - Infra
     description: Automatic transactional memory adaptation
+    layman_desc: >
+      Writing software that runs tasks in parallel without errors is notoriously
+      difficult. Transactional memory simplifies this by letting programmers
+      group operations into atomic transactions that either complete fully or
+      not at all. ProteusTM automatically selects and tunes the best underlying
+      implementation for the current workload, so developers get both simplicity
+      and good performance.
     tech_desc: >
       There are many designs and implementations of Transactional Memory, and
       that is not a coincidence: different ones perform best on different

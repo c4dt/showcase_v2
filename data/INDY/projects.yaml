@@ -8,6 +8,15 @@ projects:
     description:
       Library that provides inference algorithms for models based on Luce's
       choice axiom
+    layman_desc: >
+      Choix is a Python library for ranking and choice modeling. Given
+      observations of people or items being compared or chosen, it learns which
+      options are most preferred and can predict future choices.
+    tech_desc: >
+      Choix provides inference algorithms for probabilistic models based on
+      Luce's choice axiom, including the Bradley-Terry and Plackett-Luce models.
+      It supports pairwise comparisons, rankings, and top-k choices, with
+      efficient optimization routines such as I-LSR and MM algorithms.
     code:
       type: Personal GitHub
       url: https://github.com/lucasmaystre/choix
@@ -49,6 +58,11 @@ projects:
     description:
       Machine Learning framework to search a database via similarity samples
     url: https://who-is-th.at/
+    layman_desc: >
+      Who is that? lets you search a collection of items, such as faces or
+      products, by showing examples of what you like rather than typing
+      keywords. The system learns your preferences through a series of
+      similarity comparisons and narrows down to what you are looking for.
     tech_desc: >
       Use machine learning to organize a collection of objects (e.g. faces of
       actors) so as to make them interactively searchable via similarity
@@ -69,6 +83,10 @@ projects:
     applications:
       - Info
     description: Dynamic skill rating system
+    layman_desc: >
+      Kickscore tracks how the skill of players or teams changes over time based
+      on match results. It can predict who will win future games and visualize
+      skill trends across a whole season or career.
     tech_desc: >
       Kickscore can be used to understand & visualize the skill of players (or
       teams) competing in pairwise matches, and to predict outcomes of future
@@ -161,6 +179,12 @@ projects:
       take. This could help climate scientists, sociologists, news outlets,
       politicians, and the general public to improve climate communication and
       enhance climate action.
+    tech_desc: >
+      Climpact uses pairwise comparison methodology and discrete-choice models
+      to measure and analyze people’s perception of carbon footprints across
+      various everyday actions. By aggregating crowd-sourced judgments, it
+      quantifies systematic biases between perceived and actual CO2 impact,
+      producing calibrated estimates useful for climate communication research.
     contacts:
       - name: Victor Kristof
         url: https://victorkristof.me/

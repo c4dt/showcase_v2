@@ -8,6 +8,11 @@ projects:
     applications:
       - Infra
     description: Ethereum smart contracts with secret parameters
+    layman_desc: >
+      Blockchain smart contracts are normally fully public, meaning anyone can
+      see all their data. Offchainer lets developers create smart contracts that
+      keep certain inputs private while still proving the computation was done
+      correctly, without revealing the secret values.
     tech_desc: >
       By design, smart contracts’ data and computations are public to all
       participants. Offchainer helps to create smart contracts with parameters
@@ -40,6 +45,11 @@ projects:
     applications:
       - Infra
     description: Windows password cracker
+    layman_desc: >
+      Ophcrack recovers forgotten Windows login passwords by using precomputed
+      lookup tables called rainbow tables. It provides a graphical interface and
+      can crack most simple Windows passwords within seconds without needing the
+      original system.
     tech_desc: >
       Ophcrack is a Windows password cracker based on rainbow tables. It is a
       very efficient implementation of rainbow tables done by the inventors of

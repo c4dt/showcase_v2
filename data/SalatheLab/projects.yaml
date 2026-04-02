@@ -11,6 +11,12 @@ projects:
       The Open Food Repo is an open access database on information about
       barcoded food products sold in Switzerland. Accessible through an open
       API, it is the largest open data source on Swiss products.
+    tech_desc: >
+      Open Food Repo is a crowdsourced, openly licensed database of barcoded
+      food products available in Switzerland, exposed via a documented REST API.
+      It stores product names, ingredients, nutritional values, and images, and
+      serves as the product data backbone for the MyFoodRepo dietary tracking
+      platform.
     maturity: 3
     contacts:
       - name: contact
@@ -44,6 +50,12 @@ projects:
       discoveries together. By participating in this project, you will
       understand how your blood sugar levels change in response to the food you
       eat.
+    tech_desc: >
+      Food & You is a digital epidemiology cohort study that combines continuous
+      glucose monitoring (CGM), dietary logging via the MyFoodRepo app, and gut
+      microbiome sampling to investigate personalized glycemic responses to
+      food. Participants scan barcodes and photograph meals, generating
+      longitudinal data used in downstream nutritional and microbiome research.
     maturity: 3
     contacts:
       - name: contact
@@ -63,6 +75,18 @@ projects:
       - Health
     description:
       Track health trends using public social media data and crowdsourcing
+    layman_desc: >
+      Social media contains a wealth of real-time information about how people
+      feel and what health topics they are discussing. CrowdBreaks monitors
+      public posts to track trends in health-related attitudes — such as vaccine
+      sentiment — and uses crowdsourcing to label data so that automated models
+      can be trained and kept up to date.
+    tech_desc: >
+      CrowdBreaks is an open platform that combines streaming ingestion of
+      public social media data with crowdsourced labeling and automated machine
+      learning pipelines to track population-level health trends over time. It
+      provides real-time dashboards of sentiment and topic trends and is
+      designed to be extended to new health surveillance use cases.
     url: https://www.crowdbreaks.org
     maturity: 3
     contacts:
@@ -97,6 +121,19 @@ projects:
     applications:
       - Info
     description: Open platform for data science challenges
+    layman_desc: >
+      AIcrowd is a platform where researchers and companies can post data
+      science challenges and anyone in the world can submit solutions.
+      Participants compete to build the best AI models, which accelerates
+      progress on difficult problems and makes cutting-edge research more
+      collaborative and open.
+    tech_desc: >
+      AIcrowd is an open crowdsourcing platform for reproducible AI research
+      challenges. It provides tooling for dataset hosting, submission
+      evaluation, leaderboards, and baseline implementations. The platform
+      supports a wide variety of task types including reinforcement learning,
+      natural language processing, and biomedical AI, and has hosted challenges
+      in partnership with academic and industry organizations.
     url: https://www.aicrowd.com
     contacts:
       - name: contact
@@ -120,6 +157,18 @@ projects:
     applications:
       - Info
     description: Reproducible Text Classification
+    layman_desc: >
+      Automatically sorting text — such as tweets or news articles — into
+      categories is a common task in data science, but results are often hard to
+      reproduce. txcl is a toolkit that standardizes and simplifies training and
+      evaluating text classification models, making experiments easier to share
+      and replicate.
+    tech_desc: >
+      txcl is a Python library for reproducible text classification that wraps
+      standard NLP workflows including data loading, preprocessing, fine-tuning
+      of transformer-based models, and evaluation. It provides a configuration-
+      driven interface to support consistent experimental setups and was
+      developed in the context of social media health surveillance research.
     code:
       type: Lab GitHub
       url: https://github.com/digitalepidemiologylab/text-classification

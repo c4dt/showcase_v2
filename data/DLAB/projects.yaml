@@ -20,6 +20,12 @@ projects:
       privacy requirement that the server that trains the model is assumed to be
       untrusted and potentially malicious. We thus preserve user privacy by
       design, rather than by trust.
+    tech_desc: >
+      SecVM trains a Support Vector Machine (SVM) classifier in a federated
+      setting where the central server is considered untrusted. User data is
+      kept local and only encrypted gradient updates are sent to the server,
+      using secret-sharing and homomorphic-encryption-inspired techniques to
+      prevent the server from learning individual data points or their labels.
     code:
       type: Lab GitHub
       url: https://github.com/epfl-dlab/secvm-server
@@ -53,6 +59,13 @@ projects:
       out-of-domain generalization, and biases. This is a framework to learn
       invariant representations that should generalize across training
       environments.
+    tech_desc: >
+      This framework adapts Invariant Risk Minimization (IRM) to natural
+      language tasks by defining multiple training environments from available
+      data and penalizing features whose predictive power varies across
+      environments. It integrates with standard pretrained Transformer encoders
+      and demonstrates improved robustness on out-of-domain NLI and sentiment
+      benchmarks.
     code:
       type: Lab GitHub
       url: https://github.com/epfl-dlab/invariant-language-models
@@ -78,6 +91,13 @@ projects:
       solutions rely on annotated data, which is however not available in many
       domains. We propose a method for entity linking without the need for
       annotated data.
+    tech_desc: >
+      Eigenthemes performs unsupervised entity linking by exploiting the
+      observation that entities mentioned in the same document tend to cluster
+      in a low-dimensional subspace of a pretrained entity embedding space. It
+      extracts this subspace via SVD and ranks entity candidates by their
+      projection onto the dominant singular vectors, without requiring any
+      labeled training data.
     code:
       type: Lab GitHub
       url: https://github.com/epfl-dlab/eigenthemes
@@ -109,6 +129,13 @@ projects:
       writer. Quotebank shows that it can accurately associate any citation with
       who most probably wrote it. It helps in identifying the source of a given
       news without any metadata.
+    tech_desc: >
+      Quotebank is a large-scale dataset of 235 million quotations extracted
+      from 162 million English news articles published between 2008 and 2020.
+      Speaker attribution is performed using a Wikidata-linked entity linking
+      pipeline and a probabilistic model trained on Wikipedia-derived
+      supervision, yielding a quotation-to-speaker corpus suitable for NLP,
+      social science, and computational journalism research.
     code:
       type: Lab GitHub
       url: https://github.com/epfl-dlab/Quotebank
@@ -151,6 +178,13 @@ projects:
       we present Differentially Private Propensity Scores for Bias Correction
       (DiPPS), a method for approximating the true data distribution of interest
       in both of the above settings
+    tech_desc: >
+      DiPPS estimates propensity scores under differential privacy to reweight a
+      biased sample toward the true population distribution. It uses a private
+      logistic regression model to compute importance weights, then applies them
+      for unbiased downstream statistical estimation. The approach handles both
+      voluntary participation bias and distribution shift from proxy datasets,
+      with formal differential privacy guarantees.
     code:
       type: Lab GitHub
       url: https://github.com/epfl-dlab/DIPPS
@@ -179,6 +213,13 @@ projects:
       input and autoregressively generates a structured semantic representation
       of the information expressed in it, in the form of (subject, relation,
       object) triplets, as output.
+    tech_desc: >
+      GenIE fine-tunes a seq2seq Transformer (BART) for closed information
+      extraction by autoregressively generating entity-linked (subject,
+      relation, object) triplets constrained to a target knowledge base. A
+      constrained decoding procedure enforces that all generated entities and
+      relations are valid Wikidata identifiers, yielding fully grounded and
+      structured output from raw text.
     code:
       type: Lab GitHub
       url: https://github.com/epfl-dlab/GenIE
@@ -201,6 +242,21 @@ projects:
     tags:
       - Natural Language
     description: Exploiting Asymmetry for Synthetic Training Data Generation
+    layman_desc: >
+      Training AI models for information extraction requires large amounts of
+      labeled data, which is expensive to create. SynthIE exploits the fact that
+      generating text from structured facts is much easier than the reverse,
+      using a large language model to automatically produce synthetic training
+      examples that can then teach a smaller model to extract structured
+      information from real text.
+    tech_desc: >
+      SynthIE leverages the asymmetry between text-to-triples and
+      triples-to-text: it uses a large language model to generate fluent text
+      from Wikidata (subject, relation, object) triples, creating a large
+      synthetic corpus for training information-extraction models. The resulting
+      dataset bootstraps high-quality IE models without requiring expensive
+      manual annotation, and outperforms models trained on existing
+      human-labeled corpora.
     code:
       type: Lab GitHub
       url: https://github.com/epfl-dlab/SynthIE

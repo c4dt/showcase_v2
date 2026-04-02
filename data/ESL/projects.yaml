@@ -10,6 +10,12 @@ projects:
       gem5-X stands for a gem5-based full-system simulator with architectural
       eXtensions. It is a gem5-based simulator that allows architectural
       exploration and optimization of heterogeneous systems
+    tech_desc: >
+      gem5-X extends the gem5 full-system simulator with architectural
+      eXtensions targeting heterogeneous many-core platforms, including custom
+      memory hierarchies, power models, and hardware accelerator integration. It
+      enables design-space exploration and optimization of HPC and embedded
+      systems at the microarchitectural level using C++ and Python.
     url: https://ecocloud.epfl.ch/research/sustainable-it-infrastructure/gem5-x/
     doc: https://www.epfl.ch/labs/esl/wp-content/uploads/2021/08/gem5_X_TechnicalManual_v2.pdf
     code:
@@ -49,6 +55,13 @@ projects:
       of each other, in order to make theses more compact. But as it is getting
       smaller, it's also getting hotter. 3D-ICE helps in modelling how thermal
       flux are behaving.
+    tech_desc: >
+      3D-ICE is a compact transient thermal simulator for 3D stacked integrated
+      circuits with inter-tier liquid cooling. It models heat dissipation using
+      an equivalent resistor-capacitor network and solves the resulting system
+      of differential equations to predict temperature distributions across
+      stacked dies, supporting both linear and nonlinear thermal models with
+      pluggable heat sink configurations.
     url: https://www.epfl.ch/labs/esl/research/open-source-software-projects/3d-ice/
     doc: https://eslweb.epfl.ch/3Dice/3D-ICE-User_Guide.pdf
     code:

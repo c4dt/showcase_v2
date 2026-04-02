@@ -7,6 +7,11 @@ projects:
       - Infra
     description:
       Verification framework for a subset of the Scala programming language
+    layman_desc: >
+      Stainless automatically checks that a Scala program is correct by
+      mathematically proving it satisfies its stated properties for all possible
+      inputs. If the program has a bug, Stainless finds a concrete example that
+      triggers it.
     tech_desc: >
       Stainless is a tool for verifying Scala programs developed by the LARA. It
       can verify that your program is correct for all inputs, it can report
@@ -74,6 +79,11 @@ projects:
     applications:
       - Infra
     description: Stainless fork aimed at smart contracts
+    layman_desc: >
+      This project adapts the Stainless verification tool to formally check the
+      correctness of blockchain smart contracts. It allows developers to prove
+      that a smart contract behaves as intended before it is deployed,
+      preventing costly bugs and exploits.
     tech_desc: >
       Stainless is a tool for verifying Scala programs developed by the LARA.
       This fork can perform verification of Smart Contracts.
@@ -111,6 +121,11 @@ projects:
     applications:
       - Infra
     description: Constraint solver for Stainless
+    layman_desc: >
+      Inox is the underlying engine that powers the Stainless verifier. It takes
+      logical constraints about a program and automatically determines whether
+      they can be satisfied or proven impossible, delegating hard problems to
+      state-of-the-art SMT solvers.
     tech_desc: >
       Inox can be used to prove constraints on methods in a program, to attest
       the correctness of these parts.
@@ -143,6 +158,17 @@ projects:
     applications:
       - Infra
     description: Rust frontend for Stainless
+    layman_desc: >
+      Rust-Stainless brings formal verification to the Rust programming language
+      by connecting Rust code to the Stainless verifier. Developers can annotate
+      their Rust programs with specifications and have them automatically
+      checked for correctness.
+    tech_desc: >
+      Rust-Stainless is a frontend that extracts a Stainless-compatible
+      intermediate representation from Rust source code via the Rust compiler
+      internals. It enables deductive verification of safe Rust programs by
+      translating annotated functions into Stainless verification conditions and
+      dispatching them to the underlying SMT-based solver.
     contacts:
       - name: Georg Stefan Schmid
         email: georg.schmid@epfl.ch
@@ -171,6 +197,16 @@ projects:
     description:
       A Proof Assistant based on first order logic, sequent calculus and set
       theory.
+    layman_desc: >
+      LISA is a tool that helps mathematicians and computer scientists write and
+      check formal mathematical proofs. It verifies every logical step in a
+      proof automatically, ensuring that conclusions genuinely follow from
+      stated axioms and hypotheses.
+    tech_desc: >
+      LISA is a proof assistant built on first-order logic and sequent calculus,
+      with a foundational layer in axiomatic set theory. It provides a kernel
+      that checks proof certificates for validity and a higher-level tactic
+      language in Scala for constructing and automating proofs interactively.
     contacts:
       - name: Simon Guilloud
         email: simon.guilloud@epfl.ch
@@ -196,6 +232,17 @@ projects:
     description:
       A library for writing parsers and pretty printers for LL(1) languages in
       Scala.
+    layman_desc: >
+      Scallion is a Scala library that makes it easy to build tools that read
+      and format programming languages or structured text. Developers describe
+      the grammar of their language once, and Scallion generates both a parser
+      and a pretty printer from that single definition.
+    tech_desc: >
+      Scallion is a combinator-based library for constructing LL(1) parsers and
+      pretty printers in Scala, using a zipper-based parsing-with-derivatives
+      algorithm for efficient and predictable parsing. A single grammar
+      definition drives both directions, guaranteeing consistency between
+      parsing and printing.
     code:
       type: Lab GitHub
       url: https://github.com/epfl-lara/scallion

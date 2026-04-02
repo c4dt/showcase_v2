@@ -6,6 +6,11 @@ projects:
     applications:
       - Infra
     description: Memory allocation preventing "use-after-free" exploits
+    layman_desc: >
+      When programs request and release memory, bugs can allow attackers to
+      exploit memory that has already been freed but is still referenced.
+      ffmalloc prevents this class of attacks by never reusing the same memory
+      address, so freed memory cannot be manipulated by an attacker.
     tech_desc: >
       ffmalloc is a "one time allocator" where any given virtual memory address
       is only returned to the calling application once. Since exploitation of
@@ -38,6 +43,12 @@ projects:
     applications:
       - Infra
     description: Efficient Non-Volatile Memory (NVM) access
+    layman_desc: >
+      Non-Volatile Memory (NVM) is a new type of storage that is much faster
+      than a hard disk but keeps data even when the power is off. PACTree
+      provides design guidelines and a data structure for efficiently organizing
+      and searching data stored in NVM, offering better performance and
+      predictability.
     tech_desc: >
       Non-Volatile Memory (NVM), which provides relatively fast and
       byte-addressable persistence, is now commercially available. However, we
@@ -74,10 +85,16 @@ projects:
     applications:
       - Infra
     description: OS kernel with safer approach to synchronization
+    layman_desc: >
+      Most operating systems handle many tasks at the same time, which makes
+      them hard to reason about and prone to subtle bugs. NrOS takes a different
+      approach by using a simple, single-threaded kernel design and then scaling
+      it across multiple CPU cores through safe replication, making it both
+      easier to verify and highly performant.
     tech_desc: >
       NrOS is an operating system primarily constructed as a simple, sequential
-      kernel with no concurrency, making it easier to develop and reason
-      aboutits correctness.
+      kernel with no concurrency, making it easier to develop and reason about
+      its correctness.
     code:
       type: Non-lab GitHub
       url: https://github.com/vmware-labs/node-replicated-kernel
@@ -104,6 +121,12 @@ projects:
     applications:
       - Infra
     description: Application-Informed Kernel Synchronization Primitives
+    layman_desc: >
+      Locking mechanisms in an operating system kernel coordinate access to
+      shared resources, but the right locking strategy depends on the
+      application workload. SynCord lets developers swap and tune kernel locking
+      algorithms from user space, without needing to recompile or reboot the
+      kernel.
     tech_desc: >
       SynCord is a framework to modify kernel locks without recompiling or
       rebooting the kernel. It abstracts key behaviors of kernel locks and
@@ -130,6 +153,11 @@ projects:
     applications:
       - Infra
     description: Scaling PM Performance with Opportunistic Delegation
+    layman_desc: >
+      Modern servers have multiple processors, each with fast persistent memory
+      attached nearby. Odinfs is a file system that intelligently routes data
+      operations to take advantage of this layout, avoiding bottlenecks and
+      keeping all processors busy to maximize storage performance.
     tech_desc: >
       Odinfs is a NUMA-aware PM file system based on an opportunistic delegation
       framework to achieve datapath scalability. It limits concurrent PM access
@@ -160,6 +188,19 @@ projects:
       - Infra
     description:
       Finding Semantic Bugs in File Systems with an Extensible Fuzzing Framework
+    layman_desc: >
+      File systems are the software responsible for storing and organizing data
+      on disk, and bugs in them can cause data loss or corruption. Hydra is a
+      tool that automatically stress-tests file systems by generating many
+      unusual inputs, looking for logical errors that could lead to incorrect
+      behavior even when the file system does not crash.
+    tech_desc: >
+      Hydra is an extensible fuzzing framework for finding semantic bugs in file
+      systems. It decouples the file system fuzzing pipeline into distinct
+      components and provides abstract interfaces so researchers can plug in
+      custom bug oracles, mutators, and executors. Hydra has been used to
+      discover numerous real bugs in Linux file systems including ext4, btrfs,
+      F2FS, and XFS.
     tags:
       - Concurrency
       - Fuzzing

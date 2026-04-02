@@ -13,6 +13,12 @@ projects:
       The issuer is a web application that allows to create a new identity and
       issue a credential.  The verifier is a web application that allows to
       verify the credential.
+    layman_desc: >
+      This is a live demonstration of the Swiss electronic identity system,
+      showing how a digital ID can be issued and then verified by a third party.
+      It lets you experience how future government-issued digital credentials
+      could work in practice, without needing to understand the underlying
+      cryptography.
     code:
       type: Lab GitHub
       url: https://github.com/c4dt/eid-demo
@@ -40,6 +46,12 @@ projects:
       researching novel cryptographic algorithms. This boosts user trust,
       creates new business opportunities, and cuts financial losses after data
       breaches.
+    layman_desc: >
+      When you use a digital identity card online, today's systems often reveal
+      more personal information than necessary and allow your activities to be
+      tracked. This research project develops new cryptographic techniques so
+      that Swiss e-ID users can prove who they are without exposing unnecessary
+      details or being identifiable across different services.
     url: https://eid-privacy.github.io/
     code:
       type: Project GitHub
@@ -164,6 +176,12 @@ projects:
       Self-Sovereign Identities, using selective disclosure  for data
       protection, and explores further safeguards like unlinkability through
       BBS+ and  zero-knowledge proofs to share only essential information.
+    layman_desc: >
+      This hands-on workshop teaches participants how a privacy-preserving
+      digital identity card works, using real code and interactive exercises.
+      You will learn how modern cryptographic techniques let you prove your age
+      or citizenship without revealing your name or address, and why this
+      matters for everyday privacy.
     code:
       type: Lab GitHub
       url: https://github.com/c4dt/eid-workshop
@@ -201,6 +219,12 @@ projects:
       of matrix.c4dt.org to this EPFL-wide instance, C4DT reached out to Edward
       Andò to offer our support bolstering matrix.epfl.ch’s team, which was
       readily welcomed.
+    tech_desc: >
+      Matrix@EPFL is a self-hosted deployment of the Matrix open federation
+      protocol, running a Synapse homeserver for the EPFL community. It provides
+      end-to-end encrypted messaging, room-based collaboration, and federation
+      with the broader Matrix network, serving as a privacy-respecting
+      alternative to proprietary chat platforms.
     tags:
       - Protection
       - Decentralized
@@ -223,6 +247,16 @@ projects:
       - Other
     type: Application
     description: Version 2.0 of the C4DT's showcase.
+    layman_desc: >
+      The C4DT Showcase is a publicly accessible website that presents research
+      projects from EPFL's digital trust labs in an easy-to-understand way. It
+      helps anyone—students, industry partners, and the curious public— discover
+      what software and tools are coming out of EPFL research.
+    tech_desc: >
+      A statically generated TypeScript web application that aggregates and
+      renders YAML-described research project metadata from multiple EPFL labs.
+      It provides filtering, search, and structured display of project maturity,
+      code repositories, and related publications.
     code:
       type: Lab GitHub
       url: https://github.com/c4dt/showcase_v2

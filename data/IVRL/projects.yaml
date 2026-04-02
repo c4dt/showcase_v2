@@ -10,6 +10,12 @@ projects:
       Superpixels, which define similar regions in an image, are becoming
       increasingly popular for use in computer vision applications. This
       research proposes a faster and more accurate way to get these pixels.
+    tech_desc: >
+      SLICO is a zero-parameter variant of the SLIC superpixel algorithm that
+      adaptively normalizes gradient magnitudes across the image, producing
+      compact superpixels of uniform size in both textured and texture-less
+      regions. It runs efficiently in O(N) time and requires no manual tuning of
+      the compactness parameter.
     url: https://www.epfl.ch/labs/ivrl/research/slic-superpixels/#SLICO
     code:
       type: Lab Download
@@ -30,6 +36,13 @@ projects:
     layman_desc: >
       It is challenging to complete an image whose 99% pixels are randomly
       missing. We present a solution to this extreme image completion problem.
+    tech_desc: >
+      This work addresses extreme image completion where 99% of pixels are
+      randomly absent. The method formulates the problem as low-rank matrix
+      recovery, exploiting non-local self-similarity and sparsity priors to
+      reconstruct plausible image content from the tiny fraction of observed
+      pixels, outperforming prior inpainting approaches under this highly
+      degraded setting.
     url: https://www.epfl.ch/labs/ivrl/research/image-completion/
     code:
       type: Lab Download
@@ -48,6 +61,12 @@ projects:
     applications:
       - Info
     description: Fast and energy-efficient video encoder and decoder
+    layman_desc: >
+      Transmitting video from cameras or IoT devices consumes a lot of energy
+      and processing power. ADEFAN is a new video compression technology that is
+      extremely fast to encode and far more energy-efficient than existing
+      methods, making it ideal for battery-powered surveillance and remote
+      monitoring devices.
     tech_desc: >
       ADEFAN (Adaptive Depth Efficient Filtering by Adaptive Normaliztion) is a
       state-of-the-art technology for encoding and decoding videos that presents
@@ -85,6 +104,12 @@ projects:
     applications:
       - Info
     description: Noise-robust image classification
+    layman_desc: >
+      AI image recognition systems are typically trained on clean photos and
+      perform poorly when images are blurry or noisy. FG-NIC improves the
+      accuracy of existing AI classifiers on noisy images without needing to
+      retrain them from scratch, by estimating how faithful a noisy image is to
+      its clean version.
     tech_desc: >
       Image classification has significantly improved using deep learning. This
       is mainly due to convolutional neural networks (CNNs) that are capable of
@@ -125,6 +150,11 @@ projects:
     applications:
       - Info
     description: Deep learning image denoiser
+    layman_desc: >
+      Removing random noise from photos is a common image processing task, but
+      most tools require knowing how much noise is present. BUIFD is an AI
+      denoiser that works without any knowledge of the noise level, producing
+      high-quality results for both grayscale and color images automatically.
     tech_desc: >
       Blind and universal image denoising consists of using a unique model that
       denoises images with any level of noise. It is especially practical as
@@ -164,6 +194,11 @@ projects:
       - Info
       - Health
     description: High-quality image fusion
+    layman_desc: >
+      Medical imaging often combines information from multiple scan types, such
+      as MRI and CT, to give doctors a complete picture. This tool fuses images
+      from different medical scanners into a single high-quality image in real
+      time, without requiring any additional training data.
     tech_desc: >
       Medical image fusion plays a central role by integrating information from
       multiple sources into a single, more understandable output. We propose a
@@ -197,6 +232,11 @@ projects:
     applications:
       - Info
     description: Interactive GAN-based image editing
+    layman_desc: >
+      AI image generators can produce realistic pictures but sometimes include
+      subtle visual errors that are obvious to people but not to the system.
+      LELSD lets users point out these errors interactively, and the tool learns
+      to correct them, producing more realistic generated images.
     tech_desc: >
       When generating an image using a GAN, some errors might appear which are
       obvious to the human observer, but not to the computer. By introducing
@@ -227,6 +267,11 @@ projects:
     applications:
       - Info
     description: Drone Image Super-Resolution
+    layman_desc: >
+      Drones capture images from varying heights, which means the same scene can
+      appear at very different resolutions. DSR is a new dataset and benchmark
+      for testing AI systems that upscale low-resolution drone images, revealing
+      that current approaches do not transfer well to aerial imagery.
     tech_desc: >
       Despite achieving remarkable progress in recent years, single-image
       super-resolution methods are developed with artificial limitations. We
@@ -261,6 +306,11 @@ projects:
     applications:
       - Info
     description: Uncovering Temporal Information for Deep Saliency Prediction
+    layman_desc: >
+      When people look at an image, their eyes do not take in everything at once
+      but scan across interesting areas in a particular order over time. TempSAL
+      is an AI model that predicts not just where people will look in an image,
+      but also in what sequence they will look at different areas.
     tech_desc: >
       Deep saliency prediction algorithms complement the object recognition
       features, they typically rely on additional information, such as scene
@@ -296,6 +346,11 @@ projects:
     type: Framework
     description:
       Real-Time Dynamic Texture Synthesis Using Neural Cellular Automata
+    layman_desc: >
+      Generating realistic moving textures like flowing water, fire, or rustling
+      leaves for video games or simulations normally requires slow, offline
+      computation. DyNCA can synthesize these dynamic textures in real time and
+      allows interactive control over the motion and appearance after training.
     tech_desc: >
       Current Dynamic Texture Synthesis (DyTS) models in the literature can
       synthesize realistic videos. However, these methods require a slow

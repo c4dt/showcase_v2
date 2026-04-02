@@ -8,6 +8,12 @@ projects:
     description: Decomposition Convex Optimization
     layman_desc: >
       Package for the generic constrained convex optimization problems.
+    tech_desc: >
+      DECOPT is a MATLAB package for solving generic constrained convex
+      optimization problems using a primal-dual algorithmic framework based on
+      model-based excessive gap methods. It handles composite objective
+      functions with arbitrary convex constraints and is backed by convergence
+      guarantees proven in the accompanying NeurIPS 2014 and technical papers.
     url: https://www.epfl.ch/labs/lions/technology/decopt/
     code:
       type: Lab Download
@@ -42,6 +48,12 @@ projects:
     layman_desc: >
       Learning-based framework for optimizing magnetic resonance imaging (MRI)
       reconstruction.
+    tech_desc: >
+      LB-CSMRI is a MATLAB framework that formulates MRI reconstruction as a
+      learning-based compressed sensing problem. It jointly optimizes
+      undersampling patterns and reconstruction parameters using a bilevel
+      optimization strategy, enabling high-quality image recovery from fewer
+      measurements than traditional methods require.
     url: https://www.epfl.ch/labs/lions/technology/lb-csmri-2/
     code:
       type: Lab Download
@@ -72,6 +84,12 @@ projects:
     layman_desc: >
       Compared to the largely used SGD optimizer for PyTorch, STORM+ is faster
       but requires two passes on the data.
+    tech_desc: >
+      STORM+ is a fully adaptive stochastic gradient descent optimizer with
+      momentum for nonconvex optimization, extending the STORM algorithm. It
+      achieves optimal convergence rates without requiring knowledge of
+      problem-specific parameters such as the Lipschitz constant or noise level,
+      at the cost of two gradient evaluations per iteration.
     code:
       type: Lab GitHub
       url: https://github.com/LIONS-EPFL/storm-plus-code
@@ -442,6 +460,18 @@ projects:
     name: Fine-tuning pitfalls
     type: Hands-on
     description: Hands-on workshop on LLM fine-tuning pitfalls
+    layman_desc: >
+      Fine-tuning allows adapting a pre-trained AI language model to a specific
+      task, but common mistakes can lead to poor results or wasted effort. This
+      hands-on workshop guides participants through real pitfalls encountered
+      when fine-tuning large language models, helping them avoid costly errors
+      in their own projects.
+    tech_desc: >
+      A practical workshop covering common failure modes in LLM fine-tuning,
+      including issues with dataset quality, learning rate schedules,
+      overfitting, catastrophic forgetting, and evaluation methodology.
+      Participants work through concrete examples using open-source tooling to
+      identify and correct these problems in realistic fine-tuning scenarios.
     categories:
       - Learning
     applications:

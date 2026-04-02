@@ -224,6 +224,11 @@ projects:
     applications:
       - Info
     description: Scaling distributed Generative Adversarial Networks (GANs)
+    layman_desc: >
+      Generative AI models that create realistic images or data are expensive to
+      train. FeGAN allows these models to be trained collaboratively across many
+      devices without centralising the data, using less network bandwidth and
+      finishing training faster than existing approaches.
     tech_desc: >
       The FeGAN system enables training GANs in the Federated Learning setup.
       GANs are generative adversarial networks, a class of machine learning
@@ -258,6 +263,11 @@ projects:
     applications:
       - Infra
     description: Multiversion Timestamp Locking (MVTL)
+    layman_desc: >
+      Databases need to handle many simultaneous read and write operations
+      without corrupting data. MVTIL introduces a new family of locking
+      strategies that allow reads to use slightly older data versions, reducing
+      waiting time and improving overall database throughput.
     tech_desc: >
       MVTL is a new family of concurrency control algorithms. Improving
       performance of distributed databases by allowing read accesses to lag
@@ -293,6 +303,13 @@ projects:
     layman_desc: >
       Storing data structures in non-volatile RAM such that transient failures
       don't corrupt the data.
+    tech_desc: >
+      libNVRAM provides lock-free and lock-based concurrent data structures
+      (linked lists, hash tables, skip lists) designed for non-volatile RAM
+      (NVRAM). It eliminates the need for write-ahead logging by ensuring that
+      data structures remain consistent across failures at the hardware level,
+      achieving crash-safe persistence without the performance overhead of
+      traditional journaling.
     url: http://dcl.epfl.ch/site/nvram
     code:
       type: Lab Github
@@ -325,6 +342,13 @@ projects:
     layman_desc: >
       High performance key-value store for servers with high amount of RAM and
       lots of CPUs.
+    tech_desc: >
+      FloDB is a persistent key-value store that exploits large DRAM capacities
+      on multi-core servers by maintaining a multi-level architecture: a small
+      concurrent in-memory buffer feeds a larger DRAM-resident skip list, which
+      is periodically flushed to an LSM-tree on persistent storage. This design
+      decouples memory bandwidth from I/O bottlenecks, achieving high throughput
+      on write-heavy workloads.
     url: http://dcl.epfl.ch/site/flodb
     code:
       type: Lab GitHub
@@ -358,6 +382,13 @@ projects:
       It consumes much less battery than Standard FL while increasing the
       model's accuracy three times. It allows for Android to actually
       participate in the building of a ML model.
+    tech_desc: >
+      FLeet is a federated learning framework for Android that addresses the
+      heterogeneity of mobile hardware by combining staleness-aware gradient
+      aggregation with performance prediction. It selects and weights worker
+      contributions based on predicted compute speed, reducing idle waiting and
+      improving convergence speed and final model accuracy compared to
+      synchronous federated learning baselines.
     code:
       type: Non-lab GitHub
       url: https://github.com/gdamaskinos/fleet
@@ -392,6 +423,13 @@ projects:
       MCTOP is an abstraction of multi-core topologies augmented with important
       low-level hardware information, such as memory bandwidths and
       communication latencies.
+    tech_desc: >
+      MCTOP automatically constructs a hardware topology model for multi-core
+      processors by measuring inter-core communication latencies and memory
+      bandwidths at runtime. It exposes this model as a portable C API so that
+      system software and concurrent data structure libraries can make
+      topology-aware scheduling and memory placement decisions without requiring
+      manual hardware configuration.
     url: https://dcl.epfl.ch/site/mctop
     code:
       type: Lab GitHub
@@ -428,6 +466,13 @@ projects:
       interface of locks. However, in contrast to classic lock libraries, GLS
       does not require any effort from the programmer for allocating and
       initializing locks, nor for selecting the appropriate locking strategy.
+    tech_desc: >
+      LOCKIN provides header-only implementations of multiple locking algorithms
+      (MCS, CLH, TTAS, etc.) as drop-in replacements for pthreads mutexes. Its
+      companion middleware GLS dynamically selects the optimal algorithm at
+      runtime based on observed contention patterns, reducing energy consumption
+      and improving throughput without requiring programmers to reason about
+      low-level lock behaviour.
     url: https://dcl.epfl.ch/site/lockin
     code:
       type: Lab GitHub
@@ -469,6 +514,13 @@ projects:
       Modular approach allows most of its components to be reused in other
       projects. Unreliable communication channels are supported, providing a
       performance speed-up over standard TensorFlow in saturated networks.
+    tech_desc: >
+      AggregaThor is a distributed SGD framework layered over TensorFlow that
+      integrates pluggable Byzantine-resilient gradient aggregation rules (e.g.
+      Krum, Bulyan, coordinate-wise median) and supports asynchronous
+      parameter-server topologies. It tolerates both Byzantine worker failures
+      and unreliable network links, and its modular design allows aggregation
+      rules and communication backends to be swapped independently.
     code:
       type: Lab GitHub
       url: https://github.com/LPD-EPFL/AggregaThor
@@ -503,6 +555,14 @@ projects:
       search trees (BSTs), queues, priority queues, and stacks. ASCYLIB contains
       sequential, lock-based, and lock-free implementations for each data
       structure.
+    tech_desc: >
+      ASCYLIB is a comprehensive benchmark suite and library of over 40
+      concurrent search data structure implementations in C, covering linked
+      lists, skip lists, hash tables, BSTs, queues, and priority queues in
+      sequential, lock-based, and lock-free variants. OPTIK is a design pattern
+      embedded within ASCYLIB that uses optimistic versioned locking to simplify
+      the construction of correct and high-performance concurrent data
+      structures.
     url: https://dcl.epfl.ch/site/ascylib
     code:
       type: Lab GitHub
@@ -579,6 +639,13 @@ projects:
     layman_desc: >
       CLHT contains both a lock-based and lock-free implementation of hash
       tables. Its optimistic design allows for 50 MegaOP/s in a concurrent run.
+    tech_desc: >
+      CLHT (Cache-Line Hash Table) is a highly optimised concurrent hash table
+      in C whose buckets are aligned to single cache lines, eliminating false
+      sharing. It provides both a lock-based variant with fine-grained
+      per-bucket locking and a lock-free variant using hardware transactional
+      memory, and supports online resizing while sustaining throughput above 50
+      million operations per second on commodity multi-core hardware.
     url: https://lpd.epfl.ch/site/ascylib
     code:
       type: Lab GitHub
@@ -609,6 +676,13 @@ projects:
       How is a neural network changing its output in presence of failing node?
       This project provides a regularizer adapting itself to changing
       conditions.
+    tech_desc: >
+      This work derives a closed-form probabilistic model of how neuron failures
+      (permanent or transient) propagate through a deep neural network in the
+      continuous-width limit. It uses this model to design a regulariser that,
+      when added to standard training loss, encourages the network to learn
+      weight distributions that are inherently robust to runtime neuron
+      failures, without requiring fault injection during training.
     code:
       type: Lab GitHub
       url: https://github.com/LPD-EPFL/nn-fault-tolerance
@@ -633,6 +707,18 @@ projects:
     applications:
       - Info
     description: Membership service for microsecond applications
+    layman_desc: >
+      In a cluster of servers, each machine needs to know which other machines
+      are currently alive and reachable. uKharon is a membership service that
+      delivers this information in microseconds, enabling ultra-low-latency
+      distributed applications to react instantly to node failures or joins.
+    tech_desc: >
+      uKharon is a RDMA-based membership service that maintains a consistent
+      view of active cluster members with sub-microsecond failure detection
+      using RDMA one-sided operations and hardware timestamps. It separates the
+      liveness oracle from the application data plane, allowing membership
+      changes to be disseminated without entering the critical path of
+      microsecond-scale request processing.
     code:
       type: Lab GitHub
       url: https://github.com/LPD-EPFL/ukharon-artifacts
@@ -660,6 +746,20 @@ projects:
     applications:
       - Infra
     description: Microsecond-scale BFT using Disaggregated Memory
+    layman_desc: >
+      Byzantine fault tolerance (BFT) makes distributed systems secure even when
+      some machines behave maliciously, but traditionally it has been too slow
+      for real-time applications. uBFT achieves BFT consensus in microseconds by
+      exploiting fast, disaggregated memory hardware, making secure distributed
+      systems practical for latency-critical workloads.
+    tech_desc: >
+      uBFT is a BFT state-machine replication protocol that achieves
+      microsecond-scale latency by offloading agreement state to disaggregated
+      RDMA memory accessible to all replicas. By replacing message-passing
+      rounds with direct RDMA reads and writes, it reduces the critical-path
+      latency of BFT consensus to under ten microseconds while maintaining
+      standard safety and liveness guarantees under f Byzantine faults out of
+      3f+1 replicas.
     code:
       type: Lab GitHub
       url: https://github.com/LPD-EPFL/ubft
