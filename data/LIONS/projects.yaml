@@ -244,7 +244,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/LIONS-EPFL/scion
-      date_last_commit: 2026-02-24
+      date_last_commit: 2026-04-02
     language: Python
     license: MIT
     date_added: 2026-03-03
@@ -413,7 +413,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/LIONS-EPFL/ClippedScion
-      date_last_commit: 2025-11-06
+      date_last_commit: 2026-04-01
     language: Python
     license: MIT
     date_added: 2026-03-03

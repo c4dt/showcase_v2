@@ -28,7 +28,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/VCA-EPFL/graphiti
-      date_last_commit: 2026-03-24
+      date_last_commit: 2026-03-31
     language: Lean
     license: Apache-2.0
     date_added: 2026-03-19

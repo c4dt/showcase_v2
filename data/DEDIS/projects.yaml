@@ -199,7 +199,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/dedis/kyber
-      date_last_commit: 2026-03-17
+      date_last_commit: 2026-03-30
     lines_of_code: 17000 / 4000
     contacts:
       - name: Pierluca Borsò
@@ -385,7 +385,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/drand/drand
-      date_last_commit: 2026-03-25
+      date_last_commit: 2026-04-02
     url: https://drand.love
     doc: https://github.com/drand/drand#documentation
     lines_of_code: 1000 / 200
@@ -844,7 +844,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/dedis/quepaxa
-      date_last_commit: 2026-03-18
+      date_last_commit: 2024-08-29
     information:
       - type: Paper
         title: "QuePaxa: Escaping the tyranny of timeouts in consensus"
