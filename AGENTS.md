@@ -135,3 +135,11 @@ The directory structure is as follows:
 - Fix any errors until all the tests pass
 - Use `bun lint` and `bun format` to check the style/formatting
 - Fix any style/formatting errors until all the style/formatting checks pass
+- When adding or modifying projects in data/\*, always run
+  `bun utils/validate-data.ts` afterwards
+
+## Adding a new project
+
+- Use the data/template.yaml as a basis for any new project
+- Put it in the corresponding data/LABNAME/projects.yaml file
+- Fill out both tech_desc and layman_desc

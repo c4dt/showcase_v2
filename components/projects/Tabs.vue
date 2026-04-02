@@ -17,13 +17,6 @@
         C4DT work
       </li>
       <li
-        v-if="project.code"
-        :class="[tabBaseClass, activeTab === TAB_IDS.TECHNICAL ? tabActiveClass : tabInactiveClass]"
-        @click="changeTab(TAB_IDS.TECHNICAL)"
-      >
-        Technical
-      </li>
-      <li
         v-if="papers.length"
         :class="[tabBaseClass, activeTab === TAB_IDS.PAPERS ? tabActiveClass : tabInactiveClass]"
         @click="changeTab(TAB_IDS.PAPERS)"
@@ -36,6 +29,13 @@
         @click="changeTab(TAB_IDS.ARTICLES)"
       >
         Miscellaneous publications
+      </li>
+      <li
+        v-if="project.code"
+        :class="[tabBaseClass, activeTab === TAB_IDS.TECHNICAL ? tabActiveClass : tabInactiveClass]"
+        @click="changeTab(TAB_IDS.TECHNICAL)"
+      >
+        Technical
       </li>
     </ul>
     <div class="lg:flex-[10]">
@@ -110,9 +110,9 @@ const tabInactiveClass = "border-gray-200 bg-white";
 const tabIds = [
   ...additionalTabs.map((tab) => tab.id),
   ...(project.incubator ? [TAB_IDS.INCUBATOR] : []),
-  ...(project.code ? [TAB_IDS.TECHNICAL] : []),
   ...(papers.length ? [TAB_IDS.PAPERS] : []),
-  ...(articles.length ? [TAB_IDS.ARTICLES] : [])
+  ...(articles.length ? [TAB_IDS.ARTICLES] : []),
+  ...(project.code ? [TAB_IDS.TECHNICAL] : [])
 ];
 
 function setDefaultTab() {
