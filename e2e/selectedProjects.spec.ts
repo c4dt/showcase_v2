@@ -65,8 +65,8 @@ test.describe("project w/ complete information", () => {
       .filter({ visible: true })
       .first();
     await carouselItem.click();
-    // if there is no related information regarding C4DT's work, the default open tab is "Technical"
-    await expect(page).toHaveURL(`${baseURL}/projects/eid-example?section=technical`);
+    // the default open tab is the first available tab; eid-example has papers, so it opens "Papers"
+    await expect(page).toHaveURL(`${baseURL}/projects/eid-example?section=papers`);
   });
 
   test("displays project logo", async ({ page }) => {

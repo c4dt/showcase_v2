@@ -691,6 +691,56 @@ projects:
     showcase_interest:
       carine: 5
       linus: 3
+  quepaxa:
+    name: QuePaxa
+    categories:
+      - Blockchain
+    applications:
+      - Infra
+    description: >
+      Asynchronous consensus algorithm that escapes the tyranny of timeouts
+    layman_desc: >
+      Most distributed systems rely on timeouts to detect failures, which makes
+      them vulnerable to network slowdowns and attacks. QuePaxa is a consensus
+      algorithm that works correctly even when the network is slow or under
+      attack, replacing fixed timeouts with adaptive "hedging-delay" techniques.
+      This makes it significantly more robust and performant in practice,
+      especially against network attacks and periods of asynchrony.
+    tech_desc: >
+      QuePaxa is a crash fault-tolerant asynchronous consensus algorithm that
+      improves upon Multi-Paxos, Raft, Rabia, and EPaxos. Its three main
+      innovations are: an asynchronous consensus core with a one-round-trip fast
+      path, hedging-delay instead of traditional timeouts, and dynamic runtime
+      protocol tuning. The implementation is written in Go and includes
+      integration tests and AWS deployment scripts for artifact evaluation
+      against competing consensus algorithms.
+    contacts:
+      - name: Bryan Ford
+        email: bryan.ford@epfl.ch
+    tags:
+      - Byzantine Resilience
+      - Consensus
+      - Network
+      - Protocol
+    type: Library
+    code:
+      type: Lab GitHub
+      url: https://github.com/dedis/quepaxa
+      date_last_commit: 2026-03-18
+    information:
+      - type: Paper
+        title: "QuePaxa: Escaping the tyranny of timeouts in consensus"
+        url: https://dl.acm.org/doi/10.1145/3600006.3613150
+        notes:
+          - label: Published at
+            text: ACM SOSP 2023
+            url: https://dl.acm.org/doi/proceedings/10.1145/3600006
+    language: Go
+    license: BSD-3-Clause
+    maturity: 2
+    date_added: "2026-04-02"
+    date_updated: "2026-04-02"
+
   gd-pure:
     name: Grounded Arithmetic
     description:
@@ -721,3 +771,58 @@ projects:
       carine: 1
     applications:
       - Info
+
+  limix:
+    name: Limix
+    categories:
+      - Privacy
+    applications:
+      - Infra
+    description: >
+      Geo-distributed database with overlapping jurisdictional zone isolation
+    layman_desc: >
+      Limix is a research prototype for a database that respects geographic or
+      jurisdictional boundaries. Data stored in different regions — Europe,
+      Asia, or globally — can each follow their own rules and remain available
+      even when parts of the network fail, because each region runs its own
+      independent database instance. The system is evaluated on simulated and
+      real-world network topologies to measure fault tolerance and performance.
+    tech_desc: >
+      Limix is a geo-distributed database built on CockroachDB, organized into
+      overlapping jurisdictional zones. Each physical node can run multiple
+      CockroachDB instances — one per zone it belongs to. Coordination uses
+      DEDIS onet v2 for intra-zone membership dissemination and simnet for
+      container orchestration. Clients perform strongly-consistent per-key reads
+      and writes across relevant zones. Experiments evaluate partition tolerance
+      and latency on random synthetic, CAIDA Ark, and real AWS topologies.
+    contacts:
+      - name: Bryan Ford
+        email: bryan.ford@epfl.ch
+    tags:
+      - Decentralized
+      - Network
+    type: Experiments
+    code:
+      type: Lab Github
+      url: https://github.com/dedis/limix
+      date_last_commit: 2022-04-20
+    language: Go
+    information:
+      - type: Paper
+        title:
+          "Limix: Limiting Lamport Exposure to Distant Failures in
+          Globally-Managed Distributed Systems"
+        url: https://bford.info/pub/net/limix-full/
+        notes:
+          - label: Published at
+            text: NINES 2026
+            url: https://nines-conference.org
+      - type: Paper
+        title:
+          "Immunizing Systems from Distant Failures by Limiting Lamport Exposure"
+        url: https://dl.acm.org/doi/10.1145/3484266.3487387
+        notes:
+          - label: Published at
+            text: HotNets 2021
+            url: https://dl.acm.org/doi/proceedings/10.1145/3484266
+    date_added: 2026-04-02

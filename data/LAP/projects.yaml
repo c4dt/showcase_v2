@@ -40,6 +40,45 @@ projects:
             url: https://www.sigda.org/publications/fpga-2020-toc/
     date_added: 2021-11-04
     date_updated: 2024-03-22
+  hardcilk:
+    name: HardCilk
+    type: Experiments
+    categories:
+      - Other
+    applications:
+      - Info
+    description: Cilk-like task parallelism for FPGAs
+    layman_desc: >
+      Modern programs often split work into many small tasks that run in
+      parallel. HardCilk brings this idea directly into hardware chips (FPGAs),
+      so that parallel tasks can be created and managed by the chip itself
+      rather than by software, making computation faster and more efficient.
+    tech_desc: >
+      HardCilk implements Cilk-style fork-join task parallelism directly in
+      hardware for FPGAs, enabling dynamic task spawning and synchronization at
+      the circuit level. It brings the expressive parallel programming model of
+      Cilk to reconfigurable computing without a software runtime.
+    code:
+      type: Lab GitHub
+      url: https://github.com/EPFL-LAP/HardCilk
+      date_last_commit: 2026-03-12
+    language: SystemVerilog
+    license: GPL-3.0
+    tags:
+      - Hardware
+      - Low-Level
+      - Concurrency
+    information:
+      - type: Paper
+        title: "HardCilk: Cilk-like Task Parallelism for FPGAs"
+        url: https://www.epfl.ch/labs/lap/wp-content/uploads/2024/05/ShahawyMay24-HardCilk-Cilk-like-Task-Parallelism-for-FPGAs-FCCM.pdf
+        notes:
+          - label: Published at
+            text: FCCM 2024
+      - type: Video
+        title: Conference presentation
+        url: https://youtu.be/1EjEUD5sPpg
+    date_added: 2026-04-02
   dynaburst:
     name: DynaBurst
     type: Application, Library
