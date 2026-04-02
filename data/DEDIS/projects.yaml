@@ -45,6 +45,11 @@ projects:
       - Infra
     description:
       Modular abstractions to perform Distributed Ledger (DL) operations
+    layman_desc: >
+      Dela is a modular toolkit for building and experimenting with distributed
+      ledgers and blockchains. It lets researchers and developers plug in their
+      own components — such as consensus algorithms or smart contract engines —
+      without having to rebuild the entire system from scratch.
     tech_desc: >
       With Dela you can: learn the architecture of a distributed ledger, run
       your blockchain / distributed ledger, implement and test your new idea
@@ -83,6 +88,12 @@ projects:
       - Info
     description:
       Auditable Sharing and Management of Sensitive Data Across Jurisdictions
+    layman_desc: >
+      Odyssey lets organizations share sensitive data across borders and between
+      parties that do not fully trust each other, while keeping a tamper-proof
+      audit trail of every access. It combines blockchain technology with secure
+      hardware enclaves so that data owners stay in control of who sees their
+      information and when.
     tech_desc: >
       Odyssey is a set of applications and tools that enables sharing of
       sensitive data between multiple distrustful parties. This project uses
@@ -117,6 +128,13 @@ projects:
       control mechanism to define who is allowed to decrypt. It has been
       developed alongside with OmniLedger. But it can also be used independently
       of OmniLedger.
+    tech_desc: >
+      Calypso implements on-chain secrets management using a distributed key
+      generation protocol (DKG) combined with threshold decryption, so that
+      decryption keys are never held by a single node. Access policies are
+      expressed as Distributed Access Right Controls (DARC) stored on the
+      OmniLedger blockchain, providing a fully auditable and decentralized
+      enforcement mechanism.
     code:
       type: Lab GitHub
       url: https://github.com/dedis/cothority/tree/main/calypso
@@ -171,6 +189,13 @@ projects:
     layman_desc: >
       A low level cryptographic library to create new cryptographic primitives.
       Not to be used for everyday cryptography.
+    tech_desc: >
+      Kyber is a Go cryptographic library providing abstract group interfaces
+      and concrete implementations of elliptic curves (including Ed25519 and
+      Ristretto255), pairings, and hash-to-curve functions. It underpins
+      threshold signatures, distributed key generation, verifiable random
+      functions, and other advanced protocols used throughout the DEDIS
+      ecosystem.
     code:
       type: Lab GitHub
       url: https://github.com/dedis/kyber
@@ -201,6 +226,12 @@ projects:
       DEDIS-lab. It supports pre-compiled smart contracts, as well as Ethereum
       smart contracts. Combined with Calypso, it allows management of access to
       secure and private data in a fully audited way.
+    tech_desc: >
+      OmniLedger is a ByzCoin-based blockchain that achieves high throughput via
+      UTXO sharding and collective signing (CoSi) for block finality. It uses
+      skipchains for efficient client-side verification of the chain, and
+      exposes a smart-contract model (DARC) that supports both native Go
+      contracts and EVM-compatible Ethereum contracts.
     code:
       type: Lab GitHub
       url: https://github.com/c4dt/byzcoin
@@ -273,6 +304,12 @@ projects:
       Library to write applications and protocols in a decentralized setting.
       Including an easy to use simulation framework to test the performance of
       the protocols.
+    tech_desc: >
+      Onet is a Go framework for building overlay-network protocols and
+      distributed applications. It provides abstractions for trees of nodes,
+      protocol dispatch, service registration, and message routing over TLS. Its
+      built-in simulation framework allows running multi-node experiments
+      locally or on remote machines to benchmark latency and throughput.
     code:
       type: Lab GitHub
       url: http://github.com/dedis/onet
@@ -339,6 +376,12 @@ projects:
       In many distributed applications, it is important to get a provably secure
       random number. DRand makes it possible to have these numbers provably
       secure.
+    tech_desc: >
+      DRand produces publicly verifiable, unbiasable, and unpredictable random
+      beacons using threshold BLS signatures over pairing-friendly elliptic
+      curves. A network of independent nodes (League of Entropy) runs a
+      distributed key generation (DKG) protocol and then periodically produces
+      randomness that any third party can verify against the group public key.
     code:
       type: Lab GitHub
       url: https://github.com/drand/drand
@@ -375,6 +418,12 @@ projects:
     layman_desc: >
       A library for a novel encoding approach preventing metadata leakage for
       encrypted communication and data at rest.
+    tech_desc: >
+      PURBs (Padded Uniform Random Blobs) encode encrypted messages so that
+      ciphertexts reveal no metadata — such as the number or type of recipients
+      — to passive observers. The encoding uses Elligator-based public keys
+      embedded at uniformly random positions, and pads ciphertexts to a size
+      drawn from a geometric distribution to hide payload length.
     code:
       type: Lab GitHub
       url: http://github.com/dedis/purbs
@@ -406,6 +455,12 @@ projects:
       - Infra
     description:
       Solving the consensus problem in a new way by creating a global clock
+    layman_desc: >
+      Getting many computers to agree on a single version of events is a hard
+      problem, especially when messages can arrive out of order. This project
+      introduces "threshold logical clocks" — a way to give distributed systems
+      a shared sense of time — so that reaching agreement becomes simpler and
+      more robust than traditional approaches like Paxos.
     tech_desc: >
       An attempt to simplify asynchronous consensus by building atop a novel
       threshold logical clock abstraction, which enables upper layers to operate
@@ -453,6 +508,13 @@ projects:
       Linking patients to their physical and digital TWINs
     layman_desc: >
       Using organoids for research while protecting patients’ identity
+    tech_desc: >
+      Twins links patients to their physical biobank samples (organoids) and
+      digital health records using blockchain-based access control and encrypted
+      identifiers. The system ensures that researchers can access necessary
+      biological or clinical data without being able to re-identify the
+      contributing patient, combining OmniLedger smart contracts with
+      privacy-preserving credential management.
     contacts:
       - name: Pierluca Borsò
         email: pierluca.borso@epfl.ch
@@ -472,6 +534,11 @@ projects:
       - Infra
     description: >
       SimNet is a tool to simulate decentralized applications in the cloud
+    layman_desc: >
+      Testing a decentralized application across many servers is expensive and
+      complex. SimNet lets developers simulate entire networks of nodes in the
+      cloud, introducing artificial delays and packet loss to see how their
+      application behaves under realistic or adverse network conditions.
     tech_desc: >
       SimNet provides multiple configurations to affect the topology so that
       specific link between two nodes can have a delay or a loss of packets for
@@ -497,6 +564,18 @@ projects:
     applications:
       - Gov
     description: Token for conflicts zone
+    layman_desc: >
+      HBT is a blockchain-based token system designed for use in conflict zones,
+      where traditional banking infrastructure may be unavailable or
+      untrustworthy. It enables anonymous, verifiable value transfer so that aid
+      organizations, civilians, or displaced people can transact without relying
+      on a central authority.
+    tech_desc: >
+      HBT implements an anonymous token system on a distributed ledger targeting
+      high-risk, low-connectivity environments. It uses cryptographic anonymity
+      techniques to ensure transaction unlinkability while maintaining
+      auditability for authorized parties, and is designed to operate over
+      intermittently connected networks.
     url: https://dedis.github.io/hbt
     contacts:
       - name: Pierluca Borsò
@@ -520,6 +599,18 @@ projects:
     applications:
       - Info
     description: Find non-determinism in golang code
+    layman_desc: >
+      Distributed systems must produce the same result every time given the same
+      inputs, but subtle programming bugs can make them behave unpredictably.
+      This tool automatically scans Go source code to find such
+      non-deterministic patterns before they cause hard-to-reproduce failures in
+      production.
+    tech_desc: >
+      determ-checker is a static analysis tool for Go programs that detects
+      sources of non-determinism such as map iteration order, goroutine
+      scheduling races, and randomized data structure traversal. It is
+      particularly relevant for consensus and blockchain code where
+      non-deterministic execution can cause protocol forks.
     contacts:
       - name: Cristina Basescu
         email: cristina.basescu@epfl.ch
@@ -545,6 +636,20 @@ projects:
       Matchertext is a syntactic discipline that allows strings in one compliant
       language to be embedded verbatim without escaping (e.g., via
       cut-and-paste) into itself or another compliant language.
+    layman_desc: >
+      Embedding code written in one programming language inside another (for
+      example, SQL inside Python, or HTML inside JavaScript) usually requires
+      tedious and error-prone escaping of special characters. Matchertext is a
+      design rule for programming languages that eliminates this problem,
+      letting you paste text from one language directly into another without any
+      modification.
+    tech_desc: >
+      Matchertext defines a syntactic invariant requiring that all bracket-like
+      characters (parentheses, brackets, braces) are balanced within any
+      well-formed string in a compliant language. This property enables
+      verbatim, zero-escaping embedding of matchertext-compliant strings across
+      language boundaries, eliminating injection vulnerabilities and parser
+      ambiguity that arise from ad-hoc escaping conventions.
     contacts:
       - name: Bryan Ford
         email: bryan.ford@epfl.ch
@@ -581,6 +686,13 @@ projects:
       such that (a) the server does  not learn which record the client reads,
       and (b) the client either obtains the "authentic"  record or detects
       server misbehavior and safely aborts.
+    tech_desc: >
+      APIR extends classical Private Information Retrieval (PIR) with
+      cryptographic authentication guarantees. It provides both single-server
+      and multi-server protocols, combining homomorphic-encryption-based PIR
+      queries with Merkle-tree commitments or linear sketch-based MACs so that a
+      client can detect a dishonest server while revealing nothing about the
+      queried index.
     contacts:
       - name: Simone Colombo
         email: simone.colombo@epfl.ch
@@ -625,6 +737,12 @@ projects:
       the voting process. The ballots are encrypted during the voting phase, and
       then shuffled to anonymise the results. When they are finally decrypted,
       it is not possible anymore to retrace who voted for what.
+    tech_desc: >
+      D-Voting is built on the Dela distributed ledger and uses a threshold
+      ElGamal encryption scheme for ballot confidentiality combined with Neff
+      shuffles for anonymization. Decryption is performed collectively by a set
+      of servers using distributed key generation (DKG), ensuring that no single
+      server can decrypt or de-anonymize ballots on its own.
     tags:
       - Anonymity
       - Byzantine Resilience

@@ -55,6 +55,11 @@ projects:
     applications:
       - Info
     description: Prove your identity with regards to others
+    layman_desc: >
+      ClaimChain lets people prove their identity and share contact information
+      such as encryption keys without relying on a central authority. It works
+      like a personal, privacy-preserving record that others can verify, making
+      secure messaging and email easier to set up.
     tech_desc: >
       A decentralized public key distribution system with an emphasis on privacy
       preservation.
@@ -87,6 +92,11 @@ projects:
     applications:
       - Infra
     description: Anonymous communication in browsers via the Tor network
+    layman_desc: >
+      Lightnion allows websites to send and receive data anonymously using the
+      Tor network directly from a user's browser, without requiring any special
+      software to be installed. This helps protect the identity of users when
+      accessing or submitting sensitive information online.
     tech_desc: >
       A Javascript library for browsers for anonymous communication via the Tor
       network. The library connects to the Tor network to enable websites to
@@ -113,6 +123,11 @@ projects:
     applications:
       - Infra
     description: Sophisticated attacks on Machine Learning models
+    layman_desc: >
+      Trickster is a tool for testing how easy it is to fool machine learning
+      systems by making carefully crafted changes to inputs. It is useful for
+      evaluating the robustness of AI models used for tasks like detecting spam,
+      bots, or malware.
     tech_desc: >
       Trickster allows to attack machine learning models where the attack needs
       to be more sophisticated than simply adding some noise to an image. One
@@ -151,6 +166,11 @@ projects:
       - Info
     description:
       Sublinear-traversal blockchains and efficient key-value Merkle trees
+    layman_desc: >
+      Hippiepug provides building blocks for creating tamper-evident data
+      structures that can be traversed quickly. It is used as a foundation for
+      systems like ClaimChain that need to store and verify information securely
+      without trusting a central server.
     tech_desc: >
       This library provides implementations of two cryptographic data
       structures: fast traversal blockchain structure, and a verifiable
@@ -183,6 +203,12 @@ projects:
     applications:
       - Info
     description: Evaluation code for mobile crowdsourcing privacy
+    layman_desc: >
+      MCSAuditing examines how much private location information is leaked when
+      people participate in mobile crowdsourcing apps, where users contribute
+      data such as sensor readings or photos from their phones. The tool shows
+      that many of these apps expose users' locations far more than they
+      realize.
     tech_desc:
       This tool implements the evaluation framework described in the paper
     code:
@@ -214,6 +240,16 @@ projects:
     description:
       Library for prototyping composable zero-knowledge proofs in the
       discrete-log setting
+    layman_desc: >
+      Zero-knowledge proofs allow someone to prove they know a secret without
+      revealing the secret itself. This library makes it easy for researchers
+      and developers to quickly build and test such privacy-preserving proofs
+      without deep expertise in the underlying mathematics.
+    tech_desc: >
+      A Python library for prototyping and composing sigma-protocol-based
+      zero-knowledge proofs in the discrete-logarithm setting. It supports
+      conjunctions, disjunctions, and custom proof statements, enabling rapid
+      construction of complex proofs for research and prototyping purposes.
     code:
       type: Lab GitHub
       url: https://github.com/spring-epfl/zksk
@@ -247,6 +283,11 @@ projects:
     description:
       A privacy preserving exposure notification protocol to inform people about
       possible exposure to the COVID-19 virus
+    layman_desc: >
+      DP-3T is the privacy-preserving protocol behind the SwissCovid app used
+      during the COVID-19 pandemic. It notifies people if they have been near
+      someone who later tested positive for the virus, all without revealing
+      anyone's identity or tracking their movements.
     tech_desc: >
       The goal of the DP3T protocol is to simplify and accelerate the process of
       identifying people who have been in contact with a positively CoVid-19
@@ -289,6 +330,11 @@ projects:
       - Health
       - Gov
     description: Decentralized Privacy-Preserving Presence Tracing
+    layman_desc: >
+      CrowdNotifier is a system that notifies people if they attended an event
+      or visited a venue at the same time as someone who later tested positive
+      for COVID-19. It achieves this without collecting any personal data or
+      tracking individual movements, protecting the privacy of all attendees.
     tech_desc: >
       CrowdNotifier is a protocol that can complement manual contact tracing by
       efficiently notifying visitors of venues and events with
@@ -329,6 +375,12 @@ projects:
     applications:
       - Info
     description: Wrapper around RELIC pairings
+    layman_desc: >
+      Petrelic is a software library that provides easy access to advanced
+      cryptographic operations called pairings, which are used to build
+      privacy-preserving systems such as anonymous credentials and
+      zero-knowledge proofs. It is aimed at researchers who need a simple Python
+      interface to these powerful mathematical tools.
     tech_desc: >
       petrelic is a Python wrapper around RELIC. It provides a simple python
       interface to the BLS-381 pairing and RELIC's big number class.
@@ -351,6 +403,11 @@ projects:
     applications:
       - Info
     description: Library to facilitate anonymous authentication
+    layman_desc: >
+      SSCred is a library that allows users to prove they are allowed to access
+      a service without revealing who they are. This is useful in scenarios
+      where you want to verify that someone has a valid credential, such as a
+      membership or a ticket, without linking their identity to the action.
     tech_desc: >
       SSCred provides the following primitives: 1) Anonymous credential light
       (ACL) 2) Abe's Blind signature 3) Blinded Pedersen commitment
@@ -375,6 +432,12 @@ projects:
     description:
       Library for running membership inference attacks (MIA) against machine
       learning models
+    layman_desc: >
+      This library tests whether an AI model accidentally reveals information
+      about the data it was trained on. By probing the model with specific
+      examples, it can determine whether those examples were part of the
+      training set, which is a significant privacy risk when the training data
+      is sensitive.
     tech_desc: >
       These are attacks against privacy of the training data. In MIA, an
       attacker tries to guess whether a given example was used during training
@@ -402,6 +465,11 @@ projects:
     description:
       A Rust library to perform REST requests over the Tor network for mobile
       applications.
+    layman_desc: >
+      Lightarti-rest lets mobile apps send and receive data anonymously through
+      the Tor network without requiring heavy resource usage. It is designed for
+      phones and tablets where bandwidth and battery are limited, making it
+      practical to build privacy-protecting features into everyday apps.
     tech_desc: >
       This library builds upon the arti-library. It wraps the arti-library for
       easy use by mobile applications. Instead of downloading the whole
@@ -444,6 +512,11 @@ projects:
     applications:
       - Gov
     description: Scalable coercion-resistant voting system
+    layman_desc: >
+      VoteAgain is a system for online elections that protects voters from being
+      forced to vote in a certain way. If a voter is coerced, they can cast a
+      replacement vote in secret that overrides their earlier one, making it
+      impossible for a coercer to verify whether their pressure worked.
     tech_desc: >
       The strongest threat model for voting systems considerscoercion
       resistance: protection against coercers that force voters to modify their
@@ -481,6 +554,12 @@ projects:
     description:
       Decentralized privacy-preserving search engine for investigative
       journalists
+    layman_desc: >
+      DatashareNetwork lets investigative journalists search for documents held
+      by colleagues around the world without revealing what they are looking for
+      or which documents they possess. This protects journalists, their sources,
+      and ongoing investigations while still allowing collaboration across
+      newsrooms.
     tech_desc: >
       Investigative journalists collect large numbers of digital documents
       during their investigations. These documents can greatly benefit other
@@ -519,6 +598,11 @@ projects:
     applications:
       - Info
     description: Centralized privacy-preserving secure key storage
+    layman_desc: >
+      Tandem helps protect the cryptographic keys stored on your phone or laptop
+      by sharing responsibility with a central server. If your device is lost or
+      compromised, an attacker cannot use your keys alone — but the server also
+      learns nothing about what you are using the keys for.
     tech_desc: >
       Users’ devices, e.g., smartphones or laptops, are typically incapable of
       securely storing and processing cryptographic keys. Tandem is a novel set
@@ -557,6 +641,11 @@ projects:
       - Info
     description:
       Capturing Advertising and Tracking Information Flows for Robust Blocking
+    layman_desc: >
+      WebGraph is an ad and tracker blocker that uses machine learning to
+      identify unwanted content based on how it behaves rather than on fixed
+      lists of known bad addresses. This makes it harder for advertisers and
+      trackers to evade detection simply by changing their domain names or URLs.
     tech_desc: >
       ML-based ad and tracker blocker that detects ads and trackers based on
       their action rather than their content.
@@ -591,6 +680,12 @@ projects:
     applications:
       - Info
     description: Disparate Vulnerability to Membership Inference Attacks
+    layman_desc: >
+      This project investigates whether a machine learning model is equally
+      risky for all the people whose data it was trained on, or whether some
+      groups are more exposed to privacy attacks than others. The findings show
+      that certain subgroups within a dataset can be significantly more
+      vulnerable to having their data identified.
     tech_desc: >
       A membership inference attack (MIA) against a machine-learning model
       enables an attacker to determine whether a given data record was part of
@@ -627,6 +722,12 @@ projects:
     description: >
       Applying the privacy-preserving algorithms of Tandem to the usage of the
       Monero blockchain.
+    layman_desc: >
+      This project combines Tandem's key-protection approach with Monero, a
+      cryptocurrency designed to keep transactions completely private. It allows
+      users to secure their Monero private keys using a helper server, so that a
+      stolen or lost device cannot be used to drain funds, while the helper
+      server learns nothing about the user's transactions.
     tech_desc: >
       One challenge when using private keys is that if they get stolen the
       damage can be very big, especially when used in blockchains to protect
@@ -662,6 +763,13 @@ projects:
     description: >
       Framework to build privacy-preserving Private Collection Matching (PCM)
       systems
+    layman_desc: >
+      This framework allows a client to find out whether a server's collection
+      of data contains items of interest — for example, whether a chemical
+      database contains a specific compound — without the server learning what
+      the client is looking for or the client learning anything beyond a yes or
+      no answer. It provides strong privacy guarantees for both parties
+      involved.
     tech_desc: >
       We introduce Private Collection Matching (PCM) problems, in which a client
       aims to determine whether a collection of sets owned by a server matches

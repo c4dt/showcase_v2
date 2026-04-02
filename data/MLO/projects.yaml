@@ -8,6 +8,11 @@ projects:
     description:
       Practical low-rank communication compression in decentralized deep
       learning
+    layman_desc: >
+      PowerGossip helps AI models train faster across many computers by reducing
+      the amount of data they need to exchange with each other. It compresses
+      the updates that each computer sends to its neighbors, making distributed
+      training more practical without sacrificing accuracy.
     tech_desc: >
       Inspired by the PowerSGD algorithm for centralized deep learning, this
       algorithm uses power iteration steps to maximize the information
@@ -43,6 +48,12 @@ projects:
       - Info
     description:
       Decentralized communication-efficient machine learning and deep learning
+    layman_desc: >
+      ChocoSGD is a tool for training machine learning models across many
+      computers without a central server, while keeping the amount of data
+      exchanged between them small. It compresses the updates that each computer
+      sends to its peers, making decentralized training practical even on
+      bandwidth-limited networks.
     tech_desc: >
       Communication-efficient decentralized ML training (both deep learning,
       compatible with PyTorch, and traditional convex machine learning models).
@@ -77,6 +88,11 @@ projects:
     applications:
       - Info
     description: Decentralized linear machine learning
+    layman_desc: >
+      COLA trains linear machine learning models — such as classifiers and
+      regressors — across many devices without a central coordinator. Each
+      device only communicates with its direct neighbors, which protects data
+      privacy and scales efficiently to large networks.
     tech_desc: >
       Decentralized machine learning is a promising emerging paradigm in view of
       global challenges of data ownership and privacy. We consider learning of
@@ -125,6 +141,12 @@ projects:
     applications:
       - Info
     description: Benchmarking of distributed ML
+    layman_desc: >
+      MLBench is a standardized testing framework that lets researchers and
+      engineers measure and compare how well different distributed machine
+      learning algorithms and hardware setups perform. It aims to make
+      experiments reproducible and to help choose the best hardware and
+      algorithms for a given AI application.
     tech_desc: >
       Framework for distributed machine learning. Its purpose is to improve
       transparency, reproducibility, robustness, and to provide fair performance
@@ -164,6 +186,12 @@ projects:
     applications:
       - Info
     description: Numerical representations for short texts
+    layman_desc: >
+      sent2vec converts words and short sentences into lists of numbers that
+      capture their meaning, making it possible for machine learning models to
+      understand and compare text. These numerical representations can then be
+      used as a starting point for tasks such as text classification, similarity
+      search, or sentiment analysis.
     tech_desc: >
       Library that delivers numerical representations (features) for words,
       short texts or sentences, which can be used as input to any machine
@@ -191,6 +219,12 @@ projects:
       - Info
     description:
       Practical low-rank gradient compression for distributed optimization
+    layman_desc: >
+      PowerSGD speeds up the training of deep learning models on multiple
+      machines by compressing the gradient updates that need to be shared
+      between them. It achieves real-world speedups while maintaining model
+      accuracy, and has been integrated into widely used deep learning
+      frameworks.
     tech_desc: >
       New low-rank gradient compressor based on power iteration that can i)
       compress gradients rapidly, ii) efficiently aggregate the compressed
@@ -235,6 +269,12 @@ projects:
     applications:
       - Info
     description: Improved information propagation in decentralized learning
+    layman_desc: >
+      RelaySGD improves decentralized machine learning by making sure that
+      information from each participating computer reaches all others evenly and
+      within a predictable number of steps. This helps when the data across
+      different devices is varied and unevenly distributed, which is common in
+      real-world federated learning scenarios.
     tech_desc: >
       Because the workers only communicate with few neighbors without central
       coordination, these updates propagate progressively over the network. This
@@ -273,6 +313,12 @@ projects:
     applications:
       - Info
     description: Decentralized Collaborative Machine Learning
+    layman_desc: >
+      Disco allows anyone with data to contribute to training a shared machine
+      learning model directly from their browser, with no installation required.
+      It supports both fully decentralized training and a federated mode with a
+      coordinating server, making collaborative AI accessible to people who want
+      to help without giving up their data.
     tech_desc: >
       A collection of objects and routines to help you develop your own
       distributed machine learning algorithm. It has two modes, federated, where
@@ -359,6 +405,11 @@ projects:
     applications:
       - Info
     description: Improved federated learning with Byzantine robustness
+    layman_desc: >
+      This project makes distributed machine learning more reliable when some
+      participating computers are sending incorrect or malicious updates. It
+      introduces simple but effective techniques to filter out bad updates and
+      keep the training on track, even under coordinated attacks over time.
     tech_desc: >
       Byzantine robustness has received significant attention recently given its
       importance for distributed and federated learning. In spite of this, there
@@ -399,6 +450,12 @@ projects:
     applications:
       - Infra
     description: Improved decentralized training with data heterogeneity
+    layman_desc: >
+      Quasi-Global Momentum improves how AI models learn when training is spread
+      across many devices that each hold different kinds of data. By introducing
+      a smarter momentum update inspired by global information, it helps
+      decentralized training converge faster and to better-performing models
+      despite heterogeneous local datasets.
     tech_desc: >
       Decentralized training of deep learning models is a key element for
       enabling data privacy and on-device learning over networks. In realistic
@@ -436,6 +493,12 @@ projects:
     applications:
       - Info
     description: Sublinear aggregation algorithm
+    layman_desc: >
+      HyperAggregate is a protocol for securely combining model updates from
+      many participants in a distributed learning system, using far less
+      communication than traditional approaches. The total computation grows
+      only logarithmically with the number of participants, making it practical
+      for very large networks.
     tech_desc: >
       Novel decentralized aggregation protocol that can be parameterized so that
       the overall computation overhead scales logarithmically with the number of
@@ -462,6 +525,12 @@ projects:
     applications:
       - Health
     description: Medical Survey Generator
+    layman_desc: >
+      PhantoMedicus generates synthetic patient profiles and simulated medical
+      consultations, enabling researchers to develop and test AI-assisted
+      diagnostic tools without using real patient data. It can estimate disease
+      probabilities from the simulated data, supporting privacy-safe research in
+      healthcare.
     tech_desc: >
       Phantomedicus is a framework for simulating patients and consultations. It
       can extract disease probabilities from given data.
@@ -482,6 +551,16 @@ projects:
     applications:
       - Info
     description: Augmentent PyTorch with some JAX
+    layman_desc: >
+      PAXlib brings useful programming patterns from Google's JAX library into
+      the familiar PyTorch ecosystem. It helps machine learning researchers
+      write cleaner and more composable training code by borrowing ideas such as
+      functional transformations and structured parameter trees.
+    tech_desc: >
+      PAXlib augments PyTorch with JAX-inspired abstractions including
+      functional state management and pytree-compatible module structures. It
+      enables researchers to write more modular and composable deep learning
+      code within a PyTorch workflow, without requiring a full migration to JAX.
     code:
       type: Lab GitHub
       url: https://github.com/epfml/pax
@@ -501,6 +580,19 @@ projects:
       - Info
     description:
       Byzantine-Robust Learning on Heterogeneous Datasets via Bucketing
+    layman_desc: >
+      This project makes federated learning more secure when participants hold
+      different kinds of data and some of them may be sending corrupted updates
+      to sabotage the model. By grouping gradient updates into buckets before
+      aggregation, the method achieves robustness against malicious participants
+      even when data is not uniformly distributed.
+    tech_desc: >
+      An implementation of a bucketing-based Byzantine-robust aggregation
+      strategy for federated learning with heterogeneous (non-IID) data
+      distributions. The bucketing technique reduces the effective variance
+      introduced by data heterogeneity, enabling standard robust aggregation
+      rules to function correctly in the non-IID setting. Evaluated against
+      state-of-the-art attacks and baselines in PyTorch.
     code:
       type: Lab GitHub
       url: https://github.com/epfml/byzantine-robust-noniid-optimizer
@@ -522,6 +614,12 @@ projects:
     description:
       Proof-of-concept ML algorithms to do anomaly detection compatible with
       distributed, encrypted algorithms.
+    layman_desc: >
+      This project shows that anomaly detection — spotting unusual patterns that
+      may indicate problems or faults — can be done collaboratively by multiple
+      organizations without any of them seeing each other's private data. The
+      data stays encrypted throughout the computation, and the results are just
+      as accurate as approaches that require direct data access.
     tech_desc: >
       The goal of this project is prove that state-of-the-art anomaly detection
       algorithms that already  achieve over 99% accuracy can be run in a

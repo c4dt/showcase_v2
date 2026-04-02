@@ -7,6 +7,13 @@ projects:
     applications:
       - Info
     description: Data distribution-aware differential privacy
+    layman_desc: >
+      When organizations publish statistics derived from sensitive data, they
+      use differential privacy to ensure individuals cannot be identified.
+      Bayesian Differential Privacy improves on traditional approaches by taking
+      into account what the data actually looks like, providing stronger and
+      more realistic privacy guarantees for machine learning models without
+      sacrificing as much accuracy.
     tech_desc: >
       Traditional differential privacy is independent of the data distribution.
       However, this is not well-matched with the modern machine learning
@@ -41,6 +48,12 @@ projects:
     applications:
       - Info
     description: Continual adaption of recommendation systems without forgetting
+    layman_desc: >
+      Recommendation systems — like those suggesting products or videos — need
+      to keep up with new items as old ones become irrelevant, but updating them
+      often causes the system to forget what it learned before. ADER is a method
+      that lets recommendation systems adapt continuously to new data while
+      retaining knowledge of past user preferences.
     tech_desc: >
       Recommendation systems typically require continual adaptation to take into
       account new and obsolete items. A major challenge in this situation is

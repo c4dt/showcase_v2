@@ -8,6 +8,18 @@ projects:
     description:
       Collection of modular libraries for the development of logic synthesis
       applications
+    layman_desc: >
+      Logic synthesis is the process of converting a high-level description of a
+      digital circuit into an optimized implementation using basic logic gates.
+      This collection of libraries provides reusable building blocks for
+      researchers and engineers developing tools that automatically design and
+      optimize digital hardware circuits.
+    tech_desc: >
+      A suite of modular C++ libraries supporting logic synthesis research,
+      including data structures for Boolean networks, And-Inverter Graphs
+      (AIGs), and k-LUT networks, along with algorithms for technology mapping,
+      rewriting, and simulation. Designed for composability and used as the
+      foundation of the ABC-compatible EPFL synthesis flow.
     code:
       type: Lab GitHub
       url: https://github.com/lsils/lstools-showcase
@@ -34,6 +46,18 @@ projects:
     applications:
       - Info
     description: Benchmarks for logical gates optimizer
+    layman_desc: >
+      When researchers develop new algorithms for optimizing digital circuits,
+      they need standard test cases to compare their results fairly. This
+      benchmark suite provides a collection of representative circuits, from
+      arithmetic units to control logic, used worldwide to evaluate and compare
+      logic optimization tools.
+    tech_desc: >
+      A collection of combinational VHDL benchmark circuits covering arithmetic,
+      random control, and MtM categories, designed to stress-test logic
+      synthesis and optimization algorithms. The suite includes circuits with
+      known best gate counts and serves as a standard reference for publications
+      in the IWLS and CAD communities.
     code:
       type: Lab GitHub
       url: https://github.com/lsils/benchmarks
@@ -60,6 +84,17 @@ projects:
     applications:
       - Info
     description: Logic synthesis and optimization framework
+    layman_desc: >
+      CirKit is a software framework for designing and optimizing digital logic
+      circuits. It provides a command-line interface and scripting support that
+      lets hardware designers experiment with different optimization strategies,
+      making it easier to produce compact and efficient circuit implementations.
+    tech_desc: >
+      CirKit is a C++ framework for logic synthesis and optimization, offering
+      data structures for AIGs, MIGs, and other graph representations alongside
+      algorithms for rewriting, mapping, and verification. It exposes an
+      interactive shell and Python/shell scripting interface, and integrates
+      with external tools such as ABC and SAT solvers.
     code:
       type: Personal GitHub
       url: https://github.com/msoeken/cirkit

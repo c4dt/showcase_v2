@@ -6,6 +6,11 @@ projects:
     applications:
       - Infra
     description: Highly detailed heap profiler
+    layman_desc: >
+      Programs often request more memory than they actually use, leading to
+      waste and poor performance. Memoro helps developers understand exactly how
+      their programs use dynamically allocated memory over time, pointing out
+      inefficiencies through visual summaries so they can be fixed.
     tech_desc: >
       Modern software systems heavily use the memory heap. As systems grow more
       complex and compute with increasing amounts of data, it can be difficult
@@ -46,6 +51,12 @@ projects:
     applications:
       - Infra
     description: Precise side-channel analysis
+    layman_desc: >
+      Programs can unintentionally leak secret information through indirect
+      clues such as how long they take to run or how much memory they use.
+      Abacus detects these vulnerabilities and, unlike other tools, also
+      measures how much sensitive information is actually exposed, helping
+      developers prioritize which issues are worth fixing.
     tech_desc: >
       Side-channel attacks allow adversaries to infer sensitive information from
       non-functional characteristics. Typical side-channel detection tools are
@@ -84,6 +95,12 @@ projects:
     description:
       Bitfiltrator is an automated bitstream parameter extraction tool for
       Xilinx UltraScale and UltraScale+ FPGAs.
+    layman_desc: >
+      FPGAs are reconfigurable chips that are programmed using a binary file
+      called a bitstream. Bitfiltrator is a tool that automatically decodes the
+      internal structure of these bitstream files for Xilinx chips, without
+      needing physical access to the hardware, which is useful for security
+      research and hardware debugging.
     tech_desc: >
       Prior work has reverse-engineered parts of the bitstream format for
       security or debugging/instrumentation activities, but no paper has

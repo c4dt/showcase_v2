@@ -6,6 +6,12 @@ projects:
     applications:
       - Infra
     description: Benchmark suite for cloud services
+    layman_desc: >
+      When building or buying computer servers for internet services, it is
+      important to know how they will perform under realistic workloads.
+      CloudSuite is a collection of representative cloud applications packaged
+      as ready-to-run benchmarks, allowing hardware designers and operators to
+      measure and compare server performance fairly.
     tech_desc: >
       CloudSuite is a benchmark suite for cloud services. It consists of a
       number of applications that have been selected based on their popularity
@@ -42,6 +48,12 @@ projects:
       - Infra
     description:
       State-of-the-art modeling tools for the computer architecture community
+    layman_desc: >
+      Designing new computer processors requires testing them long before any
+      physical hardware exists. QFlex is a simulator that models an entire
+      multi-machine system in software, allowing architects to experiment with
+      new processor designs and study their performance under realistic
+      workloads without building actual hardware.
     tech_desc: >
       QFlex is a full-system cycle-accurate computer architecture simulator of
       multi-node computer systems.
@@ -77,6 +89,12 @@ projects:
       - Info
     description: >
       Co-located deep neural network training and inference
+    layman_desc: >
+      Training AI models requires enormous amounts of computation. This project
+      explores a smarter way to represent numbers inside AI training hardware,
+      combining the accuracy of standard floating-point with the hardware
+      efficiency of fixed-point arithmetic, resulting in AI accelerators that
+      are significantly faster without sacrificing accuracy.
     tech_desc: >
       HBFP is a hybrid Block Floating-Point (BFP) - Floating-Point (FP) number
       representation for DNN training introduced by ColTraIn: Co-located DNN

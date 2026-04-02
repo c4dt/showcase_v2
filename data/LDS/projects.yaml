@@ -63,6 +63,12 @@ projects:
       Unlynx offers a series of independent protocols that when combined offer a
       verifiably-secure and safe way to share sensitive data (e.g., medical
       data).
+    tech_desc: >
+      Unlynx is a decentralized system for privacy-preserving data sharing built
+      on top of the Cothority framework. It provides composable cryptographic
+      protocols — including collective aggregation, key switching, and oblivious
+      shuffling — based on homomorphic encryption and secure multi-party
+      computation, with verifiable correctness guarantees.
     notes: Transfered to TuneInsight
     code:
       type: Lab GitHub
@@ -102,6 +108,12 @@ projects:
       querying medical datasets with end-to-end encryption of queries, data at
       rest, in transfer and during computation, all the while guaranteeing
       differential privacy.
+    tech_desc: >
+      MedCo is a federated system for privacy-preserving clinical cohort
+      exploration across multiple hospital sites. It combines homomorphic
+      encryption, secure multi-party computation, and differential privacy to
+      allow researchers to run aggregate queries on sensitive patient data
+      without any site exposing individual records.
     notes: Transfered to TuneInsight
     url: https://medco.epfl.ch/
     code:
@@ -132,6 +144,12 @@ projects:
     description:
       Decentralized, secure, verifiable system for statistical queries and
       machine learning on distributed datasets
+    layman_desc: >
+      Organizations such as hospitals often hold sensitive data that would be
+      valuable for research if it could be combined, but privacy rules prevent
+      sharing it. Drynx lets multiple data holders answer statistical questions
+      together — such as computing averages or training machine learning models
+      — without any party ever seeing the other parties' raw data.
     tech_desc: >
       Drynx allows to create privacy-preserving queries on encrypted datasets
       that are stored at different data providers who don't want to share the
@@ -178,6 +196,12 @@ projects:
       - Info
     description: >
       Scalable, privacy-preserving, distributed learning on distributed datasets
+    layman_desc: >
+      Training a machine learning model usually requires all the data to be in
+      one place, which is impossible when the data is sensitive and held by
+      different organizations. SPINDLE allows multiple parties to jointly train
+      and evaluate models on their combined data without anyone ever seeing data
+      they do not own.
     tech_desc: >
       SPINDLE allows to train and evaluate generalized linear models on datasets
       that are stored at different data providers who don't want to share the
@@ -217,6 +241,12 @@ projects:
     description:
       Privacy preserving neural network learning for diseased cell
       classification
+    layman_desc: >
+      Identifying diseased cells in blood samples using AI requires large
+      amounts of patient data, but hospitals cannot freely share such sensitive
+      information. PriCell allows multiple hospitals to jointly train a neural
+      network to classify diseased cells without sharing their raw patient data
+      with each other.
     tech_desc: >
       PriCell is a Golang library that ensures CellCnn analysis in
       privacy-preserving, distributed, N-party setting.
@@ -246,6 +276,12 @@ projects:
       - Health
       - Gov
     description: Offload computation to services while keeping data private
+    layman_desc: >
+      When you send personal data to an online service for processing, you
+      normally have to trust that the service will not misuse it. CRISP lets
+      users send encrypted data to a service, get useful results back, and prove
+      that the data is genuine — all without the service ever seeing the raw
+      personal information.
     tech_desc: >
       CRISP relies on quantum-resistant lattice-based approximate homomorphic
       encryption primitives that support flexible polynomial computations on
