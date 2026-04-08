@@ -139,9 +139,6 @@ projects:
       type: Lab GitHub
       url: https://github.com/dedis/cothority/tree/main/calypso
       date_last_commit: 2022-06-29
-    c4dt_contact:
-      name: Linus Gasser
-      email: linus.gasser@epfl.ch
     incubator:
       type: retired_archived
       work: >
@@ -247,9 +244,6 @@ projects:
     incubator:
       work: Created a pilot that has been used for login procedures
       type: retired_archived
-    c4dt_contact:
-      name: Linus Gasser
-      email: linus.gasser@epfl.ch
     information:
       - type: Paper
         title:

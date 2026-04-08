@@ -36,8 +36,6 @@ projects:
         email: (name@institution.org)
     doc: (url to documentation)
     lines_of_code: (# of codelines)
-    c4dt_contact:
-      (Email of a special contact, defaults to c4dt-dev@listes.epfl.ch)
     information:
       # One or more of:
       - type:
