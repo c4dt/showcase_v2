@@ -23,13 +23,6 @@ projects:
       url: https://github.com/epfl-lara/stainless
       date_last_commit: 2026-03-31
     doc: https://epfl-lara.github.io/stainless/
-    contacts:
-      - name: Viktor Kunčak
-        email: viktor.kuncak@epfl.ch
-      - name: Nicolas Voirol
-        email: nicolas.voirol@epfl.ch
-      - name: Jad Hamza
-        email: jad.hamza@epfl.ch
     tags:
       - Static Analysis
       - Code Analysis
@@ -92,11 +85,6 @@ projects:
       type: Lab GitHub
       url: https://github.com/epfl-lara/smart
       date_last_commit: 2020-10-03
-    contacts:
-      - name: Viktor Kunčak
-        email: viktor.kuncak@epfl.ch
-      - name: Nicolas Voirol
-        email: nicolas.voirol@epfl.ch
     tags:
       - Static Analysis
       - Code Analysis
@@ -133,13 +121,6 @@ projects:
       type: Lab GitHub
       url: https://github.com/epfl-lara/inox
       date_last_commit: 2026-03-02
-    contacts:
-      - name: Viktor Kunčak
-        email: viktor.kuncak@epfl.ch
-      - name: Nicolas Voirol
-        email: nicolas.voirol@epfl.ch
-      - name: Jad Hamza
-        email: jad.hamza@epfl.ch
     tags:
       - Low-Level
     language: Scala
@@ -169,11 +150,6 @@ projects:
       internals. It enables deductive verification of safe Rust programs by
       translating annotated functions into Stainless verification conditions and
       dispatching them to the underlying SMT-based solver.
-    contacts:
-      - name: Georg Stefan Schmid
-        email: georg.schmid@epfl.ch
-      - name: Yann Bolliger
-        email: yann.bolliger@epfl.ch
     code:
       type: Lab GitHub
       url: https://github.com/epfl-lara/rust-stainless
@@ -207,9 +183,6 @@ projects:
       with a foundational layer in axiomatic set theory. It provides a kernel
       that checks proof certificates for validity and a higher-level tactic
       language in Scala for constructing and automating proofs interactively.
-    contacts:
-      - name: Simon Guilloud
-        email: simon.guilloud@epfl.ch
     code:
       type: Lab GitHub
       url: https://github.com/epfl-lara/lisa

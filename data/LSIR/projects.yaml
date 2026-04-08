@@ -24,9 +24,6 @@ projects:
       any content to any server.
     code:
       type: Private GitHub
-    contacts:
-      - name: Rémi Lebret
-        email: remi.lebret@epfl.ch
     tags:
       - Image Classification
     type: Framework
@@ -62,9 +59,6 @@ projects:
           - label: Published at
             text: NIPS'18
             url: https://neurips.cc/Conferences/2018
-    contacts:
-      - name: Rémi Lebret
-        email: remi.lebret@epfl.ch
     tags:
       - Image Classification
     type: Framework
@@ -133,9 +127,6 @@ projects:
           - label: Published at
             text: ICWSM '23
             url: https://ojs.aaai.org/index.php/ICWSM/article/view/22144
-    contacts:
-      - name: Panayiotis Smeros
-        email: panayiotis.smeros@epfl.ch
     tags:
       - Natural Language
     language: Python
@@ -277,9 +268,6 @@ projects:
       multilingual dataset of  over 500k German and French news article-image
       pairs in a  weakly-supervised manner.
     url: https://modemos.epfl.ch/article
-    contacts:
-      - name: Rémi Lebret
-        email: remi.lebret@epfl.ch
     information:
       # One or more of:
       - type: Paper

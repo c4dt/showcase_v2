@@ -22,9 +22,6 @@ projects:
       to physically show up and get identified as real persons. Using
       cryptographic primitives, it is then possible to prove that you were part
       of that group, without revealing your individual identity.
-    contacts:
-      - name: Pierluca Borsò
-        email: pierluca.borso@epfl.ch
     tags:
       - Anonymity
     type: Application
@@ -55,9 +52,6 @@ projects:
       your blockchain / distributed ledger, implement and test your new idea
       that will revolutionize the blockchain world by adding your new module’s
       implementation to the Dela ecosystem.
-    contacts:
-      - name: Pierluca Borsò
-        email: pierluca.borso@epfl.ch
     url: https://dedis.github.io/dela/
     tags:
       - Decentralized
@@ -104,9 +98,6 @@ projects:
       type: Lab GitHub
       url: https://github.com/dedis/odyssey
       date_last_commit: 2020-10-01
-    contacts:
-      - name: Pierluca Borsò
-        email: pierluca.borso@epfl.ch
     tags:
       - Encryption
       - Access Control
@@ -152,9 +143,6 @@ projects:
           title: "Odyssey"
           url: https://github.com/dedis/odyssey
     lines_of_code: 6500 / 1500
-    contacts:
-      - name: Pierluca Borsò
-        email: pierluca.borso@epfl.ch
     tags:
       - Encryption
       - Access Control
@@ -198,9 +186,6 @@ projects:
       url: https://github.com/dedis/kyber
       date_last_commit: 2026-03-30
     lines_of_code: 17000 / 4000
-    contacts:
-      - name: Pierluca Borsò
-        email: pierluca.borso@epfl.ch
     tags:
       - Encryption
       - Decentralized
@@ -233,9 +218,6 @@ projects:
       type: Lab GitHub
       url: https://github.com/c4dt/byzcoin
       date_last_commit: 2023-09-22
-    contacts:
-      - name: Pierluca Borsò
-        email: pierluca.borso@epfl.ch
     tags:
       - Byzantine Resilience
     language: GoLang
@@ -309,9 +291,6 @@ projects:
       url: http://github.com/dedis/onet
       date_last_commit: 2021-09-27
     lines_of_code: 15000 / 3000
-    contacts:
-      - name: Pierluca Borsò
-        email: pierluca.borso@epfl.ch
     tags:
       - Low-Level
       - Network
@@ -344,9 +323,6 @@ projects:
       url: https://github.com/dedis/cothority/tree/main/evoting
       date_last_commit: 2022-06-29
     lines_of_code: 1700 / 200
-    contacts:
-      - name: Pierluca Borsò
-        email: pierluca.borso@epfl.ch
     tags:
       - Anonymity
     information:
@@ -383,9 +359,6 @@ projects:
     url: https://drand.love
     doc: https://github.com/drand/drand#documentation
     lines_of_code: 1000 / 200
-    contacts:
-      - name: Nicolas Gailly
-        email: nikkolasg@gmail.com
     tags:
       - Decentralized
       - Byzantine Resilience
@@ -422,9 +395,6 @@ projects:
       type: Lab GitHub
       url: http://github.com/dedis/purbs
       date_last_commit: 2020-01-13
-    contacts:
-      - name: Kirill Nikitin
-        email: kirill.nikitin@epfl.ch
     tags:
       - Encryption
     information:
@@ -462,9 +432,6 @@ projects:
       consensus protocol for fail-stop nodes that may be simpler and more robust
       than Paxos and its leader-based variants, requiring no common coins and
       achieving consensus in a constant expected number of rounds.
-    contacts:
-      - name: Bryan Ford
-        email: bryan.ford@epfl.ch
     code:
       type: Lab GitHub
       url: https://github.com/dedis/tlc
@@ -509,9 +476,6 @@ projects:
       biological or clinical data without being able to re-identify the
       contributing patient, combining OmniLedger smart contracts with
       privacy-preserving credential management.
-    contacts:
-      - name: Pierluca Borsò
-        email: pierluca.borso@epfl.ch
     url: https://www.twins-project.org
     tags:
       - Access Control
@@ -537,9 +501,6 @@ projects:
       SimNet provides multiple configurations to affect the topology so that
       specific link between two nodes can have a delay or a loss of packets for
       instance.
-    contacts:
-      - name: Pierluca Borsò
-        email: pierluca.borso@epfl.ch
     tags:
       - Simulator
     type: Application
@@ -571,9 +532,6 @@ projects:
       auditability for authorized parties, and is designed to operate over
       intermittently connected networks.
     url: https://dedis.github.io/hbt
-    contacts:
-      - name: Pierluca Borsò
-        email: pierluca.borso@epfl.ch
     tags:
       - Anonymity
       - Decentralized
@@ -605,9 +563,6 @@ projects:
       scheduling races, and randomized data structure traversal. It is
       particularly relevant for consensus and blockchain code where
       non-deterministic execution can cause protocol forks.
-    contacts:
-      - name: Cristina Basescu
-        email: cristina.basescu@epfl.ch
     tags:
       - Code Analysis
     type: Toolset
@@ -644,9 +599,6 @@ projects:
       verbatim, zero-escaping embedding of matchertext-compliant strings across
       language boundaries, eliminating injection vulnerabilities and parser
       ambiguity that arise from ad-hoc escaping conventions.
-    contacts:
-      - name: Bryan Ford
-        email: bryan.ford@epfl.ch
     tags:
       - Code Analysis
     type: Toolset
@@ -687,9 +639,6 @@ projects:
       queries with Merkle-tree commitments or linear sketch-based MACs so that a
       client can detect a dishonest server while revealing nothing about the
       queried index.
-    contacts:
-      - name: Simone Colombo
-        email: simone.colombo@epfl.ch
     tags:
       - Anonymity
       - Access Control
@@ -741,9 +690,6 @@ projects:
       - Anonymity
       - Byzantine Resilience
       - Decentralized
-    contacts:
-      - name: Pierluca Borsò
-        email: pierluca.borso@epfl.ch
     url: https://dedis.github.io/d-voting/#/
     code:
       type: C4DT Github
@@ -826,9 +772,6 @@ projects:
       protocol tuning. The implementation is written in Go and includes
       integration tests and AWS deployment scripts for artifact evaluation
       against competing consensus algorithms.
-    contacts:
-      - name: Bryan Ford
-        email: bryan.ford@epfl.ch
     tags:
       - Byzantine Resilience
       - Consensus
@@ -907,9 +850,6 @@ projects:
       container orchestration. Clients perform strongly-consistent per-key reads
       and writes across relevant zones. Experiments evaluate partition tolerance
       and latency on random synthetic, CAIDA Ark, and real AWS topologies.
-    contacts:
-      - name: Bryan Ford
-        email: bryan.ford@epfl.ch
     tags:
       - Decentralized
       - Network

@@ -31,9 +31,6 @@ projects:
 
     # Additional fields:
     notes: (Additional description)
-    contacts:
-      - name: (Full Name)
-        email: (name@institution.org)
     doc: (url to documentation)
     lines_of_code: (# of codelines)
     information:

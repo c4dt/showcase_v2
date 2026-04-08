@@ -29,9 +29,6 @@ projects:
       expressed as a function of workload and environment variables, that we
       together call Performance Critical Variables (PCVs). informed development
       decisions.
-    contacts:
-      - name: Rishabh Iyer
-        email: rishabh.iyer@epfl.ch
     url: https://bolt-perf-contracts.github.io/
     tags:
       - Network

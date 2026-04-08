@@ -83,12 +83,6 @@ export interface Project {
   tech_desc?: string;
   notes?: string;
   url?: string;
-  contacts?: {
-    name: string;
-    email?: string;
-    url?: string;
-    [k: string]: unknown;
-  }[];
   code?: {
     type: string;
     url?: string;

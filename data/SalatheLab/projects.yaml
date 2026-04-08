@@ -18,9 +18,6 @@ projects:
       serves as the product data backbone for the MyFoodRepo dietary tracking
       platform.
     maturity: 3
-    contacts:
-      - name: contact
-        email: info@foodrepo.org
     url: https://www.foodrepo.org
     code:
       type: Lab GitHub
@@ -57,9 +54,6 @@ projects:
       food. Participants scan barcodes and photograph meals, generating
       longitudinal data used in downstream nutritional and microbiome research.
     maturity: 3
-    contacts:
-      - name: contact
-        email: support@foodandyou.ch
     tags:
       - Survey
       - Medical
@@ -89,9 +83,6 @@ projects:
       designed to be extended to new health surveillance use cases.
     url: https://www.crowdbreaks.org
     maturity: 3
-    contacts:
-      - name: Marcel Salathé
-        email: marcel.salathe@epfl.ch
     tags:
       - Survey
       - CrowdSource
@@ -135,9 +126,6 @@ projects:
       natural language processing, and biomedical AI, and has hosted challenges
       in partnership with academic and industry organizations.
     url: https://www.aicrowd.com
-    contacts:
-      - name: contact
-        email: hello@aicrowd.com
     code:
       type: Project GitHub
       url: https://github.com/AIcrowd

@@ -25,9 +25,6 @@ projects:
       about how much publishing the synthetic data instead of the raw data
       reduces the privacy loss of a chosen target record under this threat
       model.
-    contacts:
-      - name: Theresa Stadler
-        email: theresa.stadler@epfl.ch
     tags:
       - Protocol
     type: Library

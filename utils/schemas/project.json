@@ -114,24 +114,6 @@
     "url": {
       "type": "string"
     },
-    "contacts": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string"
-          }
-        },
-        "required": ["name"]
-      }
-    },
     "code": {
       "type": "object",
       "properties": {

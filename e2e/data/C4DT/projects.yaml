@@ -44,9 +44,6 @@ projects:
       - type: article
         url: https://example.com/article
         title: E-ID Example Article
-    contacts:
-      - name: Linus Gasser
-        email: linus.gasser@epfl.ch
     code:
       type: toto
       url: https://example.com/code

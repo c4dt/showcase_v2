@@ -65,9 +65,6 @@ labs:
       number of independent parties to allow scalable self-organizing communities. With no single trusted party, cothorities can secure
       software updates, provide public randomness, enable privacy-conscious medical-data sharing and a lot more. Other projects include
       communicating securely over insecure channels and fast, scalable, accountable anonymous communication.
-    contacts:
-      - name: Pierluca Borsò-Tan
-        email: pierluca.borso@epfl.ch
     url: https://dedis.epfl.ch
     information:
       - title: Lab Github
@@ -123,9 +120,6 @@ labs:
           programming languages, formal methods, and computer architecture
         </li>
       </ul>
-    contacts:
-      - name: Beatriz Descloux
-        email: beatriz.descloux@epfl.ch
     url: https://dslab.epfl.ch
 
   ESL:
@@ -215,8 +209,6 @@ labs:
       of color images. Aiming to improve everyone’s photographic experience, we develop algorithms and systems that help us understand,
       process, and measure images. <br>Their research areas are computational photography, color image processing, computer vision, and
       image quality.
-    contacts:
-      - name: Siavash Arjomand Bigdeli
     url: https://ivrl.epfl.ch/
     information:
       - title: Lab GitHub
@@ -272,11 +264,6 @@ labs:
     description: >
       We develop precise automated reasoning techniques: tools, algorithms and languages. The goal of these techniques is to help
       construction of verified computer systems.
-    contacts:
-      - name: Jad Hamza
-        email: jad.hamza@epfl.ch
-      - name: Nicolas Voirol
-        email: nicolas.voirol@epfl.ch
     url: https://lara.epfl.ch
     information:
       - title: Lab GitHub
@@ -377,9 +364,6 @@ labs:
       needs of the user and requires at the same time processing of large amounts of data, they explore methods that enable integration of
       human knowledge with state-of-the-art machine learning. <br>They apply the results of their work in concrete application domains, such
       as Media, Humanitarian Action and Knowledge Management in enterprises.
-    contacts:
-      - name: Rémi Philippe Lebret
-        email: remi.lebret@epfl.ch
     url: https://www.epfl.ch/labs/lsir/
     information:
       - title: Github Repo
@@ -479,8 +463,6 @@ labs:
       scalability. With many online services being in-memory and the minimum communication latency between the farthest nodes in a 20MW
       datacenter being microseconds, future server platforms will go through revolutionary changes in architecture to enable seamless
       aggregation of logic and memory resources across nodes, breaking the conventional system abstraction layers.
-    contacts:
-      - name: Hossein Ajallooiean
     url: https://parsa.epfl.ch/
 
   RS3LAB:
@@ -537,9 +519,6 @@ labs:
       through health personnel in hospitals, doctors’ offices, and out in the field. In recent years, however, novel data sources have
       emerged where data are frequently collected directly from individuals through the digital traces they leave as a consequence of modern
       communication and an increased use of electronic devices.
-    contacts:
-      - name: Chloé Allémann
-        email: chloe.allemann@epfl.ch
     url: https://www.epfl.ch/labs/salathelab/
 
   SPRING:
@@ -603,11 +582,6 @@ labs:
       It brings together 15 industry partners, 38 EPFL laboratories, civil society, and policy actors to collaborate,
       share insight, and to gain early access to trust-building technologies,
       building on state-of-the-art research at EPFL and beyond.
-    contacts:
-      - name: Linus Gasser
-        email: linus.gasser@epfl.ch
-      - name: Olivier Crochat
-        email: olivier.crochat@epfl.ch
     url: https://c4dt.epfl.ch
 
   COMPSEC:
