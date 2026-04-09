@@ -25,11 +25,6 @@ export interface Lab {
   };
   description: string;
   url: string;
-  contacts?: {
-    name: string;
-    email?: string;
-    [k: string]: unknown;
-  }[];
   notes?: string;
   information?: {
     title: string;

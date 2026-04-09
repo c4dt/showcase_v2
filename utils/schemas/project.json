@@ -114,24 +114,6 @@
     "url": {
       "type": "string"
     },
-    "contacts": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string"
-          }
-        },
-        "required": ["name"]
-      }
-    },
     "code": {
       "type": "object",
       "properties": {
@@ -152,22 +134,6 @@
     },
     "lines_of_code": {
       "type": ["number", "string"]
-    },
-    "c4dt_contact": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "email": {
-          "type": "string"
-        }
-      },
-      "required": ["name", "email"],
-      "default": {
-        "name": "C4DT team",
-        "email": "c4dt-dev@listes.epfl.ch"
-      }
     },
     "language": {
       "type": "string"

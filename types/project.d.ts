@@ -83,12 +83,6 @@ export interface Project {
   tech_desc?: string;
   notes?: string;
   url?: string;
-  contacts?: {
-    name: string;
-    email?: string;
-    url?: string;
-    [k: string]: unknown;
-  }[];
   code?: {
     type: string;
     url?: string;
@@ -97,11 +91,6 @@ export interface Project {
   };
   doc?: string;
   lines_of_code?: number | string;
-  c4dt_contact?: {
-    name: string;
-    email: string;
-    [k: string]: unknown;
-  };
   language?: string;
   license?: string;
   information?: {

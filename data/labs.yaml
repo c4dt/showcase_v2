@@ -86,9 +86,6 @@ labs:
       public randomness, enable privacy-conscious medical-data sharing and a lot
       more. Other projects include communicating securely over insecure channels
       and fast, scalable, accountable anonymous communication.
-    contacts:
-      - name: Pierluca Borsò-Tan
-        email: pierluca.borso@epfl.ch
     url: https://dedis.epfl.ch
     information:
       - title: Lab Github
@@ -149,9 +146,6 @@ labs:
           programming languages, formal methods, and computer architecture
         </li>
       </ul>
-    contacts:
-      - name: Beatriz Descloux
-        email: beatriz.descloux@epfl.ch
     url: https://dslab.epfl.ch
   ESL:
     name: Embedded Systems Laboratory
@@ -248,8 +242,6 @@ labs:
       algorithms and systems that help us understand, process, and measure
       images. <br>Their research areas are computational photography, color
       image processing, computer vision, and image quality.
-    contacts:
-      - name: Siavash Arjomand Bigdeli
     url: https://ivrl.epfl.ch/
     information:
       - title: Lab GitHub
@@ -314,11 +306,6 @@ labs:
       We develop precise automated reasoning techniques: tools, algorithms and
       languages. The goal of these techniques is to help construction of
       verified computer systems.
-    contacts:
-      - name: Jad Hamza
-        email: jad.hamza@epfl.ch
-      - name: Nicolas Voirol
-        email: nicolas.voirol@epfl.ch
     url: https://lara.epfl.ch
     information:
       - title: Lab GitHub
@@ -435,9 +422,6 @@ labs:
       learning. <br>They apply the results of their work in concrete application
       domains, such as Media, Humanitarian Action and Knowledge Management in
       enterprises.
-    contacts:
-      - name: Rémi Philippe Lebret
-        email: remi.lebret@epfl.ch
     url: https://www.epfl.ch/labs/lsir/
     information:
       - title: Github Repo
@@ -551,8 +535,6 @@ labs:
       revolutionary changes in architecture to enable seamless aggregation of
       logic and memory resources across nodes, breaking the conventional system
       abstraction layers.
-    contacts:
-      - name: Hossein Ajallooiean
     url: https://parsa.epfl.ch/
 
   RS3LAB:
@@ -620,9 +602,6 @@ labs:
       sources have emerged where data are frequently collected directly from
       individuals through the digital traces they leave as a consequence of
       modern communication and an increased use of electronic devices.
-    contacts:
-      - name: Chloé Allémann
-        email: chloe.allemann@epfl.ch
     url: https://www.epfl.ch/labs/salathelab/
 
   SPRING:
@@ -694,11 +673,6 @@ labs:
       laboratories, civil society, and policy actors to collaborate, share
       insight, and to gain early access to trust-building technologies, building
       on state-of-the-art research at EPFL and beyond.
-    contacts:
-      - name: Linus Gasser
-        email: linus.gasser@epfl.ch
-      - name: Olivier Crochat
-        email: olivier.crochat@epfl.ch
     url: https://c4dt.epfl.ch
 
   COMPSEC:

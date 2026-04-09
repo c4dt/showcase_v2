@@ -25,9 +25,6 @@ projects:
       about how much publishing the synthetic data instead of the raw data
       reduces the privacy loss of a chosen target record under this threat
       model.
-    contacts:
-      - name: Theresa Stadler
-        email: theresa.stadler@epfl.ch
     tags:
       - Protocol
     type: Library
@@ -319,9 +316,6 @@ projects:
     incubator:
       type: retired
       work: 2020/Q4 documentation and testing of the app
-    c4dt_contact:
-      name: Linus Gasser
-      email: linus.gasser@epfl.ch
   crowdnotifier:
     name: CrowdNotifier
     categories:
@@ -350,9 +344,6 @@ projects:
     incubator:
       type: retired
       work: 2021/Q1 reference implementation of cryptography
-    c4dt_contact:
-      name: Linus Gasser
-      email: linus.gasser@epfl.ch
     tags:
       - Protocol
     language: TypeScript
@@ -738,9 +729,6 @@ projects:
       the user. Applying Tandem to transactions on the Monero blockchain allows
       to protect the private key in case of loss, while keeping the owner of the
       transaction private.
-    c4dt_contact:
-      name: Linus Gasser
-      email: linus.gasser@epfl.ch
     type: Simulation
     tags:
       - Anonymity

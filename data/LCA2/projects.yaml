@@ -59,9 +59,6 @@ projects:
       type: Lab GitHub
       url: https://github.com/LCA2-EPFL/commelec-api
       date_last_commit: 2017-06-29
-    contacts:
-      - name: Jagdish Achara
-        email: jagdish.achara@epfl.ch
     tags:
       - Network
       - Low-Level

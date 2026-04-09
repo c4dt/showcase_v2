@@ -1,4 +1,5 @@
 import { test, expect, type Locator } from "@playwright/test";
+import { CONTACT_REQUEST } from "@/utils/vars";
 
 test.describe("bare-bone project", () => {
   let projectCard: Locator;
@@ -84,6 +85,6 @@ test.describe("project w/ complete information", () => {
   test("renders mailto link", async () => {
     const icon = projectCard.locator(infoIcons).getByLabel("Contact").filter({ visible: true }).first();
     // check that link is present
-    await expect(icon).toHaveAttribute("href", "mailto:linus.gasser@epfl.ch");
+    await expect(icon).toHaveAttribute("href", CONTACT_REQUEST.replaceAll("{name}", "E-ID Example"));
   });
 });

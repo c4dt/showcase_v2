@@ -105,9 +105,6 @@ projects:
       existing methods, and achieves communication efficiency, scalability,
       elasticity as well as resilience to changes in data and participating
       devices.
-    contacts:
-      - name: Lie He
-        email: lie.he@epfl.ch
     code:
       type: Lab GitHub
       url: https://github.com/epfml/cola
@@ -202,9 +199,6 @@ projects:
       date_last_commit: 2022-08-03
     language: C++
     license: BSD-3-Clause
-    contacts:
-      - name: Matteo Pagliardini
-        email: matteo.pagliardini@epfl.ch
     tags:
       - Natural Language
     type: Library
@@ -419,9 +413,6 @@ projects:
       clipping procedure, and incorporating worker momentum to overcome
       time-coupled attacks. This is the first provably robust method for the
       standard stochastic optimization setting.
-    contacts:
-      - name: Lie He
-        email: lie.he@epfl.ch
     code:
       type: Lab GitHub
       url: https://github.com/epfml/byzantine-robust-optimizer

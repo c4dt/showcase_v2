@@ -21,10 +21,6 @@ projects:
       type: Personal GitHub
       url: https://github.com/lucasmaystre/choix
       date_last_commit: 2025-09-04
-    contacts:
-      - name: Lucas Maystre
-        url: https://lucas.maystre.ch/
-        email: lucas@maystre.ch
     information:
       - type: Paper
         title: Fast and Accurate Inference of Plackett–Luce Models
@@ -68,9 +64,6 @@ projects:
       actors) so as to make them interactively searchable via similarity
       queries. The approach combines concepts from representation learning,
       reinforcement learning, discrete-choice theory and bayesian inference.
-    contacts:
-      - name: Daniyar Chumbalov
-        email: daniyar.chumbalov@epfl.ch
     tags:
       - Database
     type: Library
@@ -95,13 +88,6 @@ projects:
       type: Personal GitHub
       url: https://github.com/lucasmaystre/kickscore
       date_last_commit: 2025-09-04
-    contacts:
-      - name: Lucas Maystre
-        url: https://lucas.maystre.ch/
-        email: lucas@maystre.ch
-      - name: Victor Kristof
-        url: https://victorkristof.me/
-        email: victor.kristof@epfl.ch
     information:
       - type: Paper
         title: Pairwise Comparisons with Flexible Time-Dynamics
@@ -152,10 +138,6 @@ projects:
       model uses the features to predict the unpublished results of other
       municipalities. The prediction of the national vote result is obtained by
       aggregating published results and predicted results.
-    contacts:
-      - name: Victor Kristof
-        url: https://victorkristof.me/
-        email: victor.kristof@epfl.ch
     tags:
       - Predictor
     type: Library
@@ -185,10 +167,6 @@ projects:
       various everyday actions. By aggregating crowd-sourced judgments, it
       quantifies systematic biases between perceived and actual CO2 impact,
       producing calibrated estimates useful for climate communication research.
-    contacts:
-      - name: Victor Kristof
-        url: https://victorkristof.me/
-        email: victor.kristof@epfl.ch
     tags:
       - Predictor
     type: Application

@@ -120,9 +120,6 @@ projects:
       schemes are needed to enable transmission and storage of this type of
       media. This project presents a detachable learning-based residual module
       for point cloud compression that allows for efficientscalable coding.
-    contacts:
-      - name: Davi Nachtigall Lazzarotto
-        email: davi.nachtigalllazzarotto@epfl.ch
     code:
       type: Lab GitHub
       url: https://github.com/mmspg/learned-residual-pcc
@@ -164,9 +161,6 @@ projects:
       persons that have not been previously observed. We propose a universal
       method for building a multi-shot gallery of observed reference identities
       recurrently online.
-    contacts:
-      - name: Evgeniy Upenik
-        email: evgeniy.upenik@epfl.ch
     code:
       type: Lab GitHub
       url: https://github.com/mmspg/ERRGB

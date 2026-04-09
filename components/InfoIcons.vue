@@ -69,18 +69,11 @@ const projectInformationIcons = computed(() => {
     });
   }
 
-  if (project.contacts && project.contacts.length) {
-    icons.push({
-      url: `mailto:${project.contacts.map((contact) => contact.email).join(",")}`,
-      icon: faEnvelope,
-      label: "Contact"
-    });
-  } else {
-    icons.push({
-      url: "",
-      icon: faEnvelope
-    });
-  }
+  icons.push({
+    url: CONTACT_REQUEST.replaceAll("{name}", project.name),
+    icon: faEnvelope,
+    label: "Contact"
+  });
 
   return icons;
 });

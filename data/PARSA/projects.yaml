@@ -105,9 +105,6 @@ projects:
       floating-point’s accuracy while enabling hardware implementations that
       deliver up to 8.5x higher throughput. This repository is for ongoing
       research on training DNNs with HBFP.
-    contacts:
-      - name: Tao Lin
-        email: tao.lin@epfl.ch
     url: https://parsa.epfl.ch/coltrain/
     tags:
       - Deep Neural Networks
