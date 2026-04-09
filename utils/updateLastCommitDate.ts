@@ -189,7 +189,7 @@ async function updateLastCommitDate(): Promise<void> {
         continue;
       }
       if (!project.code.url) {
-        console.log(`${labName}/${projectId}: skipped (no URL — private repo)`);
+        console.log(`${labName}/${projectId}: skipped (no known URL)`);
         skippedCount++;
         continue;
       }
