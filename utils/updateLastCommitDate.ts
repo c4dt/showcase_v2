@@ -125,34 +125,33 @@ async function getGitlabProjectLastCommitDate(orgName: string, repoName: string)
 
 /**
  * Fetches the latest commit date in YYYY-MM-DD format from the provided repository URL.
- * Supports both GitHub and GitLab repositories.
- * Throws an Error if the data cannot be retrieved or if the repository format is invalid.
+ * Supports only GitHub and GitLab repositories, returns null for any other host (e.g. zenodo, c4science).
+ * Throws on API errors for GitHub/GitLab repositories.
  */
-async function getProjectLastCommitDate(gitRepo: string): Promise<string> {
+async function getProjectLastCommitDate(gitRepo: string): Promise<string | null> {
   const url = new URL(gitRepo);
 
   const repoService = url.host;
-  const pathParts = url.pathname.replace(/^\/+|\/+$/g, "").split("/");
+  const pathParts = url.pathname
+    .replace(/^\/+|\/+$/g, "")
+    .split("/")
+    .filter(Boolean);
 
   if (repoService !== "github.com" && repoService !== "gitlab.com") {
-    throw Error(`Unsupported repository service: ${repoService}. Only GitHub and GitLab are supported.`);
+    return null; // unsupported host (e.g. zenodo, c4science) — caller logs as info
   }
-  if (pathParts.length === 0 || pathParts.length > 2) {
-    throw Error(`Invalid repository path: ${url.pathname}. Expected format: /owner/repo or /owner for organization.`);
+  if (pathParts.length === 0) {
+    throw Error(`Empty repository path for ${gitRepo}`);
   }
 
-  switch (`${repoService},${pathParts.length}`) {
-    case "github.com,1":
-      return await getGithubOrgLastCommitDate(pathParts[0]);
-    case "github.com,2":
-      return await getGithubProjectLastCommitDate(pathParts[0], pathParts[1]);
-    case "gitlab.com,1":
-      return await getGitlabOrgLastCommitDate(pathParts[0]);
-    case "gitlab.com,2":
-      return await getGitlabProjectLastCommitDate(pathParts[0], pathParts[1]);
-    default:
-      throw Error(`Unsupported repository format: ${url.pathname}`);
+  // Use only owner (and optionally repo) — strip /tree/branch/... suffixes
+  const owner = pathParts[0];
+  const repo = pathParts.length >= 2 ? pathParts[1] : undefined;
+
+  if (repoService === "github.com") {
+    return repo ? await getGithubProjectLastCommitDate(owner, repo) : await getGithubOrgLastCommitDate(owner);
   }
+  return repo ? await getGitlabProjectLastCommitDate(owner, repo) : await getGitlabOrgLastCommitDate(owner);
 }
 
 /**
@@ -177,10 +176,12 @@ async function updateProjectFile(filePath: string, labProjects: Projects): Promi
  */
 async function updateLastCommitDate(): Promise<void> {
   let updatedProjectsCount = 0;
+  let skippedCount = 0;
 
   const projectsPaths = await getProjectFilesPaths();
 
   for (const projectsPath of projectsPaths) {
+    const labName = path.basename(path.dirname(projectsPath));
     const labProjects = await readProjectsFromFile(projectsPath);
 
     for (const [projectId, project] of Object.entries(labProjects.projects)) {
@@ -188,17 +189,25 @@ async function updateLastCommitDate(): Promise<void> {
         continue;
       }
       if (!project.code.url) {
-        console.warn(`No repository URL found for project: ${projectId}`);
+        console.log(`${labName}/${projectId}: skipped (no known URL)`);
+        skippedCount++;
         continue;
       }
       try {
         const lastCommitDate = await getProjectLastCommitDate(project.code.url);
+        if (lastCommitDate === null) {
+          const host = new URL(project.code.url).host;
+          console.log(`${labName}/${projectId}: skipped (unsupported host: ${host})`);
+          skippedCount++;
+          continue;
+        }
         project.code.date_last_commit = lastCommitDate;
         labProjects.projects[projectId] = project;
         updatedProjectsCount++;
+        console.log(`${labName}/${projectId}: updated to ${lastCommitDate}`);
       } catch (error) {
         const errorMessage = error instanceof Error ? error.message : String(error);
-        console.error(`Project: ${projectId} - Error: ${errorMessage}`);
+        console.warn(`${labName}/${projectId}: ${errorMessage}`);
       }
     }
 
@@ -206,7 +215,7 @@ async function updateLastCommitDate(): Promise<void> {
     await updateProjectFile(projectsPath, labProjects);
   }
 
-  console.log(`Checked and updated ${updatedProjectsCount} projects.`);
+  console.log(`Done: ${updatedProjectsCount} updated, ${skippedCount} skipped.`);
 }
 
 /**
