@@ -125,7 +125,7 @@ async function getGitlabProjectLastCommitDate(orgName: string, repoName: string)
 
 /**
  * Fetches the latest commit date in YYYY-MM-DD format from the provided repository URL.
- * Returns null for unsupported hosts (e.g. zenodo, c4science).
+ * Supports only GitHub and GitLab repositories, returns null for any other host (e.g. zenodo, c4science).
  * Throws on API errors for GitHub/GitLab repositories.
  */
 async function getProjectLastCommitDate(gitRepo: string): Promise<string | null> {
