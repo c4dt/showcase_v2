@@ -941,7 +941,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/HexHive/ViDeZZo
-      date_last_commit: 2025-04-15
+      date_last_commit: 2026-04-08
     information:
       - type: Paper
         title: "VIDEZZO: Dependency-aware Virtual Device Fuzzing"

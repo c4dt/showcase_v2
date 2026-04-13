@@ -781,7 +781,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/dedis/quepaxa
-      date_last_commit: 2024-08-29
+      date_last_commit: 2026-04-12
     information:
       - type: Paper
         title: "QuePaxa: Escaping the tyranny of timeouts in consensus"
