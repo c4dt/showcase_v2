@@ -1,6 +1,6 @@
 projects:
   secvm:
-    name: SecVM
+    title: SecVM
     categories:
       - Learning
       - Privacy
@@ -46,7 +46,7 @@ projects:
     date_updated: 2024-04-16
     maturity: 1
   invariant-language-models:
-    name: Invariant Language Modeling
+    title: Invariant Language Modeling
     categories:
       - Learning
     applications:
@@ -77,7 +77,7 @@ projects:
     date_added: 2021-11-05
     date_updated: 2024-04-16
   eighenthemes:
-    name: Eigenthemes
+    title: Eigenthemes
     categories:
       - Learning
     applications:
@@ -117,7 +117,7 @@ projects:
     date_added: 2021-11-05
     date_updated: 2024-04-16
   quotebank:
-    name: Quotebank
+    title: Quotebank
     categories:
       - Learning
     applications:
@@ -158,7 +158,7 @@ projects:
     date_added: 2022-09-28
     date_updated: 2024-04-16
   dipps:
-    name: DiPPS
+    title: DiPPS
     categories:
       - Privacy
       - Learning
@@ -198,7 +198,7 @@ projects:
     date_added: 2023-03-16
     date_updated: 2024-04-16
   genie:
-    name: GenIE
+    title: GenIE
     categories:
       - Privacy
       - Learning
@@ -233,7 +233,7 @@ projects:
     date_added: 2023-03-16
     date_updated: 2024-04-16
   synthie:
-    name: SynthIE
+    title: SynthIE
     categories:
       - Learning
     applications:
@@ -273,7 +273,7 @@ projects:
     date_updated: 2024-04-16
 
   aiflows:
-    name: aiFlows
+    title: aiFlows
     description: >
       Modular AI collaboration framework
     type: "Framework"
@@ -309,7 +309,7 @@ projects:
     date_added: 2024-04-16
 
   transformers-cfg:
-    name: Transformers CFG
+    title: Transformers CFG
     description: >
       Grammar-constrained text generation with Transformers models
     type: "Library"
@@ -345,7 +345,7 @@ projects:
     date_added: 2024-04-16
 
   multilingual-entity-insertion:
-    name: "Entity Insertion in Wikipedia"
+    title: "Entity Insertion in Wikipedia"
     description: >
       Multilingual entity insertion in Wikipedia articles
     type: "Experiments"
@@ -383,7 +383,7 @@ projects:
 
   # Most common fields:
   refiner:
-    name: Refiner
+    title: Refiner
     description: >
       Reasoning framework with feedback on intermediate steps
     type: "Toolset"
@@ -418,7 +418,7 @@ projects:
     date_added: 2024-05-03
 
   lamen:
-    name: LAMEN
+    title: LAMEN
     description: >
       Evaluating language models through negotiation tasks
     type: "Toolset"
@@ -457,7 +457,7 @@ projects:
     date_added: 2024-05-03
 
   llm-ga:
-    name: LLM Grounding Analysis
+    title: LLM Grounding Analysis
     description: >
       LLM grounding vs. factual recall
     type: "Experiments"
@@ -488,7 +488,7 @@ projects:
     license: Apache-2.0
     date_added: 2024-05-03
   debategpt:
-    name: DebateGPT
+    title: DebateGPT
     description:
       "Code and data for studying the conversational persuasiveness of GPT-4."
     layman_desc: >
@@ -529,7 +529,7 @@ projects:
     applications:
       - Info
   time:
-    name: TiME
+    title: TiME
     description:
       "Training tiny monolingual language models via knowledge distillation from
       larger models."
@@ -564,7 +564,7 @@ projects:
     applications:
       - Info
   jsonschemabench:
-    name: JSONSchemaBench
+    title: JSONSchemaBench
     description:
       "Benchmark of ~10,000 real-world JSON schemas for evaluating structured
       output generation."
@@ -597,7 +597,7 @@ projects:
     applications:
       - Info
   zip2zip:
-    name: zip2zip
+    title: zip2zip
     description:
       "High-performance LZW compression library with Python bindings for
       adaptive vocabularies."
@@ -632,7 +632,7 @@ projects:
     applications:
       - Infra
   boostcd:
-    name: BoostCD
+    title: BoostCD
     description:
       "Information extraction system with training, inference, and evaluation
       pipeline."
@@ -665,7 +665,7 @@ projects:
     applications:
       - Info
   lm-tandem-training:
-    name: Tandem Training
+    title: Tandem Training
     description: "Code and data for tandem training of language models."
     layman_desc: >
       Tandem training is a technique where two language models train together in

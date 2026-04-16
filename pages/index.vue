@@ -229,7 +229,7 @@ watch(
             <HomepageNoResultsMessage v-if="sortedProjects.length === 0" />
             <div
               v-for="project in sortedProjects"
-              :key="project.name"
+              :key="project.title"
               :data-testid="`project-${project.id}`"
               class="py-2"
             >

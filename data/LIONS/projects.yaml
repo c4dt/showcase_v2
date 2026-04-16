@@ -1,6 +1,6 @@
 projects:
   decopt:
-    name: DECOPT
+    title: DECOPT
     categories:
       - Other
     applications:
@@ -38,7 +38,7 @@ projects:
     date_added: 2021-11-04
     date_updated: 2022-07-05
   lb-csmri:
-    name: LB-CSMRI
+    title: LB-CSMRI
     categories:
       - Learning
     applications:
@@ -75,7 +75,7 @@ projects:
     date_added: 2021-11-05
     date_updated: 2022-07-05
   storm+:
-    name: STORM+
+    title: STORM+
     categories:
       - Learning
     applications:
@@ -111,7 +111,7 @@ projects:
     date_added: 2022-07-05
     date_updated: 2022-08-11
   lipslev:
-    name: LipsLev
+    title: LipsLev
     description:
       "PyTorch implementation of certified robustness against bounded
       Levenshtein distance edits."
@@ -148,7 +148,7 @@ projects:
     applications:
       - Info
   spd:
-    name: SPD
+    title: SPD
     description:
       "Single-pass detection classifier for jailbreaking inputs in large
       language models."
@@ -185,7 +185,7 @@ projects:
     applications:
       - Info
   lion:
-    name: LION
+    title: LION
     description:
       "Framework converting linear-attention Transformers into bidirectional RNN
       equivalents."
@@ -218,7 +218,7 @@ projects:
     applications:
       - Info
   scion:
-    name: Scion Optimizer
+    title: Scion Optimizer
     description:
       "Norm-constrained optimizer with multiple norm implementations for neural
       network training."
@@ -253,7 +253,7 @@ projects:
     applications:
       - Info
   leaf:
-    name: LEAF
+    title: LEAF
     description:
       "Levenshtein Efficient Adversarial Finetuning for creating a robust CLIP
       text encoder."
@@ -288,7 +288,7 @@ projects:
     applications:
       - Info
   chameleon:
-    name: CHAMELEON
+    title: CHAMELEON
     description:
       "Data-mixing framework using Kernel Ridge Leverage Scores for LLM
       pretraining and finetuning."
@@ -320,7 +320,7 @@ projects:
     applications:
       - Info
   coins:
-    name: COINs
+    title: COINs
     description:
       "Community-informed graph embeddings for fast knowledge-graph link
       prediction."
@@ -354,7 +354,7 @@ projects:
     applications:
       - Info
   nbl:
-    name: NBL
+    title: NBL
     description:
       "Neural Block Linearization replacing self-attention with LMMSE
       approximations for faster LLM inference."
@@ -388,7 +388,7 @@ projects:
     applications:
       - Info
   clippedscion:
-    name: ClippedScion
+    title: ClippedScion
     description:
       "Reference implementation of ClippedScion optimizers supporting multiple
       norms."
@@ -422,7 +422,7 @@ projects:
     applications:
       - Info
   pepo:
-    name: PEPO
+    title: PEPO
     description:
       "Preference alignment framework for language models using DPO and RLHF
       techniques."
@@ -457,7 +457,7 @@ projects:
     applications:
       - Info
   fine-tuning:
-    name: Fine-tuning pitfalls
+    title: Fine-tuning pitfalls
     type: Hands-on
     description: Hands-on workshop on LLM fine-tuning pitfalls
     layman_desc: >

@@ -1,7 +1,7 @@
 projects:
   # Most common fields:
   jumbotrace:
-    name: JumboTrace
+    title: JumboTrace
     description: >
       Java program tracer to record execution state
     type: "Toolset"
@@ -34,7 +34,7 @@ projects:
     date_added: 2024-04-14
 
   regelk:
-    name: RegElk
+    title: RegElk
     logo: /products/images/regelk/regelk.jpg
     description: >
       Linear regex engine for JavaScript in OCaml
@@ -72,7 +72,7 @@ projects:
         title: Linear Matching of JavaScript Regular Expressions
         url: https://arxiv.org/abs/2311.17620
   librrd:
-    name: LibRRD
+    title: LibRRD
     description: "Build and CLI deployment tool with a web GUI component."
     layman_desc: >
       LibRRD is a build and deployment tool that simplifies compiling and
@@ -102,7 +102,7 @@ projects:
     applications:
       - Infra
   dvar-track:
-    name: dvar-track
+    title: dvar-track
     description:
       "Emacs Lisp tool for tracking dynamic variable dependencies with eldoc
       support."
@@ -134,7 +134,7 @@ projects:
     applications:
       - Infra
   logical-pinning:
-    name: Logical Pinning
+    title: Logical Pinning
     description:
       "Coq formalization of logical pinning for container-internal pointers."
     layman_desc: >
@@ -165,7 +165,7 @@ projects:
     applications:
       - Info
   lorikeet:
-    name: Lorikeet
+    title: Lorikeet
     description:
       "Scalafix-based code quality feedback tool with custom rule definitions
       via query patterns."

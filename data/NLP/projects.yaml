@@ -1,6 +1,6 @@
 projects:
   peacok:
-    name: peacok
+    title: peacok
     description: >
       Persona Commonsense Knowledge for Consistent and Engaging Narratives
     tech_desc: >
@@ -41,7 +41,7 @@ projects:
     date_added: 2024-02-20
 
   disco_nli:
-    name: distilled counterfactual data
+    title: distilled counterfactual data
     description: >
       Automated generation of high-quality counterfactual data.
     tech_desc: >
@@ -76,7 +76,7 @@ projects:
     date_added: 2024-02-20
 
   meditron:
-    name: meditron
+    title: meditron
     description: >
       Medical language model pretraining
     tech_desc: >
@@ -114,7 +114,7 @@ projects:
     date_added: 2024-02-20
 
   crow:
-    name: crow
+    title: crow
     description: >
       Benchmarking Commonsense Reasoning in Real-World Tasks
     tech_desc: >

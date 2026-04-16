@@ -1,6 +1,6 @@
 projects:
   synthetic_data:
-    name: Synthetic data privacy evaluation
+    title: Synthetic data privacy evaluation
     categories:
       - Privacy
       - Learning
@@ -46,7 +46,7 @@ projects:
     date_updated: 2022-07-07
 
   claimchain:
-    name: ClaimChain
+    title: ClaimChain
     categories:
       - Privacy
     applications:
@@ -83,7 +83,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2022-07-07
   lightnion:
-    name: Lightnion
+    title: Lightnion
     categories:
       - Privacy
     applications:
@@ -113,7 +113,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2022-07-07
   trickster:
-    name: Trickster
+    title: Trickster
     logo: /products/images/trickster/trickster.svg
     categories:
       - Privacy
@@ -154,7 +154,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2022-07-07
   hippiepug:
-    name: Hippiepug
+    title: Hippiepug
     logo: /products/images/hippiepug/hippiepug.svg
     categories:
       - Privacy
@@ -194,7 +194,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2022-07-07
   mcsauditing:
-    name: MCSAuditing
+    title: MCSAuditing
     categories:
       - Privacy
     applications:
@@ -229,7 +229,7 @@ projects:
     date_updated: 2022-07-07
 
   zksk:
-    name: Zero-Knowledge Swiss Knife
+    title: Zero-Knowledge Swiss Knife
     categories:
       - Privacy
     applications:
@@ -270,7 +270,7 @@ projects:
     date_updated: 2022-07-07
     maturity: 2
   dp3t:
-    name: Decentralized Privacy-Preserving Proximity Tracing
+    title: Decentralized Privacy-Preserving Proximity Tracing
     categories:
       - Privacy
     applications:
@@ -317,7 +317,7 @@ projects:
       type: retired
       work: 2020/Q4 documentation and testing of the app
   crowdnotifier:
-    name: CrowdNotifier
+    title: CrowdNotifier
     categories:
       - Privacy
     applications:
@@ -360,7 +360,7 @@ projects:
     date_updated: 2022-07-07
 
   petrelic:
-    name: Petrelic
+    title: Petrelic
     categories:
       - Privacy
     applications:
@@ -388,7 +388,7 @@ projects:
     date_added: 2021-01-21
     date_updated: 2022-07-07
   sscred:
-    name: SSCred
+    title: SSCred
     categories:
       - Privacy
     applications:
@@ -415,7 +415,7 @@ projects:
     date_updated: 2023-03-22
 
   mia:
-    name: mia
+    title: mia
     categories:
       - Privacy
     applications:
@@ -447,7 +447,7 @@ projects:
     date_added: 2021-01-21
     date_updated: 2022-07-07
   lightarti:
-    name: lightarti-rest
+    title: lightarti-rest
     categories:
       - Privacy
     applications:
@@ -496,7 +496,7 @@ projects:
     date_added: 2021-08-26
     date_updated: 2023-03-22
   voteagain:
-    name: VOTEAGAIN
+    title: VOTEAGAIN
     categories:
       - Security
       - Privacy
@@ -536,7 +536,7 @@ projects:
     date_added: 2021-11-04
     date_updated: 2022-07-07
   datashare-network:
-    name: DatashareNetwork
+    title: DatashareNetwork
     categories:
       - Security
       - Privacy
@@ -582,7 +582,7 @@ projects:
     date_added: 2021-11-04
     date_updated: 2023-03-22
   tandem:
-    name: Tandem
+    title: Tandem
     categories:
       - Security
       - Privacy
@@ -624,7 +624,7 @@ projects:
     date_added: 2021-11-04
     date_updated: 2022-07-07
   webgraph:
-    name: WebGraph
+    title: WebGraph
     categories:
       - Privacy
       - Learning
@@ -664,7 +664,7 @@ projects:
     date_added: 2022-07-07
     date_updated: 2023-03-22
   disparate-vulnerability:
-    name: DisparateVulnerability
+    title: DisparateVulnerability
     categories:
       - Privacy
       - Learning
@@ -704,7 +704,7 @@ projects:
     date_added: 2022-07-07
     date_updated: 2022-08-11
   tandem_monero:
-    name: Tandem / Monero
+    title: Tandem / Monero
     categories:
       - Security
       - Privacy
@@ -741,7 +741,7 @@ projects:
     date_updated: 2022-08-25
 
   private-collection-matching:
-    name: Private Collection Matching Protocols
+    title: Private Collection Matching Protocols
     categories:
       - Security
       - Privacy
@@ -783,7 +783,7 @@ projects:
     date_added: 2023-03-22
     date_updated: 2023-03-22
   flfp:
-    name: Double-Edged Shield
+    title: Double-Edged Shield
     description:
       "Study and attacks on fingerprinting users through customized ad-blocker
       filter lists."
@@ -818,7 +818,7 @@ projects:
     applications:
       - Info
   iccwd:
-    name: ICCWD
+    title: ICCWD
     description:
       "Scripts for the Image-Caption in the Wild Dataset and minor-detection
       method evaluation."
@@ -851,7 +851,7 @@ projects:
     applications:
       - Info
   wf4nym:
-    name: WF4NYM
+    title: WF4NYM
     description:
       "Website fingerprinting and flow-correlation attacks on the Nym mixnet."
     layman_desc: >

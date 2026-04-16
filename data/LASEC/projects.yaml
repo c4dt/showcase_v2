@@ -1,6 +1,6 @@
 projects:
   offchainer:
-    name: offchainer
+    title: offchainer
     categories:
       - Privacy
       - Blockchain
@@ -39,7 +39,7 @@ projects:
     date_added: 2021-11-05
     date_updated: 2024-04-16
   ophcrack:
-    name: ophcrack
+    title: ophcrack
     categories:
       - Security
     applications:
@@ -67,7 +67,7 @@ projects:
     date_added: 2021-11-05
     date_updated: 2024-04-16
   ntat:
-    name: non/transferable anonymous tokens
+    title: non/transferable anonymous tokens
     description: >
       Anonymous tokens with non-transferability and accountability
     type: Library

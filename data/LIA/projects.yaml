@@ -1,6 +1,6 @@
 projects:
   bdp:
-    name: Bayesian Differential Privacy
+    title: Bayesian Differential Privacy
     categories:
       - Learning
       - Privacy
@@ -42,7 +42,7 @@ projects:
     date_updated: 2024-03-20
 
   ader:
-    name: ADER
+    title: ADER
     categories:
       - Learning
     applications:

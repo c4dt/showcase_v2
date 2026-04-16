@@ -1,9 +1,9 @@
 projects:
   # Most common fields:
   url_path:
-    name: (short name)
+    title: (short name)
     description: >
-      (Short description, will be shown under the name)
+      (Short description, will be shown under the title)
     type:
       ( "Application" | "Library" | "Framework" | "Toolset" | "Simulation" |
       "Experiments" )

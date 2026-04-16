@@ -1,6 +1,6 @@
 projects:
   quick-adc:
-    name: Quick ADC
+    title: Quick ADC
     categories:
       - Other
     applications:
@@ -35,7 +35,7 @@ projects:
     date_updated: 2022-07-07
 
   proteustm:
-    name: ProteusTM
+    title: ProteusTM
     categories:
       - Other
     applications:

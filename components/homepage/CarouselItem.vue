@@ -20,7 +20,7 @@ const project = props.project;
     >
       <!-- Image Container -->
       <div class="flex items-center justify-center">
-        <img :alt="project.name" :src="project.logo" class="h-48 w-full object-contain p-4" />
+        <img :alt="project.title" :src="project.logo" class="h-48 w-full object-contain p-4" />
       </div>
       <!-- Text Content -->
       <div class="mx-2 p-4 text-gray-700">
@@ -28,7 +28,7 @@ const project = props.project;
           data-testid="header"
           class="text-blue-gray-900 line-clamp-2 font-sans text-xl leading-snug font-semibold capitalize antialiased"
         >
-          {{ project.name }}
+          {{ project.title }}
         </h5>
         <p data-testid="body" class="line-clamp-6 font-sans text-sm leading-normal text-gray-500 antialiased">
           {{ project.descriptionDisplay }}

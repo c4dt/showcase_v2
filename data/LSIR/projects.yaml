@@ -1,6 +1,6 @@
 projects:
   ai-data-platform-v1:
-    name: AI Research Aiding Online Children Safety
+    title: AI Research Aiding Online Children Safety
     categories:
       - Learning
     applications:
@@ -31,7 +31,7 @@ projects:
     date_updated: 2024-02-06
 
   ai-data-platform-v2:
-    name: AI-Driven Classifier Building Pipeline
+    title: AI-Driven Classifier Building Pipeline
     categories:
       - Learning
     applications:
@@ -67,7 +67,7 @@ projects:
     maturity: 2
 
   scilens:
-    name: SciLens
+    title: SciLens
     categories:
       - Learning
     applications:
@@ -136,7 +136,7 @@ projects:
     date_updated: 2024-02-06
 
   media-observatory:
-    name: Media Observatory
+    title: Media Observatory
     categories:
       - Learning
     applications:
@@ -183,7 +183,7 @@ projects:
     date_updated: 2024-02-12
 
   mozuma:
-    name: Mozuma
+    title: Mozuma
     categories:
       - Learning
     applications:
@@ -209,7 +209,7 @@ projects:
     date_updated: 2024-02-12
 
   commpass:
-    name: CommPass
+    title: CommPass
     description: >
       News article similarity visualization tool
     type: "Application"
@@ -239,7 +239,7 @@ projects:
 
   # Most common fields:
   upgrade_newsroom:
-    name: Upgrading the Newsroom
+    title: Upgrading the Newsroom
     description: >
       Automated image selection system for news articles
     type: "Application"

@@ -1,6 +1,6 @@
 projects:
   wehey:
-    name: wehey
+    title: wehey
     description: >
       WeHe𝕐 - Localizing Traffic Differentiation
     type: Application
@@ -41,7 +41,7 @@ projects:
     date_added: 2024-03-05
 
   tero:
-    name: tero project
+    title: tero project
     description: >
       Studying Internet latency from Gaming Footage
     type: Application

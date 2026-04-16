@@ -15,7 +15,7 @@
       </div>
       <div v-if="maturity === 0">
         <a
-          :href="`${MATURITY_EVALUATION_REQUEST.replaceAll('{name}', project.name)}`"
+          :href="`${MATURITY_EVALUATION_REQUEST.replaceAll('{name}', project.title)}`"
           :aria-label="evaluationRequestTitle"
           :title="evaluationRequestTitle"
           ><FontAwesomeIcon :icon="faEnvelope" class="text-xl text-[#212121]"

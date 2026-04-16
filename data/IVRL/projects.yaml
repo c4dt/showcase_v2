@@ -1,6 +1,6 @@
 projects:
   slico:
-    name: SLICO Superpixels
+    title: SLICO Superpixels
     categories:
       - Other
     applications:
@@ -27,7 +27,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-04-14
   image-completion:
-    name: Image Completion
+    title: Image Completion
     categories:
       - Other
     applications:
@@ -54,7 +54,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-04-14
   adefan:
-    name: ADEFAN
+    title: ADEFAN
     type: Application
     categories:
       - Other
@@ -97,7 +97,7 @@ projects:
     date_added: 2021-11-05
     date_updated: 2024-04-14
   fg-nic:
-    name: FG-NIC
+    title: FG-NIC
     type: Application
     categories:
       - Learning
@@ -143,7 +143,7 @@ projects:
     date_added: 2021-11-05
     date_updated: 2024-04-14
   buifd:
-    name: BUIFD
+    title: BUIFD
     type: Application
     categories:
       - Learning
@@ -186,7 +186,7 @@ projects:
     date_added: 2021-11-05
     date_updated: 2024-04-14
   zero-learning-medical-fusion:
-    name: Zero-Learning Fast Medical Image Fusion
+    title: Zero-Learning Fast Medical Image Fusion
     type: Application
     categories:
       - Learning
@@ -225,7 +225,7 @@ projects:
     date_added: 2021-11-05
     date_updated: 2024-04-14
   lelsd:
-    name: LELSD
+    title: LELSD
     type: Application
     categories:
       - Learning
@@ -260,7 +260,7 @@ projects:
     date_added: 2022-07-05
     date_updated: 2024-04-14
   dsr:
-    name: DSR
+    title: DSR
     type: Experiments, Simulation
     categories:
       - Learning
@@ -299,7 +299,7 @@ projects:
     date_added: 2023-03-21
     date_updated: 2024-04-14
   tempsal:
-    name: TempSAL
+    title: TempSAL
     type: Application, Experiments
     categories:
       - Learning
@@ -338,7 +338,7 @@ projects:
     date_updated: 2024-04-14
 
   dynca:
-    name: DyNCA
+    title: DyNCA
     categories:
       - Learning
     applications:
@@ -376,7 +376,7 @@ projects:
     date_added: 2023-03-21
     date_updated: 2024-04-14
   noisediff:
-    name: NoiseDiff
+    title: NoiseDiff
     description:
       "Dark Noise Diffusion for synthetic low-light noise generation and image
       denoising."

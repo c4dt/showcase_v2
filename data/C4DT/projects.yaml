@@ -1,6 +1,6 @@
 projects:
   demo-eid:
-    name: Issuer & Verifier for the Swiss e-ID 2023 sandbox
+    title: Issuer & Verifier for the Swiss e-ID 2023 sandbox
     categories:
       - Security
       - Privacy
@@ -31,7 +31,7 @@ projects:
     date_added: 2024-01-09
     date_updated: 2024-01-09
   innosuisse-eid:
-    name: Secure and Privacy-Preserving Credentials for E-ID
+    title: Secure and Privacy-Preserving Credentials for E-ID
     categories:
       - Security
       - Privacy
@@ -84,7 +84,7 @@ projects:
     date_added: 2025-04-01
     date_updated: 2026-03-27
   seal-phishing:
-    name: "Combattre le phishing: quelles innovations apporter ?"
+    title: "Combattre le phishing: quelles innovations apporter ?"
     categories:
       - Security
     applications:
@@ -122,7 +122,7 @@ projects:
     date_updated: 2026-01-16
     url: https://seal-innovation.ch/en/combating-phishing/
   seal-digiinov:
-    name:
+    title:
       Sécurisation de Digiinov Hmi en adéquation avec le Cyber Resilience Act
       (CRA)
     categories:
@@ -160,7 +160,7 @@ projects:
     date_added: 2026-01-16
     date_updated: 2026-01-16
   hands-on-eid:
-    name: E-ID Hands-on Workshop
+    title: E-ID Hands-on Workshop
     categories:
       - Security
       - Privacy
@@ -200,7 +200,7 @@ projects:
     date_added: 2024-11-21
     date_updated: 2024-11-21
   matrix-epfl:
-    name: Matrix@EPFL
+    title: Matrix@EPFL
     categories:
       - Security
       - Privacy
@@ -240,7 +240,7 @@ projects:
     date_added: 2025-03-04
     date_updated: 2025-03-04
   showcasev2:
-    name: Showcase v2.0
+    title: Showcase v2.0
     categories:
       - Other
     applications:

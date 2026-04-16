@@ -1,7 +1,7 @@
 projects:
   # Most common fields:
   arkworks:
-    name: arkworks
+    title: arkworks
     description: >
       Rust ecosystem for zkSNARK programming
     type: "Library"

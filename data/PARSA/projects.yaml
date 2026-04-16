@@ -1,6 +1,6 @@
 projects:
   cloudsuite:
-    name: CloudSuite
+    title: CloudSuite
     categories:
       - Other
     applications:
@@ -41,7 +41,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-03-15
   qflex:
-    name: QFlex
+    title: QFlex
     categories:
       - Other
     applications:
@@ -82,7 +82,7 @@ projects:
     date_updated: 2024-03-15
 
   hbfpemulator:
-    name: ColTraIn HBFP Training Emulator
+    title: ColTraIn HBFP Training Emulator
     categories:
       - Other
     applications:

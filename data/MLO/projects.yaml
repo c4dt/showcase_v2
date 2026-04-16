@@ -1,6 +1,6 @@
 projects:
   powergossip:
-    name: PowerGossip
+    title: PowerGossip
     categories:
       - Learning
     applications:
@@ -41,7 +41,7 @@ projects:
     date_added: 2021-03-05
     date_updated: 2024-04-09
   chocosgd:
-    name: chocoSGD
+    title: chocoSGD
     categories:
       - Learning
     applications:
@@ -82,7 +82,7 @@ projects:
     date_updated: 2024-04-09
     maturity: 1
   cola:
-    name: cola
+    title: cola
     categories:
       - Learning
     applications:
@@ -132,7 +132,7 @@ projects:
     date_added: 2019-07-30
     date_updated: 2024-04-09
   mlbench:
-    name: MLBench
+    title: MLBench
     categories:
       - Learning
     applications:
@@ -177,7 +177,7 @@ projects:
     date_updated: 2024-04-09
     maturity: 2
   sent2vec:
-    name: sent2vec
+    title: sent2vec
     categories:
       - Learning
     applications:
@@ -206,7 +206,7 @@ projects:
     date_updated: 2024-04-09
     maturity: 1
   powersgd:
-    name: PowerSGD
+    title: PowerSGD
     categories:
       - Learning
     applications:
@@ -257,7 +257,7 @@ projects:
     date_updated: 2024-04-09
     maturity: 2
   relaysgd:
-    name: RelaySGD
+    title: RelaySGD
     categories:
       - Learning
     applications:
@@ -301,7 +301,7 @@ projects:
     date_added: 2021-11-04
     date_updated: 2024-04-09
   disco:
-    name: Disco
+    title: Disco
     categories:
       - Learning
     applications:
@@ -393,7 +393,7 @@ projects:
     date_updated: 2024-04-09
 
   byzantine-robust-optimizer:
-    name: Byzantine Robust Optimizer
+    title: Byzantine Robust Optimizer
     categories:
       - Learning
     applications:
@@ -435,7 +435,7 @@ projects:
     date_added: 2021-11-04
     date_updated: 2024-04-09
   quasi-global-momentum:
-    name: Quasi-Global Momentum
+    title: Quasi-Global Momentum
     categories:
       - Learning
     applications:
@@ -478,7 +478,7 @@ projects:
     date_added: 2021-11-04
     date_updated: 2024-04-09
   hyperaggregate:
-    name: HyperAggregate
+    title: HyperAggregate
     categories:
       - Learning
     applications:
@@ -510,7 +510,7 @@ projects:
     date_added: 2021-11-04
     date_updated: 2024-04-09
   phantomedicus:
-    name: PhantoMedicus
+    title: PhantoMedicus
     categories:
       - Learning
     applications:
@@ -536,7 +536,7 @@ projects:
     date_added: 2022-07-06
     date_updated: 2024-04-09
   paxlib:
-    name: PAXlib
+    title: PAXlib
     categories:
       - Learning
     applications:
@@ -564,7 +564,7 @@ projects:
     date_added: 2022-07-07
     date_updated: 2024-04-09
   byzantine-robust-noniid-optimizer:
-    name: Byzantine-Robust NonIID optimizer
+    title: Byzantine-Robust NonIID optimizer
     categories:
       - Learning
     applications:
@@ -597,7 +597,7 @@ projects:
     date_updated: 2024-04-09
 
   anomaly-detection:
-    name: Distributed Homomorphic Anomaly Detection
+    title: Distributed Homomorphic Anomaly Detection
     categories:
       - Learning
     applications:
@@ -633,7 +633,7 @@ projects:
     date_updated: 2024-04-09
 
   meditron:
-    name: Meditron
+    title: Meditron
     description: >
       Open-source medical language model for clinical decision support
     type: "Application"
@@ -675,7 +675,7 @@ projects:
 
   # Most common fields:
   megatron:
-    name: Megatron-LLM
+    title: Megatron-LLM
     description: >
       Large language model training library
     type: "Application"
@@ -710,7 +710,7 @@ projects:
     license: various
     date_added: 2024-04-12
   fineweb2-hq:
-    name: FineWeb2-HQ
+    title: FineWeb2-HQ
     description:
       "Multilingual data filtering tools for LLM pretraining using FastText and
       Transformer-MLP classifiers."
@@ -744,7 +744,7 @@ projects:
     applications:
       - Info
   grad-norm-smooth:
-    name: Gradient-Normalized Smoothness
+    title: Gradient-Normalized Smoothness
     description:
       "Algorithms for optimization with approximate Hessians using
       gradient-normalized smoothness."
@@ -785,7 +785,7 @@ projects:
     applications:
       - Info
   llm-optimizer-benchmark:
-    name: LLM Optimizer Benchmark
+    title: LLM Optimizer Benchmark
     description:
       "Benchmark for comparing optimizers for LLM pretraining on Llama and MoE
       models."
@@ -825,7 +825,7 @@ projects:
     applications:
       - Info
   timoe:
-    name: TiMoE
+    title: TiMoE
     description:
       "Modular framework for temporally grounded language models with time-aware
       expert routing."
@@ -858,7 +858,7 @@ projects:
     applications:
       - Info
   halluhard:
-    name: HalluHard
+    title: HalluHard
     description:
       "Hard multi-turn hallucination benchmark for evaluating language models
       across domains."
@@ -895,7 +895,7 @@ projects:
       - Info
 
   comigs:
-    name: CoMiGS
+    title: CoMiGS
     description: >
       On-device collaborative language modeling via a mixture of generalists and
       specialists

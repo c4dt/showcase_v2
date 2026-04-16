@@ -1,6 +1,6 @@
 projects:
   dynamatic:
-    name: Dynamatic
+    title: Dynamatic
     type: Toolset
     categories:
       - Other
@@ -46,7 +46,7 @@ projects:
     date_added: 2021-11-04
     date_updated: 2024-03-22
   hardcilk:
-    name: HardCilk
+    title: HardCilk
     type: Experiments
     categories:
       - Other
@@ -85,7 +85,7 @@ projects:
         url: https://youtu.be/1EjEUD5sPpg
     date_added: 2026-04-02
   dynaburst:
-    name: DynaBurst
+    title: DynaBurst
     type: Application, Library
     categories:
       - Other

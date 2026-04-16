@@ -5,7 +5,7 @@ projects:
     applications:
       - Info
       - Infra
-    name: Lattigo
+    title: Lattigo
     description: A lattice-based multiparty homomorphic encryption library in Go
     tech_desc: >
       Lattigo is a Go module for Multiparty Homomorphic Encryption, that
@@ -52,7 +52,7 @@ projects:
     date_updated: 2023-03-21
     maturity: 3
   unlynx:
-    name: Unlynx
+    title: Unlynx
     categories:
       - Privacy
     applications:
@@ -97,7 +97,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2022-09-28
   medco:
-    name: MedCo
+    title: MedCo
     categories:
       - Privacy
     applications:
@@ -136,7 +136,7 @@ projects:
     maturity: 2
 
   drynx:
-    name: Drynx
+    title: Drynx
     categories:
       - Privacy
     applications:
@@ -188,7 +188,7 @@ projects:
     date_updated: 2022-09-28
     maturity: 1
   spindle:
-    name: SPINDLE
+    title: SPINDLE
     categories:
       - Privacy
       - Learning
@@ -232,7 +232,7 @@ projects:
     date_added: 2021-01-21
     date_updated: 2022-09-28
   pricell:
-    name: PriCell
+    title: PriCell
     categories:
       - Learning
       - Privacy
@@ -269,7 +269,7 @@ projects:
     date_added: 2022-07-05
     date_updated: 2022-07-05
   crisp:
-    name: CRISP
+    title: CRISP
     categories:
       - Privacy
     applications:
