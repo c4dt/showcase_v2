@@ -5,7 +5,7 @@ import CarouselItem from "~/components/homepage/CarouselItem.vue";
 describe("CarouselItem", () => {
   const project = {
     id: "1",
-    name: "Test Project",
+    title: "Test Project",
     descriptionDisplay: "This is a test project description",
     logo: "/test-logo.png"
   };
@@ -21,8 +21,8 @@ describe("CarouselItem", () => {
         }
       }
     });
-    expect(wrapper.find(`img[src=${project.logo}][alt=${project.name}]`).exists()).toBe(true);
-    expect(wrapper.find("[data-testid='header']").text()).toBe(project.name);
+    expect(wrapper.find(`img[src=${project.logo}][alt=${project.title}]`).exists()).toBe(true);
+    expect(wrapper.find("[data-testid='header']").text()).toBe(project.title);
     expect(wrapper.find("[data-testid='body']").text()).toBe(project.descriptionDisplay);
   });
 

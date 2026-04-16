@@ -6,7 +6,7 @@
  */
 
 export interface Project {
-  name: string;
+  title: string;
   logo?: string;
   description: string;
   type: string;

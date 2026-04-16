@@ -1,6 +1,6 @@
 projects:
   choix:
-    name: Choix
+    title: Choix
     categories:
       - Learning
     applications:
@@ -46,7 +46,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2022-07-05
   who-is-that:
-    name: Who is that?
+    title: Who is that?
     categories:
       - Learning
     applications:
@@ -70,7 +70,7 @@ projects:
     date_added: 2019-09-09
     date_updated: 2022-07-05
   kickscore:
-    name: kickscore
+    title: kickscore
     categories:
       - Learning
     applications:
@@ -119,7 +119,7 @@ projects:
     date_added: 2020-05-01
     date_updated: 2022-07-05
   predikon:
-    name: Predikon
+    title: Predikon
     categories:
       - Learning
     applications:
@@ -144,7 +144,7 @@ projects:
     date_added: 2020-05-01
     date_updated: 2022-07-05
   climpact:
-    name: Climpact
+    title: Climpact
     categories:
       - Learning
     applications:

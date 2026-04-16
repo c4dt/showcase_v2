@@ -1,6 +1,6 @@
 projects:
   gotee:
-    name: Gotee
+    title: Gotee
     categories:
       - Security
     applications:
@@ -50,7 +50,7 @@ projects:
     date_added: 2021-11-04
     date_updated: 2024-02-20
   raft:
-    name: Raft consensus protocol
+    title: Raft consensus protocol
     categories:
       - Blockchain
     applications:
@@ -80,7 +80,7 @@ projects:
     date_added: 2021-11-05
     date_updated: 2024-02-20
   hovercraft:
-    name: HovercRaft
+    title: HovercRaft
     categories:
       - Other
     applications:
@@ -128,7 +128,7 @@ projects:
     date_added: 2021-11-05
     date_updated: 2024-02-20
   crab:
-    name: CRAB
+    title: CRAB
     categories:
       - Other
     applications:
@@ -163,7 +163,7 @@ projects:
     date_added: 2022-07-04
     date_updated: 2024-02-20
   fold:
-    name: Fold
+    title: Fold
     description:
       "Rust framework for building dynamic linkers with syscall filtering and
       function hooks."
@@ -196,7 +196,7 @@ projects:
     applications:
       - Infra
   nwsim:
-    name: nwsim
+    title: nwsim
     description:
       "Network simulation suite integrating ns-2 with pFabric, SIRD, DCTCP, and
       Homa."
@@ -229,7 +229,7 @@ projects:
     applications:
       - Infra
   miralis:
-    name: Miralis
+    title: Miralis
     description:
       "Virtual firmware monitor for RISC-V with formal verification via Kani."
     layman_desc: >

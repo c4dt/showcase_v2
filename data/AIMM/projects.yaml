@@ -1,6 +1,6 @@
 projects:
   virtues:
-    name: VirTues
+    title: VirTues
     description: >
       Foundation model for spatial proteomics enabling multi-scale tissue
       analysis for clinical diagnostics and biomedical discovery
@@ -37,7 +37,7 @@ projects:
     date_added: 2026-03-19
 
   mtbbench:
-    name: MTBBench
+    title: MTBBench
     description: >
       Benchmark for evaluating multimodal LLM reasoning in complex oncology
       clinical decision-making scenarios

@@ -1,6 +1,6 @@
 projects:
   iprp:
-    name: iprp
+    title: iprp
     categories:
       - Security
     applications:
@@ -39,7 +39,7 @@ projects:
     date_updated: 2022-07-05
 
   commelec-api:
-    name: commelec-api
+    title: commelec-api
     categories:
       - Security
     applications:
@@ -69,7 +69,7 @@ projects:
     date_updated: 2022-07-05
 
   t-recs:
-    name: T-RECS
+    title: T-RECS
     categories:
       - Security
     applications:

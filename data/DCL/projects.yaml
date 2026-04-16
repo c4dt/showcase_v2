@@ -1,6 +1,6 @@
 projects:
   garfield:
-    name: Garfield
+    title: Garfield
     categories:
       - Learning
     applications:
@@ -139,7 +139,7 @@ projects:
     date_updated: 2024-03-22
 
   at2:
-    name: AT2
+    title: AT2
     categories:
       - Blockchain
     applications:
@@ -218,7 +218,7 @@ projects:
     date_updated: 2024-03-22
 
   fegan:
-    name: FeGAN
+    title: FeGAN
     categories:
       - Learning
     applications:
@@ -257,7 +257,7 @@ projects:
     date_added: 2020-11-11
     date_updated: 2024-03-22
   mvtil:
-    name: MVTIL
+    title: MVTIL
     categories:
       - Security
     applications:
@@ -294,7 +294,7 @@ projects:
     date_added: 2019-09-19
     date_updated: 2024-03-22
   libnvram:
-    name: libNVRAM
+    title: libNVRAM
     categories:
       - Security
     applications:
@@ -333,7 +333,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-03-22
   flodb:
-    name: FloDB
+    title: FloDB
     categories:
       - Security
     applications:
@@ -371,7 +371,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-03-22
   fleet:
-    name: FLeet
+    title: FLeet
     categories:
       - Learning
     applications:
@@ -413,7 +413,7 @@ projects:
     date_added: 2019-07-01
     date_updated: 2024-03-22
   mctop:
-    name: MCTOP
+    title: MCTOP
     categories:
       - Security
     applications:
@@ -451,7 +451,7 @@ projects:
     date_added: 2019-07-26
     date_updated: 2024-03-22
   lockin:
-    name: LOCKIN
+    title: LOCKIN
     categories:
       - Security
     applications:
@@ -501,7 +501,7 @@ projects:
     date_added: 2019-07-01
     date_updated: 2024-03-22
   aggregathor:
-    name: AggregaThor
+    title: AggregaThor
     categories:
       - Learning
     applications:
@@ -544,7 +544,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-03-22
   ascylib-optik:
-    name: ASCYLIB + OPTIK
+    title: ASCYLIB + OPTIK
     categories:
       - Security
     applications:
@@ -599,7 +599,7 @@ projects:
     date_updated: 2024-03-22
 
   carbon:
-    name: carbon
+    title: carbon
     categories:
       - Blockchain
     applications:
@@ -630,7 +630,7 @@ projects:
     date_added: 2021-12-01
     date_updated: 2024-03-22
   clht:
-    name: CLHT
+    title: CLHT
     categories:
       - Other
     applications:
@@ -664,7 +664,7 @@ projects:
     date_added: 2022-07-04
     date_updated: 2024-03-22
   nn-fault-tolerance:
-    name:
+    title:
       Probabilistic Fault Tolerance of Neural Networks in the Continuous Limit
     categories:
       - Learning
@@ -701,7 +701,7 @@ projects:
     date_updated: 2024-03-22
 
   ukharon:
-    name: uKharon
+    title: uKharon
     categories:
       - Other
     applications:
@@ -740,7 +740,7 @@ projects:
     date_added: 2022-07-04
     date_updated: 2024-03-22
   ubft:
-    name: uBFT
+    title: uBFT
     categories:
       - Security
     applications:
@@ -784,7 +784,7 @@ projects:
     date_updated: 2024-03-22
 
   byzfl:
-    name: ByzFL
+    title: ByzFL
     description: >
       Python library for Byzantine-resilient federated learning, compatible with
       PyTorch and NumPy.
@@ -827,7 +827,7 @@ projects:
     date_updated: 2026-03-19
 
   anyway:
-    name: Anyway
+    title: Anyway
     description: >
       Self-hosted AI platform for private, on-premise LLM inference
     type: Application

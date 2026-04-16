@@ -1,7 +1,7 @@
 {
   "type": "object",
   "properties": {
-    "name": {
+    "title": {
       "type": "string"
     },
     "logo": {
@@ -232,5 +232,5 @@
       "type": "string"
     }
   },
-  "required": ["name", "description", "type", "categories", "applications", "tags", "date_added"]
+  "required": ["title", "description", "type", "categories", "applications", "tags", "date_added"]
 }

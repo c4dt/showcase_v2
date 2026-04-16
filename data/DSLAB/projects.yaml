@@ -1,6 +1,6 @@
 projects:
   bolt:
-    name: BOLT
+    title: BOLT
     categories:
       - Verification
     applications:
@@ -50,7 +50,7 @@ projects:
     date_updated: 2022-07-05
 
   pix:
-    name: PIX
+    title: PIX
     categories:
       - Verification
     applications:
@@ -97,7 +97,7 @@ projects:
     date_updated: 2023-03-20
 
   ebpf-se:
-    name: eBPF-SE
+    title: eBPF-SE
     description: >
       eBPF symbolic execution tool
     type: "Application"
@@ -133,7 +133,7 @@ projects:
     date_added: 2024-03-20
 
   nex:
-    name: NEX
+    title: NEX
     description:
       "Full-stack simulation framework running unmodified software while
       modelling hardware accelerators."
@@ -168,7 +168,7 @@ projects:
       - Infra
 
   tpot:
-    name: TPOT
+    title: TPOT
     description: >
       Practical verification of system-software components written in standard C
     layman_desc: >

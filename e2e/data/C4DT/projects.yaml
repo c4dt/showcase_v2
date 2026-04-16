@@ -1,6 +1,6 @@
 projects:
   eid-ledger:
-    name: E-ID Ledger
+    title: E-ID Ledger
     description: The ledger component of the swiss E-ID system.
     type: Application
     categories:
@@ -11,7 +11,7 @@ projects:
       - Development
     date_added: 2024-01-09
   eid-demo:
-    name: E-ID Demo (Issuer & Verifier)
+    title: E-ID Demo (Issuer & Verifier)
     description: Demo for the swiss E-ID system. It includes an issuer and a verifier.
     type: Application
     categories:
@@ -24,7 +24,7 @@ projects:
       - Development
     date_added: 2024-01-09
   eid-example:
-    name: E-ID Example
+    title: E-ID Example
     description: Example for the swiss E-ID ledger.
     type: Application
     categories:

@@ -1,6 +1,6 @@
 projects:
   scala-js:
-    name: Scala.js
+    title: Scala.js
     type: Library, Toolset
     categories:
       - Other
@@ -33,7 +33,7 @@ projects:
     date_added: 2021-11-05
     date_updated: 2024-04-12
   scala-native:
-    name: Scala Native
+    title: Scala Native
     type: Library, Toolset
     categories:
       - Other
@@ -63,7 +63,7 @@ projects:
     date_updated: 2024-04-12
 
   scala3:
-    name: Scala 3
+    title: Scala 3
     description: >
       Scala 3 release updates and new features
     type: "Application"

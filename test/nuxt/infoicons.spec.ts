@@ -5,7 +5,7 @@ import InfoIcons from "../components/InfoIcons.vue";
 const id = "test-project";
 
 test("renders only mailto link if project has no additional information associated with it", async () => {
-  const wrapper = await mountSuspended(InfoIcons, { props: { project: { id: id, name: id } } });
+  const wrapper = await mountSuspended(InfoIcons, { props: { project: { id: id, title: id } } });
   // there should be exactly one link
   const anchors = wrapper.findAll("a");
   expect(anchors).toHaveLength(1);

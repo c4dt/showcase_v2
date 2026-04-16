@@ -1,6 +1,6 @@
 projects:
   stainless:
-    name: Stainless
+    title: Stainless
     categories:
       - Verification
     applications:
@@ -66,7 +66,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-04-12
   stainless-for-smart-contracts:
-    name: Stainless for smart contracts
+    title: Stainless for smart contracts
     categories:
       - Verification
     applications:
@@ -103,7 +103,7 @@ projects:
     date_updated: 2024-04-12
     maturity: 2
   inox:
-    name: Inox
+    title: Inox
     categories:
       - Verification
     applications:
@@ -133,7 +133,7 @@ projects:
     date_updated: 2024-04-12
 
   rust-stainless:
-    name: Rust-Stainless
+    title: Rust-Stainless
     categories:
       - Verification
     applications:
@@ -165,7 +165,7 @@ projects:
     date_updated: 2024-04-12
 
   lisa:
-    name: LISA
+    title: LISA
     categories:
       - Verification
     applications:
@@ -197,7 +197,7 @@ projects:
     date_updated: 2024-04-12
 
   scallion:
-    name: Scallion
+    title: Scallion
     categories:
       - Other
     applications:

@@ -6,7 +6,7 @@ import type { ExtendedProject } from "../utils/loadData";
 function makeProject(
   id: string,
   opts: {
-    name?: string;
+    title?: string;
     description?: string;
     tags?: string[];
     sortKey?: number;
@@ -15,7 +15,7 @@ function makeProject(
 ): ExtendedProject {
   return {
     id,
-    name: opts.name ?? id,
+    title: opts.title ?? id,
     description: opts.description ?? "",
     type: "Application",
     categories: [],
@@ -92,12 +92,12 @@ describe("projectMatchesSearch", () => {
   });
 
   test("matches via project id", () => {
-    const p = makeProject("disco", { name: "Disco" });
+    const p = makeProject("disco", { title: "Disco" });
     expect(projectMatchesSearch(p, "disco")).toBe(true);
   });
 
-  test("matches via project name", () => {
-    const p = makeProject("other", { name: "Disco" });
+  test("matches via project title", () => {
+    const p = makeProject("other", { title: "Disco" });
     expect(projectMatchesSearch(p, "disco")).toBe(true);
   });
 
@@ -113,23 +113,23 @@ describe("projectMatchesSearch", () => {
 });
 
 describe("searchRelevance", () => {
-  test("exact name match scores 7", () => {
-    const p = makeProject("x", { name: "Disco" });
+  test("exact title match scores 7", () => {
+    const p = makeProject("x", { title: "Disco" });
     expect(searchRelevance(p, "Disco")).toBe(7);
   });
 
   test("exact id match scores 7", () => {
-    const p = makeProject("disco", { name: "Other" });
+    const p = makeProject("disco", { title: "Other" });
     expect(searchRelevance(p, "disco")).toBe(7);
   });
 
-  test("name prefix match scores 6", () => {
-    const p = makeProject("x", { name: "Discotron" });
+  test("title prefix match scores 6", () => {
+    const p = makeProject("x", { title: "Discotron" });
     expect(searchRelevance(p, "disco")).toBe(6);
   });
 
-  test("name contains query (non-prefix) scores 5", () => {
-    const p = makeProject("x", { name: "My Disco Thing" });
+  test("title contains query (non-prefix) scores 5", () => {
+    const p = makeProject("x", { title: "My Disco Thing" });
     expect(searchRelevance(p, "disco")).toBe(5);
   });
 
@@ -157,12 +157,12 @@ describe("searchRelevance", () => {
   });
 
   test("no match scores 0", () => {
-    const p = makeProject("other", { name: "Other", description: "unrelated content" });
+    const p = makeProject("other", { title: "Other", description: "unrelated content" });
     expect(searchRelevance(p, "disco")).toBe(0);
   });
 
   test("empty query scores 0", () => {
-    const p = makeProject("disco", { name: "Disco" });
+    const p = makeProject("disco", { title: "Disco" });
     expect(searchRelevance(p, "")).toBe(0);
   });
 });
@@ -179,14 +179,14 @@ describe("accent handling in search", () => {
   });
 
   test("query without accent matches accented description (accent-folding)", () => {
-    // id and name are unrelated so only the description is the potential match site
-    const p = makeProject("city-proj", { name: "CityProject", description: "A project based in Genève, Switzerland" });
+    // id and title are unrelated so only the description is the potential match site
+    const p = makeProject("city-proj", { title: "CityProject", description: "A project based in Genève, Switzerland" });
     expect(projectMatchesSearch(p, "Geneve")).toBe(true);
   });
 
   test("accented project appears in sortProjects results when query matches", () => {
     const p = makeProject("city-proj", {
-      name: "CityProject",
+      title: "CityProject",
       description: "A project based in Genève, Switzerland",
       sortKey: 5
     });
@@ -197,10 +197,10 @@ describe("accent handling in search", () => {
 });
 
 describe("sortProjects with search query", () => {
-  test("exact name match beats same-sortKey description-only match", () => {
-    const disco = makeProject("disco", { name: "Disco", sortKey: 12 });
+  test("exact title match beats same-sortKey description-only match", () => {
+    const disco = makeProject("disco", { title: "Disco", sortKey: 12 });
     // "other" matches "disco" only via its description (substring of "discover")
-    const other = makeProject("other", { name: "Other", description: "let's discover things", sortKey: 12 });
+    const other = makeProject("other", { title: "Other", description: "let's discover things", sortKey: 12 });
     const result = sortProjects([other, disco], [], "disco");
     expect(result[0].id).toBe("disco");
   });

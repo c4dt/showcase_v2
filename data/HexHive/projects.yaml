@@ -1,6 +1,6 @@
 projects:
   fuzzan:
-    name: FuZZan
+    title: FuZZan
     categories:
       - Security
     applications:
@@ -38,7 +38,7 @@ projects:
     date_updated: 2024-04-12
 
   usbfuzz:
-    name: USBFuzz
+    title: USBFuzz
     categories:
       - Security
     applications:
@@ -73,7 +73,7 @@ projects:
     date_updated: 2024-04-12
 
   magma:
-    name: Magma
+    title: Magma
     categories:
       - Security
     applications:
@@ -117,7 +117,7 @@ projects:
     date_added: 2020-02-21
     date_updated: 2024-04-12
   t-fuzz:
-    name: T-Fuzz
+    title: T-Fuzz
     categories:
       - Security
     applications:
@@ -154,7 +154,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-04-12
   bopc:
-    name: BOPC
+    title: BOPC
     categories:
       - Security
     applications:
@@ -192,7 +192,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-04-12
   cfixx:
-    name: CFIXX
+    title: CFIXX
     categories:
       - Security
     applications:
@@ -226,7 +226,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-04-12
   hextype:
-    name: HexType
+    title: HexType
     categories:
       - Security
     applications:
@@ -261,7 +261,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-04-12
   retrowrite:
-    name: RetroWrite
+    title: RetroWrite
     categories:
       - Security
     applications:
@@ -304,7 +304,7 @@ projects:
     date_added: 2019-09-02
     date_updated: 2024-04-12
   shadowstack:
-    name: ShadowStack
+    title: ShadowStack
     categories:
       - Security
     applications:
@@ -348,7 +348,7 @@ projects:
     date_added: 2020-02-21
     date_updated: 2024-04-12
   hexpads:
-    name: HexPADS
+    title: HexPADS
     categories:
       - Security
     applications:
@@ -390,7 +390,7 @@ projects:
     date_added: 2020-02-21
     date_updated: 2024-04-12
   fuzzgen:
-    name: FuzzGen
+    title: FuzzGen
     categories:
       - Security
     applications:
@@ -428,7 +428,7 @@ projects:
     date_added: 2020-02-21
     date_updated: 2024-04-12
   datashield:
-    name: DataShield
+    title: DataShield
     categories:
       - Privacy
     applications:
@@ -465,7 +465,7 @@ projects:
     date_added: 2020-02-21
     date_updated: 2024-04-12
   halucinator:
-    name: HALucinator
+    title: HALucinator
     categories:
       - Security
     applications:
@@ -506,7 +506,7 @@ projects:
     date_updated: 2024-04-12
     maturity: 1
   benchiot:
-    name: BenchIoT
+    title: BenchIoT
     categories:
       - Security
     applications:
@@ -544,7 +544,7 @@ projects:
     date_added: 2020-02-24
     date_updated: 2024-04-12
   freegaen:
-    name: Free GAEN alternative
+    title: Free GAEN alternative
     categories:
       - Privacy
     applications:
@@ -587,7 +587,7 @@ projects:
     date_updated: 2024-04-12
 
   lightblue:
-    name: LightBlue
+    title: LightBlue
     categories:
       - Security
     applications:
@@ -626,7 +626,7 @@ projects:
     date_added: 2020-02-26
     date_updated: 2024-04-12
   igor:
-    name: Igor
+    title: Igor
     categories:
       - Security
     applications:
@@ -668,7 +668,7 @@ projects:
     date_added: 2021-11-04
     date_updated: 2024-04-12
   dis-cover:
-    name: dis-cover
+    title: dis-cover
     categories:
       - Security
     applications:
@@ -699,7 +699,7 @@ projects:
     date_added: 2021-11-04
     date_updated: 2024-04-12
   gramatron:
-    name: Gramatron
+    title: Gramatron
     categories:
       - Security
     applications:
@@ -734,7 +734,7 @@ projects:
     date_added: 2021-11-04
     date_updated: 2024-04-12
   dataflow:
-    name: datAFLow
+    title: datAFLow
     categories:
       - Security
     applications:
@@ -769,7 +769,7 @@ projects:
     date_added: 2022-07-05
     date_updated: 2024-04-12
   midas:
-    name: Midas
+    title: Midas
     categories:
       - Security
     applications:
@@ -810,7 +810,7 @@ projects:
     date_updated: 2024-04-12
 
   gleefuzz:
-    name: GLeeFuzz
+    title: GLeeFuzz
     categories:
       - Security
     applications:
@@ -855,7 +855,7 @@ projects:
     date_updated: 2024-04-12
 
   evocatio:
-    name: Evocatio
+    title: Evocatio
     categories:
       - Security
     applications:
@@ -889,7 +889,7 @@ projects:
     date_added: 2023-03-20
     date_updated: 2024-04-12
   warpattack:
-    name: WarpAttack
+    title: WarpAttack
     categories:
       - Security
     applications:
@@ -920,7 +920,7 @@ projects:
     date_added: 2023-04-24
     date_updated: 2024-04-12
   videzzo:
-    name: ViDeZZo
+    title: ViDeZZo
     categories:
       - Security
     applications:
@@ -949,7 +949,7 @@ projects:
     date_added: 2023-04-24
     date_updated: 2024-04-12
   sievefuzz:
-    name: SieveFuzz
+    title: SieveFuzz
     categories:
       - Security
     applications:
@@ -984,7 +984,7 @@ projects:
     date_added: 2023-04-24
     date_updated: 2024-04-12
   mendelfuzz:
-    name: MendelFuzz
+    title: MendelFuzz
     description:
       "Improved deterministic stage for AFL++ fuzzer, now default in AFL++
       4.10c."
@@ -1016,7 +1016,7 @@ projects:
     applications:
       - Infra
   truman:
-    name: Truman
+    title: Truman
     description:
       "Constructs device behavior models from OS drivers for virtual-device
       fuzzing."
@@ -1052,7 +1052,7 @@ projects:
     applications:
       - Infra
   liberator:
-    name: libErator
+    title: libErator
     description:
       "Automatically generates fuzzing drivers for libraries by extracting
       constraints."
@@ -1087,7 +1087,7 @@ projects:
     applications:
       - Infra
   reflecta:
-    name: Reflecta
+    title: Reflecta
     description:
       "Reflection-based, language-agnostic fuzzer for scripting languages."
     layman_desc: >
@@ -1122,7 +1122,7 @@ projects:
     applications:
       - Infra
   sourcerer:
-    name: Sourcerer
+    title: Sourcerer
     description:
       "LLVM-based C++ type checking tool with performance overhead and fuzzing
       evaluation."
@@ -1156,7 +1156,7 @@ projects:
     applications:
       - Infra
   nass:
-    name: NASS
+    title: NASS
     description:
       "Dynamic binary instrumentation tool for fuzzing Android native system
       services."
@@ -1191,7 +1191,7 @@ projects:
     applications:
       - Infra
   droidot:
-    name: Droidot
+    title: Droidot
     description: "Framework to fuzz Android app native libraries on arm64."
     layman_desc: >
       Mobile apps often include compiled C/C++ code — native libraries — that
@@ -1223,7 +1223,7 @@ projects:
     applications:
       - Infra
   sysyphuzz:
-    name: SYSYPHUZZ
+    title: SYSYPHUZZ
     description:
       "Syzkaller-based kernel fuzzer targeting low-frequency code regions with
       coverage-guided scheduling."
@@ -1257,7 +1257,7 @@ projects:
     applications:
       - Infra
   beanpod-fiasco:
-    name: Beanpod TEE Pwn
+    title: Beanpod TEE Pwn
     description:
       "Proof-of-concept exploit for the keyinstall Trusted Application on Xiaomi
       Redmi Note 11s 5G."
@@ -1290,7 +1290,7 @@ projects:
     applications:
       - Info
   privacyshield:
-    name: PrivacyShield
+    title: PrivacyShield
     description:
       "BLE beacon relay system to prevent unwanted AirTag tracking using ESP32
       relays."
@@ -1326,7 +1326,7 @@ projects:
     applications:
       - Other
   taemu:
-    name: GP TA Emulator
+    title: GP TA Emulator
     description:
       "GlobalPlatform Trusted Application emulator with GDB and fuzzing support."
     layman_desc: >
@@ -1358,7 +1358,7 @@ projects:
     applications:
       - Infra
   orchard:
-    name: Orchestrated Artifact Evaluation
+    title: Orchestrated Artifact Evaluation
     categories:
       - Security
     applications:

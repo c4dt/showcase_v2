@@ -20,7 +20,7 @@ export function projectMatchesSearch(project: ExtendedProject, query: string): b
   const searchable = normalize(
     [
       project.id,
-      project.name,
+      project.title,
       project.description ?? "",
       project.tech_desc ?? "",
       project.layman_desc ?? "",
@@ -49,12 +49,12 @@ export function projectMatchesSearch(project: ExtendedProject, query: string): b
 export function searchRelevance(project: ExtendedProject, query: string): number {
   if (query === "") return 0;
   const q = normalize(query);
-  const name = normalize(project.name);
+  const title = normalize(project.title);
   const id = normalize(project.id);
 
-  if (name === q || id === q) return 7;
-  if (name.startsWith(q) || id.startsWith(q)) return 6;
-  if (name.includes(q) || id.includes(q)) return 5;
+  if (title === q || id === q) return 7;
+  if (title.startsWith(q) || id.startsWith(q)) return 6;
+  if (title.includes(q) || id.includes(q)) return 5;
 
   if (project.lab.prof.name.some((n) => normalize(n).includes(q))) return 4;
 

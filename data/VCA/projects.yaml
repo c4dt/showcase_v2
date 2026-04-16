@@ -1,6 +1,6 @@
 projects:
   graphiti:
-    name: Graphiti
+    title: Graphiti
     description: >
       Verified graph rewriting system for dataflow circuits.
     type: Library

@@ -1,6 +1,6 @@
 projects:
   openfoodrepo:
-    name: The Open Food Repo
+    title: The Open Food Repo
     categories:
       - Other
     applications:
@@ -35,7 +35,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-04-14
   foodandyou:
-    name: Food & You
+    title: Food & You
     categories:
       - Other
     applications:
@@ -62,7 +62,7 @@ projects:
     date_added: 2021-01-21
     date_updated: 2024-04-14
   crowdbreaks:
-    name: CrowdBreaks
+    title: CrowdBreaks
     categories:
       - Learning
     applications:
@@ -106,7 +106,7 @@ projects:
     date_added: 2021-01-21
     date_updated: 2024-04-14
   aicrowd:
-    name: AIcrowd
+    title: AIcrowd
     categories:
       - Learning
     applications:
@@ -139,7 +139,7 @@ projects:
     date_added: 2021-01-21
     date_updated: 2024-04-14
   txcl:
-    name: txcl
+    title: txcl
     categories:
       - Learning
     applications:
@@ -171,7 +171,7 @@ projects:
     date_added: 2022-07-07
     date_updated: 2024-04-14
   dietary-consistency-gut-microbiota:
-    name: Dietary Consistency and Gut Microbiota
+    title: Dietary Consistency and Gut Microbiota
     description:
       "Analysis code for a Swiss cohort study on dietary patterns and gut
       microbiota diversity."
@@ -205,7 +205,7 @@ projects:
     showcase_interest:
       carine: 1
   mindays-estimation:
-    name: Minimum Days Estimation
+    title: Minimum Days Estimation
     description:
       "Code for estimating the optimal study duration for reliable dietary
       intake information."
@@ -239,7 +239,7 @@ projects:
     showcase_interest:
       carine: 1
   myfoodrepo:
-    name: MyFoodRepo
+    title: MyFoodRepo
     description:
       "Nutrition tracking platform with food image segmentation and annotation
       tools."
@@ -271,7 +271,7 @@ projects:
     showcase_interest:
       carine: 1
   meal-pattern-analysis:
-    name: Meal Timing Analysis
+    title: Meal Timing Analysis
     description:
       "Analysis of meal timing effects on dietary quality and glucose response."
     layman_desc: >
@@ -304,7 +304,7 @@ projects:
     showcase_interest:
       carine: 1
   food-additives-gut-microbiota:
-    name: Food Additive Gut Microbiota
+    title: Food Additive Gut Microbiota
     description:
       "Code for analyzing food additive exposure and its impact on gut
       microbiota diversity."

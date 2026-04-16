@@ -1,6 +1,6 @@
 projects:
   gem5-x:
-    name: gem5-X
+    title: gem5-X
     categories:
       - Other
     applications:
@@ -44,7 +44,7 @@ projects:
     date_added: 2021-11-04
     date_updated: 2022-07-05
   3d-ice:
-    name: 3D-ICE
+    title: 3D-ICE
     categories:
       - Other
     applications:
@@ -106,7 +106,7 @@ projects:
     date_updated: 2022-07-05
 
   cloud-performance-monitor:
-    name: cloud-performance-monitor
+    title: cloud-performance-monitor
     description: >
       Monitoring and improving performance of cloud services
     tech_desc: >
@@ -138,7 +138,7 @@ projects:
     date_added: 2024-02-20
 
   digital-twins:
-    name: digital-twins
+    title: digital-twins
     description: >
       Virtual copies for real-time connections
     type: Application
@@ -166,7 +166,7 @@ projects:
     url: https://www.epfl.ch/labs/esl/research/digital-twins/
 
   hdtorch:
-    name: hdtorch
+    title: hdtorch
     description: >
       PyTorch-based hyperdimensional computing library
     tech_desc: >
@@ -201,7 +201,7 @@ projects:
     date_added: 2024-02-20
 
   x-heep:
-    name: x-heep
+    title: x-heep
     description: >
       Open-source RISC-V system-on-chip for healthcare monitoring
     tech_desc: >
@@ -237,7 +237,7 @@ projects:
     license: SOLDERPAD HARDWARE LICENSE, Apache-2.0
     date_added: 2024-02-20
   gsr-monitor:
-    name: GSR Monitor Board
+    title: GSR Monitor Board
     description:
       "Hardware validation board for HEEPidermis SoC with low-noise power
       regulation and GSR measurement."
@@ -271,7 +271,7 @@ projects:
     showcase_interest:
       carine: 2
   prau:
-    name: PRAU
+    title: PRAU
     description:
       "Open-source configurable Posit arithmetic unit supporting extended
       numerical operations."
@@ -306,7 +306,7 @@ projects:
     applications:
       - Infra
   coprosit:
-    name: Coprosit
+    title: Coprosit
     description:
       "Posit and quire arithmetic coprocessor compliant with the RISC-V
       eXtension interface."
@@ -341,7 +341,7 @@ projects:
     applications:
       - Infra
   phee:
-    name: PHEE
+    title: PHEE
     description:
       "Posit-enabled X-HEEP RISC-V platform integrating the Coprosit arithmetic
       coprocessor."
@@ -374,7 +374,7 @@ projects:
     applications:
       - Infra
   compigra:
-    name: Compigra
+    title: Compigra
     description:
       "MLIR-based compilation tool transforming C/C++ code into CGRA assembly."
     layman_desc: >
@@ -407,7 +407,7 @@ projects:
     applications:
       - Infra
   heepstor:
-    name: HEEPstor
+    title: HEEPstor
     description:
       "Framework for deploying post-training quantized PyTorch models on X-HEEP
       RISC-V SoCs."
@@ -442,7 +442,7 @@ projects:
     applications:
       - Infra
   xif-copro:
-    name: CV-X-IF Coprocessor
+    title: CV-X-IF Coprocessor
     description:
       "Sample RISC-V coprocessor implementing a custom BITREV instruction via
       the CV-X-IF interface."
@@ -476,7 +476,7 @@ projects:
     applications:
       - Infra
   cross-domain-saliency-maps:
-    name: Timeseries Saliency Maps
+    title: Timeseries Saliency Maps
     description:
       "Cross-domain saliency maps library for time-series model explanation in
       PyTorch and TensorFlow."
@@ -514,7 +514,7 @@ projects:
       carine: 4
       linus: 3
   ticwatch-radar:
-    name: Pedesite App
+    title: Pedesite App
     description:
       "Wear OS application for wearable sensor data acquisition, storage, and
       automated upload."
@@ -549,7 +549,7 @@ projects:
     showcase_interest:
       carine: 3
   metawears:
-    name: MetaWearS
+    title: MetaWearS
     description:
       "Meta-learning framework for few-shot adaptation in wearable health
       monitoring."
@@ -588,7 +588,7 @@ projects:
     showcase_interest:
       carine: 4
   heepidermis:
-    name: HEEPidermis
+    title: HEEPidermis
     description:
       "X-HEEP-based SoC for GSR and impedance recording with DMA and
       level-crossing support."
@@ -625,7 +625,7 @@ projects:
     showcase_interest:
       carine: 1
   heepidermis-breakout-board:
-    name: HEEPidermis Breakout Board
+    title: HEEPidermis Breakout Board
     description:
       "Hardware breakout board for HEEPidermis with connector pinout
       documentation."
@@ -655,7 +655,7 @@ projects:
     applications:
       - Health
   cheep-boards:
-    name: CHEEP Boards
+    title: CHEEP Boards
     description:
       "Modular PCB suite with configurable power supplies and current
       measurement modules."
@@ -687,7 +687,7 @@ projects:
     applications:
       - Infra
   aquacast:
-    name: AquaCast
+    title: AquaCast
     description:
       "Transformer-based time-series forecasting framework for urban water
       dynamics."

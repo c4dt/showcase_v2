@@ -43,7 +43,7 @@ mockNuxtImport("useRuntimeConfig", () => {
 const projects = [
   {
     id: "a",
-    name: "Alpha",
+    title: "Alpha",
     description: "",
     type: "",
     categories: ["cat1"],

@@ -31,7 +31,7 @@ mockNuxtImport("useRuntimeConfig", () => {
 const projects = [
   {
     id: "a",
-    name: "Alpha",
+    title: "Alpha",
     description: "",
     type: "",
     categories: [],
@@ -45,7 +45,7 @@ const projects = [
   },
   {
     id: "b",
-    name: "Beta",
+    title: "Beta",
     description: "",
     type: "",
     categories: [],
@@ -59,7 +59,7 @@ const projects = [
   },
   {
     id: "c",
-    name: "Gamma",
+    title: "Gamma",
     description: "",
     type: "",
     categories: [],

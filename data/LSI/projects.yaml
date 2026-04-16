@@ -1,6 +1,6 @@
 projects:
   lstools:
-    name: EPFL Logic Synthesis Libraries
+    title: EPFL Logic Synthesis Libraries
     categories:
       - Other
     applications:
@@ -40,7 +40,7 @@ projects:
     date_added: 2021-11-04
     date_updated: 2022-07-05
   benchmarks:
-    name: EPFL Combinational Benchmark Suite
+    title: EPFL Combinational Benchmark Suite
     categories:
       - Other
     applications:
@@ -78,7 +78,7 @@ projects:
     date_added: 2022-07-05
     date_updated: 2023-03-21
   cirkit:
-    name: CirKit
+    title: CirKit
     categories:
       - Other
     applications:

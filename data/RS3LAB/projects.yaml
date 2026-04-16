@@ -1,6 +1,6 @@
 projects:
   ffmalloc:
-    name: ffmalloc
+    title: ffmalloc
     categories:
       - Security
     applications:
@@ -37,7 +37,7 @@ projects:
     date_added: 2021-11-04
     date_updated: 2024-04-12
   pactree:
-    name: PACTree
+    title: PACTree
     categories:
       - Other
     applications:
@@ -79,7 +79,7 @@ projects:
     date_added: 2021-11-05
     date_updated: 2024-04-12
   nros:
-    name: NrOS
+    title: NrOS
     categories:
       - Other
     applications:
@@ -115,7 +115,7 @@ projects:
     date_added: 2021-11-05
     date_updated: 2024-04-12
   syncord:
-    name: SynCord
+    title: SynCord
     categories:
       - Other
     applications:
@@ -147,7 +147,7 @@ projects:
     date_added: 2022-07-07
     date_updated: 2024-04-12
   odinfs:
-    name: Odinfs
+    title: Odinfs
     categories:
       - Other
     applications:
@@ -181,7 +181,7 @@ projects:
     date_added: 2022-07-07
     date_updated: 2024-04-12
   hydra:
-    name: Hydra
+    title: Hydra
     categories:
       - Other
     applications:
@@ -224,7 +224,7 @@ projects:
     date_updated: 2024-04-12
 
   tclocks:
-    name: TCLocks
+    title: TCLocks
     description: >
       Scalable transparent delegation locking protocols without application
       modification
@@ -274,7 +274,7 @@ projects:
     date_added: 2024-04-12
 
   trio:
-    name: Trio Architecture
+    title: Trio Architecture
     description: >
       Trio enables customizable user-level file systems with metadata integrity
     type: "Library"
@@ -324,7 +324,7 @@ projects:
             url: https://dl.acm.org/doi/10.1145/3600006.3613171
     date_added: 2024-04-12
   mage:
-    name: Mage
+    title: Mage
     description:
       "Remote memory system for scalable memory-intensive applications with
       asynchronous decoupling."
@@ -357,7 +357,7 @@ projects:
     applications:
       - Infra
   veritas:
-    name: Veritas
+    title: Veritas
     description:
       "Syzkaller-based fuzzer with specification-based oracle for detecting eBPF
       misbehavior."

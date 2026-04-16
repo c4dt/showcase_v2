@@ -1,6 +1,6 @@
 projects:
   proof-of-personhood:
-    name: Proof-of-Personhood
+    title: Proof-of-Personhood
     categories:
       - Privacy
     applications:
@@ -34,7 +34,7 @@ projects:
     date_added: 2021-04-13
     date_updated: 2024-03-20
   dela:
-    name: DEDIS Ledger Architecture
+    title: DEDIS Ledger Architecture
     logo: /products/images/dela/infograph.png
     categories:
       - Blockchain
@@ -73,7 +73,7 @@ projects:
     date_added: 2021-04-13
     date_updated: 2024-03-20
   odyssey:
-    name: Odyssey
+    title: Odyssey
     logo: /products/images/odyssey/odyssey.png
     categories:
       - Blockchain
@@ -107,7 +107,7 @@ projects:
     date_added: 2020-04-28
     date_updated: 2024-03-20
   calypso:
-    name: Calypso
+    title: Calypso
     categories:
       - Blockchain
       - Privacy
@@ -165,7 +165,7 @@ projects:
     date_updated: 2024-03-20
     maturity: 2
   kyber:
-    name: Kyber
+    title: Kyber
     categories:
       - Privacy
     applications:
@@ -197,7 +197,7 @@ projects:
     date_updated: 2024-03-20
     maturity: 3
   omniledger:
-    name: OmniLedger
+    title: OmniLedger
     categories:
       - Blockchain
     applications:
@@ -268,7 +268,7 @@ projects:
     maturity: 2
 
   onet:
-    name: Onet
+    title: Onet
     categories:
       - Blockchain
     applications:
@@ -302,7 +302,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-03-20
   e-voting:
-    name: E-voting
+    title: E-voting
     categories:
       - Security
       - Privacy
@@ -335,7 +335,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-03-20
   drand:
-    name: DRand
+    title: DRand
     logo: /products/images/drand/drand.png
     categories:
       - Security
@@ -375,7 +375,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-03-20
   purbs:
-    name: PURBs
+    title: PURBs
     categories:
       - Privacy
     applications:
@@ -412,7 +412,7 @@ projects:
     date_added: 2019-03-18
     date_updated: 2024-03-20
   threshold-logical-clocks:
-    name: Threshold Logical Clocks
+    title: Threshold Logical Clocks
     categories:
       - Blockchain
     applications:
@@ -459,7 +459,7 @@ projects:
     date_added: 2019-07-26
     date_updated: 2024-03-20
   twins:
-    name: Twins
+    title: Twins
     categories:
       - Privacy
       - Blockchain
@@ -485,7 +485,7 @@ projects:
     date_updated: 2024-03-20
 
   simnet:
-    name: SimNet
+    title: SimNet
     categories:
       - Security
     applications:
@@ -513,7 +513,7 @@ projects:
     date_added: 2021-02-24
     date_updated: 2024-03-20
   hbt:
-    name: HBT
+    title: HBT
     categories:
       - Blockchain
     applications:
@@ -545,7 +545,7 @@ projects:
     date_added: 2022-07-04
     date_updated: 2024-03-20
   determ-checker:
-    name: determ-checker
+    title: determ-checker
     categories:
       - Verification
     applications:
@@ -576,7 +576,7 @@ projects:
     date_updated: 2024-03-20
 
   matchertext:
-    name: matchertext
+    title: matchertext
     categories:
       - Other
     applications:
@@ -619,7 +619,7 @@ projects:
     date_updated: 2024-03-20
 
   apir:
-    name: APIR
+    title: APIR
     categories:
       - Privacy
     applications:
@@ -665,7 +665,7 @@ projects:
     date_updated: 2024-03-20
 
   dvoting:
-    name: d-voting
+    title: d-voting
     description: >
       A decentralized, fully anonymous voting system for EPFL-internal
       elections.
@@ -714,7 +714,7 @@ projects:
     date_added: 2023-09-01
     date_updated: 2024-11-21
   votegral:
-    name: Votegral
+    title: Votegral
     description:
       "End-to-end verifiable, coercion-resistant voting system using TRIP for
       in-person registration."
@@ -750,7 +750,7 @@ projects:
       carine: 5
       linus: 3
   quepaxa:
-    name: QuePaxa
+    title: QuePaxa
     categories:
       - Blockchain
     applications:
@@ -797,7 +797,7 @@ projects:
     date_updated: "2026-04-02"
 
   gd-pure:
-    name: Grounded Arithmetic
+    title: Grounded Arithmetic
     description:
       "Prototype of Grounded Arithmetic logic formalized in Isabelle/Pure."
     layman_desc: >
@@ -828,7 +828,7 @@ projects:
       - Info
 
   limix:
-    name: Limix
+    title: Limix
     categories:
       - Privacy
     applications:

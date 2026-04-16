@@ -70,7 +70,7 @@ const projectInformationIcons = computed(() => {
   }
 
   icons.push({
-    url: CONTACT_REQUEST.replaceAll("{name}", project.name),
+    url: CONTACT_REQUEST.replaceAll("{name}", project.title),
     icon: faEnvelope,
     label: "Contact"
   });

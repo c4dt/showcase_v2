@@ -1,6 +1,6 @@
 projects:
   memoro:
-    name: Memoro
+    title: Memoro
     categories:
       - Other
     applications:
@@ -45,7 +45,7 @@ projects:
     date_added: 2021-11-05
     date_updated: 2022-07-07
   abacus:
-    name: Abacus
+    title: Abacus
     categories:
       - Security
     applications:
@@ -86,7 +86,7 @@ projects:
     date_added: 2021-11-05
     date_updated: 2022-07-07
   bitfiltrator:
-    name: Bitfiltrator
+    title: Bitfiltrator
     categories:
       - Security
     applications:
