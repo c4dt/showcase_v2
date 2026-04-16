@@ -12,10 +12,10 @@ import type { Project, Projects } from "~/types/projects";
 import type { Lab, Labs } from "~/types/labs";
 import { PROJECT_C4DT_STATUS, PROJECT_LAB_STATUS } from "./vars";
 
-const DATA_DIR = process.env.PLAYWRIGHT_TEST ? "./e2e/data" : "./data";
-const PROJECTS_FILE = "projects.yaml";
+const DATA_DIR = process.env.PLAYWRIGHT_TEST ? "./e2e/data/projects" : "./data/projects";
 const LABS_FILE = "labs.yaml";
 const CONFIG_FILE = "config.yaml";
+const TEMPLATE_FILE = "template.yaml";
 const PRODUCTS_DIR = "projectTabs";
 // An active project had activity within the last 9 months.
 const ACTIVE_THRESHOLD_MS = 270 * 24 * 60 * 60 * 1000;
@@ -42,19 +42,11 @@ export interface ExtendedProject extends Project {
 }
 
 function validateData(basename: string, content: object) {
-  let schema: ValidateFunction;
-  switch (basename) {
-    case LABS_FILE:
-      schema = LABS_SCHEMA;
-      break;
-    case PROJECTS_FILE:
-      schema = PROJECTS_SCHEMA;
-      break;
-    default:
-      throw new Error(`unsupported file '${basename}'`);
+  if (basename !== LABS_FILE) {
+    throw new Error(`unsupported file '${basename}'`);
   }
-  if (!schema(content)) {
-    throw new Error(`invalid YAML: ${JSON.stringify(schema.errors)}`);
+  if (!LABS_SCHEMA(content)) {
+    throw new Error(`invalid YAML: ${JSON.stringify(LABS_SCHEMA.errors)}`);
   }
 }
 
@@ -105,21 +97,19 @@ export async function loadProjectTabs(projectId: string): Promise<ProjectTab[]> 
   return templates;
 }
 
-async function loadLabProjects(
-  labProjectsDir: { name: string },
-  labs: Labs,
-  skipValidation: boolean
-): Promise<ExtendedProject[]> {
-  const projectsFilePath = path.join(DATA_DIR, labProjectsDir.name, PROJECTS_FILE);
+async function loadLabProjects(labName: string, labs: Labs, skipValidation: boolean): Promise<ExtendedProject[]> {
+  const projectsFilePath = path.join(DATA_DIR, `${labName}.yaml`);
   const labProjects: Projects = yaml.parse(await fsPromises.readFile(projectsFilePath, "utf-8"));
 
   if (!skipValidation) {
-    validateData(PROJECTS_FILE, labProjects);
+    if (!PROJECTS_SCHEMA(labProjects)) {
+      throw new Error(`invalid YAML: ${JSON.stringify(PROJECTS_SCHEMA.errors)}`);
+    }
   }
   return Object.entries(labProjects.projects).flatMap((rawProject) => {
     const projectId = rawProject[0];
     const project = rawProject[1];
-    const lab: Lab = labs.labs[labProjectsDir.name];
+    const lab: Lab = labs.labs[labName];
     const descriptionDisplay = project.layman_desc ?? project.tech_desc ?? project.description;
     project.logo = project.logo || lab.logo || "https://c4dt.epfl.ch/wp-content/themes/epfl/assets/svg/epfl-logo.svg";
     let c4dt_status: PROJECT_C4DT_STATUS | undefined = undefined;
@@ -168,14 +158,17 @@ export async function loadProjects(skipValidation: boolean = false): Promise<Ext
    */
   const labs = await loadLabs();
 
-  const projectLabsDirectories = (await fsPromises.readdir(DATA_DIR, { withFileTypes: true })).filter(
-    (labProjectsDir) => labProjectsDir.isDirectory() && labProjectsDir.name !== PRODUCTS_DIR
+  const projectLabsFiles = (await fsPromises.readdir(DATA_DIR, { withFileTypes: true })).filter(
+    (entry) =>
+      entry.isFile() &&
+      entry.name.endsWith(".yaml") &&
+      entry.name !== LABS_FILE &&
+      entry.name !== CONFIG_FILE &&
+      entry.name !== TEMPLATE_FILE
   );
 
   const projects = (
-    await Promise.all(
-      projectLabsDirectories.map((labProjectsDir) => loadLabProjects(labProjectsDir, labs, skipValidation))
-    )
+    await Promise.all(projectLabsFiles.map((f) => loadLabProjects(f.name.replace(".yaml", ""), labs, skipValidation)))
   ).flat();
 
   return projects.sort((a, b) => {
