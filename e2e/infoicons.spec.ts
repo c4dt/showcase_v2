@@ -85,6 +85,9 @@ test.describe("project w/ complete information", () => {
   test("renders mailto link", async () => {
     const icon = projectCard.locator(infoIcons).getByLabel("Contact").filter({ visible: true }).first();
     // check that link is present
-    await expect(icon).toHaveAttribute("href", CONTACT_REQUEST.replaceAll("{name}", "E-ID Example"));
+    await expect(icon).toHaveAttribute(
+      "href",
+      CONTACT_REQUEST.replaceAll("{name}", encodeURIComponent("E-ID Example"))
+    );
   });
 });

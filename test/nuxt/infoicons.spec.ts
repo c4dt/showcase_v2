@@ -9,7 +9,7 @@ test("renders only mailto link if project has no additional information associat
   // there should be exactly one link
   const anchors = wrapper.findAll("a");
   expect(anchors).toHaveLength(1);
-  expect(anchors[0].attributes("href")).toBe(CONTACT_REQUEST.replaceAll("{name}", id));
+  expect(anchors[0].attributes("href")).toBe(CONTACT_REQUEST.replaceAll("{name}", encodeURIComponent(id)));
   // all 4 other icons should be greyed out
   const icons = wrapper.findAll("svg[class*='fa-']").filter((icon) => !icon.classes().includes("fa-envelope"));
   expect(icons).toHaveLength(4);
