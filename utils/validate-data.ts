@@ -14,7 +14,7 @@ import projectSchema from "./schemas/project.json";
 import labsSchema from "./schemas/labs.json";
 import projectsSchema from "./schemas/projects.json";
 
-const DATA_DIR = "./data";
+const DATA_DIR = "./data/projects";
 
 const ajv = new Ajv({ allowUnionTypes: true });
 ajv.addSchema(labSchema, "utils/schemas/lab.json");
@@ -39,16 +39,21 @@ function check(file: string, schema: object, content: unknown, valid: boolean, e
 // Validate labs.yaml
 const labsSrc = await fs.readFile(path.join(DATA_DIR, "labs.yaml"), "utf-8");
 const labsContent = yaml.parse(labsSrc);
-check("data/labs.yaml", labsSchema, labsContent, validateLabs(labsContent), validateLabs.errors);
+check("projects/labs.yaml", labsSchema, labsContent, validateLabs(labsContent), validateLabs.errors);
 
-// Validate each lab's projects.yaml
-const dirs = (await fs.readdir(DATA_DIR, { withFileTypes: true })).filter(
-  (d) => d.isDirectory() && d.name !== "projectTabs"
+// Validate each lab's YAML file
+const files = (await fs.readdir(DATA_DIR, { withFileTypes: true })).filter(
+  (f) =>
+    f.isFile() &&
+    f.name.endsWith(".yaml") &&
+    f.name !== "labs.yaml" &&
+    f.name !== "config.yaml" &&
+    f.name !== "template.yaml"
 );
 
-for (const dir of dirs) {
-  const rel = `data/${dir.name}/projects.yaml`;
-  const projectsFile = path.join(DATA_DIR, dir.name, "projects.yaml");
+for (const file of files) {
+  const rel = `projects/${file.name}`;
+  const projectsFile = path.join(DATA_DIR, file.name);
   try {
     const src = await fs.readFile(projectsFile, "utf-8");
     const content = yaml.parse(src);
