@@ -260,7 +260,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/c4dt/showcase_v2
-      date_last_commit: 2026-04-09
+      date_last_commit: 2026-04-17
     tags:
       - Development
     language: TypeScript
