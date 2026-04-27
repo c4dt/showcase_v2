@@ -232,7 +232,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/esl-epfl/x-heep
-      date_last_commit: 2026-04-07
+      date_last_commit: 2026-04-21
     language: C
     license: SOLDERPAD HARDWARE LICENSE, Apache-2.0
     date_added: 2024-02-20
@@ -619,7 +619,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/esl-epfl/HEEPidermis
-      date_last_commit: 2026-04-08
+      date_last_commit: 2026-04-27
     language: SystemVerilog
     date_added: 2026-03-03
     showcase_interest:
@@ -715,7 +715,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/esl-epfl/AquaCast
-      date_last_commit: 2026-03-11
+      date_last_commit: 2026-04-23
     language: Python
     license: Apache-2.0
     date_added: 2026-03-03
