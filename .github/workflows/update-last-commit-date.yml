@@ -62,7 +62,7 @@ jobs:
             - **Command:** `bun utils/updateLastCommitDate.ts`
           delete-branch: true
           sign-commits: true
-          reviewers: lanterno, ineiti, PascalinDe
+          reviewers: ineiti, PascalinDe
       - name: Comment on PR with data update issues
         if: steps.update_commits.outputs.has_warnings == 'true'
         uses: peter-evans/create-or-update-comment@v5
