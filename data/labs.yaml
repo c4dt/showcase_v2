@@ -310,6 +310,25 @@ labs:
     information:
       - title: Lab GitHub
         url: https://github.com/epfl-lara
+  LASER:
+    name: Networked Systems Abstractions Lab
+    prof:
+      name:
+        - Nate
+        - Foster
+      email: nate.foster@epfl.ch
+      picture: nate_foster.png
+    description: >
+      The Networked Systems Abstractions Lab (LASeR) develops programming
+      languages and formal reasoning tools for networked systems. The lab
+      creates expressive languages to specify network behavior, develops
+      verification techniques to confirm correctness against formal
+      specifications, and engineers practical implementations that make
+      sophisticated abstractions feasible. Notable contributions include
+      algebraic frameworks (NetKAT and GKAT) and domain-specific languages for
+      programmable network hardware (P4).
+    url: https://laser.epfl.ch/
+
   LASEC:
     name: Security and Cryptography Laboratory
     prof:

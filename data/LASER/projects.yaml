@@ -1,0 +1,120 @@
+projects:
+  netkat:
+    title: NetKAT
+    description: >
+      A network specification and verification language based on Kleene Algebra
+      with Tests
+    type: Framework
+    categories:
+      - Verification
+    applications:
+      - Infra
+    tags:
+      - Formal Methods
+      - Network
+      - Protocol
+    layman_desc: >
+      NetKAT lets network engineers write precise rules for how packets should
+      be routed and forwarded, then automatically checks whether two sets of
+      rules behave identically or whether a policy meets a given specification.
+    tech_desc: >
+      NetKAT is a domain-specific language for specifying and reasoning about
+      packet-forwarding networks, grounded in Kleene Algebra with Tests (KAT).
+      It provides a sound and complete equational theory for reasoning about
+      network behavior, and supports automated verification via symbolic
+      automata algorithms implemented in the KATch tool. Extensions include GKAT
+      (Guarded KAT) for nearly-linear-time verification and StacKAT for
+      infinite-state networks.
+    url: https://netkat.org
+    code:
+      type: Lab Github
+      url: https://github.com/cornell-netlab/KATch
+      date_last_commit: 2026-01-24
+    language: Scala
+    license: Apache-2.0
+    information:
+      - type: Paper
+        title: "KATch: A Fast Symbolic Verifier for NetKAT"
+        url: https://laser.epfl.ch/papers/katch.pdf
+        notes:
+          - label: Published at
+            text: PLDI 2024
+            url: https://pldi24.sigplan.org
+      - type: Paper
+        title: >
+          Guarded Kleene Algebra with Tests: Verification of Uninterpreted
+          Programs in Nearly Linear Time
+        url: https://laser.epfl.ch/papers/gkat.pdf
+        notes:
+          - label: Published at
+            text: POPL 2020
+            url: https://popl20.sigplan.org
+          - label: Award
+            text: Distinguished Paper Award
+      - type: Paper
+        title: "StacKAT: Infinite State Network Verification"
+        url: https://laser.epfl.ch/papers/stackat.pdf
+        notes:
+          - label: Published at
+            text: PLDI 2025
+            url: https://pldi25.sigplan.org
+      - type: Web Page
+        title: NetKAT Playground
+        url: https://netkat.org
+    maturity: 2
+    date_added: 2026-04-28
+
+  petr4:
+    title: Petr4
+    description: >
+      Formal semantics and mechanized verification for P4 data plane programs
+    type: Framework
+    categories:
+      - Verification
+    applications:
+      - Infra
+    tags:
+      - Formal Methods
+      - Network
+      - Protocol
+    layman_desc: >
+      Petr4 gives P4 network programs a precise mathematical meaning, making it
+      possible to formally verify that network switches and routers behave
+      correctly and consistently across different implementations.
+    tech_desc: >
+      Petr4 provides a formal operational semantics for the P4 language,
+      mechanized in the Coq proof assistant. It includes a reference interpreter
+      for executing P4 programs and serves as the foundation for verified
+      compilation, test generation (P4Testgen), and program analysis tools such
+      as P4Cub.
+    url: https://github.com/verified-network-toolchain/petr4
+    code:
+      type: Personal Github
+      url: https://github.com/verified-network-toolchain/petr4
+      date_last_commit: 2026-03-03
+    language: OCaml
+    license: Apache-2.0
+    information:
+      - type: Paper
+        title: "Petr4: Formal Foundations for P4 Data Planes"
+        url: https://laser.epfl.ch/papers/petr4.pdf
+        notes:
+          - label: Published at
+            text: POPL 2021
+            url: https://popl21.sigplan.org
+      - type: Paper
+        title: "P4Cub: A Little Language for Big Routers"
+        url: https://laser.epfl.ch/papers/p4cub.pdf
+        notes:
+          - label: Published at
+            text: CPP 2023
+            url: https://popl23.sigplan.org/home/CPP-2023
+      - type: Paper
+        title: "P4Testgen: An Extensible Test Oracle for P4-16"
+        url: https://laser.epfl.ch/papers/p4testgen.pdf
+        notes:
+          - label: Published at
+            text: SIGCOMM 2023
+            url: https://conferences.sigcomm.org/sigcomm/2023/
+    maturity: 2
+    date_added: 2026-04-28
