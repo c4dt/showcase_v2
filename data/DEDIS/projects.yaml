@@ -694,7 +694,7 @@ projects:
     code:
       type: C4DT Github
       url: https://github.com/c4dt/d-voting
-      date_last_commit: 2026-03-26
+      date_last_commit: 2026-04-22
     incubator:
       type: incubated_market
       work: 2023/Q3-2024/Q2 Debugging and feature enhancement

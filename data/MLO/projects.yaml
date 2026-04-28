@@ -329,7 +329,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/epfml/disco
-      date_last_commit: 2026-04-16
+      date_last_commit: 2026-04-23
     language: TypeScript
     license: Apache-2.0
     incubator:
@@ -886,7 +886,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/epfml/halluhard
-      date_last_commit: 2026-04-01
+      date_last_commit: 2026-04-23
     language: Python
     date_added: 2026-03-03
     showcase_interest:
