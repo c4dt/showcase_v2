@@ -21,7 +21,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/epfl-lara/stainless
-      date_last_commit: 2026-04-14
+      date_last_commit: 2026-04-24
     doc: https://epfl-lara.github.io/stainless/
     tags:
       - Static Analysis
