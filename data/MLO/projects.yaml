@@ -886,7 +886,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/epfml/halluhard
-      date_last_commit: 2026-04-23
+      date_last_commit: 2026-05-03
     language: Python
     date_added: 2026-03-03
     showcase_interest:

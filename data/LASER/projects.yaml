@@ -29,7 +29,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/cornell-netlab/KATch
-      date_last_commit: 2026-01-24
+      date_last_commit: 2024-10-24
     language: Scala
     license: Apache-2.0
     information:
@@ -91,7 +91,7 @@ projects:
     code:
       type: Personal Github
       url: https://github.com/verified-network-toolchain/petr4
-      date_last_commit: 2026-03-03
+      date_last_commit: 2024-02-03
     language: OCaml
     license: Apache-2.0
     information:
