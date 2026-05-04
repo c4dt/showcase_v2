@@ -64,6 +64,53 @@ projects:
     maturity: 2
     date_added: 2026-04-28
 
+  yates:
+    title: YATES
+    description: >
+      A framework for rapid prototyping of traffic engineering systems
+    type: Framework
+    categories:
+      - Other
+    applications:
+      - Infra
+    tags:
+      - Network
+      - Simulator
+      - Protocol
+    layman_desc: >
+      YATES lets researchers quickly build and test traffic engineering systems
+      by providing a modular framework for modeling network topologies, routing
+      schemes, and traffic demands, with both simulation and real SDN deployment
+      support.
+    tech_desc: >
+      YATES provides a modular interface for prototyping traffic engineering
+      algorithms, accepting topology, path, demand, and routing scheme inputs.
+      It includes a network simulator for evaluating metrics such as link
+      utilization, throughput, and latency, and an SDN-based backend for
+      production validation and deployment.
+    url: https://cornell-netlab.github.io/yates/
+    code:
+      type: Lab Github
+      url: https://github.com/cornell-netlab/yates
+      date_last_commit: 2022-12-03
+    language: OCaml
+    license: LGPL-3.0
+    information:
+      - type: Paper
+        title: "YATES: Rapid Prototyping for Traffic Engineering Systems"
+        url: https://www.cs.cornell.edu/~praveenk/papers/yates-sosr18.pdf
+        notes:
+          - label: Published at
+            text: ACM SIGCOMM SOSR 2018
+      - type: Paper
+        title: "Semi-Oblivious Traffic Engineering: The Road Not Taken"
+        url: https://www.cs.cornell.edu/~praveenk/papers/smore-nsdi18.pdf
+        notes:
+          - label: Published at
+            text: USENIX NSDI 2018
+    maturity: 2
+    date_added: 2026-05-04
+
   petr4:
     title: Petr4
     description: >
