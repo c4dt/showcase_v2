@@ -148,7 +148,7 @@ watch(
                 in digital trust from EPFL’s leading laboratories. Here you’ll find the most recent projects that
                 advance security, privacy, and trustworthy computing, selected by the C4DT Factory team.
               </p>
-              <p>
+              <p class="mt-6 text-lg text-gray-600">
                 For more details about the Center for Digital Trust, visit our
                 <a class="epfl-a" href="https://c4dt.epfl.ch">main site</a>. The Factory team shares its latest news and
                 insights on our <a class="epfl-a" href="https://c4dt.epfl.ch/article/?cat=10">blog</a>. If you need to
@@ -206,6 +206,11 @@ watch(
                 </div>
                 <div class="epfl-button-plain" @click="resetFilters">Reset Filters</div>
               </div>
+              <p class="mt-4 px-4 py-3 text-xs text-gray-500">
+                <strong>Note:</strong> The project summaries are written with AI assistance for internal use and might
+                not represent the current state of the projects. Please refer to the projects themselves for accurate
+                and up-to-date information.
+              </p>
             </div>
           </div>
 
