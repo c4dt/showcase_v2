@@ -77,11 +77,10 @@ test.describe("search from project page", () => {
 });
 
 test.describe("search relevance", () => {
-  test("name match ranks above description match with higher sortKey", async ({ page }) => {
-    // eid-ledger: name contains "ledger" (relevance score 4), sortKey=0
-    // eid-demo: description mentions ledger (relevance score 1), sortKey=8 (incubated)
-    // Old code (no relevance ranking) would sort by sortKey → eid-demo first
-    // New code ranks by relevance first → eid-ledger first
+  test("name match ranks above description match", async ({ page }) => {
+    // eid-ledger: title contains "ledger" → relevance 5
+    // eid-example: description contains "ledger" → relevance 2
+    // Both have activityScore=0 in test data; composite score ranks eid-ledger first.
     await page.goto("/", { waitUntil: "networkidle" });
     const searchBox = page.getByRole("textbox", { name: "Search" }).filter({ visible: true }).first();
     await searchBox.fill("ledger");
@@ -89,5 +88,20 @@ test.describe("search relevance", () => {
 
     const firstWrapper = page.locator("[data-testid^='project-']:not([data-testid='project-card'])").first();
     await expect(firstWrapper).toHaveAttribute("data-testid", "project-eid-ledger");
+  });
+
+  test("multi-token search: 'ledger component' matches only eid-ledger", async ({ page }) => {
+    // eid-ledger title "E-ID Ledger" + description "The ledger component of the swiss E-ID system." → both tokens match
+    // eid-example description "Example for the swiss E-ID ledger." → has "ledger" but NOT "component" → filtered out
+    await page.goto("/", { waitUntil: "networkidle" });
+    const searchBox = page.getByRole("textbox", { name: "Search" }).filter({ visible: true }).first();
+    await searchBox.fill("ledger component");
+    await page.waitForURL("/#search=ledger+component");
+
+    const firstWrapper = page.locator("[data-testid^='project-']:not([data-testid='project-card'])").first();
+    await expect(firstWrapper).toHaveAttribute("data-testid", "project-eid-ledger");
+
+    const eidExample = page.locator("[data-testid='project-eid-example']");
+    await expect(eidExample).not.toBeVisible();
   });
 });
