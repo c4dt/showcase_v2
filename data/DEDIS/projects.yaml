@@ -605,7 +605,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/dedis/matchertext
-      date_last_commit: 2026-04-28
+      date_last_commit: 2026-05-08
     information:
       - type: Paper
         title: "Matchertext: Towards Verbatim Interlanguage Embedding"
