@@ -129,7 +129,7 @@ projects:
     code:
       type: Project GitHub
       url: https://github.com/AIcrowd
-      date_last_commit: 2026-05-10
+      date_last_commit: 2026-05-17
     language: JavaScript, Ruby
     license: AGPL-3.0
     tags:
@@ -199,7 +199,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/digitalepidemiologylab/dietary-consistency-and-quality-associated-with-gut-microbiota-diversity-paper
-      date_last_commit: 2025-08-08
+      date_last_commit: 2026-05-12
     language: Python
     date_added: 2026-03-03
     showcase_interest:
@@ -298,7 +298,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/digitalepidemiologylab/meal-pattern-analysis-paper
-      date_last_commit: 2026-05-08
+      date_last_commit: 2026-05-11
     language: Python
     date_added: 2026-03-03
     showcase_interest:

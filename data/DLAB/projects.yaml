@@ -623,7 +623,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/epfl-dlab/zip2zip
-      date_last_commit: 2026-05-03
+      date_last_commit: 2026-05-14
     language: Python
     license: Apache-2.0
     date_added: 2026-03-03

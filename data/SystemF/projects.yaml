@@ -157,7 +157,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/epfl-systemf/logical-pinning
-      date_last_commit: 2026-01-25
+      date_last_commit: 2026-05-13
     language: Coq
     date_added: 2026-03-03
     showcase_interest:
@@ -189,7 +189,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/epfl-systemf/lorikeet
-      date_last_commit: 2026-04-26
+      date_last_commit: 2026-05-17
     language: Scala
     date_added: 2026-03-03
     showcase_interest:
