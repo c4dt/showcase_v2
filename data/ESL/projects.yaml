@@ -67,7 +67,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/esl-epfl/3d-ice
-      date_last_commit: 2026-05-04
+      date_last_commit: 2026-05-18
     language: C
     type: Simulation
     tags:
@@ -232,7 +232,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/esl-epfl/x-heep
-      date_last_commit: 2026-05-09
+      date_last_commit: 2026-05-15
     language: C
     license: SOLDERPAD HARDWARE LICENSE, Apache-2.0
     date_added: 2024-02-20
@@ -619,7 +619,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/esl-epfl/HEEPidermis
-      date_last_commit: 2026-05-05
+      date_last_commit: 2026-05-13
     language: SystemVerilog
     date_added: 2026-03-03
     showcase_interest:
