@@ -1078,7 +1078,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/HexHive/liberator
-      date_last_commit: 2026-02-02
+      date_last_commit: 2026-06-09
     language: C++
     license: Apache-2.0
     date_added: 2026-03-03
