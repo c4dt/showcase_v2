@@ -126,7 +126,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/epfl-systemf/dvar-track
-      date_last_commit: 2025-10-20
+      date_last_commit: 2025-11-18
     language: C
     date_added: 2026-03-03
     showcase_interest:
@@ -189,7 +189,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/epfl-systemf/lorikeet
-      date_last_commit: 2026-05-19
+      date_last_commit: 2026-06-08
     language: Scala
     date_added: 2026-03-03
     showcase_interest:
