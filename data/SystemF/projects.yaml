@@ -189,7 +189,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/epfl-systemf/lorikeet
-      date_last_commit: 2026-06-08
+      date_last_commit: 2026-06-21
     language: Scala
     date_added: 2026-03-03
     showcase_interest:
