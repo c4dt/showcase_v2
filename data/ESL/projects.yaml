@@ -398,7 +398,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/esl-epfl/Compigra
-      date_last_commit: 2025-11-03
+      date_last_commit: 2026-06-24
     language: C++
     license: Apache-2.0
     date_added: 2026-03-03
