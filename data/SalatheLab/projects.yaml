@@ -129,7 +129,7 @@ projects:
     code:
       type: Project GitHub
       url: https://github.com/AIcrowd
-      date_last_commit: 2026-07-07
+      date_last_commit: 2026-07-20
     language: JavaScript, Ruby
     license: AGPL-3.0
     tags:
@@ -298,7 +298,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/digitalepidemiologylab/meal-pattern-analysis-paper
-      date_last_commit: 2026-05-19
+      date_last_commit: 2026-07-14
     language: Python
     date_added: 2026-03-03
     showcase_interest:
