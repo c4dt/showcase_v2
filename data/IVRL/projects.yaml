@@ -402,7 +402,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/IVRL/NoiseDiff
-      date_last_commit: 2025-10-25
+      date_last_commit: 2026-07-25
     language: Python
     license: Apache-2.0
     date_added: 2026-03-03
