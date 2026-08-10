@@ -329,7 +329,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/epfml/disco
-      date_last_commit: 2026-07-27
+      date_last_commit: 2026-08-03
     language: TypeScript
     license: Apache-2.0
     incubator:
