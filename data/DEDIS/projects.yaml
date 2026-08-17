@@ -60,7 +60,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/c4dt/dela
-      date_last_commit: 2024-10-10
+      date_last_commit: 2026-08-12
     incubator:
       type: retired
       work: 2023/Q3-2024/Q2 Debugging and feature enhancement
@@ -694,7 +694,7 @@ projects:
     code:
       type: C4DT Github
       url: https://github.com/c4dt/d-voting
-      date_last_commit: 2026-08-03
+      date_last_commit: 2026-08-14
     incubator:
       type: incubated_market
       work: 2023/Q3-2024/Q2 Debugging and feature enhancement
