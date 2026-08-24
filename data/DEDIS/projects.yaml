@@ -605,7 +605,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/dedis/matchertext
-      date_last_commit: 2026-07-24
+      date_last_commit: 2026-08-17
     information:
       - type: Paper
         title: "Matchertext: Towards Verbatim Interlanguage Embedding"
@@ -694,7 +694,7 @@ projects:
     code:
       type: C4DT Github
       url: https://github.com/c4dt/d-voting
-      date_last_commit: 2026-08-14
+      date_last_commit: 2026-08-21
     incubator:
       type: incubated_market
       work: 2023/Q3-2024/Q2 Debugging and feature enhancement
@@ -819,7 +819,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/dedis/gd-pure
-      date_last_commit: 2026-06-05
+      date_last_commit: 2026-08-21
     language: Isabelle
     date_added: 2026-03-03
     showcase_interest:
