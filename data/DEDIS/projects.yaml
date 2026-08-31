@@ -60,7 +60,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/c4dt/dela
-      date_last_commit: 2026-08-12
+      date_last_commit: 2026-08-27
     incubator:
       type: retired
       work: 2023/Q3-2024/Q2 Debugging and feature enhancement
