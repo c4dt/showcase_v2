@@ -21,7 +21,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/epfl-lara/stainless
-      date_last_commit: 2026-09-08
+      date_last_commit: 2026-09-18
     doc: https://epfl-lara.github.io/stainless/
     tags:
       - Static Analysis
@@ -186,7 +186,7 @@ projects:
     code:
       type: Lab GitHub
       url: https://github.com/epfl-lara/lisa
-      date_last_commit: 2026-09-03
+      date_last_commit: 2026-09-16
     language: Scala
     type: Framework, Application
     license: Apache-2.0
