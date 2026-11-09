@@ -70,7 +70,7 @@ projects:
     code:
       type: Lab Github
       url: https://github.com/nal-epfl/tero-source-code
-      date_last_commit: 2023-12-12
+      date_last_commit: 2026-11-02
     language: Python
     information:
       - type: Paper
